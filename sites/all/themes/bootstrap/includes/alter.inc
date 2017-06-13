@@ -292,8 +292,6 @@ function bootstrap_form_alter(array &$form, array &$form_state = array(), $form_
     }
 
   }
-
-
 }
 
 /**
@@ -446,8 +444,5 @@ function bootstrap_js_callback_filter_xss_alter(array &$allowed_tags = array()) 
 
 function bootstrap_field_views_data($field) {
   krumong('main')->kPrint($field);
+
 }
-
-
-  
-?>
