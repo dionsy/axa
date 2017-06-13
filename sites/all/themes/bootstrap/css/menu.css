@@ -1,0 +1,118 @@
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.dropdown-menu{
+	display:block;
+}
+.user{
+	text-align: center;
+}
+.user span{
+	display: block;
+	text-transform: capitalize;
+}
+
+.user img{
+	display: block;
+	text-align: center;
+	margin: auto;
+}
+
+
+#page-header {
+    padding-left: 45px;
+    width: 100% !important;
+	background: none repeat scroll 0 0 #23488B !important;
+	/*position: fixed !important;*/
+    bottom: 0;
+	left: 0; 
+    right: 0;
+}
+
+footer .region-footer {
+    margin-left: 25%;
+    margin-right: 25%;
+
+}
+
+
+
+footer .nav > li {
+    position: relative;
+    display: block;
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 0 0 8px;
+    padding: 0 10px 0 0px;
+    border-right: 1px dotted #fff;
+    height: 13px;
+    line-height: 10px;
+}
+
+footer .nav li a {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.7);
+    height: 12px;
+    font-size: 13px;
+}
+
+footer .nav li a:hover {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+.nav > li > a {
+    color: #fff;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+}
+#navbar_banner{
+    margin-bottom: 40px;
+    padding: 0;
+    text-align: center;
+    background-color:inherit    ;
+    border-color: none;
+}
+#block-menu-menu-menu-top ul li a:after{
+    content: "|";
+    font-size:12px;
+    padding-left: 10px;
+}
+#block-menu-menu-menu-top ul li a{
+    padding: 10px 1px 10px 5px;
+}
+#block-menu-menu-menu-top ul li:last-child a:after{
+    content: "";
+    }
+#block-menu-menu-menu-top ul li:last-child{
+    border-right: 0;
+}
+#block-menu-menu-menu-top ul li:hover {
+    background-color:#e30000; 
+    color: #fff;
+    position: relative;
+}
+#navbar {
+    border-bottom: 3px solid #e30000; 
+}
+.mon_espace_client{
+    border: 2px solid;
+    border-color:#e30000;
+    border-radius: 6px; 
+    font-size: large;
+}
+.es_cli{
+    color:#e30000;
+}
+.mon_espace_client:hover a{
+    color: #fff;
+   
+}.mon_espace_client:hover{
+    background-color:#e30000;
+}
+

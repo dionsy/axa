@@ -1,0 +1,22 @@
+<?php
+// Load includes/common.inc from the hierarchical select module.
+  module_load_include('inc', 'hierarchical_select', 'includes/common'); 
+  
+  // Load category based in vocabulary machine name
+  $voc = 'Vocabulary machine name';//replace this with the taxonomy term
+  $vocabulary = taxonomy_vocabulary_machine_name_load($voc);
+  
+  $form['Chapter_categories'] =  array(
+    '#title' => t('Choose categories'),
+    '#type'          => 'hierarchical_select',
+    '#config'        => array(
+      'module' => 'hs_taxonomy',
+      'params' => array(
+    'vid'                        => (int) $vocabulary->vid,
+    'exclude_tid'                => NULL,
+    'root_term'                  => NULL,
+    'entity_count_for_node_type' => NULL,
+      ),
+    ),
+    '#default_value' => $tids,
+  );
