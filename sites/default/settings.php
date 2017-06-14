@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * @file
  * Drupal site-specific configuration file.
@@ -259,7 +260,7 @@ $databases = array (
     ),
   ),
 );
-/*<<<<<<< HEAD  =======>>>>>>> 9aece76d9712283320b0d6c32ba7c8f5c4a1d69d*/
+
 /**
  * Access control for update.php script.
  *
