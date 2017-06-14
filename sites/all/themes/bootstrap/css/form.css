@@ -347,6 +347,7 @@ h1.page-header {
 }
 .page-node-11 form {
    border: 2px solid #ffc000;
+<<<<<<< HEAD
    border-top: none;
 }
 .page-node-10 form {
@@ -360,6 +361,18 @@ h1.page-header {
 .page-node-8 form {
    border: 2px solid #004d92;
     border-top: none;
+=======
+}
+.page-node-10 form {
+   border: 2px solid #3598dc;
+}
+.page-node-9 form {
+   border: 2px solid #a90f27;
+}
+.page-node-8 form {
+   border: 2px solid #004d92;
+}   ;
+>>>>>>> 9aece76d9712283320b0d6c32ba7c8f5c4a1d69d
 }
 
 
