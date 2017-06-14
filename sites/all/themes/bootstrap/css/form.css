@@ -47,7 +47,7 @@ ul.tabs--primary li
  }
 
 .nav > li > a:hover{
-    background-color: red;
+    border-bottom: 2px solid red;
 }
 .tabs--primary .active{
 
@@ -350,13 +350,15 @@ h1.page-header {
 }
 .page-node-10 form {
    border: 2px solid #3598dc;
+    border-top: none;
 }
 .page-node-9 form {
    border: 2px solid #a90f27;
+    border-top: none;
 }
 .page-node-8 form {
    border: 2px solid #004d92;
-}   ;
+    border-top: none;
 }
 
 
