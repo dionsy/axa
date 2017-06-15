@@ -1,6 +1,5 @@
 #navbar {
     padding: 0;
-    background-color: lightgray;
 }
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
@@ -19,12 +18,10 @@ ul{
 	list-style: outside none none;
 }
 #navbar{
-	background: #fff;
 	float: none;
 	border: none;
 }
 .connexion{
-	background: #fff;
 	float: none;
 	margin: auto;
 	padding-bottom: 15px;
@@ -532,6 +529,29 @@ footer .nav li a:hover {
     margin-right: auto;
     width: 75%;
 }
+.userInfo {
+    text-align: center;
+    border: 1px solid black;
+     margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    margin-bottom: 15px;
+}
+.infoUsers{
+	font-family: arial
+	font-size: 1.2em;
+}	
+.row.paireU {
+    background-color: gainsboro;
+    font-size: 1.2em;
+    text-align: center;
+}
 
-
-
+.row.impaireU {
+    background-color: ghostwhite;
+    font-size: 1.2em;
+    text-align: center;
+}
+.page-node-2 .col-md-4{
+	width: 100%;
+}
