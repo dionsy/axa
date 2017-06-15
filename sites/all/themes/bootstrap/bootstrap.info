@@ -7,6 +7,12 @@ stylesheets[screen][] = css/form.css
 stylesheets[screen][] = css/menu.css
 stylesheets[screen][] = font-awesome/css/font-awesome.min.css
 stylesheets[screen][] = css/sticky_footer.css
+stylesheets[screen][] = slick/slick.css
+stylesheets[screen][] = slick/slick-theme.css
+
+scripts[] = slick/slick.min.js
+scripts[] = js/script.js
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; SimplyTest.me
 ;;;;;;;;;;;;;;;;;;;;;
@@ -152,6 +158,7 @@ settings[jquery_update_jquery_version] = 2.1
 ; JavaScript
 ; --------------
 ; exclude[js][] = 'modules/contextual/contextual.js'
+
 
 ; CSS
 ; --------------

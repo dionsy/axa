@@ -114,7 +114,7 @@
      <?php
     // krumong('main')->kPrint($base_path);
      if(!user_is_logged_in()){
-         print '<div class="mon_espace_client" ><a href="'.$base_path.'/user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
+         print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
       } 
       else{
       ?>
@@ -154,13 +154,15 @@
 
 </header>
 
-<div class="main-container <?php print $container_class; ?>">
+<!-- region slideshow -->
 
- 
+ <?php if (!empty($page['highlighted'])): ?>
+        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+  <?php endif; ?>
+
+
+<div class="main-container <?php print $container_class; ?>"> 
   <div class="row">
-
-
-
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="col-sm-3" role="complementary">
         <?php print render($page['sidebar_first']); ?>
@@ -174,13 +176,10 @@
       </aside>  <!-- /#sidebar-first -->
       <aside class="col-sm-3"></aside>
     <?php endif; ?>
-
 <?php  //if(user_is_logged_in()) { ?>
 
+     
     <section id="test" <?php print $content_column_class; ?>>
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>

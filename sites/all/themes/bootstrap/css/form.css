@@ -140,7 +140,15 @@ ul.tabs--primary li
 #webform-client-form-9 .form-item-submitted-nom,#webform-client-form-9 .form-item-submitted-prenom,
 #webform-client-form-9 .form-item-submitted-type-de-bien,#webform-client-form-9 .form-item-submitted-nombre-de-pieces,
 #webform-client-form-9 .form-item-submitted-vous-etes,
-#webform-client-form-9 .form-item-submitted-quand-souhaitez-vous-etre-assure{
+#webform-client-form-9 .form-item-submitted-quand-souhaitez-vous-etre-assure,
+#webform-client-form-28 .form-item-submitted-marque-voiture,
+#webform-client-form-28 .form-item-submitted-modele,
+#webform-client-form-28 .form-item-submitted-puissance-fiscale,
+#webform-client-form-28 .form-item-submitted-nombre-de-passagers,
+#webform-client-form-28 .form-item,
+#webform-client-form-29 .form-item,
+#webform-client-form-30 .form-item,
+#webform-client-form-31 .form-item{
    
     width: 40%;
     float: left;
@@ -158,6 +166,9 @@ ul.tabs--primary li
 #webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-month ,
 #webform-client-form-11 .webform-datepicker .form-item-submitted-date-de-naissance-month ,
 #webform-client-form-10 .webform-datepicker .form-item-submitted-date-de-naissance-month,
+#webform-client-form-28 .webform-datepicker .form-item-submitted-date-de-premiere-mise-en-circulation-month,
+#webform-client-form-31 .webform-datepicker .form-item-submitted-date-depart-month,
+#webform-client-form-31 .webform-datepicker .form-item-submitted-date-retour-month,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-month {
      width: 15%;
     float: left;
@@ -172,6 +183,12 @@ ul.tabs--primary li
 #webform-client-form-11 .webform-datepicker .form-item-submitted-date-de-naissance-year,
 #webform-client-form-10 .webform-datepicker .form-item-submitted-date-de-naissance-day,
 #webform-client-form-10 .webform-datepicker .form-item-submitted-date-de-naissance-year,
+#webform-client-form-28 .webform-datepicker .form-item-submitted-date-de-premiere-mise-en-circulation-day,
+#webform-client-form-28 .webform-datepicker .form-item-submitted-date-de-premiere-mise-en-circulation-year,
+#webform-client-form-31 .webform-datepicker .form-item-submitted-date-depart-day,
+#webform-client-form-31 .webform-datepicker .form-item-submitted-date-depart-year,
+#webform-client-form-31 .webform-datepicker .form-item-submitted-date-retour-day,
+#webform-client-form-31 .webform-datepicker .form-item-submitted-date-retour-year,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-day,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-year{
     width: 15%;
@@ -342,6 +359,8 @@ h1.page-header {
     border-color:#e30000;
     margin-bottom: 0;
 }
+
+.page-node-11 h1.page-header, .page-node-30 h1.page-header,
 .page-node-2 h1.page-header {
     background-color: #23488b ;
     margin-bottom: 15px;
@@ -349,28 +368,28 @@ h1.page-header {
 .page-node-11 h1.page-header{
     background-color: #ffc000;
 }
-.page-node-10 h1.page-header{
+.page-node-10 h1.page-header, .page-node-31 h1.page-header{
     background-color: #3598dc;
 }
-.page-node-9 h1.page-header{
+.page-node-9 h1.page-header, .page-node-29 h1.page-header{
     background-color: #a90f27;
 }
-.page-node-8 h1.page-header , .page-user h1.page-header{
+.page-node-8 h1.page-header , .page-node-28 h1.page-header, .page-user h1.page-header{
     background-color: #004d92;
 }
-.page-node-11 form {
+.page-node-11 form, .page-node-30 form {
    border: 2px solid #ffc000;
    border-top: none;
 }
-.page-node-10 form {
+.page-node-10 form, .page-node-31 form{
    border: 2px solid #3598dc;
     border-top: none;
 }
-.page-node-9 form {
+.page-node-9 form, .page-node-29 form  {
    border: 2px solid #a90f27;
     border-top: none;
 }
-.page-node-8 form {
+.page-node-8 form, .page-node-28 form {
    border: 2px solid #004d92;
     border-top: none;
 
@@ -475,3 +494,5 @@ h1.page-header {
     margin-top: 20px;
     width: 50%;
 }
+
+/*** Formulaire de souscription ***/
