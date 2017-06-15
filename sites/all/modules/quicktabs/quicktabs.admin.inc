@@ -97,10 +97,7 @@ function quicktabs_form($form, &$form_state, $formtype, $qt = NULL) {
     $form_state['num_tabs']--;
   }
 
-  $tab_titles = array(
-    QUICKTABS_DELTA_NONE => t('- None -'),
-  );
-
+  $tab_titles = array();
   // Add current tabs to the form.
   foreach ($qt->tabs as $delta => $tab) {
     $tab['delta'] = $delta;
@@ -526,7 +523,10 @@ function quicktabs_block_delete_submit($form, &$form_state) {
 function quicktabs_export_form($form, &$form_state, $qt) {
   ctools_include('export');
   // Generate export code
-  $code = ctools_export_object('quicktabs', $qt, '');
+  $code = '$items = array();' ."\n";
+  $code .= ctools_export_object('quicktabs', $qt, '');
+  $code .= '$items["'. $qt->machine_name .'"] = $quicktabs;' ."\n";
+  $code .= 'return $items;';
 
   // Create form
   $form = array();

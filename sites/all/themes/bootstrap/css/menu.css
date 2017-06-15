@@ -127,3 +127,8 @@ footer .nav li a:hover {
 }.mon_espace_client:hover{
     background-color:#e30000;
 }
+/*---------Accordeon------------------*/
+
+.ui-accordion .ui-accordion-content{
+    height: inherit !important;
+}
