@@ -115,4 +115,7 @@ footer .nav li a:hover {
 }.mon_espace_client:hover{
     background-color:#e30000;
 }
+.region.region-header{
+    border-bottom: 3px solid #e30000;
+}
 
