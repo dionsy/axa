@@ -1,6 +1,5 @@
 #navbar {
     padding: 0;
-    background-color: lightgray;
 }
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
@@ -16,14 +15,13 @@ ul,li,div{
 
 ul{
 	padding: 0;
+	list-style: outside none none;
 }
 #navbar{
-	background: #fff;
 	float: none;
 	border: none;
 }
 .connexion{
-	background: #fff;
 	float: none;
 	margin: auto;
 	padding-bottom: 15px;
@@ -38,6 +36,10 @@ ul{
 
 .navbar{
 	border-radius: 0;
+}
+.row{
+	margin-right: 0;
+	margin-left: 0;
 }
 
 #user-login-form li{
@@ -203,7 +205,7 @@ ul{
 	margin-bottom: 10px;
 	width: 110px;
  	border: 1px solid;
-    border-color: #54AE32;
+    border-color: #e30000;
 }
 .Assistance .devis{
 	border: 2px solid;
@@ -281,6 +283,7 @@ li.Package {
     font-size: 1.1em;
     text-align: left;
     color: white;
+    padding-left: 12px;
 }
 .inside-package p:first-child {	
 	margin-top: 5px;
@@ -398,6 +401,7 @@ color: white;
 background: linear-gradient( #004D92,#004D92);
 border-radius: 6px;
 box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.3);
+border: 1px solid #e30000;
 }
 
 .Loisirs-vie a:hover{
@@ -482,18 +486,112 @@ footer .nav li a:hover {
     border-bottom: none !important;
 }
 
+.fa.fa-sign-out, .fa.fa-cogs{
+    font-size: 2em;
+    margin-bottom: 16px;
+    margin-right: 6px;
+
+}
+.fa.fa-cogs{
+    font-size: 2em;
+    margin-bottom: 16px;
+    margin-right: 6px;
+
+}
+.fa.fa-sign-out{
+	    color: red;
+}
+.fa.fa-cogs{
+	    color: #23488B;
+}
+
+/** WEB FORM SOUMISSION */
+.row.categorie {
+    background-color: white;
+    color: black;
+    font-size: 1.4em;
+    text-align: center;
+}	
+.row.paire {
+    background-color: gainsboro;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.row.impaire {
+    background-color: ghostwhite;
+    font-size: 1.2em;
+    text-align: center;
+}
+.lister-devis {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+.userInfo {
+    text-align: center;
+    border: 1px solid black;
+     margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    margin-bottom: 15px;
+}
+.infoUsers{
+	font-family: arial
+	font-size: 1.2em;
+}	
+.row.paireU {
+    background-color: gainsboro;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.row.impaireU {
+    background-color: ghostwhite;
+    font-size: 1.2em;
+    text-align: center;
+}
+.page-node-2 .col-md-4{
+	width: 100%;
+}
+
 /* DEBUT Slide Show*/
 
 .slick-slide{
 	position: relative;
 	z-index: 2;
+	max-height: 333px;
 }
+
 .descriptif{
 	position: absolute;
 	z-index: 10;
-	left: 10px;
-	right: 10px;
 	bottom: 10px;
+	top: 80px;
+}
+ 
+.descriptif p{
+	margin-left: 15%;
+    color: #fff;
+    font-size: 3rem;
 }
 
+.descriptif a{
+	margin: 0 0 1.5rem;
+    color: red;
+    font-size: 3rem;
+    margin-left: 30%;
+}
+
+.highlighted.jumbotron {
+  /*  max-height: 333px;*/
+    padding: 0;
+}
+
+.slick-slide img {
+	width: 100%;
+    height: auto;   
+}
 /* END Slide Show*/
