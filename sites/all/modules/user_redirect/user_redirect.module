@@ -1,0 +1,11 @@
+<?php
+
+function user_redirect_user($op, &$edit, &$account, $category = NULL) {
+  switch ($op) {
+    // On attend l'opération de login de l'utilisateur
+    case 'login':
+      // On change l'adresse de destination de notre utilisateur vers la liste des dernières actualités
+      $_REQUEST['destination'] = 'node/2';
+    break;
+  }
+}

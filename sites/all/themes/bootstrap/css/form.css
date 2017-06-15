@@ -1,0 +1,464 @@
+a{
+    text-decoration: none !important;
+}
+.radio + .radio, .checkbox + .checkbox {
+    margin-top: 0px !important;
+}
+#edit-locale, #edit-timezone, .help-block{
+	display: none;
+}
+
+h1.page-header{
+	text-transform: capitalize;
+	font: normal 30px Arial;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #777;
+}
+
+#edit-actions{
+	margin-left: auto;
+	/*margin-right: auto;*/
+    padding-top: 6%;
+	width: 75%;
+}
+.tabs--primary{
+    border-bottom: 0px solid !important;
+}
+
+.tabs--secondary{
+    margin-top: 70px;
+    margin-left: 13%;
+    margin-right: auto;
+    width: 58%;
+}
+ul.tabs--primary li
+{
+    background-color:  #4BB5C1;
+    margin-top: 15px;    
+    margin-left: 8px;
+    display: inline-block;
+    float: none;
+}
+ li.active > a{
+    background-color: initial !important;
+    border-color: transparent !important;
+    color: white !important;
+ }
+
+.nav > li > a:hover{
+    border-bottom: 2px solid red;
+}
+.tabs--primary .active{
+
+}
+
+.webform-next, .webform-previous, .webform-submit{
+    margin-bottom: 5%;
+    margin-top: 5%;
+   font: normal 20px Arial;
+   text-align: center;
+   letter-spacing: 0.4px;
+   color: #ffffff;
+   background-color: #00529B;
+   border: 2px solid #e30000;
+   border-radius: 7px 7px 7px 7px;
+   padding-right: 20px;
+}
+
+
+.webform-next:hover, .webform-previous:hover, .webform-submit:hover, #edit-submit:hover, .form-submit:hover{
+    background-color: rgb(76, 174, 76);
+}
+
+
+#user-profile-form .form-type-password {
+    clear: none !important;
+}
+
+#user-profile-form #edit-picture, #user-profile-form #bootstrap-panel{
+   margin-left: auto;
+   margin-right: auto;
+   text-align: left;
+   width: 75%;
+}
+
+#user-profile-form #edit-account .form-item-pass{
+	margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+	width: 100%;
+}
+
+#user-profile-form #user-profile-form .panel .panel-heading{
+	text-align: left;
+	background-color: rgb(16, 49, 132);
+}
+
+#user-profile-form #edit-account .form-item-current-pass{
+	margin-left: 12.7%;
+    width: 35%;
+	float: left;
+}
+#user-profile-form #edit-account .form-item-mail{
+	padding-left: 2.7%;
+    width: 39.5%;
+    float: left;
+}
+
+
+#user-profile-form #edit-account .form-item-pass-pass1{
+	margin-left: 12.7%;
+    width: 36.5%;
+	float: left;
+	
+}
+
+#user-profile-form #edit-account .form-item-pass-pass2{
+    width: 39.5%;
+    float: left;
+}
+
+
+#user-profile-form #edit-account .form-item-mail{
+	margin-left: 0.2%;
+}
+
+        /*** Formulaire demande devis ***/
+
+
+.form-item-submitted-nom, .form-item-submitted-prenom, .edit-submitted-date-de-naissance-month,
+.edit-submitted-date-de-naissance-day, .edit-submitted-e-mail, .edit-submitted-telephone{
+    margin-top: 30px;
+    margin-bottom: 20px;
+} 
+
+
+#webform-client-form-8 .form-item-submitted-nom,#webform-client-form-8 .form-item-submitted-prenom,
+#webform-client-form-11 .form-item-submitted-nom,#webform-client-form-11 .form-item-submitted-prenom,
+#webform-client-form-10 .form-item-submitted-nom,#webform-client-form-10 .form-item-submitted-prenom,
+#webform-client-form-9 .form-item-submitted-type-de-bien,#webform-client-form-9 .form-item-submitted-nombre-de-pieces,
+#webform-client-form-9 .form-item-submitted-vous-etes,
+#webform-client-form-9 .form-item-submitted-quand-souhaitez-vous-etre-assure{
+   
+    width: 40%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 4%;
+}
+
+/*#webform-client-form-8 .form-item-submitted-prenom{
+     width: 40%;
+    float: left;
+    margin-left: 4%;
+    margin-right: 6%;
+}*/
+
+#webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-month ,
+#webform-client-form-11 .webform-datepicker .form-item-submitted-date-de-naissance-month ,
+#webform-client-form-10 .webform-datepicker .form-item-submitted-date-de-naissance-month {
+     width: 15%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 2%;
+    float: left;
+
+}
+#webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-day,
+#webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-year,
+#webform-client-form-11 .webform-datepicker .form-item-submitted-date-de-naissance-day,
+#webform-client-form-11 .webform-datepicker .form-item-submitted-date-de-naissance-year,
+#webform-client-form-10 .webform-datepicker .form-item-submitted-date-de-naissance-day,
+#webform-client-form-10 .webform-datepicker .form-item-submitted-date-de-naissance-year{
+    width: 15%;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: left;
+}
+/*#webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-year{
+     width: 15%;
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    float: left;
+}*/
+.form-item-submitted-date-de-naissance label{
+         margin-top: 30px;
+    margin-left: 6%;
+}
+
+#webform-client-form-11 .form-item-submitted-date-de-naissance, #webform-client-form-10 .form-item-submitted-date-de-naissance {
+    width: 100%;
+}
+#webform-client-form-8 .form-item-submitted-e-mail,
+#webform-client-form-11 .form-item-submitted-email,
+#webform-client-form-10 .form-item-submitted-email{
+     margin-top: 25px;
+     width: 40%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 4%;
+}
+#webform-client-form-8 .form-item-submitted-telephone ,
+#webform-client-form-11 .form-item-submitted-telephone,
+#webform-client-form-10 .form-item-submitted-telephone{
+    width: 38%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 25px;
+    
+}
+#webform-client-form-11 .form-item-submitted-civilite,
+#webform-client-form-10 .form-item-submitted-civilite{
+    width: 40%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+.form-item.webform-component.webform-component-radios.webform-component--civilite.form-group.form-item.form-item-submitted-civilite.form-type-radios.form-group ,
+.form-item.webform-component.webform-component-term-reference.webform-component--type-dassurance.form-group.form-item.form-item-submitted-type-dassurance.form-type-select.form-group{
+    margin-top: 20px;
+}
+#webform-client-form-11 .form-item-submitted-type-dassurance,
+#webform-client-form-10 .form-item-submitted-type-dassurance{
+    width: 40%;
+    float: left;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+#webform-client-form-8 .form-item-submitted-marque{
+     width: 70%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 3%;
+    margin-top: 30px;
+     margin-bottom: 30px;
+}
+#webform-client-form-8 .form-item-submitted-marque label{
+    margin-right: 30px;
+    }
+#edit-submitted-marque-select-2{
+    margin-left: 30px;
+}
+#edit-submitted-marque-select-3{
+    margin-left: 30px;
+}
+#webform-client-form-8 .form-item-submitted-energie-du-vehicule{
+    margin-bottom: 30px;
+    width: 50%;
+    margin-left: 6%;
+    margin-top: 30px;
+}
+
+#webform-client-form-8 .form-item-submitted-annee-de-naissance-year {
+     width: 60%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 1%;
+}
+.form-item-submitted-annee-de-naissance label{
+    margin-left: 6%;
+}
+#webform-client-form-8 .form-item-submitted-age-dobtention-du-permis{
+     width: 60%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 1%;   
+}
+#webform-client-form-8 .form-item-submitted-email{
+    width: 60%;
+    float: left;
+    margin-left: 6%;
+    margin-right: 1%; 
+}
+.form-item.webform-component.webform-component-radios.webform-component--ce-logement-est-il-votre-residence-principale.form-group.form-item.form-item-submitted-ce-logement-est-il-votre-residence-principale.form-type-radios.form-group {
+    margin-left: 6%;
+}
+.form-item.webform-component.webform-component-textarea.webform-component--adresse-du-bien-a-assurer.form-group.form-item.form-item-submitted-adresse-du-bien-a-assurer.form-type-textarea.form-group {
+    float: left;
+    margin-left: 6%;
+    margin-right: 2%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 44%;
+}
+
+/*** dropdown hover***/
+
+#navbar-collapse .nav .dropdown {
+    position: relative !important;
+    display: inline-block !important;
+}
+#navbar-collapse .nav .dropdown-menu {
+    display: none !important;
+    position: absolute !important;
+    background-color: #00529B;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+#navbar-collapse .nav .dropdown:hover .dropdown-menu {
+    display: block !important;
+}
+
+#navbar-collapse .nav .dropdown li a:hover, #webform-node-form .tabbable .nav-tabs li a:hover{
+    background-color: #F13E41;
+    color: #ffffff
+}
+
+#navbar-collapse .nav .dropdown li a{
+    color: #ffffff
+}
+.page-user #test {
+    background-color: white;
+    border: 2px solid #004d92;
+    margin:auto ;
+    float: inherit;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+h1.page-header {
+    color: #fff;
+    font: 30px Arial;
+    letter-spacing: 0.4px;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 10px 0;
+    border: 1px solid;
+    border-color:#e30000;
+    margin-bottom: 0;
+}
+.page-node-11 h1.page-header{
+    background-color: #ffc000;
+}
+.page-node-10 h1.page-header{
+    background-color: #3598dc;
+}
+.page-node-9 h1.page-header{
+    background-color: #a90f27;
+}
+.page-node-8 h1.page-header , .page-user h1.page-header{
+    background-color: #004d92;
+}
+.page-node-11 form {
+   border: 2px solid #ffc000;
+   border-top: none;
+}
+.page-node-10 form {
+   border: 2px solid #3598dc;
+    border-top: none;
+}
+.page-node-9 form {
+   border: 2px solid #a90f27;
+    border-top: none;
+}
+.page-node-8 form {
+   border: 2px solid #004d92;
+    border-top: none;
+
+}
+.page-node-10 form {
+   border: 2px solid #3598dc;
+}
+.page-node-9 form {
+   border: 2px solid #a90f27;
+}
+.page-node-8 form {
+   border: 2px solid #004d92;
+    border-top: none;
+}
+
+
+#user-login .form-group  label{
+    display: flex;
+    font-size: 1.2em;
+    font-weight: bold;
+    left: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    max-width: 100%;
+}
+#user-login div.form-group{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.node-type-webform #test{
+    width: 75%;
+    float: none;
+    margin:auto;
+}
+.node-webform{
+    padding-top: 10px;
+    background: #fff;
+}
+
+.webform-progressbar-page .webform-progressbar-page-label{
+     top: 21px;
+}
+.webform-progressbar-page.current {
+}
+.webform-progressbar-outer {
+    background-color: #e30000;
+    border: 3px solid #fff;
+    height: 9px;
+    margin: 0.35em -1px 2em;
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+}
+.webform-progressbar-page {
+    background-color: #00529b;
+    border-radius: 5px;
+    height: 22px;
+    margin: -12px -3px;
+    position: absolute;
+    width: 22px;
+}
+/* FORM CONTROL */
+.form-control {
+    background-color: #efefef;
+    background-image: none;
+    border: 1px solid blue;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: black;
+    display: block;
+    font-size: 15px;
+    height: 35px;
+    line-height: 1.42857;
+    margin-left: 0;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 75%;
+}
+.webform-progressbar {
+    margin: 18px auto 0;
+    text-align: center;
+    width: 90%;
+}
+.form-actions {
+    text-align: center;
+}
+#edit-name.form-control.form-text.required,#edit-pass.form-control.form-text.required{
+    width: 100%;
+}
+.page-user form#user-login  label {
+    float: left;
+    margin-left: 10%;
+    margin-top: 22px;
+}
+#user-login div.form-group {
+    display: inline-block;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+#edit-name.form-control.form-text.required,#edit-pass.form-control.form-text.required {
+    margin-left: 37%;
+    margin-top: 20px;
+    width: 50%;
+}
