@@ -74,18 +74,20 @@
  */
 
 ?>
-
+<div id="navbar" class="collapse navbar-collapse ">
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
+  </header> 
+</div>
+  <!-- /#page-header -->
   
 <div class="main-container <?php print $container_class; ?>">
 <section class="row">
-<header id="navbar" role="banner" class="<?php print $navbar_classes;  ?> col-md-4 ">
+<header id="" role="banner" class="navbar <?php print $navbar_classes;  ?> col-md-4 ">
   <div class="<?php print $container_class; ?>">
     <div class="navbar-header">
       <?php if ($logo): ?>
@@ -142,7 +144,9 @@
     <section id="test" class="col-md-4 connexion">      
     
       <a id="main-content"></a>
-  
+    <?php if (!empty($title)): ?>
+        <h1 class="page-header"><?php print $title; ?></h1>
+      <?php endif; ?>
       <?php print render($page['content']); ?>
 
     </section>
