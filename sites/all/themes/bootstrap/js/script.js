@@ -30,9 +30,19 @@
           slidesToScroll: 1,
         });
 
+         $('.view-partenaire .view-content', context).slick({
+          autoplay: true,
+          dots: true,
+          infinite: true,
+          speed: 800,
+          slidesToShow: 6,
+          slidesToScroll: 1,
+        });
+
       }
       
     }
   }
 
 })(jQuery, Drupal);
+

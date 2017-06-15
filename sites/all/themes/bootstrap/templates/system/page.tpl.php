@@ -208,7 +208,16 @@
 
   </div>
 </div>
+
+<?php if (!empty($page['footer_top'])): ?>
+  <footer class="footer_top <?php print $container_class; ?>">
+    <?php print render($page['footer_top']); ?>
+  </footer>
+<?php endif; ?>
+
 </div> <!-- End Page -->
+
+
 <?php if (!empty($page['footer'])): ?>
   <footer class="footer <?php print $container_class; ?>">
     <?php print render($page['footer']); ?>
