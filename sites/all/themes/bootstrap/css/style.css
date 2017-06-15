@@ -481,3 +481,19 @@ footer .nav li a:hover {
     background: none !important;
     border-bottom: none !important;
 }
+
+/* DEBUT Slide Show*/
+
+.slick-slide{
+	position: relative;
+	z-index: 2;
+}
+.descriptif{
+	position: absolute;
+	z-index: 10;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+}
+
+/* END Slide Show*/
