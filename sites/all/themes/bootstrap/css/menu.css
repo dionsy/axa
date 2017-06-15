@@ -81,13 +81,12 @@ footer .nav li a:hover {
 #block-menu-menu-menu-top ul li a:after{
     content: "|";
     font-size:12px;
-    padding-left: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
-#block-menu-menu-menu-top ul li a{
-    padding: 10px 1px 10px 5px;
-}
+
 #block-menu-menu-menu-top ul li:last-child a:after{
-    content: "";
+    content:none;
     }
 #block-menu-menu-menu-top ul li:last-child{
     border-right: 0;
@@ -96,6 +95,19 @@ footer .nav li a:hover {
     background-color:#e30000; 
     color: #fff;
     position: relative;
+}
+
+#block-menu-menu-menu-top ul li a{
+    padding-bottom: 5px ;
+}
+/*nav > li > a:last-child:hover, .nav > li > a:focus {
+    background-color: #eee;
+    margin-left: -18px;
+    text-decoration: none;
+}*/
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent;
+    text-decoration: none;
 }
 #navbar {
     border-bottom: 3px solid #e30000; 
@@ -115,7 +127,3 @@ footer .nav li a:hover {
 }.mon_espace_client:hover{
     background-color:#e30000;
 }
-.region.region-header{
-    border-bottom: 3px solid #e30000;
-}
-
