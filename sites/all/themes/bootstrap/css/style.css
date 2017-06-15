@@ -524,11 +524,8 @@ footer .nav li a:hover {
     text-align: center;
 }
 .lister-devis {
-    border: 1px solid black;
-    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
 }
 .userInfo {
     text-align: center;
