@@ -7,6 +7,7 @@
 body
 {
 	 background-color:#EDF7F2 ;
+	 overflow-x: hidden;
 	
 }
 ul,li,div{
@@ -565,22 +566,24 @@ footer .nav li a:hover {
 .descriptif{
 	position: absolute;
 	z-index: 10;
-	bottom: 10px;
-	top: 80px;
+	top: 28%;
+	width: 50%;
+	right: 2%;
 }
- 
+ .views-more-link{
+ 	display: block;
+ }
 .descriptif p{
-	margin-left: 30%;
-	margin-right: 30%;
+	/*margin-left: 30%;
+	margin-right: 30%;*/
     color: #fff;
-    font-size: 3rem;
 }
 
 .descriptif a{
-	margin: 0 0 1.5rem;
-    color: red;
+/*	margin: 0 0 1.5rem;*/
+    color:#E30000;
     font-size: 3rem;
-    margin-left: 35%;
+ /*   margin-left: 35%;*/
 }
 
 .highlighted.jumbotron {

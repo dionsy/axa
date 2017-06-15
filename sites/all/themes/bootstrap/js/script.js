@@ -22,7 +22,7 @@
        if($('.front', context).length){     
 
          $('.slide', context).slick({
-          autoplay: false,
+          autoplay: true,
           dots: true,
           infinite: true,
           speed: 300,
