@@ -640,3 +640,9 @@ body .page{
 .slick-prev::before, .slick-next::before {
     color: #23488B !important;
 }
+
+/*** slide item ***/
+.field.field-name-field-image.field-type-image.field-label-hidden {
+    float: left;
+    margin-right: 5%;
+}
