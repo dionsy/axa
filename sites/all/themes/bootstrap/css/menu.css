@@ -168,3 +168,10 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     width: auto;
     z-index: 2;
 }
+body{
+        font-family: Georgia, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+}
+.page-node-2 .region.region-content{
+    background-color: white;
+}
