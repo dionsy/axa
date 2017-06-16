@@ -679,7 +679,7 @@ body .page{
   transition: background-color 2s ease-out;
 }*/
 
-li{
+/*li{
     position: relative !important;
 }
 
@@ -698,4 +698,4 @@ li{
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-}
+}*/
