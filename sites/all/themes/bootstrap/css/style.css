@@ -440,7 +440,7 @@ body {position: relative;}
 }
 
 body .page{
-	margin-bottom: 100px !important;
+	margin-bottom: 0px !important;
 }
 
 .footer{
@@ -448,6 +448,7 @@ body .page{
     height: 100px !important;
     /*margin-top :20px !important;*/
     padding-left: 45px;
+    margin-top: 0px !important;
     width: 100% !important;
     background: none repeat scroll 0 0 #23488B !important;
 }

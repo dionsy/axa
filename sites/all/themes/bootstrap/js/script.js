@@ -31,7 +31,7 @@
         });
 
          $('.view-partenaire .view-content', context).slick({
-          autoplay: false,
+          autoplay: true,
           dots: false,
           infinite: true,
           speed: 300,
