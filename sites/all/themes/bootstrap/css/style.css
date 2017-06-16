@@ -27,7 +27,9 @@ ul{
 	margin: auto;
 	padding-bottom: 15px;
 }
-
+.page-node-2 .connexion{
+	float: left;
+}
 .not-logged-in{
 	padding: 0;
 }
@@ -553,9 +555,7 @@ body .page{
     background-color: ghostwhite;
     font-size: 1.2em;
 }
-.page-node-2 .col-md-4{
-	width: 100%;
-}
+
 .row.impaireU .col-lg-5, .row.paire .col-lg-5, .row.impaire .col-lg-5, .row.paireU .col-lg-5{
 	padding-left: 15px;
     text-align: left;
