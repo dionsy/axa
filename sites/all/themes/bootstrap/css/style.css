@@ -18,6 +18,18 @@ ul{
 	padding: 0;
 	list-style: outside none none;
 }
+h1.page-header {
+	color: #fff;
+    font: 30px Arial;
+    letter-spacing: 0.4px;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 10px 0;
+    border: 1px solid;
+    border-color: #e30000;
+	background-color: #004d92;
+	margin-bottom: 80px;
+}
 #navbar{
 	float: none;
 	border: none;
@@ -643,6 +655,49 @@ body .page{
 
 /*** slide item ***/
 .field.field-name-field-image.field-type-image.field-label-hidden {
+	margin-right: 5%;
+	max-width: 50%;
     float: left;
-    margin-right: 5%;
+    
+}
+.node-slide {
+    margin-bottom: 80px;
+}
+
+/*** devis ***/
+
+/*{
+	background: #0104e4;    
+}*/
+
+
+/*.inside p:hover {
+  background-color: green;
+  cursor: pointer;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}*/
+
+li{
+	position: relative;
+}
+
+.inside p .btn a:before{
+	content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 100%;
+    bottom: 0;
+}
+
+.inside p .btn a:hover{
+	background: #0104e4;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }

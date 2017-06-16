@@ -348,7 +348,7 @@ ul.tabs--primary li
     padding: 10px;
     text-align: center;
 }
-h1.page-header {
+.node-type-webform h1.page-header {
     color: #fff;
     font: 30px Arial;
     letter-spacing: 0.4px;
