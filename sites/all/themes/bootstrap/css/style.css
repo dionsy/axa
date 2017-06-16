@@ -613,3 +613,12 @@ body .page{
     background-color: inherit !important;
 }
 /* END Slide Show*/
+
+/*  vue Partenaire */
+.view-partenaire .slick-list .slick-track{
+	display: flex;
+	background-color: #fff; 
+}
+.view-partenaire .slick-list .slick-track .views-row{
+	margin: auto;
+}

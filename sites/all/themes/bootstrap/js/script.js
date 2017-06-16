@@ -34,8 +34,8 @@
           autoplay: true,
           dots: true,
           infinite: true,
-          speed: 800,
-          slidesToShow: 6,
+          speed: 300,
+          slidesToShow: 4,
           slidesToScroll: 1,
         });
 
