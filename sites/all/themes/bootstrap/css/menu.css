@@ -129,6 +129,42 @@ footer .nav li a:hover {
 }
 /*---------Accordeon------------------*/
 
-.ui-accordion .ui-accordion-content{
-    height: inherit !important;
+#block-quicktabs-mes-demandes-de-devis h2.block-title{
+    margin-bottom: 15px;
+}
+ul.quicktabs-tabs.quicktabs-style-navlist li.active {
+    background: #e30000 none repeat scroll 0 0;
+    border-bottom: 1px solid black;
+    border-top: 1px solid #e30000;
+}
+.quicktabs_main.quicktabs-style-navlist {
+    background: #f0f8fc none repeat scroll 0 0;
+    border: 1px solid #e30000;
+    float: left;
+    min-height: 64px;
+    padding: 6px;
+    position: relative;
+    width: 70%;
+    z-index: 1;
+}
+ul.quicktabs-tabs.quicktabs-style-navlist li a {
+    color: white;
+    display: block;
+    font-weight: normal;
+    height: 23px;
+    margin: 0;
+    padding: 0 10px 0 5px;
+    text-align: left;
+    text-decoration: none;
+    background-color: #004d92;
+    text-transform: uppercase;
+    border-bottom: 1px solid;
+}
+ul.quicktabs-tabs.quicktabs-style-navlist {
+    float: left;
+    margin: 0;
+    padding: 4px 0;
+    position: relative;
+    width: auto;
+    z-index: 2;
 }
