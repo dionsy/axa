@@ -512,9 +512,11 @@ footer .nav li a:hover {
     color: black;
     font-size: 1.4em;
     text-align: center;
+      padding-bottom: 3px;
+    padding-top: 3px;
 }	
 .row.paire {
-    background-color: gainsboro;
+    background-color: white;
     font-size: 1.2em;
     text-align: center;
 }
@@ -549,11 +551,19 @@ footer .nav li a:hover {
 .row.impaireU {
     background-color: ghostwhite;
     font-size: 1.2em;
-    text-align: center;
 }
 .page-node-2 .col-md-4{
 	width: 100%;
 }
+.row.impaireU .col-lg-5, .row.paire .col-lg-5, .row.impaire .col-lg-5, .row.paireU .col-lg-5{
+	padding-left: 15px;
+    text-align: left;
+}
+.row.impaireU , .row.paire , .row.impaire, .row.paireU{
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
 
 /* DEBUT Slide Show*/
 
