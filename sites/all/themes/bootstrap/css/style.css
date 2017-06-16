@@ -560,7 +560,6 @@ body .page{
 .row.paireU {
     background-color: gainsboro;
     font-size: 1.2em;
-    text-align: center;
 }
 
 .row.impaireU {
@@ -681,17 +680,16 @@ body .page{
 }*/
 
 li{
-	position: relative;
+    position: relative !important;
 }
 
-.inside p .btn a:before{
-	content: "";
-    position: absolute;
-    display: block;
+.inside p .btn a::before{
+	content: '';
+    position: absolute !important;
     left: 0;
     right: 0;
-    top: 100%;
     bottom: 0;
+    top:100%;
 }
 
 .inside p .btn a:hover{
