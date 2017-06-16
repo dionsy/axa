@@ -25,9 +25,10 @@
           autoplay: true,
           dots: true,
           infinite: true,
-          speed: 300,
+          speed: 1500,
           slidesToShow: 1,
           slidesToScroll: 1,
+          fade:true,
         });
 
          $('.view-partenaire .view-content', context).slick({
