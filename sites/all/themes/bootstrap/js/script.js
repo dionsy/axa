@@ -31,8 +31,8 @@
         });
 
          $('.view-partenaire .view-content', context).slick({
-          autoplay: true,
-          dots: true,
+          autoplay: false,
+          dots: false,
           infinite: true,
           speed: 300,
           slidesToShow: 4,

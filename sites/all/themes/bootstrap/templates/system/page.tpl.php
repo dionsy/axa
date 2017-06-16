@@ -211,15 +211,19 @@
 </div>
 
 <?php if (!empty($page['footer_top'])): ?>
+  <div class="test">
   <footer class="footer_top <?php print $container_class; ?>">
     <?php print render($page['footer_top']); ?>
   </footer>
+    </div>
 <?php endif; ?>
 </div> <!-- End Page -->
 
 
 <?php if (!empty($page['footer'])): ?>
   <footer class="footer <?php print $container_class; ?>">
+  <div class="col-md-12 col-lg-12 col-xs-12">
     <?php print render($page['footer']); ?>
+  </div>
   </footer>
 <?php endif; ?>
