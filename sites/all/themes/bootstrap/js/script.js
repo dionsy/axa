@@ -40,7 +40,12 @@
           slidesToScroll: 1,
         });
 
+         /*$('.view-faq .views-row').on('click', function(){
+          $(this).addClass('current');
+        });*/
+
       }
+
       
     }
   }

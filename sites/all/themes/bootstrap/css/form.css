@@ -53,7 +53,7 @@ ul.tabs--primary li
 
 }
 
-.webform-next, .webform-previous, .webform-submit{
+.webform-next, .webform-previous, .webform-submit, .btn-default{
     margin-bottom: 5%;
     margin-top: 5%;
    font: normal 20px Arial;
@@ -148,8 +148,7 @@ ul.tabs--primary li
 #webform-client-form-28 .form-item,
 #webform-client-form-29 .form-item,
 #webform-client-form-30 .form-item,
-#webform-client-form-31 .form-item,
-#contact-site-form, .form-item{
+#webform-client-form-31 .form-item{
    
     width: 40%;
     float: left;
@@ -479,19 +478,29 @@ ul.tabs--primary li
     margin-bottom: 15px;
     vertical-align: middle;
 }
-#edit-name.form-control.form-text.required,#edit-pass.form-control.form-text.required {
-    margin-left: 40%;
-    margin-top: 20px;
-    width: 50%;
-}
 
 #contact-site-form #edit-name.form-control.form-text.required, #contact-site-form #edit-pass.form-control.form-text.required{
-    /*margin-left: 0px !important;
-    margin-top: 20px;
-    width: 100%;*/
+    margin-left: 0px !important;
+    margin-top: 2px;
+    width: 75% ;
 }
 #contact-site-form{
-    width: auto;
+
+    width: 75%;
+    margin:auto;
+    background: #fff;
 }
 
-/*** Formulaire de souscription ***/
+#contact-site-form .form-item{
+    width: 91%;
+    display: block;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#edit-actions {
+    display: block;
+    margin: auto;
+    padding-bottom: 2%;
+}
+
