@@ -486,9 +486,12 @@ ul.tabs--primary li
 }
 
 #contact-site-form #edit-name.form-control.form-text.required, #contact-site-form #edit-pass.form-control.form-text.required{
-    margin-left: 0px !important;
+    /*margin-left: 0px !important;
     margin-top: 20px;
-    width: 100%;
+    width: 100%;*/
+}
+#contact-site-form{
+    width: auto;
 }
 
 /*** Formulaire de souscription ***/
