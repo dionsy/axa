@@ -152,7 +152,7 @@
     <section id="test" class="col-md-8 connexion">      
     
       <a id="main-content"></a>
-   
+   <?php print $messages; ?>
       <?php print render($page['content']); ?>
 
     </section>

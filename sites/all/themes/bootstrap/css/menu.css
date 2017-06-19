@@ -32,15 +32,13 @@
     right: 0;
 }
 
-footer .region-footer {
-    margin-left: 25%;
-    margin-right: 25%;
+.footer .region-footer {
 
 }
 
 
 
-footer .nav > li {
+.footer .nav > li {
     position: relative;
     display: block;
     list-style-type: none;
@@ -52,7 +50,7 @@ footer .nav > li {
     line-height: 10px;
 }
 
-footer .nav li a {
+.footer .nav li a {
     margin: 0;
     padding: 0;
     color: #fff;
@@ -61,7 +59,7 @@ footer .nav li a {
     font-size: 13px;
 }
 
-footer .nav li a:hover {
+.footer .nav li a:hover {
     background: transparent !important;
     border-bottom: none !important;
 }

@@ -148,7 +148,8 @@ ul.tabs--primary li
 #webform-client-form-28 .form-item,
 #webform-client-form-29 .form-item,
 #webform-client-form-30 .form-item,
-#webform-client-form-31 .form-item{
+#webform-client-form-31 .form-item,
+#contact-site-form, .form-item{
    
     width: 40%;
     float: left;
@@ -205,7 +206,7 @@ ul.tabs--primary li
     float: left;
 }*/
 .form-item-submitted-date-de-naissance label{
-         margin-top: 30px;
+    margin-top: 30px;
     margin-left: 6%;
 }
 
@@ -218,8 +219,8 @@ ul.tabs--primary li
 #webform-client-form-11 .form-item-submitted-email,
 #webform-client-form-10 .form-item-submitted-email,
 #webform-client-form-9 .form-item-submitted-email{
-     margin-top: 25px;
-     width: 40%;
+    margin-top: 25px;
+    width: 40%;
     float: left;
     margin-left: 6%;
     margin-right: 4%;
@@ -482,6 +483,15 @@ ul.tabs--primary li
     margin-left: 40%;
     margin-top: 20px;
     width: 50%;
+}
+
+#contact-site-form #edit-name.form-control.form-text.required, #contact-site-form #edit-pass.form-control.form-text.required{
+    /*margin-left: 0px !important;
+    margin-top: 20px;
+    width: 100%;*/
+}
+#contact-site-form{
+    width: auto;
 }
 
 /*** Formulaire de souscription ***/
