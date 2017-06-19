@@ -8,6 +8,7 @@ body
 {
 	 background-color:#EDF7F2 ;
 	 overflow-x: hidden;
+	 font-family: "OpenSans",Arial,Helvetica,sans-serif;
 	
 }
 ul,li,div{
@@ -79,11 +80,11 @@ h1.page-header {
 .inside{
 	background: #fff;
 	border-top: 4px solid;
-	box-shadow: 0 0 4px #090909;
+	/*box-shadow: 0 0 4px #090909;*/
 	min-height: 184px;
-	text-align: center;
 	padding-bottom: 7px;
 	margin-top: 28px;
+	text-align: left;
 
 }
 #block-system-main{
@@ -94,7 +95,8 @@ h1.page-header {
 	margin-bottom:20px; 	
 }
 .inside{
-	width: 97%;
+	width: 95%;
+	box-shadow: 3px 3px 0 rgba(235,234,230,0.8);
 	margin: auto;
 }
 
@@ -105,28 +107,16 @@ h1.page-header {
 }
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2{
-/* background: #004D92 ;*/
- font-family: Georgia,Arial;
- font-size: 18px;
- /*padding: 3px;
- padding-right: 5px;*/
- margin-left: 4px;
+ text-transform: uppercase;
+ font-size: 1.125em;
+ margin-left: 15px;
+ margin-bottom: 5px;
+ color: #e30000;
+ font-weight: bold;
 /*border-radius: 0 20px 0 0;*/
 }
-/*.view-id-frontpage li.Loisirs-vie h2 a{
-	 background: #FFC000 !important;
-}
 
-.view-id-frontpage li.Habitation h2 a{
-	 background: #A90F27 !important;
-}
-.view-id-frontpage li.Auto h2 a{
-	 background: #004D92 !important;
-}*/
 
-.view-id-frontpage li h2{
-	margin: 0;
-}
 .view-id-frontpage li h2 a{
 }
 .view-id-frontpage ul li.col-lg-3:last-child {
@@ -136,8 +126,9 @@ h1.page-header {
 	border-color: #e30000 !important;
 }
 .inside p{
-	text-align: left;
-	padding: 0 10px;
+	margin-left: 19px;
+	margin-right: 10px;
+	margin-bottom: 12px
 }
 
 /*.Assistance .inside {
@@ -164,39 +155,39 @@ h1.page-header {
  	display: block;
 	bottom: 0;
 }
+	/*
+	.Package i.fa:before{
+		content: "\f0c0";
+		color: #54AE32 ;
+	}
 
-.Package i.fa:before{
-	content: "\f0c0";
-	color: #54AE32 ;
-}
-
-.Assistance i.fa:before {
-	color:  #3598DC;
-	content: "\f21c";
-}
-.Habitation  i.fa:before{
-	color: #A90F27;
-	content: "\f015"; 
-}
-.Auto  i.fa:before{
-	color: #004D92;
-	content: "\f1b9"; 
-}
-.Loisirs-vie  i.fa:before{
-	color: #FFC000;
-	content: "\f21a"; 
-}
-.Package i.fa:before,
-.Auto  i.fa:before,
-.Habitation  i.fa:before,
-.Loisirs-vie  i.fa:before,
-.Assistance  i.fa:before{
-	font-family:'FontAwesome';
-	font-size:30px;
-	display: block;
-	margin-top: 20px;
-	margin-bottom: 10px;
-}
+	.Assistance i.fa:before {
+		color:  #3598DC;
+		content: "\f21c";
+	}
+	.Habitation  i.fa:before{
+		color: #A90F27;
+		content: "\f015"; 
+	}
+	.Auto  i.fa:before{
+		color: #004D92;
+		content: "\f1b9"; 
+	}
+	.Loisirs-vie  i.fa:before{
+		color: #FFC000;
+		content: "\f21a"; 
+	}
+	.Package i.fa:before,
+	.Auto  i.fa:before,
+	.Habitation  i.fa:before,
+	.Loisirs-vie  i.fa:before,
+	.Assistance  i.fa:before{
+		font-family:'FontAwesome';
+		font-size:30px;
+		display: block;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}*/
 .Package .devis, .Assistance .devis,.Habitation .devis, .Auto .devis, .Loisirs-vie .devis{
 	font-family: Arial,sans-serif;
     font-size: 1.3em;
@@ -403,7 +394,7 @@ button.navbar-toggle
 
 
 
-.Loisirs-vie a, .Assistance a, .Habitation a, .Auto a {
+./*Loisirs-vie a, .Assistance a, .Habitation a, .Auto a {
 margin-left: 14%;
 margin-right: 14%;
 padding-top: 1px;
@@ -417,9 +408,9 @@ background: linear-gradient( #004D92,#004D92);
 border-radius: 6px;
 box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.3);
 border: 1px solid #e30000;
-}
+}*/
 
-.Loisirs-vie a:hover{
+/*.Loisirs-vie a:hover{
     background: #FFC000;
 }
 
@@ -433,7 +424,7 @@ border: 1px solid #e30000;
 
 .Auto a:hover{
     background: #004D92;
-}
+}*/
 
 html {
   height: 100%;
@@ -686,10 +677,15 @@ body .page{
 .inside p .btn a::before{
 	content: '';
     position: absolute !important;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top:100%;
+    border-color: #009933;
+    border-style: solid;
+    border-width: 0 0.3em 0.25em 0;
+    height: 1em;
+    top: 1.3em !important;
+    left: 0.6em !important;
+    margin-top: -1em !important;
+    transform: rotate(45deg);
+    width: 0.5em;
 }
 
 .inside p .btn a:hover{
@@ -699,3 +695,16 @@ body .page{
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }*/
+a.asligne {
+   display: block;
+   font-size: 1.3em;
+   font-weight: bold;
+   margin-top: 15px;
+   margin-bottom: 15px
+}	
+
+.view-faq .item-list ul li {
+    list-style: outside none square !important;
+    color: #23488B;
+    margin: 1%;
+}

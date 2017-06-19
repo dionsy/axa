@@ -132,10 +132,7 @@ footer .nav li a:hover {
 }
 /*---------Accordeon------------------*/
 
-body{
-        font-family: Georgia, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-}
+
 .page-node-2 .region.region-content{
     background-color: white;
 }
@@ -172,7 +169,7 @@ ul.quicktabs-tabs.quicktabs-style-garland li {
 }
 .page-node-2 .well  ul li:hover {
     background-color: #004d80;
-    border-bottom: 1px solid #e30000; 
+   /* border-bottom: 1px solid #e30000; */
 }
 #block-menu-menu-menu-espace-client ul li ::after{
     content: ">";
