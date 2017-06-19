@@ -392,17 +392,6 @@ h1.page-header {
 .page-node-8 form, .page-node-28 form {
    border: 2px solid #004d92;
     border-top: none;
-
-}
-.page-node-10 form {
-   border: 2px solid #3598dc;
-}
-.page-node-9 form {
-   border: 2px solid #a90f27;
-}
-.page-node-8 form {
-   border: 2px solid #004d92;
-    border-top: none;
 }
 
 
@@ -481,7 +470,7 @@ h1.page-header {
 }
 .page-user form#user-login  label {
     float: left;
-    margin-left: 10%;
+    margin-left: 8%;
     margin-top: 22px;
 }
 #user-login div.form-group {
@@ -490,7 +479,7 @@ h1.page-header {
     vertical-align: middle;
 }
 #edit-name.form-control.form-text.required,#edit-pass.form-control.form-text.required {
-    margin-left: 37%;
+    margin-left: 40%;
     margin-top: 20px;
     width: 50%;
 }
