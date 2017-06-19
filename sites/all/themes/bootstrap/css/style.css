@@ -321,6 +321,7 @@ div.col-xs-6 {
 .menu.nav {
     color: black;
     font-size: 1.2em;
+    text-align: center;
 }
 
 button.navbar-toggle
@@ -460,8 +461,6 @@ body .page{
 
 
 .footer .region-footer {
-    margin-left: 25%;
-    margin-right: 25%;
 
 }
 
@@ -701,10 +700,22 @@ a.asligne {
    font-weight: bold;
    margin-top: 15px;
    margin-bottom: 15px
+}
+
+.view-faq {
+    background: #fff;
+    margin-top: -79px;
 }	
 
 .view-faq .item-list ul li {
-    list-style: outside none square !important;
+    margin-left: 1.5%;
+    margin-bottom: .9rem;
     color: #23488B;
-    margin: 1%;
+    font-size: 1.5rem;
+    font-weight: normal;
+    list-style: outside none square !important;
+}
+
+.view-faq .view-content{
+	margin-left: 4%;
 }
