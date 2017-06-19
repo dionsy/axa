@@ -485,7 +485,6 @@ ul.tabs--primary li
     width: 75% ;
 }
 #contact-site-form{
-
     width: 75%;
     margin:auto;
     background: #fff;
@@ -498,7 +497,7 @@ ul.tabs--primary li
     margin-top: 2%;
 }
 
-#edit-actions {
+#contact-site-form #edit-actions {
     display: block;
     margin: auto;
     padding-bottom: 2%;

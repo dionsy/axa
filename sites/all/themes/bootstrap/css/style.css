@@ -697,7 +697,7 @@ a.asligne {
 
 .view-faq {
     background: #fff;
-    margin-top: -79px;
+    margin-top: -38px;
 }	
 
 .view-faq .item-list ul li {
@@ -719,8 +719,8 @@ a.asligne {
     padding-right: 0px;	
 }
 .node-type-offres .field-item.even p {
-     padding-left: 15px; 
-     padding-right: 15px;
+    padding-left: 15px; 
+    padding-right: 15px;
     font-size: 1.5rem;
     font-weight: normal;
     list-style: outside none square !important;
@@ -728,4 +728,13 @@ a.asligne {
 
 .view-faq .view-content{
 	margin-left: 4%;
+}
+
+
+/*** mention legale***/
+#node-48 .field.field-name-body.field-type-text-with-summary.field-label-hidden {
+    width: 75%;
+    display: block;
+    margin: auto;
+    background: #fff;
 }
