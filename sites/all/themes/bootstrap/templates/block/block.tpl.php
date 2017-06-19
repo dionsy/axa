@@ -51,11 +51,12 @@ $prefix='';
 $suffix='';
 
 switch ($block->delta) {
-	case 'login':
-		/*$class="col-md-4 col-lg-4 col-xs-12";
-		$prefix='<div class="col-md-4 col-lg-4 col-xs-12"></div>';
-		$suffix='<div class="col-md-4 col-lg-4 col-xs-12"></div>';*/
+	case 'form':
+		$class="col-md-3 col-lg-3 col-xs-12";
 		break;
+	case 'menu-menu-top':
+		$class="col-md-9 col-lg-9 col-xs-12";
+	break;
 	
 	default:
 		# code...
