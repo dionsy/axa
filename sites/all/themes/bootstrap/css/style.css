@@ -29,7 +29,7 @@ h1.page-header {
     border: 1px solid;
     border-color: #e30000;
 	background-color: #004d92;
-	margin-bottom: 80px;
+	margin-bottom: 40px;
 }
 #navbar{
 	float: none;
@@ -80,9 +80,7 @@ h1.page-header {
 .inside{
 	background: #fff;
 	border-top: 4px solid;
-	/*box-shadow: 0 0 4px #090909;*/
 	min-height: 184px;
-	padding-bottom: 7px;
 	margin-top: 28px;
 	text-align: left;
 
@@ -128,7 +126,8 @@ h1.page-header {
 .inside p{
 	margin-left: 19px;
 	margin-right: 10px;
-	margin-bottom: 12px
+	margin-bottom: 12px;
+	height: 50px;
 }
 
 /*.Assistance .inside {
@@ -189,7 +188,6 @@ h1.page-header {
 		margin-bottom: 10px;
 	}*/
 .Package .devis, .Assistance .devis,.Habitation .devis, .Auto .devis, .Loisirs-vie .devis{
-	font-family: Arial,sans-serif;
     font-size: 1.3em;
     width: 95px;
     height: 35px;
@@ -284,7 +282,6 @@ li.Package {
 	background-color: #54AE32 !important;
 }
 .inside-package p {
-	font-family: georgia,Arial;
     margin: 0 0 10px;
     font-size: 1.1em;
     text-align: left;
@@ -354,7 +351,6 @@ button.navbar-toggle
     color: black;
     cursor: pointer;
     display: block;
-    font-family: Arial,Helvetica,sans-serif;
     font-weight: 700;
     height: 22px;
     line-height: 22px;
@@ -387,7 +383,6 @@ button.navbar-toggle
 	text-align: left;
 }
 #navbar-collapse > a ,.first.last.leaf > a{
-	font-family: georgia ,Arial;
 	font-size: 1.1em;
 	color:black;
 }
@@ -545,7 +540,6 @@ body .page{
     margin-bottom: 15px;
 }
 .infoUsers{
-	font-family: arial
 	font-size: 1.2em;
 }	
 .row.paireU {
@@ -634,7 +628,6 @@ body .page{
     color: #23488B;
     text-align: center;
     font-size: 3em;
-    font-family: initial;
 }
 .footer_top.container {
     /*width: 100%;*/
@@ -707,4 +700,19 @@ a.asligne {
     list-style: outside none square !important;
     color: #23488B;
     margin: 1%;
+}
+
+.node-type-offres .field-items {
+    height: 330px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.node-type-offres section#block-system-main {
+    background-color: #fff;
+    padding-left: 0px;
+    padding-right: 0px;	
+}
+.node-type-offres .field-item.even p {
+     padding-left: 15px; 
+     padding-right: 15px;
 }

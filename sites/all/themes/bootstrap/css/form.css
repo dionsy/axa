@@ -13,7 +13,7 @@ h1.page-header{
 	font: normal 30px Arial;
     text-align: center;
     letter-spacing: 0.4px;
-    color: #777;
+    color: #fff;
 }
 
 #edit-actions{
@@ -28,7 +28,7 @@ h1.page-header{
 
 .tabs--secondary{
     margin-top: 70px;
-    margin-left: 13%;
+    margin-left: 13
     margin-right: auto;
     width: 58%;
 }
