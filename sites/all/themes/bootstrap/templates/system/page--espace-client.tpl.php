@@ -149,7 +149,7 @@
     <?php endif; ?>
 
 
-    <section id="test" class="col-md-12 connexion">      
+    <section id="test" class="col-md-8 connexion">      
     
       <a id="main-content"></a>
    <?php print $messages; ?>

@@ -434,7 +434,7 @@ button.navbar-toggle
 	text-align: left;
 }
 #navbar-collapse > a ,.first.last.leaf > a{
-	font-size: 1.1em;
+	font-size: 0.9em;
 	color:black;
 }
 
@@ -554,6 +554,7 @@ body .page{
 }
 .fa.fa-cogs{
 	    color: #103184;
+	    font-size: 16px !important;
 }
 
 /** WEB FORM SOUMISSION */
@@ -561,20 +562,17 @@ body .page{
     background-color: white;
     color: black;
     font-size: 1.4em;
-    text-align: center;
-      padding-bottom: 3px;
+    text-align: left;
+    padding-bottom: 3px;
     padding-top: 3px;
 }	
 .row.paire {
     background-color: white;
     font-size: 1.2em;
-    text-align: center;
 }
 
 .row.impaire {
-    background-color: ghostwhite;
-    font-size: 1.2em;
-    text-align: center;
+    background-color: #DCDCDC;
 }
 .lister-devis {
     margin-left: auto;
@@ -696,47 +694,7 @@ body .page{
     margin-bottom: 80px;
 }
 
-/*** devis ***/
 
-/*{
-	background: #0104e4;    
-}*/
-
-
-/*.outside p:hover {
-  background-color: green;
-  cursor: pointer;
-  -webkit-transition: background-color 2s ease-out;
-  -moz-transition: background-color 2s ease-out;
-  -o-transition: background-color 2s ease-out;
-  transition: background-color 2s ease-out;
-}*/
-
-/*li{
-    position: relative !important;
-}
-
-.outside p .btn a::before{
-	content: '';
-    position: absolute !important;
-    border-color: #009933;
-    border-style: solid;
-    border-width: 0 0.3em 0.25em 0;
-    height: 1em;
-    top: 1.3em !important;
-    left: 0.6em !important;
-    margin-top: -1em !important;
-    transform: rotate(45deg);
-    width: 0.5em;
-}
-
-.outside p .btn a:hover{
-	background: #0104e4;
-    -moz-transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}*/
 
 a.asligne, #block-views-frontpage-block-2 ul li a {
    display: block;
@@ -834,4 +792,16 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     color:#fff;
 }
 
-
+.logged-in.page-node-2 .navbar-collapse.collapse {
+    display: block;
+    height: auto;
+    left: 70px;
+    overflow: visible;
+    padding-bottom: 0;
+    position: absolute;
+}
+.logged-in.page-node-2 .avatar {
+    display: inline-block;
+    font-size: 1.3em;
+    text-align: center;
+}
