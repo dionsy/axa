@@ -71,6 +71,13 @@ h1.page-header {
 .view-content{
 
 }
+
+#node-48 .field.field-name-body ul {
+    list-style-position: outside !important;
+    list-style-type: square !important;
+    padding-left: 1.4em;
+}
+
 #block-views-frontpage-block-1 li,
 #block-system-main ul li {
 	list-style-type: none;	
@@ -764,3 +771,46 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     display: block;
     margin: auto;
 }
+
+#node-48 .field.field-name-body h3{
+	text-align: center;
+	font-size: 16px;
+    color: #23498a;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+#node-48 .field.field-name-body h3:after, #node-48 .field.field-name-body h3:before{
+	content: "\f06c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #3598DC;
+    font-size: 26px;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+
+/*** Glossaire ***/
+.view.view-glossary {
+    background: #fff;
+    padding: 1em .5em;
+}
+.view.view-glossary .views-summary.views-summary-unformatted {
+    background-color: #23488B;
+    border-radius: 20%;
+    display: inline;
+    margin: .25rem;
+    padding: .25em .65em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.view.view-glossary .views-summary. span a{
+    color:#fff;
+}
+
+
