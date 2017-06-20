@@ -755,11 +755,12 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 /*** mention legale***/
 #node-48 {
     background: #fff;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    /*padding-top: 30px;
+    padding-bottom: 30px;*/
+    padding: 30px 30px 30px 30px;
 }
-#node-48 .field.field-name-body.field-type-text-with-summary.field-label-hidden {
-    width: 75%;
+#node-48 .field.field-name-body {
+    /*width: 75%;*/
     display: block;
     margin: auto;
 }
