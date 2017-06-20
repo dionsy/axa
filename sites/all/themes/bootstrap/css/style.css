@@ -681,9 +681,23 @@ body .page{
 .footer_top.container {
     /*width: 100%;*/
 }
+
 .slick-prev::before, .slick-next::before {
     color: #23488B !important;
 }
+
+.jumbotron .slick-prev, .jumbotron .slick-next{
+	z-index: 10;
+}
+
+.jumbotron .slick-prev{
+	left: 25%;
+}
+.jumbotron .slick-next{
+	right: 25%;
+}
+
+
 
 /*** slide item ***/
 .field.field-name-field-image.field-type-image.field-label-hidden {
@@ -793,7 +807,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     margin: auto;
 }
 
-#node-48 .field.field-name-body h3{
+#node-48 .field.field-name-body h3, .view.view-glossary .item-list h3{
 	text-align: center;
 	font-size: 16px;
     color: #23498a;
@@ -803,7 +817,8 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     font-weight: bold;
 }
 
-#node-48 .field.field-name-body h3:after, #node-48 .field.field-name-body h3:before{
+#node-48 .field.field-name-body h3:after, #node-48 .field.field-name-body h3:before,
+.view.view-glossary .item-list h3:after, .view.view-glossary .item-list h3:before{
 	content: "\f06c";
     font-family: FontAwesome;
     font-style: normal;
