@@ -27,7 +27,7 @@ h1.page-header {
     text-transform: capitalize;
     border-radius: 10px 0;
     border: 1px solid;
-    border-color: #e30000;
+    border-color: #ED1846;
 	background-color: #004d92;
 	margin-bottom: 40px;
 }
@@ -83,8 +83,19 @@ h1.page-header {
 	min-height: 184px;
 	margin-top: 28px;
 	text-align: left;
-
 }
+#block-views-frontpage-block-1 li,
+.inside img{
+	display: block;
+	height: auto;
+	max-width: 100%;
+	transition: all 0.5s ease 0s;
+}
+#block-views-frontpage-block-1 li,
+.inside img.img-responsive:hover {
+    transform: scale(1.1);
+}
+
 #block-system-main{
 	margin-bottom: 20px;
 }
@@ -96,6 +107,9 @@ h1.page-header {
 	width: 95%;
 	box-shadow: 3px 3px 0 rgba(235,234,230,0.8);
 	margin: auto;
+	overflow: hidden;
+	z-index: 2;
+	transition: 0.3s all cubic-bezier(0.57, -0.15, 0.26, 1.18);
 }
 
 .view-id-frontpage ul{
@@ -109,7 +123,7 @@ h1.page-header {
  font-size: 1.125em;
  margin-left: 15px;
  margin-bottom: 5px;
- color: #e30000;
+ color: #ED1846;
  font-weight: bold;
 /*border-radius: 0 20px 0 0;*/
 }
@@ -120,8 +134,15 @@ h1.page-header {
 .view-id-frontpage ul li.col-lg-3:last-child {
 	margin-right: 0;
 }
+.inside:hover{
+	background-color: rgba(16, 49, 132, 0.8);
+    color: rgb(255, 255, 255);
+}
+.inside:hover a{
+    color: rgb(255, 255, 255);
+}
 .inside, .Package {
-	border-color: #e30000 !important;
+	border-color: #ED1846 !important;
 }
 .inside p{
 	margin-left: 19px;
@@ -187,7 +208,7 @@ h1.page-header {
 	margin-bottom: 30px;
 }
 .fa{
-	display: block !important;
+	display: inline-block !important;
 	text-align: center !important;
 }
 #block-views-frontpage-block-2  ul li {
@@ -228,7 +249,7 @@ h1.page-header {
 	margin-bottom: 10px;
 	width: 110px;
  	border: 1px solid;
-    border-color: #e30000;
+    border-color: #ED1846;
 }
 .Assistance .devis{
 	border: 2px solid;
@@ -522,10 +543,10 @@ body .page{
 
 }
 .fa.fa-sign-out{
-	    color: red;
+	    color: #ED1846;
 }
 .fa.fa-cogs{
-	    color: #23488B;
+	    color: #103184;
 }
 
 /** WEB FORM SOUMISSION */
@@ -609,7 +630,7 @@ body .page{
 
 .descriptif a{
 /*	margin: 0 0 1.5rem;*/
-    color:#E30000;
+    color:#ED1846;
     font-size: 3rem;
  /*   margin-left: 35%;*/
 }

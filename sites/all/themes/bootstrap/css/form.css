@@ -61,7 +61,7 @@ ul.tabs--primary li
    letter-spacing: 0.4px;
    color: #ffffff;
    background-color: #00529B;
-   border: 2px solid #e30000;
+   border: 2px solid #ED1846;
    border-radius: 7px 7px 7px 7px;
    padding-right: 20px;
 }
@@ -356,7 +356,7 @@ ul.tabs--primary li
     text-transform: capitalize;
     border-radius: 10px 0;
     border: 1px solid;
-    border-color:#e30000;
+    border-color:#ED1846;
     margin-bottom: 0;
 }
 
@@ -425,7 +425,7 @@ ul.tabs--primary li
 .webform-progressbar-page.current {
 }
 .webform-progressbar-outer {
-    background-color: #e30000;
+    background-color: #ED1846;
     border: 3px solid #fff;
     height: 9px;
     margin: 0.35em -1px 2em;
@@ -498,8 +498,8 @@ ul.tabs--primary li
     margin-top: 2%;
 }
 
-#edit-actions {
-    display: block;
+#search-block-form #edit-actions {
+    display: none;
     margin: auto;
     padding-bottom: 2%;
 }
