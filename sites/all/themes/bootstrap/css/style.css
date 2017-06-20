@@ -817,7 +817,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     color:#fff;
 }
 
-/*.logged-in.page-node-2 .navbar-collapse.collapse {
+.logged-in.page-node-2 .navbar-collapse.collapse {
     display: block;
     height: auto;
     left: 70px;
@@ -828,7 +828,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     display: inline-block;
     font-size: 1.3em;
     text-align: center;
-}*/
+}
 
 .courant{
 	background: red !important;
