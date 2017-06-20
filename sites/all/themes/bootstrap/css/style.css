@@ -71,6 +71,13 @@ h1.page-header {
 .view-content{
 
 }
+
+#node-48 .field.field-name-body ul {
+    list-style-position: outside !important;
+    list-style-type: square !important;
+    padding-left: 1.4em;
+}
+
 #block-views-frontpage-block-1 li,
 #block-system-main ul li {
 	list-style-type: none;	
@@ -739,7 +746,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 
 .view-faq {
     background: #fff;
-    margin-top: -79px;
+    margin-top: -38px;
 }	
 
 .view-faq .item-list ul li {
@@ -761,8 +768,8 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     padding-right: 0px;	
 }
 .node-type-offres .field-item.even p {
-     padding-left: 15px; 
-     padding-right: 15px;
+    padding-left: 15px; 
+    padding-right: 15px;
     font-size: 1.5rem;
     font-weight: normal;
     list-style: outside none square !important;
@@ -771,3 +778,60 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 .view-faq .view-content{
 	margin-left: 4%;
 }
+
+
+/*** mention legale***/
+#node-48 {
+    background: #fff;
+    /*padding-top: 30px;
+    padding-bottom: 30px;*/
+    padding: 30px 30px 30px 30px;
+}
+#node-48 .field.field-name-body {
+    /*width: 75%;*/
+    display: block;
+    margin: auto;
+}
+
+#node-48 .field.field-name-body h3{
+	text-align: center;
+	font-size: 16px;
+    color: #23498a;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+#node-48 .field.field-name-body h3:after, #node-48 .field.field-name-body h3:before{
+	content: "\f06c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #3598DC;
+    font-size: 26px;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+
+/*** Glossaire ***/
+.view.view-glossary {
+    background: #fff;
+    padding: 1em .5em;
+}
+.view.view-glossary .views-summary.views-summary-unformatted {
+    background-color: #23488B;
+    border-radius: 20%;
+    display: inline;
+    margin: .25rem;
+    padding: .25em .65em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.view.view-glossary .views-summary. span a{
+    color:#fff;
+}
+
+
