@@ -732,9 +732,13 @@ a.asligne {
 
 
 /*** mention legale***/
+#node-48 {
+    background: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 #node-48 .field.field-name-body.field-type-text-with-summary.field-label-hidden {
     width: 75%;
     display: block;
     margin: auto;
-    background: #fff;
 }
