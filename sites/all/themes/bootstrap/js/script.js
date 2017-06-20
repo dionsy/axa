@@ -19,7 +19,7 @@
 (function($, Drupal){
   Drupal.behaviors.kyziahSlickSlider = {
     attach: function(context, settings){
-       if($('.front', context).length){     
+               if($('.front', context).length){     
 
          $('.slide', context).slick({
           autoplay: true,
@@ -40,11 +40,24 @@
           slidesToScroll: 1,
         });
 
-         /*$('.view-faq .views-row').on('click', function(){
-          $(this).addClass('current');
-        });*/
 
       }
+
+      $('.view-faq li.views-row', context).on('click', function(){
+          var classes = $(this).attr('class');
+          var separateur = " ";
+          var tab_classe = classes.split(separateur);
+          var classe = tab_classe[1];
+          var cible = ".view-faq div.";
+
+          if(classe){
+            cible = cible+classe;
+            $( "div" ).removeClass("courant");
+            $( cible ).addClass("courant");
+          }
+
+        });
+
 
       
     }

@@ -681,22 +681,32 @@ body .page{
 }
 
 .slick-prev::before, .slick-next::before {
-    color: #23488B !important;
+    color: #ED1846 !important;
+    z-index: 10000;
+    font-size:40px !important;
 }
 
 .jumbotron .slick-prev, .jumbotron .slick-next{
+    top:46%;
 	z-index: 10;
 }
 
 .jumbotron .slick-prev{
-	left: 25%;
+	left: 4.7%;
 }
 .jumbotron .slick-next{
-	right: 25%;
+	right: 5.9%;
 }
 
+.view-partenaire .slick-prev{
+	left: -3.7%;
+	z-index: 10000;
+} 
 
-
+.view-partenaire .slick-next{
+	right: -2.19%;
+	z-index: 10000;
+}
 /*** slide item ***/
 .field.field-name-field-image.field-type-image.field-label-hidden {
 	margin-right: 5%;
@@ -807,7 +817,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     color:#fff;
 }
 
-.logged-in.page-node-2 .navbar-collapse.collapse {
+/*.logged-in.page-node-2 .navbar-collapse.collapse {
     display: block;
     height: auto;
     left: 70px;
@@ -818,4 +828,8 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     display: inline-block;
     font-size: 1.3em;
     text-align: center;
+}*/
+
+.courant{
+	background: red !important;
 }
