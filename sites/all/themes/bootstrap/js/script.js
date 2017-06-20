@@ -50,11 +50,8 @@
           var classe = tab_classe[1];
           var cible = ".view-faq div.";
 
-
           if(classe){
-            console.log(classe);
             cible = cible+classe;
-            console.log(cible);
             $( "div" ).removeClass("courant");
             $( cible ).addClass("courant");
           }
