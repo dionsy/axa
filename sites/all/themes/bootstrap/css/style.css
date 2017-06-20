@@ -154,39 +154,58 @@ h1.page-header {
  	display: block;
 	bottom: 0;
 }
-	/*
-	.Package i.fa:before{
-		content: "\f0c0";
-		color: #54AE32 ;
-	}
-
-	.Assistance i.fa:before {
-		color:  #3598DC;
-		content: "\f21c";
-	}
-	.Habitation  i.fa:before{
-		color: #A90F27;
-		content: "\f015"; 
-	}
-	.Auto  i.fa:before{
+#block-views-frontpage-block-2 .Auto  i.fa::before{
 		color: #004D92;
 		content: "\f1b9"; 
 	}
-	.Loisirs-vie  i.fa:before{
+
+#block-views-frontpage-block-2	.Assistance i.fa::before {
+		color:  #3598DC;
+		content: "\f21c";
+	}
+#block-views-frontpage-block-2 .Habitation  i.fa::before{
+		color: #A90F27;
+		content: "\f015"; 
+	}
+#block-views-frontpage-block-2 .Loisirs-vie  i.fa::before{
 		color: #FFC000;
 		content: "\f21a"; 
 	}
-	.Package i.fa:before,
-	.Auto  i.fa:before,
-	.Habitation  i.fa:before,
-	.Loisirs-vie  i.fa:before,
-	.Assistance  i.fa:before{
+#block-views-frontpage-block-2 .Habitation  i.fa::before,
+#block-views-frontpage-block-2 .Loisirs-vie  i.fa::before,
+#block-views-frontpage-block-2 .Assistance  i.fa::before,
+#block-views-frontpage-block-2 .Auto  i.fa::before{
+
 		font-family:'FontAwesome';
-		font-size:30px;
-		display: block;
+		font-size:55px;
 		margin-top: 20px;
 		margin-bottom: 10px;
-	}*/
+	}
+#block-views-frontpage-block-2{
+	text-align: center;
+	background-color: #fff;
+	margin-bottom: 30px;
+}
+.fa{
+	display: block !important;
+	text-align: center !important;
+}
+#block-views-frontpage-block-2  ul li {
+	background-color: #fff;
+    width: 20%;
+    padding-top: 10px;
+}
+#block-views-frontpage-block-2  ul li.Auto {
+	margin-left: 30px;
+}
+#block-views-frontpage-block-2  ul li.Loisirs-vie {
+	margin-left: 54px;
+}
+#block-views-frontpage-block-2  ul li.Assistance  {
+	margin-left: 59px;
+}#block-views-frontpage-block-2  ul li.Habitation  {
+	margin-left: 53px;
+}
 .Package .devis, .Assistance .devis,.Habitation .devis, .Auto .devis, .Loisirs-vie .devis{
     font-size: 1.3em;
     width: 95px;
@@ -250,6 +269,9 @@ h1.page-header {
      background: linear-gradient( #004D92, #3598DC);
      box-shadow: 1px 1px 10px black inset, 
                  0 1px 0 rgba( 255, 255, 255, 0.4);
+}
+#block-views-frontpage-block-2  ul li a {
+	display: inline-block;
 }
 .Package div a:first-child{
 	font-size: 1.4em;
@@ -687,12 +709,11 @@ body .page{
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }*/
-a.asligne {
+
+a.asligne, #block-views-frontpage-block-2 ul li a {
    display: block;
    font-size: 1.3em;
    font-weight: bold;
-   margin-top: 15px;
-   margin-bottom: 15px
 }
 
 .view-faq {
