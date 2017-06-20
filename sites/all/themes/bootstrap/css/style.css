@@ -84,7 +84,7 @@ h1.page-header {
 	margin-bottom: 1em;
 }
 #block-views-frontpage-block-1 li,
-.inside{
+.outside{
 	background: #fff;
 	border-top: 4px solid;
 	min-height: 184px;
@@ -92,14 +92,14 @@ h1.page-header {
 	text-align: left;
 }
 #block-views-frontpage-block-1 li,
-.inside img{
+.outside img{
 	display: block;
 	height: auto;
 	max-width: 100%;
 	transition: all 0.5s ease 0s;
 }
 #block-views-frontpage-block-1 li,
-.inside img.img-responsive:hover {
+.outside img.img-responsive:hover {
     transform: scale(1.1);
 }
 
@@ -110,7 +110,7 @@ h1.page-header {
 	padding:0 0 0 5px;
 	margin-bottom:20px; 	
 }
-.inside{
+.outside{
 	width: 95%;
 	box-shadow: 3px 3px 0 rgba(235,234,230,0.8);
 	margin: auto;
@@ -141,36 +141,36 @@ h1.page-header {
 .view-id-frontpage ul li.col-lg-3:last-child {
 	margin-right: 0;
 }
-.inside:hover{
+.outside:hover{
 	background-color: rgba(16, 49, 132, 0.8);
     color: rgb(255, 255, 255);
 }
-.inside:hover a{
+.outside:hover a{
     color: rgb(255, 255, 255);
 }
-.inside, .Package {
+.outside, .Package {
 	border-color: #ED1846 !important;
 }
-.inside p{
+.outside p{
 	margin-left: 19px;
 	margin-right: 10px;
 	margin-bottom: 12px;
 	height: 50px;
 }
 
-/*.Assistance .inside {
+/*.Assistance .outside {
 	border-color: #3598DC !important;
 }
 .Package {
 	border-color: #54AE32 !important;
 }
-.Loisirs-vie .inside {
+.Loisirs-vie .outside {
 	border-color: #FFC000 !important;
 }
-.Habitation .inside{
+.Habitation .outside{
 	border-color: #A90F27 !important;
 }
-.Auto .inside {
+.Auto .outside {
 	border-color: #004D92 !important;
 }*/
 .view-id-frontpage li.Package h2{
@@ -717,7 +717,7 @@ body .page{
 }*/
 
 
-/*.inside p:hover {
+/*.outside p:hover {
   background-color: green;
   cursor: pointer;
   -webkit-transition: background-color 2s ease-out;
@@ -730,7 +730,7 @@ body .page{
     position: relative !important;
 }
 
-.inside p .btn a::before{
+.outside p .btn a::before{
 	content: '';
     position: absolute !important;
     border-color: #009933;
@@ -744,7 +744,7 @@ body .page{
     width: 0.5em;
 }
 
-.inside p .btn a:hover{
+.outside p .btn a:hover{
 	background: #0104e4;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
