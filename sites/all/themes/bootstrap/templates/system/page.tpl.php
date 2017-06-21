@@ -212,7 +212,7 @@
 
 <?php if (!empty($page['bottom'])): ?>
   <div class="test">
-  <aside class="bottom>">
+  <aside class="bottom">
     <?php print render($page['bottom']); ?>
   </aside>
     </div>

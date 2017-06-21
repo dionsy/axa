@@ -215,10 +215,10 @@ h1.page-header {
 .bottom{
 	text-align: center;
     margin:0 0 30px 0; 
-    background: url(../images/fond.jpg) top center no-repeat;
+    background: url(../images/fond.jpg) bottom no-repeat;
 }
 .region-bottom{
-    background-color:rgba(0, 0, 0,0.5);
+    background-color:rgba(0, 0, 0,0.1);
 }
 
 .fa{
