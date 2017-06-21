@@ -780,10 +780,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 }	
 
 .view-faq .item-list ul li {
-   /* margin-left: 1.5%;
-    margin-bottom: .9rem;*/
     color: #23488B;
-
     margin: 1%;
 }
 
@@ -834,7 +831,9 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 }
 
 #node-48 .field.field-name-body h3:after, #node-48 .field.field-name-body h3:before,
-.view.view-glossary .item-list h3:after, .view.view-glossary .item-list h3:before{
+.view.view-glossary .item-list h3:after, .view.view-glossary .item-list h3:before,
+.view-faq .views-row.courant h3:after,
+.view-faq .views-row.courant h3:before{
 	content: "\f06c";
     font-family: FontAwesome;
     font-style: normal;
@@ -865,7 +864,45 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     color:#fff;
 }
 
+/*** faq suite ***/
 
-.courant{
-	background: red !important;
+.view-faq .views-row .views-field span a {
+    color: #23488B;
+}
+
+.view-faq .views-row.courant .views-field span a {
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    color: #fff;
+}
+
+.view-faq .views-row.courant{
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    background-color: #94A8C5;
+    color: #fff !important;
+}
+
+
+.view-faq .views-row.courant h3{
+	-webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+	background: #103184 !important;
+}
+.view-faq .views-row p{
+	padding: 5px 5px;
+}
+
+.view-faq .views-row.courant p{
+	-webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+	padding: 5px 10px;
 }
