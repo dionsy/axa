@@ -1,6 +1,9 @@
+
+
 #navbar {
     padding: 0;
 }
+
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
 }
@@ -245,17 +248,20 @@ h1.page-header {
 		margin-top: 20px;
 		margin-bottom: 10px;
 	}
-#block-views-frontpage-block-2{
+.bottom{
 	text-align: center;
-	background-color: #fff;
-	margin-bottom: 30px;
+    margin:0 0 30px 0; 
+    background: url(../images/fond.jpg) bottom no-repeat;
 }
+.region-bottom{
+    background-color:rgba(0, 0, 0,0.1);
+}
+
 .fa{
 	display: inline-block !important;
 	text-align: center !important;
 }
 #block-views-frontpage-block-2  ul li {
-	background-color: #fff;
     width: 20%;
     padding-top: 10px;
 }
@@ -768,10 +774,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 }	
 
 .view-faq .item-list ul li {
-   /* margin-left: 1.5%;
-    margin-bottom: .9rem;*/
     color: #23488B;
-
     margin: 1%;
 }
 
@@ -822,7 +825,9 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 }
 
 #node-48 .field.field-name-body h3:after, #node-48 .field.field-name-body h3:before,
-.view.view-glossary .item-list h3:after, .view.view-glossary .item-list h3:before{
+.view.view-glossary .item-list h3:after, .view.view-glossary .item-list h3:before,
+.view-faq .views-row.courant h3:after,
+.view-faq .views-row.courant h3:before{
 	content: "\f06c";
     font-family: FontAwesome;
     font-style: normal;
@@ -853,6 +858,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     color:#fff;
 }
 
+
 .logged-in.page-node-2 .navbar-collapse.collapse {
     display: block;
     height: auto;
@@ -866,6 +872,47 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     text-align: center;
 }
 
-.courant{
-	background: red !important;
+
+/*** faq suite ***/
+
+.view-faq .views-row .views-field span a {
+    color: #23488B;
+}
+
+.view-faq .views-row.courant .views-field span a {
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    color: #fff;
+}
+
+.view-faq .views-row.courant{
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    background-color: #94A8C5;
+    color: #fff !important;
+}
+
+
+.view-faq .views-row.courant h3{
+	-webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+	background: #103184 !important;
+}
+.view-faq .views-row p{
+	padding: 5px 5px;
+}
+
+.view-faq .views-row.courant p{
+	-webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+	padding: 5px 10px;
+>>>>>>> 7ecee3b586f6dec190f1ab1fecd7a05b09dcd70c
 }
