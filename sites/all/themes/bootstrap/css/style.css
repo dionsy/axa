@@ -83,11 +83,15 @@ h1.page-header {
 
 #block-views-frontpage-block-1 li,
 #block-system-main ul li {
-	clear: both;
     display: block;
     list-style-type: none;
     margin-bottom: 2em;
 }
+
+#block-system-main .view-glossary ul li {
+	clear: both;
+}
+
 #block-views-frontpage-block-1 li,
 .outside{
 	background: #fff;
@@ -924,7 +928,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     -o-transition: all 2s;
     transition: all 2s;
 	padding: 5px 10px;
->>>>>>> 7ecee3b586f6dec190f1ab1fecd7a05b09dcd70c
+
 }
 
 /*** lexique suite ***/
@@ -990,3 +994,6 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     background: transparent;
 }
 
+.page-glossary h1.page-header{
+	margin:0;
+}
