@@ -63,6 +63,18 @@ switch ($block->delta) {
 	case '2':
 		$class="col-md-3 col-lg-3 col-xs-12";
 	break;
+
+	case 'simple_copyright_manage':
+		$class="col-md-4 col-lg-4 col-xs-12";
+	break;
+
+	case 'contact-block':
+		$class="col-md-4 col-lg-4 col-xs-12";
+	break;
+
+	case 'menu-footer':
+		$class="col-md-4 col-lg-4 col-xs-12";
+	break;
 	
 	
 	default:
