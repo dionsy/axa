@@ -83,9 +83,16 @@ h1.page-header {
 
 #block-views-frontpage-block-1 li,
 #block-system-main ul li {
-	list-style-type: none;	
-	margin-bottom: 1em;
+    display: block;
+    list-style-type: square !important;
+    /*margin-bottom: 2em;*/
 }
+
+#block-system-main .view-glossary ul li {
+	clear: both;
+	margin-bottom: 3em;
+}
+
 #block-views-frontpage-block-1 li,
 .outside{
 	background: #fff;
@@ -787,7 +794,6 @@ a.asligne {
 }
 .view-faq {
     background: #fff;
-    margin-top: -38px;
 }	
 
 .view-faq .item-list ul li {
@@ -855,22 +861,48 @@ a.asligne {
     padding-left: 0.4em;
     padding-right: 0.4em;
 }
+.view-faq .view-faq ul li span:before{
+	content: "\f0c8";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #004D92;
+    font-size: 10px;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+
 
 /*** Glossaire ***/
-.view.view-glossary {
+.view.view-faq {
     background: #fff;
-    padding: 1em .5em;
+    padding: 0.5em 0em;
+
+}
+.view.view-glossary{
+    background: #fff;
+    padding: 1.5em 2em;
+
 }
 .view.view-glossary .views-summary.views-summary-unformatted {
     background-color: #23488B;
-    border-radius: 20%;
+    border-radius: 50%;
     display: inline;
     margin: .25rem;
     padding: .25em .65em;
     text-align: center;
     text-transform: uppercase;
+    position: relative;
 }
-
+.view-glossary #top span a::after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 .view.view-glossary .views-summary. span a{
     color:#fff;
 }
@@ -931,4 +963,80 @@ a.asligne {
     -o-transition: all 2s;
     transition: all 2s;
 	padding: 5px 10px;
+<<<<<<< HEAD
+=======
+
+}
+
+/*** lexique suite ***/
+.view-glossary #top span a {
+    color: #fff;
+}
+
+/*.view-glossary #top span a::after {
+    position: absolute;
+    content: "";
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}*/
+
+.view-glossary #top span a:hover {
+    color: #000 !important;
+}
+
+
+.view-glossary #top{
+	display: block;
+	margin-left: 25%;
+}
+
+.view-glossary .view-content .item-list ul li a, 
+.view-faq .view-content .item-list ul li a,
+#node-48 ul li a {
+    color: #103184;
+    font-size: 20px;
+}
+
+.view-glossary p, .view-faq p, #node-48 p {
+    font-size: 19px;
+    padding: 0.5% 2%;
+}
+#node-48 ul li{
+	font-size: 20px;
+	margin-bottom: 0px !important;
+	padding: 1em;
+	color: #103184;
+>>>>>>> 2e7a3c56af52e986853aaf4a14551623f2a550cf
+}
+
+.haut {
+	clear: both;
+    float: right;
+    position: relative;
+    right: 0;
+}
+
+.haut a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+
+.haut .fa-arrow-circle-up{
+	/*position: relative;
+    top: 0px;*/
+    font-size: 21px;
+    width: 1.5em;
+    color: #103184;
+    background: transparent;
+}
+
+.page-glossary h1.page-header, .page-faq-questions-top h1.page-header{
+	margin:0;
 }
