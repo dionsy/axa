@@ -80,8 +80,10 @@ h1.page-header {
 
 #block-views-frontpage-block-1 li,
 #block-system-main ul li {
-	list-style-type: none;	
-	margin-bottom: 1em;
+	clear: both;
+    display: block;
+    list-style-type: none;
+    margin-bottom: 2em;
 }
 #block-views-frontpage-block-1 li,
 .outside{
@@ -842,18 +844,26 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 /*** Glossaire ***/
 .view.view-glossary {
     background: #fff;
-    padding: 1em .5em;
+    padding: 2em;
 }
 .view.view-glossary .views-summary.views-summary-unformatted {
     background-color: #23488B;
-    border-radius: 20%;
+    border-radius: 50%;
     display: inline;
     margin: .25rem;
     padding: .25em .65em;
     text-align: center;
     text-transform: uppercase;
+    position: relative;
 }
-
+.view-glossary #top span a::after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 .view.view-glossary .views-summary. span a{
     color:#fff;
 }
@@ -900,3 +910,67 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     transition: all 2s;
 	padding: 5px 10px;
 }
+
+/*** lexique suite ***/
+.view-glossary #top span a {
+    color: #fff;
+    position: relative;
+}
+
+.view-glossary #top span a::after {
+    position: absolute;
+    content: "";
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.view-glossary #top span a:hover {
+    color: #000 !important;
+}
+
+
+.view-glossary #top{
+	display: block;
+	margin-left: 25%;
+}
+
+.view-glossary .view-content .item-list ul li a {
+    color: #103184;
+    font-size: 20px;
+}
+
+.view-glossary p {
+    font-size: 19px;
+    padding: 0.5% 2%;
+}
+
+.haut {
+	position: relative;
+    right: 0;
+    float: right;
+    font-size: 17px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.haut a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+
+.haut .fa-arrow-circle-up{
+	/*position: relative;
+    top: 0px;*/
+    font-size: 21px;
+    width: 1.5em;
+    color: #103184;
+    background: transparent;
+}
+
