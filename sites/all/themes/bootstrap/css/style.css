@@ -971,9 +971,6 @@ a.asligne {
     -o-transition: all 2s;
     transition: all 2s;
 	padding: 5px 10px;
-<<<<<<< HEAD
-=======
-
 }
 
 /*** lexique suite ***/
@@ -1016,7 +1013,6 @@ a.asligne {
 	margin-bottom: 0px !important;
 	padding: 1em;
 	color: #103184;
->>>>>>> 2e7a3c56af52e986853aaf4a14551623f2a550cf
 }
 
 .haut {
@@ -1047,4 +1043,38 @@ a.asligne {
 
 .page-glossary h1.page-header, .page-faq-questions-top h1.page-header{
 	margin:0;
+}
+
+/*** responsive partenaire ***/
+.view-partenaire .slick-list.draggable {
+    display: block;
+    margin: auto;
+}
+
+/* Breakpoint 1024 */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+	.view-partenaire .slick-list.draggable {
+		width: 90%;
+	}
+	.view-partenaire .slick-next {
+		right: 0.81%;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 600px) {
+	.view-partenaire .slick-list.draggable {
+		width: 75%;
+	}
+	.view-partenaire .slick-prev {
+		right: -2.7%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.view-partenaire .slick-list.draggable {
+		width: 50%;
+	}
+	.view-partenaire .slick-next {
+		right: 0.81%;
+	}
 }
