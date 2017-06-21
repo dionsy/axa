@@ -134,20 +134,69 @@
 /*---------Accordeon------------------*/
 
 
-.page-node-2 .region.region-content{
-    background-color: white;
+.page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #bfd0ff;
+    float: left;
+    min-height: 64px;
+    padding: 10px;
+    position: relative;
+    width: 80%;
+    z-index: 1;
 }
 ul.quicktabs-tabs.quicktabs-style-garland li {
  
     padding: 0px 6px 3px !important;
 }
  ul.quicktabs-tabs.quicktabs-style-garland {
-    background: #004d92;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     font: bold 12px/20px Verdana;
-    padding: 0px 0px 3px;
-    height: 20px;
-    margin: 16px 15px 5px 15px;
-}            /*Menu Espace client*/
+    padding: 5px 0px ;
+    height: 34px;
+}  
+ul.quicktabs-tabs.quicktabs-style-garland li.active {
+    background: #ed1846 none repeat scroll 0 0;
+}
+ul.quicktabs-tabs.quicktabs-style-garland li:hover {
+    background: #ed1846 none repeat scroll 0 0;
+}
+#quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li:hover a {
+    color:#fff !important;
+}
+ul.quicktabs-tabs.quicktabs-style-garland li a {
+    color: #103184 !important;
+}
+#quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li.active a {
+    background: transparent;
+    color: #fff !important;
+}
+
+ul.quicktabs-tabs.quicktabs-style-navlist li {
+    background-color: #103184;
+    color: #ffffff;
+    display: block;
+    margin-right: -1px;
+    padding: 0;
+    text-align: right;
+}
+ul.quicktabs-tabs.quicktabs-style-navlist li.active {
+    background: #ed1846 none repeat scroll 0 0;
+    border-bottom: 1px solid #ed1846;
+    border-top: 1px solid #ed1846;
+    text-align: right;
+}
+
+ul.quicktabs-tabs.quicktabs-style-navlist li a {
+    color: #ffffff;
+    display: block;
+    font-weight: normal;
+    height: 23px;
+    margin: 0;
+    padding: 0 10px 0 7px;
+    text-align: left;
+    text-decoration: none;
+}
+          /*Menu Espace client*/
 
 
 .page-node-2 .well {
@@ -188,3 +237,4 @@ ul.quicktabs-tabs.quicktabs-style-garland li {
 {
     display: none;
 }
+

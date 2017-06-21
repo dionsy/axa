@@ -110,21 +110,7 @@
       <?php endif; ?>
     </div>
 
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse" id="navbar-collapse">
-        <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-    <?php endif; ?>
+   
   </div>
 </header>
 </section>
@@ -152,7 +138,39 @@
     <section id="test" class="col-md-12 connexion">      
     
       <a id="main-content"></a>
-   <?php print $messages; ?>
+      <?php print $messages; ?>
+
+<!-- Mon compte -->
+
+ <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+      <div class="navbar-collapse collapse" id="navbar-collapse">
+        <nav role="navigation">
+          <?php if (!empty($primary_nav)): ?>
+            <?php print render($primary_nav); ?>
+          <?php endif; ?>
+          <?php if (!empty($secondary_nav)): ?>
+            <?php print render($secondary_nav); ?>
+          <?php endif; ?>
+          <?php if (!empty($page['navigation'])): ?>
+            <?php print render($page['navigation']); ?>
+          <?php endif; ?>
+        </nav>
+      </div>
+    <?php endif; ?>
+<!-- Mon compte -->
+
+
+
+      <?php
+        $account = user_load($user->uid);
+        $pic ='';
+        if(isset($account->picture))
+          $pic=$account->picture;
+        $img = file_create_url($pic->uri);
+        print '<div class="avatar"><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
+        
+      ?>
+
       <?php print render($page['content']); ?>
 
     </section>
@@ -160,5 +178,13 @@
 
   </div>
 </div>
+
+<?php if (!empty($page['footer'])): ?>
+  <footer class="footer <?php print $container_class; ?>">
+  <div class="col-md-12 col-lg-12 col-xs-12">
+    <?php print render($page['footer']); ?>
+  </div>
+  </footer>
+<?php endif; ?>
 
 

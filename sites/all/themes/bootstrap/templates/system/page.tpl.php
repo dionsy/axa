@@ -210,6 +210,14 @@
 
 </div>
 
+<?php if (!empty($page['bottom'])): ?>
+  <div class="test">
+  <aside class="bottom">
+    <?php print render($page['bottom']); ?>
+  </aside>
+    </div>
+<?php endif; ?>
+
 <?php if (!empty($page['footer_top'])): ?>
   <div class="test">
   <footer class="footer_top <?php print $container_class; ?>">

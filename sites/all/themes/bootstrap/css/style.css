@@ -1,6 +1,9 @@
+
+
 #navbar {
     padding: 0;
 }
+
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
 }
@@ -112,14 +115,16 @@ h1.page-header {
 	padding:0 0 0 5px;
 	margin-bottom:20px; 	
 }
+
+
 .outside{
 	width: 95%;
 	box-shadow: 3px 3px 0 rgba(235,234,230,0.8);
 	margin: auto;
 	overflow: hidden;
 	z-index: 2;
-	transition: 0.3s all cubic-bezier(0.57, -0.15, 0.26, 1.18);
 }
+
 
 .view-id-frontpage ul{
 	width: 100%;
@@ -134,6 +139,7 @@ h1.page-header {
  margin-bottom: 5px;
  color: #ED1846;
  font-weight: bold;
+ margin-top: 0;
 /*border-radius: 0 20px 0 0;*/
 }
 
@@ -143,13 +149,44 @@ h1.page-header {
 .view-id-frontpage ul li.col-lg-3:last-child {
 	margin-right: 0;
 }
-.outside:hover{
+/*.outside:hover{
 	background-color: rgba(16, 49, 132, 0.8);
     color: rgb(255, 255, 255);
+}*/
+.outside:hover p ,.outside:hover h2{
+ 	color: white;
+    z-index: 11;
+    position: relative;
 }
-.outside:hover a{
-    color: rgb(255, 255, 255);
+.outside:hover a:hover{
+	text-decoration:underline !important;
 }
+ .outside:hover a {
+ 	color: #ED1846;
+    z-index: 11;
+    position: relative;
+}
+.outside:hover .outsides::before {
+    top: 47.5%;
+}
+.outsides::before {
+    background-color: hsl(220, 31%, 56%);
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    margin-left:12px;
+    margin-right:7px; 
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transition: all 0.4s ease 0s;
+}
+.outsides {
+    padding-top: 13px;
+}
+
+
 .outside, .Package {
 	border-color: #ED1846 !important;
 }
@@ -158,6 +195,8 @@ h1.page-header {
 	margin-right: 10px;
 	margin-bottom: 12px;
 	height: 50px;
+	position: relative;
+	z-index: 11;
 }
 
 /*.Assistance .outside {
@@ -211,17 +250,20 @@ h1.page-header {
 		margin-top: 20px;
 		margin-bottom: 10px;
 	}
-#block-views-frontpage-block-2{
+.bottom{
 	text-align: center;
-	background-color: #fff;
-	margin-bottom: 30px;
+    margin:0 0 30px 0; 
+    background: url(../images/fond.jpg) bottom no-repeat;
 }
+.region-bottom{
+    background-color:rgba(0, 0, 0,0.1);
+}
+
 .fa{
 	display: inline-block !important;
 	text-align: center !important;
 }
 #block-views-frontpage-block-2  ul li {
-	background-color: #fff;
     width: 20%;
     padding-top: 10px;
 }
@@ -436,7 +478,7 @@ button.navbar-toggle
 	text-align: left;
 }
 #navbar-collapse > a ,.first.last.leaf > a{
-	font-size: 1.1em;
+	font-size: 0.9em;
 	color:black;
 }
 
@@ -556,6 +598,7 @@ body .page{
 }
 .fa.fa-cogs{
 	    color: #103184;
+	    font-size: 16px !important;
 }
 
 /** WEB FORM SOUMISSION */
@@ -563,20 +606,17 @@ body .page{
     background-color: white;
     color: black;
     font-size: 1.4em;
-    text-align: center;
-      padding-bottom: 3px;
+    text-align: left;
+    padding-bottom: 3px;
     padding-top: 3px;
 }	
 .row.paire {
     background-color: white;
     font-size: 1.2em;
-    text-align: center;
 }
 
 .row.impaire {
-    background-color: ghostwhite;
-    font-size: 1.2em;
-    text-align: center;
+    background-color: #DCDCDC;
 }
 .lister-devis {
     margin-left: auto;
@@ -722,47 +762,7 @@ body .page{
     margin-bottom: 80px;
 }
 
-/*** devis ***/
 
-/*{
-	background: #0104e4;    
-}*/
-
-
-/*.outside p:hover {
-  background-color: green;
-  cursor: pointer;
-  -webkit-transition: background-color 2s ease-out;
-  -moz-transition: background-color 2s ease-out;
-  -o-transition: background-color 2s ease-out;
-  transition: background-color 2s ease-out;
-}*/
-
-/*li{
-    position: relative !important;
-}
-
-.outside p .btn a::before{
-	content: '';
-    position: absolute !important;
-    border-color: #009933;
-    border-style: solid;
-    border-width: 0 0.3em 0.25em 0;
-    height: 1em;
-    top: 1.3em !important;
-    left: 0.6em !important;
-    margin-top: -1em !important;
-    transform: rotate(45deg);
-    width: 0.5em;
-}
-
-.outside p .btn a:hover{
-	background: #0104e4;
-    -moz-transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-}*/
 
 a.asligne, #block-views-frontpage-block-2 ul li a {
    display: block;
@@ -868,6 +868,21 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     color:#fff;
 }
 
+
+.logged-in.page-node-2 .navbar-collapse.collapse {
+    display: block;
+    height: auto;
+    left: 70px;
+    overflow: visible;
+    padding-bottom: 0;
+}
+.logged-in.page-node-2 .avatar {
+    display: inline-block;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+
 /*** faq suite ***/
 
 .view-faq .views-row .views-field span a {
@@ -909,6 +924,7 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     -o-transition: all 2s;
     transition: all 2s;
 	padding: 5px 10px;
+>>>>>>> 7ecee3b586f6dec190f1ab1fecd7a05b09dcd70c
 }
 
 /*** lexique suite ***/
