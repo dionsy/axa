@@ -84,12 +84,13 @@ h1.page-header {
 #block-views-frontpage-block-1 li,
 #block-system-main ul li {
     display: block;
-    list-style-type: none;
-    margin-bottom: 2em;
+    list-style-type: square !important;
+    /*margin-bottom: 2em;*/
 }
 
 #block-system-main .view-glossary ul li {
 	clear: both;
+	margin-bottom: 3em;
 }
 
 #block-views-frontpage-block-1 li,
@@ -776,7 +777,6 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 
 .view-faq {
     background: #fff;
-    margin-top: -38px;
 }	
 
 .view-faq .item-list ul li {
@@ -844,11 +844,29 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     padding-left: 0.4em;
     padding-right: 0.4em;
 }
+.view-faq .view-faq ul li span:before{
+	content: "\f0c8";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #004D92;
+    font-size: 10px;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+}
+
 
 /*** Glossaire ***/
-.view.view-glossary {
+.view.view-faq {
     background: #fff;
-    padding: 2em;
+    padding: 0.5em 0em;
+
+}
+.view.view-glossary{
+    background: #fff;
+    padding: 1.5em 2em;
+
 }
 .view.view-glossary .views-summary.views-summary-unformatted {
     background-color: #23488B;
@@ -934,17 +952,16 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 /*** lexique suite ***/
 .view-glossary #top span a {
     color: #fff;
-    position: relative;
 }
 
-.view-glossary #top span a::after {
+/*.view-glossary #top span a::after {
     position: absolute;
     content: "";
     top: 0px;
     bottom: 0px;
     left: 0px;
     right: 0px;
-}
+}*/
 
 .view-glossary #top span a:hover {
     color: #000 !important;
@@ -956,23 +973,29 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
 	margin-left: 25%;
 }
 
-.view-glossary .view-content .item-list ul li a {
+.view-glossary .view-content .item-list ul li a, 
+.view-faq .view-content .item-list ul li a,
+#node-48 ul li a {
     color: #103184;
     font-size: 20px;
 }
 
-.view-glossary p {
+.view-glossary p, .view-faq p, #node-48 p {
     font-size: 19px;
     padding: 0.5% 2%;
 }
+#node-48 ul li{
+	font-size: 20px;
+	margin-bottom: 0px !important;
+	padding: 1em;
+	color: #103184;
+}
 
 .haut {
-	position: relative;
-    right: 0;
+	clear: both;
     float: right;
-    font-size: 17px;
-    font-weight: bold;
-    overflow: hidden;
+    position: relative;
+    right: 0;
 }
 
 .haut a::after {
@@ -994,6 +1017,6 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     background: transparent;
 }
 
-.page-glossary h1.page-header{
+.page-glossary h1.page-header, .page-faq-questions-top h1.page-header{
 	margin:0;
 }
