@@ -124,7 +124,7 @@
         if(isset($account->picture))
           $pic=$account->picture;
         $img = file_create_url($pic->uri);
-        print '<div class="avatar"><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
+        print '<div class="avatar"><img class="img-responsive hidden-xs-down" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
         }
       ?>
      
