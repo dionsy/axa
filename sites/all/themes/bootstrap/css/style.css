@@ -95,14 +95,15 @@ h1.page-header {
 	text-align: left;
 }
 #block-views-frontpage-block-1 li,
-.outside img{
+.outside a.img_link{
 	display: block;
 	height: auto;
 	max-width: 100%;
-	transition: all 0.5s ease 0s;
+	 backface-visibility: hidden;
+	transition: transform 0.5s ease-in-out 0s;
 }
 #block-views-frontpage-block-1 li,
-.outside img.img-responsive:hover {
+.outside a.img_link:hover {
     transform: scale(1.1);
 }
 
@@ -120,7 +121,7 @@ h1.page-header {
 	box-shadow: 3px 3px 0 rgba(235,234,230,0.8);
 	margin: auto;
 	overflow: hidden;
-	z-index: 2;
+	outline: 0 none;
 }
 
 
@@ -222,7 +223,7 @@ h1.page-header {
 	bottom: 0;
 }
 #block-views-frontpage-block-2 .Auto  i.fa::before{
-		color: #004D92;
+		color: #1abd1d;
 		content: "\f1b9"; 
 	}
 
@@ -247,6 +248,7 @@ h1.page-header {
 		font-size:55px;
 		margin-top: 20px;
 		margin-bottom: 10px;
+	/*	color: #fff;*/
 	}
 .bottom{
 	text-align: center;
@@ -254,7 +256,10 @@ h1.page-header {
     background: url(../images/fond.jpg) bottom no-repeat;
 }
 .region-bottom{
-    background-color:rgba(0, 0, 0,0.1);
+    background-color:rgba(0, 0, 0, 0.5);
+}
+#block-views-frontpage-block-2 div.view-header h3{
+	color: #fff;
 }
 
 .fa{
@@ -657,14 +662,24 @@ body .page{
 	position: relative;
 	z-index: 2;
 	max-height: 333px;
+	background-color: #103184;
 }
 
-.descriptif{
+/*.descriptif{
 	position: absolute;
 	z-index: 10;
 	top: 28%;
 	width: 50%;
 	right: 2%;
+}*/
+.descriptif {
+    float: left;
+    font-size: 1.3em;
+    left: 125px;
+    position: absolute;
+    top: 4%;
+    width: 50%;
+    z-index: 10;
 }
  .views-more-link{
  	display: block;
@@ -678,7 +693,6 @@ body .page{
 .descriptif a{
 /*	margin: 0 0 1.5rem;*/
     color:#ED1846;
-    font-size: 3rem;
  /*   margin-left: 35%;*/
 }
 
@@ -761,13 +775,16 @@ body .page{
 }
 
 
-
-a.asligne, #block-views-frontpage-block-2 ul li a {
+a.asligne {
    display: block;
    font-size: 1.3em;
-   font-weight: bold;
+   color: #103184;
 }
-
+ #block-views-frontpage-block-2 ul li a {
+   display: block;
+   font-size: 1.3em;
+   color: #fff;
+}
 .view-faq {
     background: #fff;
     margin-top: -38px;
@@ -914,5 +931,4 @@ a.asligne, #block-views-frontpage-block-2 ul li a {
     -o-transition: all 2s;
     transition: all 2s;
 	padding: 5px 10px;
->>>>>>> 7ecee3b586f6dec190f1ab1fecd7a05b09dcd70c
 }
