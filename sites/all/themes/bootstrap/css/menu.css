@@ -39,27 +39,14 @@
 }
 
 
-
-.footer .nav > li {
-    position: relative;
-    display: block;
-    list-style-type: none;
-    display: inline-block;
-    margin: 0 0 0 8px;
-    padding: 0 10px 0 0px;
-    border-right: 1px dotted #fff;
-    height: 13px;
-    line-height: 10px;
-}
-
-.footer .nav li a {
+/*.footer .nav li a {
     margin: 0;
     padding: 0;
     color: #fff;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.7);
     height: 12px;
     font-size: 13px;
-}
+}*/
 
 .footer .nav li a:hover {
     background: transparent !important;
