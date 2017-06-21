@@ -1048,7 +1048,7 @@ a.asligne {
 /*** responsive partenaire ***/
 .view-partenaire .slick-list.draggable {
     display: block;
-    margin: auto;
+    margin: 0 auto;
 }
 
 /* Breakpoint 1024 */
@@ -1061,6 +1061,7 @@ a.asligne {
 	}
 }
 
+/*Breakpoint 600*/
 @media screen and (min-width: 481px) and (max-width: 600px) {
 	.view-partenaire .slick-list.draggable {
 		width: 75%;
@@ -1076,5 +1077,17 @@ a.asligne {
 	}
 	.view-partenaire .slick-next {
 		right: 0.81%;
+	}
+	.avatar, .highlighted.jumbotron{
+		display: none;
+	}
+	.paramettre {
+		float: left !important;
+	}
+	.paramettre ul li {
+		padding-left: 12%;
+	}
+	.outside{
+		width: 100%;
 	}
 }
