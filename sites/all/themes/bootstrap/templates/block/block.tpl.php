@@ -57,6 +57,13 @@ switch ($block->delta) {
 	case 'menu-menu-top':
 		$class="col-md-9 col-lg-9 col-xs-12";
 	break;
+	case '1':
+		$class="col-md-8 col-lg-8 col-xs-12";
+	break;
+	case '2':
+		$class="col-md-3 col-lg-3 col-xs-12";
+	break;
+	
 	
 	default:
 		# code...
