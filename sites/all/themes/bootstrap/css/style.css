@@ -427,12 +427,28 @@ div.col-xs-6 {
     background-color: #004D92;
     top: 15px;
 }
-.menu.nav {
-    color: black;
+#block-menu-menu-footer .menu.nav {
+    display: inline-grid;
     font-size: 1.2em;
     text-align: center;
+      list-style-type: none;
 }
-
+.footer .nav > li {
+    /* position: relative; */
+    display: block;
+    /* display: inline-block; */
+    /* float: left; */
+    /* display: inline-block; */
+    /* margin: 0 0 0 8px; */
+    /* padding: 0 10px 0 0px; */
+    /* border-right: 1px dotted #fff; */
+    /* height: 13px; */
+    /*margin-top: 15px;*/
+    /* line-height: 10px; */
+}
+.footer .nav > li a{
+	text-align: left;
+}
 button.navbar-toggle
 {
 	display: none
@@ -569,7 +585,7 @@ body .page{
     background: none repeat scroll 0 0 #23488B !important;
 }
 
-.footer .nav > li {
+/*.footer .nav > li {
     position: relative;
     display: block;
     list-style-type: none;
@@ -579,16 +595,16 @@ body .page{
     border-right: 1px dotted #fff;
     height: 13px;
     line-height: 10px;
-}
+}*/
 
-.footer .nav li a {
+/*.footer .nav li a {
     margin: 0;
     padding: 0;
     color: #fff;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.7);
     height: 12px;
     font-size: 13px;
-}
+}*/
 
 .footer .nav li a:hover {
     background: none !important;
@@ -599,24 +615,32 @@ section#block-views-contact-block {
     float: left;
 }
 
-section#block-views-contact-block .contacts span {
+section#block-views-contact-block .contacts .title {
     color: #fff;
-    font-size: 1.3em;
-    margin-bottom: 7px;
+    font-size: 1.6em;
+    margin-bottom: 30px;
 }
 section#block-views-contact-block .contacts div , section#block-views-contact-block div  a{
     color: #fff;
-    font-size: 1.1em;
-    margin-bottom: 7px;
+    font-size: 1.0em;
+    margin-bottom: 5px;
 }
 section#block-views-contact-block .contacts i.fa {
-    font-size: 1.5em;
-    margin-right: 6px;
+    font-size: 1.0em;
+    margin-right: 2px;
 }
 section#block-views-contact-block div {
     margin-bottom: 5px;
 }
+section#block-simple-copyright-simple-copyright-manage {
+    font-size: 1.2em;
+    color: #fff;
+}
 
+		/* FOOTER  */
+.page div.test{
+	margin-top: 40px;
+}
 
 
 .fa.fa-sign-out, .fa.fa-cogs{
