@@ -75,6 +75,9 @@ switch ($block->delta) {
 	case 'menu-footer':
 		$class="col-md-4 col-lg-4 col-xs-12";
 	break;
+	case 'menu-r-seaux-sociaux-':
+		$class="col-md-4 col-lg-4 col-xs-12";
+	break;
 	
 	
 	default:

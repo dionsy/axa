@@ -36,7 +36,7 @@ function bootstrap_menu_link(array $variables) {
   // entities. See: https://www.drupal.org/node/2854978
   $options['html'] = TRUE;
   // Ajouter une classe particuliere sur les items de menu
- // $class = transliteration_clean_filename($element['#title']);
+ $class = transliteration_clean_filename($element['#title']);
   $options['attributes']['class'][] = $class;
 
   $href = $element['#href'];
@@ -76,6 +76,10 @@ function bootstrap_menu_link(array $variables) {
   }
 if($element['#original_link']['menu_name']=='user-menu'){  
   $prefix ='<i class="fa fa-cogs" aria-hidden="true" style="font-size: 25px;"></i>';
+}
+
+if($element['#original_link']['menu_name']=='menu-r-seaux-sociaux-'){ 
+    $title='';
 }
   return '<li' . drupal_attributes($attributes) . '>' .$prefix.l($title, $href, $options) . $sub_menu . "</li>\n";
 }
