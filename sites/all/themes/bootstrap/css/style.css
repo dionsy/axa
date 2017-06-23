@@ -17,12 +17,12 @@
 }
 body
 {
-	 /*background-color:#EDF7F2 ;*/
+	 background-color:#EDF7F2 ;
      position: relative;
      z-index: 2;
 	 overflow-x: hidden;
 	 /*font-family: "Comic Sans MS";*/
-	 font-family: 'PT Serif',serif;
+	 font-family: georgia,serif;
 }
 
 
@@ -109,7 +109,6 @@ h1.page-header {
 #block-views-frontpage-block-1 li,
 #block-system-main ul li {
     display: block;
-    list-style-type: square !important;
     /*margin-bottom: 2em;*/
 }
 
@@ -121,7 +120,7 @@ h1.page-header {
 #block-views-frontpage-block-1 li,
 .outside{
 	background: #fff;
-	border-top: 4px solid;
+	border-top: 2px solid #ED1846 ;
 	min-height: 184px;
 	margin-top: 28px;
 	text-align: left;
@@ -150,7 +149,7 @@ h1.page-header {
 
 .outside{
 	width: 95%;
-	box-shadow: 3px 3px 0 rgba(235,234,230,0.8);
+	box-shadow: 5px 3px 0 rgba(235,234,230,0.8);
 	margin: auto;
 	overflow: hidden;
 	outline: 0 none;
@@ -184,8 +183,13 @@ h1.page-header {
 	background-color: rgba(16, 49, 132, 0.8);
     color: rgb(255, 255, 255);
 }*/
-.outside:hover p ,.outside:hover h2{
+.outside:hover p{
  	color: white;
+    z-index: 11;
+    position: relative;
+}
+.outside:hover h2{
+ 	color: black;
     z-index: 11;
     position: relative;
 }
@@ -200,8 +204,11 @@ h1.page-header {
 .outside:hover .outsides::before {
     top: 47.5%;
 }
-.outsides::before {
-    background-color: hsl(220, 31%, 56%);
+.Loisirs-vie .outsides::before,
+.Habitation .outsides::before,
+.Assistance .outsides::before,
+.Auto .outsides::before{
+    background-color: #FFC000;
     bottom: 0;
     content: "";
     display: block;
@@ -211,16 +218,41 @@ h1.page-header {
     position: absolute;
     right: 0;
     top: 100%;
-    transition: all 0.4s ease 0s;
+    transition: all 0.6s ease 0s;
 }
+.Loisirs-vie .outsides::before{
+    background-color: #FFC000;
+ }
+li.Loisirs-vie:hover .outside{
+	border-top: 2px solid #FFC000 ;
+}
+.Habitation .outsides::before {
+    background-color: #A90F27;
+}
+li.Habitation:hover .outside{
+	border-top: 2px solid #A90F27 ;
+}
+.Assistance .outsides::before {
+    background-color: #3598DC;
+}
+li.Assistance:hover .outside{
+	border-top: 2px solid #3598DC ;
+}
+.Auto .outsides::before {
+    background-color: #1abd1d;
+}
+li.Auto:hover .outside{
+	border-top: 2px solid #1abd1d ;
+}
+
 .outsides {
     padding-top: 13px;
 }
 
 
-.outside, .Package {
+/*.outside, .Package {
 	border-color: #ED1846 !important;
-}
+}*/
 .outside p{
 	margin-left: 19px;
 	margin-right: 10px;
@@ -1146,16 +1178,16 @@ a.asligne {
 	}
 }
 #block-menu-menu-r-seaux-sociaux- ul li a.facebook::after{
-		content: "\f09a"; 
+		content: "\f09a"; 	
 		color: #fff; 
 }
 #block-menu-menu-r-seaux-sociaux- ul li a.linkedin::after{
 		content: "\f0e1"; 
-		color: #007BB6;
+		color: #007BB6; 
 }
 #block-menu-menu-r-seaux-sociaux- ul li a.twitter::after{
-		content: "\f099";
-		color: #1DA1F2;  
+		content: "\f099"; 
+		color: #1DA1F2; 
 }
 #block-menu-menu-r-seaux-sociaux- ul li a.youtube::after{
 		content: "\f167"; 
@@ -1169,12 +1201,12 @@ a.asligne {
 		font-family:'FontAwesome';
 		font-size:30px;
 		margin-left: 5px;
-	   /* color: #fff;*/
+/*	    color: #fff;*/
 }
 #block-menu-menu-r-seaux-sociaux- ul li a.linkedin:hover::after,
 #block-menu-menu-r-seaux-sociaux- ul li a.twitter:hover::after,
 #block-menu-menu-r-seaux-sociaux- ul li a.youtube:hover::after{
-		color: #fff; 
+		color: #fff ; 
 }
 /*#block-menu-menu-r-seaux-sociaux- ul li a.linkedin:hover::after{
 		color: #007BB6; 
