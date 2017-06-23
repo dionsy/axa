@@ -37,7 +37,7 @@ body
   -o-transform: skew(0deg, 3deg);
   transform: skew(0deg, 3deg);
   border-top:50px solid #ED1846;
-/*  border-bottom:50px solid #ED1846;*/
+/*  border-bottom:50px solid #ED1846;
 }*/
 ul,li,div{
 	margin: 0;
