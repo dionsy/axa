@@ -17,11 +17,28 @@
 }
 body
 {
-	 background-color:#EDF7F2 ;
+	 /*background-color:#EDF7F2 ;*/
+     position: relative;
+     z-index: 2;
 	 overflow-x: hidden;
 	 /*font-family: "Comic Sans MS";*/
 	 font-family: 'PT Serif',serif;
 }
+
+
+./*barre {
+  position:absolute;
+  bottom: 0%;
+  width:100%;
+  height:50px;
+  z-index: 0;
+  -webkit-transform: skew(0deg, 3deg);
+  -moz-transform: skew(0deg, 3deg);
+  -o-transform: skew(0deg, 3deg);
+  transform: skew(0deg, 3deg);
+  border-top:50px solid #ED1846;
+/*  border-bottom:50px solid #ED1846;*/
+}*/
 ul,li,div{
 	margin: 0;
 }
