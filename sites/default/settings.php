@@ -276,8 +276,8 @@ $databases = array (
       'prefix' => '',
     ),
   ),
-);
-*/
+);*/
+
 /**
  * Access control for update.php script.
  *
