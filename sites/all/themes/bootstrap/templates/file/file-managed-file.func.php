@@ -21,6 +21,7 @@
 function bootstrap_file_managed_file($variables) {
   $output = '';
   $element = $variables['element'];
+ // krumong('main')->kPrint($element);
 
   $attributes = array();
   if (isset($element['#id'])) {
@@ -63,3 +64,41 @@ function bootstrap_file_managed_file($variables) {
   $output .= '</div>';
   return $output;
 }
+
+
+/*file icons*/
+function bootstrap_file_link($vars) {
+  $file = $vars['file'];
+ // $icon_directory = $vars['icon_directory'];
+  $url = file_create_url($file->uri);
+  $icon = theme('file_icon', array('file' => $file));
+$desc=$file->description;
+  // Set options as per anchor format described at
+  // http://microformats.org/wiki/file-format-examples
+  $options = array(
+    'attributes' => array(
+      'type' => $file->filemime . '; length=' . $file->filesize,
+    ),
+  );
+
+  // Use the description as the link text if available.
+  if (empty($file->description)) {
+    /*$link_text = $file->filename;*/
+    $link_text = 'Contrat';
+  }
+  else {
+    $link_text = $file->description;
+    $options['attributes']['title'] = check_plain($file->filename);
+  }
+  $mimeclass = drupal_html_class(str_replace('application/', '', $file->filemime));
+
+  $options['attributes']['class'] = array('icon-file', $mimeclass);
+
+  return l($link_text, $url, $options);
+}
+
+/*function bootstrap_file_icon($vars) {
+  $file = $vars['file'];
+  $mime = drupal_html_class(str_replace('application-', $file->filemime));
+  return '<div class="file-icon ' . $mime . '"></div>';
+}*/
