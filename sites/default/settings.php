@@ -245,24 +245,23 @@
  *   );
  * @endcode
  */
+// $databases = array (
+//   'default' => 
+//   array (
+//     'default' => 
+//     array (
+//       'database' => 'axa',
+//       'username' => 'root',
+//       'password' => '@tosdev',
+//       'host' => '10.94.216.37',
+//       'port' => '3306',
+//       'driver' => 'mysql',
+//       'prefix' => '',
+//     ),
+//   ),
+// );
+
 $databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'axa',
-      'username' => 'root',
-      'password' => '@tosdev',
-      'host' => '10.94.216.37',
-      'port' => '3306',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
-
-
-/*$databases = array (
   'default' => 
   array (
     'default' => 
@@ -277,7 +276,7 @@ $databases = array (
     ),
   ),
 );
-*/
+
 /**
  * Access control for update.php script.
  *
