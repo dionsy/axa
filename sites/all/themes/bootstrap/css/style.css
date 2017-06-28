@@ -1194,10 +1194,27 @@ a.asligne {
 		color: #DE2C28; 
 }
 
+.page-node-2 span.telecharger::after {
+	content: "\f019 ";  
+}
+.page-node-2 span.visualiser a::after {
+	content: "\f06e";  
+}
+.page-node-2 span.envoyerRequete a::after{
+	content: "\f040";  
+}
+.page-node-2 span.telecharger span.file {
+	display: none;
+}
+
+
 #block-menu-menu-r-seaux-sociaux- ul li a.facebook::after,
 #block-menu-menu-r-seaux-sociaux- ul li a.linkedin::after,
 #block-menu-menu-r-seaux-sociaux- ul li a.twitter::after,
-#block-menu-menu-r-seaux-sociaux- ul li a.youtube::after{
+#block-menu-menu-r-seaux-sociaux- ul li a.youtube::after,
+.page-node-2 span.envoyerRequete a::after,
+.page-node-2 span.visualiser a::after,
+.page-node-2 span.telecharger::after{
 		font-family:'FontAwesome';
 		font-size:30px;
 		margin-left: 5px;
