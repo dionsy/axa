@@ -8,13 +8,6 @@ a{
 	display: none;
 }
 
-h1.page-header{
-	text-transform: capitalize;
-	font: normal 30px Arial;
-    text-align: center;
-    letter-spacing: 0.4px;
-    color: #fff;
-}
 
 #edit-actions{
 	margin-left: auto;

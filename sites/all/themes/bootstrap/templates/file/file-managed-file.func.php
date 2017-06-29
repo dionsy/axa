@@ -66,14 +66,14 @@ function bootstrap_file_managed_file($variables) {
 }
 
 
-/*file icons*/
+/*/*file icons
 function bootstrap_file_link($vars) {
   $file = $vars['file'];
  // krumong('main')->kPrint($vars);
  // $icon_directory = $vars['icon_directory'];
   $url = file_create_url($file->uri);
   $icon = theme('file_icon', array('file' => $file));
-$desc=$file->description;
+  $desc=$file->description;
   // Set options as per anchor format described at
   // http://microformats.org/wiki/file-format-examples
   $options = array(
@@ -85,7 +85,7 @@ $desc=$file->description;
   // Use the description as the link text if available.
   if (empty($file->description)) {
     $link_text = $file->filename;
-    $link_text = '';
+    //$link_text = '';
   }
   else {
     $link_text = $file->description;
@@ -96,7 +96,7 @@ $desc=$file->description;
   $options['attributes']['class'] = array('icon-file', $mimeclass);
 
   return l($link_text, $url, $options);
-}
+}*/
 
 /*function bootstrap_file_icon($vars) {
   $file = $vars['file'];
@@ -104,7 +104,7 @@ $desc=$file->description;
   return '<div class="file-icon ' . $mime . '"></div>';
 }*/
 
-function bootstrap_download_file_direct_download_icon_item($variables) {
+/*function bootstrap_download_file_direct_download_icon_item($variables) {
   $file = $variables['file'];
   
   // Views may call this function with a NULL value, return an empty string.
@@ -126,10 +126,10 @@ function bootstrap_download_file_direct_download_icon_item($variables) {
     }
     elseif (!empty($file->title)) {
       $link_text = $file->title;
-    }*/
+    }
     $options['attributes']['title'] = $file->filename;
   }
     $link_text = '';
 
   return l($link_text, $url, $options);
-}
+}*/
