@@ -87,7 +87,7 @@
   
 <div class="main-container <?php print $container_class; ?>">
 <section class="row">
-<header id="" role="banner" class="navbar <?php print $navbar_classes;  ?> col-md-4 ">
+<header id="" role="banner" class="navbar  col-md-9 ">
   <div class="<?php print $container_class; ?>">
     <div class="navbar-header">
       <?php if ($logo): ?>
@@ -107,13 +107,48 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      <?php endif; ?>
-    </div>
-
-   
+      <?php endif; ?> 
+      </div>   
   </div>
 </header>
+
+
+<!-- Mon compte -->
+      <?php
+        $account = user_load($user->uid);
+        $pic ='';
+        if(isset($account->picture))
+          $pic=$account->picture;
+        $img = file_create_url($pic->uri);
+        print '<div class="avatar col-md-1" ><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';        
+      ?>
+
+<!-- Mon compte -->
+
+ <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+      <div class="navbar-collapse collapse col-md-2" id="navbar-collapse ">
+        <nav role="navigation">
+          <?php if (!empty($primary_nav)): ?>
+            <?php print render($primary_nav); ?>
+          <?php endif; ?>
+          <?php if (!empty($secondary_nav)): ?>
+            <?php print render($secondary_nav); ?>
+          <?php endif; ?>
+          <?php if (!empty($page['navigation'])): ?>
+            <?php print render($page['navigation']); ?>
+          <?php endif; ?>
+        </nav>
+      </div>
+    <?php endif; ?>
+    
+
+
+
+
 </section>
+
+
+
 
 
   <div class="row">
@@ -135,44 +170,10 @@
     <?php endif; ?>
 
 
-    <section id="test" class="col-md-12 connexion">      
-    
+    <section id="test" class="col-md-12 connexion">   
       <a id="main-content"></a>
       <?php print $messages; ?>
-
-<!-- Mon compte -->
-
- <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse" id="navbar-collapse">
-        <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-    <?php endif; ?>
-<!-- Mon compte -->
-
-
-
-      <?php
-        $account = user_load($user->uid);
-        $pic ='';
-        if(isset($account->picture))
-          $pic=$account->picture;
-        $img = file_create_url($pic->uri);
-        print '<div class="avatar"><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
-        
-      ?>
-
       <?php print render($page['content']); ?>
-
     </section>
  
 

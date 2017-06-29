@@ -120,57 +120,63 @@
 }
 /*---------Accordeon------------------*/
 
-
+ul.quicktabs-tabs.quicktabs-style-navlist{
+    padding: 0 !important;
+}
 .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
     background: #ffffff none repeat scroll 0 0;
-    border: 1px solid #bfd0ff;
+   /* border: 1px solid #bfd0ff;*/
     float: left;
     min-height: 64px;
-    padding: 10px;
+    padding: 0;
     position: relative;
-    width: 80%;
+    /*width: 80%;*/
     z-index: 1;
 }
 ul.quicktabs-tabs.quicktabs-style-garland li {
  
-    padding: 0px 6px 3px !important;
+    padding: 0 !important;
 }
  ul.quicktabs-tabs.quicktabs-style-garland {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    font: bold 12px/20px Verdana;
-    padding: 5px 0px ;
-    height: 34px;
+    background: #999;
+    padding:  0px ;
+    height: auto;
+    width: 100%;
+    float: left;
 }  
+ul.quicktabs-tabs.quicktabs-style-garland li a:hover,
+ul.quicktabs-tabs.quicktabs-style-garland li a:link 
+/*ul.quicktabs-tabs.quicktabs-style-garland li a:visited*/{
+    padding:12px !important;
+    color: #000 !important;
+}
 ul.quicktabs-tabs.quicktabs-style-garland li.active {
-    background: #ed1846 none repeat scroll 0 0;
+    background: #ccc;
 }
 ul.quicktabs-tabs.quicktabs-style-garland li:hover {
-    background: #ed1846 none repeat scroll 0 0;
+    background: #ccc none repeat scroll 0 0;
 }
-#quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li:hover a {
-    color:#fff !important;
-}
+
 ul.quicktabs-tabs.quicktabs-style-garland li a {
-    color: #103184 !important;
+    color: #fff !important;
+}
+ul.quicktabs-tabs.quicktabs-style-navlist li.active a{
+    font-weight: normal;
+    color: #000;
 }
 #quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li.active a {
-    background: transparent;
-    color: #fff !important;
+  background: #ccc !important;
+    color: #000 !important;
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li {
-    background-color: #103184;
-    color: #ffffff;
-    display: block;
-    margin-right: -1px;
+    background-color: #999;
     padding: 0;
     text-align: right;
+    border-bottom: 1px solid #ccc;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active {
-    background: #ed1846 none repeat scroll 0 0;
-    border-bottom: 1px solid #ed1846;
-    border-top: 1px solid #ed1846;
-    text-align: right;
+    background: #ccc;
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li a {
