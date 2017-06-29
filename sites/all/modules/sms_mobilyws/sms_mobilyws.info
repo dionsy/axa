@@ -1,0 +1,12 @@
+name = "Mobily.ws"
+description = "Allows the SMS Framework to use Mobily.ws as a gateway."
+package = SMS Framework
+dependencies[] = sms
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2017-05-20
+version = "7.x-1.2"
+core = "7.x"
+project = "sms_mobilyws"
+datestamp = "1495313590"
+
