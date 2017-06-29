@@ -1194,27 +1194,44 @@ a.asligne {
 		color: #DE2C28; 
 }
 
-.page-node-2 span.telecharger::after {
+.page-node-2 span.telecharger a::before {
 	content: "\f019 ";  
 }
-.page-node-2 span.visualiser a::after {
+.page-node-2 span.visualiser a::before {
 	content: "\f06e";  
 }
-.page-node-2 span.envoyerRequete a::after{
+.page-node-2 span.envoyerRequete a::before{
 	content: "\f040";  
 }
-.page-node-2 span.telecharger span.file {
-	display: none;
-}
 
+.page-node-2 span.envoyerRequete a,
+.page-node-2 span.visualiser a,
+.page-node-2 span.telecharger a{
+    display: inline-block;
+}
+.page-node-2 span.envoyerRequete,
+.page-node-2 span.visualiser,
+.page-node-2 span.telecharger{
+    position: relative;
+}
+.page-node-2 span.envoyerRequete a::before,
+.page-node-2 span.visualiser a::before,
+.page-node-2 span.telecharger a::before{
+    font-size: 16px;
+    color:#ccc;
+    font-family:'FontAwesome';
+ /*   position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;*/
+}
 
 #block-menu-menu-r-seaux-sociaux- ul li a.facebook::after,
 #block-menu-menu-r-seaux-sociaux- ul li a.linkedin::after,
 #block-menu-menu-r-seaux-sociaux- ul li a.twitter::after,
-#block-menu-menu-r-seaux-sociaux- ul li a.youtube::after,
-.page-node-2 span.envoyerRequete a::after,
-.page-node-2 span.visualiser a::after,
-.page-node-2 span.telecharger::after{
+#block-menu-menu-r-seaux-sociaux- ul li a.youtube::after
+{
 		font-family:'FontAwesome';
 		font-size:30px;
 		margin-left: 5px;

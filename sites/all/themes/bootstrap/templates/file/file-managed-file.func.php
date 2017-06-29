@@ -69,6 +69,7 @@ function bootstrap_file_managed_file($variables) {
 /*file icons*/
 function bootstrap_file_link($vars) {
   $file = $vars['file'];
+ // krumong('main')->kPrint($vars);
  // $icon_directory = $vars['icon_directory'];
   $url = file_create_url($file->uri);
   $icon = theme('file_icon', array('file' => $file));
@@ -83,8 +84,8 @@ $desc=$file->description;
 
   // Use the description as the link text if available.
   if (empty($file->description)) {
-    /*$link_text = $file->filename;*/
-    $link_text = 'Contrat';
+    $link_text = $file->filename;
+    $link_text = '';
   }
   else {
     $link_text = $file->description;
@@ -102,3 +103,33 @@ $desc=$file->description;
   $mime = drupal_html_class(str_replace('application-', $file->filemime));
   return '<div class="file-icon ' . $mime . '"></div>';
 }*/
+
+function bootstrap_download_file_direct_download_icon_item($variables) {
+  $file = $variables['file'];
+  
+  // Views may call this function with a NULL value, return an empty string.
+  if (empty($file->fid)) {
+    return '';
+  }
+
+  $url     = download_file_path($file->fid);
+  $icon    = theme('file_icon', array('file' => $file));
+  $options = array();
+
+  // Use the description or the title as the link text if available.
+  if (empty($file->description) && empty($file->title)) {
+  /*  $link_text = $file->filename;
+  }
+  else {
+    if (!empty($file->description)) {
+      $link_text = $file->description;
+    }
+    elseif (!empty($file->title)) {
+      $link_text = $file->title;
+    }*/
+    $options['attributes']['title'] = $file->filename;
+  }
+    $link_text = '';
+
+  return l($link_text, $url, $options);
+}
