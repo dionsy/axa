@@ -138,8 +138,8 @@ ul.quicktabs-tabs.quicktabs-style-garland li {
     padding: 0 !important;
 }
  ul.quicktabs-tabs.quicktabs-style-garland {
-    background: #999;
-    padding:  0px ;
+    background: rgb(169, 15, 39);
+    /*padding:  0px ;*/
     height: auto;
     width: 100%;
     float: left;
@@ -148,13 +148,13 @@ ul.quicktabs-tabs.quicktabs-style-garland li a:hover,
 ul.quicktabs-tabs.quicktabs-style-garland li a:link 
 /*ul.quicktabs-tabs.quicktabs-style-garland li a:visited*/{
     padding:12px !important;
-    color: #000 !important;
+    /*color: #000 !important;*/
 }
 ul.quicktabs-tabs.quicktabs-style-garland li.active {
-    background: #ccc;
+   /* background: rgba(169, 15, 39,0.2);*/
 }
 ul.quicktabs-tabs.quicktabs-style-garland li:hover {
-    background: #ccc none repeat scroll 0 0;
+    background: rgba(169, 15, 39,0.2) :important;
 }
 
 ul.quicktabs-tabs.quicktabs-style-garland li a {
@@ -162,21 +162,21 @@ ul.quicktabs-tabs.quicktabs-style-garland li a {
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active a{
     font-weight: normal;
-    color: #000;
+    color: #000 !important;
 }
 #quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li.active a {
-  background: #ccc !important;
+  background: rgba(169, 15, 39,0.2) !important;
     color: #000 !important;
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li {
-    background-color: #999;
+    background-color: #A90F27;
     padding: 0;
     text-align: right;
     border-bottom: 1px solid #ccc;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active {
-    background: #ccc;
+    background: RGBa(169, 15, 39,0.2);
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li a {
