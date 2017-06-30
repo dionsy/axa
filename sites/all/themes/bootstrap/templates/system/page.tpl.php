@@ -209,8 +209,18 @@
     <?php endif; ?>
 
   </div>
-
 </div>
+
+<?php if (!empty($page['content_bottom'])): ?>
+  <div class="page-bottom row">
+  <aside class="content_bottom col-xs-12 col-md-12 col-lg-12">
+    <?php print render($page['content_bottom']); ?>
+  </aside>
+    </div>
+<?php endif; ?>
+
+
+
 
 <?php if (!empty($page['bottom'])): ?>
   <div class="test">
