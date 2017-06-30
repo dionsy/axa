@@ -58,10 +58,10 @@ switch ($block->delta) {
 		$class="col-md-9 col-lg-9 col-xs-12";
 	break;
 	case '1':
-		$class="col-md-8 col-lg-8 col-xs-12";
+		$class="col-md-6 col-lg-6 col-xs-12";
 	break;
-	case '2':
-		$class="col-md-3 col-lg-3 col-xs-12";
+	case 'agence_axa-block_1':
+		$class="col-md-6 col-lg-6 col-xs-12";
 	break;
 
 	case 'simple_copyright_manage':
