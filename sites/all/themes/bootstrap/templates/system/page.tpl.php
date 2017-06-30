@@ -223,7 +223,7 @@
 
 
 <?php if (!empty($page['bottom'])): ?>
-  <div class="test">
+  <div class="bottom">
   <aside class="bottom">
     <?php print render($page['bottom']); ?>
   </aside>
@@ -231,7 +231,7 @@
 <?php endif; ?>
 
 <?php if (!empty($page['footer_top'])): ?>
-  <div class="test">
+  <div class="footer_top">
   <footer class="footer_top <?php print $container_class; ?>">
     <?php print render($page['footer_top']); ?>
   </footer>

@@ -15,7 +15,10 @@
 }
 body
 {
-	 background-color:#EDF7F2 ;
+	/* background-color:#EDF7F2 ;*/
+    background-image: url('../images/backgroud.jpg');
+    background-size: cover;
+    background-attachment: fixed;
      position: relative;
      z-index: 2;
 	 overflow-x: hidden;
@@ -317,14 +320,14 @@ li.Auto:hover .outside{
 .bottom{
 	text-align: center;
     margin:0 0 30px 0; 
-    background: url(../images/fond.jpg) bottom no-repeat;
+/*    background: url(../images/fond.jpg) bottom no-repeat;*/
 }
 .region-bottom{
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:#fff;
 }
-#block-views-frontpage-block-2 div.view-header h3{
+/*#block-views-frontpage-block-2 div.view-header h3{
 	color: #fff;
-}
+}*/
 
 .fa{
 	display: inline-block !important;
@@ -821,7 +824,7 @@ section#test  div#navbar-collapse {
 .jumbotron {
     background-color: inherit !important;
 }
-.test{
+div.footer_top{
 	width: 100%;
 	background: #fff;
 }
@@ -894,7 +897,7 @@ a.asligne {
  #block-views-frontpage-block-2 ul li a {
    display: block;
    font-size: 1.3em;
-   color: #fff;
+   color: rgb(237, 24, 70);
 }
 .view-faq {
     background: #fff;
