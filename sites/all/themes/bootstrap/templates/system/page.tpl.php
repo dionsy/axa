@@ -117,15 +117,17 @@
          print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
       } 
       else{
+        print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
+      }
       ?>
       <?php
-        $account = user_load($user->uid);
+      /*  $account = user_load($user->uid);
         $pic ='';
         if(isset($account->picture))
           $pic=$account->picture;
         $img = file_create_url($pic->uri);
         print '<div class="avatar"><img class="img-responsive hidden-xs-down" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
-        }
+        }*/
       ?>
      
       <?php
@@ -134,17 +136,17 @@
          if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
           <div class="navbar-collapse collapse paramettre" id="navbar-collapse">
           <a href="user/logout"><i class="fa fa-sign-out " aria-hidden="true"></i> <?php print t('Logout') ;?></a>
-            <nav role="navigation">
-              <?php if (!empty($primary_nav)): ?>
-                <?php print render($primary_nav); ?>
-              <?php endif; ?>
-              <?php if (!empty($secondary_nav)): ?>
-                <?php print render($secondary_nav); ?>
-              <?php endif; ?>
-              <?php if (!empty($page['navigation'])): ?>
-               <?php print render($page['navigation']); ?>
-              <?php endif; ?>
-            </nav>
+            <!-- <nav role="navigation">
+              <?php //if (!empty($primary_nav)): ?>
+                <?php //print render($primary_nav); ?>
+              <?php //endif; ?>
+              <?php //if (!empty($secondary_nav)): ?>
+                <?php //print render($secondary_nav); ?>
+              <?php //endif; ?>
+              <?php //if (!empty($page['navigation'])): ?>
+               <?php //print render($page['navigation']); ?>
+              <?php //endif; ?>
+            </nav> -->
           </div>
           
         <?php endif; } ?>
