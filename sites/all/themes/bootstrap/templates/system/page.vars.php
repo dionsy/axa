@@ -103,10 +103,10 @@ function bootstrap_process_page(&$variables) {
 
 
 if(isset($variables['theme_hook_suggestions'][2]) && $variables['theme_hook_suggestions'][2]=='page__compte_utilisateur' ){
-  if(user_is_logged_in())
    $variables['theme_hook_suggestions'][2] = 'page__espace_client';
+ /* if(user_is_logged_in())
   else
-    $variables['theme_hook_suggestions'][2] = 'page__user';
+    $variables['theme_hook_suggestions'][2] = 'page__user';*/
 }
 
 
