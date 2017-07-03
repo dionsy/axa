@@ -183,9 +183,9 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li
     color: #ffffff;
     display: block;
     font-weight: normal;
-    height: 23px;
+    height:auto;
     margin: 0;
-    padding: 0 10px 0 7px;
+    padding: 10px 10px 10px 7px;
     text-align: left;
     text-decoration: none;
 }

@@ -74,6 +74,8 @@
  */
 
 ?>
+<div class="fix-footer">
+  <div class="page">
 <div id="navbar" class="collapse navbar-collapse ">
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
@@ -115,12 +117,14 @@
 
 <!-- Mon compte -->
       <?php
+      if(user_is_logged_in()) {
         $account = user_load($user->uid);
         $pic ='';
         if(isset($account->picture))
           $pic=$account->picture;
         $img = file_create_url($pic->uri);
-        print '<div class="avatar col-md-1" ><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';        
+        print '<div class="avatar col-md-1" ><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';   
+        }     
       ?>
 
 <!-- Mon compte -->
@@ -179,6 +183,7 @@
 
   </div>
 </div>
+</div> <!-- end page -->
 
 <?php if (!empty($page['footer'])): ?>
   <footer class="footer <?php print $container_class; ?>">
@@ -186,6 +191,7 @@
     <?php print render($page['footer']); ?>
   </div>
   </footer>
+</div> <!-- end fix-footer -->
 <?php endif; ?>
 
 
