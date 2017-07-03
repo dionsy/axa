@@ -224,9 +224,25 @@ function twilio_command($command = '', $data = array()) {
             }
             catch (Exception $e){
               watchdog('Twilio', $e->getMessage(), array(), WATCHDOG_ERROR);
+              /*** -:
               $link = l($e->getInfo(), $e->getInfo());
               $message = t('Twilio has returned the error: "@error". For more information visit the following link. !link', array('@error' => $e->getMessage(), '!link' => $link));
+              drupal_set_message($message, 'error');***/
+              
+              /*** +: ***/
+              $message = t('Twilio has returned the error: "@error".', 
+                            array('@error' => $e->getMessage())
+                          );
               drupal_set_message($message, 'error');
+
+              if (method_exists($e, 'getInfo')) {
+                $link = l($e->getInfo(), $e->getInfo());
+                $message = t('For more information visit the following link: !link.', 
+                              array('!link' => $link)
+                            );
+                drupal_set_message($message, 'error');
+              }/*** end + ***/
+
             }
             if (!empty($response->status) && $response->status == 'failed') {
               watchdog('Twilio', 'An unkown error occured during the HTTP request');
