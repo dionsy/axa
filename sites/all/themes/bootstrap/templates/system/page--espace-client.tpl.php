@@ -115,12 +115,14 @@
 
 <!-- Mon compte -->
       <?php
+      if(user_is_logged_in()) {
         $account = user_load($user->uid);
         $pic ='';
         if(isset($account->picture))
           $pic=$account->picture;
         $img = file_create_url($pic->uri);
-        print '<div class="avatar col-md-1" ><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';        
+        print '<div class="avatar col-md-1" ><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';   
+        }     
       ?>
 
 <!-- Mon compte -->
