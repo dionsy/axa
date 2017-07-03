@@ -346,19 +346,18 @@ li.Auto:hover .outside{
 	text-align: center !important;
 }
 #block-views-frontpage-block-2  ul li {
-    width: 20%;
     padding-top: 10px;
 }
 #block-views-frontpage-block-2  ul li.Auto {
-	margin-left: 30px;
+
 }
 #block-views-frontpage-block-2  ul li.Loisirs-vie {
-	margin-left: 54px;
+
 }
 #block-views-frontpage-block-2  ul li.Assistance  {
-	margin-left: 59px;
+
 }#block-views-frontpage-block-2  ul li.Habitation  {
-	margin-left: 53px;
+
 }
 .Package .devis, .Assistance .devis,.Habitation .devis, .Auto .devis, .Loisirs-vie .devis{
     font-size: 1.3em;
@@ -492,10 +491,9 @@ div.col-xs-6 {
     top: 15px;
 }
 #block-menu-menu-footer .menu.nav {
-    display: inline-grid;
     font-size: 1.2em;
     text-align: center;
-      list-style-type: none;
+    list-style-type: none;
 }
 .footer .nav > li {
     /* position: relative; */
@@ -1222,6 +1220,10 @@ a.asligne {
     	text-align: left;
     	margin-bottom: 20px;
     }
+
+    #block-views-frontpage-block-2 ul li a {
+        font-size: 1em;
+    }
 }
 
 #block-menu-menu-r-seaux-sociaux- ul li a.facebook::after{
@@ -1319,7 +1321,7 @@ a.asligne {
 	text-align: left;
 }
 footer h2{
-	color: #fff;
+	color: #FFC000;
 	font-size: 17px;
 	text-transform: uppercase;
 }
