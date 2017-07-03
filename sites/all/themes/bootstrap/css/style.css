@@ -618,7 +618,6 @@ body, html {
   height: 100%;
 }
 
-* {-moz-box-sizing: border-box; box-sizing: border-box;}
 
 /*  FOOTER */
 .fix-footer{
@@ -628,9 +627,6 @@ body, html {
     position:relative;
 }
 
-.page{
-    padding-bottom: 300px;
-}
 
 .footer{
     position: absolute !important;
@@ -642,6 +638,13 @@ body, html {
     width: 100%;
     background: none repeat scroll 0 0 #23488B !important;
 }
+
+.page{
+    padding-bottom: 300px;
+}
+
+* {-moz-box-sizing: border-box; box-sizing: border-box;}
+
 
 /*.footer .nav > li {
     position: relative;
