@@ -102,10 +102,15 @@ function bootstrap_process_page(&$variables) {
   }
 
 
-if(isset($variables['theme_hook_suggestions'][2]) && $variables['theme_hook_suggestions'][2]=='page__compte_utilisateur'){
+if(isset($variables['theme_hook_suggestions'][2]) && $variables['theme_hook_suggestions'][2]=='page__compte_utilisateur' ){
+  if(user_is_logged_in())
    $variables['theme_hook_suggestions'][2] = 'page__espace_client';
+  else
+    $variables['theme_hook_suggestions'][2] = 'page__user';
 }
- //krumong('main')->kPrint($variables['theme_hook_suggestions']);
+
+
+ //krumong('main')->kPrint($variables);
 
   if ($header == '404 Not Found') {     
     $variables['theme_hook_suggestions'][] = 'page__404';
