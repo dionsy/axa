@@ -139,14 +139,18 @@ h1.page-header {
 #block-views-frontpage-block-1 li,
 .outside a.img_link{
 	display: block;
-	height: auto;
-	max-width: 100%;
-	 backface-visibility: hidden;
-	transition: transform 0.5s ease-in-out 0s;
+    position: relative;
+    z-index: 2;
+	overflow: hidden;
+	transition: all 0.5s ease 0s;
 }
-#block-views-frontpage-block-1 li,
-.outside a.img_link:hover {
+a.img_link:hover .img-responsive {
     transform: scale(1.1);
+}
+a.img_link img {
+    height: auto;
+    transition: all 0.5s ease 0s;
+    width: 100%;
 }
 
 #block-system-main{
@@ -160,7 +164,7 @@ h1.page-header {
 
 .outside{
 	width: 95%;
-	box-shadow: 5px 3px 0 rgba(235,234,230,0.8);
+	box-shadow: 2px 2px 0 rgba(235,234,230,0.8);
 	margin: auto;
 	overflow: hidden;
 	outline: 0 none;
@@ -213,7 +217,7 @@ h1.page-header {
     position: relative;
 }
 .outside:hover .outsides::before {
-    top: 47.5%;
+    top: 46%;
 }
 .Loisirs-vie .outsides::before,
 .Habitation .outsides::before,
@@ -1349,7 +1353,7 @@ tr:nth-child(2n){
     background-color: rgba(169, 15, 39,0.2);
 }
 td{
-    border: 1px solid #ccc;
+     border: 1px solid rgb(0, 82, 155);
     text-align: center;
     padding-left: 3px;
     padding-right: 3px;
@@ -1358,4 +1362,13 @@ td{
 .page-bottom{
     display: block;
     clear: both;
+}
+
+/*Map Openlayers  */
+section#block-views-agence-axa-block-1 {
+    margin-bottom: 20px;
+}
+
+.main-container.container {
+    margin-bottom: 30px;
 }
