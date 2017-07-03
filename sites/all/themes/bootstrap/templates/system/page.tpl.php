@@ -201,6 +201,18 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
     </section>
+
+</div>
+
+<?php if (!empty($page['bottom'])): ?>
+  <div class="bottom">
+  <aside class="bottom">
+    <?php print render($page['bottom']); ?>
+  </aside>
+    </div>
+<?php endif; ?>
+
+    
 <?php //} ?>
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="col-sm-3" role="complementary">
@@ -209,7 +221,6 @@
     <?php endif; ?>
 
   </div>
-</div>
 
 <?php if (!empty($page['content_bottom'])): ?>
   <div class="page-bottom row">
@@ -222,16 +233,10 @@
 
 
 
-<?php if (!empty($page['bottom'])): ?>
-  <div class="test">
-  <aside class="bottom">
-    <?php print render($page['bottom']); ?>
-  </aside>
-    </div>
-<?php endif; ?>
+
 
 <?php if (!empty($page['footer_top'])): ?>
-  <div class="test">
+  <div class="footer_top">
   <footer class="footer_top <?php print $container_class; ?>">
     <?php print render($page['footer_top']); ?>
   </footer>

@@ -274,8 +274,8 @@ $databases = array (
       'prefix' => '',
     ),
   ),
-);*/
-
+);
+*/
 
 
 /**

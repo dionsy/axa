@@ -61,7 +61,8 @@ ul.tabs--primary li
 
 
 .webform-next:hover, .webform-previous:hover, .webform-submit:hover, #edit-submit:hover, .form-submit:hover{
-    background-color: rgb(76, 174, 76);
+    background-color: #1DA1F2;
+     border-color: transparent !important  ;
 }
 
 
@@ -127,10 +128,7 @@ ul.tabs--primary li
 } 
 
 
-#webform-client-form-8 .form-item-submitted-nom,#webform-client-form-8 .form-item-submitted-prenom,
-#webform-client-form-11 .form-item-submitted-nom,#webform-client-form-11 .form-item-submitted-prenom,
-#webform-client-form-10 .form-item-submitted-nom,#webform-client-form-10 .form-item-submitted-prenom,
-#webform-client-form-9 .form-item-submitted-nom,#webform-client-form-9 .form-item-submitted-prenom,
+.form-item-submitted-nom,.form-item-submitted-prenom,
 #webform-client-form-9 .form-item-submitted-type-de-bien,#webform-client-form-9 .form-item-submitted-nombre-de-pieces,
 #webform-client-form-9 .form-item-submitted-vous-etes,
 #webform-client-form-9 .form-item-submitted-quand-souhaitez-vous-etre-assure,
@@ -143,10 +141,11 @@ ul.tabs--primary li
 #webform-client-form-30 .form-item,
 #webform-client-form-31 .form-item{
    
-    width: 40%;
-    float: left;
-    margin-left: 6%;
-    margin-right: 4%;
+ /*   float: left;*/
+    display:block;
+    margin-left: 10%;
+    margin-right: auto;
+    margin-top: 15px;
 }
 
 /*#webform-client-form-8 .form-item-submitted-prenom{
@@ -163,10 +162,10 @@ ul.tabs--primary li
 #webform-client-form-31 .webform-datepicker .form-item-submitted-date-depart-month,
 #webform-client-form-31 .webform-datepicker .form-item-submitted-date-retour-month,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-month {
-     width: 15%;
-    float: left;
-    margin-left: 6%;
-    margin-right: 2%;
+    width: 21%;
+    display: inline-block;
+    margin-left: 10%;
+    margin-right: auto;
     float: left;
 
 }
@@ -184,11 +183,11 @@ ul.tabs--primary li
 #webform-client-form-31 .webform-datepicker .form-item-submitted-date-retour-year,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-day,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-year{
-    width: 15%;
-    float: left;
+    width: 21%;
+    display: inline-block;
     margin-left: 2%;
     margin-right: 2%;
-    float: left;
+   /* float: left;*/
 }
 /*#webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-year{
      width: 15%;
@@ -199,7 +198,8 @@ ul.tabs--primary li
 }*/
 .form-item-submitted-date-de-naissance label{
     margin-top: 30px;
-    margin-left: 6%;
+    margin-left: 10%;
+    margin-bottom: 20px;
 }
 
 #webform-client-form-11 .form-item-submitted-date-de-naissance, 
@@ -209,22 +209,27 @@ ul.tabs--primary li
 }
 #webform-client-form-8 .form-item-submitted-e-mail,
 #webform-client-form-11 .form-item-submitted-email,
+#webform-client-form-66 .form-item-submitted-adresse,
+#webform-client-form-66 .form-item-submitted-telephone,
 #webform-client-form-10 .form-item-submitted-email,
 #webform-client-form-9 .form-item-submitted-email{
     margin-top: 25px;
-    width: 40%;
-    float: left;
-    margin-left: 6%;
-    margin-right: 4%;
+/*    width: 40%;*/
+/*    float: left;*/
+    display: block;
+    margin-left: 10%;
+    margin-right: auto;
 }
-#webform-client-form-8 .form-item-submitted-telephone ,
+#webform-client-form-8 .form-item-submitted-telephone,
+#webform-client-form-66 .form-item-submitted-email,
+#webform-client-form-66 .form-item-submitted-type-de-contrat,
 #webform-client-form-11 .form-item-submitted-telephone,
 #webform-client-form-10 .form-item-submitted-telephone,
 #webform-client-form-9 .form-item-submitted-telephone{
     width: 38%;
-    float: left;
-    margin-left: 6%;
-    margin-right: 6%;
+   display: inline-block;
+    margin-left: 10%;
+    margin-right: auto;
     margin-top: 25px;
     
 }
@@ -232,9 +237,9 @@ ul.tabs--primary li
 #webform-client-form-10 .form-item-submitted-civilite,
 #webform-client-form-9 .form-item-submitted-civilite{
     width: 40%;
-    float: left;
-    margin-left: 6%;
-    margin-right: 6%;
+    display: inline-block;
+    margin-left: 10%;
+    margin-right: auto;
 }
 .form-item.webform-component.webform-component-radios.webform-component--civilite.form-group.form-item.form-item-submitted-civilite.form-type-radios.form-group ,
 .form-item.webform-component.webform-component-term-reference.webform-component--type-dassurance.form-group.form-item.form-item-submitted-type-dassurance.form-type-select.form-group{
@@ -242,10 +247,10 @@ ul.tabs--primary li
 }
 #webform-client-form-11 .form-item-submitted-type-dassurance,
 #webform-client-form-10 .form-item-submitted-type-dassurance{
-    width: 40%;
-    float: left;
-    margin-left: 4%;
-    margin-right: 4%;
+    width: 38%;
+   display: inline-block;
+    margin-left: 10%;
+    margin-right: auto;
 }
 
 #webform-client-form-8 .form-item-submitted-marque{
@@ -294,15 +299,21 @@ ul.tabs--primary li
     margin-right: 1%; 
 }
 .form-item.webform-component.webform-component-radios.webform-component--ce-logement-est-il-votre-residence-principale.form-group.form-item.form-item-submitted-ce-logement-est-il-votre-residence-principale.form-type-radios.form-group {
-    margin-left: 6%;
+    margin-left: 10%;
+    margin-top: 15px;
 }
 .form-item.webform-component.webform-component-textarea.webform-component--adresse-du-bien-a-assurer.form-group.form-item.form-item-submitted-adresse-du-bien-a-assurer.form-type-textarea.form-group {
-    float: left;
-    margin-left: 6%;
-    margin-right: 2%;
+   display: inline-block; 
+    margin-left: 10%;
+    margin-right: auto;
     margin-top: 15px;
     margin-bottom: 15px;
     width: 44%;
+}
+
+.form-item.webform-component.webform-component-textarea.webform-component--motif.form-group.form-item.form-item-submitted-motif.form-type-textarea.form-group {
+    margin-left: 85px;
+    margin-right: 95px;
 }
 
 /*** dropdown hover***/
@@ -333,16 +344,16 @@ ul.tabs--primary li
     color: #ffffff
 }
 .page-user #test {
-    background-color: white;
-    border: 2px solid #004d92;
+ /*   background-color: white;*/
+    border: 1px solid #004d92;
     margin:auto ;
     float: inherit;
     width: 50%;
     padding: 10px;
     text-align: center;
+    margin-bottom: 25px;
 }
 .node-type-webform h1.page-header {
-    color: #fff;
     font: 30px Arial;
     letter-spacing: 0.4px;
     text-align: center;
@@ -370,21 +381,18 @@ ul.tabs--primary li
 .page-node-8 h1.page-header , .page-node-28 h1.page-header, .page-user h1.page-header{
     background-color: #004d92;
 }
-.page-node-11 form, .page-node-30 form {
+.page-node-11 form.webform-client-form , .page-node-30 form.webform-client-form  {
    border: 2px solid #ffc000;
-   border-top: none;
 }
-.page-node-10 form, .page-node-31 form{
+.page-node-10 form.webform-client-form , .page-node-31 form.webform-client-form {
    border: 2px solid #3598dc;
-    border-top: none;
+
 }
-.page-node-9 form, .page-node-29 form  {
+.page-node-9 form.webform-client-form , .page-node-29 form.webform-client-form   {
    border: 2px solid #a90f27;
-    border-top: none;
 }
-.page-node-8 form, .page-node-28 form {
+.page-node-8 form.webform-client-form , .page-node-28 form.webform-client-form  {
    border: 2px solid #004d92;
-    border-top: none;
 }
 
 
@@ -436,8 +444,7 @@ ul.tabs--primary li
 }
 /* FORM CONTROL */
 .form-control {
-    background-color: #efefef;
-    background-image: none;
+    background-color: #fff;
     border: 1px solid blue;
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
@@ -448,7 +455,7 @@ ul.tabs--primary li
     line-height: 1.42857;
     margin-left: 0;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width: 75%;
+    width: 50%;
 }
 .webform-progressbar {
     margin: 18px auto 0;
@@ -459,17 +466,17 @@ ul.tabs--primary li
     text-align: center;
 }
 #edit-name.form-control.form-text.required,#edit-pass.form-control.form-text.required{
-    width: 100%;
+    width: 65%;
 }
 .page-user form#user-login  label {
-    float: left;
-    margin-left: 8%;
+/*    float: left;
+    margin-left: 8%;*/
     margin-top: 22px;
 }
 #user-login div.form-group {
     display: inline-block;
     margin-bottom: 15px;
-    vertical-align: middle;
+    margin-left: 12%;
 }
 
 #contact-site-form #edit-name.form-control.form-text.required, #contact-site-form #edit-pass.form-control.form-text.required{

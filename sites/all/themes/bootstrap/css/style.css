@@ -15,12 +15,17 @@
 }
 body
 {
+
+ background-image: url('../images/backgroud.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 	 background-color:#EDF7F2 ;
 	 overflow-x: hidden;
 	 font-family: "OpenSans",Arial,Helvetica,sans-serif;
 	
 }/*
 =======
+>>>>>>> 06f7dac63dae683bccac76d6037cddca02f915ca
      position: relative;
      z-index: 2;
 	 overflow-x: hidden;
@@ -134,14 +139,18 @@ h1.page-header {
 #block-views-frontpage-block-1 li,
 .outside a.img_link{
 	display: block;
-	height: auto;
-	max-width: 100%;
-	 backface-visibility: hidden;
-	transition: transform 0.5s ease-in-out 0s;
+    position: relative;
+    z-index: 2;
+	overflow: hidden;
+	transition: all 0.5s ease 0s;
 }
-#block-views-frontpage-block-1 li,
-.outside a.img_link:hover {
+a.img_link:hover .img-responsive {
     transform: scale(1.1);
+}
+a.img_link img {
+    height: auto;
+    transition: all 0.5s ease 0s;
+    width: 100%;
 }
 
 #block-system-main{
@@ -155,7 +164,7 @@ h1.page-header {
 
 .outside{
 	width: 95%;
-	box-shadow: 5px 3px 0 rgba(235,234,230,0.8);
+	box-shadow: 2px 2px 0 rgba(235,234,230,0.8);
 	margin: auto;
 	overflow: hidden;
 	outline: 0 none;
@@ -208,7 +217,7 @@ h1.page-header {
     position: relative;
 }
 .outside:hover .outsides::before {
-    top: 47.5%;
+    top: 46%;
 }
 .Loisirs-vie .outsides::before,
 .Habitation .outsides::before,
@@ -323,14 +332,14 @@ li.Auto:hover .outside{
 .bottom{
 	text-align: center;
     margin:0 0 30px 0; 
-    background: url(../images/fond.jpg) bottom no-repeat;
+/*    background: url(../images/fond.jpg) bottom no-repeat;*/
 }
 .region-bottom{
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:#fff;
 }
-#block-views-frontpage-block-2 div.view-header h3{
+/*#block-views-frontpage-block-2 div.view-header h3{
 	color: #fff;
-}
+}*/
 
 .fa{
 	display: inline-block !important;
@@ -824,7 +833,7 @@ section#test  div#navbar-collapse {
 .jumbotron {
     background-color: inherit !important;
 }
-.test{
+div.footer_top{
 	width: 100%;
 	background: #fff;
 }
@@ -897,7 +906,7 @@ a.asligne {
  #block-views-frontpage-block-2 ul li a {
    display: block;
    font-size: 1.3em;
-   color: #fff;
+   color: rgb(237, 24, 70);
 }
 .view-faq {
     background: #fff;
@@ -1347,7 +1356,7 @@ tr:nth-child(2n){
     background-color: rgba(169, 15, 39,0.2);
 }
 td{
-    border: 1px solid #ccc;
+     border: 1px solid rgb(0, 82, 155);
     text-align: center;
     padding-left: 3px;
     padding-right: 3px;
@@ -1356,4 +1365,13 @@ td{
 .page-bottom{
     display: block;
     clear: both;
+}
+
+/*Map Openlayers  */
+section#block-views-agence-axa-block-1 {
+    margin-bottom: 20px;
+}
+
+.main-container.container {
+    margin-bottom: 30px;
 }
