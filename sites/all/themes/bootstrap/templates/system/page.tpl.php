@@ -74,6 +74,7 @@
  */
 
 ?>
+<div class="fix-footer">
 <div class="page">
 
  <div id="navbar" class="collapse navbar-collapse ">
@@ -252,4 +253,5 @@
     <?php print render($page['footer']); ?>
   </div>
   </footer>
+</div>
 <?php endif; ?>
