@@ -86,7 +86,10 @@ function bootstrap_process_page(&$variables) {
 
     $header = drupal_get_http_header('status'); 
     $title =  drupal_get_title();
-
+    if(isset($variables['node']) && ($variables['node']->type == 'nos_produits')) {
+         $type = $variables['node']->type;
+         $variables['theme_hook_suggestions'][3] = 'page__produit';
+    } 
 
  if($variables['page']['#type']=='page'){
     $variables['theme_hook_suggestions'][] = 'page__'.transliteration_clean_filename($title);
@@ -108,6 +111,7 @@ if(isset($variables['theme_hook_suggestions'][2]) && $variables['theme_hook_sugg
   else
     $variables['theme_hook_suggestions'][2] = 'page__user';*/
 }
+// krumong('main')->kPrint($variables);
 
 
  //krumong('main')->kPrint($variables);

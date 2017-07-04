@@ -13,7 +13,7 @@
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
 }
-body
+body.front
 {
 
  background-image: url('../images/backgroud.jpg');
@@ -60,7 +60,7 @@ h1.page-header {
 	color: #23488b;
     letter-spacing: 0.4px;
     text-align: center;
-    text-transform: capitalize;
+    text-transform: uppercase;
     background: none !important;
     border: none !important;
   /*  border-radius: 10px 0;
@@ -144,10 +144,10 @@ h1.page-header {
 	overflow: hidden;
 	transition: all 0.5s ease 0s;
 }
-a.img_link:hover .img-responsive {
+.outside a.img_link:hover .img-responsive {
     transform: scale(1.1);
 }
-a.img_link img {
+.outside a.img_link img {
     height: auto;
     transition: all 0.5s ease 0s;
     width: 100%;
@@ -174,7 +174,7 @@ a.img_link img {
 .view-id-frontpage ul{
 	width: 100%;
 	margin: auto;
-	list-style: outside none none;
+	list-style: outside none none; 
 }
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2{
@@ -223,7 +223,7 @@ a.img_link img {
 .Habitation .outsides::before,
 .Assistance .outsides::before,
 .Auto .outsides::before{
-    background-color: #FFC000;
+    /*background-color: #FFC000;*/
     bottom: 0;
     content: "";
     display: block;
@@ -259,6 +259,8 @@ li.Assistance:hover .outside{
 li.Auto:hover .outside{
 	border-top: 2px solid #1abd1d ;
 }
+
+
 
 .outsides {
     padding-top: 13px;
@@ -569,11 +571,14 @@ button.navbar-toggle
     display: inline-block;
 }
 .navbar-collapse.collapse.paramettre{
-	text-align: left;
+	text-align: center;
+    margin-top: 7px;
+
 }
 #navbar-collapse > a ,.first.last.leaf > a{
 	padding: 0;
-	color:#999;
+	color:black;
+    display: block;
 }
 
 
@@ -719,6 +724,7 @@ section#block-simple-copyright-simple-copyright-manage {
 }
 .fa.fa-sign-out{
 	    color: #ED1846;
+        margin-bottom: 0;
 
 }
 section#test  div#navbar-collapse {
@@ -1375,3 +1381,29 @@ section#block-views-agence-axa-block-1 {
 .main-container.container {
     margin-bottom: 30px;
 }
+.highlighted.jumbotron {
+    margin-bottom: 0 ! important; 
+}
+
+/*MENU NOS PROUDUITS */
+
+#block-menu-menu-nos-produits h2.block-title {
+    color: rgb(35, 72, 139);
+    text-align: center;
+}
+/*#block-menu-menu-nos-produits li a {
+    color: #fff;
+}
+#block-menu-menu-nos-produits li {
+   
+    background-color: #A90F27;
+    padding: 0;
+    font-size: 1.0em;
+    text-align: left;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;;
+}
+#block-menu-menu-nos-produits li.active {
+    background: RGBa(169, 15, 39,0.2);
+}
+*/
