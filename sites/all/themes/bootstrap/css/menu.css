@@ -249,7 +249,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li
     margin-right: auto;
 }
 li.ligne .offres {
-    display: inline-flex;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
