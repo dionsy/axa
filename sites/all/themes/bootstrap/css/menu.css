@@ -176,7 +176,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li ,#block-menu-menu-nos-produits li {
     border-bottom: 1px solid #ccc;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active {
-    background: RGBa(169, 15, 39,0.2);
+    background: rgba(169, 15, 39,0.2);
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li a  {
@@ -214,7 +214,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li
     background-color: #004d80;
    /* border-bottom: 1px solid #e30000; */
 }
-#block-menu-menu-menu-espace-client ul li ::after{
+#block-menu-menu-menu-espace-client ul li::after{
     content: ">";
     font-size:12px;
     float: right;
