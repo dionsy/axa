@@ -153,7 +153,7 @@ ul.quicktabs-tabs.quicktabs-style-garland li a:link
 ul.quicktabs-tabs.quicktabs-style-garland li.active {
    /* background: rgba(169, 15, 39,0.2);*/
 }
-ul.quicktabs-tabs.quicktabs-style-garland li:hover {
+ul.quicktabs-tabs.quicktabs-style-garland li:hover{
     background: rgba(169, 15, 39,0.2) :important;
 }
 
@@ -175,7 +175,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li ,#block-menu-menu-nos-produits li {
     text-align: right;
     border-bottom: 1px solid #ccc;
 }
-ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active {
+ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active     {
     background: RGBa(169, 15, 39,0.2);
 }
 
@@ -239,25 +239,40 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li
     text-transform: uppercase;
     font-size: 17px;
 }
-/*#block-views-frontpage-block-3 h2.block-title {
-    color: rgb(35, 72, 139);
+#block-views-frontpage-block-3 h2.block-title {
     text-align: center;
-}*/
+}
 #block-views-frontpage-block-3 li.ligne {
     display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
+    vertical-align: text-top;
+    padding: 0;
 }
-li.ligne .offres {
+#block-views-frontpage-block-3 li.active {
+    background: RGBa(169, 15, 39,0.2);
+}
+
+li .offres {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 li div.offre h2 {
-    font-weight: normal;
+    margin-top: 7px;
+    font-weight: bold;
     text-align: left;
+    margin-left: 0;
     text-transform: capitalize;
+}
+li div.offre h2  a{
+color: black;
+}
+li div.offre p {
+    text-align: left;
+} 
+#block-views-frontpage-block-3  div.item-list {
+    text-align: center;
 }
 
 /*div.main-container aside {
