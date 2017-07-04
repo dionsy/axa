@@ -177,7 +177,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li ,#block-menu-menu-nos-produits li {
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active     {
-    background: RGBa(169, 15, 39,0.2);
+    background: rgba(169, 15, 39,0.2);
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active {
     background: rgba(169, 15, 39,0.2);
@@ -246,39 +246,95 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li
 #block-views-frontpage-block-3 h2.block-title {
     text-align: center;
 }
-#block-views-frontpage-block-3 li.ligne {
+#block-views-frontpage-block-3 li {
     display: inline-block;
-    margin-left: 20px;
     vertical-align: text-top;
-    padding: 0;
+    padding: 13px;
 }
 #block-views-frontpage-block-3 li.active {
-    background: RGBa(169, 15, 39,0.2);
+    background: rgba(169, 15, 39,0.2);
 }
 
 li .offres {
     display: inline-block;
     margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    background-color: #fff;
+    box-shadow: 2px 0 4px #bbb;
+    padding-bottom: 7px;
+}
+li div.offres:hover {
+    box-shadow: 2px 0 4px red;
+}
+
+li div.offres a.img_link {
+    display: block;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 0.5s ease 0s;
+} 
+li div.offres a img {
+   transition: all 0.5s ease 0s;
+}
+
+li div.offres a.img_link:hover .img-responsive  {
+     transform: scale(1.1); 
 }
 li div.offre h2 {
     margin-top: 7px;
     font-weight: bold;
     text-align: left;
-    margin-left: 0;
+    margin-left: 5px;
     text-transform: capitalize;
 }
 li div.offre h2  a{
-color: black;
+color: rgb(237, 24, 70);
 }
 li div.offre p {
     text-align: left;
+    margin-left: 5px;
 } 
 #block-views-frontpage-block-3  div.item-list {
     text-align: center;
 }
 
+.col-centered {
+  /*float: none;*/
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.body_offre h3 {
+    border-bottom: 1px solid rgb(169, 15, 39);
+    color: #103184;
+    font-size: 1.4em;
+}
+.body_offre ul {
+    list-style: outside  disc !important; 
+     margin-left: 50px;
+}
+.body_offre ul li {
+    display: list-item !important;
+}
+
+.body_offre  em {
+    font-weight: bold;
+}
+.node-nos-produits .field-name-field-image-produit div img {
+    width: 100%;
+    height: 260px;
+}
+.node-type-nos-produits section#test {
+    background-color: #fff;
+} 
+.body_offre > p {
+    line-height: 1.7;
+}
+.body_offre table {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
 /*div.main-container aside {
     border: 2px solid rgb(0, 0, 0);
 }
