@@ -10,6 +10,7 @@
  * Implements hook_form_process().
  */
 function bootstrap_form_process($element, &$form_state, &$form) {
+ // krumong('main')->kPrint($form['#form_id']);
   if (!empty($element['#bootstrap_ignore_process'])) {
     return $element;
   }
