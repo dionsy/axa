@@ -347,10 +347,11 @@ li div.offre p {
 /*Breadcrump*/
 .breadcrumb{ 
 background: none;
-position: absolute;
-top: -17px;
+position: relative;
+top: -20px;
 left: 0;
 padding: 0;
+margin-bottom: 0;
 }
 .breadcrumb a, .breadcrumb span{
     position: relative;
@@ -431,11 +432,12 @@ body.node-type-nos-produits h1.page-header {
     position: absolute;
     text-transform: uppercase;
     display: block;
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: bold;
     left: 3%;
-    top:4%;
+    top:2%;
     padding-bottom: 0;
+    padding-top: 7px;
     z-index: 10;
 }
 body.node-type-nos-produits section#test {
@@ -452,4 +454,26 @@ body.node-type-nos-produits section#test {
 body.node-type-nos-produits  div.body{
     padding: 15px;
 } 
-
+footer div.view-id-contact ul {
+    list-style: none ;
+}
+.img_prod.row {
+    margin-top: -19px;
+}
+#block-menu-menu-menu-principal ul li {
+    background: rgb(255, 0, 0) none repeat scroll 0 0;
+    display: inline-block;
+    padding: 10px;
+}
+#block-menu-menu-menu-principal ul li ul.dropdown-menu {
+   top:-3000px;
+}
+#block-menu-menu-menu-principal ul li:hover ul.dropdown-menu {
+   top:100%;
+   width: 100%;
+   background-color: blue;
+}
+section#block-menu-menu-menu-principal {
+    text-align: center;
+    margin-bottom: 25px;
+}
