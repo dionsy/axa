@@ -26,7 +26,9 @@ body
     background-attachment: fixed;
      background-color:#EDF7F2 ;
      overflow-x: hidden;
-     font-family: "OpenSans",Arial,Helvetica,sans-serif;
+     font-family: georgia,"OpenSans",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.2px;
     
     
 }/*
@@ -60,7 +62,7 @@ ul,li,div{
 
 ul{
 	padding: 0;
-	list-style: outside none none;
+	/*list-style: outside none none;*/
 }
 h1.page-header {
 	color: #23488b;
@@ -169,7 +171,7 @@ h1.page-header {
 
 
 .outside{
-	width: 95%;
+	width: 97%;
 	box-shadow: 2px 2px 0 rgba(235,234,230,0.8);
 	margin: auto;
 	overflow: hidden;
@@ -184,8 +186,8 @@ h1.page-header {
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2{
  text-transform: uppercase;
- font-size: 1.125em;
- margin-left: 15px;
+ font-size: 1.0em;
+ margin-left: 13px;
  margin-bottom: 5px;
  color: #ED1846;
  font-weight: bold;
@@ -222,7 +224,7 @@ h1.page-header {
     position: relative;
 }
 .outside:hover .outsides::before {
-    top: 46%;
+    top: 43%;
 }
 .Loisirs-vie .outsides::before,
 .Habitation .outsides::before,
@@ -233,8 +235,8 @@ h1.page-header {
     content: "";
     display: block;
     left: 0;
-    margin-left:12px;
-    margin-right:7px; 
+    margin-left:9px;
+    margin-right:5px; 
     position: absolute;
     right: 0;
     top: 100%;
@@ -276,8 +278,8 @@ li.Auto:hover .outside{
 	border-color: #ED1846 !important;
 }*/
 .outside p{
-	margin-left: 19px;
-	margin-right: 10px;
+	margin-left: 13px;
+	margin-right: 8px;
 	margin-bottom: 12px;
 	height: 50px;
 	position: relative;
@@ -913,6 +915,7 @@ a.asligne {
    display: block;
    font-size: 1.3em;
    color: #103184;
+   margin-top: 40px;
 }
  #block-views-frontpage-block-2 ul li a {
    display: block;
@@ -1412,3 +1415,24 @@ section#block-views-agence-axa-block-1 {
     background: RGBa(169, 15, 39,0.2);
 }
 */
+body.node-type-nos-produits .body ul {
+    padding-left: 22px;
+}
+body.node-type-nos-produits .body h3 {
+    font-size: 1.2em;
+    border-bottom: 1px solid rgb(16, 49, 132);
+    color: rgb(16, 49, 132);
+}
+section#block-views-frontpage-block-3 ul.container::before {
+    border-bottom: 1px solid rgb(16, 49, 132);
+    color: rgb(16, 49, 132);
+    content: "AUTRES OFFRES";
+    display: block;
+    font-size: 1.8em;
+    margin-left: 15px;
+    text-align: left;
+}
+div.offres .offre {
+    margin-bottom: 10px;
+    margin-left: 5px;
+}

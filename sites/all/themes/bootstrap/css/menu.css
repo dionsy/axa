@@ -323,8 +323,10 @@ li div.offre p {
 }
 .node-nos-produits .field-name-field-image-produit div img {
     float: right;
-    height: 260px;
-    width: 55%;
+    height: 210px;
+    position: relative;
+    width: 58%;
+    z-index: 2;
 }
 .node-type-nos-produits section#test {
     background-color: #fff;
@@ -343,15 +345,15 @@ li div.offre p {
 #block-system-main div.field.field-name-body.field-type-text-with-summary.field-label-hidden {
     display: inline-flex;
 }
-section#block-system-main article
+/*section#block-system-main article
 {
     background-color: #103184;
 }
 section#block-system-main article .field-items {
     background: rgb(255, 255, 255) none repeat scroll 0 0;
-}
+}*/
 
-section#block-system-main article div.field-name-field-image-produit div.field-items .field-item::after{
+/*section#block-system-main article div.field-name-field-image-produit div.field-items .field-item::after{
   content: "";
 
   position: absolute;
@@ -366,4 +368,42 @@ section#block-system-main article div.field-name-field-image-produit div.field-i
   -moz-border-radius:7px;
   -webkit-border-radius:7px;
    border-radius:7px;
+} */
+section#block-system-main article div.field-name-field-image-produit div.field-items .field-item::after{
+    content: url('../images/axa.png');
+    float: left;
+    height: auto;
+    margin-left: 4px;
+    max-width: 100%;
+    position: absolute;
+    z-index: 2;
 } 
+body.node-type-nos-produits h1.page-header {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.4px;
+    position: absolute;
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.8em;
+    font-weight: bold;
+    left: 3%;
+    top:4%;
+    padding-bottom: 0;
+    z-index: 10;
+}
+body.node-type-nos-produits section#test {
+    padding: 0;
+}
+.img_prod.row div {
+    padding-left: 0 ! important;
+    padding-right: 0 ! important;
+}
+/*.img-responsive.offres {
+    height: 238px;
+    width: 450px;
+}*/
+body.node-type-nos-produits  div.body{
+    padding: 15px;
+}
