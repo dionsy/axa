@@ -14,7 +14,7 @@
  *
  * @ingroup theme_preprocess
  */
-function bootstrap_preprocess_breadcrumb(&$variables) {
+/*function bootstrap_preprocess_breadcrumb(&$variables) {
   // Do not modify breadcrumbs if the Path Breadcrumbs module should be used.
   if (_bootstrap_use_path_breadcrumbs()) {
     return;
@@ -24,9 +24,13 @@ function bootstrap_preprocess_breadcrumb(&$variables) {
 
   // Optionally get rid of the homepage link.
   $show_breadcrumb_home = bootstrap_setting('breadcrumb_home');
-  if (!$show_breadcrumb_home) {
-    array_shift($breadcrumb);
-  }
+
+ //krumong('main')->kPrint($show_breadcrumb_home);
+  //$accueil = $variables['breadcrumb'][0];
+
+  //if (!$show_breadcrumb_home) {
+   // array_shift($breadcrumb);
+  //}
 
   if (bootstrap_setting('breadcrumb_title') && !empty($breadcrumb)) {
     $item = menu_get_item();
@@ -41,3 +45,4 @@ function bootstrap_preprocess_breadcrumb(&$variables) {
     }
   }
 }
+*/
