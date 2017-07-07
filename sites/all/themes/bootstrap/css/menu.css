@@ -322,8 +322,9 @@ li div.offre p {
     font-weight: bold;
 }
 .node-nos-produits .field-name-field-image-produit div img {
-    width: 100%;
+    float: right;
     height: 260px;
+    width: 55%;
 }
 .node-type-nos-produits section#test {
     background-color: #fff;
@@ -339,6 +340,7 @@ li div.offre p {
     border: 2px solid rgb(0, 0, 0);
 }
 */
+
 
 /*Breadcrump*/
 .breadcrumb{ 
@@ -381,3 +383,32 @@ padding: 0;
 .breadcrumb a::after{
     color: #103184;
 }
+
+#block-system-main div.field.field-name-body.field-type-text-with-summary.field-label-hidden {
+    display: inline-flex;
+}
+section#block-system-main article
+{
+    background-color: #103184;
+}
+section#block-system-main article .field-items {
+    background: rgb(255, 255, 255) none repeat scroll 0 0;
+}
+
+section#block-system-main article div.field-name-field-image-produit div.field-items .field-item::after{
+  content: "";
+
+  position: absolute;
+  width:16%;
+  left: 29%;
+  top: 17.2%;
+  -webkit-transform: skew(26deg, 137deg);
+  -moz-transform: skew(26deg, 137deg);
+  -o-transform: skew(26deg, 137deg);
+  transform: skew(26deg, 137deg);
+  border-top:10px solid #ED1846;
+  -moz-border-radius:7px;
+  -webkit-border-radius:7px;
+   border-radius:7px;
+} 
+
