@@ -9,9 +9,11 @@ stylesheets[screen][] = slick/slick-theme.css
 stylesheets[screen][] = css/style.css
 stylesheets[screen][] = css/form.css
 stylesheets[screen][] = css/menu.css
+stylesheets[screen][] = css/map.css
 
 scripts[] = slick/slick.min.js
 scripts[] = js/script.js
+scripts[] = js/app.js
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; SimplyTest.me
