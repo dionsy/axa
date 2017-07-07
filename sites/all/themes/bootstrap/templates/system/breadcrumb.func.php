@@ -32,9 +32,9 @@ function bootstrap_breadcrumb($variables) {
 
      $node = $trail[1]['map'][1];
      $type= $node->type;
-     $tid= $node->field_type_de_contrat['und'][0]['tid'];
+     /*$tid= $node->field_type_de_contrat['und'][0]['tid'];
      $taxo = taxonomy_term_load($tid);
-     $type_contrat = $taxo->name;
+     $type_contrat = $taxo->name;*/
 
     switch ($type) {
       case 'nos_produits':

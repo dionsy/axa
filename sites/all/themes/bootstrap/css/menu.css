@@ -354,7 +354,7 @@ padding: 0;
 }
 .breadcrumb a, .breadcrumb span{
     position: relative;
-    padding: 1px .5em 1px 1.2em;
+    padding: 1px .5em 3px 1.2em;
     margin-right: 1em;
     color: #fff;
     background-color: #6B82B1;
@@ -453,3 +453,6 @@ body.node-type-nos-produits  div.body{
     padding: 15px;
 } 
 
+.page-contact #test{
+    background-color: #fff;
+}
