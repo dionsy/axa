@@ -92,6 +92,12 @@ function bootstrap_css_alter(&$css) {
     $excludes = array_merge($excludes, str_replace('.css', '-rtl.css', $excludes));
     $css = array_diff_key($css, drupal_map_assoc($excludes));
   }
+
+      /*$result = db_query('SELECT uid, name FROM {users} WHERE uid IN (:uids)', array(':uids' => array_keys($users)));
+     foreach ($result as $record) {
+        $users[$record->uid]->name = $record->name;
+      }
+      dsm($users);*/
 }
 
 /**
@@ -442,7 +448,17 @@ function bootstrap_js_callback_filter_xss_alter(array &$allowed_tags = array()) 
 
 
 
-function bootstrap_field_views_data($field) {
-  krumong('main')->kPrint($field);
 
+
+
+function bootstrap_webform_submit($node, $submission){
+  krumong()->kPrint($submission);
+}
+
+function bootstrap_webform_submission_load(&$submissions) {
+ krumong('main')->kPrint($submissions);
+ print '<h1>DDDDDDDDDDDDDDDDDD</h1>';
+  /*foreach ($submissions as $sid => $submission) {
+    $submissions[$sid]->new_property = 'foo';
+  }*/
 }

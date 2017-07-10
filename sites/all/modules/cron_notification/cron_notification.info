@@ -1,0 +1,7 @@
+name = "Cron Notification"
+description = "Notification send Mail SMS cron run"
+core= "7.x"
+version = "7.x-1.0"
+configure = admin/config/system/cron_notification
+dependencies[] = libraries
+dependencies[] = date

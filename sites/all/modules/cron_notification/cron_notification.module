@@ -1,0 +1,328 @@
+<?php
+/**
+ * @file
+ * Cron Notifcation module
+ */
+
+/**
+ * Define constants for cron_notification
+ */
+define('CRON_NOTIFICATION_ADMIN_PATH', 'admin/config/system/cron_notification');
+
+
+
+/**
+ * Load module include files.
+ */
+module_load_include('inc', 'cron_notification', 'cron_notification.codes');
+module_load_include('inc', 'cron_notification', 'cron_notification.admin');
+
+
+/**
+ * Implements hook_libraries_info().
+ */
+function cron_notification_libraries_info() {
+  $libraries['twilio'] = array(
+    'name' => 'Twilio library',
+    'vendor url' => 'http://www.twilio.com',
+    'download url' => 'https://github.com/twilio/twilio-php/tarball/latest',
+    'path' => 'Services',
+    'version' => '2010-04-01',
+    'files' => array(
+      'php' => array(
+        'Twilio.php',
+      ),
+    ),
+  );
+
+  $libraries['phpmailer'] = array(
+    'name' => 'PHPMailer library',
+    'vendor url' => 'http://www.phpmailer.com',
+    'download url' => 'https://github.com/PHPMailer/PHPMailer',
+    'path' => '.',
+    'version' => '5.2.23',
+    'files' => array(
+      'php' => array(
+        'PHPMailerAutoload.php',
+      ),
+    ),
+  );
+  return $libraries;
+}
+
+
+/**
+ * Implements hook_permission()
+ */
+function cron_notification_permission() {
+  return array(
+    'administer  cron_notification' => array(
+    'title' => t('Administer cron notification'),
+    'description' => t('Perform administration tasks for cron notification.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu()
+ */
+function cron_notification_menu() {
+  $items[CRON_NOTIFICATION_ADMIN_PATH] = array(
+    'title' => 'Cron Notification Settings',
+    'description' => 'Administer your Cron Notification sms settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cron_notification_admin_form'),
+    'access arguments' => array('administer cron_notification'),
+    'file' => 'cron_notification.admin.inc',
+  );
+
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/settings_sms'] = array(
+    'title' => 'Settings SMS',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
+
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/setting_mail'] = array(
+    'title' => 'Setting Mail',
+    'description' => 'Administer your Cron Notification Mail',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cron_notification_admin_settings_mail_form'),
+    'access arguments' => array('administer cron_notification'),
+    'file' => 'cron_notification.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+  );
+
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/sms'] = array(
+    'title' => 'Sending SMS',
+    'description' => 'Administer your Cron Notification SMS',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cron_notification_admin_sms_form'),
+    'access arguments' => array('administer cron_notification'),
+    'file' => 'cron_notification.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => -5,
+  );
+
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/mail'] = array(
+    'title' => 'Sending Mail',
+    'description' => 'Administer your Cron Notification mail settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cron_notification_admin_mail_form'),
+    'access arguments' => array('administer cron_notification'),
+    'file' => 'cron_notification.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 5,
+  );
+
+
+  return $items;
+}
+
+/**
+* Implements hook_cron().
+*/
+function cron_notification_cron() {
+  # For sms notification
+  $code = variable_get('cron_notification_country_codes', FALSE)[221];
+  $body = variable_get('cron_notification_sms_text');
+  #For mail notification 
+  $subject = variable_get('cron_notification_mail_subject');
+  $body = variable_get('cron_notification_mail_body');
+  # get last submissions for all users
+  $values = variable_get('values');
+  $clients = user_load_by_role("client");
+  # Week intervalle
+  $periodes_list = array(
+    0 => 'P1W',
+    1 => 'P2W',
+    2 => 'P3W',
+    3 => 'P4W',
+  );
+
+  foreach ($clients as $client) {
+    # code...
+    $uid = $client->uid;
+    $number_client = '+' . $code . $client->field_numero_telephone['und'][0]['value'];
+    
+    # Notification choice: SMS or/and Mail
+    $choice = $values[$uid][$uid][1];
+    # Notification periode
+    $periode = $values[$uid][$uid][2][0];
+    # Defaults values
+    $choice = $choice ? $choice : array("SMS","MAIL");
+    $periode = $periode ? $periode : 0;
+
+    # Today
+    $date = new DateTime(); 
+    # Date of end of contrat
+    $date_fin = $client->field_fin_contrat['und'][0]['value'];
+    $fin_contrat = new DateTime($date_fin); 
+    # Today + Choice notification periode
+    $date_intervalle = new DateInterval($periodes_list[$periode]);
+    $date->add($date_intervalle);
+    # To limit the notification to one day:
+    $date_majorant = new DateTime($date_fin); 
+    $date_majorant->add(new DateInterval('P1D'));
+
+    if($date >= $fin_contrat && $date <= $date_majorant ){
+      if(in_array("MAIL", $choice)){
+        # send email
+        cron_notification_send_mail($client->mail, $subject, $body);      
+      }
+          
+      if (($library = libraries_load(TWILIO_LIBRARY)) &&
+           !empty($library['loaded']) &&
+           in_array("SMS", $choice)) {
+        # send sms
+        cron_notification_send_sms($number_client, $body);
+        
+      }
+    }
+    
+  }
+
+}
+
+/**
+ * Sends a message via Twilio.
+ *
+ * @param string $number_client
+ *   The phone number of the recipient
+ *
+ * @param string $body
+ *   The message to send to the recipient
+ *
+ * @return bool
+ *   TRUE or FALSE if the message was successfully sent.
+ */
+function cron_notification_send_sms($number_client, $body){
+  # get value from the admin form 
+  $account_sid = variable_get('cron_notification_account_sid');
+  $auth_token = variable_get('cron_notification_account_auth');
+  $from = variable_get('cron_notification_number');
+
+  return $client = new Services_Twilio($account_sid, $auth_token);
+            $client->account->messages->create(array(
+              # To Number 
+              'To' => $number_client,
+              # Your twilio number
+              'From' => $from,
+              # Body message
+              'Body' => $body,
+          ));
+}
+
+/**
+ * Sends a mail via PHPMailer.
+ *
+ * @param string $to
+ *   The mail address of the recipient
+ *
+ * @param string $subject
+ *   The subject message
+ *
+ * @param string $body
+ *   The body message
+ *
+ * @return bool
+ *   TRUE or FALSE if the message was successfully sent.
+ */
+function cron_notification_send_mail($to, $subject, $body){
+  $host = variable_get('cron_notification_mail_smtp');
+  $smtp_secure = variable_get('cron_notification_mail_smtpsecure');
+  $port = (int) variable_get('cron_notification_mail_port');
+  $username = variable_get('cron_notification_mail_username');
+  $password = variable_get('cron_notification_mail_password');
+  $altbody = variable_get('cron_notification_mail_altbody');
+
+  $mail = new PHPMailer;
+  # Set mailer to use SMTP
+  $mail->isSMTP();
+  # Specify main and backup SMTP servers                             
+  $mail->Host = $host;
+  # Enable SMTP authentication  
+  $mail->SMTPAuth = true;                      
+  
+  # SMTP username 
+  $mail->Username = $username;
+  # SMTP password                 
+  $mail->Password = $password;
+  # Enable TLS encryption, 'ssl' also accepted                 
+  $mail->SMTPSecure = $smtp_secure;
+  # TCP port to connect to           
+  $mail->Port = $port;                          
+
+  # Add a recipient
+  $mail->addAddress($to);
+  # Set email format to HTML     
+  $mail->isHTML(true);                                           
+
+  $mail->Subject = $subject;
+  $mail->Body    = $body;
+  $mail->AltBody = $altbody;
+
+  return $mail->send();
+  
+}
+
+/**
+ * load all users by role.
+ *
+ * @param string $role
+ *   The users role
+ *
+ * @return users
+ *   array of users selected by role.
+ */
+function user_load_by_role($role){
+  $tab_roles = array('admin', 'client', 'authentificate user');
+  $clients = array();
+  if (in_array($role, $tab_roles)) {
+    $users = entity_load('user');
+    foreach ($users as $user) {
+      # code...
+      if (in_array($role, $user->roles)) {
+        $clients[] = $user;
+      }
+    }
+  }
+  return $clients;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function cron_notification_form_alter(&$form, &$form_state, $form_id) {
+    module_load_include('inc','webform','includes/webform.submissions');
+
+    //load all clients
+    $clients = user_load_by_role("client");
+    //nid preference webform
+    $nid = '86';
+    $values = array();
+
+    foreach ($clients as $client) {
+      # code...
+      $filters = array(
+        'nid' => '86',
+        'uid' => $client->uid,
+      );
+      
+      //Retrieve all submissions filtered by user and nid
+      $submissions = webform_get_submissions($filters);
+        
+      //last submit for each user
+      foreach ($submissions as $submission) {
+        # code...
+        $value = array(
+          $client->uid => $submission->data,
+        );
+      }
+
+      $values[$client->uid] = $value; 
+    }
+
+    variable_set("values", $values);
+
+}
