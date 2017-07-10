@@ -13,12 +13,7 @@
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
 }
-body.front
-{
 
- background-image: url('../images/backgroud.jpg');
-
-}
 body
 {
      background-color:#EDF7F2 ;
@@ -31,7 +26,15 @@ body
     letter-spacing: 0.2px;
     
     
-}/*
+}
+body.front
+{
+
+ background-image: url('../images/backgroud.jpg');
+
+}
+
+/*
 =======
 >>>>>>> 06f7dac63dae683bccac76d6037cddca02f915ca
      position: relative;
@@ -211,9 +214,13 @@ h1.page-header {
     position: relative;
 }
 .outside:hover h2{
- 	color: black;
+ 	color: #fff;
     z-index: 11;
     position: relative;
+    text-shadow: -1px 0 0 #ED1846, 
+             1px 0 0 #ED1846,
+             0 -1px 0 #ED1846,
+             0 1px 0 #ED1846;
 }
 .outside:hover a:hover{
 	text-decoration:underline !important;
@@ -236,7 +243,7 @@ h1.page-header {
     display: block;
     left: 0;
     margin-left:9px;
-    margin-right:5px; 
+    margin-right:4px; 
     position: absolute;
     right: 0;
     top: 100%;
@@ -638,9 +645,22 @@ body, html {
     margin-bottom: 0px;
     position:relative;
 }
+.footer {
+    background: rgb(35, 72, 139) none repeat scroll 0 0;
+    border: 0 none;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    width: 100%;
+}
 
+footer.footer div.col-md-12.col-lg-12.col-xs-12 {
+    margin-left: 5%;
+    margin-top: 32px;
+}
 
-.footer{
+/*.footer{
     position: absolute !important;
     left: 0;
     right: 0;
@@ -650,11 +670,11 @@ body, html {
     width: 100%;
     background: none repeat scroll 0 0 #23488B !important;
 }
-
-.page{
+*/
+/*.page{
     padding-bottom: 300px;
 }
-
+*/
 * {-moz-box-sizing: border-box; box-sizing: border-box;}
 
 
@@ -1424,7 +1444,7 @@ body.node-type-nos-produits .body h3 {
     color: rgb(16, 49, 132);
 }
 section#block-views-frontpage-block-3 ul.container::before {
-    border-bottom: 2px solid rgb(16, 49, 132);
+    border-bottom: 2px solid #D62723;
     color: rgb(16, 49, 132);
     content: "AUTRES OFFRES";
     display: block;

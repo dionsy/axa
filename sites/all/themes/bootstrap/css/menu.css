@@ -275,6 +275,7 @@ li div.offres a.img_link {
 } 
 li div.offres a img {
    transition: all 0.5s ease 0s;
+   width: 100%;
 }
 
 li div.offres a.img_link:hover .img-responsive  {
@@ -348,10 +349,11 @@ li div.offre p {
 .breadcrumb{ 
 background: none;
 position: relative;
-top: -20px;
+top: -35px;
 left: 0;
 padding: 0;
 margin-bottom: 0;
+float: left;
 }
 .breadcrumb a, .breadcrumb span{
     position: relative;
@@ -460,6 +462,9 @@ footer div.view-id-contact ul {
 .img_prod.row {
     margin-top: -19px;
 }
+.img_prod.row  div img{
+    height: 150px;
+}
 #block-menu-menu-menu-principal ul li {
     background: rgb(255, 0, 0) none repeat scroll 0 0;
     display: inline-block;
@@ -471,7 +476,7 @@ footer div.view-id-contact ul {
 #block-menu-menu-menu-principal ul li:hover ul.dropdown-menu {
    top:100%;
    width: 100%;
-   background-color: blue;
+   background-color: #fff;
 }
 section#block-menu-menu-menu-principal {
     text-align: center;

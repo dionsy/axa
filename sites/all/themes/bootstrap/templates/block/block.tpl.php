@@ -140,19 +140,22 @@ switch ($block->delta) {
 	break;
 
 	case 'contact-block':
-		$class="col-md-4 col-lg-4 col-xs-12";
+		$class="col-md-4 col-lg-4 col-sm-6 col-xs-12";
 	break;
 
 	case 'menu-footer':
-		$class="col-md-4 col-lg-4 col-xs-12";
+		$class="col-md-4 col-lg-4 col-sm-6 col-xs-12";
 	break;
 	case 'menu-r-seaux-sociaux-':
-		$class="col-md-4 col-lg-4 col-xs-12";
+		$class="col-md-4 col-lg-4 col-sm-6 col-xs-12";
+	break;
+			case 'main':	
+		$class="col-md-12 col-lg-12 col-sm-12 col-xs-12";
 	break;
 
-	case 'main':
+/*	case 'main':
 		$class="col-md-5 col-lg-5 col-xs-12";
-	break;	
+	break;*/	
 
 	case '3':
 	$class="col-md-7 col-lg-7 col-xs-12";

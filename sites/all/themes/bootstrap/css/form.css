@@ -57,6 +57,8 @@ ul.tabs--primary li
    border: 2px solid #ED1846;
    border-radius: 7px 7px 7px 7px;
    padding-right: 20px;
+   margin-left: 30px;
+   /*width: 25%;*/
 }
 
 
@@ -422,7 +424,7 @@ ul.tabs--primary li
     margin:auto;
 }
 .node-webform{
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     background: #fff;
 }
 
@@ -508,4 +510,13 @@ ul.tabs--primary li
     margin: auto;
     padding-bottom: 2%;
 }
+div#quicktabs-tabpage-left_menu-3 article.node {
+    padding: 25px;
+} 
+div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous-etre-notifie ,
+.webform-component--periode {
+    margin-left: 10%;
+    margin-top: 25px;
+} 
+
 
