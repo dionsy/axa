@@ -44,8 +44,7 @@
  *
  * @ingroup templates
  */
-$contenu_map='<div class="map" id="map">
-<div class="map__list">
+/*<div class="map__list">
 				<ul>
 					<li><a id="list-DK" href="#">Dakar</a></li>
 					<li><a id="list-DB" href="#">Diourbel</a></li>
@@ -62,7 +61,9 @@ $contenu_map='<div class="map" id="map">
 					<li><a id="list-TH" href="#">Thies</a></li>
 					<li><a id="list-ZG" href="#">Ziguinchor</a></li>	
 				</ul>		
-			</div>
+			</div>*/
+$contenu_map='<div class="map" id="map">
+
 			<div class="map__image">
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-20 300 700 800">
 					<g>
@@ -114,7 +115,7 @@ $contenu_map='<div class="map" id="map">
 			</div>
 		</div>';
 
-//krumong('main')->kPrint($block->delta);
+//krumong('main')->kPrint($block);
 //krumong('main')->kPrint($content);
 
 $class='';
@@ -149,17 +150,13 @@ switch ($block->delta) {
 	case 'menu-r-seaux-sociaux-':
 		$class="col-md-4 col-lg-4 col-sm-6 col-xs-12";
 	break;
-			case 'main':	
+	case 'main':	
 		$class="col-md-12 col-lg-12 col-sm-12 col-xs-12";
 	break;
 
-/*	case 'main':
-		$class="col-md-5 col-lg-5 col-xs-12";
-	break;*/	
 
 	case '3':
-	$class="col-md-7 col-lg-7 col-xs-12";
-	$content=$contenu_map;
+		$content=$contenu_map;
 	break;
 	
 	

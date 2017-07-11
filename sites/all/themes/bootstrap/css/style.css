@@ -1,4 +1,10 @@
-
+.page-contact .container{
+    position: relative;
+}
+.page-contact .main-container{
+    background-color: #fff;
+    
+}
 #block-block-1,
 #block-block-2{
     min-height: 250px;

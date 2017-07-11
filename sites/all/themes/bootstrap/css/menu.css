@@ -348,7 +348,7 @@ li div.offre p {
 /*Breadcrump*/
 .breadcrumb{ 
 background: none;
-position: relative;
+position: absolute;
 top: -35px;
 left: 0;
 padding: 0;
