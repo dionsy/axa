@@ -113,7 +113,7 @@ if(isset($variables['theme_hook_suggestions'][2]) && $variables['theme_hook_sugg
   else
     $variables['theme_hook_suggestions'][2] = 'page__user';*/
 }
-// krumong('main')->kPrint($variables);
+//krumong('main')->kPrint($variables);
 
 
  //krumong('main')->kPrint($variables);
