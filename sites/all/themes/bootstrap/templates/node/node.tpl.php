@@ -96,7 +96,8 @@
   </header>
   <?php endif; ?>
   <?php
-    // Hide comments, tags, and links now so that we can render them later.
+    // Hide comments, tags, and links now so that we can render them later.g
+
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);

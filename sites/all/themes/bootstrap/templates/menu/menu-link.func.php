@@ -1,4 +1,12 @@
 <?php
+
+
+function bootstrap_node_view_alter(&$build){
+  krumong('main')->kPrint($build,'node');
+  
+}
+
+
 /**
  * @file
  * Stub file for bootstrap_menu_link() and suggestion(s).
@@ -23,8 +31,50 @@ function bootstrap_menu_link(array $variables) {
   $sub_menu = '';
   $class='';
   $prefix ='';
+  $list_nid =array();
 
- 
+  $below =$element['#below'];
+
+if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
+  if($below){
+   // krumong('main')->kPrint($below,'below');
+
+  foreach ($below as $elt) {  
+
+    if(isset($elt['#href']) && !empty($elt['#href']))      
+       $nid = explode('/', $elt['#href']);
+
+      if(isset($nid[1])){
+       array_push($list_nid, $nid[1]);
+      }
+    # code...
+   // krumong('main')->kPrint($list_nid,'nid');
+  }
+  }
+//  n.nid in ($list_nid)
+}
+// Return all nids of nodes of type "page".
+ $nid_array = array();
+ /*for (i= 0 ; i<$list_nid.lenght ; i++) { 
+    $nid_array[i] = $list_nid[i];
+ }*/
+/*  krumong('main')->kPrint($elt,'nid');*/
+$nids = db_select('node', 'n')
+    ->fields('n')
+    ->fields('n', array('nid'))
+    ->fields('n', array('type'))
+    ->condition(db_and()->condition('n.type', 'nos_produits')->condition('n.nid',array(83,84,91),'IN'))
+    ->execute()
+    ->fetchCol(); // returns an indexed array
+
+// Now return the node objects.
+$nodes = node_load_multiple($nids);
+/*krumong('main')->kPrint($nodes,'nids');*/
+
+
+//krumong('main')->kPrint($nodes);
+
+
 
   $options = !empty($element['#localized_options']) ? $element['#localized_options'] : array();
 
@@ -52,6 +102,8 @@ function bootstrap_menu_link(array $variables) {
   if ($element['#below']) {
     // Prevent dropdown functions from being added to management menu so it
     // does not affect the navbar module.
+//krumong('main')->kPrint($element['#below']);
+
     if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
       $sub_menu = drupal_render($element['#below']);
     }

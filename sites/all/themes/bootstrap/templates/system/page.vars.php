@@ -14,6 +14,8 @@
  * @ingroup theme_preprocess
  */
 function bootstrap_preprocess_page(&$variables) {
+//krumong('main')->kPrint($variables['node']);
+
 
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
