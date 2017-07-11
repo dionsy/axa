@@ -1,4 +1,10 @@
-
+.page-contact .container{
+    position: relative;
+}
+.page-contact .main-container{
+    background-color: #fff;
+    
+}
 #block-block-1,
 #block-block-2{
     min-height: 250px;
@@ -13,17 +19,28 @@
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
 }
+
+body
+{
+     background-color:#EDF7F2 ;
+    background-size: cover;
+    background-attachment: fixed;
+     background-color:#EDF7F2 ;
+     overflow-x: hidden;
+     font-family: georgia,"OpenSans",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    
+    
+}
 body.front
 {
 
  background-image: url('../images/backgroud.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-	 background-color:#EDF7F2 ;
-	 overflow-x: hidden;
-	 font-family: "OpenSans",Arial,Helvetica,sans-serif;
-	
-}/*
+
+}
+
+/*
 =======
 >>>>>>> 06f7dac63dae683bccac76d6037cddca02f915ca
      position: relative;
@@ -54,7 +71,7 @@ ul,li,div{
 
 ul{
 	padding: 0;
-	list-style: outside none none;
+	/*list-style: outside none none;*/
 }
 h1.page-header {
 	color: #23488b;
@@ -93,7 +110,7 @@ h1.page-header {
 	border-radius: 0;
 }
 .row{
-	margin-right: 0;
+/*	margin-right: 0;*/
 	margin-left: 0;
 }
 
@@ -163,7 +180,7 @@ h1.page-header {
 
 
 .outside{
-	width: 95%;
+	width: 97%;
 	box-shadow: 2px 2px 0 rgba(235,234,230,0.8);
 	margin: auto;
 	overflow: hidden;
@@ -172,15 +189,14 @@ h1.page-header {
 
 
 .view-id-frontpage ul{
-	width: 100%;
 	margin: auto;
 	list-style: outside none none; 
 }
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2{
  text-transform: uppercase;
- font-size: 1.125em;
- margin-left: 15px;
+ font-size: 1.0em;
+ margin-left: 13px;
  margin-bottom: 5px;
  color: #ED1846;
  font-weight: bold;
@@ -204,9 +220,13 @@ h1.page-header {
     position: relative;
 }
 .outside:hover h2{
- 	color: black;
+ 	color: #fff;
     z-index: 11;
     position: relative;
+    text-shadow: -1px 0 0 #ED1846, 
+             1px 0 0 #ED1846,
+             0 -1px 0 #ED1846,
+             0 1px 0 #ED1846;
 }
 .outside:hover a:hover{
 	text-decoration:underline !important;
@@ -217,7 +237,7 @@ h1.page-header {
     position: relative;
 }
 .outside:hover .outsides::before {
-    top: 46%;
+    top: 43%;
 }
 .Loisirs-vie .outsides::before,
 .Habitation .outsides::before,
@@ -228,8 +248,8 @@ h1.page-header {
     content: "";
     display: block;
     left: 0;
-    margin-left:12px;
-    margin-right:7px; 
+    margin-left:9px;
+    margin-right:4px; 
     position: absolute;
     right: 0;
     top: 100%;
@@ -271,8 +291,8 @@ li.Auto:hover .outside{
 	border-color: #ED1846 !important;
 }*/
 .outside p{
-	margin-left: 19px;
-	margin-right: 10px;
+	margin-left: 13px;
+	margin-right: 8px;
 	margin-bottom: 12px;
 	height: 50px;
 	position: relative;
@@ -631,9 +651,22 @@ body, html {
     margin-bottom: 0px;
     position:relative;
 }
+.footer {
+    background: rgb(35, 72, 139) none repeat scroll 0 0;
+    border: 0 none;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    width: 100%;
+}
 
+footer.footer div.col-md-12.col-lg-12.col-xs-12 {
+    margin-left: 5%;
+    margin-top: 32px;
+}
 
-.footer{
+/*.footer{
     position: absolute !important;
     left: 0;
     right: 0;
@@ -643,12 +676,17 @@ body, html {
     width: 100%;
     background: none repeat scroll 0 0 #23488B !important;
 }
-
-.page{
+*/
+/*.page{
     padding-bottom: 300px;
 }
+<<<<<<< HEAD
 
 * {-moz-box-si22zing: border-box; box-sizing: border-box;}
+=======
+*/
+* {-moz-box-sizing: border-box; box-sizing: border-box;}
+>>>>>>> ea35e967bd65fbcc72a4014fdf3ec956e7d94175
 
 
 /*.footer .nav > li {
@@ -908,6 +946,7 @@ a.asligne {
    display: block;
    font-size: 1.3em;
    color: #103184;
+   margin-top: 40px;
 }
  #block-views-frontpage-block-2 ul li a {
    display: block;
@@ -1407,6 +1446,31 @@ section#block-views-agence-axa-block-1 {
     background: RGBa(169, 15, 39,0.2);
 }
 */
+
 .page-user .field-type-date.field-name-field-fin-contrat.field-widget-date-text.form-wrapper.form-group{
     display: none;
 }
+
+body.node-type-nos-produits .body ul {
+    padding-left: 22px;
+}
+body.node-type-nos-produits .body h3 {
+    font-size: 1.2em;
+    border-bottom: 1px solid rgb(16, 49, 132);
+    color: rgb(16, 49, 132);
+}
+section#block-views-frontpage-block-3 ul.container::before {
+    border-bottom: 2px solid #D62723;
+    color: rgb(16, 49, 132);
+    content: "AUTRES OFFRES";
+    display: block;
+    font-size: 1.8em;
+    margin-left: 15px;
+    text-align: left;
+     width: 35%;
+}
+div.offres .offre {
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+

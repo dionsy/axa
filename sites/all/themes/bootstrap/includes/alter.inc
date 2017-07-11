@@ -229,7 +229,11 @@ function _bootstrap_element_info_array_merge($info, $cached) {
 /**
  * Implements hook_form_alter().
  */
+
+
+
 function bootstrap_form_alter(array &$form, array &$form_state = array(), $form_id = NULL) {
+//dsm($form);
   if ($form_id) {
     switch ($form_id) {
       case 'system_theme_settings':
@@ -447,18 +451,3 @@ function bootstrap_js_callback_filter_xss_alter(array &$allowed_tags = array()) 
 }
 
 
-
-
-
-
-function bootstrap_webform_submit($node, $submission){
-  krumong()->kPrint($submission);
-}
-
-function bootstrap_webform_submission_load(&$submissions) {
- krumong('main')->kPrint($submissions);
- print '<h1>DDDDDDDDDDDDDDDDDD</h1>';
-  /*foreach ($submissions as $sid => $submission) {
-    $submissions[$sid]->new_property = 'foo';
-  }*/
-}

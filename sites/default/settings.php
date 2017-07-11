@@ -260,8 +260,13 @@
 //     ),
 //   ),
 // );
+<<<<<<< HEAD
 /*
 $databases = array (
+=======
+
+/*$databases = array (
+>>>>>>> ea35e967bd65fbcc72a4014fdf3ec956e7d94175
   'default' => 
   array (
     'default' => 
@@ -285,8 +290,8 @@ $databases = array (
     array (
       'database' => 'axa',
       'username' => 'root',
-      'password' => '',
-      'host' => 'localhost',
+      'password' => '@tosdev',
+      'host' => '10.94.216.37',
       'port' => '3306',
       'driver' => 'mysql',
       'prefix' => '',

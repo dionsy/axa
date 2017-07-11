@@ -1,0 +1,39 @@
+#map{
+	overflow: hidden;
+}
+.map__image{
+	width: 80%;
+	float: left;
+}
+
+.map__image path{
+	fill:#E6B285;
+	stroke:#fff;
+	stroke-width:1px;
+	transition: fill 2s;
+}
+.map__image #region-TH path:hover,
+.map__image #region-DK path:hover,
+.map__image #region-SL path:hover,
+.map__image #region-ZG path:hover,
+.map__image path:hover{
+	fill:rgba(16, 49, 132,.5);
+	/*cursor: pointer;*/
+}
+.map__image #region-TH path,
+.map__image #region-DK path,
+.map__image #region-SL path,
+.map__image #region-ZG path
+{
+	fill:#103184;
+}
+.map__list{
+	width: 20%;
+	float: left;
+}
+
+.map__list a{
+	color: inherit;
+	transition: color 2s;
+	text-decoration: none;
+}

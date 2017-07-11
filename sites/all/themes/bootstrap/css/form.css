@@ -57,6 +57,9 @@ ul.tabs--primary li
    border: 2px solid #ED1846;
    border-radius: 7px 7px 7px 7px;
    padding-right: 20px;
+   margin-left: 30px;
+   float: right;
+
 }
 
 
@@ -422,7 +425,7 @@ ul.tabs--primary li
     margin:auto;
 }
 .node-webform{
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     background: #fff;
 }
 
@@ -451,7 +454,6 @@ ul.tabs--primary li
 /* FORM CONTROL */
 .form-control {
     background-color: #fff;
-    border: 1px solid blue;
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     color: black;
@@ -461,7 +463,7 @@ ul.tabs--primary li
     line-height: 1.42857;
     margin-left: 0;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width: 50%;
+    /*width: 50%;*/
 }
 .webform-progressbar {
     margin: 18px auto 0;
@@ -471,9 +473,7 @@ ul.tabs--primary li
 .form-actions {
     text-align: center;
 }
-#edit-name.form-control.form-text.required,#edit-pass.form-control.form-text.required{
-    width: 65%;
-}
+
 .page-user form#user-login  label {
 /*    float: left;
     margin-left: 8%;*/
@@ -485,22 +485,28 @@ ul.tabs--primary li
     margin-left: 12%;
 }
 
-#contact-site-form #edit-name.form-control.form-text.required, #contact-site-form #edit-pass.form-control.form-text.required{
+/*#contact-site-form #edit-name.form-control.form-text.required, #contact-site-form #edit-pass.form-control.form-text.required{
     margin-left: 0px !important;
     margin-top: 2px;
     width: 75% ;
-}
+}*/
 #contact-site-form{
-    width: 75%;
     margin:auto;
     background: #fff;
 }
 
 #contact-site-form .form-item{
-    width: 91%;
     display: block;
     margin: auto;
     margin-top: 2%;
+}
+#contact-site-form .form-item-name,
+#contact-site-form .form-item-mail{
+    width: 48%;
+    float: left;
+}
+#contact-site-form .form-item-name{
+    margin-right:4% !important;    
 }
 
 #search-block-form #edit-actions {
@@ -508,4 +514,13 @@ ul.tabs--primary li
     margin: auto;
     padding-bottom: 2%;
 }
+div#quicktabs-tabpage-left_menu-3 article.node {
+    padding: 25px;
+} 
+div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous-etre-notifie ,
+.webform-component--periode {
+    margin-left: 10%;
+    margin-top: 25px;
+} 
+
 
