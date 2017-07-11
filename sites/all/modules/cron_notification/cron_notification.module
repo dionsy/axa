@@ -210,6 +210,7 @@ function cron_notification_send_sms($number_client, $body){
   $account_sid = variable_get('cron_notification_account_sid');
   $auth_token = variable_get('cron_notification_account_auth');
   $from = variable_get('cron_notification_number');
+
   $client = new Services_Twilio($account_sid, $auth_token);
             $client->account->messages->create(array(
               # To Number 
