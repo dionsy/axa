@@ -92,6 +92,12 @@ function bootstrap_css_alter(&$css) {
     $excludes = array_merge($excludes, str_replace('.css', '-rtl.css', $excludes));
     $css = array_diff_key($css, drupal_map_assoc($excludes));
   }
+
+      /*$result = db_query('SELECT uid, name FROM {users} WHERE uid IN (:uids)', array(':uids' => array_keys($users)));
+     foreach ($result as $record) {
+        $users[$record->uid]->name = $record->name;
+      }
+      dsm($users);*/
 }
 
 /**
@@ -443,9 +449,5 @@ function bootstrap_menu_local_tasks_alter(&$data, &$router_item, $root_path) {
 function bootstrap_js_callback_filter_xss_alter(array &$allowed_tags = array()) {
   $allowed_tags[] = 'button';
 }
-
-
-
-
 
 

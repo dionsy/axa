@@ -700,8 +700,13 @@ footer.footer div.col-md-12.col-lg-12.col-xs-12 {
 /*.page{
     padding-bottom: 300px;
 }
+<<<<<<< HEAD
+
+* {-moz-box-si22zing: border-box; box-sizing: border-box;}
+=======
 */
 * {-moz-box-sizing: border-box; box-sizing: border-box;}
+>>>>>>> ea35e967bd65fbcc72a4014fdf3ec956e7d94175
 
 
 /*.footer .nav > li {
@@ -1461,6 +1466,11 @@ section#block-views-agence-axa-block-1 {
     background: RGBa(169, 15, 39,0.2);
 }
 */
+
+.page-user .field-type-date.field-name-field-fin-contrat.field-widget-date-text.form-wrapper.form-group{
+    display: none;
+}
+
 body.node-type-nos-produits .body ul {
     padding-left: 22px;
 }
@@ -1483,3 +1493,4 @@ div.offres .offre {
     margin-bottom: 10px;
     margin-left: 5px;
 }
+

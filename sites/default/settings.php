@@ -261,6 +261,7 @@
 //   ),
 // );
 
+
 $databases = array (
   'default' => 
   array (
@@ -268,8 +269,8 @@ $databases = array (
     array (
       'database' => 'axa',
       'username' => 'root',
-      'password' => '@tosdev',
-      'host' => '10.94.216.37',
+      'password' => '',
+      'host' => 'localhost',
       'port' => '3306',
       'driver' => 'mysql',
       'prefix' => '',
