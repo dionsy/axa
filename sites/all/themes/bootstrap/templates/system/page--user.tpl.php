@@ -112,25 +112,7 @@
 
   </div>
     <div class="user col-md-3 col-lg-3 col-xs-6"> 
-     <?php
-    // krumong('main')->kPrint($base_path);
-     if(!user_is_logged_in()){
-         print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
-      } 
-      else{
-        print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
-      }
-      ?>
-      <?php
-      /*  $account = user_load($user->uid);
-        $pic ='';
-        if(isset($account->picture))
-          $pic=$account->picture;
-        $img = file_create_url($pic->uri);
-        print '<div class="avatar"><img class="img-responsive hidden-xs-down" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
-        }*/
-      ?>
-     
+
       <?php
       if(user_is_logged_in()){
 
@@ -184,7 +166,7 @@
 
       
     <section id="test" <?php print $content_column_class; ?>>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+      
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>

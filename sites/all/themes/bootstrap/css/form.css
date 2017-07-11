@@ -353,7 +353,7 @@ ul.tabs--primary li
     color: #ffffff
 }
 .page-user #test {
- /*   background-color: white;*/
+    background-color: white;*/
     border: 1px solid #004d92;
     margin:auto ;
     float: inherit;
@@ -361,6 +361,7 @@ ul.tabs--primary li
     padding: 10px;
     text-align: center;
     margin-bottom: 25px;
+    z-index: 50;
 }
 .node-type-webform h1.page-header {
     font: 30px Arial;
