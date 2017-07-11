@@ -325,6 +325,7 @@ function cron_notification_form_alter(&$form, &$form_state, $form_id) {
     //nid preference webform
     $nid = '86';
     $values = array();
+    $value = array();
 
     foreach ($clients as $client) {
       # code...
