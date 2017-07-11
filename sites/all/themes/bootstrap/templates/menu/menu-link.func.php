@@ -55,20 +55,26 @@ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
 }
 // Return all nids of nodes of type "page".
  $nid_array = array();
- /*for (i= 0 ; i<$list_nid.lenght ; i++) { 
-    $nid_array[i] = $list_nid[i];
- }*/
-/*  krumong('main')->kPrint($elt,'nid');*/
-$nids = db_select('node', 'n')
+ $i=0;
+    foreach ($list_nid as $value) {
+      $nid_array[$i] = $value;
+      $i++;
+    }
+/*/*   $nid_unique =  array_unique($nid_array);
+
+   /* foreach ($nid_unique as $key) {
+            krumong('main')->kPrint($key,'nid');
+    }*/
+/*$nids = db_select('node', 'n')
     ->fields('n')
     ->fields('n', array('nid'))
     ->fields('n', array('type'))
-    ->condition(db_and()->condition('n.type', 'nos_produits')->condition('n.nid',array(83,84,91),'IN'))
+    ->condition(db_and()->condition('n.type', 'nos_produits')->condition('n.nid',$nid_unique,'IN'))
     ->execute()
-    ->fetchCol(); // returns an indexed array
+    ->fetchCol();*/ // returns an indexed array*/*/
 
 // Now return the node objects.
-$nodes = node_load_multiple($nids);
+/*$nodes = node_load_multiple($nids);*/
 /*krumong('main')->kPrint($nodes,'nids');*/
 
 

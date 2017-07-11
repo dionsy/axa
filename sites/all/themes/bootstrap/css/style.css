@@ -35,10 +35,30 @@ body
 }
 body.front
 {
-
  background-image: url('../images/backgroud.jpg');
-
 }
+body.page-user
+{
+ background-image: url('../images/axabackground.jpg');
+ background-attachment: fixed;
+}
+body.not-logged-in.page-user
+{
+ background-color:#EDF7F2 ;
+}
+body.not-logged-in.page-user::after {
+    background-color: black;
+    background-size: cover;
+    content: "";
+    height: 150%;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    bottom: -300px;
+}
+
 
 /*
 =======
