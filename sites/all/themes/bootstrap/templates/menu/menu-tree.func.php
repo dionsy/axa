@@ -20,8 +20,12 @@
  * @ingroup theme_functions
  */
 function bootstrap_menu_tree(&$variables) {
-
-  return '<ul class="menu nav">' . $variables['tree'] . '</ul>';
+ // krumong('main')->kPrint($variables);
+  $class='';
+  if($variables['theme_hook_original']=='menu_tree__menu_menu_principal'){
+       $class='container';
+  }
+  return '<ul class="menu nav '.$class.'">' . $variables['tree'] . '</ul>';
 }
 
 /**
