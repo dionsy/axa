@@ -648,7 +648,7 @@ body, html {
     padding-bottom: 300px;
 }
 
-* {-moz-box-sizing: border-box; box-sizing: border-box;}
+* {-moz-box-si22zing: border-box; box-sizing: border-box;}
 
 
 /*.footer .nav > li {
@@ -1407,3 +1407,6 @@ section#block-views-agence-axa-block-1 {
     background: RGBa(169, 15, 39,0.2);
 }
 */
+.page-user .field-type-date.field-name-field-fin-contrat.field-widget-date-text.form-wrapper.form-group{
+    display: none;
+}

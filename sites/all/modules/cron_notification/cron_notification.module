@@ -125,19 +125,26 @@ function cron_notification_menu() {
 function cron_notification_cron() {
   # For sms notification
   $code = variable_get('cron_notification_country_codes', FALSE)[221];
-  $body = variable_get('cron_notification_sms_text');
+  $body_sms = variable_get('cron_notification_sms_text');
   #For mail notification 
   $subject = variable_get('cron_notification_mail_subject');
-  $body = variable_get('cron_notification_mail_body');
-  # get last submissions for all users
+  $body_mail = variable_get('cron_notification_mail_body');
+  # get last submissions for all users( Set in cron_notification_form_alter())
   $values = variable_get('values');
-  $clients = user_load_by_role("client");
+  $clients = user_load_by_role('client');
   # Week intervalle
   $periodes_list = array(
     0 => 'P1W',
     1 => 'P2W',
     2 => 'P3W',
     3 => 'P4W',
+  );
+
+  $expire_list = array(
+    0 => 'une semaine',
+    1 => 'deux semaines',
+    2 => 'trois semaines',
+    3 => 'quatre semaine',
   );
 
   foreach ($clients as $client) {
@@ -164,18 +171,20 @@ function cron_notification_cron() {
     # To limit the notification to one day:
     $date_majorant = new DateTime($date_fin); 
     $date_majorant->add(new DateInterval('P1D'));
+    $lien = 'www.axa.sn';
+    $body_sms = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
 
     if($date >= $fin_contrat && $date <= $date_majorant ){
       if(in_array("MAIL", $choice)){
         # send email
-        cron_notification_send_mail($client->mail, $subject, $body);      
+        //cron_notification_send_mail($client->mail, $subject, $body_mail);      
       }
           
       if (($library = libraries_load(TWILIO_LIBRARY)) &&
            !empty($library['loaded']) &&
            in_array("SMS", $choice)) {
         # send sms
-        cron_notification_send_sms($number_client, $body);
+        cron_notification_send_sms($number_client, $body_sms);
         
       }
     }
@@ -201,8 +210,7 @@ function cron_notification_send_sms($number_client, $body){
   $account_sid = variable_get('cron_notification_account_sid');
   $auth_token = variable_get('cron_notification_account_auth');
   $from = variable_get('cron_notification_number');
-
-  return $client = new Services_Twilio($account_sid, $auth_token);
+  $client = new Services_Twilio($account_sid, $auth_token);
             $client->account->messages->create(array(
               # To Number 
               'To' => $number_client,
@@ -211,6 +219,14 @@ function cron_notification_send_sms($number_client, $body){
               # Body message
               'Body' => $body,
           ));
+  if($client){
+    krumong('main')->kPrint('A SMS notification has been sent to:' . $number_client);
+    return $client;
+  }
+  else{
+    krumong('main')->kPrint('A SMS notification has not been sent to:' . $number_client);
+    return $client;
+  }
 }
 
 /**
@@ -262,7 +278,14 @@ function cron_notification_send_mail($to, $subject, $body){
   $mail->Body    = $body;
   $mail->AltBody = $altbody;
 
-  return $mail->send();
+  if($mail->send()){
+    krumong('main')->kPrint('A Mail notification has been sent to:' . $to);
+    return TRUE;
+  }
+  else{
+    krumong('main')->kPrint('A Mail notification has not been sent to:' . $to);
+    return $client;
+  }
   
 }
 
