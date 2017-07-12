@@ -1063,13 +1063,13 @@ a.asligne {
 }
 .view.view-glossary{
     background: #fff;
-    padding: 1.5em 2em;
+    padding: 0.5em 0 0 0;
 
 }
 .view.view-glossary .views-summary.views-summary-unformatted {
     background-color: #23488B;
     border-radius: 50%;
-    display: inline;
+    display: inline-block;
     margin: .25rem;
     padding: .25em .65em;
     text-align: center;
@@ -1170,7 +1170,6 @@ a.asligne {
 
 .view-glossary #top{
 	display: block;
-	margin-left: 25%;
 }
 
 .view-glossary .view-content .item-list ul li a, 
