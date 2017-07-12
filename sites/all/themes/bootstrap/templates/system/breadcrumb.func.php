@@ -31,7 +31,8 @@ function bootstrap_breadcrumb($variables) {
   if(isset($trail[1]['map'])){
 
      $node = $trail[1]['map'][1];
-     $type= $node->type;
+   if(isset($node->type)){
+       $type= $node->type;
      /*$tid= $node->field_type_de_contrat['und'][0]['tid'];
      $taxo = taxonomy_term_load($tid);
      $type_contrat = $taxo->name;*/
@@ -42,6 +43,7 @@ function bootstrap_breadcrumb($variables) {
         $variables['breadcrumb']['1'] = '<span>Assurance</span>';
         $variables['breadcrumb']['2'] = '<span>'.$terms['0']['#title'].'</span>';
         break;     
+    }
     }
   }
 
