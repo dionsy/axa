@@ -677,7 +677,7 @@ body, html {
     position:relative;
 }
 .footer {
-    background: rgb(35, 72, 139) none repeat scroll 0 0;
+    background: #fff;
     border: 0 none;
     bottom: 0;
     margin: 0;
@@ -750,9 +750,12 @@ section#block-views-contact-block .contacts .title {
     margin-bottom: 30px;
 }
 section#block-views-contact-block .contacts div , section#block-views-contact-block div  a{
-    color: #fff;
+    color: #103184;
     font-size: 1.0em;
     margin-bottom: 5px;
+}
+#block-menu-menu-footer li a{
+    color: #103184;
 }
 section#block-views-contact-block .contacts i.fa {
     font-size: 1.0em;
@@ -1391,9 +1394,10 @@ a.asligne {
 	text-align: left;
 }
 footer h2{
-	color: #FFC000;
+	color: #103184;
 	font-size: 17px;
 	text-transform: uppercase;
+    border-bottom: 1px solid;
 }
 #block-views-contact-block address {
 	 font-family: "Comic Sans MS";
@@ -1401,9 +1405,11 @@ footer h2{
 section#block-simple-copyright-simple-copyright-manage
 {
 	margin-top: 7px; 
-	color: #FFC000;
+	color: #103184;
 }
-
+#block-menu-menu-menu-top .nav{
+    text-align: left;
+}
 
 /*.page-node-2 */table{
     width: 100%;
@@ -1411,6 +1417,28 @@ section#block-simple-copyright-simple-copyright-manage
 .file-icon{
     display: none;
 }
+
+
+#edit-search-block-form--2 {
+    /*position: relative;
+    right: -999px;*/
+}
+#search-block-form{
+    display: none;
+}
+.loupe{
+    float: right;
+}
+
+
+   .fcurrent{
+    display: block !important;
+    transition: all 0.6s ease 0s;
+   } 
+/*#search-block-form:hover #edit-search-block-form--2{
+    right:0;
+}*/
+
 thead{
     background-color: rgb(169, 15, 39);
     color: #fff;
@@ -1496,6 +1524,9 @@ section#block-views-frontpage-block-3 ul.container::before {
     margin-left: 15px;
     text-align: left;
      width: 35%;
+}
+section#block-views-frontpage-block-3 h2{
+
 }
 div.offres .offre {
     margin-bottom: 10px;

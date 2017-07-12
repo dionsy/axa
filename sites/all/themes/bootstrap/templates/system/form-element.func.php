@@ -164,3 +164,41 @@ function bootstrap_form_element(&$variables) {
   // Render the form element build array.
   return drupal_render($build);
 }
+
+
+function bootstrap_form($variables) {
+  $element = $variables['element'];
+  $prefix='';
+  $suffix='';
+  $outer_prefix='';
+  $inner_prefix='';
+  $inner_suffix='';
+  if (isset($element['#action'])) {
+  $element['#attributes']['action'] = drupal_strip_dangerous_protocols($element['#action']);
+  }
+
+  element_set_attributes($element, array('method', 'id'));
+  if (empty($element['#attributes']['accept-charset'])) {
+    $element['#attributes']['accept-charset'] = "UTF-8";
+  }
+
+//krumong('main')->kPrint($element['#attributes']['id']);
+
+  if($element['#attributes']['id'] == 'search-block-form'){
+  $inner_prefix='<div class="input-group">';
+  $inner_suffix='</div>';
+  $prefix ='<ul class="l--nav-header"><li class="i--nav-header i--search_form">
+  <a class="loupe" href="#search-block-form"><i class="fa fa-search" aria-hidden="true"></i></a>';
+  $suffix = '</li></ul>';
+}
+return $prefix.'<form'.drupal_attributes($element['#attributes']).'>'. $inner_prefix.$element['#children'].$inner_suffix.'</form>'.$suffix;
+
+}
+
+/*$preffix ='';
+  if($variables['theme_hook_original']=='menu_tree__menu_menu_principal'){
+       $class='container';
+        $preffix= '<li class="col-md-1 col-lg-1 col-sm-12 col-xs-12 loupe"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>';
+
+  }
+*/

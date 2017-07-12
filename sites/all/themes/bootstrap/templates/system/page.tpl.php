@@ -76,7 +76,6 @@
 ?>
 <div class="fix-footer">
 <div class="page">
-
  <div id="navbar" class="collapse navbar-collapse ">
       <header role="banner" id="page-header" class="first_menu col-md-12 col-lg-12 col-xs-12">
     <div class="menu-top">
@@ -84,11 +83,9 @@
     </div>
       </header> <!-- /#page-header -->
   </div><!--/.nav-collapse -->
-
 <header id="" role="banner" class="<?php print $navbar_classes; ?>">
 <div>
-  <div class="logo col-md-9 col-lg-9 col-xs-12 <?php //print $container_class; ?>">
-    
+  <div class="logo col-md-9 col-lg-9 col-xs-12 <?php //print $container_class; ?>">    
     <div class="navbar-header ">
       <?php if ($logo): ?>
         <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
