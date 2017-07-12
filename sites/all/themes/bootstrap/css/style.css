@@ -1448,7 +1448,7 @@ section#block-views-agence-axa-block-1 {
 */
 
 .page-user .field-type-date.field-name-field-fin-contrat.field-widget-date-text.form-wrapper.form-group{
-    display: none;
+ /*   display: none;*/
 }
 
 body.node-type-nos-produits .body ul {

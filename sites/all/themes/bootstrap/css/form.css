@@ -17,6 +17,7 @@ a{
 }
 .tabs--primary{
     border-bottom: 0px solid !important;
+    display: none;
 }
 
 .tabs--secondary{

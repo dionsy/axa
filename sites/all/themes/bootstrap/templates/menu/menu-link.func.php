@@ -2,7 +2,7 @@
 
 
 function bootstrap_node_view_alter(&$build){
-  krumong('main')->kPrint($build,'node');
+ // krumong('main')->kPrint($build,'node');
   
 }
 
