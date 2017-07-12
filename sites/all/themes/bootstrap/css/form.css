@@ -15,11 +15,13 @@ a{
     padding-top: 6%;
 	width: 75%;
 }
-.tabs--primary{
+.tabs--primary{ 
     border-bottom: 0px solid !important;
     display: none;
 }
-
+.page-user .tabs--primary{ 
+    display: block;
+}
 .tabs--secondary{
     margin-top: 70px;
     margin-left: 13
