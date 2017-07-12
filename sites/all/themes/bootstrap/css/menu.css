@@ -476,11 +476,12 @@ footer div.view-id-contact ul {
 }
 .img_prod.row  div img{
     height: 150px;
+    width: 100%;
 }
 
 #block-menu-menu-menu-principal{
     background: #103184;
-    border-bottom: 2px solid #ED1846;
+ 
 }
 #block-menu-menu-menu-principal ul.menu.nav {
     font-size: 1.2em;
@@ -537,4 +538,12 @@ section#block-menu-menu-menu-top ul li:hover a{
 
 .page-contact #test{
     background-color: #fff;
+}
+.navigation{
+   
+}
+
+.fond{
+    background-color: #103184 !important;
+       border-bottom: 2px solid #ED1846;
 }

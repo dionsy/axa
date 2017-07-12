@@ -159,6 +159,13 @@
 </header>
 
 <!-- region slideshow -->
+ <?php if (!empty($page['navigation'])): ?>
+          <div class="fond">
+          <div class=" navigation <?php print $container_class; ?>">
+            <?php print render($page['navigation']); ?>
+            </div>
+        </div>
+  <?php endif; ?>
 
  <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>

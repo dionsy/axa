@@ -3,6 +3,7 @@
 }
 .page-contact .main-container{
     background-color: #fff;
+    margin-top: 30px;
     
 }
 #block-block-1,
@@ -50,13 +51,12 @@ body.not-logged-in.page-user::after {
     background-color: black;
     background-size: cover;
     content: "";
-    height: 200%;
+    height: 110%;
     opacity: 0.4;
     position: absolute;
     top: -50px;
     width: 100%;
     z-index: 1;
-    bottom: -100px;
 }
 
 
@@ -1439,6 +1439,9 @@ section#block-views-agence-axa-block-1 {
 
 .main-container.container {
     margin-bottom: 30px;
+}
+.page-user .main-container.container {
+    margin-bottom: 0px;
 }
 .highlighted.jumbotron {
     margin-bottom: 0 ! important; 

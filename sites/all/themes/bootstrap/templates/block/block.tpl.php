@@ -115,7 +115,7 @@ $contenu_map='<div class="map" id="map">
 			</div>
 		</div>';
 
-//krumong('main')->kPrint($block);
+//krumong('main')->kPrint($block->delta);
 //krumong('main')->kPrint($content);
 
 $class='';
@@ -152,6 +152,14 @@ switch ($block->delta) {
 	break;
 	case 'main':	
 		$class="col-md-12 col-lg-12 col-sm-12 col-xs-12";
+	break;
+
+	case 'menu-menu-principal':	
+		$class="col-md-9 col-lg-9 col-sm-12 col-xs-12";
+	break;
+
+	case 'form':	
+		$class="col-md-3 col-lg-3 col-sm-12 col-xs-12";
 	break;
 
 
