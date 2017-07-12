@@ -172,6 +172,7 @@ function bootstrap_form($variables) {
   $suffix='';
   $outer_prefix='';
   $inner_prefix='';
+   $close= '';
   $inner_suffix='';
   if (isset($element['#action'])) {
   $element['#attributes']['action'] = drupal_strip_dangerous_protocols($element['#action']);
@@ -188,10 +189,11 @@ function bootstrap_form($variables) {
   $inner_prefix='<div class="input-group">';
   $inner_suffix='</div>';
   $prefix ='<ul class="l--nav-header"><li class="i--nav-header i--search_form">
-  <a class="loupe" href="#search-block-form"><i class="fa fa-search" aria-hidden="true"></i></a>';
+  <a class="loupe" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
   $suffix = '</li></ul>';
+  $close ='<a class="close--nav-sidebar icon-btn icon-x-cross" role="button" href="#"><i class="fa fa-window-close" aria-hidden="true"></i></a>';
 }
-return $prefix.'<form'.drupal_attributes($element['#attributes']).'>'. $inner_prefix.$element['#children'].$inner_suffix.'</form>'.$suffix;
+return $prefix.'<form'.drupal_attributes($element['#attributes']).'>'. $inner_prefix.$element['#children'].$inner_suffix.$close.'</form>'.$suffix;
 
 }
 

@@ -34,9 +34,7 @@ ul.tabs--primary li
     display: inline-block;
     float: none;
 }
-.fcurrent{
-    background-color: red;
-}
+
  li.active > a{
     background-color: initial !important;
     border-color: transparent !important;

@@ -1425,15 +1425,33 @@ section#block-simple-copyright-simple-copyright-manage
 }
 #search-block-form{
     display: none;
+    transition: all 1s ease 0s;
 }
 .loupe{
     float: right;
-}
+    position: relative;
+    z-index: 2;
+    background: #A90F27;
+    color: #fff;
+    padding: .5em;
 
+}
+.fa.fa-window-close::before {
+    font-size: 34px;
+    color: #A90F27;
+}
+.close--nav-sidebar.icon-btn.icon-x-cross {
+    float: right;
+    position: relative;
+    top: -33px;
+    right: -16px;
+    z-index: 10;
+
+}
 
    .fcurrent{
     display: block !important;
-    transition: all 0.6s ease 0s;
+    transition: all 1s ease 0s;
    } 
 /*#search-block-form:hover #edit-search-block-form--2{
     right:0;
@@ -1536,6 +1554,5 @@ div.offres .offre {
     margin: 10px 25%; 
 }
 #block-search-form {
-    margin-top: 3px;
 }
 

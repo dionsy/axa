@@ -66,9 +66,12 @@
 
       
       $(".loupe").click(function(e) {
-          $("form").removeClass("fcurrent");
-          $("form").addClass("fcurrent");
+         $("form").addClass("fcurrent", 10000);
       });
+
+      $(".icon-x-cross").click(function(e) {
+          $("form").removeClass("fcurrent", 10000);
+       });
     }
   }
 
