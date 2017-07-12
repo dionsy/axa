@@ -50,13 +50,13 @@ body.not-logged-in.page-user::after {
     background-color: black;
     background-size: cover;
     content: "";
-    height: 150%;
+    height: 200%;
     opacity: 0.4;
     position: absolute;
-    top: 0;
+    top: -50px;
     width: 100%;
     z-index: 1;
-    bottom: -300px;
+    bottom: -100px;
 }
 
 
@@ -91,7 +91,7 @@ ul,li,div{
 
 ul{
 	padding: 0;
-	/*list-style: outside none none;*/
+	list-style:none;
 }
 h1.page-header {
 	color: #23488b;
@@ -130,8 +130,8 @@ h1.page-header {
 	border-radius: 0;
 }
 .row{
-/*	margin-right: 0;*/
-	margin-left: 0;
+	margin-right: 0 !important;
+	margin-left: 0 !important;
 }
 
 #user-login-form li{
@@ -1473,6 +1473,7 @@ section#block-views-agence-axa-block-1 {
 
 body.node-type-nos-produits .body ul {
     padding-left: 22px;
+    list-style: outside none disc;
 }
 body.node-type-nos-produits .body h3 {
     font-size: 1.2em;
@@ -1492,5 +1493,8 @@ section#block-views-frontpage-block-3 ul.container::before {
 div.offres .offre {
     margin-bottom: 10px;
     margin-left: 5px;
+}
+.page-user .logo {
+    margin: 10px 25%; 
 }
 

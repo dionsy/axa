@@ -341,6 +341,7 @@ li div.offre p {
 }
 .node-type-nos-produits section#test {
     background-color: #fff;
+    margin-top: 35px;
 } 
 .body_offre > p {
     line-height: 1.7;
@@ -359,7 +360,7 @@ li div.offre p {
 .breadcrumb{ 
 background: none;
 position: absolute;
-top: -25px;
+top: -22px;
 left: 0;
 padding: 0;
 margin-bottom: 0;
@@ -458,7 +459,7 @@ body.node-type-nos-produits section#test {
 .img_prod.row div {
     padding-left: 0 ! important;
     padding-right: 0 ! important;
-    margin-top: -19px;
+   /* margin-top: -19px;*/
 }
 /*.img-responsive.offres {
     height: 238px;
