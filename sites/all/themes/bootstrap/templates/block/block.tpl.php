@@ -124,7 +124,7 @@ $suffix='';
 
 switch ($block->delta) {
 	case 'form':
-		$class="col-md-3 col-lg-3 col-xs-12";
+		$class="col-md-2 col-lg-2 col-xs-12";
 		break;
 	case 'menu-menu-top':
 		$class="col-md-9 col-lg-9 col-xs-12";
@@ -155,11 +155,7 @@ switch ($block->delta) {
 	break;
 
 	case 'menu-menu-principal':	
-		$class="col-md-9 col-lg-9 col-sm-12 col-xs-12";
-	break;
-
-	case 'form':	
-		$class="col-md-3 col-lg-3 col-sm-12 col-xs-12";
+		$class="col-md-10 col-lg-10 col-sm-12 col-xs-12";
 	break;
 
 

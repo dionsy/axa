@@ -36,6 +36,7 @@ ul.tabs--primary li
     display: inline-block;
     float: none;
 }
+
  li.active > a{
     background-color: initial !important;
     border-color: transparent !important;

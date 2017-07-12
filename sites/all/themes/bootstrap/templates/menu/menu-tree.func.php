@@ -22,10 +22,8 @@
 function bootstrap_menu_tree(&$variables) {
  // krumong('main')->kPrint($variables);
   $class='';
-  if($variables['theme_hook_original']=='menu_tree__menu_menu_principal'){
-       $class='container';
-  }
-  return '<ul class="menu nav '.$class.'">' . $variables['tree'] . '</ul>';
+  
+  return '<ul class="menu nav '.$class.'">' . $variables['tree'] .'</ul>';
 }
 
 /**
