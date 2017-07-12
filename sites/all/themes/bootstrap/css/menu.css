@@ -359,12 +359,21 @@ li div.offre p {
 /*Breadcrump*/
 .breadcrumb{ 
 background: none;
+/*position: absolute;
+top: -22px;
+left: 0;
+padding: 0;
+margin-bottom: 0;
+float: left;*/
+}
+.node-type-nos-produits .breadcrumb {
 position: absolute;
 top: -22px;
 left: 0;
 padding: 0;
 margin-bottom: 0;
 float: left;
+
 }
 .breadcrumb a, .breadcrumb span{
     position: relative;

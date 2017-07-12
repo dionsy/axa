@@ -93,7 +93,12 @@ ul{
 	padding: 0;
 	list-style:none;
 }
+#block-views-frontpage-block-2 h3{
+    margin-top: 0;
+}
+#block-views-frontpage-block-2 h3,
 h1.page-header {
+    font-size: 30px;
 	color: #23488b;
     letter-spacing: 0.4px;
     text-align: center;
@@ -1498,5 +1503,8 @@ div.offres .offre {
 }
 .page-user .logo {
     margin: 10px 25%; 
+}
+#block-search-form {
+    margin-top: 3px;
 }
 
