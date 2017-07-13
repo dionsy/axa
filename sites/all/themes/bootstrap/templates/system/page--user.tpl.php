@@ -76,33 +76,12 @@
 ?>
 <div class="fix-footer">
 <div class="page">
-
-
-
-<header id="" role="banner" class="<?php print $navbar_classes; ?>">
-<div>
-
-
-
-  </div>
-
-</header>
-
 <!-- region slideshow -->
-
- <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-  <?php endif; ?>
 
 
 <div class="main-container <?php print $container_class; ?>"> 
   <div class="row">
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
+   
      <?php if (!empty($page['connexion'])): ?>
       <aside class="col-sm-3"></aside>
       <aside class="col-sm-6 connexion">
