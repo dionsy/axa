@@ -326,6 +326,7 @@ li div.offre h2 {
     text-align: left;
     margin-left: 5px;
     text-transform: capitalize;
+    font-size: 1.1em !important;
 }
 li div.offre h2  a{
 color: rgb(237, 24, 70);
