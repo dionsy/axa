@@ -76,49 +76,20 @@
 ?>
 <div class="fix-footer">
 <div class="page">
-<<<<<<< HEAD
-
 
 </div><!--/.nav-collapse -->
 
-<header id="" role="banner" class="<?php print $navbar_classes; ?>">
-
  <div id="navbar" class="collapse navbar-collapse ">
-      <header role="banner" id="page-header" class="first_menu col-md-10 col-lg-10 col-xs-12">
-    <div class="menu-top">
-        <?php print render($page['header']); ?>
-    </div>
-     <!-- ESPACE CLIENT -->
-      </header> <!-- /#page-header -->
-    <div class="user col-md-2 col-lg-2 col-xs-12"> 
-  </div><!--/.nav-collapse -->
+
 <header id="" role="banner" class="<?php print $navbar_classes; ?>">
-<div>
-  <div class="logo col-md-9 col-lg-9 col-xs-12 <?php //print $container_class; ?>">    
-    <div class="navbar-header ">
-      <?php if ($logo): ?>
-        <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img class ="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
-
-      <!--<?php //if (!empty($site_name)): ?>
-         <a class="name navbar-brand" href="<?php // print $front_page; ?>" title="<?php //print t('Home'); ?>"><?php// print $site_name; ?></a> 
-      <?php //endif; ?> -->
-
-      <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      <?php endif; ?>
-    </div>
-
-  </div>
-    <div class="user col-md-3 col-lg-3 col-xs-6"> 
->>>>>>> 2d2b68195cc26abe2208884e0e514084e745144d
+    <div class="row">
+        <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-xs-12">
+          <div class="menu-top">
+            <?php print render($page['header']); ?>
+         </div>
+     <!-- ESPACE CLIENT -->
+        </header> <!-- /#page-header -->
+        <div class="user col-md-3 col-lg-3 col-xs-12"> 
      <?php
     // krumong('main')->kPrint($base_path);
      if(!user_is_logged_in()){
@@ -160,9 +131,9 @@
           
         <?php endif; } ?>
       </div>
-<div>
-  <div class="logo col-md-9 col-lg-9 col-xs-12 <?php //print $container_class; ?>">
-    
+
+    </div>
+  <div class="logo col-md-9 col-lg-9 col-xs-12 <?php //print $container_class; ?>">    
     <div class="navbar-header ">
       <?php if ($logo): ?>
         <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -185,9 +156,7 @@
     </div>
 
   </div>
- 
-
-  </div>
+    
 
 </header>
 
