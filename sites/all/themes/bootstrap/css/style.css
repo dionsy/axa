@@ -23,21 +23,21 @@
 
 body
 {
-     background-color:#EDF7F2 ;
+/*     background-color:#EDF7F2 ;*/
+    background-color: #fff;
     background-size: cover;
     background-attachment: fixed;
-     background-color:#EDF7F2 ;
      overflow-x: hidden;
-     font-family: georgia,"OpenSans",Arial,Helvetica,sans-serif;
+     font-family: sans-serif,georgia,"OpenSans",Arial,Helvetica,sans-serif;
     font-size: 16px;
     letter-spacing: 0.2px;
     
     
 }
-body.front
+/*body.front
 {
  background-image: url('../images/backgroud.jpg');
-}
+}*/
 body.page-user
 {
  background-image: url('../images/axabackground.jpg');
@@ -141,6 +141,9 @@ h1.page-header {
 	margin-right: 0 !important;
 	margin-left: 0 !important;
 }
+.page-frontpage div.row {
+    margin-bottom: 25px;
+}
 
 #user-login-form li{
 	list-style:none;
@@ -176,7 +179,7 @@ h1.page-header {
 #block-views-frontpage-block-1 li,
 .outside{
 	background: #fff;
-	border-top: 3px solid #ED1846 ;
+	border-top: 4px solid #ED1846 ;
 	min-height: 184px;
 	margin-top: 28px;
 	text-align: left;
@@ -203,7 +206,8 @@ h1.page-header {
 }
 .view-frontpage ul li {
 	padding:0 0 0 5px;
-	margin-bottom:20px; 	
+	margin-bottom:5px;
+    margin-top: 20px; 	
 }
 
 
@@ -234,7 +238,7 @@ h1.page-header {
 */
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2{
- font-size: 1.5em;
+ font-size: 1.3em;
  color: black;
  margin-top: 0;
  text-align: center;
@@ -291,8 +295,8 @@ h1.page-header {
  }
  .outsides > div {
     text-align: center;
-    margin-top: 12px;
-    margin-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 li.Loisirs-vie:hover .outside{
 	border-top: 4px solid #FFC000 ;
@@ -329,8 +333,7 @@ li.Auto:hover .outside{
 .outside p{
    text-align: center;
    padding: 5px;
-   margin: 2px 20px 40px ; 
-   box-shadow: 1px 1px 5px #555;
+   margin: 2px 15px 35px ; 
    border-radius: 3px;
 }
 li.Auto .outside p {
@@ -634,7 +637,6 @@ button.navbar-toggle
 
 
 .user {
-    padding: 0;
     text-align: center;
 }
 .fa.fa-cogs {
@@ -705,17 +707,17 @@ body, html {
     position:relative;
 }
 .footer {
-    background: #fff;
+    background: #fff;   
     border: 0 none;
     bottom: 0;
     margin: 0;
     padding: 0;
     right: 0;
     width: 100%;
+    border-top: 2px solid #004893;
 }
 
-footer.footer div.col-md-12.col-lg-12.col-xs-12 {
-    margin-left: 5.5%;
+footer.footer div.container {
     margin-top: 32px;
 }
 
@@ -889,9 +891,9 @@ section#test  div#navbar-collapse {
 .descriptif{
 	position: absolute;
 	z-index: 10;
-	top: 28%;
+	top: 35%;
 	width: 50%;
-	right: 2%;
+	right: 8%;
 }
 /*.descriptif {
     float: left;
@@ -1328,7 +1330,7 @@ a.asligne {
 
 #block-menu-menu-r-seaux-sociaux- ul li a.facebook::after{
 		content: "\f09a"; 	
-		color: #fff; 
+		color: #3B5998; 
 }
 #block-menu-menu-r-seaux-sociaux- ul li a.linkedin::after{
 		content: "\f0e1"; 
@@ -1386,11 +1388,11 @@ a.asligne {
 		margin-left: 5px;
 /*	    color: #fff;*/
 }
-#block-menu-menu-r-seaux-sociaux- ul li a.linkedin:hover::after,
+/*#block-menu-menu-r-seaux-sociaux- ul li a.linkedin:hover::after,
 #block-menu-menu-r-seaux-sociaux- ul li a.twitter:hover::after,
 #block-menu-menu-r-seaux-sociaux- ul li a.youtube:hover::after{
 		color: #fff ; 
-}
+}*/
 /*#block-menu-menu-r-seaux-sociaux- ul li a.linkedin:hover::after{
 		color: #007BB6; 
 }
@@ -1516,6 +1518,7 @@ td{
 /*Map Openlayers  */
 section#block-views-agence-axa-block-1 {
     margin-bottom: 20px;
+    padding-left: 0px;
 }
 
 .main-container.container {
@@ -1588,5 +1591,17 @@ div.offres .offre {
 }
 #block-menu-menu-menu-principal {
     padding: 0;
+}
+.page-frontpage div.main-container {
+    background-image: url('../images/bg.jpg');
+    background-position-x: center;
+    background-position-y: top;
+    background-size: initial;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
 }
 
