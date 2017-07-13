@@ -9,6 +9,8 @@
 }
 .user{
 	text-align: center;
+    padding: 0;
+    float: right;
 }
 .user span{
 	display: block;
@@ -34,9 +36,13 @@
     right: 0;
 }
 
-.footer .region-footer {
-
+.footer  div.container section {
+    padding : 0 ;
 }
+section#block-views-contact-block ,section#block-menu-menu-footer {
+    padding-right: 30px;
+}
+
 
 
 /*.footer .nav li a {
@@ -53,7 +59,7 @@
     border-bottom: none !important;
 }
 .nav > li > a {
-    color: #fff;
+    color: black;
     display: block;
     padding: 2px;
     position: relative;
@@ -80,7 +86,7 @@
     font-size:1.0em;
     padding-left: 7px;
     padding-right: 7px;
-    background-color: #EFEBEA;
+    background-color: #BBD2E1;
 }
 #block-menu-menu-menu-top ul li a {
     color: black;
@@ -99,6 +105,7 @@ section#block-menu-menu-menu-top ul li:hover a{
    top:100%;
    width: 100%;
    background-color: #fff;
+   margin-top: 0px;
 }
 
 /*#block-menu-menu-menu-top ul li:after{
@@ -134,6 +141,8 @@ section#block-menu-menu-menu-top ul li:hover a{
 }*/
 .mon_espace_client{
     background-color:#ED1846; 
+    padding-bottom: 4px;
+    padding-top: 4px;
 }
 a.es_cli {
     color:#fff;
@@ -509,7 +518,7 @@ footer div.view-id-contact ul {
 }
 
 #block-menu-menu-menu-principal{
-    background: #103184;
+    background: #BBD2E1;
  
 }
 #block-menu-menu-menu-principal ul.menu.nav {
@@ -519,9 +528,11 @@ footer div.view-id-contact ul {
    /* background: rgb(237, 24, 70) none repeat scroll 0 0;*/
     display: inline-block;
     /*margin-left: 10px;*/
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-left:10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-right: 3px solid #fff;
     /*border-right: 2px solid rgb(255, 255, 255);*/
 }
 #block-menu-menu-menu-principal ul li li a{
@@ -534,10 +545,10 @@ footer div.view-id-contact ul {
     float: right;
     margin-right: -14px;
     margin-top: -31px;
-} 
-#block-menu-menu-menu-principal ul li.dropdown:last-child:after{
-    content: "";    
-}*/
+} */
+#block-menu-menu-menu-principal ul li.dropdown:first-child{  
+     border-left: 3px solid #fff;
+}
 #block-menu-menu-menu-principal ul li.dropdown:hover {
    background-color: #ED1846;
 }
@@ -556,6 +567,6 @@ footer div.view-id-contact ul {
 }
 
 .fond{
-    background-color: #103184 !important;
-       border-bottom: 2px solid #ED1846;
+    background-color: #BBD2E1 !important;
+    margin-bottom: 15px;
 }

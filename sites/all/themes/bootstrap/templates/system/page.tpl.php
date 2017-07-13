@@ -75,91 +75,87 @@
 
 ?>
 <div class="fix-footer">
-<div class="page">
+  <div class="page">
 
-</div><!--/.nav-collapse -->
+       <header id="" role="banner" class="<?php print $navbar_classes; ?>">
+             <div class="row">
+               
+                  <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-xs-12">
+                   <div id="navbar" class="collapse navbar-collapse ">
+                     <div class="menu-top">
+                     <?php print render($page['header']); ?>
+                    </div>
+                     </div>
+                  </header> <!-- /#page-header -->
+                  <div class="user col-md-3 col-lg-3 col-xs-12"> 
+                    <?php
+        // krumong('main')->kPrint($base_path);
+                    if(!user_is_logged_in()){
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
+                    } 
+                   else{
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
+                    }
+                 ?>
+                 <?php
+          /*  $account = user_load($user->uid);
+            $pic ='';
+            if(isset($account->picture))
+              $pic=$account->picture;
+            $img = file_create_url($pic->uri);
+            print '<div class="avatar"><img class="img-responsive hidden-xs-down" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
+            }*/
+                  ?>
+         
+                <?php
+                   if(user_is_logged_in()){
 
- <div id="navbar" class="collapse navbar-collapse ">
+                      if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+                        <div class="navbar-collapse collapse paramettre" id="navbar-collapse">
+                            <i class="fa fa-sign-out " aria-hidden="true"></i>
+                              <a href="user/logout"> <?php print t('Logout') ;?></a>
+                        <!-- <nav role="navigation">
+                          <?php //if (!empty($primary_nav)): ?>
+                            <?php //print render($primary_nav); ?>
+                          <?php //endif; ?>
+                          <?php //if (!empty($secondary_nav)): ?>
+                            <?php //print render($secondary_nav); ?>
+                          <?php //endif; ?>
+                          <?php //if (!empty($page['navigation'])): ?>
+                           <?php //print render($page['navigation']); ?>
+                          <?php //endif; ?>
+                        </nav> -->
+                        </div>
+              
+                     <?php endif; } ?>
+                </div>
+              </div>
+           
+            <div class="logo col-md-9 col-lg-9 col-xs-12 <?php //print $container_class; ?>">    
+              <div class="navbar-header ">
+                <?php if ($logo): ?>
+                  <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+                    <img class ="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+                  </a>
+                <?php endif; ?>
 
-<header id="" role="banner" class="<?php print $navbar_classes; ?>">
-    <div class="row">
-        <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-xs-12">
-          <div class="menu-top">
-            <?php print render($page['header']); ?>
-         </div>
-     <!-- ESPACE CLIENT -->
-        </header> <!-- /#page-header -->
-        <div class="user col-md-3 col-lg-3 col-xs-12"> 
-     <?php
-    // krumong('main')->kPrint($base_path);
-     if(!user_is_logged_in()){
-         print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
-      } 
-      else{
-        print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
-      }
-      ?>
-      <?php
-      /*  $account = user_load($user->uid);
-        $pic ='';
-        if(isset($account->picture))
-          $pic=$account->picture;
-        $img = file_create_url($pic->uri);
-        print '<div class="avatar"><img class="img-responsive hidden-xs-down" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
-        }*/
-      ?>
-     
-      <?php
-      if(user_is_logged_in()){
+          <!--<?php //if (!empty($site_name)): ?>
+             <a class="name navbar-brand" href="<?php // print $front_page; ?>" title="<?php //print t('Home'); ?>"><?php// print $site_name; ?></a> 
+          <?php //endif; ?> -->
 
-         if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-          <div class="navbar-collapse collapse paramettre" id="navbar-collapse">
-          <i class="fa fa-sign-out " aria-hidden="true"></i>
-           <a href="user/logout"> <?php print t('Logout') ;?></a>
-            <!-- <nav role="navigation">
-              <?php //if (!empty($primary_nav)): ?>
-                <?php //print render($primary_nav); ?>
-              <?php //endif; ?>
-              <?php //if (!empty($secondary_nav)): ?>
-                <?php //print render($secondary_nav); ?>
-              <?php //endif; ?>
-              <?php //if (!empty($page['navigation'])): ?>
-               <?php //print render($page['navigation']); ?>
-              <?php //endif; ?>
-            </nav> -->
-          </div>
-          
-        <?php endif; } ?>
-      </div>
+                  <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                      <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  <?php endif; ?>
+               </div>
 
-    </div>
-  <div class="logo col-md-9 col-lg-9 col-xs-12 <?php //print $container_class; ?>">    
-    <div class="navbar-header ">
-      <?php if ($logo): ?>
-        <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img class ="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
-
-      <!--<?php //if (!empty($site_name)): ?>
-         <a class="name navbar-brand" href="<?php // print $front_page; ?>" title="<?php //print t('Home'); ?>"><?php// print $site_name; ?></a> 
-      <?php //endif; ?> -->
-
-      <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      <?php endif; ?>
-    </div>
-
-  </div>
-    
-
-</header>
-
+            </div>
+        </header>
+    <!-- End Page -->
 <!-- region slideshow -->
  <?php if (!empty($page['navigation'])): ?>
           <div class="fond">
@@ -174,7 +170,7 @@
   <?php endif; ?>
 
 
-<div class="main-container <?php print $container_class; ?>"> 
+<div class="main-container "> 
   <div class="row">
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="col-sm-3" role="complementary">
@@ -191,8 +187,7 @@
     <?php endif; ?>
 <?php  //if(user_is_logged_in()) { ?>
 
-      
-    <section id="test" <?php print $content_column_class; ?>>
+    <section id="test" class="container">
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
@@ -228,9 +223,9 @@
 
 <?php if (!empty($page['content_bottom'])): ?>
   <div class="page-bottom row">
-  <aside class="content_bottom col-xs-12 col-md-12 col-lg-12">
-    <?php print render($page['content_bottom']); ?>
-  </aside>
+      <aside class="content_bottom container">
+      <?php print render($page['content_bottom']); ?>
+      </aside>
     </div>
 <?php endif; ?>
 
@@ -239,22 +234,23 @@
 
 
 
-<?php if (!empty($page['footer_top'])): ?>
+      <?php if (!empty($page['footer_top'])): ?>
   <div class="footer_top">
-  <footer class="footer_top <?php print $container_class; ?>">
-    <?php print render($page['footer_top']); ?>
-  </footer>
-    </div>
-<?php endif; ?>
-</div> <!-- End Page -->
+      <footer class="footer_top <?php print $container_class; ?>">
+        <?php print render($page['footer_top']); ?>
+      </footer>
+      </div>
+        <?php endif; ?>
+ 
+</div><!--/.nav-collapse -->
 
 <div class="barre">
   </div>
 <?php if (!empty($page['footer'])): ?>
   <footer class="footer <?php print $container_class; ?>">
-  <div class="col-md-12 col-lg-12 col-xs-12">
+  <div class="container">
     <?php print render($page['footer']); ?>
   </div>
   </footer>
+  <?php endif; ?>
 </div>
-<?php endif; ?>
