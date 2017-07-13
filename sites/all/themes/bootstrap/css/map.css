@@ -16,10 +16,12 @@
 .map__image #region-DK path:hover,
 .map__image #region-SL path:hover,
 .map__image #region-ZG path:hover,
+.map__image #region-LG path:hover,
 .map__image path:hover{
 	fill:rgba(16, 49, 132,.5);
 	/*cursor: pointer;*/
 }
+.map__image #region-LG path,
 .map__image #region-TH path,
 .map__image #region-DK path,
 .map__image #region-SL path,

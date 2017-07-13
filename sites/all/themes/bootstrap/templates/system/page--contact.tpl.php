@@ -148,7 +148,13 @@
 </header>
 
 <!-- region slideshow -->
-
+ <?php if (!empty($page['navigation'])): ?>
+          <div class="fond">
+          <div class=" navigation <?php print $container_class; ?>">
+            <?php print render($page['navigation']); ?>
+            </div>
+        </div>
+  <?php endif; ?>
  <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
   <?php endif; ?>
@@ -241,7 +247,7 @@
   </div>
 <?php if (!empty($page['footer'])): ?>
   <footer class="footer <?php print $container_class; ?>">
-  <div class="col-md-12 col-lg-12 col-xs-12">
+  <div class="container">
     <?php print render($page['footer']); ?>
   </div>
   </footer>
