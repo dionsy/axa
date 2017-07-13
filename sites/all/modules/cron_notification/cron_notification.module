@@ -115,6 +115,17 @@ function cron_notification_menu() {
     'weight' => 5,
   );
 
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/kannel'] = array(
+    'title' => 'Settings Kannel',
+    'description' => 'Kannel Basic Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('cron_notification_kannel_form'),
+    'access arguments' => array('administer cron_notification'),
+    'file' => 'cron_notification.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 15,
+  );
+
 
   return $items;
 }
@@ -151,7 +162,7 @@ function cron_notification_cron() {
     # code...
     $uid = $client->uid;
     $number_client = '+' . $code . $client->field_numero_telephone['und'][0]['value'];
-    
+
     # Notification choice: SMS or/and Mail
     $choice = $values[$uid][$uid][1];
     # Notification periode
@@ -171,22 +182,23 @@ function cron_notification_cron() {
     # To limit the notification to one day:
     $date_majorant = new DateTime($date_fin); 
     $date_majorant->add(new DateInterval('P1D'));
+    
     $lien = 'www.axa.sn';
     $body_sms = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
-
-    if($date >= $fin_contrat && $date <= $date_majorant ){
+    $body_mail = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
+ 
+    if($date >= $fin_contrat && $date <= $date_majorant){
       if(in_array("MAIL", $choice)){
         # send email
-        //cron_notification_send_mail($client->mail, $subject, $body_mail);      
-      }
-          
+        cron_notification_send_mail($client->mail, $subject, $body_mail);      
+      }    
       if (($library = libraries_load(TWILIO_LIBRARY)) &&
            !empty($library['loaded']) &&
            in_array("SMS", $choice)) {
         # send sms
-        cron_notification_send_sms($number_client, $body_sms);
-        
+        cron_notification_send_kannel_sms($number_client, $body_sms);        
       }
+
     }
     
   }
@@ -205,7 +217,7 @@ function cron_notification_cron() {
  * @return bool
  *   TRUE or FALSE if the message was successfully sent.
  */
-function cron_notification_send_sms($number_client, $body){
+function cron_notification_twilio_sms($number_client, $body){
   # get value from the admin form 
   $account_sid = variable_get('cron_notification_account_sid');
   $auth_token = variable_get('cron_notification_account_auth');
@@ -229,6 +241,38 @@ function cron_notification_send_sms($number_client, $body){
     return $client;
   }
 }
+
+/**
+ * Sends a message via Kannel.
+ *
+ * @param string $to
+ *   The phone number of the recipient
+ *
+ * @param string $message
+ *   The message to send to the recipient
+ *
+ * @return bool
+ *   TRUE or FALSE if the message was successfully sent.
+ */
+function cron_notification_send_kannel_sms($to, $message){
+  $sms_to      = $to;
+  $sms_message = urlencode(strip_tags($message));
+        
+  //http://kannel_server_ip_address:13002/cgi-bin/sendsms?username=username&password=password&smsc=smsc-id&to=phone_number_1 phone_number_2&text=message_content
+
+  $kannel_basic_host   = variable_get('kannel_basic_host', '192.168.128.128');
+  $kannel_sendsms_port = variable_get('kannel_sendsms_port', '13002');
+        
+  $kannel_url  = 'http://' . $kannel_basic_host . ':' . $kannel_sendsms_port . '/cgi-bin/sendsms';
+  $kannel_url .= '?username=' . variable_get('kannel_sendsms_username', 'usersms');
+  $kannel_url .= '&password=' . variable_get('kannel_sendsms_password', 'passwordsms');
+  $kannel_url .= '&to='. $sms_to;
+  $kannel_url .= '&text=' . $sms_message ;
+        
+  return $result = file_get_contents("$kannel_url") && $result === '0: Accepted for delivery';
+  
+}
+
 
 /**
  * Sends a mail via PHPMailer.
@@ -290,7 +334,7 @@ function cron_notification_send_mail($to, $subject, $body){
   
 }
 
-/**
+/**https://www.twilio.com/console/phone-numbers/verified
  * load all users by role.
  *
  * @param string $role
