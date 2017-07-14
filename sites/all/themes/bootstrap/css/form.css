@@ -30,7 +30,7 @@ a{
 }
 ul.tabs--primary li
 {
-    background-color:  #4BB5C1;
+    background-color:  #00529B;
     margin-top: 15px;    
     margin-left: 8px;
     display: inline-block;
@@ -411,8 +411,8 @@ ul.tabs--primary li
 
 #user-login .form-group  label{
     display: flex;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.0em;
+    font-weight: initial;
     left: 20px;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -460,6 +460,7 @@ ul.tabs--primary li
 .form-control {
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-radius: 0;
     color: black;
     display: block;
     font-size: 15px;
@@ -528,6 +529,9 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 } 
 #edit-actions--2 {
     margin-bottom: 0px;
+}
+.page-user .tabs--primary.nav.nav-tabs a {
+    color: rgb(255, 255, 255);
 }
 
 
