@@ -74,8 +74,8 @@
  */
 
 ?>
-<div class="fix-footer">
-  <div class="page">
+<!-- <div class="fix-footer">
+  <div class="page"> -->
 <div id="navbar" class="collapse navbar-collapse ">
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
@@ -183,14 +183,14 @@
 
   </div>
 </div>
-</div> <!-- end page -->
+<!-- </div> --> <!-- end page -->
 
 <?php if (!empty($page['footer'])): ?>
-  <footer class="footer <?php print $container_class; ?>">
+  <!-- <footer class="footer <?php print $container_class; ?>">
   <div class="container">
     <?php print render($page['footer']); ?>
   </div>
-  </footer>
+  </footer> -->
 </div> <!-- end fix-footer -->
 <?php endif; ?>
 

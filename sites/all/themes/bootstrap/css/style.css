@@ -848,7 +848,9 @@ section#test  div#navbar-collapse {
 }
 
 .row.impaire {
-    background-color: rgba(169, 15, 39,0.2);
+    /*background-color: rgba(169, 15, 39,0.2);*/
+    background-color: #bbd2e1;
+}
 }
 .lister-devis {
     margin-left: auto;

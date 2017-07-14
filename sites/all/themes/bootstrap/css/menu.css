@@ -204,6 +204,7 @@ ul.quicktabs-tabs.quicktabs-style-garland li a {
     color: #fff !important;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active a{
+    color: #fff;
     font-weight: normal;
     color: #000 !important;
 }
@@ -213,14 +214,16 @@ ul.quicktabs-tabs.quicktabs-style-navlist li.active a{
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li ,#block-menu-menu-nos-produits li {
-    background-color: #A90F27;
+    /*background-color: #A90F27;*/
+    background-color: #bbd2e1;
     padding: 0;
     text-align: right;
     border-bottom: 1px solid #ccc;
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active     {
-    background: rgba(169, 15, 39,0.2);
+    /*background: rgba(169, 15, 39,0.2);*/
+    background: #ccc none repeat scroll 0 0;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active {
     background: rgba(169, 15, 39,0.2);
@@ -572,4 +575,7 @@ footer div.view-id-contact ul {
 .fond{
     background-color: #BBD2E1 !important;
     margin-bottom: 15px;
+}
+ul.quicktabs-tabs.quicktabs-style-garland {
+    background: #bcd6eb url("images/bg.gif") repeat-x scroll center bottom !important;
 }
