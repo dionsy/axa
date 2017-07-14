@@ -14,7 +14,7 @@
  * @ingroup theme_preprocess
  */
 function bootstrap_preprocess_page(&$variables) {
-//  krumong('main')->kPrint($variables);
+ //krumong('main')->kPrint($variables);
 
 
   // Add information about the number of sidebars.
@@ -106,16 +106,11 @@ function bootstrap_process_page(&$variables) {
       $variables['title'] ='';
   }
 
+$tab[]=array('page__user__register','page__user__reset');
 
-if(isset($variables['theme_hook_suggestions'][2]) && $variables['theme_hook_suggestions'][2]=='page__compte_utilisateur' ){
-   $variables['theme_hook_suggestions'][2] = 'page__espace_client';
- /* if(user_is_logged_in())
-  else
-    $variables['theme_hook_suggestions'][2] = 'page__user';*/
+if(isset($variables['theme_hook_suggestions']['1']) &&  in_array($variables['theme_hook_suggestions']['1'], $tab)){  
+      $variables['theme_hook_suggestions'][]='page__user';   
 }
-//krumong('main')->kPrint($variables);
-
-
  //krumong('main')->kPrint($variables);
 
   if ($header == '404 Not Found') {     
