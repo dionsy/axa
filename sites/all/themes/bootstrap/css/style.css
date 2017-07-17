@@ -849,7 +849,8 @@ section#test  div#navbar-collapse {
 
 .row.impaire {
     /*background-color: rgba(169, 15, 39,0.2);*/
-    background-color: #bbd2e1;
+    background-color: #cccccc;
+    /*color: #ffffff;*/
 }
 }
 .lister-devis {
@@ -1496,8 +1497,8 @@ section#block-simple-copyright-simple-copyright-manage
 }*/
 
 thead{
-    background-color: rgb(169, 15, 39);
-    color: #fff;
+    background-color: #004D92;
+    color: #ffffff;
 }
 th{
     padding: 2px;
@@ -1506,7 +1507,8 @@ th{
 }
 
 tr:nth-child(2n){
-    background-color: rgba(169, 15, 39,0.2);
+    background-color: #cccccc;
+    /*color: #ffffff;*/
 }
 td{
      border: 1px solid rgb(0, 82, 155);
