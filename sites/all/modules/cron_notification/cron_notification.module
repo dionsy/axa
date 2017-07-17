@@ -168,8 +168,8 @@ function cron_notification_cron() {
     # Notification periode
     $periode = $values[$uid][$uid][2][0];
     # Defaults values
-    $choice = $choice ? $choice : array("SMS","MAIL");
-    $periode = $periode ? $periode : 0;
+    $choice = isset($choice) ? $choice : array("SMS","MAIL");
+    $periode = isset($periode) ? $periode : 0;
 
     # Today
     $date = new DateTime(); 
@@ -187,7 +187,7 @@ function cron_notification_cron() {
     $body_sms = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
     $body_mail = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
  
-    if($date >= $fin_contrat && $date <= $date_majorant){
+    if(/*$date >= $fin_contrat && $date <= $date_majorant*/TRUE){
       if(in_array("MAIL", $choice)){
         # send email
         cron_notification_send_mail($client->mail, $subject, $body_mail);      
@@ -196,7 +196,7 @@ function cron_notification_cron() {
            !empty($library['loaded']) &&
            in_array("SMS", $choice)) {
         # send sms
-        cron_notification_send_kannel_sms($number_client, $body_sms);        
+        //cron_notification_send_kannel_sms($number_client, $body_sms);        
       }
 
     }
@@ -316,6 +316,7 @@ function cron_notification_send_mail($to, $subject, $body){
 
   # Add a recipient
   $mail->addAddress($to);
+  $mail->setFrom('noreplay@axa.sn', 'Support Team AXA');
   # Set email format to HTML     
   $mail->isHTML(true);                                           
 

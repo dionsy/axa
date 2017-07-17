@@ -30,7 +30,7 @@ a{
 }
 ul.tabs--primary li
 {
-    background-color:  #4BB5C1;
+    background-color:  #00529B;
     margin-top: 15px;    
     margin-left: 8px;
     display: inline-block;
@@ -50,19 +50,21 @@ ul.tabs--primary li
 
 }
 
-.webform-next, .webform-previous, .webform-submit, .btn-default{
+.webform-next, .webform-submit, .webform-previous,.btn-default{
     margin-bottom: 5%;
     margin-top: 5%;
-   font: normal 20px Arial;
+   font: normal 1.0em;
    text-align: center;
    letter-spacing: 0.4px;
    color: #ffffff;
    background-color: #00529B;
-   border: 2px solid #ED1846;
-   border-radius: 7px 7px 7px 7px;
-   padding-right: 20px;
+   padding-right: 22px;
+   padding-left: 20px;
    margin-left: 30px;
-
+}
+.webform-previous
+{
+    background-color: #606060;
 }
 
 
@@ -260,12 +262,15 @@ ul.tabs--primary li
 }
 
 #webform-client-form-8 .form-item-submitted-marque{
-     width: 70%;
+    max-width: 100%;
     float: left;
     margin-left: 6%;
     margin-right: 3%;
-    margin-top: 30px;
-     margin-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+#edit-submitted-energie-du-vehicule div {
+    display: inline;
 }
 #webform-client-form-8 .form-item-submitted-marque label{
     margin-right: 30px;
@@ -276,11 +281,14 @@ ul.tabs--primary li
 #edit-submitted-marque-select-3{
     margin-left: 30px;
 }
+#webform-client-form-8 .form-item-submitted-marque select {
+    padding: 5px;
+}
 #webform-client-form-8 .form-item-submitted-energie-du-vehicule{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     width: 50%;
     margin-left: 6%;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 #webform-client-form-8 .form-item-submitted-annee-de-naissance-year {
@@ -367,6 +375,7 @@ ul.tabs--primary li
     z-index: 50;
 }
 .node-type-webform h1.page-header {
+    background-color: #004d92;
     font: 30px Arial;
     letter-spacing: 0.4px;
     text-align: center;
@@ -374,7 +383,8 @@ ul.tabs--primary li
     border-radius: 10px 0;
     border: 1px solid;
     border-color:#ED1846;
-    margin-bottom: 0;
+    margin-bottom: 10px;
+    color: #fff;
 }
 
 .page-node-11 h1.page-header, .page-node-30 h1.page-header,
@@ -391,8 +401,8 @@ ul.tabs--primary li
 .page-node-9 h1.page-header, .page-node-29 h1.page-header{
     background-color: #a90f27;
 }
-.page-node-8 h1.page-header , .page-node-28 h1.page-header, .page-user h1.page-header{
-    background-color: #004d92;
+.page-node-8 h1.page-header , .page-node-28 h1.page-header  {
+    background-color: #1ABD1D;
 }
 .page-node-11 form.webform-client-form , .page-node-30 form.webform-client-form  {
    border: 2px solid #ffc000;
@@ -405,14 +415,17 @@ ul.tabs--primary li
    border: 2px solid #a90f27;
 }
 .page-node-8 form.webform-client-form , .page-node-28 form.webform-client-form  {
-   border: 2px solid #004d92;
+   border: 2px solid #1ABD1D    ;
+}
+.page-user h1.page-header {
+    border-bottom: none !important;
 }
 
 
 #user-login .form-group  label{
     display: flex;
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.0em;
+    font-weight: initial;
     left: 20px;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -424,7 +437,7 @@ ul.tabs--primary li
 }
 
 .node-type-webform #test{
-    width: 75%;
+    width: 55%;
     float: none;
     margin:auto;
     margin-top: 28px;
@@ -460,6 +473,7 @@ ul.tabs--primary li
 .form-control {
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-radius: 0;
     color: black;
     display: block;
     font-size: 15px;
@@ -528,6 +542,9 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 } 
 #edit-actions--2 {
     margin-bottom: 0px;
+}
+.page-user .tabs--primary.nav.nav-tabs a {
+    color: rgb(255, 255, 255);
 }
 
 
