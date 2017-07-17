@@ -16,4 +16,16 @@
  */
 ?>
 
-<?php print drupal_render_children($renderable); ?>
+<?php // print drupal_render_children($renderable); 
+
+//if ($format == 'html') {
+    $output = drupal_render_children($renderable);
+
+    $output = preg_replace('/<label.*?>/', '<p class="label">', $output);
+    $output = str_replace(' </label>', ':</p><p class="value">', $output);
+    $output = str_replace('</div>', '</p></div>', $output);
+    print $output;
+//}
+
+?>
+

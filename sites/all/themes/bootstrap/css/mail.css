@@ -1,0 +1,70 @@
+img{
+	display:block;
+	margin-bottom: 1em;
+}
+.fond_mail{
+	background-color: #ccc;
+	width: 90%;
+	margin: auto;
+	padding: 15px 0;
+}
+.corps{
+	margin: auto;
+	width: 80%;
+	font-size: 15px;
+	background-color: #fff;
+	padding: 3em;
+}
+.entete_mail{
+	background-color: #5A8093;
+}
+.entete_mail p{
+	color: #fff;
+}
+.merci{
+}
+p{
+	/*display: block;*/
+}
+label{
+	font-weight: bold;
+}
+label::after{
+	content: ':';
+	margin-right: 0.5em;
+
+}
+.right{
+	float: right;
+	text-align: right;
+}
+h3,strong{
+	color: rgb(16, 49, 132);
+}
+h3{
+
+}
+.infos{
+	border: #ccc solid 1px;
+}
+.conseiller,
+.demande{
+	background-color: #BBD2E1;
+}
+
+
+.conseiller,
+.demande,
+.merci,
+.entete_mail,
+.infos{
+	margin-bottom: 1em;
+	padding: 1em;	
+}
+
+h3,
+img{
+	margin-bottom: 1em;
+	margin-left: 1em;
+}
+

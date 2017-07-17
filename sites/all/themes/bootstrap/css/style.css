@@ -1,3 +1,8 @@
+.bleu{
+    background-color: red;
+    font-size: 18px;
+    color: #fff;
+}
 .page-contact .container{
     position: relative;
 }
@@ -99,8 +104,7 @@ ul{
 #block-views-frontpage-block-2 h3{
     margin-top: 0;
 }
-#block-views-frontpage-block-2 h3,
-h1.page-header {
+#block-views-frontpage-block-2 h3 {
     font-size: 30px;
 	color: #23488b;
     letter-spacing: 0.4px;
@@ -576,9 +580,8 @@ div.col-xs-6 {
     top: 15px;
 }
 #block-menu-menu-footer .menu.nav {
-    font-size: 1.2em;
-    text-align: center;
-    list-style-type: none;
+    font-size: 1.0em;
+    list-style: none;
 }
 .footer .nav > li {
     /* position: relative; */
@@ -716,7 +719,7 @@ body, html {
     background: #fff;   
     border: 0 none;
     bottom: 0;
-    margin: 0;
+    margin-top: 30px;
     padding: 0;
     right: 0;
     width: 100%;
@@ -741,13 +744,9 @@ footer.footer div.container {
 /*.page{
     padding-bottom: 300px;
 }
-<<<<<<< HEAD
 
-* {-moz-box-si22zing: border-box; box-sizing: border-box;}
-=======
 */
-* {-moz-box-sizing: border-box; box-sizing: border-box;}
->>>>>>> ea35e967bd65fbcc72a4014fdf3ec956e7d94175
+*{-moz-box-sizing: border-box; box-sizing: border-box;}
 
 
 /*.footer .nav > li {
@@ -801,7 +800,7 @@ section#block-views-contact-block div {
     margin-bottom: 5px;
 }
 section#block-simple-copyright-simple-copyright-manage {
-    font-size: 1.2em;
+    font-size: 0.9em;
     color: #fff;
 }
 
@@ -1421,8 +1420,7 @@ a.asligne {
 	content: "\f1db "; 
 	font-family:'FontAwesome';
 	font-size:7px;
-	color: #fff;
-	margin-right:8px;
+	margin-right: 10px;
 	vertical-align: middle;	
 }
 #block-menu-menu-footer ul li a:hover {
