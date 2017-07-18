@@ -190,7 +190,7 @@ ul.quicktabs-tabs.quicktabs-style-garland li {
 ul.quicktabs-tabs.quicktabs-style-garland li a:hover,
 ul.quicktabs-tabs.quicktabs-style-garland li a:link 
 /*ul.quicktabs-tabs.quicktabs-style-garland li a:visited*/{
-    padding:12px !important;
+    /*padding:12px !important;*/
     /*color: #000 !important;*/
 }
 ul.quicktabs-tabs.quicktabs-style-garland li.active {
@@ -204,26 +204,52 @@ ul.quicktabs-tabs.quicktabs-style-garland li a {
     color: #fff !important;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active a{
+    color: #ffffff;
     font-weight: normal;
-    color: #000 !important;
 }
+
+ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-0::before{
+    content:"\f0e4";
+    font-family: "FontAwesome";
+    padding-right: 3%;
+}
+
+ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-1::before{
+    content:"\f1b0";
+    font-family: "FontAwesome";
+    padding-right: 3%;
+}
+ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-2::before{
+    content:"\f114";
+    font-family: "FontAwesome";
+    padding-right: 3%;
+}
+ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-3::before{
+    content:"\f085";
+    font-family: "FontAwesome";
+    padding-right: 3%;
+}
+
+
 #quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li.active a {
-  background: rgba(169, 15, 39,0.2) !important;
-    color: #000 !important;
+  /*background: rgba(169, 15, 39,0.2) !important;
+    color: #000 !important;*/
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li ,#block-menu-menu-nos-produits li {
-    background-color: #A90F27;
+    /*background-color: #A90F27;*/
+    background-color: #3598dc;
     padding: 0;
     text-align: right;
     border-bottom: 1px solid #ccc;
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active     {
-    background: rgba(169, 15, 39,0.2);
+    /*background: rgba(169, 15, 39,0.2);*/
+     background: #004d92 none repeat scroll 0 0;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active {
-    background: rgba(169, 15, 39,0.2);
+    /*background: rgba(169, 15, 39,0.2);*/
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li a  {
@@ -572,4 +598,20 @@ footer div.view-id-contact ul {
 .fond{
     background-color: #BBD2E1 !important;
     margin-bottom: 15px;
+}
+ul.quicktabs-tabs.quicktabs-style-garland {
+    background: #004D92 url(images/bg.gif) repeat-x scroll center bottom !important;
+}
+
+/*** espace client ***/
+h2.pane-title {
+    text-align: center;
+}
+
+#node-49.node.node-panel.node-promoted.clearfix div.panel-display.panel-2col.clearfix{
+    background: #cccccc;
+    color: #000;
+}
+ul#quicktabs-tab-left_menu-0::before{
+    content: "\f0e4";
 }
