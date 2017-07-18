@@ -1,3 +1,8 @@
+.bleu{
+    background-color: red;
+    font-size: 18px;
+    color: #fff;
+}
 .page-contact .container{
     position: relative;
 }
@@ -739,13 +744,9 @@ footer.footer div.container {
 /*.page{
     padding-bottom: 300px;
 }
-<<<<<<< HEAD
 
-* {-moz-box-si22zing: border-box; box-sizing: border-box;}
-=======
 */
-* {-moz-box-sizing: border-box; box-sizing: border-box;}
->>>>>>> ea35e967bd65fbcc72a4014fdf3ec956e7d94175
+*{-moz-box-sizing: border-box; box-sizing: border-box;}
 
 
 /*.footer .nav > li {
@@ -846,7 +847,10 @@ section#test  div#navbar-collapse {
 }
 
 .row.impaire {
-    background-color: rgba(169, 15, 39,0.2);
+    /*background-color: rgba(169, 15, 39,0.2);*/
+    background-color: #cccccc;
+    /*color: #ffffff;*/
+}
 }
 .lister-devis {
     margin-left: auto;
@@ -1491,8 +1495,8 @@ section#block-simple-copyright-simple-copyright-manage
 }*/
 
 thead{
-    background-color: rgb(169, 15, 39);
-    color: #fff;
+    background-color: #004D92;
+    color: #ffffff;
 }
 th{
     padding: 2px;
@@ -1501,7 +1505,8 @@ th{
 }
 
 tr:nth-child(2n){
-    background-color: rgba(169, 15, 39,0.2);
+    background-color: #cccccc;
+    /*color: #ffffff;*/
 }
 td{
      border: 1px solid rgb(0, 82, 155);

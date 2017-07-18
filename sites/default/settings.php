@@ -245,7 +245,7 @@
  *   );
  * @endcode
  */
-/*$databases = array (
+$databases = array (
   'default' => 
   array (
     'default' => 
@@ -260,23 +260,23 @@
     ),
   ),
 );
-*/
 
-$databases = array (
+
+/*$databases = array (
   'default' => 
   array (
     'default' => 
     array (
       'database' => 'axa',
       'username' => 'root',
-      'password' => '@tosdev',
-      'host' => '10.94.216.37',
+      'password' => '',
+      'host' => 'localhost',
       'port' => '3306',
       'driver' => 'mysql',
       'prefix' => '',
     ),
   ),
-);
+);*/
 
 /*
 $databases = array (
