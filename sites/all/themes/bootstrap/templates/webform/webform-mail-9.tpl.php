@@ -56,7 +56,7 @@ if($node->nid==9){
 		<p>Vous pouvez dès à présent trouver un conseiller proche de chez vous :</p>
 	</div>
 
-	<h3>Votre demande:</h3>
+	<h3>Votre demande</h3>
 	<div class="demande">
 		[submission:values:type_de_bien:withlabel]
 		[submission:values:nombre_de_pieces:withlabel]
@@ -77,15 +77,14 @@ if($node->nid==9){
 
 	<div class="right">
 		<p>Nous vous remercions pour votre confiance.</p>
-			<strong>À très bientôt avec AXA</strong>
+		<strong>À très bientôt avec AXA</strong>
 	</div>
-
 	</div>
 	</div>
 ';
-	print $output;
+print $output;
 
 }
 
-?>
+
 
