@@ -66,6 +66,7 @@
     <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
   <?php print $scripts; ?>
+<!--   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-gUxI2igS1rbhlgq0NGM4d2hvrWt9guw&sensor=false&v=3.20"></script> -->
 </head>
 <body<?php print $body_attributes; ?>>
 
