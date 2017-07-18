@@ -77,7 +77,7 @@ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
   $options['html'] = TRUE;
   // Ajouter une classe particuliere sur les items de menu
  $class = transliteration_clean_filename($element['#title']);
- 
+
  if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
   $class='';
   
@@ -136,7 +136,7 @@ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
 }
 
 
-  return '<li' . drupal_attributes($attributes) . '>' .$prefix.l($title, $href, $options) . $sub_menu . "</li>\n";
+  return '<li' . drupal_attributes($attributes) . '>' .$prefix.l($title, $href, $options) . $sub_menu . "</li>";
 }
 
 /**
