@@ -30,14 +30,17 @@ function bootstrap_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
   $class='';
+  //$classli='';
   $prefix ='';
   $list_nid =array();
 
   $below =$element['#below'];
 
+    //krumong('main')->kPrint($variables['theme_hook_original']);
+
 if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
+  
   if($below){
-   // krumong('main')->kPrint($below,'below');
 
   foreach ($below as $elt) {  
 
@@ -60,25 +63,6 @@ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
       $nid_array[$i] = $value;
       $i++;
     }
-/*/*   $nid_unique =  array_unique($nid_array);
-
-   /* foreach ($nid_unique as $key) {
-            krumong('main')->kPrint($key,'nid');
-    }*/
-/*$nids = db_select('node', 'n')
-    ->fields('n')
-    ->fields('n', array('nid'))
-    ->fields('n', array('type'))
-    ->condition(db_and()->condition('n.type', 'nos_produits')->condition('n.nid',$nid_unique,'IN'))
-    ->execute()
-    ->fetchCol();*/ // returns an indexed array*/*/
-
-// Now return the node objects.
-/*$nodes = node_load_multiple($nids);*/
-/*krumong('main')->kPrint($nodes,'nids');*/
-
-
-//krumong('main')->kPrint($nodes);
 
 
 
@@ -93,6 +77,11 @@ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
   $options['html'] = TRUE;
   // Ajouter une classe particuliere sur les items de menu
  $class = transliteration_clean_filename($element['#title']);
+ 
+ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
+  $class='';
+  
+}
   $options['attributes']['class'][] = $class;
 
   $href = $element['#href'];
@@ -139,6 +128,14 @@ if($element['#original_link']['menu_name']=='user-menu'){
 if($element['#original_link']['menu_name']=='menu-r-seaux-sociaux-'){ 
     $title='';
 }
+
+
+if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
+  $class='';
+  $attributes['class'][] = transliteration_clean_filename($element['#title']);
+}
+
+
   return '<li' . drupal_attributes($attributes) . '>' .$prefix.l($title, $href, $options) . $sub_menu . "</li>\n";
 }
 

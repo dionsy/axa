@@ -104,8 +104,7 @@ section#block-menu-menu-menu-top ul li:hover a{
 #block-menu-menu-menu-principal ul li:hover ul.dropdown-menu {
    top:100%;
    width: 100%;
-   background-color: #fff;
-   margin-top: 0px;
+    margin-top: 0px;
 }
 
 /*#block-menu-menu-menu-top ul li:after{
@@ -564,23 +563,25 @@ footer div.view-id-contact ul {
     border-right: 3px solid #fff;
     /*border-right: 2px solid rgb(255, 255, 255);*/
 }
-#block-menu-menu-menu-principal ul li li a{
-    color: #000;
+#block-menu-menu-menu-principal ul li:hover a{
+    color: #fff;
 }
-/*#block-menu-menu-menu-principal ul li.dropdown::after {
-    content: "|";
-    color:#fff;
-    font-size: 1.1em;
-    float: right;
-    margin-right: -14px;
-    margin-top: -31px;
-} */
 #block-menu-menu-menu-principal ul li.dropdown:first-child{  
      border-left: 3px solid #fff;
 }
-#block-menu-menu-menu-principal ul li.dropdown:hover {
-   background-color: #ED1846;
+#block-menu-menu-menu-principal ul li.auto:hover {
+   background-color: #004D92;
 }
+#block-menu-menu-menu-principal ul li.assistance_et_accidents:hover {
+   background-color: #3598DC;
+}
+#block-menu-menu-menu-principal ul li.habitation:hover {
+   background-color: #A90F27;
+}
+#block-menu-menu-menu-principal ul li.loisir-vie_privee:hover {
+   background-color:#FFC000;
+}
+
 #block-menu-menu-menu-principal .nav .dropdown{
     position: initial;
 }
@@ -597,7 +598,6 @@ footer div.view-id-contact ul {
 
 .fond{
     background-color: #BBD2E1 !important;
-    margin-bottom: 15px;
 }
 ul.quicktabs-tabs.quicktabs-style-garland {
     background: #004D92 url(images/bg.gif) repeat-x scroll center bottom !important;
@@ -614,4 +614,64 @@ h2.pane-title {
 }
 ul#quicktabs-tab-left_menu-0::before{
     content: "\f0e4";
+}
+
+#block-menu-menu-menu-principal li li{
+    display: inline-block;
+}
+
+#block-menu-menu-menu-principal li li{
+    background-color: #fff
+}
+
+.comment_souscrire_ a:before,
+.individuelle_accidents_particuliers a:before,
+.evacuation_sanitaire a:before,
+li.solution_auto a:before,
+li.assurance_voyage a:before{
+    font-family: "FontAwesome";
+    font-size: 20px;
+    padding-right: .5em;
+}
+li.assurance_voyage a:before{
+    content: "\f072";
+    color: #3598DC;
+}
+li.solution_auto a:before{
+    content: "\f1b9";
+    color: #004D92;
+}
+.assistance_et_accidents li a{
+    color: #3598DC !important;
+}
+li.auto li a{
+     color: #004D92 !important;
+}
+.evacuation_sanitaire a:before,
+.individuelle_accidents_particuliers a:before{
+    content:"\f0f9";
+}
+
+.auto ul{
+    background-color: #004D92;
+}
+
+.assistance_et_accidents ul{
+    background-color: #3598DC;
+}
+.habitation ul{
+    background-color: #A90F27;
+}
+.habitation li a{
+    color: #A90F27 !important;
+}
+.loisir-vie_privee ul{
+   background-color:#FFC000;
+}
+.loisir-vie_privee li a:before,
+.loisir-vie_privee li a{
+    color: #FFC000 !important;
+}
+.comment_souscrire_ a:before{
+   content:"\f046";    
 }
