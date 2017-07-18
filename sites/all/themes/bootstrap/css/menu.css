@@ -630,7 +630,7 @@ ul#quicktabs-tab-left_menu-0::before{
 li.solution_auto a:before,
 li.assurance_voyage a:before{
     font-family: "FontAwesome";
-    font-size: 20px;
+    font-size: 30px;
     padding-right: .5em;
 }
 li.assurance_voyage a:before{
