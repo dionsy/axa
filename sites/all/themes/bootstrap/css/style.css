@@ -327,7 +327,7 @@ li.Assistance:hover .outside{
     background-color: #1abd1d;
 }
 li.Auto:hover .outside{
-	border-top: 4px solid #1abd1d ;
+	border-top: 4px solid #004D92 ;
 }
 
 
@@ -388,7 +388,7 @@ li.Loisirs-vie  .outside p {
 	bottom: 0;
 }
 .view-id-frontpage li.Auto  i.fa::before{
-		color: #1abd1d;
+		color: #004D92;
 		content: "\f1b9"; 
 	}
 
@@ -412,8 +412,8 @@ li.Loisirs-vie  .outside p {
 		font-family:'FontAwesome';
 		font-size:40px;
 		margin-top: 20px;
-		margin-bottom: 10px;
-	/*	color: #fff;*/
+		margin-bottom: 20px;
+	    display: block;
 	}
 .bottom{
 	text-align: center;
@@ -667,37 +667,36 @@ button.navbar-toggle
 
 
 
-./*Loisirs-vie a, .Assistance a, .Habitation a, .Auto a {
-margin-left: 14%;
-margin-right: 14%;
-padding-top: 1px;
-padding-bottom: 2px;
+.Loisirs-vie div.outsides a, .Assistance div.outsides a, .Habitation div.outsides a,
+ .Auto div.outsides a {
+padding-top: 5px;
+padding-bottom: 5px;
 padding-left: 6px;
-padding-right: 6px;
+margin-left: 10px;
+margin-right: 10px;
 font-size: 1.3em;
 text-align: center;
 color: white;
 background: linear-gradient( #004D92,#004D92);
-border-radius: 6px;
-box-shadow: 0 0 5px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.3);
-border: 1px solid #e30000;
-}*/
+box-shadow: 0 0 3px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.3);
+display: block;
+}
 
-/*.Loisirs-vie a:hover{
+.Loisirs-vie div.outsides a {
     background: #FFC000;
 }
 
-.Assistance a:hover{
+.Assistance div.outsides  a{
     background: #3598DC;
 }
 
-.Habitation a:hover{
+.Habitation div.outsides a {
     background: #A90F27;
 }
 
-.Auto a:hover{
+.Auto div.outsides a{
     background: #004D92;
-}*/
+}
 *{
     margin:0;
     padding:0;
@@ -1417,7 +1416,7 @@ a.asligne {
 
 }
 #block-menu-menu-footer ul li ::before {
-	content: "\f1db "; 
+	content: "\f1db"; 
 	font-family:'FontAwesome';
 	font-size:7px;
 	margin-right: 10px;

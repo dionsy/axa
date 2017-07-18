@@ -1,4 +1,4 @@
-img{
+.img_mail{
 	display:block;
 	margin-bottom: 1em;
 }
@@ -26,10 +26,10 @@ img{
 p{
 	/*display: block;*/
 }
-label{
+.corps label{
 	font-weight: bold;
 }
-label::after{
+.corps label::after{
 	content: ':';
 	margin-right: 0.5em;
 
@@ -38,10 +38,10 @@ label::after{
 	float: right;
 	text-align: right;
 }
-h3,strong{
+.corps h3,.corps strong{
 	color: rgb(16, 49, 132);
 }
-h3{
+.corps h3{
 
 }
 .infos{
@@ -62,8 +62,8 @@ h3{
 	padding: 1em;	
 }
 
-h3,
-img{
+.corps h3,
+.img_mail{
 	margin-bottom: 1em;
 	margin-left: 1em;
 }

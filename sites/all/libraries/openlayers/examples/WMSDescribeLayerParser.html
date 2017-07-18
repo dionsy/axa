@@ -12,12 +12,11 @@
           format = new OpenLayers.Format.WMSDescribeLayer();
           html = "<br>";
           resp = format.read(req.responseText);
-          var layerDescriptions = resp.layerDescriptions;
-          for(var i = 0; i < layerDescriptions.length; i++) {
-            html += "Layer: typeName: "+layerDescriptions[i].typeName+",";
+          for(var i = 0; i < resp.length; i++) {
+            html += "Layer: typeName: "+ resp[i].typeName+",";
                 html += "<ul>";
-                html += "<li>owsURL: "+layerDescriptions[i].owsURL+"</li>";
-                html += "<li>owsType: "+layerDescriptions[i].owsType+"</li>";
+                html += "<li>owsURL: "+resp[i].owsURL+"</li>";
+                html += "<li>owsType: "+resp[i].owsType+"</li>";
                 html += "</ul>"
           }
           document.getElementById('output').innerHTML = html;
