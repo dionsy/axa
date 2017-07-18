@@ -615,3 +615,41 @@ h2.pane-title {
 ul#quicktabs-tab-left_menu-0::before{
     content: "\f0e4";
 }
+#block-menu-menu-menu-d-aide {
+    text-align: center;
+    display: inline-block;
+}
+#block-menu-menu-menu-d-aide  ul{
+        background-color: #fff; 
+    position: fixed;
+    right: 15px;
+    top: 150px;
+    width:100px; 
+    padding: 10px;
+    z-index: 300;
+    font-size: 15px;
+    box-shadow: 0 9px 30px 0 rgba(0, 0, 0, 0.15);
+    border-top: 2px solid #00529B;
+}
+
+#block-menu-menu-menu-d-aide  ul li a.trouver_une_agence::before{
+    content: "\f041" ;
+
+
+}
+#block-menu-menu-menu-d-aide  ul li a.besoin_daide_::before {
+     content: "\f059" ;
+}
+#block-menu-menu-menu-d-aide  ul li a.trouver_une_agence::before ,
+#block-menu-menu-menu-d-aide  ul li a.besoin_daide_::before{
+     font-family: "FontAwesome";
+     font-size: 30px;
+     display: block;
+}
+#block-menu-menu-menu-d-aide  ul li {
+    border-bottom: 1px solid #ED1846; 
+    padding-bottom: 5px;
+}
+#block-menu-menu-menu-d-aide  ul li:hover  a:before {
+    color: #00529B;
+}

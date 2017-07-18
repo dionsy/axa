@@ -20,7 +20,7 @@ map.addControl(draw);
 draw.activate();
 
 // handle clicks on method links
-document.getElementById("insertXY").onclick = function() {
+$("insertXY").onclick = function() {
     var values = parseInput(
         window.prompt(
             "Enter map coordinates for new point (e.g. '-111, 46')", "x, y"
@@ -30,7 +30,7 @@ document.getElementById("insertXY").onclick = function() {
         draw.insertXY(values[0], values[1]);
     }
 };
-document.getElementById("insertDeltaXY").onclick = function() {
+$("insertDeltaXY").onclick = function() {
     var values = parseInput(
         window.prompt(
             "Enter offset values for new point (e.g. '15, -10')", "dx, dy"
@@ -40,7 +40,7 @@ document.getElementById("insertDeltaXY").onclick = function() {
         draw.insertDeltaXY(values[0], values[1]);
     }
 };
-document.getElementById("insertDirectionLength").onclick = function() {
+$("insertDirectionLength").onclick = function() {
     var values = parseInput(
         window.prompt(
             "Enter direction and length offset values for new point (e.g. '-45, 10')", "direction, length"
@@ -50,7 +50,7 @@ document.getElementById("insertDirectionLength").onclick = function() {
         draw.insertDirectionLength(values[0], values[1]);
     }
 };
-document.getElementById("insertDeflectionLength").onclick = function() {
+$("insertDeflectionLength").onclick = function() {
     var values = parseInput(
         window.prompt(
             "Enter deflection and length offset values for new point (e.g. '15, 20')", "deflection, length"
@@ -60,10 +60,10 @@ document.getElementById("insertDeflectionLength").onclick = function() {
         draw.insertDeflectionLength(values[0], values[1]);
     }
 };
-document.getElementById("cancel").onclick = function() {
+$("cancel").onclick = function() {
     draw.cancel();
 };
-document.getElementById("finishSketch").onclick = function() {
+$("finishSketch").onclick = function() {
     draw.finishSketch();
 };
 

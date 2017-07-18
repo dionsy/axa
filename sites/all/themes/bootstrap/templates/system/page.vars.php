@@ -85,7 +85,7 @@ function bootstrap_process_page(&$variables) {
   $variables['navbar_classes'] = implode(' ', $variables['navbar_classes_array']);
 
 //Custom error page
-
+//krumong('main')->kPrint($variables);
     $header = drupal_get_http_header('status'); 
     $title =  drupal_get_title();
     if(isset($variables['node']) && ($variables['node']->type == 'nos_produits')) {
