@@ -258,8 +258,8 @@
       'prefix' => '',
     ),
   ),
-);*/
-
+);
+*/
 
 $databases = array (
   'default' => 
