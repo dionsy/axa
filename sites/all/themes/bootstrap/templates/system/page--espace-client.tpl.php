@@ -88,6 +88,7 @@
   <!-- /#page-header -->
   
 <div class="main-container <?php print $container_class; ?>">
+
 <section class="row">
 <header id="" role="banner" class="navbar  col-md-9 ">
   <div class="<?php print $container_class; ?>">
@@ -145,10 +146,6 @@
       </div>
     <?php endif; ?>
     
-
-
-
-
 </section>
 
 
@@ -163,9 +160,9 @@
       </aside>  <!-- /#sidebar-first -->
      <!--  <aside class="col-sm-3"></aside> -->
     <?php endif; ?>
- <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
+ <?php /*if (!empty($title)):*/ ?>
+        <!-- <h1 class="page-header"><?php print $title; ?></h1> -->
+      <?php /*endif;*/ ?>
 
   <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="col-md-4 sidebar_first">

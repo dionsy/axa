@@ -628,3 +628,15 @@ ul#quicktabs-tab-left_menu-0::before{
     color: #2384BE;
     text-align: center;
 }
+
+.page-node-2 section.row {
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 1px 3px 3px #ccc;
+    margin-top: 8px;
+}
+
+ul.quicktabs-tabs.quicktabs-style-navlist {
+    margin-left: -14px;
+    margin-right: 14px;
+    box-shadow: 1px 1px 3px 3px #ccc;
+}
