@@ -553,7 +553,7 @@ footer div.view-id-contact ul {
 #block-menu-menu-menu-principal ul.menu.nav {
     font-size: 1.2em;
 }
-#block-menu-menu-menu-principal ul li.dropdown {
+#block-menu-menu-menu-principal ul li.dropdown , #block-menu-menu-menu-principal ul li.package{
    /* background: rgb(237, 24, 70) none repeat scroll 0 0;*/
     display: inline-block;
     /*margin-left: 10px;*/
@@ -583,7 +583,7 @@ footer div.view-id-contact ul {
    background-color:#FFC000;
 }
 
-#block-menu-menu-menu-principal .nav .dropdown{
+#block-menu-menu-menu-principal .nav .dropdown ,#block-menu-menu-menu-principal ul li.package{
     position: initial;
 }
 #block-menu-menu-menu-principal .nav{

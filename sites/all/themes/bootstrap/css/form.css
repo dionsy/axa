@@ -150,10 +150,14 @@ ul.tabs--primary li
 #webform-client-form-31 .form-item{
    
  /*   float: left;*/
-    display:block;
+    position: relative;
     margin-left: 10%;
     margin-right: auto;
     margin-top: 15px;
+    animation-timing-function: ease-in-out;
+/*    opacity: 1;*/
+    transform: translateX(0px);
+    transition: all 1s ease-in-out 0s;
 }
 
 /*#webform-client-form-8 .form-item-submitted-prenom{
@@ -409,7 +413,6 @@ ul.tabs--primary li
 }
 .page-node-10 form.webform-client-form , .page-node-31 form.webform-client-form {
    border: 2px solid #3598dc;
-
 }
 .page-node-9 form.webform-client-form , .page-node-29 form.webform-client-form   {
    border: 2px solid #a90f27;
@@ -471,19 +474,29 @@ ul.tabs--primary li
 }
 /* FORM CONTROL */
 .form-control {
-    background-color: #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border:0;
+    border-bottom: 1px solid rgb(33, 73, 118);
     border-radius: 0;
-    color: black;
-    display: block;
-    font-size: 15px;
-    height: 35px;
-    line-height: 1.42857;
-    margin-left: 0;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width: auto;
+    box-shadow: none;
+    font-size: 16px;
+    line-height: 15px;
+    margin-left: 5px;
+    margin-top: -4px;
+    width: 150px !important;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    -moz-appearance: none;
+    height: 25px;
+    padding: 0;
+    vertical-align: inherit;
+}
+.form-control:focus
+{
+    border-color: rgb(102, 175, 233);
+    box-shadow: inherit !important;
+    outline: 0 none;
 }
 .webform-progressbar {
+     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     margin: 18px auto 0;
     text-align: center;
     width: 90%;
