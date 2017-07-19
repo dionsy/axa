@@ -161,7 +161,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist{
 }
 .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
     background: #ffffff none repeat scroll 0 0;
-   /* border: 1px solid #bfd0ff;*/
+    border: none;
     float: left;
     min-height: 64px;
     padding: 0;
@@ -169,10 +169,18 @@ ul.quicktabs-tabs.quicktabs-style-navlist{
     /*width: 80%;*/
     z-index: 1;
 }
+
 ul.quicktabs-tabs.quicktabs-style-garland li {
- 
-    padding: 0 !important;
+    margin: -3px 0;
+    padding: 12px !important;
+    border-left: 1px solid #fff;
 }
+
+ul.quicktabs-tabs.quicktabs-style-garland li.active {
+    background: #004D92 none repeat scroll 0 0;
+    color: #ffffff !important;
+}
+
  ul.quicktabs-tabs.quicktabs-style-garland {
     background: rgb(169, 15, 39);
     /*padding:  0px ;*/
@@ -225,13 +233,12 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-3::before
 
 
 #quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li.active a {
-  /*background: rgba(169, 15, 39,0.2) !important;
-    color: #000 !important;*/
+  background: none;
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li ,#block-menu-menu-nos-produits li {
     /*background-color: #A90F27;*/
-    background-color: #3598dc;
+    background-color: #ffffff;
     padding: 0;
     text-align: right;
     border-bottom: 1px solid #ccc;
@@ -246,7 +253,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produi
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li a  {
-    color: #ffffff;
+    color: #666;
     display: block;
     font-weight: normal;
     height:auto;
@@ -486,7 +493,7 @@ section#block-system-main article .field-items {
   -moz-border-radius:7px;
   -webkit-border-radius:7px;
    border-radius:7px;
-<<<<<<< HEAD
+
 } */
 section#block-system-main article div.field-name-field-image-produit div.field-items .field-item::after{
     content: url('../images/axa.png');
@@ -594,7 +601,7 @@ footer div.view-id-contact ul {
     background-color: #BBD2E1 !important;
 }
 ul.quicktabs-tabs.quicktabs-style-garland {
-    background: #004D92 url(images/bg.gif) repeat-x scroll center bottom !important;
+    background: #3598DC url(images/bg.gif) repeat-x scroll center bottom !important;
 }
 
 /*** espace client ***/
@@ -608,6 +615,40 @@ h2.pane-title {
 }
 ul#quicktabs-tab-left_menu-0::before{
     content: "\f0e4";
+}
+
+
+.page-node-2 header .container, .page-node-2 header{
+    padding-left: 0 !important;
+}
+
+
+.page-node-2 .page-header{
+    background: none !important;
+    color: #2384BE;
+    text-align: center;
+}
+
+.page-node-2 section.row {
+    margin-top: 8px;
+    margin-bottom: 22px;
+    background: #fff none repeat scroll 0 0;
+    box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+ul.quicktabs-tabs.quicktabs-style-navlist {
+    margin-left: -14px;
+    margin-right: 14px;
+    box-shadow: 3px 1px 1px 1px #ccc;
+    width: 30% !important;
+}
+
+.page-node-2 #block-quicktabs-left-menu {
+   float: left;
+   width: 80%;
+}
+.page-node-2 #block-system-main{
+    display: none;
 }
 #block-menu-menu-menu-d-aide {
     text-align: center;

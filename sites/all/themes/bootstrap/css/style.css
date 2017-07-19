@@ -1501,9 +1501,9 @@ thead{
     color: #ffffff;
 }
 th{
-    padding: 2px;
+    padding: 8.8px;
     border: 1px solid #ccc;
-     text-align: center;
+    text-align: center;
 }
 
 tr:nth-child(2n){

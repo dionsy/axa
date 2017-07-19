@@ -88,6 +88,7 @@
   <!-- /#page-header -->
   
 <div class="main-container <?php print $container_class; ?>">
+
 <section class="row">
 <header id="" role="banner" class="navbar  col-md-9 ">
   <div class="<?php print $container_class; ?>">
@@ -116,16 +117,6 @@
 
 
 <!-- Mon compte -->
-      <?php
-      if(user_is_logged_in()) {
-        $account = user_load($user->uid);
-        $pic ='';
-        if(isset($account->picture))
-          $pic=$account->picture;
-        $img = file_create_url($pic->uri);
-        print '<div class="avatar col-md-1" ><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';   
-        }     
-      ?>
 
 <!-- Mon compte -->
 
@@ -145,10 +136,6 @@
       </div>
     <?php endif; ?>
     
-
-
-
-
 </section>
 
 
@@ -163,22 +150,31 @@
       </aside>  <!-- /#sidebar-first -->
      <!--  <aside class="col-sm-3"></aside> -->
     <?php endif; ?>
- <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
+ 
+        <?php
+          if(user_is_logged_in()) {
+            $account = user_load($user->uid);
+            $pic ='';
+            if(isset($account->picture))
+              $pic=$account->picture;
+            $img = file_create_url($pic->uri);
+            print '<div class="avatar col-md-1" ><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';   
+          }     
+        ?>
 
-  <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-md-4 sidebar_first">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
 
 
-    <section id="test" class="col-md-12 connexion">   
+    <section id="test" class="col-md-9 connexion">   
       <a id="main-content"></a>
       <?php print $messages; ?>
       <?php print render($page['content']); ?>
     </section>
+
+    <?php if (!empty($page['sidebar_first'])): ?>
+      <aside class="col-md-3 sidebar_first">
+        <?php print render($page['sidebar_first']); ?>
+      </aside>  <!-- /#sidebar-first -->
+    <?php endif; ?>
  
 
   </div>
