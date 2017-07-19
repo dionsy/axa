@@ -1,6 +1,5 @@
 <?php
 
-
 function bootstrap_node_view_alter(&$build){
  // krumong('main')->kPrint($build,'node');
   
@@ -36,11 +35,24 @@ function bootstrap_menu_link(array $variables) {
 
   $below =$element['#below'];
 
-    //krumong('main')->kPrint($variables['theme_hook_original']);
+
+
+
+  $pattern = '/\S+\.(png|gif|jpg)\b/i';
+  if (preg_match($pattern, $element['#title'], $matches) > 0) {
+    $element['#title'] = preg_replace($pattern, 
+      '<img alt = "' . $element['#localized_options']['attributes']['title'] . '" src = "' . url($matches[0]) . '" />',
+      $element['#title']);
+    $element['#localized_options']['html'] = TRUE;
+  }
+
+
 
 if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
   
   if($below){
+ //$element['#below']['#children']=$element['#below']['#children'].'<li><a href="#">DDDDDDDDDD</a></li>';
+  //krumong('main')->kPrint( $element['#below']);
 
   foreach ($below as $elt) {  
 
@@ -51,7 +63,6 @@ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
        array_push($list_nid, $nid[1]);
       }
     # code...
-   // krumong('main')->kPrint($list_nid,'nid');
   }
   }
 //  n.nid in ($list_nid)
@@ -63,9 +74,7 @@ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
       $nid_array[$i] = $value;
       $i++;
     }
-
-
-
+ 
   $options = !empty($element['#localized_options']) ? $element['#localized_options'] : array();
 
   // Check plain title if "html" is not set, otherwise, filter for XSS attacks.
@@ -110,10 +119,6 @@ if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
       // Generate as standard dropdown.
       $title .= ' <span class="caret"></span>';
       $attributes['class'][] = 'dropdown';
-
-
-
-
       // Set dropdown trigger element to # to prevent inadvertant page loading
       // when a submenu link is clicked.
       $options['attributes']['data-target'] = '#';
@@ -132,6 +137,9 @@ if($element['#original_link']['menu_name']=='menu-r-seaux-sociaux-'){
 
 if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
   $class='';
+ 
+// krumong('main')->kPrint($element['#below']['#children']);
+
   $attributes['class'][] = transliteration_clean_filename($element['#title']);
 }
 
