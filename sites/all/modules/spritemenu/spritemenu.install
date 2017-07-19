@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * @file
+ * .install code for the spritemenu module.
+ *
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function spritemenu_schema() {
+  $schema['spritemenu'] = array(
+    'description' => 'Databasing storing menu item sprites.',
+    'fields' => array(
+      'mid' => array(
+        'description' => '{menu}.mid ID',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'path' => array(
+        'description' => 'TODO',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'fid' => array(
+        'description' => '{file_managed}.fid ID',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'link' => array(
+        'description' => 'TODO',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'visited' => array(
+        'description' => 'TODO',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'hover' => array(
+        'description' => 'TODO',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'active' => array(
+        'description' => 'TODO',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('mid'),
+  );
+
+  return $schema;
+}
+
+
+function spritemenu_uninstall() {
+  module_load_include('module', 'spritemenu');
+
+  // Delete all image files from disk
+  $result = db_query("SELECT * FROM {spritemenu}");
+  foreach ($result as $row) {
+    if ($file = file_load($row->fid)) {
+      file_usage_delete($file, 'spritemenu', 'menu_link', $row->mid);
+      file_delete($file);
+    }
+  }
+
+  // remove css
+  $css = _spritemenu_css_filepath();
+  file_delete($css);
+
+  // remove settings
+  variable_del('spritemenu_path');
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function spritemenu_requirements($phase) {
+  $requirements = array();
+  // Ensure translations don't break at install time
+  $t = get_t();
+
+  if ($phase == 'runtime') {
+    $cnt = db_query("SELECT COUNT(*) FROM {spritemenu} s LEFT JOIN {menu_links} ml ON s.mid = ml.mlid WHERE isnull(ml.mlid)")->fetchField();
+    if ($cnt) {
+      $requirements['spritemenu_orphaned'] = array(
+        'title' => $t('Spritemenu orphaned items'),
+        'description' => $t("It is unclear why this sometimes happens. We are aware of this issue. In the meantime, however, we recommend to <a href=\"!clean_uri\">clean the orphaned items and rebuild the spritemenu CSS file</a>.<i></b></div>", array('!clean_uri' => url('spritemenu/clean_orphaned'))),
+        'severity' => REQUIREMENT_WARNING,
+        'value' => $cnt,
+      );
+    }
+  }
+
+  return $requirements;
+}
+
+/**
+ * Upgrade Sprite Menu to Drupal 7.
+ */
+function spritemenu_update_7000() {
+  global $user;
+
+  // Add an FID column to the spritemenu table. Because we need a default value
+  // for a new column when data exists, start with a default then remove it.
+  db_add_field('spritemenu', 'fid', array(
+    'description' => '{file_managed}.fid ID',
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+    'default' => 0,
+  ));
+  db_change_field('spritemenu', 'fid', 'fid', array(
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  ));
+
+  // Convert all existing paths to FIDs.
+  $result = db_query("SELECT * FROM {spritemenu}");
+  foreach ($result as $row) {
+    // Make a file_managed entry for each file.
+    $uri = file_build_uri(str_replace(variable_get('file_directory_path', 'sites/default/files'), '', $row->filepath));
+    $file = array(
+      'uid' => $user->uid,
+      'filename' => basename($uri),
+      'uri' => $uri,
+      'filemime' => file_get_mimetype($uri),
+      'filesize' => file_exists($uri) ? filesize($uri) : 0,
+      'status' => 1,
+      'timestamp' => REQUEST_TIME,
+      'type' => 'image',
+    );
+    $fid = db_insert('file_managed')
+      ->fields($file)
+      ->execute();
+    db_update('spritemenu')
+      ->fields(array(
+        'fid' => $fid,
+      ))
+      ->condition('filepath', $row->filepath)
+      ->execute();
+
+    // Make a file usage entry.
+    $file_usage = array(
+      'fid' => $fid,
+      'module' => 'spritemenu',
+      'type' => 'menu_link',
+      'id' => $row->mid,
+      'count' => 1,
+    );
+    $fid = db_insert('file_usage')
+      ->fields($file_usage)
+      ->execute();
+  }
+
+  db_drop_field('spritemenu', 'filepath');
+}

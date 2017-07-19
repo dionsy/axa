@@ -1,0 +1,11 @@
+name = Sprite Graphic Menu
+description = "Ability to use sprites (graphics) for menu items. It lets you upload one image per menu item and configure its sprites via CSS."
+dependencies[] = menu
+core = 7.x
+
+; Information added by drupal.org packaging script on 2013-03-08
+version = "7.x-1.2"
+core = "7.x"
+project = "spritemenu"
+datestamp = "1362752429"
+
