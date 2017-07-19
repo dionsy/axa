@@ -1,5 +1,5 @@
 .container ,.navbar.container {
-    max-width: 990px;
+    max-width: 1000px;
     padding-left: 0;
     padding-right:0; 
 }
@@ -217,6 +217,7 @@ ul{
 
 #block-system-main{
 	margin-bottom: 20px;
+    margin-top: 35px;
 }
 .view-frontpage ul li {
 	padding:0 0 0 5px;
@@ -682,7 +683,8 @@ padding-bottom: 5px;
 padding-left: 6px;
 margin-left: 10px;
 margin-right: 10px;
-font-size: 1.3em;
+font-size: 1.1em;
+font-weight: 600;
 text-align: center;
 color: white;
 background: linear-gradient( #004D92,#004D92);
