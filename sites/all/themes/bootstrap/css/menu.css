@@ -89,7 +89,7 @@
     font-size:1.0em;
     padding-left: 7px;
     padding-right: 7px;
-    background-color: #BBD2E1;
+    background-color: #ccc;
     margin-right: 4px;
 }
 #block-menu-menu-menu-top ul li a {
@@ -546,10 +546,7 @@ footer div.view-id-contact ul {
     width: 100%;
 }
 
-#block-menu-menu-menu-principal{
-    background: #BBD2E1;
- 
-}
+
 #block-menu-menu-menu-principal ul.menu.nav {
 }
 #block-menu-menu-menu-principal ul li.dropdown , #block-menu-menu-menu-principal ul li.package{
@@ -597,7 +594,7 @@ footer div.view-id-contact ul {
 }
 
 .fond{
-    background-color: #BBD2E1 !important;
+    background-color: #ccc !important;
 }
 ul.quicktabs-tabs.quicktabs-style-garland {
     background: #3598DC url(images/bg.gif) repeat-x scroll center bottom !important;
