@@ -551,7 +551,6 @@ footer div.view-id-contact ul {
  
 }
 #block-menu-menu-menu-principal ul.menu.nav {
-    font-size: 1.2em;
 }
 #block-menu-menu-menu-principal ul li.dropdown , #block-menu-menu-menu-principal ul li.package{
    /* background: rgb(237, 24, 70) none repeat scroll 0 0;*/
@@ -690,9 +689,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
 }
 
 #block-menu-menu-menu-principal li li{
-    display: inline-block;
-    background-color: #fff;
-    margin-right:10px;
+    display: block;
 }
 
 
@@ -715,8 +712,8 @@ li.auto li a{
     content:"\f0f9";
 }
 
-.auto ul{
-    background-color: #004D92;
+/*.auto ul{
+background-color: #004D92;
 }
 
 .assistance_et_accidents ul{
@@ -724,13 +721,13 @@ li.auto li a{
 }
 .habitation ul{
     background-color: #A90F27;
-}
+}*/
 .habitation li a{
     color: #A90F27 !important;
 }
-.loisir-vie_privee ul{
+/*.loisir-vie_privee ul{
    background-color:#FFC000;
-}
+}*/
 .loisir-vie_privee li a:before,
 .loisir-vie_privee li a{
     color: #FFC000 !important;
