@@ -653,18 +653,6 @@ ul#quicktabs-tab-left_menu-0::before{
 }
 /*** end ***/
 
-.avatar .barre {
-    background: #fff none repeat scroll 0 0;
-    border-bottom: 46px solid #ffffff;
-    border-top: 7px solid #ee3e40;
-    float: right;
-    left: -20px;
-    position: relative;
-    top: -45px;
-    transform: skew(16deg, -49deg);
-    width: 59%;
-}
-
 .info-left-menu .espace-client {
     color: #005399;
     padding-left: 0px;
@@ -702,15 +690,27 @@ ul#quicktabs-tab-left_menu-0::before{
     padding-right: 0px;
 }
 
+#block-block-4 .avatar .barre {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 46px solid #ffffff;
+    border-top: 7px solid #ee3e40;
+    float: right;
+    left: 8px;
+    position: relative;
+    top: -45px;
+    transform: skew(13deg, -51deg);
+    width: 74%;
+}
+
+
 #block-block-4 .head0 {
-    padding-left: 0;
-    padding-top: 1%;
+    
 }
 
 #block-block-4 .head1 {
     color: #2f5399;
-    font-size: 20px;
     letter-spacing: 1px;
+    font-size: 17px;
 }
 
 #block-block-4 .head2 {
