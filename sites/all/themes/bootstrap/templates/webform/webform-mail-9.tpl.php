@@ -34,7 +34,7 @@ $src=explode('public://', $logo_url);
 //$type_de_bien = $tb->name;
 
 
-$logo = '<img src="'.$base_url.'/sites/default/files/'.$src[1].'"/>';
+$logo = '<img class="img_mail" src="'.$base_url.'/sites/default/files/'.$src[1].'"/>';
 
  /*[submission:values]*/
  

@@ -91,47 +91,40 @@
 
 <section class="row">
 <header id="" role="banner" class="navbar  col-md-9 ">
-  <div class="<?php print $container_class; ?>">
+  <div class="">
     <div class="navbar-header">
       <?php if ($logo): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
       <?php endif; ?>
-
-     <!--  <?php //if (!empty($site_name)): ?>
-        <a class="name navbar-brand" href="<?php // print $front_page; ?>" title="<?php //print t('Home'); ?>"><?php //print $site_name; ?></a>
-      <?php //endif; ?> -->
-
-      <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      <?php endif; ?> 
+ 
       </div>   
   </div>
 </header>
 
-
-<!-- Mon compte -->
-
-<!-- Mon compte -->
-
  <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse col-md-2" id="navbar-collapse ">
+      <div class="info-left-menu col-md-3" id="">
         <nav role="navigation">
-          <?php if (!empty($primary_nav)): ?>
-            <?php print render($primary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($secondary_nav)): ?>
-            <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-          <?php endif; ?>
+          <div class="row espace">
+             <div class="espace-client col-md-8">
+               <p>Mon espace client</p>
+               <div class="barre"></div>
+             </div>
+             <div class="nom-client col-md-4">
+               <?php
+                  $account = array();
+                  if(user_is_logged_in())
+                    $account = user_load($user->uid);    
+                  print '<span>M. '.$account->name. '</span>';   
+               ?>
+             </div>
+          </div>
+          <div class="row">
+             <div class="deconnexion col-md-12">
+               <span>Déconnexion</span>
+             </div>
+          </div>
         </nav>
       </div>
     <?php endif; ?>
@@ -151,16 +144,6 @@
      <!--  <aside class="col-sm-3"></aside> -->
     <?php endif; ?>
  
-        <?php
-          if(user_is_logged_in()) {
-            $account = user_load($user->uid);
-            $pic ='';
-            if(isset($account->picture))
-              $pic=$account->picture;
-            $img = file_create_url($pic->uri);
-            print '<div class="avatar col-md-1" ><img class="img-responsive" src="'.$img.'" /> <span>'.$account->name. '</span></div>';   
-          }     
-        ?>
 
 
 
@@ -171,7 +154,7 @@
     </section>
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-md-3 sidebar_first">
+      <aside class="mon-conseiller col-md-3 sidebar_first">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>

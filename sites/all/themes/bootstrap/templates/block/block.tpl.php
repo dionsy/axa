@@ -115,6 +115,7 @@ $contenu_map='<div class="map" id="map">
 			</div>
 		</div>';
 
+
 //krumong('main')->kPrint($block->delta);
 //krumong('main')->kPrint($content);
 
@@ -163,6 +164,16 @@ switch ($block->delta) {
 		$content=$contenu_map;
 	break;
 	
+	case '4':
+	    if(user_is_logged_in()) {
+	        $account = user_load($user->uid);
+	    	$pic ='';
+		    if(isset($account->picture))
+               $pic=$account->picture;
+            $img = file_create_url($pic->uri);
+            $prefix = '<div class="avatar col-md-2" ><img class="img-responsive" src="'.$img.'" /><div class="barre">&nbsp;&nbsp;&nbsp;&nbsp;</div></div>';
+        }
+	break;
 	
 	default:
 		# code...
