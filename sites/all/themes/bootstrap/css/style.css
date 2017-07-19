@@ -664,7 +664,10 @@ button.navbar-toggle
 	color:black;
     display: block;
 }
-
+.slick-dotted.slick-slider{
+    max-height: 275px;
+    overflow: hidden;
+}
 
 
 .Loisirs-vie div.outsides a, .Assistance div.outsides a, .Habitation div.outsides a,

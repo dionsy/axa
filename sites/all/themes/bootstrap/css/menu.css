@@ -39,8 +39,11 @@
 .footer  div.container section {
     padding : 0 ;
 }
-section#block-views-contact-block ,section#block-menu-menu-footer {
+#block-views-contact-block , #block-menu-menu-footer {
     padding-right: 30px;
+}
+#block-menu-menu-footer ul li {
+    width: 162px;
 }
 
 
@@ -87,6 +90,7 @@ section#block-views-contact-block ,section#block-menu-menu-footer {
     padding-left: 7px;
     padding-right: 7px;
     background-color: #BBD2E1;
+    margin-right: 4px;
 }
 #block-menu-menu-menu-top ul li a {
     color: black;
@@ -107,16 +111,6 @@ section#block-menu-menu-menu-top ul li:hover a{
     margin-top: 0px;
 }
 
-/*#block-menu-menu-menu-top ul li:after{
-    content: "|";
-    font-size:1.0em;
-    float: right;
-    margin-right: -12px;
-    margin-top: -27px;
-}*/
-#block-menu-menu-menu-top ul li:last-child:after{
-    content: "";
-}
 #block-menu-menu-menu-top ul li:hover , #block-menu-menu-menu-top ul li:active   {
     background-color:#ED1846; 
     color: #fff;
@@ -656,7 +650,6 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
 .page-node-2 #block-system-main{
     display: none;
 }
-=======
 #block-menu-menu-menu-d-aide {
     text-align: center;
     display: inline-block;
@@ -700,19 +693,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     display: block;
 }
 
-#block-menu-menu-menu-principal li li{
-    background-color: #fff
-}
 
-.comment_souscrire_ a:before,
-.individuelle_accidents_particuliers a:before,
-.evacuation_sanitaire a:before,
-li.solution_auto a:before,
-li.assurance_voyage a:before{
-    font-family: "FontAwesome";
-    font-size: 30px;
-    padding-right: .5em;
-}
 li.assurance_voyage a:before{
     content: "\f072";
     color: #3598DC;
@@ -755,4 +736,29 @@ li.auto li a{
 .comment_souscrire_ a:before{
    content:"\f046";    
 }
->>>>>>> cceabdfef60e932298323b4714c050ce692d858d
+.que_faire_en_cas_de_sinistre a:before{
+    content: "\f071";
+}    
+.mrh_premium a:before{
+    content: "\f015";
+}
+.multirisque_immeuble a:before{
+    content: "\f0f7";
+}
+.incendie_particulier a:before{
+    content: "\f06d";
+}
+
+.comment_souscrire_ a:before,
+.individuelle_accidents_particuliers a:before,
+.evacuation_sanitaire a:before,
+li.solution_auto a:before,
+li.assurance_voyage a:before,
+.que_faire_en_cas_de_sinistre a:before,
+.mrh_premium a:before,
+.multirisque_immeuble a:before,
+.incendie_particulier a:before{
+    font-family: "FontAwesome";
+    font-size: 30px;
+    padding-right: .5em;
+}
