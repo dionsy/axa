@@ -36,6 +36,18 @@ function bootstrap_menu_link(array $variables) {
   $below =$element['#below'];
 
 
+
+
+  $pattern = '/\S+\.(png|gif|jpg)\b/i';
+  if (preg_match($pattern, $element['#title'], $matches) > 0) {
+    $element['#title'] = preg_replace($pattern, 
+      '<img alt = "' . $element['#localized_options']['attributes']['title'] . '" src = "' . url($matches[0]) . '" />',
+      $element['#title']);
+    $element['#localized_options']['html'] = TRUE;
+  }
+
+
+
 if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
   
   if($below){
