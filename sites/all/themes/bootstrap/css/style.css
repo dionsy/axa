@@ -1,3 +1,8 @@
+.container ,.navbar.container {
+    max-width: 990px;
+    padding-left: 0;
+    padding-right:0; 
+}
 .bleu{
     background-color: red;
     font-size: 18px;
@@ -249,6 +254,7 @@ ul{
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2{
  font-size: 1.3em;
+ max-height: 25px;
  color: black;
  margin-top: 0;
  text-align: center;
