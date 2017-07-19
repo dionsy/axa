@@ -43,7 +43,7 @@
     padding-right: 30px;
 }
 #block-menu-menu-footer ul li {
-    width: 162px;
+    width: 145px;
 }
 
 
@@ -66,6 +66,9 @@
     display: block;
     padding: 2px;
     position: relative;
+}
+#block-menu-menu-menu-principal .nav li a {
+    font-weight: 700;
 }
 #navbar_banner{
     margin-bottom: 40px;
@@ -558,8 +561,23 @@ footer div.view-id-contact ul {
     padding-right: 20px;
     padding-left: 20px;
     border-right: 3px solid #fff;
+/*    box-shadow: 0 2px 0 0 rgb(255, 255, 255) inset;*/
     /*border-right: 2px solid rgb(255, 255, 255);*/
 }
+/*#block-menu-menu-menu-principal ul li.auto{
+    border-top: 3px solid #004D92
+
+}
+#block-menu-menu-menu-principal ul li.assistance_et_accidents{
+    border-top: 3px solid  #3598DC
+
+}
+#block-menu-menu-menu-principal ul li.habitation {
+   border-top: 3px solid #A90F27;
+}
+#block-menu-menu-menu-principal ul li.loisir-vie_privee {
+   border-top: 3px solid #FFC000;
+}*/
 #block-menu-menu-menu-principal ul li:hover a{
     color: #fff;
 }
