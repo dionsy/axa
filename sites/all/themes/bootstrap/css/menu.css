@@ -697,7 +697,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
 }
 
 #block-menu-menu-menu-principal li li{
-    display: inline-block;
+    display: block;
 }
 
 #block-menu-menu-menu-principal li li{
