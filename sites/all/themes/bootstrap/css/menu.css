@@ -84,7 +84,20 @@
 #block-menu-menu-menu-top ul li:last-child a::after{
     content:none;
     }*/
-
+#block-menu-menu-menu-principal li li.last{
+    display: inherit;
+    width: 40%;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#block-menu-menu-menu-principal li li.last img{
+    float: right;
+}
+#block-menu-menu-menu-principal li li{
+    width: 50%;
+}
 #block-menu-menu-menu-top ul li{
     font-size:1.0em;
     padding-left: 7px;
@@ -104,6 +117,7 @@ section#block-menu-menu-menu-top ul li:hover a{
 }
 #block-menu-menu-menu-principal ul li ul.dropdown-menu {
    top:-3000px;
+   min-height: 167px;
 }
 #block-menu-menu-menu-principal ul li:hover ul.dropdown-menu {
    top:100%;
@@ -744,7 +758,10 @@ background-color: #004D92;
 .incendie_particulier a:before{
     content: "\f06d";
 }
-
+.plaisance a:before{
+    content: "\f21a";
+}
+.plaisance a:before,
 .comment_souscrire_ a:before,
 .individuelle_accidents_particuliers a:before,
 .evacuation_sanitaire a:before,
