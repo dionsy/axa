@@ -68,8 +68,8 @@ body.not-logged-in.page-user::after {
     z-index: 1;
 }
 .navbar.container, .navbar.container-fluid {
-    margin-top: 0px;
-    margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 7px;
     padding: 0 !important;
 }
 
@@ -1599,7 +1599,7 @@ div.offres .offre {
     margin-left: 5px;
 }
 .page-user .logo {
-    margin: 10px 25%; 
+    margin: 25px 3%; 
 }
 #block-search-form {
 }
