@@ -153,12 +153,13 @@ section#block-menu-menu-menu-top ul li:hover a{
     background-color:#ED1846; 
     padding-bottom: 4px;
     padding-top: 4px;
-/*    margin-right: 42px;*/
     margin-left:42px;
+    width: 60%;
+    float: right;
 }
 a.es_cli {
     color:#fff;
-     font-size: 1.0em;
+     font-size: larger;
 }
 .es_cli:hover {
     color:#fff;
@@ -952,11 +953,11 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     background-color: #fff; 
     position: fixed;
     right: 15px;
-    top: 150px;
-    width:100px; 
-    padding: 10px;
+    top: 220px;
+    width:75px; 
+    padding: 5px;
     z-index: 300;
-    font-size: 15px;
+    font-size: 11px;
     box-shadow: 0 9px 30px 0 rgba(0, 0, 0, 0.15);
     border-top: 2px solid #00529B;
 }

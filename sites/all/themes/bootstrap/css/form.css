@@ -132,11 +132,14 @@ form#user-login {
 
 .form-item-submitted-nom, .form-item-submitted-prenom, .edit-submitted-date-de-naissance-month,
 .edit-submitted-date-de-naissance-day, .edit-submitted-e-mail, .edit-submitted-telephone{
-    margin-top: 30px;
+/*    margin-top: 30px;*/
     margin-bottom: 20px;
 } 
-
-
+.input-transforme {
+    position: relative;
+    transform: translateX(20%);
+    width: 75%;
+}
 .form-item-submitted-nom,.form-item-submitted-prenom,
 #webform-client-form-9 .form-item-submitted-type-de-bien,#webform-client-form-9 .form-item-submitted-nombre-de-pieces,
 #webform-client-form-9 .form-item-submitted-vous-etes,
@@ -152,22 +155,67 @@ form#user-login {
    
  /*   float: left;*/
     position: relative;
-    margin-left: 10%;
+        /*margin-left: 10%;*/
+    cursor: default;
     margin-right: auto;
-    margin-top: 15px;
-    animation-timing-function: ease-in-out !important;
+    margin-top: 25px;
+
+}
+ .form-item-submitted-nom ,.webform-component--civilite ,
+ .form-item-submitted-prenom, .webform-component--date-de-naissance,
+ .form-item-submitted-email,.form-item-submitted-telephone,
+.form-item-submitted-type-dassurance ,.webform-component--type-de-bien ,
+.form-item-submitted-nombre-de-pieces,
+.webform-component--ce-logement-est-il-votre-residence-principale,
+.form-item-submitted-adresse-du-bien-a-assurer,
+.form-item-submitted-vous-etes ,
+.form-item-submitted-quand-souhaitez-vous-etre-assure,
+.form-item-submitted-marque,
+.webform-component--energie-du-vehicule,
+.form-item-submitted-annee-de-naissance,
+.form-item-submitted-age-dobtention-du-permis,
+.webform-component--email-conducteur{
+    animation-timing-function: ease-in-out;
 /*    opacity: 1;*/
-    transform: translateX(0px) !important;
-    transition: all 1s ease-in-out 0s !important;
-/*    width: 170px;*/
+    transform: translateX(50px) ;
+    transition: all 0.4s ease-in-out 0s ;
+    width: 80%;
 }
 
-/*#webform-client-form-8 .form-item-submitted-prenom{
-     width: 40%;
-    float: left;
-    margin-left: 4%;
-    margin-right: 6%;
-}*/
+.form-item-submitted-nom ,.form-item-submitted-prenom ,
+.webform-component--date-de-naissance ,.form-item-submitted-email,
+ .form-item-submitted-telephone , .form-item-submitted-type-dassurance, 
+ .form-item-submitted-nombre-de-pieces,
+ .webform-component--ce-logement-est-il-votre-residence-principale,
+ .form-item-submitted-adresse-du-bien-a-assurer,
+ .form-item-submitted-vous-etes,
+ .form-item-submitted-quand-souhaitez-vous-etre-assure,
+ .webform-component--energie-du-vehicule,
+ .form-item-submitted-age-dobtention-du-permis,
+ .webform-component--email-conducteur{
+   height: 0;
+  opacity: 0;
+}
+
+.fadeIn{
+    display: block;
+    margin-bottom: 25px;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+    height: 20px;
+    transform: translateX(0px);
+    transition: all 1s ease-in-out 0s;
+}
+.webform-component--date-de-naissance.fadeIn {
+    height: 90px;
+}
+.webform-component--ce-logement-est-il-votre-residence-principale.fadeIn ,
+.form-item-submitted-annee-de-naissance {
+    height: 60px;
+}
+.form-item-submitted-annee-de-naissance {
+    height: 25px;
+}
 
 #webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-month ,
 #webform-client-form-11 .webform-datepicker .form-item-submitted-date-de-naissance-month ,
@@ -180,7 +228,7 @@ form#user-login {
     display: inline-block;
     margin-left: 10%;
     margin-right: auto;
-    float: left;
+  /*  float: left;*/
 
 }
 #webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-day,
@@ -203,16 +251,10 @@ form#user-login {
     margin-right: 2%;
    /* float: left;*/
 }
-/*#webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-year{
-     width: 15%;
-    float: left;
-    margin-left: 2%;
-    margin-right: 2%;
-    float: left;
-}*/
+
 .form-item-submitted-date-de-naissance label{
-    margin-top: 30px;
-    margin-left: 10%;
+    margin-top: 20px;
+   /* margin-left: 10%;*/
     margin-bottom: 20px;
 }
 
@@ -227,11 +269,12 @@ form#user-login {
 #webform-client-form-66 .form-item-submitted-telephone,
 #webform-client-form-10 .form-item-submitted-email,
 #webform-client-form-9 .form-item-submitted-email{
-    margin-top: 25px;
+     position: relative;
+    cursor: default;
 /*    width: 40%;*/
 /*    float: left;*/
     display: block;
-    margin-left: 10%;
+/*    margin-left: 10%;*/
     margin-right: auto;
 }
 #webform-client-form-8 .form-item-submitted-telephone,
@@ -240,38 +283,45 @@ form#user-login {
 #webform-client-form-11 .form-item-submitted-telephone,
 #webform-client-form-10 .form-item-submitted-telephone,
 #webform-client-form-9 .form-item-submitted-telephone{
-    width: 38%;
-   display: inline-block;
-    margin-left: 10%;
+    /*width: 38%;*/
+   display: block;
+   /* margin-left: 10%;*/
     margin-right: auto;
-    margin-top: 25px;
+    margin-top: 35px;
     
 }
+
 #webform-client-form-11 .form-item-submitted-civilite,
 #webform-client-form-10 .form-item-submitted-civilite,
 #webform-client-form-9 .form-item-submitted-civilite{
-    width: 40%;
+   /* width: 40%;*/
     display: inline-block;
-    margin-left: 10%;
+   /* margin-left: 10%;*/
     margin-right: auto;
+}
+#edit-submitted-civilite .form-item-submitted-civilite ,
+#edit-submitted-civilite .form-item-submitted-civilite,
+#edit-submitted-civilite .form-item-submitted-civilite{
+
+    margin-left: 13%;
 }
 .form-item.webform-component.webform-component-radios.webform-component--civilite.form-group.form-item.form-item-submitted-civilite.form-type-radios.form-group ,
 .form-item.webform-component.webform-component-term-reference.webform-component--type-dassurance.form-group.form-item.form-item-submitted-type-dassurance.form-type-select.form-group{
-    margin-top: 20px;
+    margin-top: 30px;
 }
 #webform-client-form-11 .form-item-submitted-type-dassurance,
 #webform-client-form-10 .form-item-submitted-type-dassurance{
-    width: 38%;
+    /*width: 38%;*/
    display: inline-block;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
     margin-right: auto;
 }
 
 #webform-client-form-8 .form-item-submitted-marque{
     max-width: 100%;
-    float: left;
+   /* float: left;
     margin-left: 6%;
-    margin-right: 3%;
+    margin-right: 3%;*/
     margin-top: 25px;
     margin-bottom: 40px;
 }
@@ -279,52 +329,28 @@ form#user-login {
     display: inline;
 }
 #webform-client-form-8 .form-item-submitted-marque label{
-    margin-right: 30px;
+    margin-right: 20px;
     }
-#edit-submitted-marque-select-2{
-    margin-left: 30px;
-}
-#edit-submitted-marque-select-3{
-    margin-left: 30px;
+#edit-submitted-marque-select-2 ,#edit-submitted-marque-select-3{
+    margin-left: 20px;
 }
 #webform-client-form-8 .form-item-submitted-marque select {
     padding: 5px;
+    width: 23%;
 }
 #webform-client-form-8 .form-item-submitted-energie-du-vehicule{
     margin-bottom: 20px;
-    width: 50%;
-    margin-left: 6%;
+    margin-right: 10px;
     margin-top: 15px;
 }
 
-#webform-client-form-8 .form-item-submitted-annee-de-naissance-year {
-     width: 60%;
-    float: left;
-    margin-left: 6%;
-    margin-right: 1%;
-}
-.form-item-submitted-annee-de-naissance label{
-    margin-left: 6%;
-}
-#webform-client-form-8 .form-item-submitted-age-dobtention-du-permis{
-     width: 60%;
-    float: left;
-    margin-left: 6%;
-    margin-right: 1%;   
-}
-#webform-client-form-8 .form-item-submitted-email{
-    width: 60%;
-    float: left;
-    margin-left: 6%;
-    margin-right: 1%; 
-}
 .form-item.webform-component.webform-component-radios.webform-component--ce-logement-est-il-votre-residence-principale.form-group.form-item.form-item-submitted-ce-logement-est-il-votre-residence-principale.form-type-radios.form-group {
-    margin-left: 10%;
+    /*margin-left: 10%;*/
     margin-top: 15px;
 }
 .form-item.webform-component.webform-component-textarea.webform-component--adresse-du-bien-a-assurer.form-group.form-item.form-item-submitted-adresse-du-bien-a-assurer.form-type-textarea.form-group {
    display: inline-block; 
-    margin-left: 10%;
+/*    margin-left: 10%;*/
     margin-right: auto;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -341,7 +367,10 @@ form#user-login {
     width: 50%;
     padding: 4px 3px;
 }
-
+textarea#edit-submitted-adresse-du-bien-a-assurer {
+    width: 100% !important;
+      border: 1px solid black;
+}
 /*** dropdown hover***/
 
 #navbar-collapse .nav .dropdown {
@@ -478,6 +507,9 @@ form#user-login {
 }
 /* FORM CONTROL */
 .form-control {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
     border:0;
     border-bottom: 1px solid rgb(33, 73, 118);
     border-radius: 0;
@@ -492,6 +524,7 @@ form#user-login {
     height: 25px;
     padding: 0;
     vertical-align: inherit;
+    transition: none;
 }
 .form-control:focus
 {
@@ -508,7 +541,12 @@ form#user-login {
 .form-actions {
     text-align: center;
 }
-
+#edit-submitted-email ,#edit-submitted-email-conducteur {
+    width: 75% !important;
+}
+.form-item-submitted-annee-de-naissance .webform-container-inline.webform-datepicker {
+    display: inline-block;
+}
 .page-user form#user-login  label {
 /*    float: left;
     margin-left: 8%;*/
