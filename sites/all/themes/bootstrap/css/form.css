@@ -39,7 +39,7 @@ ul.tabs--primary li
  li.active > a{
     background-color: initial !important;
     border-color: transparent !important;
-    /*color: white !important;*/
+    color: white !important;
  }
 form#user-login {
     margin-top: 30px;
