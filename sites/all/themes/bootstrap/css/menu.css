@@ -662,7 +662,7 @@ ul#quicktabs-tab-left_menu-0::before{
 .info-left-menu .barre {
     border-top: 4px solid #ee3e40;
     float: right;
-    left: -20px;
+    left: -35px;
     position: relative;
     text-align: right;
     top: -12px;
@@ -684,7 +684,6 @@ ul#quicktabs-tab-left_menu-0::before{
 .info-left-menu .nom-client {
     padding-left: 3px;
     padding-right: 0;
-    text-align: right;
 }
  .info-left-menu .nom-client span{
     color: #aaa;
@@ -710,31 +709,29 @@ ul#quicktabs-tab-left_menu-0::before{
 
 #block-block-4 .avatar .barre {
     background: #fff none repeat scroll 0 0;
-    border-bottom: 46px solid #ffffff;
+    border-bottom: 43px solid #ffffff;
     border-top: 7px solid #ee3e40;
     float: right;
-    left: 8px;
+    left: -6px;
     position: relative;
     top: -45px;
     transform: skew(13deg, -51deg);
-    width: 74%;
+    width: 65%;
 }
 
-
-#block-block-4 .head0 {
-    
-}
 
 #block-block-4 .head1 {
     color: #2f5399;
     letter-spacing: 1px;
-    font-size: 17px;
 }
 
 #block-block-4 .head2 {
     color: #004d92;
-    font-size: 21px;
+    font-size: 14px;
     font-weight: bold;
+}
+.page-node-2 .connexion {
+    padding-right: 0;
 }
 
 
@@ -749,8 +746,99 @@ ul#quicktabs-tab-left_menu-0::before{
 ul.quicktabs-tabs.quicktabs-style-navlist {
     margin-left: -14px;
     margin-right: 14px;
-    box-shadow: 3px 1px 1px 1px #ccc;
+    box-shadow: 2px 1px 1px 2px #ccc;
     width: 30% !important;
+}
+
+.corps-espace-client {
+    box-shadow: 2px 2px 2px 2px #ccc;
+    margin-top: -10%;
+    padding: 0;
+}
+
+h1.bienvenue {
+    box-shadow: 0 -1px 0 0 #eee inset;
+    color: #005399;
+    font-size: 20px;
+    margin: 0;
+    padding: 21px 3% 13px 3%;
+    /* Navigateurs récents */
+    background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
+    background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
+    background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+}
+
+.alignement {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.alignement h3{
+    color: #666666;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.mon-conseiller h3{
+    color: #666666;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.alignement > p, #block-block-5 .conseiller-left-bar >p {
+    color: #666;
+}
+
+#block-block-5 .conseiller-left-bar {
+    margin: 3%;
+}
+
+#block-block-5{
+    border: none;
+    /* Navigateurs récents */
+    background: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#c6d7e4), color-stop(0.5, #fff));
+    background: -webkit-linear-gradient(left top, #fff, #fff 39%, #c0e7e0);
+    background: -moz-linear-gradient(left top, #fff, #fff 39%, #c0e7e0);
+    background: -o-linear-gradient(left top, #fff, #fff 39%, #c0e7e0);
+    background: linear-gradient(left top, #fff, #fff 39%, #c0e7e0);
+}
+
+.mon-conseiller .well {
+    border: medium none;
+    box-shadow: 0 1px 2px 0 #ccc;
+}
+.conseiller-left-bar p:last-child {
+    text-align: center;
+}
+
+.conseiller-left-bar p:last-child a {
+    background: rgb(71, 168, 13) none repeat scroll 0 0;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    padding: 2%;
+}
+
+#block-block-5 .blanc {
+    border-bottom: 7px solid #fff;
+    padding-top: 24px;
+}
+
+#block-block-5 .incline {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 46px solid #ffffff;
+    border-top: 7px solid #ffffff;
+    float: right;
+    left: 2px;
+    position: relative;
+    top: 16px;
+    transform: skew(0deg, 7deg);
+    width: 102%;
 }
 
 .page-node-2 #block-quicktabs-left-menu {
@@ -765,7 +853,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     display: inline-block;
 }
 #block-menu-menu-menu-d-aide  ul{
-        background-color: #fff; 
+    background-color: #fff; 
     position: fixed;
     right: 15px;
     top: 150px;
@@ -873,4 +961,6 @@ li.assurance_voyage a:before,
     font-size: 30px;
     padding-right: .5em;
 }
->>>>>>> 2d0edfee7fca9f05ecf2b6a7cdb62c374412da1a
+.container, .navbar.container {
+    max-width: none;
+}
