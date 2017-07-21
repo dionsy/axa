@@ -676,7 +676,7 @@ ul#quicktabs-tab-left_menu-0::before{
 .info-left-menu .barre {
     border-top: 4px solid #ee3e40;
     float: right;
-    left: -35px;
+    left: -25px;
     position: relative;
     text-align: right;
     top: -12px;
@@ -693,6 +693,7 @@ ul#quicktabs-tab-left_menu-0::before{
 
 .info-left-menu .espace-client p {
     margin: 0;
+    font-weight: bold;
 }
 
 .info-left-menu .nom-client {
@@ -746,22 +747,15 @@ ul#quicktabs-tab-left_menu-0::before{
 }
 .page-node-2 .connexion {
     padding-right: 0;
+    padding-left: 0;
 }
 
 
 
-
-
-
-
-
-
-
 ul.quicktabs-tabs.quicktabs-style-navlist {
-    margin-left: -14px;
-    margin-right: 14px;
     box-shadow: 2px 1px 1px 2px #ccc;
-    width: 30% !important;
+    margin-right: 3%;
+    width: 26%;
 }
 
 .corps-espace-client {
@@ -770,7 +764,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     padding: 0;
 }
 
-h1.bienvenue {
+h1.bienvenue, #block-views-liste-contrats-block .block-title {
     box-shadow: 0 -1px 0 0 #eee inset;
     color: #005399;
     font-size: 20px;
@@ -784,7 +778,7 @@ h1.bienvenue {
     background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
 }
 
-.alignement {
+.alignement, .view-liste-contrats {
     padding-left: 3%;
     padding-right: 3%;
 }
@@ -855,8 +849,65 @@ h1.bienvenue {
     width: 102%;
 }
 
+/*** mes contrats ***/
+#block-views-liste-contrats-block .block-title {
+    margin-bottom: 25px;
+}
+.view-liste-contrats {
+    padding-bottom: 15%;
+}
+
+#quicktabs-tabpage-left_menu-2.quicktabs-tabpage {
+    box-shadow: 2px 2px 2px 2px #ccc;
+}
+
+.view-liste-contrats .view-content .list-contrat h3{
+    color: #004D92;
+}
+
+.view-liste-contrats .view-content .list-contrat {
+    clear: both !important;
+}
+
+.view-liste-contrats .view-content .list-contrat, .view-liste-contrats .view-content .list-contrat ul, .view-liste-contrats .view-content{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.view-liste-contrats .view-content .list-contrat h3 {
+    background: #fcfcfc none repeat scroll 0 0;
+    border: 1px solid #eee;
+    color: #004d92;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2%;
+    margin: 0px;
+}
+
+.view-liste-contrats .view-content .list-contrat .action span {
+    background: #fcfcfc none repeat scroll 0 0;
+    float: left;
+    width: 33%;
+    padding-left: 2%;
+}
+
+.view-liste-contrats .view-content .list-contrat .action span.envoyerRequete {
+    width: 34%;
+}
+
+.action .telecharger, .action .visualiser, .action .envoyerRequete{
+    border: 1px solid #eee;
+}
+
+.view-liste-contrats .view-content .list-contrat .action span a {
+    color: #aaa;
+} 
+
+
 .page-node-2 #block-quicktabs-left-menu {
    float: left;
+   width: 100%;
 }
 .page-node-2 #block-system-main{
     display: none;
