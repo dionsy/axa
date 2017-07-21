@@ -112,6 +112,8 @@
         $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
            $('.form-item-submitted-email').addClass('fadeIn'  ) ;
          }); 
+    }
+  }
 
         $( ".form-item-submitted-email").focusout(function() {
            $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;

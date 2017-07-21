@@ -122,7 +122,7 @@
           </div>
           <div class="row">
              <div class="deconnexion col-md-12">
-               <span>Déconnexion</span>
+                <a href="user/logout"> <?php print t('Logout') ;?></a>
              </div>
           </div>
         </nav>
@@ -165,11 +165,11 @@
 <!-- </div> --> <!-- end page -->
 
 <?php if (!empty($page['footer'])): ?>
-  <!-- <footer class="footer <?php print $container_class; ?>">
+  <footer class="footer-client <?php print $container_class; ?>">
   <div class="container">
     <?php print render($page['footer']); ?>
   </div>
-  </footer> -->
+  </footer>
 </div> <!-- end fix-footer -->
 <?php endif; ?>
 

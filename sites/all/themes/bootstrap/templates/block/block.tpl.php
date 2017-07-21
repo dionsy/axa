@@ -174,6 +174,22 @@ switch ($block->delta) {
             $prefix = '<div class="avatar col-md-2" ><img class="img-responsive" src="'.$img.'" /><div class="barre">&nbsp;&nbsp;&nbsp;&nbsp;</div></div>';
         }
 	break;
+
+	case '5':	
+		$suffix='<div class="blanc"></div><div class="bas">&nbsp;</div><div class="incline">&nbsp;&nbsp;&nbsp;&nbsp;</div>';
+	break;
+
+	case 'menu-menu-footer-client':	
+		$class="col-md-3";
+	break;
+
+	case 'menu-s-informer':	
+		$class="col-md-3";
+	break;
+
+	case 'menu-services':	
+		$class="col-md-6";
+	break;
 	
 	default:
 		# code...

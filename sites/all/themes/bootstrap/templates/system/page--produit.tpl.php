@@ -111,9 +111,9 @@
                    if(user_is_logged_in()){
 
                       if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-                        <div class="navbar-collapse collapse paramettre" id="navbar-collapse">
+                        <!-- <div class="navbar-collapse collapse paramettre" id="navbar-collapse">
                             <i class="fa fa-sign-out " aria-hidden="true"></i>
-                              <a href="user/logout"> <?php print t('Logout') ;?></a>
+                              <a href="user/logout"> <?php print t('Logout') ;?></a> -->
                         <!-- <nav role="navigation">
                           <?php //if (!empty($primary_nav)): ?>
                             <?php //print render($primary_nav); ?>
@@ -125,7 +125,7 @@
                            <?php //print render($page['navigation']); ?>
                           <?php //endif; ?>
                         </nav> -->
-                        </div>
+                        <!-- </div> -->
               
                      <?php endif; } ?>
                 </div>
