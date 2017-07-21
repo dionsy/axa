@@ -193,6 +193,13 @@ function bootstrap_form($variables) {
   $suffix = '</li></ul>';
   $close ='<a class="close--nav-sidebar icon-btn icon-x-cross" role="button" href="#"><i class="fa fa-window-close" aria-hidden="true"></i></a>';
 }
+if(($element['#attributes']['id'] == 'webform-client-form-10') || ($element['#attributes']['id'] == 'webform-client-form-11') || ($element['#attributes']['id'] == 'webform-client-form-9') || ($element['#attributes']['id'] == 'webform-client-form-8')  ){
+  $inner_prefix='<div class="input-transforme">';
+  $inner_suffix='</div>';
+  $prefix ='';
+  $suffix = '';
+  $close ='';
+}
 return $prefix.'<form'.drupal_attributes($element['#attributes']).'>'. $inner_prefix.$element['#children'].$inner_suffix.$close.'</form>'.$suffix;
 
 }
