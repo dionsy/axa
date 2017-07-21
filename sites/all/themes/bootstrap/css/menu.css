@@ -777,6 +777,9 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title {
     background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
 }
+#block-views-liste-contrats-block .block-title {
+    padding: 6px 3% 13px 3%;
+}
 
 .alignement, .view-liste-contrats {
     padding-left: 3%;
