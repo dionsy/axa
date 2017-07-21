@@ -102,27 +102,25 @@
            } 
          });
 
-       $( ".form-item-submitted-adresse-du-bien-a-assurer" ).focusout(function() {
-           $('.form-item-submitted-vous-etes').addClass('fadeIn'  ) ;
-      });
-       $( ".form-item-submitted-prenom" ).focusout(function() {
-           $('.form-type-date').addClass('fadeIn'  ) ;
-      });
+         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).focusout(function() {
+              $('.form-item-submitted-vous-etes').addClass('fadeIn'  ) ;
+          });
+        $( ".form-item-submitted-prenom" ).focusout(function() {
+              $('.form-type-date').addClass('fadeIn'  ) ;
+          });
 
         $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
-           $('.form-item-submitted-email').addClass('fadeIn'  ) ;
+             $('.form-item-submitted-email').addClass('fadeIn'  ) ;
          }); 
-    }
-  }
 
         $( ".form-item-submitted-email").focusout(function() {
-           $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
+             $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
          });
         $( ".form-item-submitted-telephone").focusout(function() {
-            $('.form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
+             $('.form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
         });
         $( ".form-item-submitted-age-dobtention-du-permis").focusout(function() {
-            $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
+             $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
         });
         $('#edit-submitted-marque-select-1').on('change', function (e) {
              $('.webform-component--energie-du-vehicule').addClass('fadeIn') ;

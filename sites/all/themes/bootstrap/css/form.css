@@ -181,6 +181,7 @@ form#user-login {
     transition: all 0.4s ease-in-out 0s ;
     width: 80%;
 }
+
 .form-item-submitted-nom ,.form-item-submitted-prenom ,
 .webform-component--date-de-naissance ,.form-item-submitted-email,
  .form-item-submitted-telephone , .form-item-submitted-type-dassurance, 
@@ -211,6 +212,9 @@ form#user-login {
 .webform-component--ce-logement-est-il-votre-residence-principale.fadeIn ,
 .form-item-submitted-annee-de-naissance {
     height: 60px;
+}
+.form-item-submitted-annee-de-naissance {
+    height: 25px;
 }
 
 #webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-month ,
@@ -286,9 +290,7 @@ form#user-login {
     margin-top: 35px;
     
 }
-#edit-submitted-email {
-    width: 75% !important;
-}
+
 #webform-client-form-11 .form-item-submitted-civilite,
 #webform-client-form-10 .form-item-submitted-civilite,
 #webform-client-form-9 .form-item-submitted-civilite{
@@ -342,25 +344,6 @@ form#user-login {
     margin-top: 15px;
 }
 
-#webform-client-form-8 .form-item-submitted-annee-de-naissance-year {
-   /* float: left;
-    margin-left: 6%;*/
-    margin-right: 1%;
-}
-/*.form-item-submitted-annee-de-naissance label{
-    margin-left: 6%;
-}*/
-#webform-client-form-8 .form-item-submitted-age-dobtention-du-permis{
-  /*  float: left;*/
-    /*margin-left: 6%;*/
-    margin-right: 1%;   
-}
-#webform-client-form-8 .form-item-submitted-email{
-/*    width: 60%;
-    float: left;*/
-/*    margin-left: 6%;
-    margin-right: 1%; */
-}
 .form-item.webform-component.webform-component-radios.webform-component--ce-logement-est-il-votre-residence-principale.form-group.form-item.form-item-submitted-ce-logement-est-il-votre-residence-principale.form-type-radios.form-group {
     /*margin-left: 10%;*/
     margin-top: 15px;
@@ -558,7 +541,12 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 .form-actions {
     text-align: center;
 }
-
+#edit-submitted-email ,#edit-submitted-email-conducteur {
+    width: 75% !important;
+}
+.form-item-submitted-annee-de-naissance .webform-container-inline.webform-datepicker {
+    display: inline-block;
+}
 .page-user form#user-login  label {
 /*    float: left;
     margin-left: 8%;*/
