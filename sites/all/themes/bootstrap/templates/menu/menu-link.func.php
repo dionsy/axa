@@ -32,28 +32,21 @@ function bootstrap_menu_link(array $variables) {
   //$classli='';
   $prefix ='';
   $list_nid =array();
-
+  global $base_url;
   $below =$element['#below'];
 
-
-
-
+if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
   $pattern = '/\S+\.(png|gif|jpg)\b/i';
   if (preg_match($pattern, $element['#title'], $matches) > 0) {
-    $element['#title'] = preg_replace($pattern, 
-      '<img alt = "' . $element['#localized_options']['attributes']['title'] . '" src = "' . url($matches[0]) . '" />',
-      $element['#title']);
+    $src=$base_url.'/sites/default/files/image_menu/'.$matches[0];
+    //krumong('main')->kprint($src);
+
+    $element['#title'] = preg_replace($pattern,'<img class="img-responsive" alt = "'.$element['#localized_options']['attributes']['title'] .'"src = "'.$src.'"/>',
+    $element['#title']);    
     $element['#localized_options']['html'] = TRUE;
   }
-
-
-
-if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
   
   if($below){
- //$element['#below']['#children']=$element['#below']['#children'].'<li><a href="#">DDDDDDDDDD</a></li>';
-  //krumong('main')->kPrint( $element['#below']);
-
   foreach ($below as $elt) {  
 
     if(isset($elt['#href']) && !empty($elt['#href']))      
