@@ -72,6 +72,7 @@
       $(".icon-x-cross").click(function(e) {
           $("form").removeClass("fcurrent", 10000);
        });
+
     }
   }
 

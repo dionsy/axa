@@ -186,13 +186,14 @@ function bootstrap_form($variables) {
 //krumong('main')->kPrint($element['#attributes']['id']);
 
   if($element['#attributes']['id'] == 'search-block-form'){
-  $inner_prefix='<div class="input-group">';
-  $inner_suffix='</div>';
-  $prefix ='<ul class="l--nav-header"><li class="i--nav-header i--search_form">
-  <a class="loupe" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
-  $suffix = '</li></ul>';
-  $close ='<a class="close--nav-sidebar icon-btn icon-x-cross" role="button" href="#"><i class="fa fa-window-close" aria-hidden="true"></i></a>';
-}
+    $inner_prefix='<div class="input-group">';
+    $inner_suffix='</div>';
+    $prefix ='<ul class="l--nav-header"><li class="i--nav-header i--search_form">
+    <a class="loupe" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>';
+    $suffix = '</li></ul>';
+    $close ='<a class="close--nav-sidebar icon-btn icon-x-cross" role="button" href="#"><i class="fa fa-window-close" aria-hidden="true"></i></a>';
+  }
+  
 return $prefix.'<form'.drupal_attributes($element['#attributes']).'>'. $inner_prefix.$element['#children'].$inner_suffix.$close.'</form>'.$suffix;
 
 }
