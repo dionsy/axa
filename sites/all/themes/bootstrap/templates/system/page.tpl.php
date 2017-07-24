@@ -79,19 +79,16 @@
 
        <header id="" role="banner" class="<?php print $navbar_classes; ?>">
              <div class="row">
-               
-                  <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-sm-6 col-xs-12">
-                   <div id="navbar" class="collapse navbar-collapse ">
-                     <div class="menu-top">
-                     <?php print render($page['header']); ?>
-                    </div>
-                     </div>
-                  </header> <!-- /#page-header -->
-                  <div class="user col-md-3 col-lg-3 col-sm-6 col-xs-12"> 
+                <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-sm-6 col-xs-12">
+
+                          <?php print render($page['header']); ?>
+
+                </header> <!-- /#page-header -->
+                <div class="user col-md-3 col-lg-3 col-sm-6 col-xs-12"> 
                     <?php
-        // krumong('main')->kPrint($base_path);
+                    // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace</span></a></div>';
                     } 
                    else{
                       print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
@@ -143,7 +140,7 @@
              <a class="name navbar-brand" href="<?php // print $front_page; ?>" title="<?php //print t('Home'); ?>"><?php// print $site_name; ?></a> 
           <?php //endif; ?> -->
 
-                  <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+                <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                       <span class="sr-only"><?php print t('Toggle navigation'); ?></span>
                       <span class="icon-bar"></span>
@@ -152,22 +149,21 @@
                     </button>
                   <?php endif; ?>
                </div>
-
             </div>
         </header>
     <!-- End Page -->
 <!-- region slideshow -->
- <?php if (!empty($page['navigation'])): ?>
-          <div class="fond">
-          <div class=" navigation <?php print $container_class; ?>">
-            <?php print render($page['navigation']); ?>
-            </div>
-        </div>
-  <?php endif; ?>
+         <?php if (!empty($page['navigation'])): ?>
+                  <div class="fond">
+                    <div class=" navigation <?php print $container_class; ?>">
+                          <?php print render($page['navigation']); ?>
+                    </div>
+                </div>
+          <?php endif; ?>
 
- <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-  <?php endif; ?>
+         <?php if (!empty($page['highlighted'])): ?>
+                <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+          <?php endif; ?>
 
 
 <div class="main-container "> 
@@ -210,13 +206,11 @@
 
 </div>
 
-
-    
-<?php //} ?>
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
+      <?php //} ?>
+        <?php if (!empty($page['sidebar_second'])): ?>
+           <aside class="col-sm-3" role="complementary">
+             <?php print render($page['sidebar_second']); ?>
+          </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
 
   </div>
