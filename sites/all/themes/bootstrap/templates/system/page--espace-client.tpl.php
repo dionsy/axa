@@ -122,7 +122,7 @@
           </div>
           <div class="row">
              <div class="deconnexion col-md-12">
-                <a href="user/logout"> <?php print t('Logout') ;?></a>
+                <a href="?q=user/logout"> <?php print t('Logout') ;?></a>
              </div>
           </div>
         </nav>
