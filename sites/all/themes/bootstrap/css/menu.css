@@ -862,7 +862,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     padding-bottom: 15%;
 }
 
-#quicktabs-tabpage-left_menu-2.quicktabs-tabpage, #node-86{
+#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1{
     box-shadow: 2px 2px 2px 2px #ccc;
 }
 
@@ -907,7 +907,57 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 
 .view-liste-contrats .view-content .list-contrat .action span a {
     color: #aaa;
-} 
+}
+
+/*** Mes devis ***/
+#block-panels-mini-panel-espace-client .block-title {
+    /*margin-top: 0px;*/
+    padding: 2%;
+    /*color: #004D92;
+    font-weight: bold;
+    font-size: 14px;
+    background: #fcfcfc none repeat scroll 0 0;
+    border: 1px solid #eee;*/
+
+    box-shadow: 0 -1px 0 0 #eee inset;
+    color: #005399;
+    font-size: 20px;
+    margin-top: 0;
+    /*padding: 21px 3% 13px 3%;*/
+    /* Navigateurs récents */
+    background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
+    background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
+    background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+}
+#block-panels-mini-panel-espace-client .title {
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    color: #004d92;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2%;
+    margin-top: 19px;
+}
+
+#block-panels-mini-panel-espace-client .case {
+    background: #fcfcfc;
+    color: #aaa;
+    border: 1px solid #eee;
+}
+
+#block-panels-mini-panel-espace-client .case a {
+    color: #aaa;
+}
+
+#mini-panel-panel_espace_client .view-content {
+    margin: 0% 5%;
+    padding-bottom: 20%;
+}
+
+/*** mes contrats ***/
+
 /*** preference ***/
 #node-86 h2 {
     margin-top: 0;

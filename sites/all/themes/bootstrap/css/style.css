@@ -1644,3 +1644,16 @@ div.offres .offre {
 h1, .h1, h2, .h2, h3, .h3{
     margin-top: 10px;
 }
+#block-views-declaration-sinistre-block{
+    text-align: center;
+    background-color: #FFC000;
+    margin-top: 1em;
+}
+#block-views-declaration-sinistre-block ul{margin: 0;}
+#block-views-declaration-sinistre-block li a{
+    color: #fff;
+    padding:1em;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+}
