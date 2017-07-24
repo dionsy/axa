@@ -95,34 +95,11 @@
                     }
                  ?>
                  <?php
-          /*  $account = user_load($user->uid);
-            $pic ='';
-            if(isset($account->picture))
-              $pic=$account->picture;
-            $img = file_create_url($pic->uri);
-            print '<div class="avatar"><img class="img-responsive hidden-xs-down" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
-            }*/
-                  ?>
-         
+                  ?>        
                 <?php
                    if(user_is_logged_in()){
 
                       if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-                     <!--    <div class="navbar-collapse collapse paramettre" id="navbar-collapse">
-                            <i class="fa fa-sign-out " aria-hidden="true"></i>
-                               <a href="user/logout"> <?php //print t('Logout') ;?></a> 
-                        <nav role="navigation">
-                          <?php //if (!empty($primary_nav)): ?>
-                            <?php //print render($primary_nav); ?>
-                          <?php //endif; ?>
-                          <?php //if (!empty($secondary_nav)): ?>
-                            <?php //print render($secondary_nav); ?>
-                          <?php //endif; ?>
-                          <?php //if (!empty($page['navigation'])): ?>
-                           <?php //print render($page['navigation']); ?>
-                          <?php //endif; ?>
-                        </nav>
-                        </div> -->
               
                      <?php endif; } ?>
                 </div>
@@ -135,10 +112,6 @@
                     <img class ="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
                   </a>
                 <?php endif; ?>
-
-          <!--<?php //if (!empty($site_name)): ?>
-             <a class="name navbar-brand" href="<?php // print $front_page; ?>" title="<?php //print t('Home'); ?>"><?php// print $site_name; ?></a> 
-          <?php //endif; ?> -->
 
                 <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">

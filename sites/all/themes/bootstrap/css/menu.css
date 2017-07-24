@@ -1162,9 +1162,41 @@ li.assurance_voyage a:before,
          text-align: center;
     }
     #block-menu-menu-f                                                      oter ul li {
-    width: auto;
-}
-}
+        width: auto;
+    }
+    .outside a.img_link img {
+        display: none;
+    }
+    #block-views-frontpage-block-1 li, .outside{
+        min-height: auto;
+    }
+    .outsides > div {
+            margin-left: 10px;
+            text-align: inherit;
+            margin-bottom: 0px;
+            margin-top: 0px;
+    }
+    #block-views-frontpage-block-1 li h2 a, .view-id-frontpage li h2 {
+        float: left;
+        margin-left: 75px;
+        position: absolute;
+    }
+    .view-id-frontpage .Habitation i.fa::before, .view-id-frontpage .Loisirs-vie i.fa::before, .view-id-frontpage .Assistance i.fa::before, .view-id-frontpage .Auto i.fa::before {
+            display: inline-block;
+            float: left;
+            font-family: "FontAwesome";
+            font-size: 50px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+    }
+    .Loisirs-vie div.outsides a,
+     .Assistance div.outsides a, .Habitation div.outsides a, .Auto div.outsides a {
+        display: inline-block;
+        float: right;
+        padding-right: 5px;
+        margin-top: 30px;
+
+    }
 @media all and (max-width: 480px){
         .mon_espace_client a span{
         color: black;
