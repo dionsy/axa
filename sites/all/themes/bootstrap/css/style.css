@@ -613,7 +613,7 @@ button.navbar-toggle
 .mean-container .mean-bar {
 	background: none;
     float: right;
-    margin-top: 18px;
+    margin-top: 05px;
     min-height: 42px;
     padding: 4px 0;
     position: absolute;
@@ -643,6 +643,9 @@ button.navbar-toggle
     text-indent: -9999em;
     top: 0;
     width: 17px;
+}
+.mean-container .mean-nav {
+    margin-top: 55px;
 }
 
 

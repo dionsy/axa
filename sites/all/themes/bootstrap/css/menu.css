@@ -1078,7 +1078,7 @@ li.assurance_voyage a:before,
         margin-left: 0;
         width: auto;
         padding: 0;
-        margin-top: 18px;
+        margin-top: 1px;
          background-color: transparent;
     }
     .mon_espace_client a span{
@@ -1111,7 +1111,7 @@ li.assurance_voyage a:before,
     .footer .nav > li a {
          text-align: center;
     }
-    #block-menu-menu-footer ul li {
+    #block-menu-menu-f                                                      oter ul li {
     width: auto;
 }
 }
@@ -1122,4 +1122,36 @@ li.assurance_voyage a:before,
         text-transform: normal;
         font-size: 1.6em;
     }
+     div.user {
+        width: auto;
+        float: left;
+        margin-top: 18px;
+    }
+    .mean-container .mean-bar {
+    margin-top: 48px;
+    }
+    .mean-container .mean-nav {
+    margin-top: 55px;
+    }
+}
+@media all and (max-width: 304px){
+   .mean-container a.meanmenu-reveal {
+    margin-right: 27px;
+} 
+    div.user {
+    float: right;
+    margin-top: -3px;
+    width: auto;
+    margin-right:10px;
+}
+    .mean-container .mean-bar {
+    margin-top: 60px;
+}
+    #block-menu-menu-menu-top ul li {
+        display: block;
+        margin-top:  3px;
+    }
+         .mon_espace_client a i{
+        margin-right: 0px !important;
+     }
 }
