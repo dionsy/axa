@@ -1616,3 +1616,29 @@ div.offres .offre {
     background-color: initial;
 }
 
+/*L-------------es service Axa-------------*/
+
+#block-views-vos-services-axa-senegal-block li{
+    display: inline-block;
+}
+#block-views-vos-services-axa-senegal-block{
+    background: #F5F5F7;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+}
+#block-views-vos-services-axa-senegal-block .block-title{
+    margin-top:0;
+}
+
+#block-views-vos-services-axa-senegal-block .conseiller{
+    background: none;
+    margin:0;
+    padding: 0;
+}
+
+h1, .h1, h2, .h2, h3, .h3{
+    margin-top: 10px;
+}
