@@ -591,12 +591,12 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     padding-bottom: 2%;
 }
 div#quicktabs-tabpage-left_menu-3 article.node {
-    padding: 25px;
+    /*padding: 25px;*/
 } 
 div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous-etre-notifie ,
 .webform-component--periode {
-    margin-left: 10%;
-    margin-top: 25px;
+    padding-left: 2%;
+    margin-top: 15px;
 } 
 #edit-actions--2 {
     margin-bottom: 0px;

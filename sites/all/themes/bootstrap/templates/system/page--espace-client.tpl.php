@@ -95,7 +95,7 @@
     <div class="navbar-header">
       <?php if ($logo): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          <img class="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
       <?php endif; ?>
  
@@ -107,11 +107,11 @@
       <div class="info-left-menu col-xs-12 col-sm-12 col-md-3 col-lg-3" id="">
         <nav role="navigation">
           <div class="row espace">
-             <div class="espace-client col-xs-12 col-sm-12 col-md-8 col-lg-8">
+             <div class="espace-client col-xs-4 col-sm-4 col-md-8 col-lg-8">
                <p>Mon espace client</p>
                <div class="barre"></div>
              </div>
-             <div class="nom-client col-xs-12 col-sm-12 col-md-4 col-lg-4">
+             <div class="nom-client col-xs-4 col-sm-4 col-md-4 col-lg-4">
                <?php
                   $account = array();
                   if(user_is_logged_in())

@@ -675,18 +675,20 @@ ul#quicktabs-tab-left_menu-0::before{
 }
 /*** barre ***/
 .info-left-menu .barre {
+    position: absolute !important;
     border-top: 4px solid #ee3e40;
     float: right;
-    left: -25px;
+    left: 78%;
     position: relative;
     text-align: right;
-    top: -12px;
+    top: 8px;
     transform: skew(0deg, -52deg);
     width: 8%;
 }
 /*** end ***/
 
 .info-left-menu .espace-client {
+    position: relative;
     color: #005399;
     padding-left: 0px;
     padding-right: 0px;
@@ -738,6 +740,7 @@ ul#quicktabs-tab-left_menu-0::before{
 
 #block-block-4 .head1 {
     color: #2f5399;
+    font-weight: bold;
     letter-spacing: 1px;
 }
 
@@ -765,12 +768,14 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     padding: 0;
 }
 
-h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
+h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini-panel-espace-client .block-title{
     box-shadow: 0 -1px 0 0 #eee inset;
     color: #005399;
     font-size: 20px;
+    text-transform: capitalize;
     margin: 0;
-    padding: 21px 3% 13px 3%;
+    /*padding: 21px 3% 13px 3%;*/
+    padding: 6px 3% 13px 3% !important;
     /* Navigateurs récents */
     background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
     background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
@@ -778,7 +783,22 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
 }
-#block-views-liste-contrats-block .block-title{
+
+#node-86 > header{
+    box-shadow: 0 -1px 0 0 #eee inset;
+    color: #005399;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 0;
+    /* Navigateurs récents */
+    background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
+    background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
+    background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+}
+
+#block-views-liste-contrats-block .block-title, #block-panels-mini-panel-espace-client .block-title{
     padding: 6px 3% 13px 3% !important;
 }
 
@@ -849,8 +869,8 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     left: 2px;
     position: relative;
     top: 16px;
-    transform: skew(0deg, 7deg);
-    width: 102%;
+    transform: skew(0deg, 4deg);
+    width: 107%;
 }
 
 /*** mes contrats ***/
@@ -905,30 +925,21 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 .view-liste-contrats .view-content .list-contrat .action span a {
-    color: #999;
+    color: #666;
 }
 
 /*** Mes devis ***/
 #block-panels-mini-panel-espace-client .block-title {
-    /*margin-top: 0px;*/
-    padding: 2%;
-    /*color: #004D92;
-    font-weight: bold;
-    font-size: 14px;
-    background: #fcfcfc none repeat scroll 0 0;
-    border: 1px solid #eee;*/
-
+    /*padding: 2%;
     box-shadow: 0 -1px 0 0 #eee inset;
     color: #005399;
     font-size: 20px;
     margin-top: 0;
-    /*padding: 21px 3% 13px 3%;*/
-    /* Navigateurs récents */
     background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
     background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
     background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
-    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);*/
 }
 #block-panels-mini-panel-espace-client .title {
     background: #fcfcfc;
@@ -937,21 +948,21 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     font-size: 14px;
     font-weight: bold;
     padding: 2%;
-    margin-top: 19px;
+    margin-top: 15px;
 }
 
 #block-panels-mini-panel-espace-client .case {
     background: #fcfcfc;
-    color: #999;
+    color: #666;
     border: 1px solid #eee;
 }
 
 #block-panels-mini-panel-espace-client .case a {
-    color: #999;
+    color: #666;
 }
 
 #mini-panel-panel_espace_client .view-content {
-    margin: 0% 5%;
+    margin: 0% 3%;
     padding-bottom: 20%;
 }
 
@@ -962,13 +973,13 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 #node-86{
-    padding: 0 !important;
-}
-#node-86 > header{
-    padding: 0px !important;
+    padding: 0;
 }
 
+
 #node-86 a {
+    position: relative !important;
+    bottom: 22% !important;
     color: #00529b;
     font-size: 20px;
     font-weight: 500;
@@ -981,7 +992,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 #node-86 label, #node-86 select{
-    color: #999;
+    color: #666;
 }
 
 .page-node-2 #block-quicktabs-left-menu {
@@ -996,6 +1007,36 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 .footer-client{
     margin-top: 20%;
 }
+
+/* Breakpoint 1024 */
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    /* md */    
+}
+
+/*Breakpoint 600*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* sm */
+    .info-left-menu .barre {
+        left: 56%;
+    }
+}
+
+/*Breakpoint 524*/
+@media screen and (min-width: 767px) and and (max-width: : 524px)  {
+    /* xs */
+    .info-left-menu .barre {
+        left: 79%;
+    }
+
+/*Breakpoint */
+@media screen and (max-width: 523px) {
+    /* xs */
+    .info-left-menu .barre {
+        left: 96% !important;
+    }
+}
+
+
 
 #block-menu-menu-menu-d-aide {
     text-align: center;
