@@ -1470,10 +1470,10 @@ section#block-simple-copyright-simple-copyright-manage
     /*position: relative;
     right: -999px;*/
 }
-#search-block-form{
+/*#search-block-form{
     display: none;
     transition: all 1s ease 0s;
-}
+}*/
 .loupe{
     float: right;
     position: relative;
