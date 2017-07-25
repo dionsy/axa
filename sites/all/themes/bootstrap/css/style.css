@@ -1656,12 +1656,11 @@ h1, .h1, h2, .h2, h3, .h3{
 }
 #block-views-declaration-sinistre-block{
     text-align: center;
-    background-color: #FFC000;
     margin-top: 1em;
 }
 #block-views-declaration-sinistre-block ul{margin: 0;}
 #block-views-declaration-sinistre-block li a{
-    color: #fff;
+    color: #004D92;
     padding:1em;
     display: block;
     text-transform: uppercase;

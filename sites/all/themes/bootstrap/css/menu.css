@@ -704,15 +704,15 @@ ul#quicktabs-tab-left_menu-0::before{
     padding-right: 0;
 }
  .info-left-menu .nom-client span{
-    color: #aaa;
+    color: #999;
  }
  .info-left-menu .espace{
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
  }
 
  .info-left-menu .deconnexion {
     padding-left: 0px;
-    color: #aaa;
+    color: #999;
 }
  
 .info-left-menu .deconnexion::before {
@@ -832,7 +832,6 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 
 .conseiller-left-bar p:last-child a {
     background: rgb(71, 168, 13) none repeat scroll 0 0;
-    border-radius: 4px;
     color: #fff;
     font-weight: bold;
     letter-spacing: -0.5px;
@@ -908,7 +907,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 .view-liste-contrats .view-content .list-contrat .action span a {
-    color: #aaa;
+    color: #999;
 }
 
 /*** Mes devis ***/
@@ -945,20 +944,18 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 
 #block-panels-mini-panel-espace-client .case {
     background: #fcfcfc;
-    color: #aaa;
+    color: #999;
     border: 1px solid #eee;
 }
 
 #block-panels-mini-panel-espace-client .case a {
-    color: #aaa;
+    color: #999;
 }
 
 #mini-panel-panel_espace_client .view-content {
     margin: 0% 5%;
     padding-bottom: 20%;
 }
-
-/*** mes contrats ***/
 
 /*** preference ***/
 #node-86 h2 {
@@ -986,7 +983,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 #node-86 label, #node-86 select{
-    color: #aaa;
+    color: #999;
 }
 
 .page-node-2 #block-quicktabs-left-menu {
@@ -995,6 +992,11 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 .page-node-2 #block-system-main{
     display: none;
+}
+
+/*** footer ***/
+.footer-client{
+    margin-top: 20%;
 }
 
 #block-menu-menu-menu-d-aide {
