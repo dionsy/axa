@@ -80,14 +80,11 @@
  <header id="" role="banner" class="<?php print $navbar_classes; ?>">
              <div class="row">
                
-                  <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-xs-12">
-                   <div id="navbar" class="collapse navbar-collapse ">
-                     <div class="menu-top">
+                  <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-sm-6 col-xs-12">  
                      <?php print render($page['header']); ?>
-                    </div>
-                     </div>
+
                   </header> <!-- /#page-header -->
-                  <div class="user col-md-3 col-lg-3 col-xs-12"> 
+                  <div class="user col-md-3 col-lg-3 col-sm-6 col-xs-12"> 
                     <?php
         // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
