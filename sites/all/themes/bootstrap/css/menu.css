@@ -535,11 +535,15 @@ body.node-type-nos-produits h1.page-header {
     font-size: 1.5em;
     font-weight: bold;
     left: 3%;
-    top:2%;
+    top:5%;
     padding-bottom: 0;
     padding-top: 7px;
     z-index: 10;
 }
+#block-menu-menu-nos-produits {
+    margin-top: 33px;
+}
+
 body.node-type-nos-produits section#test {
     padding: 0;
 }
@@ -560,6 +564,7 @@ footer div.view-id-contact ul {
 }
 .img_prod.row {
     overflow: hidden;
+    margin-top: 10px;
 }
 .img_prod.row  div img{
     height: 150px;
@@ -1184,11 +1189,11 @@ li.assurance_voyage a:before,
             margin-bottom: 0px;
             margin-top: 0px;
     }
-    #block-views-frontpage-block-1 li h2 a, .view-id-frontpage li h2 {
+/*    #block-views-frontpage-block-1 li h2 a, .view-id-frontpage li h2 {
         float: left;
         margin-left: 75px;
-        position: absolute;
-    }
+      /*  position: absolute;
+    }   */
     .view-id-frontpage .Habitation i.fa::before, .view-id-frontpage .Loisirs-vie i.fa::before, .view-id-frontpage .Assistance i.fa::before, .view-id-frontpage .Auto i.fa::before {
             display: inline-block;
             float: left;
@@ -1223,6 +1228,9 @@ li.assurance_voyage a:before,
     }
 }  
 @media all and (max-width: 480px){
+       #page-header.first_menu {
+        float: none;
+     }
         .mon_espace_client a span{
         color: black;
         padding-top: 0px;
@@ -1241,6 +1249,18 @@ li.assurance_voyage a:before,
     margin-top: 55px;
     }
 }
+@media all and (max-width: 464px){
+    .img_prod.row {
+        display: inline-block;
+        margin-top: 25px;
+        position: relative;
+    }
+     .breadcrumb span {
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
+
 @media all and (max-width: 304px){
    .mean-container a.meanmenu-reveal {
     margin-right: 27px;
