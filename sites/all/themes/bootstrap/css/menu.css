@@ -13,7 +13,7 @@
     float: right;
 }
 .user span{
-	display: block;
+	/*display: block;*/
 	text-transform: capitalize;
 }
 
@@ -1115,4 +1115,127 @@ li.assurance_voyage a:before,
 }
 .container, .navbar.container {
     max-width: none;
+}
+
+@media all and (max-width: 768px)
+{
+    #page-header.first_menu {
+    width: auto;
+    }
+    div.user {
+        width: auto;
+        margin-right: 75px;
+    }
+    .mon_espace_client{
+        margin-left: 0;
+        width: auto;
+        padding: 0;
+        margin-top: 1px;
+         background-color: transparent;
+    }
+    .mon_espace_client a span{
+        color: black;
+        padding-top: 0px;
+        text-transform: normal;
+        font-size: 0.8em;
+    }
+     .mon_espace_client a i{
+        visibility: hidden;
+        margin-right: 0px;
+     }
+    .mon_espace_client a:before {
+        display:block;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    content: "";
+    background: url("../images/espace.png") no-repeat 0 0;
+    background-size: 100%;
+    }
+    footer section {
+     text-align: center;
+     padding: 0;
+    }
+    #block-menu-menu-r-seaux-sociaux- ul {
+      text-align: center;
+    }
+    .footer .nav > li a {
+         text-align: center;
+    }
+    #block-menu-menu-f                                                      oter ul li {
+        width: auto;
+    }
+    .outside a.img_link img {
+        display: none;
+    }
+    #block-views-frontpage-block-1 li, .outside{
+        min-height: auto;
+    }
+    .outsides > div {
+            margin-left: 10px;
+            text-align: inherit;
+            margin-bottom: 0px;
+            margin-top: 0px;
+    }
+    #block-views-frontpage-block-1 li h2 a, .view-id-frontpage li h2 {
+        float: left;
+        margin-left: 75px;
+        position: absolute;
+    }
+    .view-id-frontpage .Habitation i.fa::before, .view-id-frontpage .Loisirs-vie i.fa::before, .view-id-frontpage .Assistance i.fa::before, .view-id-frontpage .Auto i.fa::before {
+            display: inline-block;
+            float: left;
+            font-family: "FontAwesome";
+            font-size: 50px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+    }
+    .Loisirs-vie div.outsides a,
+     .Assistance div.outsides a, .Habitation div.outsides a, .Auto div.outsides a {
+        display: inline-block;
+        float: right;
+        padding-right: 5px;
+        margin-top: 30px;
+
+    }
+@media all and (max-width: 480px){
+        .mon_espace_client a span{
+        color: black;
+        padding-top: 0px;
+        text-transform: normal;
+        font-size: 1.6em;
+    }
+     div.user {
+        width: auto;
+        float: left;
+        margin-top: 18px;
+    }
+    .mean-container .mean-bar {
+    margin-top: 48px;
+    }
+    .mean-container .mean-nav {
+    margin-top: 55px;
+    }
+}
+@media all and (max-width: 304px){
+   .mean-container a.meanmenu-reveal {
+    margin-right: 27px;
+} 
+    div.user {
+    float: right;
+    margin-top: -3px;
+    width: auto;
+    margin-right:10px;
+}
+    .mean-container .mean-bar {
+    margin-top: 60px;
+}
+    #block-menu-menu-menu-top ul li {
+        display: block;
+        margin-top:  3px;
+    }
+         .mon_espace_client a i{
+        margin-right: 0px !important;
+     }
 }
