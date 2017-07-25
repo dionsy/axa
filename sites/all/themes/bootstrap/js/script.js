@@ -65,13 +65,13 @@
         });
 
       
-      $(".loupe").click(function(e) {
+      /*$(".loupe").click(function(e) {
          $("form").addClass("fcurrent", 10000);
       });
 
       $(".icon-x-cross").click(function(e) {
           $("form").removeClass("fcurrent", 10000);
-       });
+       });*/
       /*$("input:radio:checked").next("div.form-item-submitted-nom").addClass("fadeIn") ;*/
        /*$("input.form-radio:radio").change(function() {
         $('form-item-submitted-nom').addClass('fadeIn') ;
