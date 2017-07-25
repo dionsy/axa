@@ -90,7 +90,7 @@
 <div class="main-container <?php print $container_class; ?>">
 
 <section class="row">
-<header id="" role="banner" class="navbar  col-md-9 ">
+<header id="" role="banner" class="navbar col-xs-12 col-sm-12 col-md-9 col-lg-9">
   <div class="">
     <div class="navbar-header">
       <?php if ($logo): ?>
@@ -104,14 +104,14 @@
 </header>
 
  <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="info-left-menu col-md-3" id="">
+      <div class="info-left-menu col-xs-12 col-sm-12 col-md-3 col-lg-3" id="">
         <nav role="navigation">
           <div class="row espace">
-             <div class="espace-client col-md-8">
+             <div class="espace-client col-xs-12 col-sm-12 col-md-8 col-lg-8">
                <p>Mon espace client</p>
                <div class="barre"></div>
              </div>
-             <div class="nom-client col-md-4">
+             <div class="nom-client col-xs-12 col-sm-12 col-md-4 col-lg-4">
                <?php
                   $account = array();
                   if(user_is_logged_in())
@@ -121,7 +121,7 @@
              </div>
           </div>
           <div class="row">
-             <div class="deconnexion col-md-12">
+             <div class="deconnexion col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <a href="?q=user/logout"> <?php print t('Logout') ;?></a>
              </div>
           </div>
@@ -138,7 +138,7 @@
   <div class="row">
      <?php if (!empty($page['connexion'])): ?>
      <!--  <aside class="col-sm-3"></aside> -->
-      <aside class="col-md-4 connexion">
+      <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-4 connexion">
         <?php print render($page['connexion']); ?>
       </aside>  <!-- /#sidebar-first -->
      <!--  <aside class="col-sm-3"></aside> -->
@@ -147,14 +147,14 @@
 
 
 
-    <section id="test" class="col-md-9 connexion">   
+    <section id="test" class="col-xs-12 col-sm-12 col-md-9 col-lg-9 connexion">   
       <a id="main-content"></a>
       <?php print $messages; ?>
       <?php print render($page['content']); ?>
     </section>
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="mon-conseiller col-md-3 sidebar_first">
+      <aside class="mon-conseiller col-xs-12 col-sm-12 col-md-3 col-lg-3 sidebar_first">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
@@ -165,11 +165,11 @@
 <!-- </div> --> <!-- end page -->
 
 <?php if (!empty($page['footer'])): ?>
-  <footer class="footer-client <?php print $container_class; ?>">
+  <!-- <footer class="footer-client <?php print $container_class; ?>">
   <div class="container">
     <?php print render($page['footer']); ?>
   </div>
   </footer>
-</div> <!-- end fix-footer -->
+</div> --> <!-- end fix-footer -->
 <?php endif; ?>
 
