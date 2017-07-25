@@ -85,17 +85,15 @@
 
                 </header> <!-- /#page-header -->
                 <div class="user col-md-3 col-lg-3 col-sm-6 col-xs-12"> 
-                    <?php
+                  <?php
                     // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
                       print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace</span></a></div>';
                     } 
                    else{
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace</a></div>';
                     }
-                 ?>
-                 <?php
-                  ?>        
+                  ?>      
                 <?php
                    if(user_is_logged_in()){
 
@@ -140,85 +138,77 @@
 
 
 <div class="main-container "> 
-  <div class="row">
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
-     <?php if (!empty($page['connexion'])): ?>
-      <aside class="col-sm-3"></aside>
-      <aside class="col-sm-6 connexion">
-        <?php print render($page['connexion']); ?>
-      </aside>  <!-- /#sidebar-first -->
-      <aside class="col-sm-3"></aside>
-    <?php endif; ?>
-<?php  //if(user_is_logged_in()) { ?>
-
-    <section id="test" class="container">
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($action_links)): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-
-      <?php print render($page['content']); ?>
-    </section>
-
-</div>
-
-      <?php //} ?>
-        <?php if (!empty($page['sidebar_second'])): ?>
-           <aside class="col-sm-3" role="complementary">
-             <?php print render($page['sidebar_second']); ?>
-          </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
-
-  </div>
-
-<?php if (!empty($page['content_bottom'])): ?>
-  <div class="page-bottom row">
-      <aside class="content_bottom container">
-      <?php print render($page['content_bottom']); ?>
-      </aside>
-    </div>
-<?php endif; ?>
-
-
-
-
-
-
-      <?php if (!empty($page['footer_top'])): ?>
-  <div class="footer_top">
-      <footer class="footer_top <?php print $container_class; ?>">
-        <?php print render($page['footer_top']); ?>
-      </footer>
-      </div>
+   <div class="row">
+        <?php if (!empty($page['sidebar_first'])): ?>
+          <aside class="col-sm-3" role="complementary">
+            <?php print render($page['sidebar_first']); ?>
+          </aside>  <!-- /#sidebar-first -->
         <?php endif; ?>
- 
-</div><!--/.nav-collapse -->
 
-<div class="barre">
+         <?php if (!empty($page['connexion'])): ?>
+          <aside class="col-sm-3"></aside>
+          <aside class="col-sm-6 connexion">
+            <?php print render($page['connexion']); ?>
+          </aside>  <!-- /#sidebar-first -->
+          <aside class="col-sm-3"></aside>
+        <?php endif; ?>
+
+        <section id="test" class="container">
+            <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+            <a id="main-content"></a>
+            <?php print render($title_prefix); ?>
+            <?php if (!empty($title)): ?>
+              <h1 class="page-header"><?php print $title; ?></h1>
+            <?php endif; ?>
+            <?php print render($title_suffix); ?>
+            <?php print $messages; ?>
+            <?php if (!empty($tabs)): ?>
+              <?php print render($tabs); ?>
+            <?php endif; ?>
+            <?php if (!empty($page['help'])): ?>
+              <?php print render($page['help']); ?>
+            <?php endif; ?>
+            <?php if (!empty($action_links)): ?>
+              <ul class="action-links"><?php print render($action_links); ?></ul>
+            <?php endif; ?>
+
+            <?php print render($page['content']); ?>
+        </section>
+
+    </div>
+                <?php //} ?>
+                  <?php if (!empty($page['sidebar_second'])): ?>
+                     <aside class="col-sm-3" role="complementary">
+                       <?php print render($page['sidebar_second']); ?>
+                    </aside>  <!-- /#sidebar-second -->
+              <?php endif; ?>
   </div>
-<?php if (!empty($page['footer'])): ?>
-  <footer class="footer <?php print $container_class; ?>">
-  <div class="container">
-    <?php print render($page['footer']); ?>
-  </div>
-  </footer>
-  <?php endif; ?>
-</div>
+
+          <?php if (!empty($page['content_bottom'])): ?>
+            <div class="page-bottom row">
+                <aside class="content_bottom container">
+                <?php print render($page['content_bottom']); ?>
+                </aside>
+              </div>
+          <?php endif; ?>
+
+                <?php if (!empty($page['footer_top'])): ?>
+            <div class="footer_top">
+                <footer class="footer_top <?php print $container_class; ?>">
+                  <?php print render($page['footer_top']); ?>
+                </footer>
+                </div>
+                  <?php endif; ?>
+           
+          </div><!--/.nav-collapse -->
+
+          <div class="barre">
+            </div>
+          <?php if (!empty($page['footer'])): ?>
+            <footer class="footer <?php print $container_class; ?>">
+            <div class="container">
+              <?php print render($page['footer']); ?>
+            </div>
+            </footer>
+            <?php endif; ?>
+          </div>
