@@ -535,11 +535,15 @@ body.node-type-nos-produits h1.page-header {
     font-size: 1.5em;
     font-weight: bold;
     left: 3%;
-    top:2%;
+    top:5%;
     padding-bottom: 0;
     padding-top: 7px;
     z-index: 10;
 }
+#block-menu-menu-nos-produits {
+    margin-top: 33px;
+}
+
 body.node-type-nos-produits section#test {
     padding: 0;
 }
@@ -560,6 +564,7 @@ footer div.view-id-contact ul {
 }
 .img_prod.row {
     overflow: hidden;
+    margin-top: 10px;
 }
 .img_prod.row  div img{
     height: 150px;
@@ -677,20 +682,18 @@ ul#quicktabs-tab-left_menu-0::before{
 }
 /*** barre ***/
 .info-left-menu .barre {
-    position: absolute !important;
     border-top: 4px solid #ee3e40;
     float: right;
-    left: 78%;
+    left: -25px;
     position: relative;
     text-align: right;
-    top: 8px;
+    top: -12px;
     transform: skew(0deg, -52deg);
     width: 8%;
 }
 /*** end ***/
 
 .info-left-menu .espace-client {
-    position: relative;
     color: #005399;
     padding-left: 0px;
     padding-right: 0px;
@@ -742,7 +745,6 @@ ul#quicktabs-tab-left_menu-0::before{
 
 #block-block-4 .head1 {
     color: #2f5399;
-    font-weight: bold;
     letter-spacing: 1px;
 }
 
@@ -770,14 +772,12 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     padding: 0;
 }
 
-h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini-panel-espace-client .block-title{
+h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     box-shadow: 0 -1px 0 0 #eee inset;
     color: #005399;
     font-size: 20px;
-    text-transform: capitalize;
     margin: 0;
-    /*padding: 21px 3% 13px 3%;*/
-    padding: 6px 3% 13px 3% !important;
+    padding: 21px 3% 13px 3%;
     /* Navigateurs récents */
     background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
     background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
@@ -785,22 +785,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini
     background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
 }
-
-#node-86 > header{
-    box-shadow: 0 -1px 0 0 #eee inset;
-    color: #005399;
-    font-size: 20px;
-    text-transform: capitalize;
-    margin: 0;
-    /* Navigateurs récents */
-    background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
-    background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
-    background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
-    background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
-    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
-}
-
-#block-views-liste-contrats-block .block-title, #block-panels-mini-panel-espace-client .block-title{
+#block-views-liste-contrats-block .block-title{
     padding: 6px 3% 13px 3% !important;
 }
 
@@ -871,8 +856,8 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini
     left: 2px;
     position: relative;
     top: 16px;
-    transform: skew(0deg, 4deg);
-    width: 107%;
+    transform: skew(0deg, 7deg);
+    width: 102%;
 }
 
 /*** mes contrats ***/
@@ -927,21 +912,30 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini
 }
 
 .view-liste-contrats .view-content .list-contrat .action span a {
-    color: #666;
+    color: #999;
 }
 
 /*** Mes devis ***/
 #block-panels-mini-panel-espace-client .block-title {
-    /*padding: 2%;
+    /*margin-top: 0px;*/
+    padding: 2%;
+    /*color: #004D92;
+    font-weight: bold;
+    font-size: 14px;
+    background: #fcfcfc none repeat scroll 0 0;
+    border: 1px solid #eee;*/
+
     box-shadow: 0 -1px 0 0 #eee inset;
     color: #005399;
     font-size: 20px;
     margin-top: 0;
+    /*padding: 21px 3% 13px 3%;*/
+    /* Navigateurs récents */
     background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
     background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
     background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
-    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);*/
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
 }
 #block-panels-mini-panel-espace-client .title {
     background: #fcfcfc;
@@ -950,21 +944,21 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini
     font-size: 14px;
     font-weight: bold;
     padding: 2%;
-    margin-top: 15px;
+    margin-top: 19px;
 }
 
 #block-panels-mini-panel-espace-client .case {
     background: #fcfcfc;
-    color: #666;
+    color: #999;
     border: 1px solid #eee;
 }
 
 #block-panels-mini-panel-espace-client .case a {
-    color: #666;
+    color: #999;
 }
 
 #mini-panel-panel_espace_client .view-content {
-    margin: 0% 3%;
+    margin: 0% 5%;
     padding-bottom: 20%;
 }
 
@@ -975,13 +969,13 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini
 }
 
 #node-86{
-    padding: 0;
+    padding: 0 !important;
+}
+#node-86 > header{
+    padding: 0px !important;
 }
 
-
 #node-86 a {
-    position: relative !important;
-    bottom: 22% !important;
     color: #00529b;
     font-size: 20px;
     font-weight: 500;
@@ -994,7 +988,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini
 }
 
 #node-86 label, #node-86 select{
-    color: #666;
+    color: #999;
 }
 
 .page-node-2 #block-quicktabs-left-menu {
@@ -1009,36 +1003,6 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-panels-mini
 .footer-client{
     margin-top: 20%;
 }
-
-/* Breakpoint 1024 */
-@media screen and (min-width: 992px) and (max-width: 1024px) {
-    /* md */    
-}
-
-/*Breakpoint 600*/
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    /* sm */
-    .info-left-menu .barre {
-        left: 56%;
-    }
-}
-
-/*Breakpoint 524*/
-@media screen and (min-width: 767px) and and (max-width: : 524px)  {
-    /* xs */
-    .info-left-menu .barre {
-        left: 79%;
-    }
-
-/*Breakpoint */
-@media screen and (max-width: 523px) {
-    /* xs */
-    .info-left-menu .barre {
-        left: 96% !important;
-    }
-}
-
-
 
 #block-menu-menu-menu-d-aide {
     text-align: center;
@@ -1225,11 +1189,11 @@ li.assurance_voyage a:before,
             margin-bottom: 0px;
             margin-top: 0px;
     }
-    #block-views-frontpage-block-1 li h2 a, .view-id-frontpage li h2 {
+/*    #block-views-frontpage-block-1 li h2 a, .view-id-frontpage li h2 {
         float: left;
         margin-left: 75px;
-        position: absolute;
-    }
+      /*  position: absolute;
+    }*/
     .view-id-frontpage .Habitation i.fa::before, .view-id-frontpage .Loisirs-vie i.fa::before, .view-id-frontpage .Assistance i.fa::before, .view-id-frontpage .Auto i.fa::before {
             display: inline-block;
             float: left;
@@ -1282,6 +1246,18 @@ li.assurance_voyage a:before,
     margin-top: 55px;
     }
 }
+@media all and (max-width: 464px){
+    .img_prod.row {
+        display: inline-block;
+        margin-top: 25px;
+        position: relative;
+    }
+     .breadcrumb span {
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
+
 @media all and (max-width: 304px){
    .mean-container a.meanmenu-reveal {
     margin-right: 27px;
