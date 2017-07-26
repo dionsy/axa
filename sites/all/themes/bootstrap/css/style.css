@@ -1712,15 +1712,12 @@ h1, .h1, h2, .h2, h3, .h3{
     margin-right: 50px;
 }
 #block-menu-menu-menu-principal li li.last:before {
-    content: "";
-    font-size: 25px;
-    color: #ED1846;
-    position:absolute;
-    height:10px;
-  -webkit-transform: skew(0deg, 3deg);
-  -moz-transform: skew(0deg, 3deg);
-  -o-transform: skew(0deg, 3deg);
-  transform: skew(0deg, 3deg);
-  border-top:10px solid #ED1846;
-  border-bottom:10px solid #ED1846;
+  color: rgb(237, 24, 70);
+    content: "|";
+    font-size: 20em;
+    height: 25px;
+    left: 11px;
+    position: absolute;
+    top: -136px;
+    transform: skew(-33deg, 179deg);
 }
