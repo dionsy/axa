@@ -1730,3 +1730,9 @@ h1, .h1, h2, .h2, h3, .h3{
     background: #ccc;
     min-height: 250px;
 }
+.view-declaration-sinistre  .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
+    text-align: -moz-center;
+}
+.view-declaration-sinistre .views-field.views-field-title {
+    width: 19.5%;
+}
