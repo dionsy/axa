@@ -1004,35 +1004,6 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     margin-top: 20%;
 }
 
-/* Breakpoint 1024 */
-@media screen and (min-width: 992px) and (max-width: 1024px) {
-    /* md */    
-}
-
-/*Breakpoint 600*/
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    /* sm */
-    .info-left-menu .barre {
-        left: 56%;
-    }
-}
-
-/*Breakpoint 524*/
-@media screen and (min-width: 524px) and (max-width: : 767px)  {
-    /* xs */
-    .info-left-menu .barre {
-        left: 79%;
-    }
-
-/*Breakpoint */
-@media screen and (min-width: 300px) and (max-width: 523px) {
-    /* xs */
-    .info-left-menu .barre {
-        left: 96% !important;
-    }
-}
-
-
 #block-menu-menu-menu-d-aide {
     text-align: center;
     display: inline-block;
