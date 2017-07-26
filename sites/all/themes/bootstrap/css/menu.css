@@ -12,10 +12,10 @@
     padding: 0;
     float: right;
 }
-.user span{
-	/*display: block;*/
+/*.user span{
+	display: block;
 	text-transform: capitalize;
-}
+}*/
 
 .user img{
 	display: block;
