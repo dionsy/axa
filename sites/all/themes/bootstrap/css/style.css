@@ -1465,7 +1465,9 @@ section#block-simple-copyright-simple-copyright-manage
     display: none;
 }
 
-
+.logo{
+    padding-left: 0;
+}
 #edit-search-block-form--2 {
     /*position: relative;
     right: -999px;*/
@@ -1474,6 +1476,9 @@ section#block-simple-copyright-simple-copyright-manage
     display: none;
     transition: all 1s ease 0s;
 }*/
+.navbar-btn {
+    margin-bottom: 13px;
+}
 .loupe{
     float: right;
     position: relative;
