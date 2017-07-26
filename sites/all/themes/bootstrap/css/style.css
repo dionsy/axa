@@ -1712,6 +1712,7 @@ h1, .h1, h2, .h2, h3, .h3{
     margin-right: 50px;
 }
 #block-menu-menu-menu-principal li li.last:before {
+<<<<<<< HEAD
     content: "";
     font-size: 25px;
     color: #ED1846;
@@ -1729,4 +1730,14 @@ h1, .h1, h2, .h2, h3, .h3{
    /* margin-left: 1em;*/
     background: #ccc;
     min-height: 250px;
+=======
+  color: rgb(237, 24, 70);
+    content: "|";
+    font-size: 20em;
+    height: 25px;
+    left: 11px;
+    position: absolute;
+    top: -136px;
+    transform: skew(-33deg, 179deg);
+>>>>>>> c0bad1f44dc967252b3c0d5281bc709ecb5decba
 }

@@ -92,14 +92,14 @@
     width: 40%;
     float: right;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 20%;
+    right: 20px;
 }
 #block-menu-menu-menu-principal li li.last img{
     float: right;
 }
 #block-menu-menu-menu-principal li li{
-    width: 50%;
+    width: 40%;
 }
 #block-menu-menu-menu-top ul li{
     font-size:1.0em;
@@ -123,7 +123,27 @@ section#block-menu-menu-menu-top ul li:hover a{
 #block-menu-menu-menu-principal ul li ul.dropdown-menu {
    top:-3000px;
    min-height: 300px;
+   padding-left: 40px;
+    padding-top: 60px;
 }
+#block-menu-menu-menu-principal ul li.auto ul.dropdown-menu {
+    border-right: 3px solid rgb(0, 77, 146);
+    border-top: 3px solid rgb(0, 77, 146);
+}
+#block-menu-menu-menu-principal ul li.habitation ul.dropdown-menu {
+    border-right: 3px solid rgb(169, 15, 39);
+    border-top: 3px solid rgb(169, 15, 39);
+}
+#block-menu-menu-menu-principal ul li.assistance_et_accidents ul.dropdown-menu {
+    border-right: 3px solid rgb(53, 152, 220);
+    border-top: 3px solid rgb(53, 152, 220);
+}
+
+#block-menu-menu-menu-principal ul li.loisir-vie_privee ul.dropdown-menu {
+    border-right: 3px solid rgb(255, 192, 0);
+    border-top: 3px solid rgb(255, 192, 0);
+}
+
 #block-menu-menu-menu-principal ul li:hover ul.dropdown-menu {
    top:100%;
    width: 100%;
@@ -1003,35 +1023,6 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 .footer-client{
     margin-top: 20%;
 }
-
-/* Breakpoint 1024 */
-@media screen and (min-width: 992px) and (max-width: 1024px) {
-    /* md */    
-}
-
-/*Breakpoint 600*/
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    /* sm */
-    .info-left-menu .barre {
-        left: 56%;
-    }
-}
-
-/*Breakpoint 524*/
-@media screen and (min-width: 524px) and (max-width: : 767px)  {
-    /* xs */
-    .info-left-menu .barre {
-        left: 79%;
-    }
-
-/*Breakpoint */
-@media screen and (min-width: 300px) and (max-width: 523px) {
-    /* xs */
-    .info-left-menu .barre {
-        left: 96% !important;
-    }
-}
-
 
 #block-menu-menu-menu-d-aide {
     text-align: center;
