@@ -1644,21 +1644,21 @@ div.offres .offre {
     margin-top:0;
 }
 
-#block-views-vos-services-axa-senegal-block .conseiller{
+#block-views-vos-services-axa-senegal-block .item0{
     background: none;
     margin:0;
     padding: 0;
 }
 
-#block-views-vos-services-axa-senegal-block .conseiller:before{
+#block-views-vos-services-axa-senegal-block .item0:before{
     content:"\f041";
 
 }
-#block-views-vos-services-axa-senegal-block .courriers:before{
+#block-views-vos-services-axa-senegal-block .item1:before{
     content:"\f003";
 
 }
-#block-views-vos-services-axa-senegal-block .services:before{
+#block-views-vos-services-axa-senegal-block .item2:before{
     content:"\f0ae";
 
 }
@@ -1707,7 +1707,7 @@ h1, .h1, h2, .h2, h3, .h3{
     background-color: #fff;
     color: black;
 }
-.Vos.courriers.en.ligne {
+.item1 {
     margin-left: 50px;
     margin-right: 50px;
 }
