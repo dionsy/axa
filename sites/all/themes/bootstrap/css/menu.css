@@ -122,7 +122,7 @@ section#block-menu-menu-menu-top ul li:hover a{
 }
 #block-menu-menu-menu-principal ul li ul.dropdown-menu {
    top:-3000px;
-   min-height: 167px;
+   min-height: 300px;
 }
 #block-menu-menu-menu-principal ul li:hover ul.dropdown-menu {
    top:100%;

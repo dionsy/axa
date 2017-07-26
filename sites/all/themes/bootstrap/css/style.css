@@ -1643,8 +1643,6 @@ div.offres .offre {
     background: none;
     margin:0;
     padding: 0;
-    float: left;
-    margin-left: 40px;
 }
 
 #block-views-vos-services-axa-senegal-block .conseiller:before{
@@ -1662,10 +1660,6 @@ div.offres .offre {
 #block-views-vos-services-axa-senegal-block ul li:before {
     font-family: "FontAwesome";
     font-size: 45px;
-}
-#block-views-vos-services-axa-senegal-block  .services {
-    float: right;
-    margin-right: 40px;
 }
 #block-views-vos-services-axa-senegal-block .view-footer {
     padding: 15px 15px 30px;
@@ -1707,4 +1701,21 @@ h1, .h1, h2, .h2, h3, .h3{
     padding: 15px;
     background-color: #fff;
     color: black;
+}
+.Vos.courriers.en.ligne {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#block-menu-menu-menu-principal li li.last:before {
+    content: "";
+    font-size: 25px;
+    color: #ED1846;
+    position:absolute;
+    height:10px;
+  -webkit-transform: skew(0deg, 3deg);
+  -moz-transform: skew(0deg, 3deg);
+  -o-transform: skew(0deg, 3deg);
+  transform: skew(0deg, 3deg);
+  border-top:10px solid #ED1846;
+  border-bottom:10px solid #ED1846;
 }
