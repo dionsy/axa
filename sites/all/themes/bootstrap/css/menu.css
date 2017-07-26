@@ -1145,6 +1145,23 @@ li.assurance_voyage a:before,
 }
 
         /*MEDIA QUERY*/
+@media screen and (min-width: 870px) and (max-width: 1300px) {
+    form div:first-child {
+    position: relative;
+    transform: translateX(6%);
+    width: 90%;
+}
+}
+
+@media all and (max-width: 870px){
+    .node-type-webform #test {
+        width: 91%;   
+    }
+       form div:first-child {
+    position: relative;
+    transform: translateX(6%);
+    width: 90%;
+ }
 
 @media all and (max-width: 768px)
 {
@@ -1154,6 +1171,7 @@ li.assurance_voyage a:before,
     div.user {
         width: auto;
         margin-right: 75px;
+        z-index: 99999;
     }
     .mon_espace_client{
         margin-left: 0;
@@ -1273,7 +1291,13 @@ li.assurance_voyage a:before,
         border-left: 4px solid rgb(255, 192, 0);
     }
 
+
 }  
+@media all and (max-width: 550px){
+    .webform-progressbar-page .webform-progressbar-page-label {
+        font-size: 11px;   
+    }
+ }
 @media all and (max-width: 480px){
         .mon_espace_client a span{
         color: black;

@@ -621,7 +621,7 @@ button.navbar-toggle
     padding: 4px 0;
     position: absolute;
     width: 100%;
-    z-index: 999999;
+    z-index: 999;
 }
 .mean-container a.meanmenu-reveal span {
     display: block;
