@@ -250,12 +250,15 @@ ul{
 */
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2{
- font-size: 1.3em;
+ font-size: 1.4em;
  max-height: 25px;
- color: black;
  margin-top: 0;
  text-align: center;
 /*border-radius: 0 20px 0 0;*/
+}
+#block-views-frontpage-block-1 li h2 a,
+.view-id-frontpage li h2 a{
+ color: black;
 }
 
 
@@ -526,7 +529,7 @@ li.Loisirs-vie  .outside p {
 	background: #54AE32 !important;
 	text-decoration: none;
 }
-.view-id-frontpage li.Assistance h2 a:hover{
+/*.view-id-frontpage li.Assistance h2 a:hover{
 	background: #3598DC !important;
 }
 .view-id-frontpage li.Loisirs-vie h2 a:hover{
@@ -538,7 +541,7 @@ li.Loisirs-vie  .outside p {
 }
 .view-id-frontpage li.Auto h2 a:hover{
 	background: rgb(16, 49, 170) !important;
-}
+}*/
 a {
 	text-decoration: none !important;
 }
@@ -675,8 +678,8 @@ button.navbar-toggle
 }
 
 
-.Loisirs-vie div.outsides a, .Assistance div.outsides a, .Habitation div.outsides a,
- .Auto div.outsides a {
+.Loisirs-vie div.outsides div a, .Assistance div.outsides div a, .Habitation div.outsides div a,
+ .Auto div.outsides div a {
 padding-top: 5px;
 padding-bottom: 5px;
 padding-left: 6px;
@@ -691,19 +694,19 @@ box-shadow: 0 0 3px rgba( 0, 0, 0, 0.5), 0 -1px 0 rgba( 255, 255, 255, 0.3);
 display: block;
 }
 
-.Loisirs-vie div.outsides a {
+.Loisirs-vie div.outsides div a {
     background: #FFC000;
 }
 
-.Assistance div.outsides  a{
+.Assistance div.outsides div  a{
     background: #3598DC;
 }
 
-.Habitation div.outsides a {
+.Habitation div.outsides div a {
     background: #A90F27;
 }
 
-.Auto div.outsides a{
+.Auto div.outsides div a{
     background: #004D92;
 }
 *{
@@ -1712,32 +1715,17 @@ h1, .h1, h2, .h2, h3, .h3{
     margin-right: 50px;
 }
 #block-menu-menu-menu-principal li li.last:before {
-<<<<<<< HEAD
-    content: "";
-    font-size: 25px;
-    color: #ED1846;
-    position:absolute;
-    height:10px;
-  -webkit-transform: skew(0deg, 3deg);
-  -moz-transform: skew(0deg, 3deg);
-  -o-transform: skew(0deg, 3deg);
-  transform: skew(0deg, 3deg);
-  border-top:10px solid #ED1846;
-  border-bottom:10px solid #ED1846;
+   color: rgb(237, 24, 70);
+    content: "|";
+    font-size: 19em;
+    height: 110px;
+    position: absolute;
+    top: -126px;
+    transform: skew(-36deg,  -19deg);
 }
 
 #block-views-faq-block-1 {
    /* margin-left: 1em;*/
     background: #ccc;
     min-height: 250px;
-=======
-  color: rgb(237, 24, 70);
-    content: "|";
-    font-size: 20em;
-    height: 25px;
-    left: 11px;
-    position: absolute;
-    top: -136px;
-    transform: skew(-33deg, 179deg);
->>>>>>> c0bad1f44dc967252b3c0d5281bc709ecb5decba
 }
