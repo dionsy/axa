@@ -1027,7 +1027,7 @@ a.asligne {
    color: rgb(237, 24, 70);
 }
 .view-faq {
-    background: #fff;
+    /*background: #fff;*/
 }	
 
 .view-faq .item-list ul li {
@@ -1110,8 +1110,8 @@ a.asligne {
 
 /*** Glossaire ***/
 .view.view-faq {
-    background: #fff;
-    padding: 0.5em 0em;
+    /*background: #fff;
+    padding: 0.5em 0em;*/
 
 }
 .view.view-glossary{
@@ -1723,4 +1723,10 @@ h1, .h1, h2, .h2, h3, .h3{
   transform: skew(0deg, 3deg);
   border-top:10px solid #ED1846;
   border-bottom:10px solid #ED1846;
+}
+
+#block-views-faq-block-1 {
+   /* margin-left: 1em;*/
+    background: #ccc;
+    min-height: 250px;
 }

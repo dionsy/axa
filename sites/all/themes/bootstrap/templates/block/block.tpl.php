@@ -131,7 +131,10 @@ switch ($block->delta) {
 		$class="col-md-9 col-lg-9 col-xs-12";
 	break;
 	case '1':
-		$class="col-md-6 col-lg-6 col-xs-12";
+		$class="col-md-7 col-lg-7 col-xs-12";
+	break;
+	case 'faq-block_1':
+		$class="col-md-5 col-lg-5 col-xs-12";
 	break;
 	case 'agence_axa-block_1':
 		$class="col-md-6 col-lg-6 col-xs-12";
