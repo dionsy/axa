@@ -135,10 +135,11 @@ form#user-login {
 /*    margin-top: 30px;*/
     margin-bottom: 20px;
 } 
-#webform-client-form-11 div:first-child,
+/*#webform-client-form-11 div:first-child,
 #webform-client-form-10 div:first-child,
 #webform-client-form-9 div:first-child,
-#webform-client-form-8 div:first-child {
+#webform-client-form-8 div:first-child */
+form div:first-child{
     position: relative;
     transform: translateX(17%);
     width: 75%;
@@ -642,4 +643,11 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     white-space: nowrap;
     position: absolute;
     right: 36px;
-    top: 1.4px;}
+    top: 1.4px;
+}
+
+#search-block-form div:first-child{
+    position: relative;
+    transform: none;
+    width: 100%;
+}
