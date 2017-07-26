@@ -145,8 +145,9 @@ form div:first-child{
     width: 75%;
 }
 
+#user-login div:first-child,
 .webform-progressbar {
-    transform: initial !important;
+    transform: none !important;
     width: 100% !important;
 }
 

@@ -1027,7 +1027,7 @@ a.asligne {
    color: rgb(237, 24, 70);
 }
 .view-faq {
-    background: #fff;
+    /*background: #fff;*/
 }	
 
 .view-faq .item-list ul li {
@@ -1110,8 +1110,8 @@ a.asligne {
 
 /*** Glossaire ***/
 .view.view-faq {
-    background: #fff;
-    padding: 0.5em 0em;
+    /*background: #fff;
+    padding: 0.5em 0em;*/
 
 }
 .view.view-glossary{
@@ -1644,33 +1644,27 @@ div.offres .offre {
     margin-top:0;
 }
 
-#block-views-vos-services-axa-senegal-block .conseiller{
+#block-views-vos-services-axa-senegal-block .item0{
     background: none;
     margin:0;
     padding: 0;
-    float: left;
-    margin-left: 40px;
 }
 
-#block-views-vos-services-axa-senegal-block .conseiller:before{
+#block-views-vos-services-axa-senegal-block .item0:before{
     content:"\f041";
 
 }
-#block-views-vos-services-axa-senegal-block .courriers:before{
+#block-views-vos-services-axa-senegal-block .item1:before{
     content:"\f003";
 
 }
-#block-views-vos-services-axa-senegal-block .services:before{
+#block-views-vos-services-axa-senegal-block .item2:before{
     content:"\f0ae";
 
 }
 #block-views-vos-services-axa-senegal-block ul li:before {
     font-family: "FontAwesome";
     font-size: 45px;
-}
-#block-views-vos-services-axa-senegal-block  .services {
-    float: right;
-    margin-right: 40px;
 }
 #block-views-vos-services-axa-senegal-block .view-footer {
     padding: 15px 15px 30px;
@@ -1712,4 +1706,24 @@ h1, .h1, h2, .h2, h3, .h3{
     padding: 15px;
     background-color: #fff;
     color: black;
+}
+.item1 {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#block-menu-menu-menu-principal li li.last:before {
+    color: rgb(237, 24, 70);
+    content: "|";
+    font-size: 20em;
+    height: 25px;
+    left: 11px;
+    position: absolute;
+    top: -136px;
+    transform: skew(-33deg, 179deg);
+}
+
+#block-views-faq-block-1 {
+   /* margin-left: 1em;*/
+    background: #ccc;
+    min-height: 250px;
 }

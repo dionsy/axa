@@ -9,7 +9,6 @@ global $base_path;
       <?php 
       $i=0;
       foreach ($rows as $row) {
-      	# code...
       	print '<li class="item'.$i.'">'.$row.'</li>';
       	$i++;
       }
