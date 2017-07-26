@@ -1646,9 +1646,29 @@ div.offres .offre {
     float: left;
     margin-left: 40px;
 }
+
+#block-views-vos-services-axa-senegal-block .conseiller:before{
+    content:"\f041";
+
+}
+#block-views-vos-services-axa-senegal-block .courriers:before{
+    content:"\f003";
+
+}
+#block-views-vos-services-axa-senegal-block .services:before{
+    content:"\f0ae";
+
+}
+#block-views-vos-services-axa-senegal-block ul li:before {
+    font-family: "FontAwesome";
+    font-size: 45px;
+}
 #block-views-vos-services-axa-senegal-block  .services {
     float: right;
     margin-right: 40px;
+}
+#block-views-vos-services-axa-senegal-block .view-footer {
+    padding: 15px 15px 30px;
 }
 
 h1, .h1, h2, .h2, h3, .h3{
@@ -1672,4 +1692,19 @@ h1, .h1, h2, .h2, h3, .h3{
     line-height: 36px;
     margin-top: 15px;
     color: #fff;    
+}
+.monespace {
+    margin-top: 20px;
+}
+.monespace > a {
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 10px;
+    padding: 15px;
+    color: #fff;
+}
+.monespace > a:hover {
+    border: 1px solid rgb(255, 255, 255);
+    padding: 15px;
+    background-color: #fff;
+    color: black;
 }
