@@ -64,6 +64,10 @@
 
         });
 
+      $('#quicktabs-left_menu ul.quicktabs-tabs').append('<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>');
+      $('#quicktabs-left_menu ul.quicktabs-tabs').addClass('topnav');
+
+
       
       /*$(".loupe").click(function(e) {
          $("form").addClass("fcurrent", 10000);

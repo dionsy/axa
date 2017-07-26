@@ -1015,21 +1015,110 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     .info-left-menu .barre {
         left: 56%;
     }
+
+    ul.quicktabs-tabs.quicktabs-style-navlist {
+        margin-right: 2%;
+        width: 30%;
+    }
+
+    .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+      width: 68%;
+      padding-left: 2%
+    }
+
+    .mon-conseiller {
+        display: block;
+        margin-left: 32% !important;
+        width: 68%;
+    }
 }
 
-/*Breakpoint 524*/
-@media screen and (min-width: 524px) and (max-width: : 767px)  {
+/*Breakpoint 524 767*/
+@media screen and (min-width: 524px) and (max-width: 767px) {
     /* xs */
     .info-left-menu .barre {
+        display: none;
         left: 79%;
     }
 
+    #block-block-4 .avatar .barre {
+        display: none;
+    }
+
+    .corps-espace-client {
+        margin-top: 10px !important;
+    }
+
+    ul.quicktabs-tabs.quicktabs-style-navlist {
+        margin-right: 2%;
+        width: 30%;
+    }
+
+    .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+      width: 68%;
+      padding-left: 2%
+    }
+
+    .mon-conseiller {
+        display: block;
+        margin-left: 32% !important;
+        width: 68% !important;
+    }
+}
+
 /*Breakpoint */
-@media screen and (min-width: 300px) and (max-width: 523px) {
+@media screen and (max-width: 523px) {
     /* xs */
     .info-left-menu .barre {
+        display: none;
         left: 96% !important;
     }
+
+    .topnav li:not(li.active) {
+        display: none !important;
+        background: red;
+    }
+
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+
+    .corps-espace-client {
+        margin-top: 10px !important;
+    }
+
+    ul.quicktabs-tabs.quicktabs-style-navlist {
+        margin-bottom: 15px;
+        margin-left: 2%;
+        margin-right:2%;
+        width: 100%;
+    }
+
+    .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+      width: 100%;
+      margin-left: 2%;
+      margin-right:2%;
+    }
+
+    .mon-conseiller {
+        display: block;
+        width: 100% ;
+        margin-right:2%;
+        margin-bottom: 0px;
+    }
+
+    #block-block-5 .incline {
+        display: none;
+    }
+
+    #block-block-4 .avatar .barre {
+        display: none;
+    }
+
+    .page-node-2 .well {
+        margin-bottom: 0px !important;
+    } 
 }
 
 

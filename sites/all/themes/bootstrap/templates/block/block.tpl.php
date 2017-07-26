@@ -171,7 +171,7 @@ switch ($block->delta) {
 		    if(isset($account->picture))
                $pic=$account->picture;
             $img = file_create_url($pic->uri);
-            $prefix = '<div class="avatar col-md-2" ><img class="img-responsive" src="'.$img.'" /><div class="barre">&nbsp;&nbsp;&nbsp;&nbsp;</div></div>';
+            $prefix = '<div class="avatar col-xs-2 col-sm-2 col-md-2 col-lg-2" ><img class="img-responsive" src="'.$img.'" /><div class="barre">&nbsp;&nbsp;&nbsp;&nbsp;</div></div>';
         }
 	break;
 
@@ -190,6 +190,10 @@ switch ($block->delta) {
 	case 'menu-services':	
 		$class="col-md-6";
 	break;
+	
+	/*case 'left_menu':	
+		$prefix='<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>';
+	break;*/
 	
 	default:
 		# code...
