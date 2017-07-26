@@ -77,7 +77,7 @@
 <div class="fix-footer">
   <div class="page">
 
-       <header id="" role="banner" class="<?php print $navbar_classes; ?>">
+       <header role="banner" class="container navbar-default">
              <div class="row">
                 <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-sm-6 col-xs-12">
 
