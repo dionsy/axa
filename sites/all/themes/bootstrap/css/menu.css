@@ -1094,15 +1094,30 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
         left: 96% !important;
     }
 
-    .topnav li:not(li.active) {
+    .topnav li:not(:first-child) {
         display: none !important;
-        background: red;
     }
 
     .topnav a.icon {
-      float: right;
-      display: block;
+      /*float: right;*/
+      display: block !important;
     }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 10%;
+        top: 0;
+    }
+  .topnav.responsive li {
+    float: none;
+    display: block !important;
+    text-align: left;
+  }
+
 
     .corps-espace-client {
         margin-top: 10px !important;

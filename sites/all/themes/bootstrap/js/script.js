@@ -64,9 +64,19 @@
 
         });
 
-      $('#quicktabs-left_menu ul.quicktabs-tabs').append('<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>');
+      $('#quicktabs-left_menu ul.quicktabs-tabs').append('<a href="javascript:void(0);" class="icon">&#9776;</a>');
       $('#quicktabs-left_menu ul.quicktabs-tabs').addClass('topnav');
-
+      $('#quicktabs-left_menu ul.quicktabs-tabs').attr( 'id', 'idForResponsive' );
+      $('.topnav a.icon', context).on('click', function(){
+        var x = document.getElementById("idForResponsive");
+        if (x.className=== "quicktabs-tabs quicktabs-style-navlist topnav") {
+          x.className += " responsive";
+        } 
+        else {
+          x.className = "quicktabs-tabs quicktabs-style-navlist topnav";
+        }
+      });
+      
 
       
       /*$(".loupe").click(function(e) {
