@@ -64,6 +64,20 @@
 
         });
 
+      $('#quicktabs-left_menu ul.quicktabs-tabs').append('<a href="javascript:void(0);" class="icon">&#9776;</a>');
+      $('#quicktabs-left_menu ul.quicktabs-tabs').addClass('topnav');
+      $('#quicktabs-left_menu ul.quicktabs-tabs').attr( 'id', 'idForResponsive' );
+      $('.topnav a.icon', context).on('click', function(){
+        var x = document.getElementById("idForResponsive");
+        if (x.className=== "quicktabs-tabs quicktabs-style-navlist topnav") {
+          x.className += " responsive";
+        } 
+        else {
+          x.className = "quicktabs-tabs quicktabs-style-navlist topnav";
+        }
+      });
+      
+
       
       /*$(".loupe").click(function(e) {
          $("form").addClass("fcurrent", 10000);
@@ -128,13 +142,16 @@
              $('.webform-component--energie-du-vehicule').addClass('fadeIn') ;
         });
         $( "#edit-submitted-annee-de-naissance-year" ).on('change', function (e) {
-           $('.form-item-submitted-age-dobtention-du-permis').addClass('fadeIn'  ) ;
+             $('.form-item-submitted-age-dobtention-du-permis').addClass('fadeIn') ;
          });
         $( "#edit-account .form-item-name" ).focusout(function() {
-              $(' #edit-account .form-item-mail').addClass('fadeIn'  ) ;
+              $(' #edit-account .form-item-mail').addClass('fadeIn') ;
           });
         $( "#edit-account .form-item-mail" ).focusout(function() {
-              $(' #edit-field-numero-telephone').addClass('fadeIn'  ) ;
+              $(' #edit-field-numero-telephone').addClass('fadeIn') ;
+          });
+        $( "#edit-field-numero-telephone" ).focusout(function() {
+              $('#edit-field-numero-contrat').addClass('fadeIn') ;
           });
 
    }

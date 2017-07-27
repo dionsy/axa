@@ -1024,6 +1024,140 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     margin-top: 20%;
 }
 
+/* Breakpoint 1024 */
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    /* md */    
+}
+
+/*Breakpoint 600*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* sm */
+    .info-left-menu .barre {
+        left: 56%;
+    }
+
+    ul.quicktabs-tabs.quicktabs-style-navlist {
+        margin-right: 2%;
+        width: 30%;
+    }
+
+    .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+      width: 68%;
+      padding-left: 2%
+    }
+
+    .mon-conseiller {
+        display: block;
+        margin-left: 32% !important;
+        width: 68%;
+    }
+}
+
+/*Breakpoint 524 767*/
+@media screen and (min-width: 524px) and (max-width: 767px) {
+    /* xs */
+    .info-left-menu .barre {
+        display: none;
+        left: 79%;
+    }
+
+    #block-block-4 .avatar .barre {
+        display: none;
+    }
+
+    .corps-espace-client {
+        margin-top: 10px !important;
+    }
+
+    ul.quicktabs-tabs.quicktabs-style-navlist {
+        margin-right: 2%;
+        width: 30%;
+    }
+
+    .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+      width: 68%;
+      padding-left: 2%
+    }
+
+    .mon-conseiller {
+        display: block;
+        margin-left: 32% !important;
+        width: 68% !important;
+    }
+}
+
+/*Breakpoint */
+@media screen and (max-width: 523px) {
+    /* xs */
+    .info-left-menu .barre {
+        display: none;
+        left: 96% !important;
+    }
+
+    .topnav li:not(:first-child) {
+        display: none !important;
+    }
+
+    .topnav a.icon {
+      /*float: right;*/
+      display: block !important;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 10%;
+        top: 0;
+    }
+  .topnav.responsive li {
+    float: none;
+    display: block !important;
+    text-align: left;
+  }
+
+
+    .corps-espace-client {
+        margin-top: 10px !important;
+    }
+
+    ul.quicktabs-tabs.quicktabs-style-navlist {
+        margin-bottom: 15px;
+        margin-left: 2%;
+        margin-right:2%;
+        width: 100%;
+    }
+
+    .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+      width: 100%;
+      margin-left: 2%;
+      margin-right:2%;
+    }
+
+    .mon-conseiller {
+        display: block;
+        width: 100% ;
+        margin-right:2%;
+        margin-bottom: 0px;
+    }
+
+    #block-block-5 .incline {
+        display: none;
+    }
+
+    #block-block-4 .avatar .barre {
+        display: none;
+    }
+
+    .page-node-2 .well {
+        margin-bottom: 0px !important;
+    } 
+}
+
+
+
 #block-menu-menu-menu-d-aide {
     text-align: center;
     display: inline-block;
@@ -1075,6 +1209,7 @@ li.assurance_voyage a:before{
 li.solution_auto a:before{
     content: "\f1b9";
     color: #004D92;
+    
 }
 .assistance_et_accidents li a{
     color: #3598DC !important;
@@ -1212,7 +1347,7 @@ li.assurance_voyage a:before,
     #block-menu-menu-r-seaux-sociaux- ul {
         text-align: center;
     }
-    #block-menu-menu-f                                                      oter ul li {
+    #block-menu-menu-footer ul li {
         width: auto;
     }
     .outside a.img_link img {
