@@ -144,7 +144,7 @@ form div:first-child{
     transform: translateX(17%);
     width: 75%;
 }
-
+#user-register-form div:first-child,
 #user-login div:first-child,
 .webform-progressbar {
     transform: none !important;
@@ -185,7 +185,10 @@ form div:first-child{
 .webform-component--energie-du-vehicule,
 .form-item-submitted-annee-de-naissance,
 .form-item-submitted-age-dobtention-du-permis,
-.webform-component--email-conducteur{
+.webform-component--email-conducteur,
+#edit-account .form-item-name ,
+#edit-account .form-item-mail,
+#edit-field-numero-telephone{
     animation-timing-function: ease-in-out;
 /*    opacity: 1;*/
     transform: translateX(50px) ;
@@ -203,7 +206,9 @@ form div:first-child{
  .form-item-submitted-quand-souhaitez-vous-etre-assure,
  .webform-component--energie-du-vehicule,
  .form-item-submitted-age-dobtention-du-permis,
- .webform-component--email-conducteur{
+ .webform-component--email-conducteur,
+ #edit-account .form-item-mail,
+ #edit-field-numero-telephone{
    height: 0;
   opacity: 0;
 }
@@ -211,11 +216,11 @@ form div:first-child{
 .fadeIn{
     display: block;
     margin-bottom: 25px;
-    animation-timing-function: ease-in-out;
-    opacity: 1;
-    height: 20px;
-    transform: translateX(0px);
-    transition: all 1s ease-in-out 0s;
+    animation-timing-function: ease-in-out !important;
+    opacity: 1 !important;
+    height: 20px !important;
+    transform: translateX(0px) !important;
+    transition: all 1s ease-in-out 0s !important;
 }
 .webform-component--date-de-naissance.fadeIn {
     height: 90px;
@@ -651,4 +656,7 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     position: relative;
     transform: none;
     width: 100%;
+}
+#edit-account.form-wrapper.form-group {
+    margin-top: 25px;
 }

@@ -88,10 +88,10 @@
                     <?php
         // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
                     } 
                    else{
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i>Mon espace client</a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
                     }
                  ?>
                  <?php
@@ -208,13 +208,16 @@
         //krumong('main')->kPrint($node);
         $url=$node->field_image_produit['und'][0]['uri'];
          $img = file_create_url($url);
-/*         if (isset($node->body['und'][0]['value']))
-            $body=$node->body['und'][0]['value'];*/
+     
          $img2= file_create_url('sites/all/themes/bootstrap/images/axa.png');
           print '<div class="img_prod row"><div class="col-md-8 col-lg-8 col-sm-8 col-xs-6"><img class="img-responsive axa_logo" src="'.$img2.'" /></div><h1 class="page-header">'.$title.'</h1><div class="col-md-4 col-lg-4 col-sm-4 col-xs-6"><img class="img-responsive offres" src="'.$img.'" /></div>';  
           print '</div>';
-     /*     print '<div class="body">'.$body.'</div>';*/
-        //print render($node->body);
+        //krumong('main')->kPrint($node);
+          if (!empty($node->body)){
+            $body = $node->body['und'][0]['value'];
+           print '<div class="body">'.$body.'</div>';
+          //print render($node->body);
+         }
        ?>
     </section>
 

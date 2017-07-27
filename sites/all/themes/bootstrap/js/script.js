@@ -97,6 +97,7 @@
           $('#webform-client-form-8 .form-item-submitted-prenom').addClass('fadeIn') ;
           $('.form-item-submitted-marque').addClass('fadeIn') ;
           $('.form-item-submitted-annee-de-naissance').addClass('fadeIn') ;
+          $('#edit-account .form-item-name').addClass('fadeIn') ;
         });
         $('#edit-submitted-type-de-bien').on('change', function (e) {
              $('.form-item-submitted-nombre-de-pieces').addClass('fadeIn') ;
@@ -119,6 +120,7 @@
          $( ".form-item-submitted-adresse-du-bien-a-assurer" ).focusout(function() {
               $('.form-item-submitted-vous-etes').addClass('fadeIn'  ) ;
           });
+     
         $( ".form-item-submitted-prenom" ).focusout(function() {
               $('.form-type-date').addClass('fadeIn'  ) ;
           });
@@ -142,6 +144,12 @@
         $( "#edit-submitted-annee-de-naissance-year" ).on('change', function (e) {
            $('.form-item-submitted-age-dobtention-du-permis').addClass('fadeIn'  ) ;
          });
+        $( "#edit-account .form-item-name" ).focusout(function() {
+              $(' #edit-account .form-item-mail').addClass('fadeIn'  ) ;
+          });
+        $( "#edit-account .form-item-mail" ).focusout(function() {
+              $(' #edit-field-numero-telephone').addClass('fadeIn'  ) ;
+          });
 
    }
   }
