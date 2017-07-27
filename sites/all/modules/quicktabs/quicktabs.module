@@ -629,6 +629,8 @@ function theme_qt_quicktabs_tabset($vars) {
     ),
     'items' => array(),
   );
+  
+
   foreach (element_children($vars['tabset']['tablinks']) as $key) {
     $item = array();
     if (is_array($vars['tabset']['tablinks'][$key])) {

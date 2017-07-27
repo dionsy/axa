@@ -451,3 +451,17 @@ function bootstrap_js_callback_filter_xss_alter(array &$allowed_tags = array()) 
 }
 
 
+
+/**
+ * Alter the Quicktabs instance before it gets rendered.
+ *
+ * @param &$quicktabs
+ *   A loaded Quicktabs object, either from the database or from code.
+ */
+function bootstrap_quicktabs_alter(&$quicktabs) {
+  $tabs=$quicktabs->tabs;
+  //krumong('main')->kPrint($tabs);
+}
+
+
+
