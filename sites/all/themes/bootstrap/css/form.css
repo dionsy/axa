@@ -14,6 +14,7 @@ a{
 	/*margin-right: auto;*/
     padding-top: 6%;
 	width: 75%;
+    margin-bottom: 25px;
 }
 .tabs--primary{ 
     border-bottom: 0px solid !important;
@@ -34,7 +35,12 @@ ul.tabs--primary li
     margin-left: 8px;
     display: inline-block;
     float: none;
+    padding-left: 5px;
+    padding-right: 5px;
 }
+ul.tabs--primary li:hover{
+    background-color: #ED1846 ! important;
+ }
 
  li.active > a{
     background-color: initial !important;
@@ -188,7 +194,8 @@ form div:first-child{
 .webform-component--email-conducteur,
 #edit-account .form-item-name ,
 #edit-account .form-item-mail,
-#edit-field-numero-telephone{
+#edit-field-numero-telephone,
+#edit-field-numero-contrat{
     animation-timing-function: ease-in-out;
 /*    opacity: 1;*/
     transform: translateX(50px) ;
@@ -208,7 +215,8 @@ form div:first-child{
  .form-item-submitted-age-dobtention-du-permis,
  .webform-component--email-conducteur,
  #edit-account .form-item-mail,
- #edit-field-numero-telephone{
+ #edit-field-numero-telephone,
+ #edit-field-numero-contrat{
    height: 0;
   opacity: 0;
 }
@@ -223,14 +231,15 @@ form div:first-child{
     transition: all 1s ease-in-out 0s !important;
 }
 .webform-component--date-de-naissance.fadeIn {
-    height: 90px;
+    height: 90px !important;
 }
 .webform-component--ce-logement-est-il-votre-residence-principale.fadeIn ,
 .form-item-submitted-annee-de-naissance {
-    height: 60px;
+    height: 60px !important;
 }
+
 .form-item-submitted-annee-de-naissance {
-    height: 25px;
+    height: 25px !important;
 }
 
 #webform-client-form-8 .webform-datepicker .form-item-submitted-date-de-naissance-month ,
@@ -319,7 +328,7 @@ form div:first-child{
 #edit-submitted-civilite .form-item-submitted-civilite,
 #edit-submitted-civilite .form-item-submitted-civilite{
 
-    margin-left: 13%;
+    width: 25% ! important;
 }
 .form-item.webform-component.webform-component-radios.webform-component--civilite.form-group.form-item.form-item-submitted-civilite.form-type-radios.form-group ,
 .form-item.webform-component.webform-component-term-reference.webform-component--type-dassurance.form-group.form-item.form-item-submitted-type-dassurance.form-type-select.form-group{
@@ -489,7 +498,7 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 }
 
 .node-type-webform #test{
-    width: 55%;
+    width: 57%;
     float: none;
     margin:auto;
     margin-top: 28px;
@@ -497,6 +506,11 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 .node-webform{
     /*padding-top: 10px;*/
     background: #fff;
+}
+.form-item.form-item-submitted-ce-logement-est-il-votre-residence-principale.form-type-radio.radio {
+    width: 25% ! important;
+    display: inline-block ! important;
+     margin-top: 15px;
 }
 
 .webform-progressbar-page .webform-progressbar-page-label{
@@ -659,4 +673,13 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 }
 #edit-account.form-wrapper.form-group {
     margin-top: 25px;
+}
+.btn {
+    border-radius: 0  ! important;
+}
+.btn-default {
+    border-color: rgba(0, 0, 0, 0) ! important;
+}
+.nav-tabs > li > a:hover {
+    border-color: transparent; !important;
 }

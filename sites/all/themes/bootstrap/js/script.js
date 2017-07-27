@@ -128,13 +128,16 @@
              $('.webform-component--energie-du-vehicule').addClass('fadeIn') ;
         });
         $( "#edit-submitted-annee-de-naissance-year" ).on('change', function (e) {
-           $('.form-item-submitted-age-dobtention-du-permis').addClass('fadeIn'  ) ;
+             $('.form-item-submitted-age-dobtention-du-permis').addClass('fadeIn') ;
          });
         $( "#edit-account .form-item-name" ).focusout(function() {
-              $(' #edit-account .form-item-mail').addClass('fadeIn'  ) ;
+              $(' #edit-account .form-item-mail').addClass('fadeIn') ;
           });
         $( "#edit-account .form-item-mail" ).focusout(function() {
-              $(' #edit-field-numero-telephone').addClass('fadeIn'  ) ;
+              $(' #edit-field-numero-telephone').addClass('fadeIn') ;
+          });
+        $( "#edit-field-numero-telephone" ).focusout(function() {
+              $('#edit-field-numero-contrat').addClass('fadeIn') ;
           });
 
    }

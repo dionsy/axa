@@ -1075,6 +1075,7 @@ li.assurance_voyage a:before{
 li.solution_auto a:before{
     content: "\f1b9";
     color: #004D92;
+    
 }
 .assistance_et_accidents li a{
     color: #3598DC !important;
