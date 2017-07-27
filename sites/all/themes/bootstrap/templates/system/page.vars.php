@@ -14,8 +14,14 @@
  * @ingroup theme_preprocess
  */
 function bootstrap_preprocess_page(&$variables) {
- //krumong('main')->kPrint($variables);
-
+  /*$icon =  array(
+    '#type'=>'link',
+    '#title'=>'&#9776',
+    '#href' => '#',
+  );
+  $variables['page']['content']['quicktabs_left_menu']['content']['tabs']['tablinks'][] = $icon;
+  krumong('main')->kPrint($variables['page']['content']['quicktabs_left_menu']['content']['tabs']['tablinks']);
+  krumong('main')->kPrint($variables['page']['content']['quicktabs_left_menu']);*/
 
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
