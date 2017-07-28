@@ -683,3 +683,8 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 .nav-tabs > li > a:hover {
     border-color: transparent; !important;
 }
+
+form#webform-client-form-86 div{
+    transform: none;
+    width: auto;
+}

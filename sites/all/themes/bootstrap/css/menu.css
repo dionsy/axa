@@ -938,7 +938,8 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 /*** Mes devis ***/
 #block-panels-mini-panel-espace-client .block-title {
     /*margin-top: 0px;*/
-    padding: 2%;
+    padding: 6px 3% 13px 3%;
+    margin-bottom: 0px;
     /*color: #004D92;
     font-weight: bold;
     font-size: 14px;
@@ -964,7 +965,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     font-size: 14px;
     font-weight: bold;
     padding: 2%;
-    margin-top: 19px;
+    margin-top: 15px;
 }
 
 #block-panels-mini-panel-espace-client .case {
@@ -978,14 +979,14 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 #mini-panel-panel_espace_client .view-content {
-    margin: 0% 5%;
+    margin: 0% 5% 0% 3%;;
     padding-bottom: 20%;
 }
 
 /*** preference ***/
 #node-86 h2 {
     margin-top: 0;
-    padding: 4px;
+    padding: 4px 11px;
 }
 
 #node-86{
@@ -1118,6 +1119,9 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     text-align: left;
   }
 
+  #mini-panel-panel_espace_client .view-content {
+    padding-bottom: 1%;
+  }
 
     .corps-espace-client {
         margin-top: 10px !important;
