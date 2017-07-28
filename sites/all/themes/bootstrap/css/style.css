@@ -1730,7 +1730,7 @@ h1, .h1, h2, .h2, h3, .h3{
     font-size: 17px !important;
     text-align: center;
 }
-.view-display-id-block_1{
+#block-views-faq-block-1 .view-display-id-block_1{
    /* margin-left: 1em;*/
    /* min-height: 250px;*/
     background: #FFF;
@@ -1742,13 +1742,13 @@ h1, .h1, h2, .h2, h3, .h3{
     -moz-box-shadow: #888 0 2px 1px 0px;
     box-shadow: #888 0 2px 1px 0px;
 }
-.view-display-id-block_1 li{
+#block-views-faq-block-1 .view-display-id-block_1 li{
     padding: .5em 0;
 }
-.view-display-id-block_1  .view-footer{
+#block-views-faq-block-1 .view-display-id-block_1  .view-footer{
     text-align: center;
 }
-.view-display-id-block_1 li a:before{
+#block-views-faq-block-1 .view-display-id-block_1 li a:before{
     content: '>';
     font-weight: bold;
     padding-right: .5em;

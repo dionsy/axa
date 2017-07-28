@@ -721,6 +721,7 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 .nav-tabs > li > a:hover {
     border-color: transparent; !important;
 }
+<<<<<<< HEAD
 .page-user .form-item-name ,.form-item-pass {
     width: auto !important;
 }
@@ -764,4 +765,8 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 }
 .navbar-btn.pull-left img {
      margin: auto; 
+}
+form#webform-client-form-86 div{
+    transform: none;
+    width: auto;
 }
