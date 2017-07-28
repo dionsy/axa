@@ -1,0 +1,4 @@
+name = Paiement
+description = Permet le payement en ligne.
+core = 7.x
+package = ATOS
