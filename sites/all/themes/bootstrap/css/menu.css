@@ -1484,6 +1484,13 @@ li.assurance_voyage a:before,
         display: inline-block;
         margin-top: 5px;
     }
+    #block-menu-menu-menu-d-aide li a{
+        font-size: 0 !important;
+    }
+    #block-menu-menu-menu-d-aide ul {
+        width: 50px;
+    }
+
 }
 
 @media all and (max-width: 304px){
@@ -1512,6 +1519,9 @@ li.assurance_voyage a:before,
     }
     #block-views-frontpage-block-1 li h2 a, .view-id-frontpage li h2 {
                 margin-left: 25px;
+    }
+    .mean-container .mean-nav ul li a {
+        font-size: 0.8em ! important;
     }
 }
 
