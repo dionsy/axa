@@ -195,7 +195,10 @@ form div:first-child{
 #edit-account .form-item-name ,
 #edit-account .form-item-mail,
 #edit-field-numero-telephone,
-#edit-field-numero-contrat{
+#edit-field-numero-contrat,
+.form-item-submitted-puissance,
+.form-item-submitted-date-premiere--mise-en-circulation,
+.form-item-submitted-valeur-a-neuf{
     animation-timing-function: ease-in-out;
 /*    opacity: 1;*/
     transform: translateX(50px) ;
@@ -216,7 +219,10 @@ form div:first-child{
  .webform-component--email-conducteur,
  #edit-account .form-item-mail,
  #edit-field-numero-telephone,
- #edit-field-numero-contrat{
+ #edit-field-numero-contrat,
+ .form-item-submitted-puissance,
+ .form-item-submitted-date-premiere--mise-en-circulation ,
+ .form-item-submitted-valeur-a-neuf{
    height: 0;
   opacity: 0;
 }
@@ -226,13 +232,19 @@ form div:first-child{
     margin-bottom: 25px;
     animation-timing-function: ease-in-out !important;
     opacity: 1 !important;
-    height: 20px !important;
+    height: 25px !important;
     transform: translateX(0px) !important;
     transition: all 1s ease-in-out 0s !important;
 }
-.webform-component--date-de-naissance.fadeIn {
-    height: 90px !important;
+.webform-component--date-de-naissance.fadeIn ,
+.form-item-submitted-date-premiere--mise-en-circulation.fadeIn{
+   /* height: 80px !important;*/
+    width: auto;
+    margin-top: 25px;
 }
+/*.form-item-submitted-date-premiere--mise-en-circulation{
+    width: auto;
+}*/
 .webform-component--ce-logement-est-il-votre-residence-principale.fadeIn ,
 .form-item-submitted-annee-de-naissance {
     height: 60px !important;
@@ -249,9 +261,9 @@ form div:first-child{
 #webform-client-form-31 .webform-datepicker .form-item-submitted-date-depart-month,
 #webform-client-form-31 .webform-datepicker .form-item-submitted-date-retour-month,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-month {
-    width: 21%;
-    display: inline-block;
-    margin-left: 10%;
+    width: auto ;
+    display: inline;
+    /*margin-left: 4%;*/
     margin-right: auto;
   /*  float: left;*/
 
@@ -270,19 +282,23 @@ form div:first-child{
 #webform-client-form-31 .webform-datepicker .form-item-submitted-date-retour-year,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-day,
 #webform-client-form-9 .webform-datepicker .form-item-submitted-date-de-naissance-year{
-    width: 21%;
+    /*width: 21%;*/
     display: inline-block;
-    margin-left: 2%;
-    margin-right: 2%;
+   /* margin-left: 2%;
+    margin-right: 2%;*/
    /* float: left;*/
 }
 
-.form-item-submitted-date-de-naissance label{
-    margin-top: 20px;
-   /* margin-left: 10%;*/
-    margin-bottom: 20px;
+.webform-container-inline.webform-datepicker {
+    display: inline;
 }
 
+
+/*.form-item-submitted-date-de-naissance label{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+*/
 #webform-client-form-11 .form-item-submitted-date-de-naissance, 
 #webform-client-form-10 .form-item-submitted-date-de-naissance 
 #webform-client-form-9 .form-item-submitted-date-de-naissance {
@@ -312,23 +328,27 @@ form div:first-child{
    display: block;
    /* margin-left: 10%;*/
     margin-right: auto;
-    margin-top: 35px;
+    margin-top: 25px;
     
 }
-
+/*
 #webform-client-form-11 .form-item-submitted-civilite,
 #webform-client-form-10 .form-item-submitted-civilite,
 #webform-client-form-9 .form-item-submitted-civilite{
-   /* width: 40%;*/
-    display: inline-block;
-   /* margin-left: 10%;*/
-    margin-right: auto;
-}
+
+}*/
 #edit-submitted-civilite .form-item-submitted-civilite ,
 #edit-submitted-civilite .form-item-submitted-civilite,
 #edit-submitted-civilite .form-item-submitted-civilite{
 
     width: 25% ! important;
+       /* width: 40%;*/
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: auto;
+}
+.form-item-submitted-type-dassurance {
+    margin-top: 0 !important;
 }
 .form-item.webform-component.webform-component-radios.webform-component--civilite.form-group.form-item.form-item-submitted-civilite.form-type-radios.form-group ,
 .form-item.webform-component.webform-component-term-reference.webform-component--type-dassurance.form-group.form-item.form-item-submitted-type-dassurance.form-type-select.form-group{
@@ -340,6 +360,10 @@ form div:first-child{
    display: inline-block;
     /*margin-left: 10%;*/
     margin-right: auto;
+}
+#edit-submitted-energie-du-vehicule {
+    display: inline;
+    margin-left: 30px;
 }
 
 #webform-client-form-8 .form-item-submitted-marque{
@@ -364,7 +388,7 @@ form div:first-child{
     width: 23%;
 }
 #webform-client-form-8 .form-item-submitted-energie-du-vehicule{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     margin-right: 10px;
     margin-top: 15px;
 }
@@ -547,13 +571,19 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     line-height: 15px;
     margin-left: 5px;
     margin-top: -4px;
-    width: 150px !important;
+    width: 150px ! important;
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     -moz-appearance: none;
     height: 25px;
     padding: 0;
     vertical-align: inherit;
     transition: none;
+}
+.webform-container-inline.webform-datepicker div select {
+    width: 65px ! important;
+}
+#edit-submitted-civilite {
+    display: inline;
 }
 .form-control:focus
 {
@@ -571,7 +601,7 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     text-align: center;
 }
 #edit-submitted-email ,#edit-submitted-email-conducteur {
-    width: 75% !important;
+    width: 65% !important;
 }
 .form-item-submitted-annee-de-naissance .webform-container-inline.webform-datepicker {
     display: inline-block;
