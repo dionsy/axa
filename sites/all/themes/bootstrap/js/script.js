@@ -87,14 +87,14 @@
           $("form").removeClass("fcurrent", 10000);
        });*/
       /*$("input:radio:checked").next("div.form-item-submitted-nom").addClass("fadeIn") ;*/
-       /*$("input.form-radio:radio").change(function() {
-        $('form-item-submitted-nom').addClass('fadeIn') ;
-        });*/
+         /*$("input.form-radio:radio").change(function() {
+          $('form-item-submitted-nom').addClass('fadeIn') ;
+          });*/
         $(function() { 
-          $('.webform-component--civilite').addClass('fadeIn'  ) ;
-          $('.webform-component--type-de-bien').addClass('fadeIn'  ) ;
           $('#webform-client-form-8 .form-item-submitted-nom').addClass('fadeIn') ;
           $('#webform-client-form-8 .form-item-submitted-prenom').addClass('fadeIn') ;
+          $('.webform-component--civilite').addClass('fadeIn'  ) ;
+          $('.webform-component--type-de-bien').addClass('fadeIn'  ) ;
           $('.form-item-submitted-marque').addClass('fadeIn') ;
           $('.form-item-submitted-annee-de-naissance').addClass('fadeIn') ;
           $('#edit-account .form-item-name').addClass('fadeIn') ;

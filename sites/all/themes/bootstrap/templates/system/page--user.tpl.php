@@ -96,19 +96,17 @@
         <div class="logo col-md-12 col-lg-12 col-xs-12 <?php print $container_class; ?>">
     
     <div class="navbar-header ">
-      <?php if ($logo): ?>
+     <?php
+       $logo = $base_path.'/sites/all/themes/bootstrap/images/logo-axa.png' ;
+     ?>
         <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
           <img class ="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
-      <?php endif; ?>
     </div>
 
   </div>
       <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
+<!--  -->
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
       <?php if (!empty($tabs)): ?>
