@@ -1025,6 +1025,23 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     margin-top: 20%;
 }
 
+.topnav a.icon, .topnav a.icon-close{
+        display: none;
+        position: absolute;
+        top: 0%;
+        right: 10%;
+        color: #ccc;
+}
+
+/*.topnav a.icon-close {
+        display: none;
+        position: absolute;
+        display: block;
+        top: 0%;
+        right: 10%;
+        color: #fff;
+}*/
+
 /* Breakpoint 1024 */
 @media screen and (min-width: 992px) and (max-width: 1024px) {
     /* md */    
@@ -1095,24 +1112,42 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
         left: 96% !important;
     }
 
-    .topnav li:not(:first-child) {
+    .topnav li:not(.active){
         display: none !important;
     }
 
     .topnav a.icon {
-      /*float: right;*/
-      display: block !important;
+        display: block ;
     }
 
     .topnav.responsive {
         position: relative;
     }
 
-    .topnav.responsive .icon {
+    .topnav.responsive a.icon {
+        display: none;
+    }
+    .topnav.responsive a.icon-close {
+        display: block;
+    }
+    .topnav.responsive.ferme a.icon {
+        display: block;
+    }
+    .topnav.responsive.ferme a.icon-close {
+        display: none;
+    }
+
+    /*.topnav.responsive .icon {
         position: absolute;
         right: 10%;
         top: 0;
-    }
+    }*/
+  .topnav.responsive.ferme li:not(.active) {
+    float: none;
+    display: none !important;
+    text-align: left;
+  }
+
   .topnav.responsive li {
     float: none;
     display: block !important;

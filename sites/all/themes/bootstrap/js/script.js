@@ -62,21 +62,31 @@
             $( cible ).addClass("courant");
           }
 
-        });
+      });
 
-      $('#quicktabs-left_menu ul.quicktabs-tabs').append('<a href="javascript:void(0);" class="icon">&#9776;</a>');
+      $('#quicktabs-left_menu ul.quicktabs-tabs').append('<a href="javascript:void(0);" class="icon">&#9776;</a><a href="javascript:void(1);" class="icon-close">&#10060;</a>');
       $('#quicktabs-left_menu ul.quicktabs-tabs').addClass('topnav');
       $('#quicktabs-left_menu ul.quicktabs-tabs').attr( 'id', 'idForResponsive' );
       $('.topnav a.icon', context).on('click', function(){
         var x = document.getElementById("idForResponsive");
-        if (x.className=== "quicktabs-tabs quicktabs-style-navlist topnav") {
+
+        if (x.className === "quicktabs-tabs quicktabs-style-navlist topnav") {
           x.className += " responsive";
         } 
         else {
-          x.className = "quicktabs-tabs quicktabs-style-navlist topnav";
+          x.className = "quicktabs-tabs quicktabs-style-navlist topnav responsive";
         }
       });
-      
+      $('.topnav a.icon-close', context).on('click', function(){
+        var x = document.getElementById("idForResponsive");
+
+        if (x.className === "quicktabs-tabs quicktabs-style-navlist topnav responsive") {
+          x.className += " ferme";
+        } 
+        else {
+          x.className = "quicktabs-tabs quicktabs-style-navlist topnav responsive";
+        }
+      });
 
       
       /*$(".loupe").click(function(e) {
