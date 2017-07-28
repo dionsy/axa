@@ -1118,6 +1118,11 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     text-align: left;
   }
 
+  /*.view-display-id-block_1 {
+    margin: 0px;
+    padding: 0px;
+}*/
+
 
     .corps-espace-client {
         margin-top: 10px !important;
