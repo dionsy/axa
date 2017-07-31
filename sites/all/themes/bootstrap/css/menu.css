@@ -1118,6 +1118,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 
     .topnav a.icon {
         display: block ;
+        font-size: 28px;
     }
 
     .topnav.responsive {
@@ -1129,9 +1130,12 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     }
     .topnav.responsive a.icon-close {
         display: block;
+        font-size: 28px;
+        color: #ee3e40;
     }
     .topnav.responsive.ferme a.icon {
         display: block;
+        font-size: 28px;
     }
     .topnav.responsive.ferme a.icon-close {
         display: none;
