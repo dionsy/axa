@@ -771,7 +771,7 @@ form#webform-client-form-86 div{
     transform: none;
     width: auto;
 }
-form div:first-child {
+form#contact-site-form div:first-child {
     transform: none;
     width: none;
 }

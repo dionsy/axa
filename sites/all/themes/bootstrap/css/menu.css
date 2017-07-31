@@ -1429,6 +1429,15 @@ li.assurance_voyage a:before,
         border-bottom: 1px solid;
         margin-right: 25px;
     }
+    #block-menu-menu-r-seaux-sociaux- {
+        margin-left: 0px;
+    }
+    #block-menu-menu-r-seaux-sociaux- h2{
+        margin-left: 25px;
+    }
+     #block-menu-menu-r-seaux-sociaux- ul li {
+        margin-left: 15px;
+    }
     #block-menu-menu-r-seaux-sociaux- ul {
         text-align: center;
     }
@@ -1612,11 +1621,12 @@ li.assurance_voyage a:before,
     body {
     font-size: 12px;
     }
-}
-@media all and (max-width: 233px){
-    .node-type-nos-produits .breadcrumb {
+     .breadcrumb {
         display: none;
     }
+}
+@media all and (max-width: 233px){
+    
     .img_prod.row ,.node-type-nos-produits section#test ,
     #block-menu-menu-nos-produits {
         margin-top: 0;

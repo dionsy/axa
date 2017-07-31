@@ -1427,7 +1427,7 @@ a.asligne {
 */
 #block-menu-menu-r-seaux-sociaux- ul li {
 	display: inline-block;
-	margin-left: 5px;
+	margin-left: 20px;
 
 }
 #block-menu-menu-footer ul li ::before {
@@ -1764,5 +1764,7 @@ h1, .h1, h2, .h2, h3, .h3{
 }
 #block-menu-menu-menu-principal .caret {
     display: none;
-
-}    
+}  
+#block-menu-menu-menu-d-aide li.active > a {
+    color: black ! important;
+}
