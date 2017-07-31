@@ -149,7 +149,8 @@ ul{
 	margin-right: 0 !important;
 	margin-left: 0 !important;
 }
-.page-frontpage div.row {
+.page-frontpage div.row ,.not-front div.row {
+    margin-bottom: 10px;
 }
 
 #user-login-form li{
@@ -219,12 +220,14 @@ ul{
 }
 .view-frontpage ul li {
 	padding:0;
-    margin-top: 20px; 	
+    margin-top: 40px;
+    margin-bottom: 60px;
+
 }
 
 
 .outside{
-	width: 97%;
+	width: 94%;
 	box-shadow: 2px 2px 0 rgba(235,234,230,0.8);
 	margin: auto;
 	overflow: hidden;
@@ -1759,3 +1762,7 @@ h1, .h1, h2, .h2, h3, .h3{
 .view-declaration-sinistre .views-field.views-field-title {
     width: 19.5%;
 }
+#block-menu-menu-menu-principal .caret {
+    display: none;
+
+}    

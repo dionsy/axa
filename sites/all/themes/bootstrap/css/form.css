@@ -38,6 +38,7 @@ ul.tabs--primary li
     float: none;
     padding-left: 5px;
     padding-right: 5px;
+     margin-bottom: 3px;
 }
 ul.tabs--primary li:hover{
     background-color: #ED1846 ! important;
@@ -769,4 +770,27 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 form#webform-client-form-86 div{
     transform: none;
     width: auto;
+}
+form div:first-child {
+    transform: none;
+    width: none;
+}
+#contact-site-form .form-item-subject label {
+    display: block;
+}
+#contact-site-form #edit-name,
+#contact-site-form #edit-mail {
+    margin-bottom: 25px;
+}
+#contact-site-form .form-item.form-item-message.form-type-textarea.form-group {
+    margin-top: 25px;
+}
+/*#contact-site-form .form-item.form-item-message textarea.form-control {
+    height: 100% ! important;
+    width: 100% ! important;
+}*/
+#contact-site-form .form-control {
+    height: 100% ! important;
+    width: 100% ! important;
+    padding-left: 3px;  
 }

@@ -106,7 +106,7 @@
     padding-left: 7px;
     padding-right: 7px;
     background-color: #ccc;
-    margin-right: 4px;
+    margin-right: 3px;
 }
 #block-menu-menu-menu-top ul li a {
     color: black !important;
@@ -276,13 +276,21 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-3::before
   background: none;
 }
 
-ul.quicktabs-tabs.quicktabs-style-navlist li ,#block-menu-menu-nos-produits li {
+ul.quicktabs-tabs.quicktabs-style-navlist li ,
+#block-menu-menu-nos-produits li {
     /*background-color: #A90F27;*/
     background-color: #ffffff;
     padding: 0;
     text-align: right;
     border-bottom: 1px solid #ccc;
 }
+#block-menu-menu-nos-produits li:hover {
+    background-color: #004D92;
+}
+#block-menu-menu-nos-produits li:hover a {
+    color: #fff;
+}
+
 
 ul.quicktabs-tabs.quicktabs-style-navlist li.active ,#block-menu-menu-nos-produits li.active     {
     /*background: rgba(169, 15, 39,0.2);*/
@@ -475,7 +483,7 @@ float: left;
 }
 .breadcrumb a, .breadcrumb span{
     position: relative;
-    padding: 1px .5em 3px 1.2em;
+    padding: 1px .5em 1px 1.2em;
     margin-right: 1em;
     color: #fff;
     background-color: #6B82B1;
@@ -606,11 +614,15 @@ footer div.view-id-contact ul {
 /*    box-shadow: 0 2px 0 0 rgb(255, 255, 255) inset;*/
     /*border-right: 2px solid rgb(255, 255, 255);*/
 }
-/*#block-menu-menu-menu-principal ul li.auto{
-    border-top: 3px solid #004D92
+#block-menu-menu-menu-principal ul li.auto,
+#block-menu-menu-menu-principal ul li.assistance_et_accidents,
+#block-menu-menu-menu-principal ul li.habitation,
+#block-menu-menu-menu-principal ul li.loisir-vie_privee,
+#block-menu-menu-menu-principal ul li.package{
+    border-top: 3px solid graytext
 
 }
-#block-menu-menu-menu-principal ul li.assistance_et_accidents{
+/*#block-menu-menu-menu-principal ul li.assistance_et_accidents{
     border-top: 3px solid  #3598DC
 
 }
@@ -655,6 +667,7 @@ footer div.view-id-contact ul {
 
 .fond{
     background-color: #ccc !important;
+    margin-top: 15px;
 }
 ul.quicktabs-tabs.quicktabs-style-garland {
     background: #3598DC url(images/bg.gif) repeat-x scroll center bottom !important;
@@ -1244,21 +1257,24 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 li.assurance_voyage a:before{
     content: "\f072";
     color: #3598DC;
+    margin-right: 9px;
 }
 li.solution_auto a:before{
     content: "\f1b9";
     color: #004D92;
     
 }
-.assistance_et_accidents li a{
-    color: #3598DC !important;
+li.auto li a, .habitation li a,.assistance_et_accidents li a ,
+.loisir-vie_privee li a{
+    color: black !important;
 }
-li.auto li a{
+/*li.auto li a{
      color: #004D92 !important;
-}
+}*/
 .evacuation_sanitaire a:before,
 .individuelle_accidents_particuliers a:before{
     content:"\f0f9";
+    color: #3598DC;
 }
 
 /*.auto ul{
@@ -1271,31 +1287,35 @@ background-color: #004D92;
 .habitation ul{
     background-color: #A90F27;
 }*/
-.habitation li a{
+/*.habitation li a{
     color: #A90F27 !important;
-}
+}*/
 /*.loisir-vie_privee ul{
    background-color:#FFC000;
 }*/
-.loisir-vie_privee li a:before,
-.loisir-vie_privee li a{
+.loisir-vie_privee li a:before{
     color: #FFC000 !important;
 }
 .comment_souscrire_ a:before{
-   content:"\f046";    
+   content:"\f046";  
+   color: #004D92;  
 }
 
 .que_faire_en_cas_de_sinistre a:before{
     content: "\f071";
+    color: #004D92;
 }    
 .mrh_premium a:before{
     content: "\f015";
+    color: #A90F27
 }
 .multirisque_immeuble a:before{
     content: "\f0f7";
+    color: #A90F27
 }
 .incendie_particulier a:before{
     content: "\f06d";
+    color: #A90F27
 }
 .plaisance a:before{
     content: "\f21a";
@@ -1311,8 +1331,8 @@ li.assurance_voyage a:before,
 .multirisque_immeuble a:before,
 .incendie_particulier a:before{
     font-family: "FontAwesome";
-    font-size: 30px;
-    padding-right: .5em;
+    font-size: 33px;
+    padding-right: .7em;
 }
 .container, .navbar.container {
     max-width: none;
@@ -1464,6 +1484,9 @@ li.assurance_voyage a:before,
     li.Loisirs-vie .outside ,li.Loisirs-vie:hover .outside {
         border-left: 4px solid rgb(255, 192, 0);
     }
+    .mean-nav ul li:last-child {
+        display: none;
+    }
 
 
 }  
@@ -1524,10 +1547,13 @@ li.assurance_voyage a:before,
     #block-menu-menu-menu-d-aide ul {
         width: 50px;
     }
+    .breadcrumb a, .breadcrumb span {
+    padding: 1px 0.5em -1px 1.2em !important;
+    }
 
 }
 
-@media all and (max-width: 304px){
+@media all and (max-width: 304px){ 
    .mean-container a.meanmenu-reveal {
     margin-right: 27px;
     } 
@@ -1557,8 +1583,68 @@ li.assurance_voyage a:before,
     .mean-container .mean-nav ul li a {
         font-size: 0.8em ! important;
     }
+    body {
+    font-size: 12px;
+    }
 }
-
-#block-menu-menu-menu-principal span.caret {
-    display:none !important;
+@media all and (max-width: 233px){
+    .node-type-nos-produits .breadcrumb {
+        display: none;
+    }
+    .img_prod.row ,.node-type-nos-produits section#test ,
+    #block-menu-menu-nos-produits {
+        margin-top: 0;
+    }
+    .node-type-nos-produits section#test {
+        margin-top: 10px;
+    }
+}
+#block-menu-menu-menu-principal .caret {
+    display: none;
+} 
+#block-menu-menu-menu-principal li:hover ul li a{
+    color: black !important;
+}
+.mean-container .mean-nav ul li {
+    background-color: rgb(0, 77, 146) !important;
+}
+.mean-container .mean-nav ul li a {
+    color: rgb(255, 255, 255);
+    border-top: 1px solid rgb(255, 255, 255);
+}
+.mean-container .mean-nav ul li a.mean-expand:hover {
+    background: rgb(237, 24, 70) none repeat scroll 0 0;
+    color: rgb(255, 255, 255);
+    font-size: 0.9em;
+    font-weight: 700;
+}
+.mean-container .mean-nav ul li a.mean-expand {
+    border-width: 0 0 1px 1px;
+    font-weight: 700;
+    height: 45%;
+    margin-top: 1px;
+    position: absolute;
+    right: 0;
+    width: 35px;
+    z-index: 2;
+}
+.mean-container a.meanmenu-reveal {
+    color: rgb(255, 255, 255);
+}
+.mean-container .mean-nav ul li a.mean-clicked {
+    height: 12%;
+}
+.mean-container .mean-nav ul li li {
+    background: rgb(255, 255, 255) none repeat scroll 0 0 ! important;
+}
+.mean-container .mean-nav ul li li a {
+    border-top: 1px solid black;
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0.7;
+    padding: 1em 15%;
+    text-shadow: none;
+    visibility: visible;
+    width: 80%;
+    color: rgb(0, 0, 0);
 }
