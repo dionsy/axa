@@ -804,7 +804,7 @@ section#block-views-contact-block .contacts div , section#block-views-contact-bl
     margin-bottom: 5px;
 }
 #block-menu-menu-footer li a{
-    color: #103184;
+    color: #103184 !important;
 }
 section#block-views-contact-block .contacts i.fa {
     font-size: 1.0em;

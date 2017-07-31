@@ -818,6 +818,8 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
 }
+
+
 #block-views-liste-contrats-block .block-title{
     padding: 6px 3% 13px 3% !important;
 }
@@ -892,6 +894,26 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     transform: skew(0deg, 7deg);
     width: 102%;
 }
+/*** mes informations ***/
+#node-113 form div:first-child {
+    transform: none;
+    width: auto;
+}
+#node-113 header > h2 {
+    margin: 0px !important;
+    margin-top: 0px;
+    padding-bottom: 8px;
+    background: red;
+    padding-top: 0px;
+    box-shadow: 0 -1px 0 0 #eee inset;
+
+    /* Navigateurs récents */
+    background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
+    background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
+    background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+}*/
 
 /*** mes contrats ***/
 #block-views-liste-contrats-block .block-title {
@@ -901,7 +923,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     padding-bottom: 15%;
 }
 
-#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1{
+#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1, #quicktabs-tabpage-left_menu-4{
     box-shadow: 2px 2px 2px 2px #ccc;
 }
 
@@ -1131,6 +1153,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 
     .topnav a.icon {
         display: block ;
+        font-size: 28px;
     }
 
     .topnav.responsive {
@@ -1142,9 +1165,12 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     }
     .topnav.responsive a.icon-close {
         display: block;
+        font-size: 28px;
+        color: #ee3e40;
     }
     .topnav.responsive.ferme a.icon {
         display: block;
+        font-size: 28px;
     }
     .topnav.responsive.ferme a.icon-close {
         display: none;
