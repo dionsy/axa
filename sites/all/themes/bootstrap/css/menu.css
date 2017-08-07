@@ -271,6 +271,13 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-3::before
     padding-right: 3%;
 }
 
+ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-4::before{
+    content:"\f129";
+    font-family: "FontAwesome";
+    padding-right: 3%;
+}
+
+
 
 #quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li.active a {
   background: none;
@@ -687,7 +694,7 @@ ul#quicktabs-tab-left_menu-0::before{
 }
 
 
-.page-node-2 header .container, .page-node-2 header{
+.page-node-2 header .container/*, .page-node-2 header*/{
     padding-left: 1% !important;
 }
 
@@ -742,15 +749,15 @@ ul#quicktabs-tab-left_menu-0::before{
     padding-right: 0;
 }
  .info-left-menu .nom-client span{
-    color: #999;
+    color: #666;
  }
  .info-left-menu .espace{
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #666;
  }
 
  .info-left-menu .deconnexion {
     padding-left: 0px;
-    color: #999;
+    color: #666;
 }
  
 .info-left-menu .deconnexion::before {
@@ -810,6 +817,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     color: #005399;
     font-size: 20px;
     margin: 0;
+    margin-bottom: 25px;
     padding: 21px 3% 13px 3%;
     /* Navigateurs récents */
     background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
@@ -896,9 +904,32 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 /*** mes informations ***/
 #node-113 form div:first-child {
+    transform: none !important;
+    width: auto !important;
+}
+#node-113 .fadeIn {
+    animation-timing-function: none !important;
+    height: auto !important;
+    transform: none !important;
+    transition: none !important;
+}
+#node-113 .form-item-submitted-nom, #node-113 .webform-component--date-de-naissance, #node-113 .form-item-submitted-prenom, #node-113 .form-item-submitted-email, #node-113 .form-item-submitted-telephone{
+    height: auto;
+    opacity: 1;
+}
+#node-113 .form-item-submitted-nom, #node-113 .webform-component--civilite, #node-113 .form-item-submitted-prenom, #node-113 .webform-component--date-de-naissance, #node-113 .form-item-submitted-email, #node-113 .form-item-submitted-telephone, #node-113 .form-item-submitted-type-dassurance, #node-113 .form-item-submitted-annee-de-naissance, #node-113 #edit-field-numero-telephone{
+    animation-timing-function: ease-in-out;
+    opacity: 1;
     transform: none;
+    transition: none;
     width: auto;
 }
+#node-113 .form-item-submitted-nom, #node-113 .form-item-submitted-prenom{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
 #node-113 header > h2 {
     margin: 0px !important;
     margin-top: 0px;
@@ -913,7 +944,76 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
-}*/
+}
+#node-113 #edit-submitted-email, #edit-submitted-email-conducteur {
+    width: auto;
+}
+#node-113 .control-label{
+    position: relative;
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-right: 1px solid #eee;
+    color: #666;
+    font-weight: normal;
+}
+
+#node-113 .form-item-submitted-accept-accept .control-label{
+    border-right: 0;
+    width: 100%;
+}
+
+#node-113 .form-item-submitted-accept-accept{
+    float: left;
+    clear: both;
+    padding-left: 20px;
+}
+
+#node-113 .webform-client-form-113{
+    padding-top: 25px;
+    padding-left:3%;
+    padding-right: 3%;
+    margin-top: auto;
+    background: #fcfcfc none repeat scroll 0 0;
+}
+
+#node-113 > header{
+    /*margin-bottom: 25px;*/
+}
+
+#node-113 #webform-client-form-113 .form-item{
+    /*margin-top: 20px;*/
+    margin-bottom: 0px;
+    border: 1px solid #eee;
+}
+
+#node-113 header h2 a {
+    color: #005399;
+    padding: 3%;
+    font-size: 20px;
+}
+
+#node-113 .form-control {   
+    border: 1px solid #eee;
+    margin-top: 0px;
+    background: #fff;
+}
+#node-113 .form-group {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#node-113 .form-item.form-item-submitted-accept-accept {
+    border: 0 !important;
+    margin-top: 25px;
+    padding: 6px !important;
+}
+
+#node-113 .form-item.webform-component.webform-component-checkboxes.webform-component--accept.form-group.form-item-submitted-accept.form-type-checkboxes {
+    border: 0 !important;
+}
 
 /*** mes contrats ***/
 #block-views-liste-contrats-block .block-title {
@@ -967,7 +1067,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 .view-liste-contrats .view-content .list-contrat .action span a {
-    color: #999;
+    color: #666;
 }
 
 /*** Mes devis ***/
@@ -1005,12 +1105,12 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 
 #block-panels-mini-panel-espace-client .case {
     background: #fcfcfc;
-    color: #999;
+    color: #666;
     border: 1px solid #eee;
 }
 
 #block-panels-mini-panel-espace-client .case a {
-    color: #999;
+    color: #666;
 }
 
 #mini-panel-panel_espace_client .view-content {
@@ -1044,7 +1144,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 #node-86 label, #node-86 select{
-    color: #999;
+    color: #666;
 }
 
 .page-node-2 #block-quicktabs-left-menu {
@@ -1391,7 +1491,7 @@ li.assurance_voyage a:before,
     div.user {
         width: auto;
         margin-right: 75px;
-        z-index: 99999;
+        z-index: 66699;
     }
     .mon_espace_client{
         margin-left: 0;
