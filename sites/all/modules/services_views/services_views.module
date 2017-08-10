@@ -14,6 +14,7 @@ function services_views_views_api() {
 }
 
 /**
+<<<<<<< HEAD
  * Implements hook_menu().
  */
 function services_views_menu() {
@@ -34,6 +35,8 @@ function services_views_menu() {
 }
 
 /**
+=======
+>>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
  * Implementation of hook_services_resources().
  */
 function services_views_services_resources() {
@@ -159,6 +162,7 @@ function services_views_services_resources() {
 function services_views_access($op = 'view', $args = array()) {
   switch ($op) {
     case 'view':
+
       $router_item = menu_get_item();
       $page_arguments = $router_item['page_arguments'];
       $endpoint = $page_arguments[0];
@@ -166,6 +170,7 @@ function services_views_access($op = 'view', $args = array()) {
       $whitelist = variable_get($prefix . '_white_list', 0);
       $listed_views = variable_get($prefix . "_view_displays", array());
       $listed_view_key = $args['view_name'] . '|' . $args['display_id'];
+
       $view = views_get_view($args['view_name']);
       if (empty($view)) {
         return services_error(t('View @view could not be found', array('@view' => $args['view_name'])), 404);
@@ -176,6 +181,7 @@ function services_views_access($op = 'view', $args = array()) {
           '@view' => $args['view_name'],
         )), 404);
       }
+
       if ($whitelist && empty($listed_views[$listed_view_key])) {
         return services_error(t('Display @display on view @view could not be found', array(
           '@display' => $args['display_id'],
@@ -188,7 +194,7 @@ function services_views_access($op = 'view', $args = array()) {
           '@view' => $args['view_name'],
         )), 404);
       }
-      return $view->access($args['display_id']);
+
   }
 }
 
@@ -419,6 +425,7 @@ function services_views_entity_info_alter(&$info) {
   }
 }
 
+
 /**
  * Implements hook_form_alter().
  */
@@ -507,3 +514,4 @@ function services_views_view_resource_settings_form($form, &$form_state, $endpoi
   );
   return system_settings_form($form);
 }
+

@@ -70,6 +70,7 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
     }
     elseif ($row_plugin == 'fields') {
       $items = array();
+<<<<<<< HEAD
 
       // Pre-render and field values.
       foreach ($view->field as $field) {
@@ -79,6 +80,10 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
       foreach ($view->result as $row_index => $row) {
         $item = new stdClass();
         $excluded_fields = array();
+=======
+      foreach ($view->result as $row) {
+        $item = new stdClass();
+>>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
         foreach ($view->field as $field_id => $field) {
           if (!empty($field->options['label'])) {
             $field_label = strtolower($field->options['label']);
@@ -89,6 +94,7 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
           else {
             $field_label = $field_id;
           }
+<<<<<<< HEAD
           $field->view->row_index = $row_index;
           $item->$field_label = $field->theme($row);
           if(!empty($field->options['exclude'])) {
@@ -97,6 +103,9 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
         }
         foreach ($excluded_fields as $excluded_field) {
           unset($item->{$excluded_field});
+=======
+          $item->$field_label = $field->theme($row);
+>>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
         }
         $items[] = $item;
       }
@@ -161,15 +170,21 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
         // Move key if we have an entity property and the target_key was changed via label
         if ($entity_property) {
           unset($output[$index]->$f_key);
+<<<<<<< HEAD
           $field->view->row_index = $index;
+=======
+>>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
           $output[$index]->$target_key = $field->theme($row); // @todo: Do not render twice; use view->execute_display and consolidate functions
           continue;
         }
 
         // Create helper variables
         $output[$index]->$target_key = array();
+<<<<<<< HEAD
         if($field->field_info['cardinality'] == 1)
           $output[$index]->$target_key = '';
+=======
+>>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
         $obj = &$output[$index]->$target_key;
         $format = ($field->options['type'] == 'services') ? 'raw' : 'rendered';
 
@@ -237,12 +252,15 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
           }
         }
 
+<<<<<<< HEAD
         // Check html_strip property.
         if ($field->options['alter']['strip_tags'] == 1) {
           // Strip the tags which aren't allowed.
           $obj[$idx] = strip_tags($obj[$idx], $field->options['alter']['preserve_tags']);
         }
 
+=======
+>>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
         // Check cardinality of the field.
         if ($field->field_info['cardinality'] == 1 && count($obj) == 1) {
           $obj = $obj[$idx];

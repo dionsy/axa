@@ -271,6 +271,13 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-3::before
     padding-right: 3%;
 }
 
+ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-4::before, ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-5::before{
+    content:"\f129";
+    font-family: "FontAwesome";
+    padding-right: 3%;
+}
+
+
 
 #quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li.active a {
   background: none;
@@ -687,7 +694,7 @@ ul#quicktabs-tab-left_menu-0::before{
 }
 
 
-.page-node-2 header .container, .page-node-2 header{
+.page-node-2 header .container/*, .page-node-2 header*/{
     padding-left: 1% !important;
 }
 
@@ -742,15 +749,15 @@ ul#quicktabs-tab-left_menu-0::before{
     padding-right: 0;
 }
  .info-left-menu .nom-client span{
-    color: #999;
+    color: #666;
  }
  .info-left-menu .espace{
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #666;
  }
 
  .info-left-menu .deconnexion {
     padding-left: 0px;
-    color: #999;
+    color: #666;
 }
  
 .info-left-menu .deconnexion::before {
@@ -805,11 +812,12 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     padding: 0;
 }
 
-h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
+h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-infos-user-informations .block-title, #node-86 > header{
     box-shadow: 0 -1px 0 0 #eee inset;
     color: #005399;
     font-size: 20px;
     margin: 0;
+    margin-bottom: 25px;
     padding: 21px 3% 13px 3%;
     /* Navigateurs récents */
     background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
@@ -820,7 +828,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 
-#block-views-liste-contrats-block .block-title{
+#block-views-liste-contrats-block .block-title, #block-views-user-infos-user-informations .block-title{
     padding: 6px 3% 13px 3% !important;
 }
 
@@ -895,10 +903,33 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     width: 102%;
 }
 /*** mes informations ***/
-#node-113 form div:first-child {
+#node-113 form div:first-child, #form-information-form > div{
+    transform: none !important;
+    width: auto !important;
+}
+#node-113 .fadeIn {
+    animation-timing-function: none !important;
+    height: auto !important;
+    transform: none !important;
+    transition: none !important;
+}
+#node-113 .form-item-submitted-nom, #node-113 .webform-component--date-de-naissance, #node-113 .form-item-submitted-prenom, #node-113 .form-item-submitted-email, #node-113 .form-item-submitted-telephone{
+    height: auto;
+    opacity: 1;
+}
+#node-113 .form-item-submitted-nom, #node-113 .webform-component--civilite, #node-113 .form-item-submitted-prenom, #node-113 .webform-component--date-de-naissance, #node-113 .form-item-submitted-email, #node-113 .form-item-submitted-telephone, #node-113 .form-item-submitted-type-dassurance, #node-113 .form-item-submitted-annee-de-naissance, #node-113 #edit-field-numero-telephone{
+    animation-timing-function: ease-in-out;
+    opacity: 1;
     transform: none;
+    transition: none;
     width: auto;
 }
+#node-113 .form-item-submitted-nom, #node-113 .form-item-submitted-prenom{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
 #node-113 header > h2 {
     margin: 0px !important;
     margin-top: 0px;
@@ -913,8 +944,219 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
     background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
-}*/
+}
+#node-113 #edit-submitted-email, #edit-submitted-email-conducteur {
+    width: auto;
+}
+#node-113 .control-label{
+    position: relative;
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-right: 1px solid #eee;
+    color: #666;
+    font-weight: normal;
+}
 
+#node-113 .form-item-submitted-accept-accept .control-label{
+    border-right: 0;
+    width: 100%;
+}
+
+#node-113 .form-item-submitted-accept-accept{
+    float: left;
+    clear: both;
+    padding-left: 20px;
+}
+
+#node-113 .webform-client-form-113{
+    padding-top: 25px;
+    padding-left:3%;
+    padding-right: 3%;
+    margin-top: auto;
+    background: #fcfcfc none repeat scroll 0 0;
+}
+
+#node-113 > header{
+    /*margin-bottom: 25px;*/
+}
+
+#node-113 #webform-client-form-113 .form-item{
+    /*margin-top: 20px;*/
+    margin-bottom: 0px;
+    border: 1px solid #eee;
+}
+
+#node-113 header h2 a {
+    color: #005399;
+    padding: 3%;
+    font-size: 20px;
+}
+
+#node-113 .form-control {   
+    border: 1px solid #eee;
+    margin-top: 0px;
+    background: #fff;
+}
+#node-113 .form-group {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#node-113 .form-item.form-item-submitted-accept-accept {
+    border: 0 !important;
+    margin-top: 25px;
+    padding: 6px !important;
+}
+
+#node-113 .form-item.webform-component.webform-component-checkboxes.webform-component--accept.form-group.form-item-submitted-accept.form-type-checkboxes {
+    border: 0 !important;
+}
+#quicktabs-tabpage-left_menu-5 .views-label {
+    float: left;
+    padding-left: 2%;
+    width: 50%;
+    color: #666;
+    border: 1px solid #eee;
+}
+#quicktabs-tabpage-left_menu-5 .field-content {
+    float: left;
+    padding-left: 2%;
+    width: 50%;
+    color: #666;
+    border: 1px solid #eee;
+}
+#quicktabs-tabpage-left_menu-5 .view-user-infos{
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 80px;
+}
+
+#form-information-form > div > fieldset:first-child .panel-body {
+    display: none !important;
+}
+
+#form-information-form #edit-submit--4{
+    display: none;
+}
+
+#form-information-form > div > .form-item {
+    margin: 0 3% 0px 3%;
+    border: 1px solid #eee;
+    background: #fcfcfc none repeat scroll 0 0;
+}
+
+#form-information-form > div > .form-item.checkbox {
+    border: 0 !important;
+    margin-top: 10px !important;
+}
+
+#form-information-form > div > .form-item.checkbox label.control-label {
+    border-right: 0 !important;
+    padding-left: 3.45% !important;
+    width: 100%;
+    float: none;
+    margin-bottom: 15px;
+}
+
+#form-information-form > div > .form-item label.control-label {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    border-right: 1px solid #eee;
+    color: #666;
+    font-weight: normal;
+    padding-left: 2%;
+}
+
+#form-information-form > div > fieldset:first-child .panel-body {
+    display: none !important;
+}
+
+#form-information-form > div > fieldset:first-child > .panel-heading {
+    color: #004D92 !important;
+    background-color: inherit !important;
+    border:0 !important;
+}
+
+#form-information-form > div > fieldset:first-child > legend {
+    padding-bottom: 6.5px !important;
+}
+
+#form-information-form > div > fieldset:first-child > legend span {
+    position: relative;
+    top: -5px;
+    left: 2px;    
+    font-size: 20px;
+}
+
+#form-information-form > div > fieldset:first-child {
+    /*margin-top: 0px;*/
+    /*padding: 6px 3% 13px 3%;*/
+    margin-bottom: 25px;
+    /*color: #004D92;
+    font-weight: bold;
+    font-size: 14px;
+    background: #fcfcfc none repeat scroll 0 0;
+    border: 1px solid #eee;*/
+
+    box-shadow: 0 -1px 0 0 #eee inset;
+    color: #005399;
+    font-size: 20px;
+    margin-top: 0;
+    border-radius: 0 !important;
+    /* Navigateurs récents */
+    background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
+    background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
+    background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+}
+
+
+#form-information-form > div .form-control {
+    border: 1px solid #eee;
+    background: #fff;
+    margin-left: 7px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+    width: 40% !important;
+}
+
+#form-information-form > div #edit-pass {
+    margin-left: 3%;
+    margin-right: 3%;
+    background: #fcfcfc;
+}
+
+#form-information-form > div .form-type-password.form-group {
+    transform: none;
+    width: 100%;
+    
+}
+
+#form-information-form .form-type-password .control-label {
+    width: 50%;
+    color: #666;
+    font-weight: normal;
+    padding-left: 2%;
+}
+
+.quicktabs-tabpage{
+    background: #fcfcfc;
+}
+
+.panel-title.fieldset-legend {
+    color: #004D92;
+}
+
+#edit-submit--5 {
+    margin-bottom: 25px;
+    background: #004D92;
+    border: 1px solid #004D92;
+}
 /*** mes contrats ***/
 #block-views-liste-contrats-block .block-title {
     margin-bottom: 25px;
@@ -923,7 +1165,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     padding-bottom: 15%;
 }
 
-#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1, #quicktabs-tabpage-left_menu-4{
+#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1, #quicktabs-tabpage-left_menu-4, #quicktabs-tabpage-left_menu-5, #quicktabs-tabpage-left_menu-6{
     box-shadow: 2px 2px 2px 2px #ccc;
 }
 
@@ -967,7 +1209,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 .view-liste-contrats .view-content .list-contrat .action span a {
-    color: #999;
+    color: #666;
 }
 
 /*** Mes devis ***/
@@ -1005,12 +1247,12 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 
 #block-panels-mini-panel-espace-client .case {
     background: #fcfcfc;
-    color: #999;
+    color: #666;
     border: 1px solid #eee;
 }
 
 #block-panels-mini-panel-espace-client .case a {
-    color: #999;
+    color: #666;
 }
 
 #mini-panel-panel_espace_client .view-content {
@@ -1044,7 +1286,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 #node-86 label, #node-86 select{
-    color: #999;
+    color: #666;
 }
 
 .page-node-2 #block-quicktabs-left-menu {
@@ -1391,7 +1633,7 @@ li.assurance_voyage a:before,
     div.user {
         width: auto;
         margin-right: 75px;
-        z-index: 99999;
+        z-index: 66699;
     }
     .mon_espace_client{
         margin-left: 0;
@@ -1428,6 +1670,15 @@ li.assurance_voyage a:before,
     footer h2 {
         border-bottom: 1px solid;
         margin-right: 25px;
+    }
+    #block-menu-menu-r-seaux-sociaux- {
+        margin-left: 0px;
+    }
+    #block-menu-menu-r-seaux-sociaux- h2{
+        margin-left: 25px;
+    }
+     #block-menu-menu-r-seaux-sociaux- ul li {
+        margin-left: 15px;
     }
     #block-menu-menu-r-seaux-sociaux- ul {
         text-align: center;
@@ -1612,11 +1863,12 @@ li.assurance_voyage a:before,
     body {
     font-size: 12px;
     }
-}
-@media all and (max-width: 233px){
-    .node-type-nos-produits .breadcrumb {
+     .breadcrumb {
         display: none;
     }
+}
+@media all and (max-width: 233px){
+    
     .img_prod.row ,.node-type-nos-produits section#test ,
     #block-menu-menu-nos-produits {
         margin-top: 0;

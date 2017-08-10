@@ -548,9 +548,9 @@ li.Loisirs-vie  .outside p {
 a {
 	text-decoration: none !important;
 }
-li.Package {
+/*li.Package {
 	background-color: #54AE32 !important;
-}
+}*/
 .inside-package p {
     margin: 0 0 10px;
     font-size: 1.1em;
@@ -1427,7 +1427,7 @@ a.asligne {
 */
 #block-menu-menu-r-seaux-sociaux- ul li {
 	display: inline-block;
-	margin-left: 5px;
+	margin-left: 20px;
 
 }
 #block-menu-menu-footer ul li ::before {
@@ -1764,5 +1764,41 @@ h1, .h1, h2, .h2, h3, .h3{
 }
 #block-menu-menu-menu-principal .caret {
     display: none;
+}  
+#block-menu-menu-menu-d-aide li.active > a {
+    color: black ! important;
+}
 
-}    
+
+.nmpd-wrapper {
+    display: none;
+}
+.nmpd-target {
+    cursor: pointer;
+}
+.nmpd-grid {
+    position:absolute;
+    left:50px;
+    top:50px;
+    z-index:5000;
+ z-indexkhtml-user-select: none;
+    border: medium none;
+    padding: 20px;
+    width: initial;
+}
+.nmpd-overlay {
+    z-index:4999;
+}
+input.nmpd-display {
+    text-align: right;
+}
+.nmpd-grid tr {
+    background-color: transparent ! important;
+}
+.nmpd-grid tr td {
+    border:medium none ! important;
+}
+.nmpd-grid .numero {
+    background-color: #00529B;
+    color: #fff;
+}
