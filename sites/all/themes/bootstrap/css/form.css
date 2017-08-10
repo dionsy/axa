@@ -590,7 +590,7 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     margin-top: -4px;
     width: 50% ! important;
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    -moz-appearance: none;
+    /*-moz-appearance: none;*/
     height: 25px;
     padding: 0;
     vertical-align: inherit;
@@ -620,6 +620,9 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 /*#edit-submitted-email ,#edit-submitted-email-conducteur {
     width: 65% !important;
 }*/
+#edit-submitted-email ,#edit-submitted-email-conducteur {
+    width: 65%;
+}
 .form-item-submitted-annee-de-naissance .webform-container-inline.webform-datepicker {
     display: inline-block;
 }
@@ -738,7 +741,6 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 .nav-tabs > li > a:hover {
     border-color: transparent; !important;
 }
-<<<<<<< HEAD
 .page-user .form-item-name ,.form-item-pass {
     width: auto !important;
 }
