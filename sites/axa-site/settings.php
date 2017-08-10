@@ -244,7 +244,7 @@
  *   );
  * @endcode
  */
-$databases = array (
+/*$databases = array (
   'default' => 
   array (
     'default' => 
@@ -258,8 +258,8 @@ $databases = array (
       'prefix' => '',
     ),
   ),
-);
-/*
+);*/
+
 $databases = array (
   'default' => 
   array (
@@ -275,7 +275,7 @@ $databases = array (
     ),
   ),
 );
-*/
+
 
 
 /**

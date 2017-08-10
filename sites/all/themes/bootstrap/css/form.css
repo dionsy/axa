@@ -9,13 +9,13 @@ a{
 }
 
 
-#edit-actions{
-	margin-left: auto;
+.page-user-edit #edit-actions{
+	/*margin-left: auto;*/
 	/*margin-right: auto;*/
-    padding-top: 6%;
+    /*padding-top: 6%;*/
 	width: 75%;
-    margin-bottom: 25px;
     text-align: right !important;
+    float: right;
 }
 .page-user-edit #edit-actions{
     text-align: center ! important; 
@@ -90,18 +90,24 @@ form#user-login {
     clear: none !important;
 }
 
-#user-profile-form #edit-picture, #user-profile-form #bootstrap-panel ,#edit-mimemail ,
+#user-profile-form #edit-picture, #user-profile-form #bootstrap-panel  ,
 #edit-contact{
    margin-left: auto;
    margin-right: auto;
    text-align: left;
    width: 75%;
 }
+#edit-mimemail {
+    display: none;
+}
 
+.form-type-password-confirm .password-help {
+    display: none !important;
+}
 #user-profile-form #edit-account .form-item-pass{
 	margin-left: auto;
     margin-right: auto;
-    text-align: left;
+    /*text-align: left;*/
 	width: 75%;
 }
 #edit-picture-upload {
@@ -128,9 +134,12 @@ form#user-login {
 #user-profile-form #edit-account .form-item-pass-pass1,
 #user-profile-form #edit-account .form-item-pass-pass2  {
 	display: block;
-    width: 60%;
+    width: auto;
 	float: left;
-	
+	padding-left: 0 !important;
+}
+.form-item-pass-pass1 label ,.form-item-pass-pass2 label {
+    text-align: left;
 }
 
 /*#user-profile-form #edit-account .form-item-pass-pass2{
@@ -143,10 +152,14 @@ form#user-login {
 	margin-left: 0.2%;
 }
 #edit-pass-pass1 , #edit-pass-pass2 {
-    margin-bottom: 35px;
+    margin-bottom: 22px;
+    width: auto !important;
 }
 .form-type-password-confirm .password-help {
     left: 57%;
+}
+.page-user-edit #edit-contact {
+    display: none;
 }
 
         /*** Formulaire demande devis ***/
@@ -168,9 +181,14 @@ form div:first-child{
 }
 #user-register-form div:first-child,
 #user-login div:first-child,
-.webform-progressbar ,#user-profile-form div:first-child{
+.webform-progressbar {
     transform: none !important;
     width: 100% !important;
+}
+#user-profile-form div:first-child {
+    width: 75% !important;
+    transform: none;
+    margin: auto;
 }
 
 .form-item-submitted-nom,.form-item-submitted-prenom,
@@ -730,7 +748,10 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     width: 100%;
 }
 #edit-account.form-wrapper.form-group {
-    margin-top: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin: auto;
+    /*width: 75%;*/
 }
 .btn {
     border-radius: 0  ! important;
@@ -773,7 +794,18 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     }
     .page-user #test {
         top: 40px;
+        width: 66%;
     }
+}
+
+@media all and (max-width: 500px){
+    body.page-user ,body.not-logged-in.page-user {
+        background: black;
+    }
+    .page-user #test {
+        width: 85%;
+    }  
+
 }
 .page-user .navbar-header , .navbar-btn.pull-left {
     float: none !important;
@@ -816,7 +848,7 @@ form#contact-site-form div:first-child {
      width: 60% ! important;
 }
 #edit-account  .label-danger ,#edit-account .progress {
-    width: auto ! important;
+    display: none ! important;
 }
 #webform-client-form-8 label,#webform-client-form-9  label, 
 #webform-client-form-10 label, #webform-client-form-11 label{
@@ -836,4 +868,44 @@ form#contact-site-form div:first-child {
 }
 .form-item-submitted-civilite label {
     width: 44% !important;
+}
+.form-control-feedback {
+    display: none ! important;
+}
+.page-user-edit form div:first-child {
+
+    width: none !important;
+}
+
+.page-user-password form#user-pass div:first-child {
+    transform:  none !important;
+    width: auto !important;
+    margin-top: 20px; 
+}
+.form-item.form-item-name.form-type-textfield.form-group.fadeIn {
+    margin-top: 20px;
+}
+
+.page-user-edit #edit-field-numero-contrat ,
+.page-user-edit #edit-field-numero-telephone {
+    display: none ! important;
+}
+
+#user-register-form  label{
+    width: 44%;
+}
+form#user-register-form {
+    padding-left: 24px;
+}
+#user-register-form div:first-child {
+    text-align: left !important;
+}
+
+#webform-client-form-11 #edit-submitted-type-dassurance ,
+#webform-client-form-10 #edit-submitted-type-dassurance {
+    margin-left: 46px;
+} 
+#webform-client-form-10 .webform-container-inline label {
+    display: inline-block;
+    margin-right: 0;
 }
