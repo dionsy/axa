@@ -13,7 +13,10 @@ function bootstrap_pre_render($element) {
   if (!empty($element['#bootstrap_ignore_pre_render'])) {
     return $element;
   }
-
+//krumong('main')->kPrint($element);
+/* if ($element['#type']=='password') {
+      $element['#wrapper_attributes']['class'][] = 'keypadContainer';
+    }*/
   // Only add the "form-control" class for specific element input types.
   $types = array(
     // Core.

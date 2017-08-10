@@ -17,6 +17,9 @@ a{
     margin-bottom: 25px;
     text-align: right !important;
 }
+.page-user-edit #edit-actions{
+    text-align: center ! important; 
+}
 .tabs--primary{ 
     border-bottom: 0px solid !important;
     display: none;
@@ -87,7 +90,8 @@ form#user-login {
     clear: none !important;
 }
 
-#user-profile-form #edit-picture, #user-profile-form #bootstrap-panel{
+#user-profile-form #edit-picture, #user-profile-form #bootstrap-panel ,#edit-mimemail ,
+#edit-contact{
    margin-left: auto;
    margin-right: auto;
    text-align: left;
@@ -98,7 +102,10 @@ form#user-login {
 	margin-left: auto;
     margin-right: auto;
     text-align: left;
-	width: 100%;
+	width: 75%;
+}
+#edit-picture-upload {
+    width:  75% !important;
 }
 
 #user-profile-form #user-profile-form .panel .panel-heading{
@@ -111,28 +118,35 @@ form#user-login {
     width: 35%;
 	float: left;
 }
-#user-profile-form #edit-account .form-item-mail{
+/*#user-profile-form #edit-account .form-item-mail{
 	padding-left: 2.7%;
     width: 39.5%;
     float: left;
-}
+}*/
 
 
-#user-profile-form #edit-account .form-item-pass-pass1{
-	margin-left: 12.7%;
-    width: 36.5%;
+#user-profile-form #edit-account .form-item-pass-pass1,
+#user-profile-form #edit-account .form-item-pass-pass2  {
+	display: block;
+    width: 60%;
 	float: left;
 	
 }
 
-#user-profile-form #edit-account .form-item-pass-pass2{
+/*#user-profile-form #edit-account .form-item-pass-pass2{
     width: 39.5%;
     float: left;
-}
+}*/
 
 
 #user-profile-form #edit-account .form-item-mail{
 	margin-left: 0.2%;
+}
+#edit-pass-pass1 , #edit-pass-pass2 {
+    margin-bottom: 35px;
+}
+.form-type-password-confirm .password-help {
+    left: 57%;
 }
 
         /*** Formulaire demande devis ***/
@@ -154,7 +168,7 @@ form div:first-child{
 }
 #user-register-form div:first-child,
 #user-login div:first-child,
-.webform-progressbar {
+.webform-progressbar ,#user-profile-form div:first-child{
     transform: none !important;
     width: 100% !important;
 }
@@ -205,7 +219,7 @@ form div:first-child{
 /*    opacity: 1;*/
     transform: translateX(50px) ;
     transition: all 0.4s ease-in-out 0s ;
-    width: 80%;
+    /*width: 80%;*/
 }
 
 .form-item-submitted-nom ,.form-item-submitted-prenom ,
@@ -243,6 +257,7 @@ form div:first-child{
    /* height: 80px !important;*/
     width: auto;
     margin-top: 25px;
+    height: 45px;
 }
 /*.form-item-submitted-date-premiere--mise-en-circulation{
     width: auto;
@@ -376,6 +391,7 @@ form div:first-child{
     margin-top: 25px;
     margin-bottom: 40px;
 }
+
 #edit-submitted-energie-du-vehicule div {
     display: inline;
 }
@@ -572,7 +588,7 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     line-height: 15px;
     margin-left: 5px;
     margin-top: -4px;
-    width: 150px ! important;
+    width: 50% ! important;
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     -moz-appearance: none;
     height: 25px;
@@ -601,9 +617,9 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 .form-actions {
     text-align: center;
 }
-#edit-submitted-email ,#edit-submitted-email-conducteur {
+/*#edit-submitted-email ,#edit-submitted-email-conducteur {
     width: 65% !important;
-}
+}*/
 .form-item-submitted-annee-de-naissance .webform-container-inline.webform-datepicker {
     display: inline-block;
 }
@@ -793,4 +809,29 @@ form#contact-site-form div:first-child {
     height: 100% ! important;
     width: 100% ! important;
     padding-left: 3px;  
+}
+.page-user-edit #test {
+     width: 60% ! important;
+}
+#edit-account  .label-danger ,#edit-account .progress {
+    width: auto ! important;
+}
+#webform-client-form-8 label,#webform-client-form-9  label, 
+#webform-client-form-10 label, #webform-client-form-11 label{
+    width: 35%;
+}
+/*.webform-component--date-de-naissance label {
+    width: 28% !important;
+}*/
+.form-item-submitted-marque label,
+.webform-component--ce-logement-est-il-votre-residence-principale label,
+.form-item-submitted-energie-du-vehicule label,
+.webform-component--adresse-du-bien-a-assurer label {
+    width: auto !important;
+}
+.form-item.webform-component.webform-component-number.webform-component--valeur-a-neuf.form-group.form-item.form-item-submitted-valeur-a-neuf.form-type-webform-number.form-group.fadeIn {
+    margin-top: 40px;
+}
+.form-item-submitted-civilite label {
+    width: 44% !important;
 }

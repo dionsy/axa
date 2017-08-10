@@ -234,6 +234,7 @@ function _bootstrap_element_info_array_merge($info, $cached) {
 
 function bootstrap_form_alter(array &$form, array &$form_state = array(), $form_id = NULL) {
 //dsm($form);
+
   if ($form_id) {
     switch ($form_id) {
       case 'system_theme_settings':
@@ -302,6 +303,18 @@ function bootstrap_form_alter(array &$form, array &$form_state = array(), $form_
     }
 
   }
+     if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block' ) ) )
+    {
+        $form['name']['#attributes']['placeholder'] = t( 'Username' );
+        $form['pass']['#attributes']['placeholder'] = t( 'Password' );
+        $form['pass']['#inputmode'] = 'numeric';
+/*        $form['pass']['#type'] = 'password';
+        $form['pass']['#pattern'] = '[0-9]*';*/
+
+      // krumong('main')->kPrint($form);
+       
+    }
+ 
 }
 
 /**
@@ -463,5 +476,10 @@ function bootstrap_quicktabs_alter(&$quicktabs) {
   //krumong('main')->kPrint($tabs);
 }
 
+function bootstrap_user_presave(&$edit, $account, $category) {
+  dsm($account);
+}
 
-
+function bootstrap_user_insert(&$edit, $account, $category) {
+  dsm($account);
+}

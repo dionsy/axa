@@ -66,3 +66,4 @@ drupal_static_reset('element_info');
  * they are properly detected when drupal_alter() is invoked.
  */
 bootstrap_include('bootstrap', 'includes/alter.inc');
+
