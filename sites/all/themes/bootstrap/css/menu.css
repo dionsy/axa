@@ -271,7 +271,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-3::before
     padding-right: 3%;
 }
 
-ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-4::before{
+ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-4::before, ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-5::before{
     content:"\f129";
     font-family: "FontAwesome";
     padding-right: 3%;
@@ -812,7 +812,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     padding: 0;
 }
 
-h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
+h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-infos-user-informations .block-title, #node-86 > header{
     box-shadow: 0 -1px 0 0 #eee inset;
     color: #005399;
     font-size: 20px;
@@ -828,7 +828,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 }
 
 
-#block-views-liste-contrats-block .block-title{
+#block-views-liste-contrats-block .block-title, #block-views-user-infos-user-informations .block-title{
     padding: 6px 3% 13px 3% !important;
 }
 
@@ -903,7 +903,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     width: 102%;
 }
 /*** mes informations ***/
-#node-113 form div:first-child {
+#node-113 form div:first-child, #form-information-form > div{
     transform: none !important;
     width: auto !important;
 }
@@ -1014,7 +1014,149 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
 #node-113 .form-item.webform-component.webform-component-checkboxes.webform-component--accept.form-group.form-item-submitted-accept.form-type-checkboxes {
     border: 0 !important;
 }
+#quicktabs-tabpage-left_menu-5 .views-label {
+    float: left;
+    padding-left: 2%;
+    width: 50%;
+    color: #666;
+    border: 1px solid #eee;
+}
+#quicktabs-tabpage-left_menu-5 .field-content {
+    float: left;
+    padding-left: 2%;
+    width: 50%;
+    color: #666;
+    border: 1px solid #eee;
+}
+#quicktabs-tabpage-left_menu-5 .view-user-infos{
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 80px;
+}
 
+#form-information-form > div > fieldset:first-child .panel-body {
+    display: none !important;
+}
+
+#form-information-form #edit-submit--4{
+    display: none;
+}
+
+#form-information-form > div > .form-item {
+    margin: 0 3% 0px 3%;
+    border: 1px solid #eee;
+    background: #fcfcfc none repeat scroll 0 0;
+}
+
+#form-information-form > div > .form-item.checkbox {
+    border: 0 !important;
+    margin-top: 10px !important;
+}
+
+#form-information-form > div > .form-item.checkbox label.control-label {
+    border-right: 0 !important;
+    padding-left: 3.45% !important;
+    width: 100%;
+    float: none;
+    margin-bottom: 15px;
+}
+
+#form-information-form > div > .form-item label.control-label {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    border-right: 1px solid #eee;
+    color: #666;
+    font-weight: normal;
+    padding-left: 2%;
+}
+
+#form-information-form > div > fieldset:first-child .panel-body {
+    display: none !important;
+}
+
+#form-information-form > div > fieldset:first-child > .panel-heading {
+    color: #004D92 !important;
+    background-color: inherit !important;
+    border:0 !important;
+}
+
+#form-information-form > div > fieldset:first-child > legend {
+    padding-bottom: 6.5px !important;
+}
+
+#form-information-form > div > fieldset:first-child > legend span {
+    position: relative;
+    top: -5px;
+    left: 2px;    
+    font-size: 20px;
+}
+
+#form-information-form > div > fieldset:first-child {
+    /*margin-top: 0px;*/
+    /*padding: 6px 3% 13px 3%;*/
+    margin-bottom: 25px;
+    /*color: #004D92;
+    font-weight: bold;
+    font-size: 14px;
+    background: #fcfcfc none repeat scroll 0 0;
+    border: 1px solid #eee;*/
+
+    box-shadow: 0 -1px 0 0 #eee inset;
+    color: #005399;
+    font-size: 20px;
+    margin-top: 0;
+    border-radius: 0 !important;
+    /* Navigateurs récents */
+    background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
+    background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
+    background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+}
+
+
+#form-information-form > div .form-control {
+    border: 1px solid #eee;
+    background: #fff;
+    margin-left: 7px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+    width: 40% !important;
+}
+
+#form-information-form > div #edit-pass {
+    margin-left: 3%;
+    margin-right: 3%;
+    background: #fcfcfc;
+}
+
+#form-information-form > div .form-type-password.form-group {
+    transform: none;
+    width: 100%;
+    
+}
+
+#form-information-form .form-type-password .control-label {
+    width: 50%;
+    color: #666;
+    font-weight: normal;
+    padding-left: 2%;
+}
+
+.quicktabs-tabpage{
+    background: #fcfcfc;
+}
+
+.panel-title.fieldset-legend {
+    color: #004D92;
+}
+
+#edit-submit--5 {
+    margin-bottom: 25px;
+    background: #004D92;
+    border: 1px solid #004D92;
+}
 /*** mes contrats ***/
 #block-views-liste-contrats-block .block-title {
     margin-bottom: 25px;
@@ -1023,7 +1165,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #node-86 > header{
     padding-bottom: 15%;
 }
 
-#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1, #quicktabs-tabpage-left_menu-4{
+#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1, #quicktabs-tabpage-left_menu-4, #quicktabs-tabpage-left_menu-5, #quicktabs-tabpage-left_menu-6{
     box-shadow: 2px 2px 2px 2px #ccc;
 }
 

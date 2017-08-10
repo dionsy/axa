@@ -1,0 +1,4 @@
+name = "Form Info User"
+description = "Update the user info"
+core= "7.x"
+version = "7.x-1.0"
