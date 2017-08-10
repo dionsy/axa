@@ -166,6 +166,10 @@ form div:first-child{
     transform: translateX(17%);
     width: 75%;
 }
+#commerce-checkout-form-checkout div:first-child{
+    width: auto ;
+     transform: none !important;
+}
 #user-register-form div:first-child,
 #user-login div:first-child,
 .webform-progressbar ,#user-profile-form div:first-child{

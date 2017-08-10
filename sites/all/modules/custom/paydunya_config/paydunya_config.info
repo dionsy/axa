@@ -1,0 +1,5 @@
+name = Paydunya configuration
+description = Configuration de tous les variables pour l'API Paydunya
+package = ATOS
+core = 7.x
+
