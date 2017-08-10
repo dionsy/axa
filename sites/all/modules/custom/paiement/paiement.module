@@ -1,0 +1,51 @@
+<?php
+
+	include 'conf.inc';
+function paiement_commerce_checkout_complete($order) {
+	global $base_url;
+
+	$modePaiementOnline = '';
+
+	$orderStatus = strval($order->status);//see if checkout_complete
+
+	variable_set('order',$order);
+
+	$listPaymentOnline = 'payment_commerce_3|commerce_payment_payment_commerce_3';
+	$listPaymentOffline = 'payment_commerce_4|commerce_payment_payment_commerce_4';
+
+	$orderTypePayement = $order->data['payment_method'];
+
+	$orderStatus = strval($order->status);//see if checkout_complete
+
+	$totalOrder = $order->commerce_order_total['und'][0]['amount'];
+
+	$commerceLineItems = $order->commerce_line_items['und'];
+	$wrapper = entity_metadata_wrapper('commerce_order', $order);
+
+	if($orderTypePayement==$listPaymentOnline && $orderStatus=='checkout_complete'){ //paiement en Ligne
+
+		foreach ($wrapper->commerce_line_items as $delta => $line_item_wrapper) {
+		  	$price = number_format($line_item_wrapper->commerce_unit_price->amount->value() / 100, 3);
+		  	$quantity = number_format($line_item_wrapper->quantity->value());
+		  	$title = $line_item_wrapper->commerce_product->title->value();
+		}
+
+		$invoice = new Paydunya_Checkout_Invoice();
+	 	$invoice->addItem($title, $quantity,$price, $totalOrder); //Envoie à Paydunya les infos de la commande
+		$invoice->setTotalAmount($totalOrder); // Envoie à Paydunya le montant total de la commande
+		variable_set('token',$invoice->token);
+		if( $invoice->create()) {
+			$url = 'https://paydunya.com/sandbox-checkout/invoice/'.$invoice->token;	
+		  	drupal_goto($url);
+		}else{
+		  echo $invoice->response_text;
+		}
+	}
+	else{
+		$url = $base_url.'?q=node/113';
+		drupal_goto($url);
+	}
+}
+
+
+

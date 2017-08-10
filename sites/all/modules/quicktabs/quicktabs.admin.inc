@@ -97,7 +97,10 @@ function quicktabs_form($form, &$form_state, $formtype, $qt = NULL) {
     $form_state['num_tabs']--;
   }
 
-  $tab_titles = array();
+  $tab_titles = array(
+    QUICKTABS_DELTA_NONE => t('- None -'),
+  );
+
   // Add current tabs to the form.
   foreach ($qt->tabs as $delta => $tab) {
     $tab['delta'] = $delta;
@@ -314,7 +317,9 @@ function _quicktabs_form(array $tab, $qt) {
     }
     $tabtypes[$name] = $name;
     $content_provider = quick_content_factory($name, $tab);
-    $form = array_merge_recursive($form, $content_provider->optionsForm($delta, $qt));
+    if (is_object($content_provider)) {
+      $form = array_merge_recursive($form, $content_provider->optionsForm($delta, $qt));
+    }
   }
 
   $form['type'] = array(
@@ -523,10 +528,7 @@ function quicktabs_block_delete_submit($form, &$form_state) {
 function quicktabs_export_form($form, &$form_state, $qt) {
   ctools_include('export');
   // Generate export code
-  $code = '$items = array();' ."\n";
-  $code .= ctools_export_object('quicktabs', $qt, '');
-  $code .= '$items["'. $qt->machine_name .'"] = $quicktabs;' ."\n";
-  $code .= 'return $items;';
+  $code = ctools_export_object('quicktabs', $qt, '');
 
   // Create form
   $form = array();

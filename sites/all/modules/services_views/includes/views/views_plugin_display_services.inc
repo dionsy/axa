@@ -41,6 +41,7 @@ class views_plugin_display_services extends views_plugin_display {
     // Execute a view.
     $this->view->execute();
 
+
     // Render the fields.
     $this->view->style_plugin->render_fields($this->view->result);
 
@@ -49,6 +50,7 @@ class views_plugin_display_services extends views_plugin_display {
     foreach ($this->view->result as $row_id => $item) {
       $new_item = new stdClass();
       foreach ($this->view->field as $field_name => $field) {
+
         // Make sure new keys are alphanumerical, underscore and dash.
         $custom_key = (!empty($field->options['label']) && preg_match('/^[0-9A-Za-z_-]*$/', $field->options['label']))
           ? $field->options['label'] : FALSE;
