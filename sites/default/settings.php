@@ -244,7 +244,7 @@
  *     'database' => '/path/to/databasefilename',
  *   );
  * @endcode
- 
+ */
 $databases = array (
   'default' => 
   array (
@@ -260,8 +260,8 @@ $databases = array (
     ),
   ),
 );
-*/
 
+/*
 $databases = array (
   'default' => 
   array (
@@ -276,7 +276,7 @@ $databases = array (
       'prefix' => '',
     ),
   ),
-);
+);*/
 
 
 /**

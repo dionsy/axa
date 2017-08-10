@@ -1,0 +1,179 @@
+<?php
+/**
+ * hook_perm()
+ * 
+ */
+function paydunya_config_permission() {
+  return array(
+  'access configuration paydunya' => array(
+      'title' => t('Administer Paydunya configuration'),
+    ),
+  );
+}
+/**
+ * Création du menu reprise.
+ */
+function paydunya_config_menu() {
+  $items['admin/paydunya_config'] = array(
+      'title' => t('Paydunya configuration'),
+      'page callback' => 'get_form_paydunya_config',
+      'access arguments' => array('access configuration Paydunya'),
+      'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+/**
+ * Retourner le formulaire de la reprise.
+ */
+function get_form_paydunya_config() {
+    return drupal_get_form('form_paydunya_config');
+}
+/**
+ * Formulaire reprise données
+ */
+function form_paydunya_config() {
+    $form = array();
+
+    $languages = language_list();
+    
+    $form['paydunya'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Page Configuration Paydunya'),
+      '#collapsible' => TRUE, // Added
+      '#collapsed' => FALSE,  // Added
+    );
+//-----------------déclaration d'une variable 
+    $form['paydunya']['paydunya_master_key'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_master_key'),
+        '#title' => t('Paydunya Master Key'),
+        '#required' => TRUE, // Added
+    );
+//------------------- 
+
+//-----------------déclaration d'une variable 
+$form['paydunya']['paydunya_public_key'] = array(
+    '#type' => 'textfield',
+    '#default_value' => variable_get('paydunya_public_key'),
+    '#title' => t('Paydunya Public Key'),
+    '#required' => TRUE, // Added
+);
+//-------------------
+
+//-----------------déclaration d'une variable 
+    $form['paydunya']['paydunya_private_key'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_private_key'),
+        '#title' => t('Paydunya Private Key'),
+        '#required' => TRUE, // Added
+    );
+//-------------------
+
+//-----------------déclaration d'une variable 
+    $form['paydunya']['paydunya_token'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_token'),
+        '#title' => t('Paydunya Token'),
+        '#required' => TRUE, // Added
+    );
+//-------------------
+    
+//-----------------déclaration d'une variable 
+    $form['paydunya']['paydunya_end_point_test'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_end_point_test'),
+        '#title' => t('Paydunya End Point Test'),
+        '#required' => TRUE, // Added
+    );
+
+//-----------------déclaration d'une variable 
+    $form['paydunya']['paydunya_end_point_prod'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_end_point_prod'),
+        '#title' => t('Paydunya End Point Prod'),
+        '#required' => FALSE, // Added
+    );
+
+//-------------------Configuration service activité entreprise------------------
+
+  $form['paydunya_SAE'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('service activité entreprise'),
+      '#collapsible' => TRUE, // Added
+      '#collapsed' => FALSE,  // Added
+    );
+
+    //-----------------déclaration d'une variable 
+    $form['paydunya_SAE']['paydunya_SAE_Name'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_SAE_Name'),
+        '#title' => t('Name'),
+        '#required' => TRUE, // Added
+    );
+
+//-----------------déclaration d'une variable 
+    $form['paydunya_SAE']['paydunya_SAE_Tagline'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_SAE_Tagline'),
+        '#title' => t('Tagline'),
+        '#required' => FALSE, // Added
+    );
+
+//-----------------déclaration d'une variable 
+    $form['paydunya_SAE']['paydunya_SAE_PhoneNumber'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_SAE_PhoneNumber'),
+        '#title' => t('PhoneNumber'),
+        '#required' => FALSE, // Added
+    );
+
+//--------déclaration d'une variable 
+    $form['paydunya_SAE']['paydunya_SAE_PostalAddress'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_SAE_paydunya_PostalAddress'),
+        '#title' => t('PostalAddress'),
+        '#required' => FALSE, // Added
+    );
+
+//--------déclaration d'une variable 
+    $form['paydunya_SAE']['paydunya_SAE_WebsiteUrl'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_SAE_paydunya_WebsiteUrl'),
+        '#title' => t('WebsiteUrl'),
+        '#required' => FALSE, // Added
+    );
+
+//--------déclaration d'une variable 
+    $form['paydunya_SAE']['paydunya_SAE_LogoUrl'] = array(
+        '#type' => 'textfield',
+        '#default_value' => variable_get('paydunya_SAE_LogoUrl'),
+        '#title' => t('LogoUrl'),
+        '#required' => FALSE, // Added
+    );
+//-------------------Configuration IPN ------------------ 
+  $form['paydunya_IPN'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Instant Payment Notification'),
+      '#collapsible' => TRUE, // Added
+      '#collapsed' => FALSE,  // Added
+    );
+
+//-----------------déclaration d'une variable 
+  $form['paydunya_IPN']['paydunya_IPN_callback_finalyzedpaye'] = array(
+      '#type' => 'textfield',
+      '#default_value' => variable_get('paydunya_IPN_callback_finalyzedpaye'),
+      '#title' => t('Paydunya Page callback if paiement is finalized'),
+      '#required' => TRUE, // Added
+  );
+
+//-----------------déclaration d'une variable 
+  $form['paydunya_IPN']['paydunya_IPN_callback_notfinalizedpaye'] = array(
+      '#type' => 'textfield',
+      '#default_value' => variable_get('paydunya_IPN_callback_notfinalizedpaye'),
+      '#title' => t('Paydunya  Page callback if paiement is NOT finalized'),
+      '#required' => TRUE, // Added
+  );
+
+  return system_settings_form($form);
+}
+

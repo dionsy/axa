@@ -92,7 +92,6 @@ function theme_quicktabs_style_options($variables) {
     'style' => array('#markup' => $markup),
     '#attached' => array('css' => array(drupal_get_path('module', 'quicktabs_tabstyles') . '/css/quicktabs-tabstyles-admin.css')),
   );
-
   return drupal_render($build);
 }
 
