@@ -90,21 +90,18 @@
       <aside class="col-sm-3"></aside>
     <?php endif; ?>
 <?php  //if(user_is_logged_in()) { ?>
-
-      
     <section id="test" <?php print $content_column_class; ?>>
-        <div class="logo col-md-12 col-lg-12 col-xs-12 <?php print $container_class; ?>">
-    
-    <div class="navbar-header ">
-     <?php
-       $logo = $base_path.'/sites/all/themes/bootstrap/images/logo-axa.png' ;
-     ?>
-        <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img class ="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-    </div>
+      <div class="logo col-md-12 col-lg-12 col-xs-12 <?php print $container_class; ?>">
+       <div class="navbar-header ">
+         <?php
+          $logo = $base_path.'/sites/all/themes/bootstrap/images/logo-axa.png' ;
+          ?>
+         <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php   print t('Home'); ?>">
+            <img class ="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+       </div>
 
-  </div>
+    </div>
       <a id="main-content"></a>
 <!--  -->
       <?php print render($title_suffix); ?>

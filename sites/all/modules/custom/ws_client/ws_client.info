@@ -1,0 +1,4 @@
+name = Web Services Client
+description = Web Services Client
+package = ATOS
+core = 7.x

@@ -1,0 +1,133 @@
+<?php
+	/**
+	* @file
+	* Web services Client
+	*/
+function  ws_client_block_info() {
+	$blocks['ws_client_block_info'] = array('info' => t('web service client'));
+	return $blocks ;
+}
+function  ws_client_block_view($delta = '') {
+	$block['content'] = '<h1>Web Services client</h1>';
+	$get_node_result = ws_client_getClient_node();
+	/*krumong('main')->kPrint($get_node_result);*/	
+	$data = json_decode($get_node_result->data);
+	/*krumong('main')->kPrint($data);*/
+	return $block ;
+}
+
+function ws_client_get_node(){
+	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
+	return drupal_http_request($url) ;
+}
+function ws_client_getClient_node($numeroContrat){
+	$url = "http://192.168.43.145/Service1.svc/compte/espaceClient/".$numeroContrat."";
+/*	$node_options = array (
+			'header' => array( 
+				'Content-Type' => 'application/json'),
+			'method' => 'GET'
+	);*/
+
+	return drupal_http_request($url) ;
+}
+/*function ws_client_getIdentifiant_node(){
+
+	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
+	return drupal_http_request($url) ;
+}*/
+
+function ws_client_user_presave(&$edit, $account, $category) {
+	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
+	$get_node_result = ws_client_getClient_node($numContrat);	
+	$data = json_decode($get_node_result->data);
+	if (isset($data)) {
+		$edit['field_identifiant_client']['und'][0]['value'] = $data ;
+	}
+}
+
+function ws_client_permission() {
+  return array(
+    'ws_client view any ws'=> array('title' => t('ws_client view any ws'),'description' => t('view any ws'),),
+	'ws_client view own ws'=> array('title' => t('ws_client view own ws'),'description' => t('view own ws'),),
+  );
+}
+
+ function ws_client_services_resources() {
+      $api = array(
+       'user' => array(
+         'create' => array(
+           'help' => 'create a user',
+/*          'file' => array(
+          	'type' => 'inc',
+          	'module' => 'ws_client',
+          	'name' => 'ws_client/ws_resource'),*/
+           'callback' => '_clientResource_create',
+           'access callback' => 'user_access',
+           'access arguments' => array('create user'),
+           'access arguments append' => FALSE,
+          'args' => array(
+             	array(
+               'name' => 'userName',
+               'type' => 'string',
+               'description' => 'nom du client',
+               'source' => array('path' => "userName"),
+               'optional' => FALSE,
+               'default' => 'Axa',
+             ),/*
+             array(
+              'name' => 'emailUser',
+              'type' => 'string',
+              'description' => "Adresse courriel de l'utilisateur",
+              'source' => array('path' => 'emailUser'),
+              'optional' => FALSE,
+            ),        
+             array(
+              'name' => 'numTel',
+              'type' => 'int',
+              'description' => "Numero téléphone de l'utilisateur",
+              'source' => array('path' => 'numTel'),
+              'optional' => FALSE,
+            ),     
+             array(
+              'name' => 'numContrat',
+              'type' => 'string',
+              'description' => "Numero contrat d'assurance",
+              'source' => array('path' => 'numContrat'),
+              'optional' => FALSE,
+            ),
+             array(
+              'name' => 'codeConfidentiel',
+              'type' => 'int',
+              'description' => "Code confidentiel de l'utilisateur",
+              'source' => array('path' => 'codeConfidentiel'),
+              'optional' => FALSE,
+            ),*/
+           ),
+         ),
+       ),
+     );
+      return $api ;
+}
+
+
+function  _clientResource_create($userName /*, $emailUser , $numTel ,$numContrat ,$codeConfidentiel*/) {
+		$userName = 12;
+/*		$emailUser = "syllababacar@yahoo.fr";
+		$numTel = 778241624 ;
+		$numContrat = "CNTR00000001";
+		$codeConfidentiel = 1234;*/
+
+		/*$result_json = array('name' => 'test', 'age' => '16');
+		$data= json_encode($result_json);*/
+		header('Content-type: application/json');
+	  /*$get_node_result = ws_client_getClient_node($numContrat);	
+	  	$date_add() = json_decode($get_node_result->data);
+	if (isset($data)) {
+		return $data;
+		
+	}
+	else		*/
+		$data ='title':'aliou' ;																											
+
+      return $data;
+ }
