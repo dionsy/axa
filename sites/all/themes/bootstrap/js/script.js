@@ -173,14 +173,24 @@
         $( ".form-item-submitted-puissance" ).focusout(function() {
               $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
           });
-        $('#edit-pass').numpad({
-          target: $('#edit-pass')
+        $('#user-login #edit-pass').numpad({
+          target: $('#user-login #edit-pass')
           }); 
         $('#edit-pass-pass1').numpad({
           target: $('#edit-pass-pass1')
           });
         $('#edit-pass-pass2').numpad({
           target: $('#edit-pass-pass2')
+          });
+
+        $('#edit-pass--2').numpad({
+          target: $('#edit-pass--2')
+          });
+        $('#edit-pass1').numpad({
+          target: $('#edit-pass1')
+          });
+        $('#edit-pass2').numpad({
+          target: $('#edit-pass2')
           });
  
             $(".nmpd-display").keydown(function(event) { 

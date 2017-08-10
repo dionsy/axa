@@ -782,6 +782,10 @@ ul#quicktabs-tab-left_menu-0::before{
     width: 65%;
 }
 
+div#edit-field-fin-contrat {
+    display: none !important;
+}
+
 
 #block-block-4 .head1 {
     color: #2f5399;
