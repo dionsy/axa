@@ -244,6 +244,22 @@
  *   );
  * @endcode
  */
+/*$databases = array (
+  'default' => 
+  array (
+    'default' => 
+    array (
+      'database' => 'axa',
+      'username' => 'root',
+      'password' => '',
+      'host' => 'localhost',
+      'port' => '3306',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+);*/
+
 $databases = array (
   'default' => 
   array (
@@ -259,23 +275,7 @@ $databases = array (
     ),
   ),
 );
-/*
-$databases = array (
-  'default' => 
-  array (
-    'default' => 
-    array (
-      'database' => 'axa',
-      'username' => 'root',
-      'password' => '',
-      'host' => 'localhost',
-      'port' => '3306',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
-*/
+
 
 
 /**
