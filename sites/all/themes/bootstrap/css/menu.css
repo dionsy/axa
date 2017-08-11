@@ -782,6 +782,10 @@ ul#quicktabs-tab-left_menu-0::before{
     width: 65%;
 }
 
+div#edit-field-fin-contrat {
+    display: none !important;
+}
+
 
 #block-block-4 .head1 {
     color: #2f5399;
@@ -810,6 +814,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     box-shadow: 2px 2px 2px 2px #ccc;
     margin-top: -10%;
     padding: 0;
+    background: #fcfcfc;
 }
 
 h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-infos-user-informations .block-title, #node-86 > header{
@@ -903,6 +908,9 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     width: 102%;
 }
 /*** mes informations ***/
+#block-block-4 {
+    background: #fff;
+}
 #node-113 form div:first-child, #form-information-form > div{
     transform: none !important;
     width: auto !important;
@@ -1261,6 +1269,9 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 }
 
 /*** preference ***/
+#node-86{
+    background: #fcfcfc;
+}
 #node-86 h2 {
     margin-top: 0;
     padding: 4px 11px;

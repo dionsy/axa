@@ -117,8 +117,8 @@ function  _clientResource_create($userName /*, $emailUser , $numTel ,$numContrat
 		$numContrat = "CNTR00000001";
 		$codeConfidentiel = 1234;*/
 
-		/*$result_json = array('name' => 'test', 'age' => '16');
-		$data= json_encode($result_json);*/
+		$result_json = array('name' => 'test', 'age' => '16');
+		/*$data= json_encode($result_json);*/
 		header('Content-type: application/json');
 	  /*$get_node_result = ws_client_getClient_node($numContrat);	
 	  	$date_add() = json_decode($get_node_result->data);
@@ -126,8 +126,7 @@ function  _clientResource_create($userName /*, $emailUser , $numTel ,$numContrat
 		return $data;
 		
 	}
-	else		*/
-		$data ='title':'aliou' ;																											
+	else		*/																											
 
       return $data;
  }

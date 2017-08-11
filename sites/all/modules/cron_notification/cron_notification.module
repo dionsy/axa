@@ -186,8 +186,8 @@ function cron_notification_cron() {
     $lien = 'www.axa.sn';
     $body_sms = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
     $body_mail = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
- 
-    if(/*$date >= $fin_contrat && $date <= $date_majorant*/TRUE){
+
+    if($date >= $fin_contrat && $date <= $date_majorant){
       if(in_array("MAIL", $choice)){
         # send email
         cron_notification_send_mail($client->mail, $subject, $body_mail);      
@@ -196,7 +196,7 @@ function cron_notification_cron() {
            !empty($library['loaded']) &&
            in_array("SMS", $choice)) {
         # send sms
-        //cron_notification_send_kannel_sms($number_client, $body_sms);        
+        cron_notification_send_kannel_sms($number_client, $body_sms);        
       }
 
     }
