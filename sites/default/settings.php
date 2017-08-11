@@ -245,7 +245,7 @@
  *   );
  * @endcode
  */
-$databases = array (
+/*$databases = array (
   'default' => 
   array (
     'default' => 
@@ -260,8 +260,8 @@ $databases = array (
     ),
   ),
 );
-
-/*$databases = array (
+*/
+$databases = array (
   'default' => 
   array (
     'default' => 
@@ -276,7 +276,7 @@ $databases = array (
     ),
   ),
 );
-*/
+
 
 /**
  * Access control for update.php script.
