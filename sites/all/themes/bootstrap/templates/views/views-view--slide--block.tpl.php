@@ -26,6 +26,7 @@
  *
  * @ingroup views_templates
  */
+
 ?>
 
   <?php if ($rows): ?>

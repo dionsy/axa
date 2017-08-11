@@ -22,7 +22,7 @@ function bootstrap_preprocess_page(&$variables) {
   $variables['page']['content']['quicktabs_left_menu']['content']['tabs']['tablinks'][] = $icon;
   krumong('main')->kPrint($variables['page']['content']['quicktabs_left_menu']['content']['tabs']['tablinks']);
   krumong('main')->kPrint($variables['page']['content']['quicktabs_left_menu']);*/
-
+//krumong('main')->kPrint($variables);
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['content_column_class'] = ' class="col-sm-6"';
