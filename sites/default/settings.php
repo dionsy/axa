@@ -259,8 +259,8 @@
       'prefix' => '',
     ),
   ),
-);
-*/
+);*/
+
 $databases = array (
   'default' => 
   array (

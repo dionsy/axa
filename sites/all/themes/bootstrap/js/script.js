@@ -247,7 +247,40 @@
         nmpd.grid = table;
         table.append($(options.rowTpl).append($(options.displayCellTpl).append(display).append($('<input type="hidden" class="dirty" value="0"></input>'))));
         // Create rows and columns of the the grid with appropriate buttons
-        table.append(
+        tbchiffre =[1,2,3,4,5,6,7,8,9,0]; 
+         var rt = $(options.rowTpl) ;
+    
+           for (var i = 0 ; i<10 ; i++){
+
+              if(i==3){
+                rt.append($(options.cellTpl).append($(options.buttonFunctionTpl).html(options.textClear).addClass('clear btn').click(function(){
+                  nmpd.setValue('');
+                })));
+                table.append(rt) ;
+                rt = $(options.rowTpl) ;
+              }
+              if(i==6){
+                rt.append($(options.cellTpl).append($(options.buttonFunctionTpl).html(options.textDone).addClass('done btn')));
+                table.append(rt) ;
+                rt = $(options.rowTpl) ;
+              }
+              var dt = $(options.cellTpl).append($(options.buttonNumberTpl));
+              if(tbchiffre.length==1){
+                dt =dt.html(tbchiffre[0]).addClass('numero btn');
+              }
+              else{
+                var spl=Math.round(Math.random()*(tbchiffre.length-1));
+                dt = dt.html(tbchiffre[spl]).addClass('numero btn');
+                tbchiffre.splice(spl,1);
+              }
+              rt.append(dt);
+        }
+        table.append(rt);
+
+
+
+
+        /*table.append(
           $(options.rowTpl)
             .append($(options.cellTpl).append($(options.buttonNumberTpl).html(7).addClass('numero btn')))
             .append($(options.cellTpl).append($(options.buttonNumberTpl).html(8).addClass('numero btn')))
@@ -277,7 +310,7 @@
             .append($(options.cellTpl).append($(options.buttonNumberTpl).html(0).addClass('numero btn')))
             .append($(options.cellTpl).append($(options.buttonFunctionTpl).html('')))
             .append($(options.cellTpl).append($(options.buttonFunctionTpl).html(options.textDone).addClass('done btn')))
-          );
+          );*/
         // Create the backdrop of the numpad - an overlay for the main page
         nmpd.append($(options.backgroundTpl).addClass('nmpd-overlay').click(function(){nmpd.close(false);}));
         // Append the grid table to the nmpd element
@@ -375,8 +408,7 @@
           target.trigger('change');
         }
         return nmpd;
-      };
-      
+      };    
       /**
       * Opens the numpad for a given target element optionally filling it with a given value
       * @param jQuery object target
@@ -462,10 +494,10 @@
     gridTableClass: '',
     hidePlusMinusButton: false,
     hideDecimalButton: false,
-    textDone: 'Done',
-    textDelete: 'Del',
-    textClear: 'Clear',
-    textCancel: 'Cancel',
+    textDone: 'Valider',
+    textDelete: 'Supprimer',
+    textClear: 'Effacer',
+    textCancel: 'Annuler',
     decimalSeparator: ',',
     precision: null,
     appendKeypadTo: false,
