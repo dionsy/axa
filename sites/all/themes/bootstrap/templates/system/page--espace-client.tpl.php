@@ -115,8 +115,11 @@
                <?php
                   $account = array();
                   if(user_is_logged_in())
-                    $account = user_load($user->uid);    
-                  print '<span>M. '.$account->name. '</span>';   
+                    $account = user_load($user->uid); 
+                  //('main')->kPrint($account);
+                    if(isset($account)) {
+                      print '<span>'.$account->name. '</span>';                    
+                    }  
                ?>
              </div>
           </div>
