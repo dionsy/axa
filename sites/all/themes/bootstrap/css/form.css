@@ -926,3 +926,10 @@ form#user-register-form {
 .page-trouveragence .breadcrumb {
     display: none;
 }
+
+
+/*-----------Page de confirmation webform-------*/
+.page-node-done .page-header{
+    text-align: center !important;
+    color: #fff !important;
+}
