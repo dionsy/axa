@@ -1430,6 +1430,9 @@ a.asligne {
 	margin-left: 20px;
 
 }
+#block-menu-menu-r-seaux-sociaux- ul li:first-child {
+    margin-left: 0px;
+}
 #block-menu-menu-footer ul li ::before {
 	content: "\f1db"; 
 	font-family:'FontAwesome';

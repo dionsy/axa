@@ -53,7 +53,7 @@ ul.tabs--primary li:hover{
     color: white !important;
  }
 form#user-login {
-    margin-top: 40px;
+    margin-top: 25px;
 }
 /*.nav > li > a:hover{
     border-bottom: 2px solid red;
@@ -637,9 +637,16 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     text-align: center;
     width: 90%;
 }
-.form-actions {
+#edit-actions.form-actions {
     text-align: center;
+    margin-bottom: 25px;
+    margin-top: 15px;
 }
+
+#edit-actions.form-actions #edit-submit {
+    margin-top: 15px;
+}
+
 /*#edit-submitted-email ,#edit-submitted-email-conducteur {
     width: 65% !important;
 }*/
@@ -656,7 +663,8 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 }
 #user-login div.form-group {
     display: block;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
+    display: inline-block;
     /*margin-left: 15%;*/
     text-align: justify;
 }
@@ -913,4 +921,8 @@ form#user-register-form {
 #webform-client-form-10 .webform-container-inline label {
     display: inline-block;
     margin-right: 0;
+}
+
+.page-trouveragence .breadcrumb {
+    display: none;
 }
