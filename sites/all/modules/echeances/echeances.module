@@ -15,12 +15,60 @@ function echeances_block_info() {
  * Implements hook_block_view()
  */
 function echeances_block_view($delta = '') {
-  
   if ($delta == 'echeances') {
-    $output = NULL;
+  	$title_echeance = t('Mes échéances');
+  	$title_p = t('Situation au 14/08/2017'); 
+  	$title = '<h2>'. $title_echeance .'</h2>';
+  	$title .= '<p>'. $title_p .'</p>';
+  	$text_prime = t("Dates des prochaines primes à payer pour vos contrat d'assurance");
+  	$text_contact = t('Pour toute information supplémentaire contacter votre conseiller');
+  	$output = '';
+
+  	$table = array(
+	  	'thead' = array(
+	  		'NumContrat' => t('N° Contrat'),
+	  		'produit' => t('Produit'),
+	  		'caracteristiques' => t('Caractéristiques'),
+	  		'mode_echeance' => t('Mode d\'echeance'),
+	  		'prochaine_echeance' => t('Prochaine échéance'),
+	  	),
+	  	'tbody' = array(
+	  		array(
+		  	    'NumContrat' => t('10245520'),
+		  		'produit' => t('Oplus LIFE-Equatoria'),
+		  		'caracteristiques' => t('wele'),
+		  		'mode_echeance' => t('Mensuelle'),
+		  		'prochaine_echeance' => t('01/09/2017'),		
+	  		),
+	  	),
+  	); 
+
+    $output .= '<p>'. $text_prime .'</p>';
+    $output .= '<table class="table table-bordered">';
+    $output .=   '<thead>';
+    
+    foreach ($table['thead'] as $key => $value) {
+    	# code...
+        $output .=     '<th>'. $value .'</th>';
+    }
+
+    $output .=   '</thead>';
+    $output .=   '<tbody>';
+    foreach ($table['tbody'] as $tables) {
+    	# code...
+    	$output .= '<tr>';
+    	foreach ($tables as $key => $value) {
+    		# code...
+    		$output .=   '<td>'. $value .'</td>';
+    	}
+    	$output .= '</tr>';
+    }
+    $output .=   '</tbody>';
+    $output .= '</table';
+    $output .= '<p>'. $text_contact .'</p>';
     return array(
-      'subject' => t('Mes Echeances'),
-      'content' => (!empty($output)) ? '<ul>' . $output . '</ul>' : '<p>' . t('For now, this list is empty!') . '</p>',
+      'subject' => '<header>'. $title .'</header>',
+      'content' => (!empty($output)) ? '<div class="echeance_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
     );
   }
 

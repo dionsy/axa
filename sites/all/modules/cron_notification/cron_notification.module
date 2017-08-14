@@ -82,14 +82,14 @@ function cron_notification_menu() {
     'weight' => -10,
   );
 
-  $items[CRON_NOTIFICATION_aDMIN_PATH . '/setting_mail'] = array(
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/setting_mail'] = array(
     'title' => 'Setting Mail',
     'description' => 'administer your Cron Notification Mail',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_admin_settings_mail_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCaL_TaSK,
+    'type' => MENU_LOCaL_TASK,
     'weight' => 10,
   );
 
