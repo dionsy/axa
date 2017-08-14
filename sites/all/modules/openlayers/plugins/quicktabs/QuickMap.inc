@@ -44,7 +44,7 @@ class QuickMap extends QuickContent {
     //return array('map');
   }
   
-  /*+*/
+  /*+-*/
   public function getUniqueKeys() {}
   /*end + */
 

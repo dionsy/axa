@@ -1,0 +1,28 @@
+<?php
+/**
+ * Implements hook_block_info()
+ */
+function echeances_block_info() {
+  return array(
+    'echeances' => array(
+      'info' => t('echeances client'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function echeances_block_view($delta = '') {
+  
+  if ($delta == 'echeances') {
+    $output = NULL;
+    return array(
+      'subject' => t('Mes Echeances'),
+      'content' => (!empty($output)) ? '<ul>' . $output . '</ul>' : '<p>' . t('For now, this list is empty!') . '</p>',
+    );
+  }
+
+  return array();
+}

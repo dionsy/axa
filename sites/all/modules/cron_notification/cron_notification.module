@@ -7,7 +7,7 @@
 /**
  * Define constants for cron_notification
  */
-define('CRON_NOTIFICaTION_aDMIN_PaTH', 'admin/config/system/cron_notification');
+define('CRON_NOTIFICATION_ADMIN_PATH', 'admin/config/system/cron_notification');
 
 
 
@@ -67,7 +67,7 @@ function cron_notification_permission() {
  * Implements hook_menu()
  */
 function cron_notification_menu() {
-  $items[CRON_NOTIFICaTION_aDMIN_PaTH] = array(
+  $items[CRON_NOTIFICATION_ADMIN_PATH] = array(
     'title' => 'Cron Notification Settings',
     'description' => 'administer your Cron Notification sms settings',
     'page callback' => 'drupal_get_form',
@@ -76,13 +76,13 @@ function cron_notification_menu() {
     'file' => 'cron_notification.admin.inc',
   );
 
-  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/settings_sms'] = array(
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/settings_sms'] = array(
     'title' => 'Settings SMS',
-    'type' => MENU_DEFaULT_LOCaL_TaSK,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
     'weight' => -10,
   );
 
-  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/setting_mail'] = array(
+  $items[CRON_NOTIFICATION_aDMIN_PATH . '/setting_mail'] = array(
     'title' => 'Setting Mail',
     'description' => 'administer your Cron Notification Mail',
     'page callback' => 'drupal_get_form',
@@ -93,36 +93,36 @@ function cron_notification_menu() {
     'weight' => 10,
   );
 
-  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/sms'] = array(
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/sms'] = array(
     'title' => 'Sending SMS',
     'description' => 'administer your Cron Notification SMS',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_admin_sms_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCaL_TaSK,
+    'type' => MENU_LOCAL_TASK,
     'weight' => -5,
   );
 
-  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/mail'] = array(
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/mail'] = array(
     'title' => 'Sending Mail',
     'description' => 'administer your Cron Notification mail settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_admin_mail_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCaL_TaSK,
+    'type' => MENU_LOCAL_TASK,
     'weight' => 5,
   );
 
-  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/kannel'] = array(
+  $items[CRON_NOTIFICATION_ADMIN_PATH . '/kannel'] = array(
     'title' => 'Settings Kannel',
     'description' => 'Kannel Basic Settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_kannel_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCaL_TaSK,
+    'type' => MENU_LOCAL_TASK,
     'weight' => 15,
   );
 
@@ -135,7 +135,7 @@ function cron_notification_menu() {
 */
 function cron_notification_cron() {
   # For sms notification
-  $code = variable_get('cron_notification_country_codes', FaLSE)[221];
+  $code = variable_get('cron_notification_country_codes', FALSE)[221];
   $body_sms = variable_get('cron_notification_sms_text');
   #For mail notification 
   $subject = variable_get('cron_notification_mail_subject');
@@ -199,10 +199,10 @@ function cron_notification_cron() {
     if(/*$date >= $fin_contrat && $date <= $date_majorant*/TRUE){
       if(in_array("MaIL", $choice)){
         # send email
-        krumong('main')->kPrint($body_mail, 'body mail');
+        //krumong('main')->kPrint($body_mail, 'body mail');
         cron_notification_send_mail($client->mail, $subject, $body_mail);      
       }    
-      if (($library = libraries_load(TWILIO_LIBRaRY)) &&
+      if (($library = libraries_load(TWILIO_LIBRARY)) &&
            !empty($library['loaded']) &&
            in_array("SMS", $choice)) {
         # send sms
