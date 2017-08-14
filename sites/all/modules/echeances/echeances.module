@@ -25,14 +25,14 @@ function echeances_block_view($delta = '') {
   	$output = '';
 
   	$table = array(
-	  	'thead' = array(
+	  	'thead' => array(
 	  		'NumContrat' => t('N° Contrat'),
 	  		'produit' => t('Produit'),
 	  		'caracteristiques' => t('Caractéristiques'),
 	  		'mode_echeance' => t('Mode d\'echeance'),
 	  		'prochaine_echeance' => t('Prochaine échéance'),
 	  	),
-	  	'tbody' = array(
+	  	'tbody' => array(
 	  		array(
 		  	    'NumContrat' => t('10245520'),
 		  		'produit' => t('Oplus LIFE-Equatoria'),

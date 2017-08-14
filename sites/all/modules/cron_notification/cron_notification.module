@@ -89,7 +89,7 @@ function cron_notification_menu() {
     'page arguments' => array('cron_notification_admin_settings_mail_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCaL_TASK,
+    'type' => MENU_LOCAL_TASK,
     'weight' => 10,
   );
 
