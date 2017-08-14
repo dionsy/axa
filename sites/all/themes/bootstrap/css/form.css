@@ -179,6 +179,7 @@ form div:first-child{
     transform: translateX(17%);
     width: 75%;
 }
+#commerce-checkout-form-review div:first-child,
 #commerce-checkout-form-checkout div:first-child{
     width: auto ;
      transform: none !important;
