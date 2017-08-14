@@ -31,9 +31,13 @@ function paiement_commerce_checkout_complete($order) {
 		}
 
 		$invoice = new Paydunya_Checkout_Invoice();
+
 	 	$invoice->addItem($title, $quantity,$price, $totalOrder); //Envoie à Paydunya les infos de la commande
+
 		$invoice->setTotalAmount($totalOrder); // Envoie à Paydunya le montant total de la commande
+		
 		variable_set('token',$invoice->token);
+		
 		if( $invoice->create()) {
 			$url = 'https://paydunya.com/sandbox-checkout/invoice/'.$invoice->token;	
 		  	drupal_goto($url);
