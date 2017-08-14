@@ -7,7 +7,7 @@
 /**
  * Define constants for cron_notification
  */
-define('CRON_NOTIFICATION_ADMIN_PATH', 'admin/config/system/cron_notification');
+define('CRON_NOTIFICaTION_aDMIN_PaTH', 'admin/config/system/cron_notification');
 
 
 
@@ -43,7 +43,7 @@ function cron_notification_libraries_info() {
     'version' => '5.2.23',
     'files' => array(
       'php' => array(
-        'PHPMailerAutoload.php',
+        'PHPMailerautoload.php',
       ),
     ),
   );
@@ -57,7 +57,7 @@ function cron_notification_libraries_info() {
 function cron_notification_permission() {
   return array(
     'administer  cron_notification' => array(
-    'title' => t('Administer cron notification'),
+    'title' => t('administer cron notification'),
     'description' => t('Perform administration tasks for cron notification.'),
     ),
   );
@@ -67,62 +67,62 @@ function cron_notification_permission() {
  * Implements hook_menu()
  */
 function cron_notification_menu() {
-  $items[CRON_NOTIFICATION_ADMIN_PATH] = array(
+  $items[CRON_NOTIFICaTION_aDMIN_PaTH] = array(
     'title' => 'Cron Notification Settings',
-    'description' => 'Administer your Cron Notification sms settings',
+    'description' => 'administer your Cron Notification sms settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_admin_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
   );
 
-  $items[CRON_NOTIFICATION_ADMIN_PATH . '/settings_sms'] = array(
+  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/settings_sms'] = array(
     'title' => 'Settings SMS',
-    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'type' => MENU_DEFaULT_LOCaL_TaSK,
     'weight' => -10,
   );
 
-  $items[CRON_NOTIFICATION_ADMIN_PATH . '/setting_mail'] = array(
+  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/setting_mail'] = array(
     'title' => 'Setting Mail',
-    'description' => 'Administer your Cron Notification Mail',
+    'description' => 'administer your Cron Notification Mail',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_admin_settings_mail_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_LOCaL_TaSK,
     'weight' => 10,
   );
 
-  $items[CRON_NOTIFICATION_ADMIN_PATH . '/sms'] = array(
+  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/sms'] = array(
     'title' => 'Sending SMS',
-    'description' => 'Administer your Cron Notification SMS',
+    'description' => 'administer your Cron Notification SMS',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_admin_sms_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_LOCaL_TaSK,
     'weight' => -5,
   );
 
-  $items[CRON_NOTIFICATION_ADMIN_PATH . '/mail'] = array(
+  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/mail'] = array(
     'title' => 'Sending Mail',
-    'description' => 'Administer your Cron Notification mail settings',
+    'description' => 'administer your Cron Notification mail settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_admin_mail_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_LOCaL_TaSK,
     'weight' => 5,
   );
 
-  $items[CRON_NOTIFICATION_ADMIN_PATH . '/kannel'] = array(
+  $items[CRON_NOTIFICaTION_aDMIN_PaTH . '/kannel'] = array(
     'title' => 'Settings Kannel',
     'description' => 'Kannel Basic Settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('cron_notification_kannel_form'),
     'access arguments' => array('administer cron_notification'),
     'file' => 'cron_notification.admin.inc',
-    'type' => MENU_LOCAL_TASK,
+    'type' => MENU_LOCaL_TaSK,
     'weight' => 15,
   );
 
@@ -135,7 +135,7 @@ function cron_notification_menu() {
 */
 function cron_notification_cron() {
   # For sms notification
-  $code = variable_get('cron_notification_country_codes', FALSE)[221];
+  $code = variable_get('cron_notification_country_codes', FaLSE)[221];
   $body_sms = variable_get('cron_notification_sms_text');
   #For mail notification 
   $subject = variable_get('cron_notification_mail_subject');
@@ -168,7 +168,7 @@ function cron_notification_cron() {
     # Notification periode
     $periode = $values[$uid][$uid][2][0];
     # Defaults values
-    $choice = isset($choice) ? $choice : array("SMS","MAIL");
+    $choice = isset($choice) ? $choice : array("SMS","MaIL");
     $periode = isset($periode) ? $periode : 0;
 
     # Today
@@ -182,21 +182,31 @@ function cron_notification_cron() {
     # To limit the notification to one day:
     $date_majorant = new DateTime($date_fin); 
     $date_majorant->add(new DateInterval('P1D'));
-    
-    $lien = 'www.axa.sn';
-    $body_sms = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
-    $body_mail = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
 
-    if($date >= $fin_contrat && $date <= $date_majorant){
-      if(in_array("MAIL", $choice)){
+    
+    global $base_url;
+    $logo_url = theme_get_setting('logo_path');
+    $src=explode('public://', $logo_url);
+    $lien = 'www.axa.sn';
+    //$body_mail->addEmbeddedImage($base_url .'/sites/default/files/'.$src[1], "my-attach", "logo_axa_ci_1.jpg");
+    $logo = '<img alt="img_mail" src="cid:my-attach">';
+
+
+
+    $body_sms = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
+
+    $body_mail = $logo .'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
+    if(/*$date >= $fin_contrat && $date <= $date_majorant*/TRUE){
+      if(in_array("MaIL", $choice)){
         # send email
+        krumong('main')->kPrint($body_mail, 'body mail');
         cron_notification_send_mail($client->mail, $subject, $body_mail);      
       }    
-      if (($library = libraries_load(TWILIO_LIBRARY)) &&
+      if (($library = libraries_load(TWILIO_LIBRaRY)) &&
            !empty($library['loaded']) &&
            in_array("SMS", $choice)) {
         # send sms
-        cron_notification_send_kannel_sms($number_client, $body_sms);        
+        //cron_notification_send_kannel_sms($number_client, $body_sms);        
       }
 
     }
@@ -215,7 +225,7 @@ function cron_notification_cron() {
  *   The message to send to the recipient
  *
  * @return bool
- *   TRUE or FALSE if the message was successfully sent.
+ *   TRUE or FaLSE if the message was successfully sent.
  */
 function cron_notification_twilio_sms($number_client, $body){
   # get value from the admin form 
@@ -233,11 +243,11 @@ function cron_notification_twilio_sms($number_client, $body){
               'Body' => $body,
           ));
   if($client){
-    krumong('main')->kPrint('A SMS notification has been sent to:' . $number_client);
+    krumong('main')->kPrint('a SMS notification has been sent to:' . $number_client);
     return $client;
   }
   else{
-    krumong('main')->kPrint('A SMS notification has not been sent to:' . $number_client);
+    krumong('main')->kPrint('a SMS notification has not been sent to:' . $number_client);
     return $client;
   }
 }
@@ -252,7 +262,7 @@ function cron_notification_twilio_sms($number_client, $body){
  *   The message to send to the recipient
  *
  * @return bool
- *   TRUE or FALSE if the message was successfully sent.
+ *   TRUE or FaLSE if the message was successfully sent.
  */
 function cron_notification_send_kannel_sms($to, $message){
   $sms_to      = $to;
@@ -269,7 +279,7 @@ function cron_notification_send_kannel_sms($to, $message){
   $kannel_url .= '&to='. $sms_to;
   $kannel_url .= '&text=' . $sms_message ;
         
-  return $result = file_get_contents("$kannel_url") && $result === '0: Accepted for delivery';
+  return $result = file_get_contents("$kannel_url") && $result === '0: accepted for delivery';
   
 }
 
@@ -287,7 +297,7 @@ function cron_notification_send_kannel_sms($to, $message){
  *   The body message
  *
  * @return bool
- *   TRUE or FALSE if the message was successfully sent.
+ *   TRUE or FaLSE if the message was successfully sent.
  */
 function cron_notification_send_mail($to, $subject, $body){
   $host = variable_get('cron_notification_mail_smtp');
@@ -303,7 +313,7 @@ function cron_notification_send_mail($to, $subject, $body){
   # Specify main and backup SMTP servers                             
   $mail->Host = $host;
   # Enable SMTP authentication  
-  $mail->SMTPAuth = true;                      
+  $mail->SMTPauth = true;                      
   
   # SMTP username 
   $mail->Username = $username;
@@ -314,22 +324,22 @@ function cron_notification_send_mail($to, $subject, $body){
   # TCP port to connect to           
   $mail->Port = $port;                          
 
-  # Add a recipient
-  $mail->addAddress($to);
-  $mail->setFrom('noreplay@axa.sn', 'Support Team AXA');
+  # add a recipient
+  $mail->addaddress($to);
+  $mail->setFrom('noreplay@axa.sn', 'Support Team aXa');
   # Set email format to HTML     
   $mail->isHTML(true);                                           
 
   $mail->Subject = $subject;
   $mail->Body    = $body;
-  $mail->AltBody = $altbody;
+  $mail->altBody = $altbody;
 
   if($mail->send()){
-    krumong('main')->kPrint('A Mail notification has been sent to:' . $to);
+    krumong('main')->kPrint('a Mail notification has been sent to:' . $to);
     return TRUE;
   }
   else{
-    krumong('main')->kPrint('A Mail notification has not been sent to:' . $to);
+    krumong('main')->kPrint('a Mail notification has not been sent to:' . $to);
     return $client;
   }
   

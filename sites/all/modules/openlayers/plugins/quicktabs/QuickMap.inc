@@ -41,8 +41,12 @@ class QuickMap extends QuickContent {
   }
 
   public function getAjaxKeys() {
-    return array('map');
+    //return array('map');
   }
+  
+  /*+*/
+  public function getUniqueKeys() {}
+  /*end + */
 
 }
 
