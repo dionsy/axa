@@ -18,7 +18,7 @@ function echeances_block_view($delta = '') {
   if ($delta == 'echeances') {
   	$title_echeance = t('Mes échéances');
   	$title_p = t('Situation au 14/08/2017'); 
-  	$title = '<h2>'. $title_echeance .'</h2>'
+  	$title = '<h2>'. $title_echeance .'</h2>';
   	$title .= '<p>'. $title_p .'</p>';
   	$text_prime = t("Dates des prochaines primes à payer pour vos contrat d'assurance");
   	$text_contact = t('Pour toute information supplémentaire contacter votre conseiller');
