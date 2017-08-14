@@ -502,10 +502,10 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 }
 .node-type-webform h1.page-header {
     background-color: #004d92;
-    font: 30px Arial;
+    font-size: 2.5rem;
     letter-spacing: 0.4px;
     text-align: center;
-    text-transform: capitalize;
+ /*   text-transform: capitalize;*/
     border-radius: 10px 0;
     border: 1px solid;
     border-color:#ED1846;
@@ -931,5 +931,37 @@ form#user-register-form {
 /*-----------Page de confirmation webform-------*/
 .page-node-done .page-header{
     text-align: center !important;
-    color: #fff !important;
+    color: #004D92 !important;
+    background: none !important;
+    border:none;
+    margin-top: 2rem;
+    font-size: 2.4rem;
+}
+
+.webform-confirmation{
+    text-align: center;
+    width: auto;
+    max-width: 35%;
+    margin: 0 auto;
+}
+
+.webform-confirmation .fa-check-circle{
+    color: #74C421;
+    font-size: 6rem;
+}
+.webform-confirmation p{
+    margin-bottom: 1.8rem
+}
+.confir{
+    color: #666;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+.cons_contact{
+    color: #004D92;
+    font-weight: bold;
+    line-height: 3rem;
+}
+.page-node-done .breadcrumb{
+    display: none !important;
 }

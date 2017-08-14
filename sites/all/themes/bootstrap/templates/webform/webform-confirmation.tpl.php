@@ -19,13 +19,14 @@
  * - $url: The URL of the form (or for in-block confirmations, the same page).
  */
 ?>
-<?php print $progressbar; ?>
+<?php //print $progressbar; ?>
 
 <div class="webform-confirmation">
   <?php if ($confirmation_message): ?>
     <?php print $confirmation_message ?>
-  <?php else: ?>
-    <p><?php print t('Thank you, your submission has been received.'); ?></p>
-    <p><?php print t('A counselor will contact you within 48 hours for a personalized study.'); ?></p>
+  <?php else: ?>	
+	<i class="fa fa-check-circle" aria-hidden="true"></i>
+    <p class="confir"><?php print t('Thank you, your submission has been received.'); ?></p>
+    <p class="cons_contact"><?php print t('A counselor will contact you within 48 hours for a personalized study.'); ?></p>
   <?php endif; ?>
 </div>
