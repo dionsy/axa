@@ -172,6 +172,20 @@
               <ul class="action-links"><?php print render($action_links); ?></ul>
             <?php endif; ?>
             <?php print render($page['content']); ?>
+
+            <?php
+              global $user; 
+              global $base_url; 
+              $userUID = $user->uid; 
+              if(empty($userUID)){
+                $href= $base_url.'/user';
+              }
+              else{
+                $href=$base_url.'node/12';
+              }
+              print '<div class="sinistre"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
+            ?>
+
         </section>
 
     </div>

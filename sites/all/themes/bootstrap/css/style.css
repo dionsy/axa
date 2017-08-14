@@ -1687,8 +1687,8 @@ h1, .h1, h2, .h2, h3, .h3{
     text-align: center;
     margin-top: 1em;
 }
-#block-views-declaration-sinistre-block ul{margin: 0;}
-#block-views-declaration-sinistre-block li a{
+
+.sinistre a{
     color: #004D92;
     padding:1em;
     display: block;
