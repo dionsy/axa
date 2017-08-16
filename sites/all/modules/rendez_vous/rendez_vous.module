@@ -1,0 +1,87 @@
+<?php
+/**
+ * Implements hook_block_info()
+ */
+function rendez_vous_block_info() {
+  return array(
+    'rendez_vous' => array(
+      'info' => t('Rendez-vous avec le conseiller'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function rendez_vous_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'rendez_vous') {	
+    $block['subject'] = '<header>'. 'Fixer un rendez vous avec mon conseiller' .'</header>';
+    $block['content'] = drupal_get_form('fixer_rendez_vous_form');
+  }
+
+  return $block;
+}
+
+/**
+ * fixer_rendez_vous_form
+ */
+function fixer_rendez_vous_form($form, &$form_state){
+
+  $form['objet'] = array(
+    '#type' => 'select',
+    '#title' => t('Objet du contrat'),
+    '#options' => array(
+      0 => t('Souscription d\'un nouveau contrat'),
+      1 => t('Demande d\'information'),
+    ), 
+    '#required' => TRUE,
+  );
+  $form['demande'] = array(
+    '#title' => t('Demande'),
+    '#type' => 'textarea',
+    '#description' => t('funny, bungee jumping, "Company, Inc."'),
+    '#default_value' => t('Bonjour je souhaite souscrire un contrat, merci de me contacter pour discuter des solutions proposées.'),
+    '#required' => TRUE,
+  );
+
+  $form['moyen_contact'] = array(
+    '#type' => 'select',
+    '#title' => t('Je souhaite être contacter par'),
+    '#options' => array(
+      'SMS' => t('SMS'),
+      'EMAIL' => t('Email'),
+    ), 
+    '#required' => TRUE,
+  );
+
+  $form['date'] = array(
+    '#type' => 'textfield', 
+    '#title' => t('Dans la journée de'), 
+    '#default_value' => '10/10/2017', 
+    '#required' => TRUE,
+  );
+
+  $form['horaire'] = array(
+    '#type' => 'select',
+    '#title' => t('Aux horaires suivants'),
+    '#options' => array(
+      0 => t('08h-13h'),
+      1 => t('16h-18h'),
+    ),
+    '#required' => TRUE,
+  );
+
+
+  $form['submit'] = array(
+    '#type' => 'submit', 
+    '#title' => 'Enregistrer',
+  );
+
+  $form['#submit'][] = 'fixer_rendez_vous_form_submit';
+
+  
+  return system_settings_form($form);
+
+}

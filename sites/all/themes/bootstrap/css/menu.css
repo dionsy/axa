@@ -1937,3 +1937,9 @@ li.assurance_voyage a:before,
     width: 80%;
     color: rgb(0, 0, 0);
 }
+/*** font awesome ***/
+.telechargement-contrat a:after{
+    font-family: 'FontAwesome';
+    content: "\f019";
+    font-size: 16px;
+}

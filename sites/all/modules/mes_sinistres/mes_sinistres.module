@@ -25,7 +25,7 @@ function mes_sinistres_block_view($delta = '') {
     $title .= '<h2>'. $title_sinistre .'</h2>';
     $title .= '<p>'. $title_p .'</p>';
 
-    $table = array(
+    $table_auto = array(
       'thead' => array(
         'date_survenance' => 'Date survenance',
         'numero_sinistre' => 'N° Sinistre',
@@ -48,6 +48,23 @@ function mes_sinistres_block_view($delta = '') {
       ),
     );
 
+    $table_habitation = array(
+      'thead' => array(
+        'date_survenance' => 'Date survenance',
+        'numero_sinistre' => 'N° Sinistre',
+        'evenements' => t('Evénements'),
+        'status' => t('Terminé'),
+      ),
+      'tbody' => array(
+        array(
+          'date_survenance' => '11/01/2015',
+          'numero_sinistre' => '2500145780',
+          'evenements' => 'Dégat des eaux',
+          'status' => t('Terminé'),    
+        ),
+      ),
+    );
+
     $get_service_sinistres = array(
       array(
         'type' => 'Auto',
@@ -55,7 +72,7 @@ function mes_sinistres_block_view($delta = '') {
                   'numero_contrat' => '251463987',
                   'info_sup' => 'Immatriculation LU2667',
                 ),
-        'tableau' => $table,
+        'tableau' => $table_auto,
       ),
       array(
         'type' => 'Habitation',
@@ -63,7 +80,7 @@ function mes_sinistres_block_view($delta = '') {
                   'numero_contrat' => '251463987',
                   'info_sup' => 'Adresse: Gueule tapée Rue 67*52',
                 ),
-        'tableau' => $table,
+        'tableau' => $table_habitation,
       ),
 
     );
@@ -71,9 +88,33 @@ function mes_sinistres_block_view($delta = '') {
     foreach ($get_service_sinistres as $sinistre) {
       # code...
       $output .= '<div class="item-type-sinistre">';
-      $output .=    '<h3 class="title-sinistre">';
-      $output .=        'Suivi de vos sinistre '. $sinistre['type'];
-      $output .=    '</h3>';
+      $output .=   '<h3 class="title-sinistre">';
+      $output .=     'Suivi de vos sinistre '. $sinistre['type'];
+      $output .=   '</h3>';
+      $output .=   '<div class="item-info-contrat">';
+      $output .=      '<h3>';
+      $output .=        'Contrat '. $sinistre['id']['numero_contrat'] . ' / '. $sinistre['id']['info_sup'];
+      $output .=      '</h3>';
+      $output .= '<table class="table table-bordered">';
+      $output .=   '<thead>';
+      foreach ($sinistre['tableau']['thead'] as $key => $value) {
+        # code...
+          $output .=     '<th>'. $value .'</th>';
+      }
+      $output .=   '</thead>';
+      $output .=   '<tbody>';
+      foreach ($sinistre['tableau']['tbody'] as $tables) {
+        # code...
+        $output .= '<tr>';
+        foreach ($tables as $key => $value) {
+          # code...
+          $output .=   '<td>'. $value .'</td>';
+        }
+        $output .= '</tr>';
+      }
+      $output .=       '</tbody>';
+      $output .=     '</table>';   
+      $output .=   '</div>';
       $output .= '</div>';
     }
     
