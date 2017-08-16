@@ -1,0 +1,6 @@
+name = Mes sinistres block
+description = Cette module affiches les sinistres du client.
+package = Atos
+version = 7.x-1
+core = 7.x
+files[] = mes_sinistres.module

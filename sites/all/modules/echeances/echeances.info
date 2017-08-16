@@ -1,6 +1,6 @@
 name = Echeance block
 description = Cette module affiches les echeances du client.
-package = Drupal 7 Development
+package = Atos
 version = 7.x-1
 core = 7.x
 files[] = echeances.module

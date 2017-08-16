@@ -1,0 +1,87 @@
+<?php
+/**
+ * Implements hook_block_info()
+ */
+function mes_sinistres_block_info() {
+  return array(
+    'mes_sinistres' => array(
+      'info' => t('Sinistres client'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function mes_sinistres_block_view($delta = '') {
+  if ($delta == 'mes_sinistres') {
+    $title = '';
+  	$output = '';
+
+    $title_sinistre = t('Mes Sinistres');
+    $title_p = t('Suivi de mes déclérations sinistres'); 
+    
+    $title .= '<h2>'. $title_sinistre .'</h2>';
+    $title .= '<p>'. $title_p .'</p>';
+
+    $table = array(
+      'thead' => array(
+        'date_survenance' => 'Date survenance',
+        'numero_sinistre' => 'N° Sinistre',
+        'evenements' => t('Evénements'),
+        'status' => t('Terminé'),
+      ),
+      'tbody' => array(
+        array(
+          'date_survenance' => '10/07/2017',
+          'numero_sinistre' => '2501457882',
+          'evenements' => 'Bris de Glace',
+          'status' => t('Terminé'),    
+        ),
+        array(
+          'date_survenance' => '10/07/2016',
+          'numero_sinistre' => '2501478923',
+          'evenements' => 'Collision entre vehicules',
+          'status' => t('Terminé'),
+        ),
+      ),
+    );
+
+    $get_service_sinistres = array(
+      array(
+        'type' => 'Auto',
+        'id' => array(
+                  'numero_contrat' => '251463987',
+                  'info_sup' => 'Immatriculation LU2667',
+                ),
+        'tableau' => $table,
+      ),
+      array(
+        'type' => 'Habitation',
+        'id' => array(
+                  'numero_contrat' => '251463987',
+                  'info_sup' => 'Adresse: Gueule tapée Rue 67*52',
+                ),
+        'tableau' => $table,
+      ),
+
+    );
+
+    foreach ($get_service_sinistres as $sinistre) {
+      # code...
+      $output .= '<div class="item-type-sinistre">';
+      $output .=    '<h3 class="title-sinistre">';
+      $output .=        'Suivi de vos sinistre '. $sinistre['type'];
+      $output .=    '</h3>';
+      $output .= '</div>';
+    }
+    
+    return array(
+      'subject' => '<header>'. $title .'</header>',
+      'content' => (!empty($output)) ? '<div class="sinistre_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
+    );
+  }
+
+  return array();
+}

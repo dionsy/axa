@@ -40,6 +40,20 @@ function echeances_block_view($delta = '') {
 		  		'mode_echeance' => t('Mensuelle'),
 		  		'prochaine_echeance' => t('01/09/2017'),		
 	  		),
+	  		array(
+		  	    'NumContrat' => t('1254885222'),
+		  		'produit' => t('Oplus LIFE-Equatoria'),
+		  		'caracteristiques' => t('je ne sais pas'),
+		  		'mode_echeance' => t('Mensuelle'),
+		  		'prochaine_echeance' => t('01/09/2017'),		
+	  		),
+	  		array(
+		  	    'NumContrat' => t('125460'),
+		  		'produit' => t('Oplus LIFE-Equatoria'),
+		  		'caracteristiques' => t('dfsdfsd'),
+		  		'mode_echeance' => t('Mensuelle'),
+		  		'prochaine_echeance' => t('01/09/2017'),		
+	  		),
 	  	),
   	); 
 
@@ -64,7 +78,7 @@ function echeances_block_view($delta = '') {
     	$output .= '</tr>';
     }
     $output .=   '</tbody>';
-    $output .= '</table';
+    $output .= '</table>';
     $output .= '<p>'. $text_contact .'</p>';
     return array(
       'subject' => '<header>'. $title .'</header>',
