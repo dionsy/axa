@@ -172,7 +172,8 @@
               <ul class="action-links"><?php print render($action_links); ?></ul>
             <?php endif; ?>
             <?php print render($page['content']); ?>
-
+        </section>
+    </div>
             <?php
               global $user; 
               global $base_url; 
@@ -181,14 +182,11 @@
                 $href= $base_url.'/user';
               }
               else{
-                $href=$base_url.'node/12';
+                $href=$base_url.'/node/12';
               }
               print '<div class="sinistre"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
             ?>
 
-        </section>
-
-    </div>
                 <?php //} ?>
                   <?php if (!empty($page['sidebar_second'])): ?>
                      <aside class="col-sm-3" role="complementary">
