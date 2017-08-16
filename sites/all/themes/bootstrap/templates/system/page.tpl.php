@@ -182,7 +182,7 @@
                 $href= $base_url.'/user';
               }
               else{
-                $href=$base_url.'node/12';
+                $href=$base_url.'/node/12';
               }
               print '<div class="sinistre"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
             ?>
