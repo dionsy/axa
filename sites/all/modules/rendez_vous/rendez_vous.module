@@ -1,0 +1,109 @@
+<?php
+/**
+ * Implements hook_block_info()
+ */
+function rendez_vous_block_info() {
+  return array(
+    'rendez_vous' => array(
+      'info' => t('Rendez-vous avec le conseiller'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function rendez_vous_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'rendez_vous') {	
+    $block['subject'] = '<header>'. 'Fixer un rendez vous avec le conseiller' .'</header>';
+    $block['content'] = drupal_get_form('fixer_rendez_vous_form');
+  }
+
+  return $block;
+}
+
+/**
+ * fixer_rendez_vous_form
+ */
+function fixer_rendez_vous_form($form, &$form_state){
+  global $user;
+  $user_load = user_load($user->uid);
+
+  $form['titre'] = array(
+  '#type' => 'fieldset', 
+  '#title' => t('Mes Informations Personnelles'), 
+  );
+  
+  $form['nom'] = array(
+    '#type' => 'textfield', 
+    '#title' => 'Nom',
+    '#default_value' => $user_load->name,
+    '#required' => TRUE,
+  );
+
+  $form['email'] = array(
+    '#type' => 'textfield', 
+    '#title' => 'Email',
+    '#default_value' => $user_load->mail,
+    '#required' => TRUE,
+  );
+
+  $form['telephone'] = array(
+    '#type' => 'textfield', 
+    '#title' => 'Téléphone',
+    '#default_value' => $user_load->field_numero_telephone['und'][0]['value'],
+    '#required' => TRUE,
+  );
+
+  $form['change_pass'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Changer de code confidentiel'),
+  );
+
+  $form['pass'] = array(
+    '#title' => t('Change Password'),
+    '#type' => 'fieldset',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="change_pass"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+
+  $form['pass']['pass'] = array(
+    '#type' => 'password', 
+    '#title' => 'Ancien code confidentiel', 
+    '#maxlength' => 64, 
+    '#size' => 15,
+    '#required' => FALSE,
+  );
+
+  $form['pass']['pass1'] = array(
+    '#type' => 'password', 
+    '#title' => 'Nouveau code confidentiel', 
+    '#maxlength' => 64, 
+    '#size' => 15,
+    '#required' => FALSE,
+  );
+
+  $form['pass']['pass2'] = array(
+    '#type' => 'password', 
+    '#title' => t('Confirme code confidentiel'), 
+    '#maxlength' => 64, 
+    '#size' => 15,
+    '#required' => FALSE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit', 
+    '#title' => 'Enregistrer',
+  );
+
+  $form['#submit'][] = 'form_information_form_submit';
+
+  
+  return system_settings_form($form);
+
+}
