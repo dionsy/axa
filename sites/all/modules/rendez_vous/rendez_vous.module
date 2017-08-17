@@ -16,8 +16,10 @@ function rendez_vous_block_info() {
  */
 function rendez_vous_block_view($delta = '') {
   $block = array();
-  if ($delta == 'rendez_vous') {	
-    $block['subject'] = '<header>'. 'Fixer un rendez vous avec mon conseiller' .'</header>';
+  if ($delta == 'rendez_vous') {
+    $nom_conseiller = "Aliou Samba WELE";
+    $block['subject'] = '<p>'. 'Fixer un rendez vous avec mon conseiller' .'</p>';
+    $block['subject'] .= '<span>'. $nom_conseiller . '</span>'; 
     $block['content'] = drupal_get_form('fixer_rendez_vous_form');
   }
 
@@ -78,9 +80,11 @@ function fixer_rendez_vous_form($form, &$form_state){
   $form['submit'] = array(
     '#type' => 'submit', 
     '#title' => 'Enregistrer',
+    '#value' => 'ppapa',
   );
-
+  
   $form['#submit'][] = 'fixer_rendez_vous_form_submit';
+
 
   
   return system_settings_form($form);

@@ -25,7 +25,7 @@
 }
 
 /*** mes echéances ***/
-#block-echeances-echeances .block-title, #block-mes-sinistres-mes-sinistres .block-title {
+#block-echeances-echeances .block-title, #block-mes-sinistres-mes-sinistres .block-title, #block-rendez-vous-rendez-vous .block-title {
     padding: 6px 3% 32px 3%;
     margin-bottom: 0px;
     box-shadow: 0 -1px 0 0 #eee inset;
@@ -40,12 +40,12 @@
     background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
 }
 
-#block-echeances-echeances .block-title p, #block-mes-sinistres-mes-sinistres .block-title p {
+#block-echeances-echeances .block-title p, #block-mes-sinistres-mes-sinistres .block-title p, #block-rendez-vous-rendez-vous .block-title p {
     font-size: 30px;
     padding-top: 20px;
 }
 
-#block-echeances-echeances .block-title span {
+#block-echeances-echeances .block-title span{
     font-size: 14px;
 	font-weight: normal;
 	color: #666;
@@ -115,4 +115,96 @@
 
 .webform-client-form-86 .webform-submit{
 	margin-left: 2%;
+}
+
+/*** fixer un rendez vous ***/
+#block-rendez-vous-rendez-vous .block-title span {
+	font-weight: normal;
+	color: #005399;
+}
+
+form#fixer-rendez-vous-form div:first-child{
+	transform: none;
+	width: auto;
+}
+
+form#fixer-rendez-vous-form {
+    margin: 3%;
+    border: 1px solid #fcfcfc;
+}
+
+form#fixer-rendez-vous-form div.form-group {
+    margin-bottom: 0px;
+}
+
+form#fixer-rendez-vous-form div.form-group label{
+    border:1px solid #fcfcfc;
+    border-right: 1px solid #eee;
+    margin-bottom: 0px;
+}
+
+form#fixer-rendez-vous-form div.form-group{
+    border:1px solid #eee;
+    margin-bottom: 0px;
+}
+form#fixer-rendez-vous-form div.form-item-demande .control-label{
+	border-bottom: 1px solid #eee;
+}
+
+form#fixer-rendez-vous-form div.form-group .control-label{
+	float: left;
+	width: 50%;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+	font-weight: normal;
+}
+form#fixer-rendez-vous-form div.form-group .form-control{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    border: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+    line-height: 15px;
+    margin-left: 0px !important;
+    margin-top: 0px;
+    width: auto;
+    background: #ffffff;
+    height: 20px;
+    padding: 3px;
+    vertical-align: inherit;
+    transition: none;
+    margin-left: 0px !important;
+}
+
+form#fixer-rendez-vous-form #edit-submit--5{
+	display: none;
+}
+
+form#fixer-rendez-vous-form .form-item-demande .control-label {
+    width: 100% !important;
+}
+
+form#fixer-rendez-vous-form .form-item-demande #edit-demande {
+    width: 96% !important;
+    height: 100% !important;
+    margin: 2% !important;
+    border: 1px solid #eee; 
+}
+
+form#fixer-rendez-vous-form .grippie{
+	display: none;
+}
+
+form#fixer-rendez-vous-form #edit-submit--6 {
+    margin-left: 30%;
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+form#fixer-rendez-vous-form #edit-actions--4 {
+    border: 0 !important;
 }
