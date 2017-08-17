@@ -1842,13 +1842,19 @@ input.nmpd-display {
     margin-top: 2rem;
     text-transform: uppercase;
 }
-#block-menu-menu-mon-axa ul{
-    text-align: center;
-}
-#block-menu-menu-mon-axa li{
+
+  #views-exposed-form-bandeau-mon-axa-block-1 .form-item{
     display: inline-block;
 }
 
-#block-menu-menu-mon-axa li a{
+ #views-exposed-form-bandeau-mon-axa-block-1 .form-item a{
     padding: 0 1rem;
  }
+
+ #views-exposed-form-bandeau-mon-axa-block-1 div:first-child{
+    transform: none;
+    width: auto;
+    text-align: center;
+    float: none;
+ }
+
