@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Axa Service Configuration feature.
+ */
+
+include_once 'axa_service_configuration.features.inc';
