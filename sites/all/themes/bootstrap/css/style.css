@@ -1781,25 +1781,29 @@ h1, .h1, h2, .h2, h3, .h3{
 
 .nmpd-wrapper {
     display: none;
+    margin-top: 10px;
 }
 .nmpd-target {
     cursor: pointer;
 }
 .nmpd-grid {
-    position:absolute;
+    position: relative;
+     box-shadow: none  !important;
+     border: none !important; 
+   /* 
     left:50px;
-    top:50px;
-    z-index:5000;
- z-indexkhtml-user-select: none;
-    border: medium none;
+    top:50px;*/
+/*    z-index:5000;
+ z-indexkhtml-user-select: none;*/
+   /* border: medium none;
     padding: 20px;
-    width: initial;
+    width: initial;*/
 }
 .nmpd-overlay {
     z-index:4999;
 }
 input.nmpd-display {
-    text-align: right;
+    text-align: left;
 }
 .nmpd-grid tr {
     background-color: transparent ! important;
@@ -1810,6 +1814,21 @@ input.nmpd-display {
 .nmpd-grid .numero {
     background-color: #00529B;
     color: #fff;
+    font-size: 1.5em;
+     padding: 14px 25px !important;
+}
+.cancel.btn ,.clear.btn {
+    
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    height: 60px;
+}
+.cancel.btn  {
+    background: rgb(71, 168, 13) none repeat scroll 0 0;
+}
+.clear.btn   {
+    background: rgb(237, 24, 70);
+}
 }
 
 .page-node-114 .fond{
