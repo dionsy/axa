@@ -1,0 +1,6 @@
+name = Mes Contrat Block
+description = Cette module permet de lister tous les contrats du client.
+package = Atos
+version = 7.x-1
+core = 7.x
+files[] = mes_contrats.module

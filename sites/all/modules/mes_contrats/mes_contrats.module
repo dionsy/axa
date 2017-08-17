@@ -1,0 +1,92 @@
+<?php
+/**
+ * Implements hook_block_info()
+ */
+function mes_contrats_block_info() {
+  return array(
+    'mes_contrats' => array(
+      'info' => t('Contrats client'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function mes_contrats_block_view($delta = '') {
+  if ($delta == 'mes_contrats') {
+    $title = '';
+  	$output = '';
+
+    $get_service_contrats = array(
+      array(
+        'type' => 'Auto',
+        'info' => array(
+                    array(
+                      'id' =>'25123596870',
+                      'produit' => 'AUTO ECO',
+                      'marque' => 'BMW',
+                    ),
+                    array(
+                      'id' =>'25456789321',
+                      'produit' => 'SOLUTION CONFORT',
+                      'marque' => 'Mercedes',
+                    ),
+                  ),
+      ),
+
+      array(
+        'type' => 'Habitation',
+        'info' => array(
+                    array(
+                      'id' =>'25456789321',
+                      'produit' => 'MRH PREMIUM',
+                      'adresse' => 'Mermoz',
+                    ),
+                  ),
+      ),
+
+    );
+
+    $title .= '<h2>';
+    $title .=   t('Mes Contrats');
+    $title .= '</h2>';
+
+    $output .= '<div class="item-mes-contrats">';
+    foreach ($get_service_contrats as $contrat) {
+      # code...
+      $output .=   '<h3>';
+      $output .=     'Assurance '. $contrat['type'];
+      $output .=   '</h3>';
+      $output .=   '<div class="row item-contrat">';
+      foreach ($contrat['info'] as $informations) {
+        # code...
+        foreach ($informations as $key => $value) {
+          # code...
+          $output .=     '<div class="col-lg-3">';
+          $output .=       '<span>'. $value .'</span>';      
+          $output .=     '</div>';  
+        }
+        $output .=     '<div class="col-lg-1 telechargement-contrat">';
+        $output .=       '<a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>';      
+        $output .=     '</div>';
+        $output .=     '<div class="col-lg-1 visualisation-contrat">';
+        $output .=       '<a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
+        $output .=     '</div>';
+        $output .=     '<div class="col-lg-1 requete-contrat">';
+        $output .=       '<a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';      
+        $output .=     '</div>';
+      }
+      $output .=   '</div>';
+    }
+    $output .= '</div>';
+
+    return array(
+      'subject' => '<header>'. $title .'</header>',
+      'content' => (!empty($output)) ? '<div class="contrat_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
+    );
+  }
+
+  return array();
+}
