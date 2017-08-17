@@ -18,18 +18,37 @@ function  ws_client_block_view($delta = '') {
 
 function ws_client_get_node(){
 	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
-	return drupal_http_request($url) ;
+  $options = array('timeout' => 6000.0) ;
+	return drupal_http_request($url , $options) ;
 }
-function ws_client_getClient_node($numeroContrat){
-	$url = "http://192.168.43.145/Service1.svc/compte/espaceClient/".$numeroContrat."";
-/*	$node_options = array (
-			'header' => array( 
-				'Content-Type' => 'application/json'),
-			'method' => 'GET'
-	);*/
 
-	return drupal_http_request($url) ;
+
+function ws_client_getIdClient($numeroContrat){
+	$url = "http://192.168.43.145/Service1.svc/compte/". $numeroContrat ."";
+
+   $options = array('timeout' => 6000.0) ;
+	$request = drupal_http_request($url ,$options) ;
+  /*var_dump($request->data);die();*/
+  return drupal_json_decode($request->data);
 }
+
+function ws_client_getInfoUser($identifiant){
+  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/". $identifiant ."";
+  $options = array('timeout' => 6000.0) ;
+  $request = drupal_http_request($url ,$options) ;
+   $data = drupal_json_decode($request->data) ;
+   $returnArray = array(
+    'nom' => $data->nom ,
+    'prenom' => $data->prenom ,
+    'adresse' => $data->adresse ,
+    'telephone' => $data->telephone ,
+    'mail' => $data->mail 
+    );
+
+   return $returnArray ;
+}
+
+
 /*function ws_client_getIdentifiant_node(){
 
 	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
@@ -38,29 +57,26 @@ function ws_client_getClient_node($numeroContrat){
 
 function ws_client_user_presave(&$edit, $account, $category) {
 	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
-	$get_node_result = ws_client_getClient_node($numContrat);	
-	$data = json_decode($get_node_result->data);
-	if (isset($data)) {
-		$edit['field_identifiant_client']['und'][0]['value'] = $data ;
-	}
+	$result = ws_client_getIdClient($numContrat);	
+		$edit['field_identifiant_client']['und'][0]['value'] = $result ;
 }
 
-function ws_client_permission() {
+/*function ws_client_permission() {
   return array(
     'ws_client view any ws'=> array('title' => t('ws_client view any ws'),'description' => t('view any ws'),),
 	'ws_client view own ws'=> array('title' => t('ws_client view own ws'),'description' => t('view own ws'),),
   );
 }
-
- function ws_client_services_resources() {
+*/
+ /*function ws_client_services_resources() {
       $api = array(
        'user' => array(
          'create' => array(
            'help' => 'create a user',
-/*          'file' => array(
+                    'file' => array(
           	'type' => 'inc',
           	'module' => 'ws_client',
-          	'name' => 'ws_client/ws_resource'),*/
+          	'name' => 'ws_client/ws_resource'),
            'callback' => '_clientResource_create',
            'access callback' => 'user_access',
            'access arguments' => array('create user'),
@@ -73,7 +89,7 @@ function ws_client_permission() {
                'source' => array('path' => "userName"),
                'optional' => FALSE,
                'default' => 'Axa',
-             ),/*
+             ),
              array(
               'name' => 'emailUser',
               'type' => 'string',
@@ -101,13 +117,13 @@ function ws_client_permission() {
               'description' => "Code confidentiel de l'utilisateur",
               'source' => array('path' => 'codeConfidentiel'),
               'optional' => FALSE,
-            ),*/
+            ),
            ),
          ),
        ),
      );
       return $api ;
-}
+}*/
 
 
 function  _clientResource_create($userName /*, $emailUser , $numTel ,$numContrat ,$codeConfidentiel*/) {
