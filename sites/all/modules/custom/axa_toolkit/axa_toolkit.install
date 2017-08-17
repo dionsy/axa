@@ -1,0 +1,16 @@
+<?php
+
+
+/**
+ * Install webform_service module
+ */
+function axa_toolkit_update_7000() {
+  module_enable(array('webform_service'),TRUE);
+}
+
+/**
+ * Install service configuration feature module
+ */
+function axa_toolkit_update_7001() {
+  module_enable(array('axa_service_configuration'),TRUE);
+}
