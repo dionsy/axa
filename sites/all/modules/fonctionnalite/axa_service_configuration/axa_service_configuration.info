@@ -1,0 +1,9 @@
+name = Axa Service Configuration
+core = 7.x
+package = AXA
+dependencies[] = ctools
+dependencies[] = rest_server
+dependencies[] = services
+features[ctools][] = services:services:3
+features[features_api][] = api:2
+features[services_endpoint][] = axa_endpoint

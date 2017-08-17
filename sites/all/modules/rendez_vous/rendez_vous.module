@@ -17,7 +17,7 @@ function rendez_vous_block_info() {
 function rendez_vous_block_view($delta = '') {
   $block = array();
   if ($delta == 'rendez_vous') {	
-    $block['subject'] = '<header>'. 'Fixer un rendez vous avec le conseiller' .'</header>';
+    $block['subject'] = '<header>'. 'Fixer un rendez vous avec mon conseiller' .'</header>';
     $block['content'] = drupal_get_form('fixer_rendez_vous_form');
   }
 
@@ -28,80 +28,59 @@ function rendez_vous_block_view($delta = '') {
  * fixer_rendez_vous_form
  */
 function fixer_rendez_vous_form($form, &$form_state){
-  global $user;
-  $user_load = user_load($user->uid);
 
-  $form['titre'] = array(
-  '#type' => 'fieldset', 
-  '#title' => t('Mes Informations Personnelles'), 
+  $form['objet'] = array(
+    '#type' => 'select',
+    '#title' => t('Objet du contrat'),
+    '#options' => array(
+      0 => t('Souscription d\'un nouveau contrat'),
+      1 => t('Demande d\'information'),
+      2 => t('Résiliation contrat'),
+    ), 
+    '#required' => TRUE,
   );
-  
-  $form['nom'] = array(
-    '#type' => 'textfield', 
-    '#title' => 'Nom',
-    '#default_value' => $user_load->name,
+  $form['demande'] = array(
+    '#title' => t('Demande'),
+    '#type' => 'textarea',
+    '#description' => t('funny, bungee jumping, "Company, Inc."'),
+    '#default_value' => t('Bonjour je souhaite souscrire un contrat, merci de me contacter pour discuter des solutions proposées.'),
     '#required' => TRUE,
   );
 
-  $form['email'] = array(
-    '#type' => 'textfield', 
-    '#title' => 'Email',
-    '#default_value' => $user_load->mail,
+  $form['moyen_contact'] = array(
+    '#type' => 'select',
+    '#title' => t('Je souhaite être contacter par'),
+    '#options' => array(
+      'SMS' => t('SMS'),
+      'EMAIL' => t('Email'),
+    ), 
     '#required' => TRUE,
   );
 
-  $form['telephone'] = array(
+  $form['date'] = array(
     '#type' => 'textfield', 
-    '#title' => 'Téléphone',
-    '#default_value' => $user_load->field_numero_telephone['und'][0]['value'],
+    '#title' => t('Dans la journée de'), 
+    '#default_value' => '10/10/2017', 
     '#required' => TRUE,
   );
 
-  $form['change_pass'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Changer de code confidentiel'),
-  );
-
-  $form['pass'] = array(
-    '#title' => t('Change Password'),
-    '#type' => 'fieldset',
-    '#states' => array(
-      'visible' => array(
-        ':input[name="change_pass"]' => array('checked' => TRUE),
-      ),
+  $form['horaire'] = array(
+    '#type' => 'select',
+    '#title' => t('Aux horaires suivants'),
+    '#options' => array(
+      0 => t('08h-13h'),
+      1 => t('16h-18h'),
     ),
+    '#required' => TRUE,
   );
 
-  $form['pass']['pass'] = array(
-    '#type' => 'password', 
-    '#title' => 'Ancien code confidentiel', 
-    '#maxlength' => 64, 
-    '#size' => 15,
-    '#required' => FALSE,
-  );
-
-  $form['pass']['pass1'] = array(
-    '#type' => 'password', 
-    '#title' => 'Nouveau code confidentiel', 
-    '#maxlength' => 64, 
-    '#size' => 15,
-    '#required' => FALSE,
-  );
-
-  $form['pass']['pass2'] = array(
-    '#type' => 'password', 
-    '#title' => t('Confirme code confidentiel'), 
-    '#maxlength' => 64, 
-    '#size' => 15,
-    '#required' => FALSE,
-  );
 
   $form['submit'] = array(
     '#type' => 'submit', 
     '#title' => 'Enregistrer',
   );
 
-  $form['#submit'][] = 'form_information_form_submit';
+  $form['#submit'][] = 'fixer_rendez_vous_form_submit';
 
   
   return system_settings_form($form);

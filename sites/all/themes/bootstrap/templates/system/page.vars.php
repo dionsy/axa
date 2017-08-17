@@ -112,6 +112,11 @@ function bootstrap_process_page(&$variables) {
       $variables['title'] ='';
   }
 
+if (isset($variables['theme_hook_suggestions'][2]) && $variables['theme_hook_suggestions'][2]=='page__node__114'){
+      $variables['theme_hook_suggestions'][]= 'page__mon_axa';
+
+}
+
 $tab[]=array('page__user__register','page__user__reset');
 
 if(isset($variables['theme_hook_suggestions']['1']) &&  in_array($variables['theme_hook_suggestions']['1'], $tab)){  

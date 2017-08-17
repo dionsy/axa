@@ -274,6 +274,7 @@
         'driver' => 'mysql',
         'prefix' => '',
       ),
+
     ),
   );
 
