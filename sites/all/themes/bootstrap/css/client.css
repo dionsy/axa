@@ -1,0 +1,25 @@
+/*** mes contrats new ***/
+.item-mes-contrats{
+	margin: 0% 5% 0% 3%;
+}
+.item-mes-contrats h3{
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    color: #004d92;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2%;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.field-contrat{
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    color: #666;
+}
+
+/*** mes informations personnelles ***/
+#edit-submit--2 {
+    display: none;
+}

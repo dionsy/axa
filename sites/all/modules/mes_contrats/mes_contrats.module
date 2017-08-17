@@ -47,11 +47,20 @@ function mes_contrats_block_view($delta = '') {
                   ),
       ),
 
+      array(
+        'type' => 'Accident',
+        'info' => array(
+                    array(
+                      'id' =>'25012547896',
+                      'produit' => 'Individuelle Accident',
+                      'adresse' => 'je ne sais',
+                    ),
+                  ),
+      ),
+
     );
 
-    $title .= '<h2>';
     $title .=   t('Mes Contrats');
-    $title .= '</h2>';
 
     $output .= '<div class="item-mes-contrats">';
     foreach ($get_service_contrats as $contrat) {
@@ -62,19 +71,33 @@ function mes_contrats_block_view($delta = '') {
       $output .=   '<div class="row item-contrat">';
       foreach ($contrat['info'] as $informations) {
         # code...
+        $i = 0;
         foreach ($informations as $key => $value) {
           # code...
-          $output .=     '<div class="col-lg-3">';
-          $output .=       '<span>'. $value .'</span>';      
-          $output .=     '</div>';  
+          if($i==0){
+            $output .=     '<div class="col-lg-3 field-contrat">';
+            $output .=       '<span>'. $value .'</span>';      
+            $output .=     '</div>';    
+          }
+          elseif($i==1){
+            $output .=     '<div class="col-lg-4 field-contrat">';
+            $output .=       '<span>'. $value .'</span>';      
+            $output .=     '</div>'; 
+          }
+          else{
+            $output .=     '<div class="col-lg-2 field-contrat">';
+            $output .=       '<span>'. $value .'</span>';      
+            $output .=     '</div>';
+          }
+          $i++;
         }
-        $output .=     '<div class="col-lg-1 telechargement-contrat">';
+        $output .=     '<div class="col-lg-1 telechargement-contrat field-contrat">';
         $output .=       '<a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>';      
         $output .=     '</div>';
-        $output .=     '<div class="col-lg-1 visualisation-contrat">';
+        $output .=     '<div class="col-lg-1 visualisation-contrat field-contrat">';
         $output .=       '<a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
         $output .=     '</div>';
-        $output .=     '<div class="col-lg-1 requete-contrat">';
+        $output .=     '<div class="col-lg-1 requete-contrat field-contrat">';
         $output .=       '<a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';      
         $output .=     '</div>';
       }
@@ -83,7 +106,7 @@ function mes_contrats_block_view($delta = '') {
     $output .= '</div>';
 
     return array(
-      'subject' => '<header>'. $title .'</header>',
+      'subject' => $title ,
       'content' => (!empty($output)) ? '<div class="contrat_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
     );
   }

@@ -2,6 +2,7 @@ name = Bootstrap
 description = Built to use Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development.
 core = 7.x
 
+stylesheets[screen][] = css/client.css
 stylesheets[screen][] = font-awesome/css/font-awesome.min.css
 stylesheets[screen][] = css/sticky_footer.css
 stylesheets[screen][] = slick/slick.css

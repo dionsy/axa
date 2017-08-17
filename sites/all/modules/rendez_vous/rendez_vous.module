@@ -35,6 +35,7 @@ function fixer_rendez_vous_form($form, &$form_state){
     '#options' => array(
       0 => t('Souscription d\'un nouveau contrat'),
       1 => t('Demande d\'information'),
+      2 => t('Résiliation contrat'),
     ), 
     '#required' => TRUE,
   );
