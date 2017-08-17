@@ -1,8 +1,8 @@
 /*** mes contrats new ***/
-.item-mes-contrats{
+#block-mes-contrats-mes-contrats .item-mes-contrats{
 	margin: 0% 5% 0% 3%;
 }
-.item-mes-contrats h3{
+#block-mes-contrats-mes-contrats .item-mes-contrats h3{
     background: #fcfcfc;
     border: 1px solid #eee;
     color: #004d92;
@@ -13,7 +13,7 @@
     margin-bottom: 0px;
 }
 
-.field-contrat{
+#block-mes-contrats-mes-contrats .field-contrat{
     background: #fcfcfc;
     border: 1px solid #eee;
     color: #666;
@@ -22,4 +22,97 @@
 /*** mes informations personnelles ***/
 #edit-submit--2 {
     display: none;
+}
+
+/*** mes echéances ***/
+#block-echeances-echeances .block-title, #block-mes-sinistres-mes-sinistres .block-title {
+    padding: 6px 3% 32px 3%;
+    margin-bottom: 0px;
+    box-shadow: 0 -1px 0 0 #eee inset;
+    color: #005399;
+    font-size: 20px;
+    margin-top: 0;
+    /* Navigateurs récents */
+    background: -webkit-gradient( linear,left top, left bottom, from(#eeeeed), to(#eeeeed), color-stop(0.5, #fff));
+    background: -webkit-linear-gradient( top, #eeeeed, #fff 50%, #eeeeed);
+    background: -moz-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: -o-linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+    background: linear-gradient(top, #eeeeed, #fff 50%, #eeeeed);
+}
+
+#block-echeances-echeances .block-title p, #block-mes-sinistres-mes-sinistres .block-title p {
+    font-size: 30px;
+    padding-top: 20px;
+}
+
+#block-echeances-echeances .block-title span {
+    font-size: 14px;
+	font-weight: normal;
+	color: #666;
+}
+
+#block-echeances-echeances .echeance_body, #block-mes-sinistres-mes-sinistres .sinistre_body {
+    margin: 3%;
+}
+
+#block-echeances-echeances .echeance_body thead {
+    background: #fcfcfc;
+    color: #005399;
+    font-size: 14px;
+}
+
+#block-echeances-echeances .echeance_body tbody td, #block-mes-sinistres-mes-sinistres .sinistre_body tbody td {
+    background: #fcfcfc;
+    color: #666;
+    font-size: 14px;
+}
+
+#block-echeances-echeances .echeance_body p:last-child {
+    margin-top:19px;
+}
+
+#block-echeances-echeances .echeance_body p {
+    color: #999;
+}
+
+/*** mes sinistres ***/
+
+#block-mes-sinistres-mes-sinistres .block-title span {
+    font-size: 14px;
+	font-weight: normal;
+	color: #005399;
+}
+
+#block-mes-sinistres-mes-sinistres .sinistre_body thead {
+    background: #fcfcfc;
+    color: #666;
+    font-size: 14px;
+}
+
+.title-sinistre {
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    color: #005399;
+    padding-left: 1%;
+    font-weight: bold;
+    font-size: 15px;
+    padding-top: 4px;
+	padding-bottom: 5px;
+}
+
+.item-info-contrat h3 {
+    border: 1px solid #eee;
+    margin-bottom: 0;
+    color: #005399;
+    padding-left: 1%;
+    font-size: 14px;
+}
+
+/*** preferences ***/
+.form-item-submitted-par-quel-moyen-voulez-vous-etre-notifie{
+	padding-left: 2%; 
+}
+
+.webform-client-form-86 .webform-submit{
+	margin-left: 2%;
 }

@@ -19,25 +19,20 @@ function mes_sinistres_block_view($delta = '') {
     $title = '';
   	$output = '';
 
-    $title_sinistre = t('Mes Sinistres');
-    $title_p = t('Suivi de mes déclérations sinistres'); 
-    
-    $title .= '<h2>'. $title_sinistre .'</h2>';
-    $title .= '<p>'. $title_p .'</p>';
 
     $table_auto = array(
       'thead' => array(
         'date_survenance' => 'Date survenance',
         'numero_sinistre' => 'N° Sinistre',
         'evenements' => t('Evénements'),
-        'status' => t('Terminé'),
+        'status' => t('Status'),
       ),
       'tbody' => array(
         array(
           'date_survenance' => '10/07/2017',
           'numero_sinistre' => '2501457882',
           'evenements' => 'Bris de Glace',
-          'status' => t('Terminé'),    
+          'status' => t('En cours'),    
         ),
         array(
           'date_survenance' => '10/07/2016',
@@ -53,7 +48,7 @@ function mes_sinistres_block_view($delta = '') {
         'date_survenance' => 'Date survenance',
         'numero_sinistre' => 'N° Sinistre',
         'evenements' => t('Evénements'),
-        'status' => t('Terminé'),
+        'status' => t('Status'),
       ),
       'tbody' => array(
         array(
@@ -84,6 +79,12 @@ function mes_sinistres_block_view($delta = '') {
       ),
 
     );
+
+    $title_sinistre = t('Mes Sinistres');
+    $title_span = t('Suivi de mes déclérations sinistres'); 
+    
+    $title .= '<p>'. $title_sinistre .'</p>';
+    $title .= '<span>'. $title_span .'</span>';
 
     foreach ($get_service_sinistres as $sinistre) {
       # code...
@@ -119,7 +120,7 @@ function mes_sinistres_block_view($delta = '') {
     }
     
     return array(
-      'subject' => '<header>'. $title .'</header>',
+      'subject' => $title,
       'content' => (!empty($output)) ? '<div class="sinistre_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
     );
   }

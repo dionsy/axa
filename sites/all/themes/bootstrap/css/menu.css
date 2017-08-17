@@ -266,13 +266,13 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-2::before
     padding-right: 3%;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-3::before{
-    content:"\f085";
+    content:"\f129";
     font-family: "FontAwesome";
     padding-right: 3%;
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-4::before, ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-5::before{
-    content:"\f129";
+    content:"\f085";
     font-family: "FontAwesome";
     padding-right: 3%;
 }
@@ -761,7 +761,7 @@ ul#quicktabs-tab-left_menu-0::before{
 }
  
 .info-left-menu .deconnexion::before {
-    content: "\f023";
+    content: "\f011";
     font-family: "FontAwesome";
     color: #005399;
 }
