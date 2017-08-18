@@ -1,5 +1,5 @@
 /*** mes contrats new ***/
-#block-mes-contrats-mes-contrats .item-mes-contrats{
+#block-mes-contrats-mes-contrats .item-mes-contrats {
 	margin: 0% 5% 0% 3%;
 }
 #block-mes-contrats-mes-contrats .item-mes-contrats h3{
@@ -207,4 +207,25 @@ form#fixer-rendez-vous-form #edit-submit--6 {
 
 form#fixer-rendez-vous-form #edit-actions--4 {
     border: 0 !important;
+}
+
+/*** mes sinistres ***/
+#block-mes-devis-mes-devis .item-mes-devis{
+	margin: 0% 5% 0% 3%;
+}
+#block-mes-devis-mes-devis .item-mes-devis h3{
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    color: #004d92;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2%;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+#block-mes-devis-mes-devis .field-devis{
+    background: #fcfcfc;
+    border: 1px solid #eee;
+    color: #666;
 }

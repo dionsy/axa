@@ -80,7 +80,7 @@ function fixer_rendez_vous_form($form, &$form_state){
   $form['submit'] = array(
     '#type' => 'submit', 
     '#title' => 'Enregistrer',
-    '#value' => 'ppapa',
+    '#values' => 'Enregistrer',
   );
   
   $form['#submit'][] = 'fixer_rendez_vous_form_submit';

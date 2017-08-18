@@ -1,0 +1,38 @@
+<?php
+/**
+ * Implements hook_block_info()
+ */
+function mon_conseiller_block_info() {
+  return array(
+    'mon_conseiller' => array(
+      'info' => t('conseiller du client'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function mon_conseiller_block_view($delta = '') {
+  if ($delta == 'mon_conseiller') {
+    $title = '';
+  	$output = '';
+
+    $get_service_devis = array(     
+    );
+
+    $title .=   t('Mon Conseiller');
+
+    $output .= '<div class="item-mon-conseiller">';
+    $output .= 'mon conseiller';
+    $output .= '</div>';
+
+    return array(
+      'subject' => $title ,
+      'content' => (!empty($output)) ? '<div class="conseiller">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
+    );
+  }
+
+  return array();
+}
