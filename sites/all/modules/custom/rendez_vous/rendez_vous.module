@@ -44,8 +44,7 @@ function fixer_rendez_vous_form($form, &$form_state){
   $form['demande'] = array(
     '#title' => t('Demande'),
     '#type' => 'textarea',
-    '#description' => t('funny, bungee jumping, "Company, Inc."'),
-    '#default_value' => t('Bonjour je souhaite souscrire un contrat, merci de me contacter pour discuter des solutions proposées.'),
+    '#default_value' => t(''),
     '#required' => TRUE,
   );
 
