@@ -41,9 +41,35 @@ function mes_devis_block_view($delta = '') {
 	        	),
 		    	array(
 	              'Age d\'optention permis', 
-	              '22ans',
+	              '22 ans',
 	        	),
         	),
+        ),
+
+        array(
+            'type' => 'Type de vehicule',
+            'tableau' => array(
+              array(
+                  'Marque',
+                  'Dacia',
+                ),
+            array(
+              'Energie', 
+                'Essence',
+            ),
+          array(
+                'Email conducteur', 
+                'aliou-samba.wele@atos.net',
+              ),
+          array(
+                'Année de naissance', 
+                '1991',
+            ),
+          array(
+                'Age d\'optention permis', 
+                '26 ans',
+            ),
+          ),
         ),
 
         array(

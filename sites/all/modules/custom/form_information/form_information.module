@@ -2,33 +2,29 @@
 
 require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
 
-
 /**
- * Implements hook_permission()
+ * Implements hook_block_info()
  */
-function form_information_permission() {
+function form_information_block_info() {
   return array(
-    'submit  form_information' => array(
-    'title' => t('Submit form_information'),
-    'description' => t('Submit the form_information form.'),
+    'form_information' => array(
+      'info' => t('Information du client'),
+      'cache' => DRUPAL_NO_CACHE,
     ),
   );
 }
 
 /**
- * Implements hook_menu()
+ * Implements hook_block_view()
  */
-function form_information_menu() {
-  $items = array();
-  $items['form-information'] = array(
-    'title' => 'Form Information',
-    'type' => MENU_NORMAL_ITEM,
-    'access arguments' => array('submit form_information'),
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('form_information_form'),
-  );
+function form_information_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'form_information') {
+    $block['subject'] = '<p>'. 'Mes informations personnelles' .'</p>'; 
+    $block['content'] = drupal_get_form('form_information_form');
+  }
 
-  return $items;
+  return $block;
 }
 
 /**
