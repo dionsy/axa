@@ -1840,7 +1840,6 @@ input.nmpd-display {
     width: -moz-fit-content;
     padding: 1rem;
     margin-top: 2rem;
-    text-transform: uppercase;
 }
 
   #views-exposed-form-bandeau-mon-axa-block-1 .form-item{
@@ -1849,6 +1848,7 @@ input.nmpd-display {
 
  #views-exposed-form-bandeau-mon-axa-block-1 .form-item a{
     padding: 0 1rem;
+    text-transform: uppercase;
  }
 
  #views-exposed-form-bandeau-mon-axa-block-1 div:first-child{
@@ -1858,3 +1858,22 @@ input.nmpd-display {
     float: none;
  }
 
+#block-quicktabs-mon-axa .quicktabs-tabs{
+    width: 50%;
+    margin: auto;
+}
+#block-quicktabs-mon-axa .quicktabs_main.quicktabs-style-sky{
+    border:none;
+    padding: 0;
+}
+
+#block-quicktabs-mon-axa .quicktabs-tabpage{
+    background: none;
+}
+
+#block-quicktabs-mon-axa ul.quicktabs-tabs.quicktabs-style-sky li.active a, 
+#block-quicktabs-mon-axa ul.quicktabs-tabs.quicktabs-style-sky li.active a:visited{
+    background: none;
+    border: none;
+    color: #000;
+}
