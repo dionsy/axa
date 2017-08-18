@@ -33,10 +33,12 @@ function ws_client_getIdClient($numeroContrat){
 }
 
 function ws_client_getInfoUser(){
-/*  if(user_is_logged_in())
+ global $user;
       $account = user_load($user->uid);
-  $identifiant = ['field_identifiant_client']['und'][0]['value'] ;*/
-  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/AXA00000016";
+
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+ 
+  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
    $data = drupal_json_decode($request->data) ;
@@ -47,7 +49,7 @@ function ws_client_getInfoUser(){
     'telephone' => $data['telephone'] ,
     'mail' => $data['mail'] 
     );
-    var_dump($returnArray);die();
+    /* var_dump($returnArray);die();*/
 
    return $returnArray ;
 }
