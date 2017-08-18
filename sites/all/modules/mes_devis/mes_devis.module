@@ -1,0 +1,113 @@
+<?php
+/**
+ * Implements hook_block_info()
+ */
+function mes_devis_block_info() {
+  return array(
+    'mes_devis' => array(
+      'info' => t('devis client'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function mes_devis_block_view($delta = '') {
+  if ($delta == 'mes_devis') {
+    $title = '';
+  	$output = '';
+
+    $get_service_devis = array(
+        array(
+            'type' => 'Type de vehicule',
+            'tableau' => array(
+            	array(
+      	          'Marque',
+                  'Mercedes shooting Brake',
+                ),
+		        array(
+		      	  'Energie', 
+	  	          'Gasoil',
+		  	    ),
+		    	array(
+	              'Email conducteur', 
+	              'ousmane@gmail.com',
+	            ),
+		    	array(
+	              'Année de naissance', 
+	              '1990',
+	        	),
+		    	array(
+	              'Age d\'optention permis', 
+	              '22ans',
+	        	),
+        	),
+        ),
+
+        array(
+        	'type' => 'Info Habitation',
+        	'tableau' => array(
+	        	array(
+	        	  'Type de bien',
+	              'Appartement',
+	           	),
+		    	array(
+	              'Nombre de pieces', 
+	              '4',
+		  	    ),
+		    	array(
+	  	          'Résidence principale', 
+	  	          'ousmane@gmail.com',
+	        	),
+		    	array(
+	      	      'Adresse du bien à assurer', 
+	      	      '1990',
+	            ),
+		    	array(
+	  	          'Vous étes:', 
+	      	      '22ans',
+	            ),
+		    	array(
+	  	          'Date assuré:', 
+	  	          '22ans',
+	            ),
+        	),
+        
+        ),
+
+      
+    );
+
+    $title .=   t('Mes devis');
+
+    $output .= '<div class="item-mes-devis">';
+    foreach ($get_service_devis as $devis) {
+      # code...
+      $output .=   '<h3>';
+      $output .=     $devis['type'];
+      $output .=   '</h3>';
+      $output .=   '<div class="row item-devis">';
+      foreach ($devis['tableau'] as $tableau) {
+      	# code...
+      	foreach ($tableau as $value) {
+      		# code...
+      		$output .= '<div class="field-devis col-lg-6">';
+      		$output .= '<span>'. $value . '</span>';
+      		$output .= '</div>';
+      	}
+      }
+
+      $output .=   '</div>';
+    }
+    $output .= '</div>';
+
+    return array(
+      'subject' => $title ,
+      'content' => (!empty($output)) ? '<div class="devis_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
+    );
+  }
+
+  return array();
+}
