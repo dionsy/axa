@@ -1,0 +1,6 @@
+name = Declarer Sinistre block
+description = Cette module permet au client de déclarer un sinistre.
+package = Atos
+version = 7.x-1
+core = 7.x
+files[] = declarer_sinistre.module

@@ -3,4 +3,4 @@ description = Cette module permet de fixer un rendez-vous avec le conseiller.
 package = Atos
 version = 7.x-1
 core = 7.x
-files[] = rendez.module
+files[] = rendez_vous.module

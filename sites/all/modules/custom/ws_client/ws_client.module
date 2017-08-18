@@ -24,7 +24,7 @@ function ws_client_get_node(){
 
 
 function ws_client_getIdClient($numeroContrat){
-	$url = "http://192.168.43.145/Service1.svc/compte/". $numeroContrat ."";
+	$url = "http://192.168.43.145/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
 
    $options = array('timeout' => 6000.0) ;
 	$request = drupal_http_request($url ,$options) ;
@@ -32,18 +32,24 @@ function ws_client_getIdClient($numeroContrat){
   return drupal_json_decode($request->data);
 }
 
-function ws_client_getInfoUser($identifiant){
-  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/". $identifiant ."";
+function ws_client_getInfoUser(){
+ global $user;
+      $account = user_load($user->uid);
+
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+ 
+  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
    $data = drupal_json_decode($request->data) ;
    $returnArray = array(
-    'nom' => $data->nom ,
-    'prenom' => $data->prenom ,
-    'adresse' => $data->adresse ,
-    'telephone' => $data->telephone ,
-    'mail' => $data->mail 
+    'nom' => $data['nom'] ,
+    'prenom' => $data['prenom'] ,
+    'adresse' => $data['adresse'] ,
+    'telephone' => $data['telephone'] ,
+    'mail' => $data['mail'] 
     );
+    /* var_dump($returnArray);die();*/
 
    return $returnArray ;
 }
@@ -54,10 +60,14 @@ function ws_client_getInfoUser($identifiant){
 	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
 	return drupal_http_request($url) ;
 }*/
+function ws_client_user_login(&$edit, $account) {
+  $edit['redirect'] = 'node/123';
+}
 
 function ws_client_user_presave(&$edit, $account, $category) {
 	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
 	$result = ws_client_getIdClient($numContrat);	
+ /* if($result != 'false')*/
 		$edit['field_identifiant_client']['und'][0]['value'] = $result ;
 }
 

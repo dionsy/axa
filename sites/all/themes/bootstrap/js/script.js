@@ -173,16 +173,40 @@
         $( ".form-item-submitted-puissance" ).keyup(function() {
               $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
           });
-        $('input:password').numpad(
+        $('#user-login #edit-pass').numpad(
           {
-             target: $('input:password')
+             target: $('#user-login #edit-pass')
           }); 
-        
- 
-            $(".nmpd-display").keydown(function(event) { 
-               return false;
-            });
+        $('#edit-pass-pass1').numpad(
+          {
+             target: $('#edit-pass-pass1')
+          });
+        $('#edit-pass-pass2').numpad({
+             target: $('#edit-pass-pass2')
+          });
 
+        $('#edit-pass--2').numpad({
+              target: $('#edit-pass--2')
+          });
+        $('#edit-pass1').numpad({
+              target: $('#edit-pass1')
+          });
+        $('#edit-pass2').numpad({
+              target: $('#edit-pass2')
+          });
+ 
+        $(".nmpd-display").keydown(function(event) { 
+              return false;
+        });
+         /* $('#user-login #edit-pass').bind('blur  ' ,function(){
+            $("#nmpd1").hide();
+          });*/
+          $("input:password").bind('click focus', function(){
+             $(this).attr("readonly", false);
+          }).bind('blur', function(){
+             $(this).attr("readonly", true);
+         });
+        
    }
 
   }
@@ -217,7 +241,7 @@
         if ($('#'+id).length == 0) {
             nmpd = $('<div id="' + id + '"></div>').addClass('nmpd-wrapper');
             nmpd.options = options;
-            var display = $('input:password').addClass('nmpd-display form-control');
+            var display = nmpd.options.target.addClass('nmpd-display form-control');
             nmpd.display = display;
             var table = $(options.gridTpl).addClass('table modal-content nmpd-grid');
             nmpd.grid = table;
@@ -270,7 +294,7 @@
             if (options.onChange){
               nmpd.on('numpad.change', options.onChange);
             }
-            (options.appendKeypadTo ? options.appendKeypadTo : $("input:password")).after(nmpd);   
+            (options.appendKeypadTo ? options.appendKeypadTo : $("form div.form-type-password input")).after(nmpd);   
 
               $('#'+id+' .numero').bind('click', function(event){
                 event.preventDefault();
@@ -288,7 +312,7 @@
       
         $.data(this, 'numpad', nmpd);
 
-        $(this).attr("readonly", true).attr('data-numpad', id).addClass('nmpd-target');
+        $(this).attr('data-numpad', id).addClass('nmpd-target');
 
         $(this).bind(options.openOnEvent,function(){
            nmpd.open(options.target ? options.target : $(this));
@@ -406,6 +430,8 @@
     onKeypadClose: false,
     onChange: false
   };
+
+
   
 
 })(jQuery, Drupal);
