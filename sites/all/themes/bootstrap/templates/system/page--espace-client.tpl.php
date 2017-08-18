@@ -116,7 +116,6 @@
                   $account = array();
                   if(user_is_logged_in())
                     $account = user_load($user->uid); 
-                  //('main')->kPrint($account);
                     if(isset($account)) {
                       print '<span>'.$account->name. '</span>';                    
                     }  

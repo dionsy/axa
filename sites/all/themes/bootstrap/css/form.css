@@ -52,9 +52,9 @@ ul.tabs--primary li:hover{
     border-color: transparent !important;
     color: white !important;
  }
-form#user-login {
+/*form#user-login {
     margin-top: 25px;
-}
+}*/
 /*.nav > li > a:hover{
     border-bottom: 2px solid red;
 }*/
@@ -642,10 +642,10 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     margin-bottom: 25px;
     margin-top: 15px;
 }
-
+/*
 #edit-actions.form-actions #edit-submit {
     margin-top: 15px;
-}
+}*/
 
 /*#edit-submitted-email ,#edit-submitted-email-conducteur {
     width: 65% !important;
@@ -659,7 +659,7 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 .page-user form#user-login  label {
 /*    float: left;
     margin-left: 8%;*/
-    margin-top: 22px;
+    margin-top: 10px;
 }
 #user-login div.form-group {
     display: block;
