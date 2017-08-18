@@ -266,13 +266,13 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-2::before
     padding-right: 3%;
 }
 ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-3::before{
-    content:"\f085";
+    content:"\f129";
     font-family: "FontAwesome";
     padding-right: 3%;
 }
 
 ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-4::before, ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-5::before{
-    content:"\f129";
+    content:"\f085";
     font-family: "FontAwesome";
     padding-right: 3%;
 }
@@ -761,7 +761,7 @@ ul#quicktabs-tab-left_menu-0::before{
 }
  
 .info-left-menu .deconnexion::before {
-    content: "\f023";
+    content: "\f011";
     font-family: "FontAwesome";
     color: #005399;
 }
@@ -1173,7 +1173,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     padding-bottom: 15%;
 }
 
-#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1, #quicktabs-tabpage-left_menu-4, #quicktabs-tabpage-left_menu-5, #quicktabs-tabpage-left_menu-6{
+#quicktabs-tabpage-left_menu-2, #node-86, #quicktabs-tabpage-left_menu-1, #quicktabs-tabpage-left_menu-4, #quicktabs-tabpage-left_menu-5, #quicktabs-tabpage-left_menu-6, .quicktabs-tabpage{
     box-shadow: 2px 2px 2px 2px #ccc;
 }
 
@@ -1221,7 +1221,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 }
 
 /*** Mes devis ***/
-#block-panels-mini-panel-espace-client .block-title {
+#block-panels-mini-panel-espace-client .block-title, #block-mes-contrats-mes-contrats .block-title {
     /*margin-top: 0px;*/
     padding: 6px 3% 13px 3%;
     margin-bottom: 0px;

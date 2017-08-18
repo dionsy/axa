@@ -18,8 +18,8 @@ function echeances_block_view($delta = '') {
   if ($delta == 'echeances') {
   	$title_echeance = t('Mes échéances');
   	$title_p = t('Situation au 14/08/2017'); 
-  	$title = '<h2>'. $title_echeance .'</h2>';
-  	$title .= '<p>'. $title_p .'</p>';
+  	$title = '<p>'. $title_echeance .'</p>';
+  	$title .= '<span>'. $title_p .'</span>';
   	$text_prime = t("Dates des prochaines primes à payer pour vos contrat d'assurance");
   	$text_contact = t('Pour toute information supplémentaire contacter votre conseiller');
   	$output = '';
@@ -58,7 +58,7 @@ function echeances_block_view($delta = '') {
   	); 
 
     $output .= '<p>'. $text_prime .'</p>';
-    $output .= '<table class="table table-bordered">';
+    $output .= '<table class="table-bordered">';
     $output .=   '<thead>';
     
     foreach ($table['thead'] as $key => $value) {
@@ -81,7 +81,7 @@ function echeances_block_view($delta = '') {
     $output .= '</table>';
     $output .= '<p>'. $text_contact .'</p>';
     return array(
-      'subject' => '<header>'. $title .'</header>',
+      'subject' => $title,
       'content' => (!empty($output)) ? '<div class="echeance_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
     );
   }
