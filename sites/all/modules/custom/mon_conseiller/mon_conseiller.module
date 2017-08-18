@@ -19,18 +19,33 @@ function mon_conseiller_block_view($delta = '') {
     $title = '';
   	$output = '';
 
-    $get_service_devis = array(     
+    $get_service_conseiller = array(
+      'nom' => 'Aliou Samba WELE',
+      'adresse' => 'Rue 67*52',
+      'telephone' => '+221778088471',
+      'email' => 'aliou-samba.wele@atos.net',
     );
 
     $title .=   t('Mon Conseiller');
 
-    $output .= '<div class="item-mon-conseiller">';
-    $output .= 'mon conseiller';
+    $output .= '<div class="conseiller-left-bar">';
+    $output .= '<h3>Mon conseiller</h3>';
+    foreach ($get_service_conseiller as $key => $value) {
+      # code...
+      $output .= '<p>'. $value . '</p>';
+    }
+    $output .= '<p><a href="#">Fixer un RDV </a></p>'; 
+    $output .= '</div>';
+    $output .= '<div class="blanc">';
+    $output .= '</div>';
+    $output .= '<div class="bas">';
+    $output .= '</div>';
+    $output .= '<div class="incline">';
     $output .= '</div>';
 
     return array(
-      'subject' => $title ,
-      'content' => (!empty($output)) ? '<div class="conseiller">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
+      'subject' => '' ,
+      'content' => (!empty($output)) ?   $output : '<p>' . t('For now, this list is empty!') . '</p>',
     );
   }
 

@@ -857,15 +857,15 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     border-bottom: 1px solid #ccc;
 }
 
-.alignement > p, #block-block-5 .conseiller-left-bar >p {
+.alignement > p, #block-mon-conseiller-mon-conseiller .conseiller-left-bar >p {
     color: #666;
 }
 
-#block-block-5 .conseiller-left-bar {
+#block-mon-conseiller-mon-conseiller .conseiller-left-bar {
     margin: 3%;
 }
 
-#block-block-5{
+#block-mon-conseiller-mon-conseiller{
     border: none;
     /* Navigateurs récents */
     background: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#c6d7e4), color-stop(0.5, #fff));
@@ -891,12 +891,12 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     padding: 2%;
 }
 
-#block-block-5 .blanc {
+#block-mon-conseiller-mon-conseiller .blanc {
     border-bottom: 7px solid #fff;
     padding-top: 24px;
 }
 
-#block-block-5 .incline {
+#block-mon-conseiller-mon-conseiller .incline {
     background: #fff none repeat scroll 0 0;
     border-bottom: 46px solid #ffffff;
     border-top: 7px solid #ffffff;
@@ -1474,7 +1474,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         margin-bottom: 0px;
     }
 
-    #block-block-5 .incline {
+    #block-mon-conseiller-mon-conseiller .incline {
         display: none;
     }
 
