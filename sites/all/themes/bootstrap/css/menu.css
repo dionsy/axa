@@ -1103,7 +1103,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 #form-information-form > div > fieldset:first-child {
     /*margin-top: 0px;*/
     /*padding: 6px 3% 13px 3%;*/
-    margin-bottom: 25px;
+    margin-bottom: 16px;
     /*color: #004D92;
     font-weight: bold;
     font-size: 14px;
@@ -1221,7 +1221,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 }
 
 /*** Mes devis ***/
-#block-panels-mini-panel-espace-client .block-title, #block-mes-contrats-mes-contrats .block-title {
+#block-panels-mini-panel-espace-client .block-title, #block-mes-contrats-mes-contrats .block-title, #block-mes-devis-mes-devis .block-title{
     /*margin-top: 0px;*/
     padding: 6px 3% 13px 3%;
     margin-bottom: 0px;

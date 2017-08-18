@@ -1,0 +1,173 @@
+<?php
+
+require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
+
+/**
+ * Implements hook_block_info()
+ */
+function form_information_block_info() {
+  return array(
+    'form_information' => array(
+      'info' => t('Information du client'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function form_information_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'form_information') {
+    $block['subject'] = '<p>'. 'Mes informations personnelles' .'</p>'; 
+    $block['content'] = drupal_get_form('form_information_form');
+  }
+
+  return $block;
+}
+
+/**
+ * form_informaton form
+ */
+function form_information_form($form, &$form_state){
+  global $user;
+  $user_load = user_load($user->uid);
+
+  $form['titre'] = array(
+  '#type' => 'fieldset', 
+  '#title' => t('Mes Informations Personnelles'), 
+  );
+  
+  $form['nom'] = array(
+    '#type' => 'textfield', 
+    '#title' => 'Nom',
+    '#default_value' => $user_load->name,
+    '#required' => TRUE,
+  );
+
+  $form['email'] = array(
+    '#type' => 'textfield', 
+    '#title' => 'Email',
+    '#default_value' => $user_load->mail,
+    '#required' => TRUE,
+  );
+
+  $form['telephone'] = array(
+    '#type' => 'textfield', 
+    '#title' => 'Téléphone',
+    '#default_value' => $user_load->field_numero_telephone['und'][0]['value'],
+    '#required' => TRUE,
+  );
+
+  $form['change_pass'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Changer de code confidentiel'),
+  );
+
+  $form['pass'] = array(
+    '#title' => t('Change Password'),
+    '#type' => 'fieldset',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="change_pass"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+
+  $form['pass']['pass'] = array(
+  	'#type' => 'password', 
+  	'#title' => 'Ancien code confidentiel', 
+  	'#maxlength' => 64, 
+  	'#size' => 15,
+  	'#required' => FALSE,
+  );
+
+  $form['pass']['pass1'] = array(
+  	'#type' => 'password', 
+  	'#title' => 'Nouveau code confidentiel', 
+  	'#maxlength' => 64, 
+  	'#size' => 15,
+  	'#required' => FALSE,
+  );
+
+  $form['pass']['pass2'] = array(
+  	'#type' => 'password', 
+  	'#title' => t('Confirme code confidentiel'), 
+  	'#maxlength' => 64, 
+  	'#size' => 15,
+  	'#required' => FALSE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit', 
+    '#title' => 'Enregistrer',
+  );
+
+  $form['#submit'][] = 'form_information_form_submit';
+
+  
+  return system_settings_form($form);
+
+}
+
+/**
+ *Validation handler
+ */
+function form_information_form_validate($form, &$form_state) {
+  /*print('<pre>'. print_r($form_state['values'], TRUE) .'</pre>'); die();*/
+  global $user;
+  $account = user_load_by_name($user->name);
+
+  if($form_state['values']['change_pass']){
+	  
+	  if(!user_check_password($form_state['values']['pass'], $account)){
+	  	form_set_error('pass', t('User error: ancien code cofidentiel invalide'));
+	  	return FALSE;
+	  }
+
+	  if(!is_numeric($form_state['values']['pass'])){
+	  	form_set_error('pass', t('User error: entrer un code cofidentiel valide'));
+	  	return FALSE;
+	  }
+
+	  if(!is_numeric($form_state['values']['pass1'])){
+	  	form_set_error('pass1', t('User error: entrer un code cofidentiel valide'));
+	  	return FALSE;
+	  }
+
+	  if(!is_numeric($form_state['values']['pass2'])){
+	  	form_set_error('pass2', t('User error: entrer un code cofidentiel valide'));
+	  	return FALSE;
+	  }
+
+	  if(!($form_state['values']['pass1'] === $form_state['values']['pass2'])){
+	  	form_set_error('pass', t('User error: code confidentiel non conforme'));
+	  	return FALSE;
+	  }
+  }
+
+
+  if(!is_numeric($form_state['values']['telephone'])){
+  	form_set_error('telephone', t('User error: enter a valide number'));
+  	return FALSE;
+  }
+
+
+  return TRUE;
+}
+
+
+function form_information_form_submit($form, &$form_state){
+	global $user;
+    $edit = array();
+    $account = user_load_by_name($user->name);
+    if (isset($form_state['values']['pass1'])){
+    	$edit['pass'] = $form_state['values']['pass1'];    	
+    }
+    $edit['name'] = $form_state['values']['nom'];
+    $edit['mail'] = $form_state['values']['email'];
+    $edit['field_numero_telephone']['und']['0']['value'] = $form_state['values']['telephone'];
+
+  	user_save($account, $edit);
+}
