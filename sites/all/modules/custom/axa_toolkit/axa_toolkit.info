@@ -2,4 +2,4 @@ name = axa plateform configuration
 description = Configuration 
 package = ATOS
 core = 7.x
-
+dependencies[] = ctools
