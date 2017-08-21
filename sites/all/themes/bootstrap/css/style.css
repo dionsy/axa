@@ -156,11 +156,18 @@ ul{
 #user-login-form li{
 	list-style:none;
 }
-#edit-actions #edit-submit.form-submit{
+
+#edit-actions #edit-submit.form-submit,
+#edit-actions--2 #edit-submit--2{
     background-color: rgb(71, 168, 13);
     padding-left: 20px;
     padding-right:20px;
    /* width: 50%; */
+}
+#drupal-modal #edit-actions--2{
+    display: block !important;
+    margin: 0 auto !important;
+    width: 120px !important;
 }
 #edit-actions #edit-submit.form-submit:hover{
 	background: rgb(61, 144, 11) none repeat scroll 0 0;
