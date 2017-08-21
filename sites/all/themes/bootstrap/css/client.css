@@ -241,18 +241,71 @@ form#fixer-rendez-vous-form #edit-actions--4 {
     color: #666;
 }
 
-
+/*** declarer un sinstre ***/
 .declarer-sinistre {
     position: absolute;
     width: 102%;
     bottom: -87px;
     background: #005399 !important;
     color: #fff !important;
-    height: 14%;
-    border-radius: 21px;
+    height: 10%;
+    border-radius: 5px;
 }
 
-#quicktabs-tab-left_menu-8 {
+.declarer-sinistre #quicktabs-tab-left_menu-8 {
+	position: absolute;
+    top: -5px;
+    left: 18%;
     color: #fff;
-    padding-left: 18%;
+}
+
+#fixer-declarer-sinistre-form{
+	padding: 3%;
+}
+
+fieldset {
+	background: #fcfcfc;
+}
+
+#fixer-declarer-sinistre-form div{
+	transform: none !important;
+    width: 100% !important;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item .control-label {
+    float: left;
+    width: 50%;
+    color: #666;
+    font-weight: normal;
+    padding-left: 2%;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item-garage{
+	margin: 3.5%;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item .form-control{
+	width: 48% !important;
+	border: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item-garage .control-label{
+	width: 100% !important;
+}
+
+
+#block-declarer-sinistre-declarer-sinistre .form-textarea-wrapper {
+    margin: 2%;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item .form-textarea{
+	width: 84% !important;
+}
+
+#block-declarer-sinistre-declarer-sinistre .grippie{
+	display: none;
+}
+#block-declarer-sinistre-declarer-sinistre .form-item.form-item-nom {
+    margin-top: 10%;
 }
