@@ -12,7 +12,7 @@
   </header>
 
   <?php if (!empty($page['highlighted'])): ?>
-    <div class="fond">
+    <div class="fond-mon-axa">
         <div class="highlighted container"><?php print render($page['highlighted']); ?></div>
     </div> 
   <?php endif; ?> 

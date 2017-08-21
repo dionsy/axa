@@ -1812,7 +1812,7 @@ input.nmpd-display {
     border:medium none ! important;
 }
 .nmpd-grid .numero {
-    background-color: #00529B;
+    background-color: #113184;
     color: #fff;
     font-size: 1.5em;
      padding: 10px 25px !important;
@@ -1831,7 +1831,7 @@ input.nmpd-display {
 }
 }
 
-.page-node-114 .fond{
+.fond-mon-axa{
     background: url(../images/bg-monaxa.jpg) no-repeat center;
     background-size: cover;
     margin-top: 2rem;
@@ -1859,7 +1859,6 @@ input.nmpd-display {
     width: -moz-fit-content;
     padding: 1rem;
     margin-top: 2rem;
-    text-transform: uppercase;
 }
 
   #views-exposed-form-bandeau-mon-axa-block-1 .form-item{
@@ -1868,6 +1867,7 @@ input.nmpd-display {
 
  #views-exposed-form-bandeau-mon-axa-block-1 .form-item a{
     padding: 0 1rem;
+    text-transform: uppercase;
  }
 
  #views-exposed-form-bandeau-mon-axa-block-1 div:first-child{
@@ -1877,3 +1877,22 @@ input.nmpd-display {
     float: none;
  }
 
+#block-quicktabs-mon-axa .quicktabs-tabs{
+    width: 50%;
+    margin: auto;
+}
+#block-quicktabs-mon-axa .quicktabs_main.quicktabs-style-sky{
+    border:none;
+    padding: 0;
+}
+
+#block-quicktabs-mon-axa .quicktabs-tabpage{
+    background: none;
+}
+
+#block-quicktabs-mon-axa ul.quicktabs-tabs.quicktabs-style-sky li.active a, 
+#block-quicktabs-mon-axa ul.quicktabs-tabs.quicktabs-style-sky li.active a:visited{
+    background: none;
+    border: none;
+    color: #000;
+}
