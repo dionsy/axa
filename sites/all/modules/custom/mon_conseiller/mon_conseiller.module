@@ -20,7 +20,7 @@ function mon_conseiller_block_view($delta = '') {
   	$output = '';
 
     $get_service_conseiller = array(
-      'nom' => 'Aliou Samba WELE',
+      'nom' => 'Aliou Samba Wele',
       'adresse' => 'Rue 67*52',
       'telephone' => '+221778088471',
       'email' => 'aliou-samba.wele@atos.net',
@@ -34,7 +34,7 @@ function mon_conseiller_block_view($delta = '') {
       # code...
       $output .= '<p>'. $value . '</p>';
     }
-    $output .= '<p><a href="#">Fixer un RDV </a></p>'; 
+    $output .= '<p><a href="?q=node/2&qt-left_menu=7">Fixer un RDV </a></p>'; 
     $output .= '</div>';
     $output .= '<div class="blanc">';
     $output .= '</div>';

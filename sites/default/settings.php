@@ -261,7 +261,6 @@ $databases = array (
   ),
 );
 
-/*  $databases = array (
 /*$databases = array (
   'default' => 
   array (
@@ -275,9 +274,12 @@ $databases = array (
       'driver' => 'mysql',
       'prefix' => '',
     ),
-  );
+  ),
+);
+
+);
 */
- 
+  
 /**
  * Access control for update.php script.
  *

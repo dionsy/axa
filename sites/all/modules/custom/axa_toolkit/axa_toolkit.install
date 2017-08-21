@@ -14,3 +14,9 @@ function axa_toolkit_update_7000() {
 function axa_toolkit_update_7001() {
   module_enable(array('axa_service_configuration'),TRUE);
 }
+/**
+ * Install service configuration feature module
+ */
+function axa_toolkit_update_7002() {
+  module_enable(array('dialog'),TRUE);
+}

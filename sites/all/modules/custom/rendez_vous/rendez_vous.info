@@ -4,3 +4,4 @@ package = Atos
 version = 7.x-1
 core = 7.x
 files[] = rendez_vous.module
+

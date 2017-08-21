@@ -1,2 +1,10 @@
 <?php
 
+/**
+ * Implement hook_block_view_alter().
+ */
+function axa_toolkit_page_alter(&$page) {
+  if( drupal_is_front_page() ){
+    $page['content']['#attached']['library'][] = array('system', 'drupal.ajax');
+  }
+}

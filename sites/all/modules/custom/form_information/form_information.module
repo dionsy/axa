@@ -31,7 +31,11 @@ function form_information_block_view($delta = '') {
  * form_informaton form
  */
 function form_information_form($form, &$form_state){
+
  // $infoPerso = ws_client_getInfoUser() ;
+
+  /*$infoPerso = ws_client_getInfoUser() ;*/
+
   global $user;
   $user_load = user_load($user->uid);
 
@@ -43,21 +47,21 @@ function form_information_form($form, &$form_state){
   $form['nom'] = array(
     '#type' => 'textfield', 
     '#title' => 'Nom',
-    '#default_value' => $user->name,
+    '#default_value' => $user_load->name,
     '#required' => TRUE,
   );
 
   $form['email'] = array(
     '#type' => 'textfield', 
     '#title' => 'Email',
-    '#default_value' => $user->mail,
+    '#default_value' => $user_load->mail,
     '#required' => TRUE,
   );
 
   $form['telephone'] = array(
     '#type' => 'textfield', 
     '#title' => 'Téléphone',
-    '#default_value' => '778241624',
+    '#default_value' => '778088471',
     '#required' => TRUE,
   );
 

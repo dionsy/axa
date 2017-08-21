@@ -146,6 +146,17 @@ form#fixer-rendez-vous-form div.form-group label{
 form#fixer-rendez-vous-form div.form-group{
     border:1px solid #eee;
     margin-bottom: 0px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+form#fixer-rendez-vous-form .form-item-date-month .form-control{
+	width: auto !important;
+}
+form#fixer-rendez-vous-form .form-item-date-day .form-control{
+	width: auto !important;
+}
+form#fixer-rendez-vous-form .form-item-date-year .form-control{
+	width: auto !important;
 }
 form#fixer-rendez-vous-form div.form-item-demande .control-label{
 	border-bottom: 1px solid #eee;
@@ -228,4 +239,73 @@ form#fixer-rendez-vous-form #edit-actions--4 {
     background: #fcfcfc;
     border: 1px solid #eee;
     color: #666;
+}
+
+/*** declarer un sinstre ***/
+.declarer-sinistre {
+    position: absolute;
+    width: 102%;
+    bottom: -87px;
+    background: #005399 !important;
+    color: #fff !important;
+    height: 10%;
+    border-radius: 5px;
+}
+
+.declarer-sinistre #quicktabs-tab-left_menu-8 {
+	position: absolute;
+    top: -5px;
+    left: 18%;
+    color: #fff;
+}
+
+#fixer-declarer-sinistre-form{
+	padding: 3%;
+}
+
+fieldset {
+	background: #fcfcfc;
+}
+
+#fixer-declarer-sinistre-form div{
+	transform: none !important;
+    width: 100% !important;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item .control-label {
+    float: left;
+    width: 50%;
+    color: #666;
+    font-weight: normal;
+    padding-left: 2%;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item-garage{
+	margin: 3.5%;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item .form-control{
+	width: 48% !important;
+	border: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item-garage .control-label{
+	width: 100% !important;
+}
+
+
+#block-declarer-sinistre-declarer-sinistre .form-textarea-wrapper {
+    margin: 2%;
+}
+
+#block-declarer-sinistre-declarer-sinistre .form-item .form-textarea{
+	width: 84% !important;
+}
+
+#block-declarer-sinistre-declarer-sinistre .grippie{
+	display: none;
+}
+#block-declarer-sinistre-declarer-sinistre .form-item.form-item-nom {
+    margin-top: 10%;
 }
