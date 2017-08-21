@@ -1,0 +1,6 @@
+name = Acceuil client block
+description = Cette module permet d'afficher la page d'acceuil du client.
+package = Atos
+version = 7.x-1
+core = 7.x
+files[] = acceuil.module
