@@ -71,7 +71,7 @@ function form_information_form($form, &$form_state){
   );
 
   $form['pass'] = array(
-    '#title' => t('Change Password'),
+    '#title' => t('Code confidentiel'),
     '#type' => 'fieldset',
     '#states' => array(
       'visible' => array(
