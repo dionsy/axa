@@ -40,14 +40,14 @@ function fixer_declarer_sinistre_form($form, &$form_state){
       array(
         'type' => 'Habitation',
         'info' => array(
-                      '25456789321 MRH PREMIUM Mermoz',
+                      '25456789321 MRH PREMIUM',
                   ),
       ),
 
       array(
         'type' => 'Accident',
         'info' => array(
-                      '25012547896 Individuelle Accident lorem',
+                      '25012547896 Individuelle Accident',
                   ),
       ),
 
@@ -183,7 +183,7 @@ function fixer_declarer_sinistre_form($form, &$form_state){
 
   $form['justificatifs'] = array(
     '#type' => 'fieldset', 
-    '#title' => t('Joindre des documents justificatifs(photo, constat amiable, devis de réparation)'),   
+    '#title' => t('Joindre des documents justificatifs(photo, devis de réparation, ...)'),   
   );
 
   $form['justificatifs']['jsutificatif1'] = array(

@@ -288,6 +288,7 @@ fieldset {
 	width: 48% !important;
 	border: 1px solid #eee;
     border-bottom: 1px solid #eee;
+    background: #fff;
 }
 
 #block-declarer-sinistre-declarer-sinistre .form-item-garage .control-label{
@@ -308,4 +309,27 @@ fieldset {
 }
 #block-declarer-sinistre-declarer-sinistre .form-item.form-item-nom {
     margin-top: 10%;
+}
+
+#edit-jsutificatif1, #edit-jsutificatif2, #edit-jsutificatif3 {
+    margin: 3%;
+    border: 0;
+    width: 100% !important;
+}
+
+#fixer-declarer-sinistre-form #edit-date--2 .form-item{
+	display: inline-block;
+	width: 33.33% !important; 
+}
+
+#fixer-declarer-sinistre-form #edit-date--2{
+	border: 0 !important;
+}
+
+#block-declarer-sinistre-declarer-sinistre .panel-body {
+    background: #fcfcfc;
+}
+
+#block-declarer-sinistre-declarer-sinistre #edit-submit--7 {
+    margin-left: 0% !important;
 }
