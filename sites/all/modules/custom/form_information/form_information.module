@@ -31,7 +31,11 @@ function form_information_block_view($delta = '') {
  * form_informaton form
  */
 function form_information_form($form, &$form_state){
+
+ // $infoPerso = ws_client_getInfoUser() ;
+
   /*$infoPerso = ws_client_getInfoUser() ;*/
+
   global $user;
   $user_load = user_load($user->uid);
 
