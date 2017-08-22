@@ -34,21 +34,21 @@ function ws_client_getIdClient($numeroContrat){
 
 function ws_client_getInfoUser(){
   global $user;
-   $account = user_load($user->uid);
+  $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
 
-  $url = "http://192.168.200.14/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
+  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
+  
   $returnArray = array(
     'nom' => $data['nom'] ,
     'prenom' => $data['prenom'] ,
     'adresse' => $data['adresse'] ,
     'telephone' => $data['telephone'] ,
-    'mail' => $data['mail'] 
+    'mail' => $data['mail'], 
   );
-    /* var_dump($returnArray);die();*/
 
   return $returnArray ;
 }
@@ -58,7 +58,7 @@ function ws_client_get_info_conseiller(){
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
  
-  $url = "http://192.168.200.14/Service1.svc/conseiller/" .$identifiant. "";
+  $url = "http://192.168.43.145/Service1.svc/conseiller/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
@@ -88,7 +88,7 @@ function ws_client_update_info_user($array_data) {
                   'headers' => array('Content-Type' => 'application/json')
   );
 
-  $url = 'http://192.168.200.14/Service1.svc/compte/update';
+  $url = 'http://192.168.43.145/Service1.svc/compte/update';
 
   $result = drupal_http_request($url, $options);
           
@@ -158,7 +158,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request('http://192.168.200.14/Service1.svc/devisAuto/create', $options);
+              $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisAuto/create', $options);
                     $submission->data[1][0] = "" ;
                     $submission->data[2][0] = "" ;
                     $submission->data[3][0] = "" ;
@@ -199,7 +199,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request('http://192.168.200.14/Service1.svc/devisHabitation/create', $options);
+              $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisHabitation/create', $options);
               var_dump( $result) ; die();
           }
 }

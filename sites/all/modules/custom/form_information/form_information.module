@@ -190,7 +190,5 @@ function form_information_form_submit($form, &$form_state){
     $update['mail'] = $form_state['values']['email'];
     $update['telephone'] = $form_state['values']['telephone'];
 
-
-
     ws_client_update_info_user($update);
 }
