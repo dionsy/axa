@@ -36,7 +36,7 @@ function ws_client_getInfoUser(){
   global $user;
    $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
-  $url = "http://192.168.200.14/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
+  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
    $data = drupal_json_decode($request->data) ;
@@ -71,7 +71,7 @@ function ws_client_user_presave(&$edit, $account, $category) {
 function ws_client_webform_submission_presave($node, &$submission) {
     global $user;
    $account = user_load($user->uid);
-  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+  /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
      /* var_dump($node) ;  die();*/
       if($node->nid == '8')
       {
@@ -100,8 +100,8 @@ function ws_client_webform_submission_presave($node, &$submission) {
              'marque' =>  $marque ,
              'carosserie' => $carroserie ,
              'modele' => $modeleVehicule,
-             'puissane' => $submission->data[18][0],
-             'adresse' => $submission->data[21][0] 
+             'puissane' => $submission->data[18][0]
+             /*'adresse' => $submission->data[21][0] */
              /*'anneeDeNaissanceconducteur' => $submission->data[15][0] */
              );
              /* var_dump($devis); die();*/
@@ -114,7 +114,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request('http://192.168.200.14/Service1.svc/devisAuto/create', $options);
+              $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisAuto/create', $options);
                     $submission->data[1][0] = "" ;
                     $submission->data[2][0] = "" ;
                     $submission->data[3][0] = "" ;
@@ -138,7 +138,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
              'prenom' => $submission->data[9][0], 
              'telephone' => $submission->data[11][0],
              'mail' => $submission->data[12][0],
-             'typeLogement' => $submission->data[15][0],
+             'typeLogement' => $submission->data[1][0],
              'adresseLogement' => $submission->data[4][0],
              'nbPieces' =>  $submission->data[2][0],
              'principal' => $submission->data[3][0],
@@ -155,7 +155,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request('http://192.168.200.14/Service1.svc/devisHabitation/create', $options);
+              $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisHabitation/create', $options);
               var_dump( $result) ; die();
           }
 }
