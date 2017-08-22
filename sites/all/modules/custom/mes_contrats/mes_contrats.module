@@ -53,7 +53,7 @@ function mes_contrats_block_view($delta = '') {
                     array(
                       'id' =>'25012547896',
                       'produit' => 'Individuelle Accident',
-                      'adresse' => 'je ne sais',
+                      'adresse' => 'lorem',
                     ),
                   ),
       ),

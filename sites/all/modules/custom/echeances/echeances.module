@@ -16,8 +16,10 @@ function echeances_block_info() {
  */
 function echeances_block_view($delta = '') {
   if ($delta == 'echeances') {
+    $today = date("d/m/Y");
+    
   	$title_echeance = t('Mes échéances');
-  	$title_p = t('Situation au 14/08/2017'); 
+  	$title_p = t('Situation au ' . $today); 
   	$title = '<p>'. $title_echeance .'</p>';
   	$title .= '<span>'. $title_p .'</span>';
   	$text_prime = t("Dates des prochaines primes à payer pour vos contrat d'assurance");

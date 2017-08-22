@@ -54,9 +54,9 @@ function fixer_declarer_sinistre_form($form, &$form_state){
   );
 
   $nature_sinistre = array(
-    'auto' => array('Collision entre vehicule', 'nature auto 1', 'nature auto 2','nature auto 3'),
-    'habitation' => array('nature habitation 1', 'nature habitation 2', 'nature habitation 3'),
-    'accident' => array('nature accident 1','nature accident 2','nature accident 3'),
+    'auto' => array('Collision entre vehicule', 'Vitre brisee', 'nature auto 2','nature auto 3'),
+    'habitation' => array('Cambriolage', 'Catastrophe naturelle', 'Incendie'),
+    'accident' => array('Accident de la route','nature accident 2','nature accident 3'),
   );
 
   $form['sinistre'] = array(
@@ -137,13 +137,15 @@ function fixer_declarer_sinistre_form($form, &$form_state){
 
   $form['supplementaire'] = array(
     '#type' => 'fieldset', 
-    '#title' => t('Information supplémentaire'),   
+    '#title' => t('Information supplémentaire'),
+    '#collapsible' => TRUE, 
+    '#collapsed' => TRUE,   
   );
 
   $form['supplementaire']['estimation'] = array(
     '#type' => 'select',
     '#options' => array('plus de 50000 FCFA','plus de 10000 FCFA','plus de 500000 FCFA','plus de 1000000 FCFA') ,
-    '#title' => t('Estimations des dégats'),
+    '#title' => t('Estimations des dégâts'),
   );
 
   $form['supplementaire']['dommages'] = array(
@@ -183,7 +185,9 @@ function fixer_declarer_sinistre_form($form, &$form_state){
 
   $form['justificatifs'] = array(
     '#type' => 'fieldset', 
-    '#title' => t('Joindre des documents justificatifs(photo, devis de réparation, ...)'),   
+    '#title' => t('Joindre des documents justificatifs (photo, devis de réparation, ...)'),
+    '#collapsible' => TRUE, 
+    '#collapsed' => TRUE,   
   );
 
   $form['justificatifs']['jsutificatif1'] = array(

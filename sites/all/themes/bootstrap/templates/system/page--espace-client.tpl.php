@@ -1,4 +1,5 @@
 <?php
+module_load_include('module','ws_client');
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
@@ -117,7 +118,8 @@
                   if(user_is_logged_in())
                     $account = user_load($user->uid); 
                     if(isset($account)) {
-                      print '<span>'.$account->name. '</span>';                    
+                      $array = ws_client_getInfoUser();
+                      print '<span>'.$array['nom']. '</span>';                    
                     }  
                ?>
              </div>

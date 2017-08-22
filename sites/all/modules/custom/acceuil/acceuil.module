@@ -20,8 +20,8 @@ function acceuil_block_view($delta = '') {
     $output = '';
 
     $output .= '<div class="head0 col-xs-10 col-sm-10 col-md-10 col-lg-10">';
-    $output .=   '<p class="head1">Profiter d\'un maximum de deductions fiscales</p>';
-    $output .=   '<p class="head2">Cela vous interesse?</p>';
+    $output .=   '<p class="head1">Profiter d\'un maximum de déductions fiscales</p>';
+    $output .=   '<p class="head2">Cela vous intéresse?</p>';
     $output .= '</div>';
     $output .= '<div class="corps-espace-client col-xs-12 col-sm-12  col-md-12 col-lg-12">';
     $output .=   '<h1 class="bienvenue">Bienvenue</h1>';

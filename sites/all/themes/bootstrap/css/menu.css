@@ -277,6 +277,12 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-4::before
     padding-right: 3%;
 }
 
+ul.quicktabs-tabs.quicktabs-style-navlist li a#quicktabs-tab-left_menu-5::before{
+    content:"\f017";
+    font-family: "FontAwesome";
+    padding-right: 3%;
+}
+
 
 
 #quicktabs-mes_demandes_de_devis ul.quicktabs-tabs.quicktabs-style-garland li.active a {
