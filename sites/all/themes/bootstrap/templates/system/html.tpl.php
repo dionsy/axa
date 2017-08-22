@@ -77,7 +77,6 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   
-  <script src="https://code.highcharts.com/highcharts.src.js"></script>
   <!-- <script src="keypad.js"></script> -->
 <!--   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-gUxI2igS1rbhlgq0NGM4d2hvrWt9guw&sensor=false&v=2"></script> -->
 </body>
