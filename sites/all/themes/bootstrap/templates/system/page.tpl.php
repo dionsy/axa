@@ -93,7 +93,7 @@
                    else{
                       print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
                     }
-                    print '<a href="node/114" >Découvrir Mon Axa</a>';
+                    print '<div class="prez-mon-axa"><i class="fa fa-mobile" aria-hidden="true"></i><a href="node/114" >Découvrir Mon Axa</a></div>';
                   ?>      
                 <?php
                    if(user_is_logged_in()){
