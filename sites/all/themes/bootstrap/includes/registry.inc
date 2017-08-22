@@ -92,6 +92,8 @@ function _bootstrap_theme(&$existing, $type, $theme, $path) {
   $hooks['bootstrap_search_form_wrapper'] = array(
     'render element' => 'element',
   );
+
+  
   return $hooks;
 }
 
@@ -101,6 +103,7 @@ function _bootstrap_theme(&$existing, $type, $theme, $path) {
 function bootstrap_theme_registry_alter(&$registry) {
   // Retrieve the active theme names.
   $themes = _bootstrap_get_base_themes(NULL, TRUE);
+
 
   // Return the theme registry unaltered if it is not Bootstrap based.
   if (!in_array('bootstrap', $themes)) {

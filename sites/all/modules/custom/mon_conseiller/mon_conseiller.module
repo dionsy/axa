@@ -20,16 +20,16 @@ function mon_conseiller_block_view($delta = '') {
     $title = '';
   	$output = '';
 
-    $get_service_conseiller = ws_client_get_info_conseiller();
+    //$get_service_conseiller = ws_client_get_info_conseiller();
 
     $title .=   t('Mon Conseiller');
 
     $output .= '<div class="conseiller-left-bar">';
     $output .= '<h3>Mon conseiller</h3>';
-    foreach ($get_service_conseiller as $key => $value) {
+    /*foreach ($get_service_conseiller as $key => $value) {
       # code...
       $output .= '<p>'. $value . '</p>';
-    }
+    }*/
     $output .= '<p><a href="?q=node/2&qt-left_menu=7">Fixer un RDV </a></p>'; 
     $output .= '</div>';
     $output .= '<div class="blanc">';

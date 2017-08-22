@@ -114,7 +114,7 @@
         $('#edit-submitted-type-de-bien').on('change', function (e) {
              $('.form-item-submitted-nombre-de-pieces').addClass('fadeIn') ;
         });
-         $('#edit-submitted-vous-etes').on('change', function (e) {
+         $('#edit-submitted-est-il-locataire').on('change', function (e) {
              $('.form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn') ;
         });
          
@@ -134,8 +134,11 @@
         //ON CHANGE 
 
         $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
+             $('.form-item-submitted-adresse').addClass('fadeIn'  ) ;
+         }); 
+         $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
              $('.form-item-submitted-email').addClass('fadeIn'  ) ;
-         });  
+         });   
         $( ".form-item-submitted-date-premiere--mise-en-circulation-year" ).on('change', function (e) {
              $('.form-item-submitted-valeur-a-neuf').addClass('fadeIn'  ) ;
          }); 
@@ -148,13 +151,16 @@
 
         //FOCUSOUT
         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).keyup(function() {
-              $('.form-item-submitted-vous-etes').addClass('fadeIn'  ) ;
+              $('.form-item-submitted-est-il-locataire').addClass('fadeIn'  ) ;
           });
      
         $( ".form-item-submitted-prenom" ).keyup(function() {
               $('.form-type-date').addClass('fadeIn'  ) ;
           });
-        $( ".form-item-submitted-email").keyup(function() {
+        $(".form-item-submitted-adresse").keyup(function() {
+             $('.form-item-submitted-email').addClass('fadeIn'  ) ;
+          }); 
+        $(".form-item-submitted-email").keyup(function() {
              $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
          });
         $( ".form-item-submitted-telephone").keyup(function() {

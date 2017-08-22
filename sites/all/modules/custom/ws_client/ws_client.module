@@ -34,11 +34,9 @@ function ws_client_getIdClient($numeroContrat){
 
 function ws_client_getInfoUser(){
   global $user;
-  $account = user_load($user->uid);
-
+   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
-  /*var_dump($identifiant); die();*/
- 
+
   $url = "http://192.168.200.14/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
@@ -115,49 +113,95 @@ function ws_client_user_presave(&$edit, $account, $category) {
 		$edit['field_identifiant_client']['und'][0]['value'] = $result ;
 }
 function ws_client_webform_submission_presave($node, &$submission) {
+    global $user;
+   $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+     /* var_dump($node) ;  die();*/
+      if($node->nid == '8')
+      {
+            $carrosserieObject = taxonomy_term_load($submission->data[12][0]) ;
+            $carroserie = $carrosserieObject->name ;
+            $idCarroserie = $carrosserieObject->tid ;
+            $modeleVehiculeObjectParent = taxonomy_get_parents($idCarroserie) ;
+            $modeleVehiculeObject = reset($modeleVehiculeObjectParent) ;
+            $modeleVehicule = $modeleVehiculeObject->name ;
+            $idmodel = $modeleVehiculeObject->tid ;
+            $marqueObjectParent = (taxonomy_get_parents($idmodel)) ;
+            $marqueObject  = reset($marqueObjectParent) ;
+            $marque = $marqueObject->name ;
+            $devis = array(
+             'idCompte' => '' ,
+             'nom' => $submission->data[1][0] ,
+             'prenom' => $submission->data[2][0] , 
+            /* 'dateNaissance' => $submission->data[3][0] ,*/ 
+             'telephone' => $submission->data[5][0]  ,
+             'mail' => $submission->data[4][0] ,
+            /* 'dateMiseCirculation' => $submission->data[19][0] ,*/
+             /*'ageObtentionPermis' => $submission->data[16][0] ,*/
+             'carburant' => $submission->data[13][0] ,
+             'valeurAneuf' => $submission->data[20][0] ,
+          /*   'emailDuconducteurPrincipal' => $submission->data[17][0] ,*/
+             'marque' =>  $marque ,
+             'carosserie' => $carroserie ,
+             'modele' => $modeleVehicule,
+             'puissane' => $submission->data[18][0],
+             'adresse' => $submission->data[21][0] 
+             /*'anneeDeNaissanceconducteur' => $submission->data[15][0] */
+             );
+             /* var_dump($devis); die();*/
+            $data = drupal_json_encode($devis);
 
-     /* var_dump($node) ; */ 
-        $carrosserieObject = taxonomy_term_load($submission->data[12][0]) ;
-        $carroserie = $carrosserieObject->name ;
-        $idCarroserie = $carrosserieObject->tid ;
-        $modeleVehiculeObjectParent = taxonomy_get_parents($idCarroserie) ;
-        $modeleVehiculeObject = reset($modeleVehiculeObjectParent) ;
-        $modeleVehicule = $modeleVehiculeObject->name ;
+              $options = array(
+                              'method' => 'POST',
+                              'data' => $data,
+                              'timeout' => 6000.0,
+                              'headers' => array('Content-Type' => 'application/json')
+              );
 
-        $idmodel = $modeleVehiculeObject->tid ;
-        $marqueObjectParent = (taxonomy_get_parents($idmodel)) ;
-        $marqueObject  = reset($marqueObjectParent) ;
-        $marque = $marqueObject->name ;
-        $devis = array(
-         'idCompte' => '' ,
-         'nom' => $submission->data[1][0] ,
-         'prenom' => $submission->data[2][0] , 
-        /* 'dateNaissance' => $submission->data[3][0] ,*/ 
-         'telephone' => $submission->data[5][0]  ,
-         'mail' => $submission->data[4][0] ,
-        /* 'dateMiseCirculation' => $submission->data[19][0] ,*/
-         /*'ageObtentionPermis' => $submission->data[16][0] ,*/
-         'carburant' => $submission->data[13][0] ,
-         'valeurAneuf' => $submission->data[20][0] ,
-      /*   'emailDuconducteurPrincipal' => $submission->data[17][0] ,*/
-         'marque' =>  $marque ,
-         'carosserie' => $carroserie ,
-         'modele' => $modeleVehicule,
-         'puissane' => $submission->data[18][0] 
-         /*'anneeDeNaissanceconducteur' => $submission->data[15][0] */
-         );
-         /* var_dump($devis); die();*/
-        $data = drupal_json_encode($devis);
+              $result = drupal_http_request('http://192.168.200.14/Service1.svc/devisAuto/create', $options);
+                    $submission->data[1][0] = "" ;
+                    $submission->data[2][0] = "" ;
+                    $submission->data[3][0] = "" ;
+                    $submission->data[4][0] = "" ;
+                    $submission->data[5][0] = "" ;
+                    $submission->data[9][0] = "" ;
+                    $submission->data[19][0] = "" ;
+                    $submission->data[13][0] = "" ;
+                    $submission->data[20][0] = "" ;
+                    $submission->data[16][0] = "" ;
+                    $submission->data[17][0] = "" ;
+                    $submission->data[21][0] = "" ;
+                    $submission->data[12][0] = "" ;
+                    $submission->data[18][0] = "" ;
+        }
+         if($node->nid == '9')
+          { 
+            $devis = array(
+             'idCompte' => $identifiant ,
+             'nom' => $submission->data[8][0],
+             'prenom' => $submission->data[9][0], 
+             'telephone' => $submission->data[11][0],
+             'mail' => $submission->data[12][0],
+             'typeLogement' => $submission->data[15][0],
+             'adresseLogement' => $submission->data[4][0],
+             'nbPieces' =>  $submission->data[2][0],
+             'principal' => $submission->data[3][0],
+             'locataire' => $submission->data[14][0],
+             'montant' => '5000000'
+             );
+              /*var_dump($devis); die();*/
+            $data = drupal_json_encode($devis);
 
-          $options = array(
-                          'method' => 'POST',
-                          'data' => $data,
-                          'timeout' => 6000.0,
-                          'headers' => array('Content-Type' => 'application/json')
-                  );
+              $options = array(
+                              'method' => 'POST',
+                              'data' => $data,
+                              'timeout' => 6000.0,
+                              'headers' => array('Content-Type' => 'application/json')
+              );
 
-          $result = drupal_http_request('http://192.168.200.14/Service1.svc/devisAuto/create', $options);
-          
+              $result = drupal_http_request('http://192.168.200.14/Service1.svc/devisHabitation/create', $options);
+              var_dump( $result) ; die();
+          }
 }
 
 
