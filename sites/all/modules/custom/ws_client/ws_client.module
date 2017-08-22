@@ -26,33 +26,77 @@ function ws_client_get_node(){
 function ws_client_getIdClient($numeroContrat){
 	$url = "http://192.168.43.145/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
 
-   $options = array('timeout' => 6000.0) ;
+  $options = array('timeout' => 6000.0) ;
 	$request = drupal_http_request($url ,$options) ;
   /*var_dump($request->data);die();*/
   return drupal_json_decode($request->data);
 }
 
 function ws_client_getInfoUser(){
- global $user;
-      $account = user_load($user->uid);
+  global $user;
+  $account = user_load($user->uid);
 
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+  /*var_dump($identifiant); die();*/
  
   $url = "http://192.168.200.14/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
-   $data = drupal_json_decode($request->data) ;
-   $returnArray = array(
+  $data = drupal_json_decode($request->data) ;
+  $returnArray = array(
     'nom' => $data['nom'] ,
     'prenom' => $data['prenom'] ,
     'adresse' => $data['adresse'] ,
     'telephone' => $data['telephone'] ,
     'mail' => $data['mail'] 
-    );
+  );
     /* var_dump($returnArray);die();*/
 
-   return $returnArray ;
+  return $returnArray ;
 }
+
+function ws_client_get_info_conseiller(){
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+ 
+  $url = "http://192.168.200.14/Service1.svc/conseiller/" .$identifiant. "";
+  $options = array('timeout' => 6000.0) ;
+  $request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;
+   
+  $returnArray = array(
+    'nomComplet' => $data['nomComplet'] ,
+    'adresse' => $data['adresse'] ,
+    'telephone' => $data['telephone'] ,
+    'mail' => $data['mail'], 
+  );
+   
+  return $returnArray ;
+}
+
+function ws_client_update_info_user($array_data) {
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+  $array_data['id'] = $identifiant;
+  $data = drupal_json_encode($array_data);
+
+  $options = array(
+                  'method' => 'PUT',
+                  'data' => $data,
+                  'timeout' => 6000.0,
+                  'headers' => array('Content-Type' => 'application/json')
+  );
+
+  $url = 'http://192.168.200.14/Service1.svc/compte/update';
+
+  $result = drupal_http_request($url, $options);
+          
+}
+
+
 
 
 /*function ws_client_getIdentifiant_node(){
