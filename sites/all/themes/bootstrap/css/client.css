@@ -211,7 +211,7 @@ form#fixer-rendez-vous-form .grippie{
 }
 
 form#fixer-rendez-vous-form #edit-submit--6 {
-    margin-left: 30%;
+    margin-left: 0%;
     margin-top: 6%;
     margin-bottom: 6%;
 }
@@ -266,6 +266,10 @@ form#fixer-rendez-vous-form #edit-actions--4 {
 
 fieldset {
 	background: #fcfcfc;
+}
+
+fieldset .panel-heading a.panel-title {
+    color: #005399 !important;
 }
 
 #fixer-declarer-sinistre-form div{
@@ -325,6 +329,8 @@ fieldset {
 
 #fixer-declarer-sinistre-form #edit-date--2{
 	border: 0 !important;
+	background: #fcfcfc;
+	color: #fcfcfc;
 }
 
 #block-declarer-sinistre-declarer-sinistre .panel-body {
