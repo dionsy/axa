@@ -207,8 +207,7 @@
              $(this).attr("readonly", false);
           }).bind('blur', function(){
              $(this).attr("readonly", true);
-         });
-        
+         });  
    }
 
   }
