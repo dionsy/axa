@@ -34,23 +34,23 @@ function echeances_block_view($delta = '') {
 	  	),
 	  	'tbody' => array(
 	  		array(
-		  	    'NumContrat' => t('10245520'),
+		  	  'NumContrat' => t('10245520'),
 		  		'produit' => t('Oplus LIFE-Equatoria'),
-		  		'caracteristiques' => t('wele'),
+		  		'caracteristiques' => t('BMW'),
 		  		'mode_echeance' => t('Mensuelle'),
 		  		'prochaine_echeance' => t('01/09/2017'),		
 	  		),
 	  		array(
-		  	    'NumContrat' => t('1254885222'),
+		  	  'NumContrat' => t('1254885222'),
 		  		'produit' => t('Oplus LIFE-Equatoria'),
-		  		'caracteristiques' => t('je ne sais pas'),
+		  		'caracteristiques' => t('BMW'),
 		  		'mode_echeance' => t('Mensuelle'),
 		  		'prochaine_echeance' => t('01/09/2017'),		
 	  		),
 	  		array(
 		  	    'NumContrat' => t('125460'),
 		  		'produit' => t('Oplus LIFE-Equatoria'),
-		  		'caracteristiques' => t('dfsdfsd'),
+		  		'caracteristiques' => t('BMW'),
 		  		'mode_echeance' => t('Mensuelle'),
 		  		'prochaine_echeance' => t('01/09/2017'),		
 	  		),

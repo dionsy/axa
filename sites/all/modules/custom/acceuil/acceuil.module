@@ -1,0 +1,45 @@
+<?php
+/**
+ * Implements hook_block_info()
+ */
+function acceuil_block_info() {
+  return array(
+    'acceuil' => array(
+      'info' => t('acceuil du client'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function acceuil_block_view($delta = '') {
+  if ($delta == 'acceuil') {
+    $title = '';
+    $output = '';
+
+    $output .= '<div class="head0 col-xs-10 col-sm-10 col-md-10 col-lg-10">';
+    $output .=   '<p class="head1">Profiter d\'un maximum de deductions fiscales</p>';
+    $output .=   '<p class="head2">Cela vous interesse?</p>';
+    $output .= '</div>';
+    $output .= '<div class="corps-espace-client col-xs-12 col-sm-12  col-md-12 col-lg-12">';
+    $output .=   '<h1 class="bienvenue">Bienvenue</h1>';
+    $output .=   '<div class="alignement">';
+    $output .=    '<h3 class="espace"><a href="?q=node/2&qt-left_menu=3">Mon espace client internet AXA, rapide et efficace a tout moment</a></h3>';
+    $output .=    '<p>Toutes mes informations personnelles. </p>';
+    $output .=    '<h3 class="contrat"><a href="?q=node/2&qt-left_menu=2">Mes contrats</a></h3>';
+    $output .=    '<p>Mes couvertures et caracteristiques de mes contrats d\'assurance</p>';
+    $output .=    '<h3 class="echeances"><a href="?q=node/2&qt-left_menu=5">Mes echeances</a></h3>';
+    $output .=    '<p>Mes prochaines cotisation d\'assurance</p>';
+    $output .=   '</div>';
+    $output .= '</div>';
+
+    return array(
+      'subject' => '' ,
+      'content' => (!empty($output)) ?   $output : '<p>' . t('For now, this list is empty!') . '</p>',
+    );
+  }
+
+  return array();
+}

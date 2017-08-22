@@ -30,6 +30,8 @@ function rendez_vous_block_view($delta = '') {
  * fixer_rendez_vous_form
  */
 function fixer_rendez_vous_form($form, &$form_state){
+  global $user;
+  $user_load = user_load($user->uid);
 
   $form['objet'] = array(
     '#type' => 'select',
@@ -58,10 +60,32 @@ function fixer_rendez_vous_form($form, &$form_state){
     '#required' => TRUE,
   );
 
+  $form['sms'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Numéro de téléphone'),
+    '#default_value' => '778241624',
+    '#states' => array(
+      'visible' => array(
+        ':input[name="moyen_contact"]' => array('value' => 'SMS'),
+      ),
+    ),
+  );
+
+  $form['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Adresse mail'),
+    '#default_value' => $user_load->mail,
+    '#states' => array(
+      'visible' => array(
+        ':input[name="moyen_contact"]' => array('value' => 'EMAIL'),
+      ),
+    ),
+  );
+
   $form['date'] = array(
-    '#type' => 'textfield', 
+    '#type' => 'date', 
     '#title' => t('Dans la journée de'), 
-    '#default_value' => '10/10/2017', 
+    '#default_value' =>  array('year' => 2017, 'month' => 2, 'day' => 15), 
     '#required' => TRUE,
   );
 

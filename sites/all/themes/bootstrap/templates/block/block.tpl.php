@@ -178,6 +178,18 @@ switch ($block->delta) {
         }
 	break;
 
+	case 'acceuil':
+		# code...
+	    if(user_is_logged_in()) {
+	        $account = user_load($user->uid);
+	    	$pic ='';
+		    if(isset($account->picture))
+               $pic=$account->picture;
+            $img = file_create_url($pic->uri);
+            $prefix = '<div class="avatar col-xs-2 col-sm-2 col-md-2 col-lg-2" ><img class="img-responsive" src="'.$img.'" /><div class="barre">&nbsp;&nbsp;&nbsp;&nbsp;</div></div>';
+        }
+	break;
+
 	case '5':	
 		$suffix='<div class="blanc"></div><div class="bas">&nbsp;</div><div class="incline">&nbsp;&nbsp;&nbsp;&nbsp;</div>';
 	break;

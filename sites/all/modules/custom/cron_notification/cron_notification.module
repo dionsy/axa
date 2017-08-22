@@ -200,7 +200,7 @@ function cron_notification_cron() {
       if(in_array("MaIL", $choice)){
         # send email
         //krumong('main')->kPrint($body_mail, 'body mail');
-        cron_notification_send_mail($client->mail, $subject, $body_mail);      
+        //cron_notification_send_mail($client->mail, $subject, $body_mail);      
       }    
       if (($library = libraries_load(TWILIO_LIBRARY)) &&
            !empty($library['loaded']) &&

@@ -63,7 +63,9 @@
           }
 
       });
-
+      
+      $('.quicktabs-tab-block-declarer-sinistre-delta-declarer-sinistre').parents('li').addClass('declarer-sinistre');
+      $('.quicktabs-tab-block-rendez-vous-delta-rendez-vous').parents('li').addClass('hide');
       $('#quicktabs-left_menu ul.quicktabs-tabs').append('<a href="javascript:void(0);" class="icon">&#9776;</a><a href="javascript:void(1);" class="icon-close">&#10060;</a>');
       $('#quicktabs-left_menu ul.quicktabs-tabs').addClass('topnav');
       $('#quicktabs-left_menu ul.quicktabs-tabs').attr( 'id', 'idForResponsive' );

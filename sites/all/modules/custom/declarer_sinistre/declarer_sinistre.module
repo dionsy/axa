@@ -17,7 +17,7 @@ function declarer_sinistre_block_info() {
 function declarer_sinistre_block_view($delta = '') {
   $block = array();
   if ($delta == 'declarer_sinistre') {
-    $block['subject'] = '<p>'. 'Declarer Sinistre' .'</p>'; 
+    $block['subject'] = '<p>'. 'Déclarer un Sinistre' .'</p>'; 
     $block['content'] = drupal_get_form('fixer_declarer_sinistre_form');
   }
 
@@ -28,9 +28,188 @@ function declarer_sinistre_block_view($delta = '') {
  * fixer_declarer_sinistre_form
  */
 function fixer_declarer_sinistre_form($form, &$form_state){
+  $get_service_contrats = array(
+      array(
+        'type' => 'Auto',
+        'info' => array(
+                      '25123596870 AUTO ECO BMW',
+                      '25456789321 SOLUTION CONFORT Mercedes',
+                  ),
+      ),
 
+      array(
+        'type' => 'Habitation',
+        'info' => array(
+                      '25456789321 MRH PREMIUM',
+                  ),
+      ),
+
+      array(
+        'type' => 'Accident',
+        'info' => array(
+                      '25012547896 Individuelle Accident',
+                  ),
+      ),
+
+  );
+
+  $nature_sinistre = array(
+    'auto' => array('Collision entre vehicule', 'nature auto 1', 'nature auto 2','nature auto 3'),
+    'habitation' => array('nature habitation 1', 'nature habitation 2', 'nature habitation 3'),
+    'accident' => array('nature accident 1','nature accident 2','nature accident 3'),
+  );
+
+  $form['sinistre'] = array(
+    '#type' => 'fieldset', 
+    '#title' => t('Information sur votre sinistre'),   
+  );
+
+  $form['sinistre']['type'] = array(
+    '#type' => 'select',
+    '#options' => drupal_map_assoc(array(t('Auto'), t('Habitation'), t('Assistance et Accident'))),
+    '#title' => t('Type de sinistre'),
+  );
   
+  $form['sinistre']['contrat_auto'] = array(
+    '#type' => 'select',
+    '#options' => $get_service_contrats[0]['info'] ,
+    '#title' => t('Contrat concené'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="type"]' => array('value' => t('Auto')),
+      ),
+    ),
+  );
+  $form['sinistre']['contrat_habitation'] = array(
+    '#type' => 'select',
+    '#options' => $get_service_contrats[1]['info'] ,
+    '#title' => t('Contrat concené'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="type"]' => array('value' => t('Habitation')),
+      ),
+    ),
+  );
+
+  $form['sinistre']['contrat_accident'] = array(
+    '#type' => 'select',
+    '#options' => $get_service_contrats[2]['info'] ,
+    '#title' => t('Contrat concené'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="type"]' => array('value' => t('Assistance et Accident')),
+      ),
+    ),
+  );
+
+  $form['sinistre']['nature_auto'] = array(
+    '#type' => 'select',
+    '#options' => $nature_sinistre['auto'] ,
+    '#title' => t('Nature du sinistre'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="type"]' => array('value' => t('Auto')),
+      ),
+    ),
+  );
+
+  $form['sinistre']['nature_habitation'] = array(
+    '#type' => 'select',
+    '#options' => $nature_sinistre['habitation'] ,
+    '#title' => t('Nature du sinistre'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="type"]' => array('value' => t('Habitation')),
+      ),
+    ),
+  );
+
+  $form['sinistre']['nature_accident'] = array(
+    '#type' => 'select',
+    '#options' => $nature_sinistre['accident'] ,
+    '#title' => t('Nature du sinistre'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="type"]' => array('value' => t('Assistance et Accident')),
+      ),
+    ),
+  );
+
+  $form['supplementaire'] = array(
+    '#type' => 'fieldset', 
+    '#title' => t('Information supplémentaire'),   
+  );
+
+  $form['supplementaire']['estimation'] = array(
+    '#type' => 'select',
+    '#options' => array('plus de 50000 FCFA','plus de 10000 FCFA','plus de 500000 FCFA','plus de 1000000 FCFA') ,
+    '#title' => t('Estimations des dégats'),
+  );
+
+  $form['supplementaire']['dommages'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Décrire les dommages'),
+  );
+
+  $form['supplementaire']['garage'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Si votre véhicule est ou sera déposé dans un garage?'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="type"]' => array('value' => t('Auto')),
+      ),
+    ),
+  );
+
+  $form['supplementaire']['nom'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Nom du réparateur du véhicule'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="garage"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+
+  $form['supplementaire']['date'] = array(
+    '#type' => 'date',
+    '#title' => t('Date de réparation(si connue)'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="garage"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+
+  $form['justificatifs'] = array(
+    '#type' => 'fieldset', 
+    '#title' => t('Joindre des documents justificatifs(photo, devis de réparation, ...)'),   
+  );
+
+  $form['justificatifs']['jsutificatif1'] = array(
+    '#type' => 'file',
+    '#title' => t('Choisir un fichier'),
+    '#title_display' => 'invisible',
+    '#size' => 22,
+    '#theme_wrappers' => array(),
+  );
+
+  $form['justificatifs']['jsutificatif2'] = array(
+    '#type' => 'file',
+    '#title' => t('Choisir un fichier'),
+    '#title_display' => 'invisible',
+    '#size' => 22,
+    '#theme_wrappers' => array(),
+  );
+
+  $form['justificatifs']['jsutificatif3'] = array(
+    '#type' => 'file',
+    '#title' => t('Choisir un fichier'),
+    '#title_display' => 'invisible',
+    '#size' => 22,
+    '#theme_wrappers' => array(),
+  );
+
   
   return system_settings_form($form);
-
 }

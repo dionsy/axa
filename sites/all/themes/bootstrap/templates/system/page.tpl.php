@@ -88,12 +88,12 @@
                   <?php
                     // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
                     } 
                    else{
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
                     }
-                    print '<a href="node/114" >Découvrir Mon Axa</a>';
+                    print '<div class="prez-mon-axa"><i class="fa fa-mobile" aria-hidden="true"></i><a href="node/114" >Découvrir Mon Axa</a></div>';
                   ?>      
                 <?php
                    if(user_is_logged_in()){
@@ -180,12 +180,21 @@
               global $base_url; 
               $userUID = $user->uid; 
               if(empty($userUID)){
-                $href= $base_url.'/user';
+                $href= l(t('Declaration Sinistre'), 'user', array(
+                  'attributes' => array(
+                    'title' => t('Create un espace client'),
+                    'class' => array('use-ajax ','sinistre'),
+                    'data-dialog' => 'true',
+                    'data-dialog-options' => '{"width":"40%"}',
+                  )
+                ));
               }
               else{
                 $href=$base_url.'/node/12';
               }
-              print '<div class="sinistre"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
+              
+              echo $href;
+              // print '<div class="sinistre"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
             ?>
 
                 <?php //} ?>
@@ -224,3 +233,4 @@
             </footer>
             <?php endif; ?>
           </div>
+

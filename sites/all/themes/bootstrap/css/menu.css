@@ -770,7 +770,7 @@ ul#quicktabs-tab-left_menu-0::before{
     padding-right: 0px;
 }
 
-#block-block-4 .avatar .barre {
+#block-acceuil-acceuil .avatar .barre {
     background: #fff none repeat scroll 0 0;
     border-bottom: 43px solid #ffffff;
     border-top: 7px solid #ee3e40;
@@ -787,12 +787,12 @@ div#edit-field-fin-contrat {
 }
 
 
-#block-block-4 .head1 {
+#block-acceuil-acceuil .head1 {
     color: #2f5399;
     letter-spacing: 1px;
 }
 
-#block-block-4 .head2 {
+#block-acceuil-acceuil .head2 {
     color: #004d92;
     font-size: 14px;
     font-weight: bold;
@@ -842,8 +842,12 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     padding-left: 3%;
     padding-right: 3%;
 }
-
-.alignement h3{
+.alignement h3 {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.alignement h3 a{
     color: #666666;
     font-size: 14px;
     font-weight: bold;
@@ -904,11 +908,11 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     left: 2px;
     position: relative;
     top: 16px;
-    transform: skew(0deg, 7deg);
+    transform: skew(0deg, 6deg);
     width: 102%;
 }
 /*** mes informations ***/
-#block-block-4 {
+#block-acceuil-acceuil {
     background: #fff;
 }
 #node-113 form div:first-child, #form-information-form > div{
@@ -1221,7 +1225,10 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 }
 
 /*** Mes devis ***/
-#block-panels-mini-panel-espace-client .block-title, #block-mes-contrats-mes-contrats .block-title, #block-mes-devis-mes-devis .block-title{
+#block-panels-mini-panel-espace-client .block-title, 
+#block-mes-contrats-mes-contrats .block-title, 
+#block-mes-devis-mes-devis .block-title,
+#block-declarer-sinistre-declarer-sinistre .block-title{
     /*margin-top: 0px;*/
     padding: 6px 3% 13px 3%;
     margin-bottom: 0px;
@@ -1367,7 +1374,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         left: 79%;
     }
 
-    #block-block-4 .avatar .barre {
+    #block-acceuil-acceuil .avatar .barre {
         display: none;
     }
 
@@ -1478,7 +1485,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         display: none;
     }
 
-    #block-block-4 .avatar .barre {
+    #block-acceuil-acceuil .avatar .barre {
         display: none;
     }
 

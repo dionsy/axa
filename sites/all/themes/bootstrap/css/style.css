@@ -156,11 +156,18 @@ ul{
 #user-login-form li{
 	list-style:none;
 }
-#edit-actions #edit-submit.form-submit{
+
+#edit-actions #edit-submit.form-submit,
+#edit-actions--2 #edit-submit--2{
     background-color: rgb(71, 168, 13);
     padding-left: 20px;
     padding-right:20px;
    /* width: 50%; */
+}
+#drupal-modal #edit-actions--2{
+    display: block !important;
+    margin: 0 auto !important;
+    width: 120px !important;
 }
 #edit-actions #edit-submit.form-submit:hover{
 	background: rgb(61, 144, 11) none repeat scroll 0 0;
@@ -1830,10 +1837,10 @@ input.nmpd-display {
 .clear.btn   {
     background: rgb(237, 24, 70);
 }
-}
 
-.fond-mon-axa{
-    background: url(../images/bg-monaxa.jpg) no-repeat center;
+
+#fond-mon-axa{
+    background: url(../images/bg-monaxa.jpg) no-repeat center !important;
     background-size: cover;
     margin-top: 2rem;
 }
@@ -1841,17 +1848,23 @@ input.nmpd-display {
 #block-views-bandeau-mon-axa-block{
     min-height: 400px;
 }
+.mon_axa h2,
 #block-views-bandeau-mon-axa-block h2{
     font-weight: bold;
 }
+.mon_axa h3,
+.mon_axa h2,
 #block-views-bandeau-mon-axa-block h3,
 #block-views-bandeau-mon-axa-block h2{
     color: #00529B;
 }
-.mon_axa {
+#block-views-bandeau-mon-axa-block .mon_axa {
     width: 50%;
     position: relative;
     top: 7rem;
+}
+.mon_axa p{
+    line-height: 26px;
 }
 .mon_axa a{
     display: block;
@@ -1889,11 +1902,67 @@ input.nmpd-display {
 
 #block-quicktabs-mon-axa .quicktabs-tabpage{
     background: none;
+    box-shadow: none;
 }
 
 #block-quicktabs-mon-axa ul.quicktabs-tabs.quicktabs-style-sky li.active a, 
 #block-quicktabs-mon-axa ul.quicktabs-tabs.quicktabs-style-sky li.active a:visited{
     background: none;
+    color: #000 !important;
+    border-bottom: #00529B 2px solid !important;
+}
+
+#quicktabs-mon_axa ul.quicktabs-tabs.quicktabs-style-sky li a{
+    text-transform: uppercase;
+        background: none;
     border: none;
-    color: #000;
+    color: #000 !important;
+}
+.view-bandeau-mon-axa .views-row-odd,
+.view-bandeau-mon-axa .views-row-even{
+    padding-top:2em; 
+    padding-bottom: 2em;
+}
+.view-bandeau-mon-axa .views-row-odd{
+    background-color: rgba(204, 204, 204,.2);
+}
+.view-bandeau-mon-axa .views-row-first {
+    border-top: 2px solid #ccc;
+}
+.view-bandeau-mon-axa .container:before,
+.view-bandeau-mon-axa .container:after{
+    display: inherit !important;
+    content: inherit !important;
+}
+.axa_img,
+.axa_texte{
+    width: 48%;
+    display: inline-block;
+    position : relative;
+    vertical-align: middle;
+    margin: auto;
+}
+.axa_img img{
+    float: right;
+}
+.view-bandeau-mon-axa .sinistre{
+   /* text-align: left;*/
+}
+
+.prez-mon-axa{
+   display: block;
+    float: right;
+    margin-top: 1rem;
+    border: 1px solid #ccc;
+    padding: 0 1.5rem;
+}
+
+.prez-mon-axa .fa-mobile{
+    font-size: 3rem;
+    color: #999;
+    margin-right: 1rem;
+}
+
+.prez-mon-axa a{
+    color: #999;
 }

@@ -12,8 +12,8 @@
   </header>
 
   <?php if (!empty($page['highlighted'])): ?>
-    <div class="fond-mon-axa">
-        <div class="highlighted container"><?php print render($page['highlighted']); ?></div>
+    <div id="fond-mon-axa">
+        <div  class="highlighted container"><?php print render($page['highlighted']); ?></div>
     </div> 
   <?php endif; ?> 
 
@@ -23,7 +23,7 @@
 
   <div class="main-container "> 
      <div class="row">
-         <section id="test" class="container">            
+         <section>            
             <a id="main-content"></a>
             <?php print render($page['content']); ?>
           </section>
