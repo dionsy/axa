@@ -183,7 +183,7 @@
                 $href= l(t('Declaration Sinistre'), 'user', array(
                   'attributes' => array(
                     'title' => t('Create un espace client'),
-                    'class' => array('use-ajax ','sinistre'),
+                    'class' => array('use-ajax ','sinistre-front'),
                     'data-dialog' => 'true',
                     'data-dialog-options' => '{"width":"40%"}',
                   )

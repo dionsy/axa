@@ -1695,14 +1695,14 @@ h1, .h1, h2, .h2, h3, .h3{
     text-align: center;
     margin-top: 1em;
 }
-.sinistre {
+.sinistre-front {
     display: block;
     clear: both;
     background: #fff;
     width: 100%;
     text-align: center;
 }
-.sinistre a{
+.sinistre-front a{
     color: #004D92;
     padding:1em;
     display: block;
@@ -1966,3 +1966,28 @@ input.nmpd-display {
 .prez-mon-axa a{
     color: #999;
 }
+
+
+.front .ajax-progress,.front .ajax-progress-throbber {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 500;
+	vertical-align: middle;
+	text-align: center;
+	}
+
+.ajax-progress .throbber {
+	position: relative;
+	top: 48%;
+	left: 48%;
+	width: 120px; /* dimensions of the ajax-loader.gif */
+	height: 80px;
+	margin: auto;
+	/* background:url(/sites/default/files/throbber_12.gif) no-repeat contain; */
+	color: #000;
+	z-index: 501;
+	}

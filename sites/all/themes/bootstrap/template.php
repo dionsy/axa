@@ -46,8 +46,10 @@ bootstrap_include('bootstrap', 'includes/deprecated.inc');
  */
 function bootstrap_theme(&$existing, $type, $theme, $path) {
   bootstrap_include($theme, 'includes/registry.inc');
-  return _bootstrap_theme($existing, $type, $theme, $path);
+   return _bootstrap_theme($existing, $type, $theme, $path);
 }
+
+
 
 /**
  * Clear any previously set element_info() static cache.
@@ -66,4 +68,5 @@ drupal_static_reset('element_info');
  * they are properly detected when drupal_alter() is invoked.
  */
 bootstrap_include('bootstrap', 'includes/alter.inc');
+
 

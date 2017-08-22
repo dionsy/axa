@@ -233,7 +233,7 @@ function _bootstrap_element_info_array_merge($info, $cached) {
 
 
 function bootstrap_form_alter(array &$form, array &$form_state = array(), $form_id = NULL) {
-//dsm($form);
+//krumong('main')->kPrint($form);
 
   if ($form_id) {
     switch ($form_id) {
@@ -476,10 +476,5 @@ function bootstrap_quicktabs_alter(&$quicktabs) {
   //krumong('main')->kPrint($tabs);
 }
 
-function bootstrap_user_presave(&$edit, $account, $category) {
-  dsm($account);
-}
 
-function bootstrap_user_insert(&$edit, $account, $category) {
-  dsm($account);
-}
+
