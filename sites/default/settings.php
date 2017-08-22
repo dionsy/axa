@@ -261,7 +261,6 @@ $databases = array (
   ),
 );
 
-/*  $databases = array (
 /*$databases = array (
   'default' => 
   array (
@@ -274,6 +273,7 @@ $databases = array (
       'port' => '3306',
       'driver' => 'mysql',
       'prefix' => '',
+    ),
     ),
   );
 */
@@ -288,7 +288,7 @@ $databases = array (
  * statement below. Change the FALSE to a TRUE to disable the access check.
  * After finishing the upgrade, be sure to open this file again and change the
  * TRUE back to a FALSE!
- */
+ 
 $update_free_access = FALSE;
 
 /**
