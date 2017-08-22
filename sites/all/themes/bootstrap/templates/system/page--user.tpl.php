@@ -104,18 +104,45 @@
     </div>
       <a id="main-content"></a>
 <!--  -->
-      <?php print render($title_suffix); ?>
+     <?php print render($page['content']); ?>
+
       <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
+
+      <?php if (!empty($tabs)): 
+
+        $header =  current_path();
+
+       // krumong('main')->kPrint($header);
+
+       // krumong('main')->kPrint($tabs);
+        switch ($header) {
+          case 'user/register':
+           $tabs['#primary'][0]='';
+            break;
+          case 'user/password':
+           $tabs['#primary'][2]='';
+            break;
+
+         case 'user':
+           $tabs['#primary'][1]='';
+            break;
+          default:
+            # code...
+            break;
+        }
+
+
+      ?>
         <?php print render($tabs); ?>
       <?php endif; ?>
+
       <?php if (!empty($page['help'])): ?>
         <?php print render($page['help']); ?>
       <?php endif; ?>
+ 
       <?php if (!empty($action_links)): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-      <?php print render($page['content']); ?>
     </section>
 
 </div>

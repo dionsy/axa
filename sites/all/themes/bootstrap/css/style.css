@@ -1694,14 +1694,14 @@ h1, .h1, h2, .h2, h3, .h3{
     text-align: center;
     margin-top: 1em;
 }
-.sinistre {
+.sinistre-front {
     display: block;
     clear: both;
     background: #fff;
     width: 100%;
     text-align: center;
 }
-.sinistre a{
+.sinistre-front a{
     color: #004D92;
     padding:1em;
     display: block;
