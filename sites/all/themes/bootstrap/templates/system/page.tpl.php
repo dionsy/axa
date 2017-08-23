@@ -175,7 +175,7 @@
             <?php print render($page['content']); ?>
         </section>
     </div>
-            <?php
+    <?php
               global $user; 
               global $base_url; 
               $userUID = $user->uid; 
@@ -183,7 +183,7 @@
                 $href= l(t('Declaration Sinistre'), 'user', array(
                   'attributes' => array(
                     'title' => t('Create un espace client'),
-                    'class' => array('use-ajax ','sinistre-front'),
+                    'class' => array('use-ajax ','sinistre'),
                     'data-dialog' => 'true',
                     'data-dialog-options' => '{"width":"40%"}',
                   )
@@ -191,12 +191,12 @@
               }
               else{
                 $href=$base_url.'/node/12';
+                $href = '<div class="sinistre"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
               }
               
               echo $href;
-              // print '<div class="sinistre"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
+            
             ?>
-
                 <?php //} ?>
                   <?php if (!empty($page['sidebar_second'])): ?>
                      <aside class="col-sm-3" role="complementary">
