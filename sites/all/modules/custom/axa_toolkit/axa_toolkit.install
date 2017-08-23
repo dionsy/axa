@@ -20,3 +20,10 @@ function axa_toolkit_update_7001() {
 function axa_toolkit_update_7002() {
   module_enable(array('dialog'),TRUE);
 }
+
+/**
+ * Install service configuration feature module
+ */
+function axa_toolkit_update_7003() {
+  module_enable(array('email_registration','er_svc'),TRUE);
+}

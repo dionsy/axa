@@ -114,7 +114,7 @@
         $('#edit-submitted-type-de-bien').on('change', function (e) {
              $('.form-item-submitted-nombre-de-pieces').addClass('fadeIn') ;
         });
-         $('#edit-submitted-est-il-locataire').on('change', function (e) {
+         $('#edit-submitted-etes-vous-locataire').on('change', function (e) {
              $('.form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn') ;
         });
          
@@ -151,7 +151,7 @@
 
         //FOCUSOUT
         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).keyup(function() {
-              $('.form-item-submitted-est-il-locataire').addClass('fadeIn'  ) ;
+              $('.form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
           });
      
         $( ".form-item-submitted-prenom" ).keyup(function() {
@@ -170,12 +170,9 @@
              $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
         });        
         $( "#edit-account .form-item-name" ).keyup(function() {
-              $(' #edit-account .form-item-mail').addClass('fadeIn') ;
+              $('#edit-account .form-item-mail').addClass('fadeIn') ;
           });
         $( "#edit-account .form-item-mail" ).keyup(function() {
-              $(' #edit-field-numero-telephone').addClass('fadeIn') ;
-          });
-        $( "#edit-field-numero-telephone" ).keyup(function() {
               $('#edit-field-numero-contrat').addClass('fadeIn') ;
           });
         $( ".form-item-submitted-puissance" ).keyup(function() {
