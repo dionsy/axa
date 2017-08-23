@@ -148,9 +148,9 @@ ul.tabs--primary li:hover{
 }*/
 
 
-#user-profile-form #edit-account .form-item-mail{
+/*#user-profile-form #edit-account .form-item-mail{
 	margin-left: 0.2%;
-}
+}*/
 #edit-pass-pass1 , #edit-pass-pass2 {
     margin-bottom: 22px;
     width: auto !important;
@@ -231,9 +231,9 @@ form div:first-child{
 .form-item-submitted-annee-de-naissance,
 .form-item-submitted-age-dobtention-du-permis,
 .webform-component--email-conducteur,
-#edit-account .form-item-name ,
-#edit-account .form-item-mail,
-#edit-field-numero-contrat,
+/*#edit-account .form-item-name ,
+#edit-account .form-item-mail,*/
+/*#edit-field-numero-contrat,*/
 .form-item-submitted-puissance,
 .form-item-submitted-date-premiere--mise-en-circulation,
 .form-item-submitted-valeur-a-neuf ,
@@ -256,8 +256,8 @@ form div:first-child{
  .webform-component--energie-du-vehicule,
  .form-item-submitted-age-dobtention-du-permis,
  .webform-component--email-conducteur,
- #edit-account .form-item-mail,
- #edit-field-numero-contrat,
+/* #edit-account .form-item-mail,*/
+/* #edit-field-numero-contrat,*/
  .form-item-submitted-puissance,
  .form-item-submitted-date-premiere--mise-en-circulation ,
  .form-item-submitted-valeur-a-neuf,
@@ -911,7 +911,7 @@ form#contact-site-form div:first-child {
 }
 
 #user-register-form  label{
-    width: 44%;
+    width: 32%;
 }
 form#user-register-form {
     padding-left: 24px;
@@ -970,4 +970,28 @@ form#user-register-form {
 }
 .page-node-done .breadcrumb{
     display: none !important;
+}
+
+#user-register-form .form-item-mail{
+    opacity: inherit !important;
+    height: auto !important;
+}
+#user-register-form .form-type-password {
+    padding-left: 0 ;
+    padding-right: 0 ;
+    display: inline-block;
+}
+#user-register-form .form-type-password label{
+    display: inline-block;
+}
+#user-register-form .form-item-pass-pass2 label {
+    width: auto;
+}
+#user-register-form .form-item-pass-pass2  {
+    width: 100%;
+}#user-register-form .form-item-pass-pass2 #edit-pass-pass2 {
+    width: 33% ! important;
+}
+#user-register-form input {
+    margin-bottom: 30px;
 }
