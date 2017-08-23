@@ -36,7 +36,7 @@ function ws_client_getInfoUser(){
   global $user;
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
-
+  /*var_dump($identifiant) ; die();*/
   $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
@@ -294,17 +294,22 @@ function ws_client_user_login(&$edit, $account) {
 }
 
 function ws_client_user_presave(&$edit, $account, $category) {
-	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
-	$result = ws_client_getIdClient($numContrat);	
+  if(isset( $edit['field_numero_contrat']['und'][0]['value']))
+  {
+  	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
+  	$result = ws_client_getIdClient($numContrat);	
+    $edit['field_identifiant_client']['und'][0]['value'] = $result ;
+  }
+    /*var_dump($result) ;  die();*/
  /* if($result != 'false')*/
-		$edit['field_identifiant_client']['und'][0]['value'] = $result ;
 }
 function ws_client_webform_submission_presave($node, &$submission) {
     global $user;
    $account = user_load($user->uid);
-  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+  /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
      /* var_dump($node) ;  die();*/
-      if($node->nid == '8')
+     $nid = $node->nid ;
+      if($nid == '8')
       {
             $carrosserieObject = taxonomy_term_load($submission->data[12][0]) ;
             $carroserie = $carrosserieObject->name ;
@@ -331,8 +336,8 @@ function ws_client_webform_submission_presave($node, &$submission) {
              'marque' =>  $marque ,
              'carosserie' => $carroserie ,
              'modele' => $modeleVehicule,
-             'puissane' => $submission->data[18][0],
-             'adresse' => $submission->data[21][0] 
+             'puissane' => $submission->data[18][0]
+             /*'adresse' => $submission->data[21][0] */
              /*'anneeDeNaissanceconducteur' => $submission->data[15][0] */
              );
              /* var_dump($devis); die();*/
@@ -346,22 +351,9 @@ function ws_client_webform_submission_presave($node, &$submission) {
               );
 
               $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisAuto/create', $options);
-                    $submission->data[1][0] = "" ;
-                    $submission->data[2][0] = "" ;
-                    $submission->data[3][0] = "" ;
-                    $submission->data[4][0] = "" ;
-                    $submission->data[5][0] = "" ;
-                    $submission->data[9][0] = "" ;
-                    $submission->data[19][0] = "" ;
-                    $submission->data[13][0] = "" ;
-                    $submission->data[20][0] = "" ;
-                    $submission->data[16][0] = "" ;
-                    $submission->data[17][0] = "" ;
-                    $submission->data[21][0] = "" ;
-                    $submission->data[12][0] = "" ;
-                    $submission->data[18][0] = "" ;
+
         }
-         if($node->nid == '9')
+         if($nid == '9')
           { 
             $devis = array(
              'idCompte' => $identifiant ,
@@ -369,7 +361,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
              'prenom' => $submission->data[9][0], 
              'telephone' => $submission->data[11][0],
              'mail' => $submission->data[12][0],
-             'typeLogement' => $submission->data[15][0],
+             'typeLogement' => $submission->data[1][0],
              'adresseLogement' => $submission->data[4][0],
              'nbPieces' =>  $submission->data[2][0],
              'principal' => $submission->data[3][0],
@@ -387,29 +379,8 @@ function ws_client_webform_submission_presave($node, &$submission) {
               );
 
               $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisHabitation/create', $options);
-              var_dump( $result) ; die();
+             /* var_dump( $result) ; die();*/
           }
+          webform_submission_delete($nid, $sid);
 }
 
-
-
-function  _clientResource_create($userName /*, $emailUser , $numTel ,$numContrat ,$codeConfidentiel*/) {
-		$userName = 12;
-/*		$emailUser = "syllababacar@yahoo.fr";
-		$numTel = 778241624 ;
-		$numContrat = "CNTR00000001";
-		$codeConfidentiel = 1234;*/
-
-		$result_json = array('name' => 'test', 'age' => '16');
-		/*$data= json_encode($result_json);*/
-		header('Content-type: application/json');
-	  /*$get_node_result = ws_client_getClient_node($numContrat);	
-	  	$date_add() = json_decode($get_node_result->data);
-	if (isset($data)) {
-		return $data;
-		
-	}
-	else		*/																											
-
-      return $data;
- }

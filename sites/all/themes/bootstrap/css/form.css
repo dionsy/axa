@@ -148,9 +148,9 @@ ul.tabs--primary li:hover{
 }*/
 
 
-#user-profile-form #edit-account .form-item-mail{
+/*#user-profile-form #edit-account .form-item-mail{
 	margin-left: 0.2%;
-}
+}*/
 #edit-pass-pass1 , #edit-pass-pass2 {
     margin-bottom: 22px;
     width: auto !important;
@@ -198,7 +198,7 @@ form div:first-child{
 
 .form-item-submitted-nom,.form-item-submitted-prenom,
 #webform-client-form-9 .form-item-submitted-type-de-bien,#webform-client-form-9 .form-item-submitted-nombre-de-pieces,
-#webform-client-form-9 .form-item-submitted-est-il-locataire,
+#webform-client-form-9 .form-item-submitted-etes-vous-locataire,
 #webform-client-form-9 .form-item-submitted-quand-souhaitez-vous-etre-assure,
 #webform-client-form-28 .form-item-submitted-marque-voiture,
 #webform-client-form-28 .form-item-submitted-modele,
@@ -224,17 +224,16 @@ form div:first-child{
 .form-item-submitted-nombre-de-pieces,
 .webform-component--ce-logement-est-il-votre-residence-principale,
 .form-item-submitted-adresse-du-bien-a-assurer,
-.form-item-submitted-est-il-locataire ,
+.form-item-submitted-etes-vous-locataire ,
 .form-item-submitted-quand-souhaitez-vous-etre-assure,
 .form-item-submitted-marque,
 .webform-component--energie-du-vehicule,
 .form-item-submitted-annee-de-naissance,
 .form-item-submitted-age-dobtention-du-permis,
 .webform-component--email-conducteur,
-#edit-account .form-item-name ,
-#edit-account .form-item-mail,
-#edit-field-numero-telephone,
-#edit-field-numero-contrat,
+/*#edit-account .form-item-name ,
+#edit-account .form-item-mail,*/
+/*#edit-field-numero-contrat,*/
 .form-item-submitted-puissance,
 .form-item-submitted-date-premiere--mise-en-circulation,
 .form-item-submitted-valeur-a-neuf ,
@@ -252,14 +251,13 @@ form div:first-child{
  .form-item-submitted-nombre-de-pieces,
  .webform-component--ce-logement-est-il-votre-residence-principale,
  .form-item-submitted-adresse-du-bien-a-assurer,
- .form-item-submitted-est-il-locataire,
+ .form-item-submitted-etes-vous-locataire,
  .form-item-submitted-quand-souhaitez-vous-etre-assure,
  .webform-component--energie-du-vehicule,
  .form-item-submitted-age-dobtention-du-permis,
  .webform-component--email-conducteur,
- #edit-account .form-item-mail,
- #edit-field-numero-telephone,
- #edit-field-numero-contrat,
+/* #edit-account .form-item-mail,*/
+/* #edit-field-numero-contrat,*/
  .form-item-submitted-puissance,
  .form-item-submitted-date-premiere--mise-en-circulation ,
  .form-item-submitted-valeur-a-neuf,
@@ -277,6 +275,9 @@ form div:first-child{
     transform: translateX(0px) !important;
     transition: all 1s ease-in-out 0s !important;
 }
+ .page-user-register  .fadeIn {
+    height: auto !important;
+ }
 .webform-component--date-de-naissance.fadeIn ,
 .form-item-submitted-date-premiere--mise-en-circulation.fadeIn{
    /* height: 80px !important;*/
@@ -910,7 +911,7 @@ form#contact-site-form div:first-child {
 }
 
 #user-register-form  label{
-    width: 44%;
+    width: 32%;
 }
 form#user-register-form {
     padding-left: 24px;
@@ -969,4 +970,28 @@ form#user-register-form {
 }
 .page-node-done .breadcrumb{
     display: none !important;
+}
+
+#user-register-form .form-item-mail{
+    opacity: inherit !important;
+    height: auto !important;
+}
+#user-register-form .form-type-password {
+    padding-left: 0 ;
+    padding-right: 0 ;
+    display: inline-block;
+}
+#user-register-form .form-type-password label{
+    display: inline-block;
+}
+#user-register-form .form-item-pass-pass2 label {
+    width: auto;
+}
+#user-register-form .form-item-pass-pass2  {
+    width: 100%;
+}#user-register-form .form-item-pass-pass2 #edit-pass-pass2 {
+    width: 33% ! important;
+}
+#user-register-form input {
+    margin-bottom: 30px;
 }

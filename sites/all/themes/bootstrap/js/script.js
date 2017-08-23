@@ -4,9 +4,9 @@
           if($('.front', context).length){
              $('.slide', context).slick({
               autoplay: true,
-              dots: true,
+              dots:false,
               infinite: true,
-              speed: 1500,
+              speed: 3000,
               slidesToShow: 1,
               slidesToScroll: 1,
               fade:true
@@ -109,12 +109,12 @@
           $('.webform-component--type-de-bien').addClass('fadeIn'  ) ;
           $('.form-item-submitted-marque').addClass('fadeIn') ;
           $('.form-item-submitted-annee-de-naissance').addClass('fadeIn') ;
-          $('#edit-account .form-item-name').addClass('fadeIn') ;
+        /*  $('#edit-account .form-item-mail').addClass('fadeIn') ;*/
         });
         $('#edit-submitted-type-de-bien').on('change', function (e) {
              $('.form-item-submitted-nombre-de-pieces').addClass('fadeIn') ;
         });
-         $('#edit-submitted-est-il-locataire').on('change', function (e) {
+         $('#edit-submitted-etes-vous-locataire').on('change', function (e) {
              $('.form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn') ;
         });
          
@@ -151,7 +151,7 @@
 
         //FOCUSOUT
         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).keyup(function() {
-              $('.form-item-submitted-est-il-locataire').addClass('fadeIn'  ) ;
+              $('.form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
           });
      
         $( ".form-item-submitted-prenom" ).keyup(function() {
@@ -169,15 +169,10 @@
         $( ".form-item-submitted-age-dobtention-du-permis").keyup(function() {
              $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
         });        
-        $( "#edit-account .form-item-name" ).keyup(function() {
-              $(' #edit-account .form-item-mail').addClass('fadeIn') ;
-          });
-        $( "#edit-account .form-item-mail" ).keyup(function() {
-              $(' #edit-field-numero-telephone').addClass('fadeIn') ;
-          });
-        $( "#edit-field-numero-telephone" ).keyup(function() {
+
+/*        $( "#edit-account .form-item-mail" ).keyup(function() {
               $('#edit-field-numero-contrat').addClass('fadeIn') ;
-          });
+          });*/
         $( ".form-item-submitted-puissance" ).keyup(function() {
               $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
           });
@@ -206,9 +201,38 @@
         $(".nmpd-display").keydown(function(event) { 
               return false;
         });
-         /* $('#user-login #edit-pass').bind('blur  ' ,function(){
-            $("#nmpd1").hide();
-          });*/
+
+        $('#edit-account #edit-mail').focus( function(){
+            
+                   $(".nmpd-wrapper").hide();
+          });
+          $('#edit-field-numero-contrat-und-0-value').focus( function(){
+            
+                   $(".nmpd-wrapper").hide();
+          });
+
+
+          $('#edit-pass-pass1').focus( function(){
+                  
+                    $(".nmpd-wrapper").hide();    
+          });
+          $('#edit-pass-pass2').focus( function(){
+                  
+                    $(".nmpd-wrapper").hide();    
+          });
+          $('#edit-pass--2').focus( function(){
+                  
+                    $(".nmpd-wrapper").hide();    
+          });
+          $('#edit-pass2').focus( function(){
+                  
+                    $(".nmpd-wrapper").hide();    
+          });
+          $('#edit-pass1').focus( function(){
+                  
+                    $(".nmpd-wrapper").hide();    
+          });
+
           $("input:password").bind('click focus', function(){
              $(this).attr("readonly", false);
           }).bind('blur', function(){
@@ -220,7 +244,7 @@
   /******     KEYPAD   ******/
   var cursorFocus = function(elem) {
     var x = window.scrollX, y = window.scrollY;
-    elem.focus();
+   /* elem.focus();*/
     window.scrollTo(x, y);
   }
 
@@ -248,7 +272,8 @@
         if ($('#'+id).length == 0) {
             nmpd = $('<div id="' + id + '"></div>').addClass('nmpd-wrapper');
             nmpd.options = options;
-            var display = nmpd.options.target.addClass('nmpd-display form-control');
+            /*console.log(nmpd.options.target);*/
+            var display = $(nmpd.options.target).addClass('nmpd-display form-control');
             nmpd.display = display;
             var table = $(options.gridTpl).addClass('table modal-content nmpd-grid');
             nmpd.grid = table;

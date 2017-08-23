@@ -15,17 +15,52 @@
     margin-top: 30px;
     
 }
-#block-block-1,
+#block-views-slide-block,
 #block-block-2{
-    min-height: 250px;
-    background-color: #ccc;
-    text-align: center;
+  /*  min-height: 250px;*/
+       text-align: center;
 }
+#block-views-slide-block{
+    padding: 0;
+}
+#block-views-slide-block .descriptif h2 {
+    font-size: 100%;
+}
+#block-views-slide-block .descriptif h2 a{
+    text-transform: uppercase;
 
+}
+#block-views-slide-block .descriptif p{
+    text-align: left;
+    font-size: 100%;
+    font-weight: bold;
+}
+.slick-prev {
+    left: -2px;
+}
+.slick-next {
+    right: 0%;
+}
+.slick-next,
+.slick-prev {
+    z-index: 100;
+    height: 4rem;
+    width: 4rem;
+}
 #navbar {
     padding: 0;
 }
-
+#block-views-faq-block-1 .view-footer a,
+#block-views-slide-block .views-more-link{
+    background-color: #3D900B;
+    width: 106px;
+    padding: .5rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
 }
@@ -59,12 +94,15 @@ body.not-logged-in.page-user::after ,.page-user-edit::after {
     background-color: black;
     background-size: cover;
     content: "";
-    height: 132%;
+    height: 100%;
     opacity: 0.6;
     position: absolute;
     top: 0px;
     width: 100%;
     z-index: 1;
+}
+body.not-logged-in.page-user-register::after {
+    height: 132% ! important ;
 }
 .navbar.container, .navbar.container-fluid {
     margin-top: 0;
@@ -150,7 +188,7 @@ ul{
 	margin-left: 0 !important;
 }
 .page-frontpage div.row ,.not-front div.row {
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 #user-login-form li{
@@ -223,17 +261,14 @@ ul{
 }
 
 #block-system-main{
-	margin-bottom: 20px;
-    margin-top: 30px;
+	margin-bottom: 0;
+    margin-top: 2em;
 }
 .view-frontpage ul li {
 	padding:0;
-    margin-top: 60px;
-    margin-bottom: 60px;
-
+    margin-top:0;
+    margin-bottom: 1.5em;
 }
-
-
 .outside{
 	width: 94%;
 	box-shadow: 2px 2px 0 rgba(235,234,230,0.8);
@@ -741,7 +776,7 @@ body, html {
     background: #fff;   
     border: 0 none;
     bottom: 0;
-    margin-top: 30px;
+    margin-top: 2em;
     padding: 0;
     right: 0;
     width: 100%;
@@ -749,7 +784,7 @@ body, html {
 }
 
 footer.footer div.container {
-    margin-top: 32px;
+    margin-top: 1em;
 }
 
 /*.footer{
@@ -921,7 +956,7 @@ section#test  div#navbar-collapse {
 .descriptif{
 	position: absolute;
 	z-index: 10;
-	top: 35%;
+	top: 20%;
 	width: 50%;
 	right: 8%;
 }
@@ -1311,10 +1346,18 @@ a.asligne {
 	.view-partenaire .slick-prev {
 		right: -2.7%;
 	}
+
 }
 
+@media screen and (max-width: 978px) {
+  #block-views-faq-block-1{
+        padding: 0;
+        margin-top: 1.5em;
+    }
+}
 /*Breakpoint 480*/
 @media screen and (max-width: 480px) {
+
 	.view-partenaire .slick-list.draggable {
 		width: 50%;
 	}
@@ -1624,6 +1667,8 @@ div.offres .offre {
 .page-user .logo {
     margin-bottom: 15px;
     margin-top: 25px;
+    position: relative;
+    z-index: 100;
 }
 #block-search-form {
 }
@@ -1653,10 +1698,8 @@ div.offres .offre {
 #block-views-vos-services-axa-senegal-block{
     background:  #00677F;
     text-align: center;
-    padding-top: 1em;
     padding-bottom: 1em;
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
+    margin-bottom: 2em;
 }
 #block-views-vos-services-axa-senegal-block .block-title{
     margin-top:0;
@@ -1747,31 +1790,46 @@ h1, .h1, h2, .h2, h3, .h3{
 }
 
 #block-views-faq-block-1 h2{
-    font-size: 17px !important;
+/*    font-size: 17px !important;*/
     text-align: center;
+     background: #B58CBC;  
+     margin: 0;
+     font-size: 30px;
+font-weight: 300;
+line-height: 36px;
+/*margin-top: 15px;*/
+color: rgb(255, 255, 255);
+}
+#block-views-faq-block-1{
+    padding-right: 0;
 }
 #block-views-faq-block-1 .view-display-id-block_1{
+    background: #B58CBC;    
    /* margin-left: 1em;*/
-   /* min-height: 250px;*/
-    background: #FFF;
+    min-height:298px;
     padding: 10px 20px 20px;
-    padding-right: 20px;
-    margin: 0 0 40px;
+    padding-right: 0px;
+    margin: 0;
     margin-top: 0px;
-    -webkit-box-shadow: #888 0 2px 1px 0px;
-    -moz-box-shadow: #888 0 2px 1px 0px;
-    box-shadow: #888 0 2px 1px 0px;
-}
+    position: relative;
+    }
 #block-views-faq-block-1 .view-display-id-block_1 li{
     padding: .5em 0;
 }
 #block-views-faq-block-1 .view-display-id-block_1  .view-footer{
     text-align: center;
+    position: absolute;
+    left: 39%;
+}
+#block-views-faq-block-1 .view-display-id-block_1 li a{
+    color: #fff;
+    font-size: 100%;
 }
 #block-views-faq-block-1 .view-display-id-block_1 li a:before{
-    content: '>';
+    content: '\f138';
     font-weight: bold;
     padding-right: .5em;
+    font-family: 'FontAwesome';
 }
 .view-declaration-sinistre  .views-row.views-row-1.views-row-odd.views-row-first.views-row-last {
     text-align: -moz-center;
@@ -1948,11 +2006,14 @@ input.nmpd-display {
 .view-bandeau-mon-axa .sinistre{
    /* text-align: left;*/
 }
-
+.logo,
+.appli{
+    padding-right: 0;
+    margin-top: 1em;
+}
 .prez-mon-axa{
    display: block;
     float: right;
-    margin-top: 1rem;
     border: 1px solid #ccc;
     padding: 0 1.5rem;
 }
