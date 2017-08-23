@@ -1624,6 +1624,8 @@ div.offres .offre {
 .page-user .logo {
     margin-bottom: 15px;
     margin-top: 25px;
+    position: relative;
+    z-index: 100;
 }
 #block-search-form {
 }
