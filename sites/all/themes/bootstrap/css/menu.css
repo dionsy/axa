@@ -1141,6 +1141,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     margin-bottom: 5px;
     margin-top: 3px;
     width: 40% !important;
+    padding-left: 7px;
 }
 
 #form-information-form > div #edit-pass {

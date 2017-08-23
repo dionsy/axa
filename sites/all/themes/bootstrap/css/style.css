@@ -94,12 +94,15 @@ body.not-logged-in.page-user::after ,.page-user-edit::after {
     background-color: black;
     background-size: cover;
     content: "";
-    height: 132%;
+    height: 100%;
     opacity: 0.6;
     position: absolute;
     top: 0px;
     width: 100%;
     z-index: 1;
+}
+body.not-logged-in.page-user-register::after {
+    height: 132% ! important ;
 }
 .navbar.container, .navbar.container-fluid {
     margin-top: 0;

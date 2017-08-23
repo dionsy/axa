@@ -36,8 +36,8 @@ function ws_client_getInfoUser(){
   global $user;
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
-
-  $url = "http://192.168.200.13/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
+  /*var_dump($identifiant) ; die();*/
+  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
@@ -88,15 +88,15 @@ function ws_client_update_info_user($array_data) {
                   'headers' => array('Content-Type' => 'application/json')
   );
 
-  $url = 'http://192.168.200.14/Service1.svc/compte/update';
-
-
- // $url = 'http://192.168.43.145/Service1.svc/compte/update';
-
+  $url = 'http://192.168.43.145/Service1.svc/compte/update';
 
   $result = drupal_http_request($url, $options);
           
 }
+
+
+
+
 /*function ws_client_getIdentifiant_node(){
 
 	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
@@ -107,24 +107,22 @@ function ws_client_user_login(&$edit, $account) {
 }
 
 function ws_client_user_presave(&$edit, $account, $category) {
-   global $user;
-   if($user->uid != 1)
-   {
+  if(isset( $edit['field_numero_contrat']['und'][0]['value']))
+  {
   	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
   	$result = ws_client_getIdClient($numContrat);	
-   /* if($result != 'false')*/
-  		$edit['field_identifiant_client']['und'][0]['value'] = $result ;
-    }  
+    $edit['field_identifiant_client']['und'][0]['value'] = $result ;
+  }
+    /*var_dump($result) ;  die();*/
+ /* if($result != 'false')*/
 }
 function ws_client_webform_submission_presave($node, &$submission) {
-      var_dump($submission) ;  die();
     global $user;
    $account = user_load($user->uid);
   /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
-  /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
-
      /* var_dump($node) ;  die();*/
-      if($node->nid == '8')
+     $nid = $node->nid ;
+      if($nid == '8')
       {
             $carrosserieObject = taxonomy_term_load($submission->data[12][0]) ;
             $carroserie = $carrosserieObject->name ;
@@ -166,7 +164,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
               );
 
               $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisAuto/create', $options);
-                  
+
         }
          if($nid == '9')
           { 
@@ -194,30 +192,8 @@ function ws_client_webform_submission_presave($node, &$submission) {
               );
 
               $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisHabitation/create', $options);
-              // var_dump( $result) ; die();
+             /* var_dump( $result) ; die();*/
           }
-           webform_submission_delete($nid, $sid);
+          webform_submission_delete($nid, $sid);
 }
 
-
-
-function  _clientResource_create($userName /*, $emailUser , $numTel ,$numContrat ,$codeConfidentiel*/) {
-		$userName = 12;
-/*		$emailUser = "syllababacar@yahoo.fr";
-		$numTel = 778241624 ;
-		$numContrat = "CNTR00000001";
-		$codeConfidentiel = 1234;*/
-
-		$result_json = array('name' => 'test', 'age' => '16');
-		/*$data= json_encode($result_json);*/
-		header('Content-type: application/json');
-	  /*$get_node_result = ws_client_getClient_node($numContrat);	
-	  	$date_add() = json_decode($get_node_result->data);
-	if (isset($data)) {
-		return $data;
-		
-	}
-	else		*/																											
-
-      return $data;
- }
