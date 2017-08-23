@@ -93,7 +93,7 @@
                    else{
                       print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
                     }
-                    print '<div class="prez-mon-axa"><i class="fa fa-mobile" aria-hidden="true"></i><a href="node/114" >Découvrir Mon Axa</a></div>';
+                   
                   ?>      
                 <?php
                    if(user_is_logged_in()){
@@ -104,7 +104,7 @@
                 </div>
               </div>
            
-            <div class="logo col-md-9 col-lg-9 col-xs-12 <?php //print $container_class; ?>">    
+            <div class="logo col-md-10 col-lg-10 col-xs-12 col-sm-6<?php //print $container_class; ?>">    
               <div class="navbar-header ">
                 <?php if ($logo): ?>
                   <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -121,6 +121,12 @@
                     </button>
                   <?php endif; ?>
                </div>
+            </div>
+            <!-- Lien mon axa  -->
+            <div class="appli col-md-2 col-lg-2 col-xs-12 col-sm-6">
+              <div class="prez-mon-axa">
+                <i class="fa fa-mobile" aria-hidden="true"></i><a href="node/114" >Découvrir Mon Axa</a>
+              </div>
             </div>
         </header>
     <!-- End Page -->

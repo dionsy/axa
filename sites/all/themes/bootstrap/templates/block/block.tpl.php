@@ -130,6 +130,9 @@ switch ($block->delta) {
 	case 'menu-menu-top':
 		$class="col-md-9 col-lg-9 col-xs-12";
 	break;
+	case 'slide-block':
+		$class="col-md-7 col-lg-7 col-xs-12";
+	break;
 	case '1':
 		$class="col-md-7 col-lg-7 col-xs-12";
 	break;
