@@ -8,3 +8,78 @@ function axa_toolkit_page_alter(&$page) {
     $page['content']['#attached']['library'][] = array('system', 'drupal.ajax');
   }
 }
+/**
+ * Implement hook_form_FORM_ID_alter().
+ */
+function axa_toolkit_form_user_login_alter(&$form, &$form_state, $form_id) {
+  if( drupal_is_front_page() ){
+    // Wrap the form in a <div> with a known ID so it can be targeted via AJAX.
+    $form['#prefix'] = '<div id="dialog-user-user-login">';
+    $form['#suffix'] = '</div>';
+
+    // Make the 'Log in' button the primary action.
+    // $form['actions']['submit']['#attributes']['class'][] = 'button--primary';  
+
+    // Add an AJAX submission callback.
+    $form['actions']['submit']['#ajax'] = array(
+      'callback' => 'axa_toolkit_user_login_submit',
+      'event' => 'click',
+    );
+  }
+}
+/**
+ * Ajax callback for the user login form.
+ *
+ * @see dialog_user_form_user_login_alter()
+ */
+function axa_toolkit_user_login_submit($form, &$form_state) {
+  if( drupal_is_front_page() ){
+    // Display form errors, otherwise close the dialog and reload the page.
+    if (form_get_errors()) {
+      print_r('ici');die();
+      unset($form['#prefix'], $form['#suffix']);
+      $status_messages = array('#theme' => 'status_messages');
+      $output = drupal_render($form);
+      $output = '<div>' . drupal_render($status_messages) . $output . '</div>';
+      $commands[] = ajax_command_html('#dialog-user-user-login', $output);
+    }
+    else {
+      $commands[] = dialog_command_close_modal_dialog();
+      $commands[] = dialog_command_reload();
+    }
+
+    return array(
+      '#type' => 'ajax',
+      '#commands' => $commands,
+    );
+  }
+}
+/**
+ * Implements hook_user_presave().
+ */
+function axa_toolkit_user_presave(&$edit,$account, $category) {
+  $edit['name'] = $edit['mail'];
+}
+
+/**
+  * Implements hook_form_alter().
+  */
+  function axa_toolkit_form_alter(&$form, &$form_state, $form_id) {
+    if ($form_id == 'user_register_form' ) { // id of registration form
+      // $form['account']['name']['#access'] = FALSE;
+    }
+    if ($form_id === 'user_register_form') {
+      $form['#validate'][] = 'axa_toolkit_user_register_form_validate';
+    }
+   }
+
+
+function axa_toolkit_user_register_form_validate($form, &$form_state){
+  module_load_include('module', 'ws_client');  
+  if ($form_state['values']['field_numero_contrat']['und'][0]['value']) {
+    // $result = ws_client_getIdClient($numContrat);	
+    // print_r($result); die();
+    // form_set_error('title', 'Title cannot be "test"');
+  }
+  
+}
