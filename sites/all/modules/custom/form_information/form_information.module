@@ -33,7 +33,7 @@ function form_information_block_view($delta = '') {
  */
 function form_information_form($form, &$form_state){
 
-  $infoPerso = ws_client_getInfoUser();
+  //$infoPerso = ws_client_getInfoUser();
 
   $form['titre'] = array(
   '#type' => 'fieldset', 
@@ -43,35 +43,35 @@ function form_information_form($form, &$form_state){
   $form['nom'] = array(
     '#type' => 'textfield', 
     '#title' => 'Nom',
-    '#default_value' => $infoPerso['nom'],
+    //'#default_value' => $infoPerso['nom'],
     '#required' => TRUE,
   );
 
   $form['prenom'] = array(
     '#type' => 'textfield', 
     '#title' => 'Prénom',
-    '#default_value' => $infoPerso['prenom'],
+    //'#default_value' => $infoPerso['prenom'],
     '#required' => TRUE,
   );
 
   $form['adresse'] = array(
     '#type' => 'textfield', 
     '#title' => 'Adresse',
-    '#default_value' => $infoPerso['adresse'],
+    //'#default_value' => $infoPerso['adresse'],
     '#required' => TRUE,
   );
 
   $form['email'] = array(
     '#type' => 'textfield', 
     '#title' => 'Email',
-    '#default_value' => $infoPerso['mail'],
+    //'#default_value' => $infoPerso['mail'],
     '#required' => TRUE,
   );
 
   $form['telephone'] = array(
     '#type' => 'textfield', 
     '#title' => 'Téléphone',
-    '#default_value' => $infoPerso['telephone'],
+    //'#default_value' => $infoPerso['telephone'],
     '#required' => TRUE,
   );
 

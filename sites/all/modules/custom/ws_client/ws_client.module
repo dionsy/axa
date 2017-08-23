@@ -53,6 +53,193 @@ function ws_client_getInfoUser(){
   return $returnArray ;
 }
 
+function ws_client_get_liste_contrats(){
+  $returnArray = array();
+  $habitation = array();
+  $auto = array();
+  $accident = array();
+  $loisir = array();
+
+  $logement = array(
+    0 => 'Bintou corrige',
+    100000000 => 'Appartement',
+    100000001 => 'Maison',
+    100000002 => 'Autres',
+  );
+
+  $accident_tab = array(
+    0 => 'Bintou corrige',
+    100000000 => 'Voyage',
+    100000001 => 'Evacuation Sanitaire',
+    100000002 => 'Individuels accidents particulier',
+  );
+
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+  $identifiant = 'AXA00000000';
+
+
+  $url = "http://192.168.43.145/Service1.svc/listeContrats/" .$identifiant. "";
+  $options = array('timeout' => 6000.0) ;
+  $request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;
+  
+  foreach ($data as $assurance) {
+    # code...
+    if ($assurance['typeContrat'] == 'Habitation') {
+      # code...
+      $habitation['type'] = 'Habitation';
+      $habitation['info'][] = array(
+        'id' => $assurance['id'],
+        'type_logement' => $logement[$assurance['typeLogement']],
+        'adresse' => $assurance['adresseLogement'],  
+      );
+
+    }
+
+    if ($assurance['typeContrat'] == 'Automobile') {
+      # code...
+      $auto['type'] = 'Auto';
+      $auto['info'][] = array(
+        'id' => $assurance['id'],
+        'marque' => $assurance['marque'],
+        'modele' => $assurance['modele'],  
+      );
+    }
+
+    if ($assurance['typeContrat'] == 'Assistance & Accidents') {
+      # code...
+      $accident['type'] = 'Accident';
+      $accident['info'][] = array(
+        'id' => $assurance['id'],
+        'produit' => $accident_tab[$assurance['typeAssurance']],
+        'complete' => 'complete',  
+      );  
+    }
+
+  }
+  
+  $returnArray[] = $auto;
+  $returnArray[] = $habitation;
+  $returnArray[] = $accident;
+  
+  return $returnArray;
+}
+
+function ws_client_get_liste_devis(){
+  $returnArray = array();
+  $habitation = array();
+  $auto = array();
+  $accident = array();
+  $loisir = array();
+
+  $type_habitation = array(
+    'adresseLogement' => 'Adresse du logement',
+    'id' => 'Numéro devis',
+    'typeLogement' => 'Type du logement',
+    'typeContrat' => 'Type contrat',
+  );
+
+  $type_auto = array(
+    'marque' => 'Marque',
+    'id' => 'Numéro devis',
+    'modele' => 'Modèle',
+    'typeContrat' => 'Type contrat',
+  );
+
+  $type_accident = array(
+    'typeAssurance' => 'Type Assurance',
+    'id' => 'Numéro devis',
+    'typeContrat' => 'Type contrat',
+  );
+
+  $logement = array(
+    0 => 'Bintou corrige',
+    100000000 => 'Appartement',
+    100000001 => 'Maison',
+    100000002 => 'Autres',
+  );
+
+  $accident_tab = array(
+    0 => 'Bintou corrige',
+    100000000 => 'Voyage',
+    100000001 => 'Evacuation Sanitaire',
+    100000002 => 'Individuels accidents particulier',
+  );
+
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+  $identifiant = 'AXA00000000';
+
+
+  $url = "http://192.168.43.145/Service1.svc/listeDevis/" .$identifiant. "";
+  $options = array('timeout' => 6000.0) ;
+  $request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;
+
+  foreach ($data as $assurance) {
+    # code...
+    if ($assurance['typeContrat'] == 'Habitation') {
+      # code...
+      $habitation['type'] = 'Type habitation';
+      $i = 0;
+      foreach ($assurance as $key => $value) {
+        # code...
+        if($value == TRUE && $key != 'typeContrat'){
+          $habitation['tableau'][$i] = array(
+              $type_habitation[$key],
+              $value,
+          );
+        }
+      $i = $i + 1;   
+      }
+    $returnArray[] = $habitation;
+    }
+
+    if ($assurance['typeContrat'] == 'Automobile') {
+      # code...
+      $auto['type'] = 'Type Auto';
+      $i = 0;
+      foreach ($assurance as $key => $value) {
+        # code...
+        if($value == TRUE && $key != 'typeContrat'){
+          $auto['tableau'][$i] = array(
+            $type_auto[$key],
+            $value,
+          );
+        }
+      $i = $i + 1; 
+      }
+    $returnArray[] = $auto;
+    }
+
+    if ($assurance['typeContrat'] == 'Assistance & Accidents') {
+      # code...
+      $accident['type'] = 'Type Assistance & Accidents';
+      $i=0;
+      foreach ($assurance as $key => $value) {
+        # code...
+        if($value == TRUE && $key != 'typeContrat'){
+          $accident['tableau'][$i] = array(
+            $type_accident[$key],
+            $value,
+          );
+        }
+      $i = $i + 1; 
+      }
+    $returnArray[] = $accident;
+    }
+
+  }
+    
+  return $returnArray;
+}
+
+
 function ws_client_get_info_conseiller(){
   global $user;
   $account = user_load($user->uid);

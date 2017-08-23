@@ -27,7 +27,7 @@ function mon_conseiller_block_view($delta = '') {
       '778088470',
     );
 
-    $get_service_conseiller = ws_client_get_info_conseiller();
+    //$get_service_conseiller = ws_client_get_info_conseiller();
 
     $conseiller = isset($get_service_conseiller) ? $get_service_conseiller : $test;
 
@@ -35,7 +35,7 @@ function mon_conseiller_block_view($delta = '') {
 
     $output .= '<div class="conseiller-left-bar">';
     $output .= '<h3>Mon conseiller</h3>';
-    foreach ($get_service_conseiller as $key => $value) {
+    foreach ($conseiller as $key => $value) {
       # code...
       $output .= '<p>'. $value . '</p>';
     }
