@@ -109,7 +109,7 @@
           $('.webform-component--type-de-bien').addClass('fadeIn'  ) ;
           $('.form-item-submitted-marque').addClass('fadeIn') ;
           $('.form-item-submitted-annee-de-naissance').addClass('fadeIn') ;
-          $('#edit-account .form-item-name').addClass('fadeIn') ;
+          $('#edit-account .form-item-mail').addClass('fadeIn') ;
         });
         $('#edit-submitted-type-de-bien').on('change', function (e) {
              $('.form-item-submitted-nombre-de-pieces').addClass('fadeIn') ;

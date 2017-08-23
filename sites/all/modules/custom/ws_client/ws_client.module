@@ -37,7 +37,7 @@ function ws_client_getInfoUser(){
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
 
-  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
+  $url = "http://192.168.200.13/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
@@ -107,17 +107,22 @@ function ws_client_user_login(&$edit, $account) {
 }
 
 function ws_client_user_presave(&$edit, $account, $category) {
-	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
-	$result = ws_client_getIdClient($numContrat);	
- /* if($result != 'false')*/
-		$edit['field_identifiant_client']['und'][0]['value'] = $result ;
+   global $user;
+   if($user->uid != 1)
+   {
+  	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
+  	$result = ws_client_getIdClient($numContrat);	
+   /* if($result != 'false')*/
+  		$edit['field_identifiant_client']['und'][0]['value'] = $result ;
+    }  
 }
 function ws_client_webform_submission_presave($node, &$submission) {
+      var_dump($submission) ;  die();
     global $user;
    $account = user_load($user->uid);
   /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
-     /* var_dump($node) ;  die();*/
-      if($node->nid == '8')
+        $nid = $node->nid ;
+      if($nid == '8')
       {
             $carrosserieObject = taxonomy_term_load($submission->data[12][0]) ;
             $carroserie = $carrosserieObject->name ;
@@ -159,22 +164,9 @@ function ws_client_webform_submission_presave($node, &$submission) {
               );
 
               $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisAuto/create', $options);
-                    $submission->data[1][0] = "" ;
-                    $submission->data[2][0] = "" ;
-                    $submission->data[3][0] = "" ;
-                    $submission->data[4][0] = "" ;
-                    $submission->data[5][0] = "" ;
-                    $submission->data[9][0] = "" ;
-                    $submission->data[19][0] = "" ;
-                    $submission->data[13][0] = "" ;
-                    $submission->data[20][0] = "" ;
-                    $submission->data[16][0] = "" ;
-                    $submission->data[17][0] = "" ;
-                    $submission->data[21][0] = "" ;
-                    $submission->data[12][0] = "" ;
-                    $submission->data[18][0] = "" ;
+                  
         }
-         if($node->nid == '9')
+         if($nid == '9')
           { 
             $devis = array(
              'idCompte' => $identifiant ,
@@ -202,6 +194,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
               $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisHabitation/create', $options);
               var_dump( $result) ; die();
           }
+           webform_submission_delete($nid, $sid);
 }
 
 
