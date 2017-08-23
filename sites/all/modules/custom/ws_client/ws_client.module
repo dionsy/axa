@@ -87,16 +87,10 @@ function ws_client_update_info_user($array_data) {
                   'timeout' => 6000.0,
                   'headers' => array('Content-Type' => 'application/json')
   );
-
   $url = 'http://192.168.200.14/Service1.svc/compte/update';
-
   $result = drupal_http_request($url, $options);
           
 }
-
-
-
-
 /*function ws_client_getIdentifiant_node(){
 
 	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
@@ -113,8 +107,8 @@ function ws_client_user_presave(&$edit, $account, $category) {
 		$edit['field_identifiant_client']['und'][0]['value'] = $result ;
 }
 function ws_client_webform_submission_presave($node, &$submission) {
-    global $user;
-   $account = user_load($user->uid);
+  global $user;
+  $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
      /* var_dump($node) ;  die();*/
       if($node->nid == '8')
