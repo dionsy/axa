@@ -175,7 +175,7 @@
             <?php print render($page['content']); ?>
         </section>
     </div>
-            <?php
+    <?php
               global $user; 
               global $base_url; 
               $userUID = $user->uid; 
@@ -191,12 +191,12 @@
               }
               else{
                 $href=$base_url.'/node/12';
+                $href = '<div class="sinistre-front"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
               }
               
               echo $href;
-              // print '<div class="sinistre"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
+            
             ?>
-
                 <?php //} ?>
                   <?php if (!empty($page['sidebar_second'])): ?>
                      <aside class="col-sm-3" role="complementary">
