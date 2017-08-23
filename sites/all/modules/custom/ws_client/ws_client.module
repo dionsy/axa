@@ -88,15 +88,15 @@ function ws_client_update_info_user($array_data) {
                   'headers' => array('Content-Type' => 'application/json')
   );
 
-  $url = 'http://192.168.43.145/Service1.svc/compte/update';
+  $url = 'http://192.168.200.14/Service1.svc/compte/update';
+
+
+ // $url = 'http://192.168.43.145/Service1.svc/compte/update';
+
 
   $result = drupal_http_request($url, $options);
           
 }
-
-
-
-
 /*function ws_client_getIdentifiant_node(){
 
 	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
@@ -121,8 +121,10 @@ function ws_client_webform_submission_presave($node, &$submission) {
     global $user;
    $account = user_load($user->uid);
   /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
-        $nid = $node->nid ;
-      if($nid == '8')
+  /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
+
+     /* var_dump($node) ;  die();*/
+      if($node->nid == '8')
       {
             $carrosserieObject = taxonomy_term_load($submission->data[12][0]) ;
             $carroserie = $carrosserieObject->name ;
@@ -192,7 +194,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
               );
 
               $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisHabitation/create', $options);
-              var_dump( $result) ; die();
+              // var_dump( $result) ; die();
           }
            webform_submission_delete($nid, $sid);
 }

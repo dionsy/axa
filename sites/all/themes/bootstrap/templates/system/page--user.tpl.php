@@ -103,18 +103,10 @@
 
     </div>
       <a id="main-content"></a>
-<!--  -->
-     <?php print render($page['content']); ?>
-
+      <?php print render($page['content']); ?>
       <?php print $messages; ?>
-
-      <?php if (!empty($tabs)): 
-
+      <?php if (!empty($tabs)):
         $header =  current_path();
-
-       // krumong('main')->kPrint($header);
-
-       // krumong('main')->kPrint($tabs);
         switch ($header) {
           case 'user/register':
            $tabs['#primary'][0]='';
@@ -122,7 +114,6 @@
           case 'user/password':
            $tabs['#primary'][2]='';
             break;
-
          case 'user':
            $tabs['#primary'][1]='';
             break;
@@ -130,10 +121,8 @@
             # code...
             break;
         }
-
-
       ?>
-        <?php print render($tabs); ?>
+      <?php print render($tabs); ?>
       <?php endif; ?>
 
       <?php if (!empty($page['help'])): ?>
