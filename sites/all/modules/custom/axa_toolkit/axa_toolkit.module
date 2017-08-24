@@ -36,7 +36,7 @@ function axa_toolkit_user_login_submit($form, &$form_state) {
   if( drupal_is_front_page() ){
     // Display form errors, otherwise close the dialog and reload the page.
     if (form_get_errors()) {
-      print_r('ici');die();
+      // print_r('ici');die();
       unset($form['#prefix'], $form['#suffix']);
       $status_messages = array('#theme' => 'status_messages');
       $output = drupal_render($form);
@@ -65,11 +65,24 @@ function axa_toolkit_user_presave(&$edit,$account, $category) {
   * Implements hook_form_alter().
   */
   function axa_toolkit_form_alter(&$form, &$form_state, $form_id) {
-    if ($form_id == 'user_register_form' ) { // id of registration form
-      // $form['account']['name']['#access'] = FALSE;
-    }
-    if ($form_id === 'user_register_form') {
-      $form['#validate'][] = 'axa_toolkit_user_register_form_validate';
+    // if ($form_id == 'user_register_form' ) { // id of registration form
+    //   // $form['account']['name']['#access'] = FALSE;
+    // }
+    // if ($form_id == 'user_register_form') {
+    //   $form['#validate'][] = 'axa_toolkit_user_register_form_validate';
+    // }
+    // if ($form_id == 'user_login_form' ) {
+    //   print_r($form);die();
+    // }
+    switch ($form_id) {
+      case 'user_login':
+      $form['name']['#attributes']['placeholder'] = t('Email');
+      $form['name']['#title'] = t('Email');
+       print_r($form);die();
+        break;
+      default:
+        # code...
+        break;
     }
    }
 
@@ -83,3 +96,57 @@ function axa_toolkit_user_register_form_validate($form, &$form_state){
   }
   
 }
+
+/**
+* Implementation of hook_services_services().
+*/
+function axa_toolkit_services_resources() {
+  $resources = array(
+    'sinistre' => array(
+      'actions' => array(
+        'create' => array(
+          'help' => t('Create a sinistre.'),
+          'file' => array(
+            'type' => 'inc',
+            'module' => 'axa_toolkit',
+            'name' => 'axa_toolkit',
+          ),
+          'callback' => '_sinistre_service_create',
+          'args' => array(
+              array(
+                'name' => 'data',
+                'type' => 'struct',
+                'description' => 'The sinistre object',
+                'source' => 'data',
+                'optional' => FALSE,
+            ),
+          ),
+          'access arguments' => array('access content'),
+        ),
+      ),
+    ),
+  );
+  return $resources;
+}
+// function axa_toolkit_services_resources() {
+//   return array(
+//     'sinistre' => array(
+//       'create' => array(
+//         'help' => 'Creer un sinistre',
+//         'file' => array('file' => 'inc', 'module' => 'axa_toolkit'),
+//         'callback' => '_sinistre_service_create',
+//         'access arguments' => array('sinistre service create'),
+//         'access arguments append' => FALSE,
+//         'args' => array(
+//           array(
+//             'name' => 'data',
+//             'type' => 'struct',
+//             'description' => 'The sinistre object',
+//             'source' => 'data',
+//             'optional' => FALSE,
+//           ),
+//         ),
+//       ),
+//     ),
+//   );
+// }
