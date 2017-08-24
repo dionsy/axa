@@ -161,7 +161,7 @@ function cron_notification_cron() {
   foreach ($clients as $client) {
     # code...
     $uid = $client->uid;
-    $number_client = '+' . $code . $client->field_numero_telephone['und'][0]['value'];
+    $number_client = '+' . $code . /*$client->field_numero_telephone['und'][0]['value']*/'778088471';
 
     # Notification choice: SMS or/and Mail
     $choice = $values[$uid][$uid][1];
@@ -174,7 +174,7 @@ function cron_notification_cron() {
     # Today
     $date = new DateTime(); 
     # Date of end of contrat
-    $date_fin = $client->field_fin_contrat['und'][0]['value'];
+    $date_fin = /*$client->field_fin_contrat['und'][0]['value'];*/'30/08/2017';
     $fin_contrat = new DateTime($date_fin); 
     # Today + Choice notification periode
     $date_intervalle = new DateInterval($periodes_list[$periode]);
@@ -195,12 +195,12 @@ function cron_notification_cron() {
 
     $body_sms = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
 
-    $body_mail = $logo .'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
+    $body_mail = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
     if(/*$date >= $fin_contrat && $date <= $date_majorant*/TRUE){
-      if(in_array("MaIL", $choice)){
+      if(/*in_array("MaIL", $choice)*/TRUE){
         # send email
         //krumong('main')->kPrint($body_mail, 'body mail');
-        //cron_notification_send_mail($client->mail, $subject, $body_mail);      
+        cron_notification_send_mail($client->mail, $subject, $body_mail);      
       }    
       if (($library = libraries_load(TWILIO_LIBRARY)) &&
            !empty($library['loaded']) &&
@@ -340,7 +340,51 @@ function cron_notification_send_mail($to, $subject, $body){
   }
   else{
     krumong('main')->kPrint('a Mail notification has not been sent to:' . $to);
-    return $client;
+    return FALSE;
+  }
+  
+}
+
+function notification_send_mail($from, $to, $subject, $body){
+  $host = variable_get('cron_notification_mail_smtp');
+  $smtp_secure = variable_get('cron_notification_mail_smtpsecure');
+  $port = (int) variable_get('cron_notification_mail_port');
+  $username = variable_get('cron_notification_mail_username');
+  $password = variable_get('cron_notification_mail_password');
+  $altbody = variable_get('cron_notification_mail_altbody');
+
+  $mail = new PHPMailer;
+  # Set mailer to use SMTP
+  $mail->isSMTP();
+  # Specify main and backup SMTP servers                             
+  $mail->Host = $host;
+  # Enable SMTP authentication  
+  $mail->SMTPauth = true;                      
+  
+  # SMTP username 
+  $mail->Username = $username;
+  # SMTP password                 
+  $mail->Password = $password;
+  # Enable TLS encryption, 'ssl' also accepted                 
+  $mail->SMTPSecure = $smtp_secure;
+  # TCP port to connect to           
+  $mail->Port = $port;                          
+
+  # add a recipient
+  $mail->addaddress($to);
+  $mail->setFrom($from, 'Support Team aXa');
+  # Set email format to HTML     
+  $mail->isHTML(true);                                           
+
+  $mail->Subject = $subject;
+  $mail->Body    = $body;
+  $mail->altBody = $altbody;
+
+  if($mail->send()){
+    return TRUE;
+  }
+  else{
+    return FALSE;
   }
   
 }

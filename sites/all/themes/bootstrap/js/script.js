@@ -210,11 +210,25 @@
             
                    $(".nmpd-wrapper").hide();
           });
+
+
           $('#edit-pass-pass1').focus( function(){
                   
                     $(".nmpd-wrapper").hide();    
           });
-              $('#edit-pass-pass2').focus( function(){
+          $('#edit-pass-pass2').focus( function(){
+                  
+                    $(".nmpd-wrapper").hide();    
+          });
+          $('#edit-pass--2').focus( function(){
+                  
+                    $(".nmpd-wrapper").hide();    
+          });
+          $('#edit-pass2').focus( function(){
+                  
+                    $(".nmpd-wrapper").hide();    
+          });
+          $('#edit-pass1').focus( function(){
                   
                     $(".nmpd-wrapper").hide();    
           });

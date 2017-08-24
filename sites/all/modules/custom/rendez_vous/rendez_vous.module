@@ -1,4 +1,27 @@
 <?php
+module_load_include('module','ws_client');
+
+
+/**
+ * Implements hook_libraries_info().
+ */
+function rendez_vous_libraries_info() {
+  $libraries['phpmailer'] = array(
+    'name' => 'PHPMailer library',
+    'vendor url' => 'http://www.phpmailer.com',
+    'download url' => 'https://github.com/PHPMailer/PHPMailer',
+    'path' => '.',
+    'version' => '5.2.23',
+    'files' => array(
+      'php' => array(
+        'PHPMailerautoload.php',
+      ),
+    ),
+  );
+  return $libraries;
+}
+
+
 /**
  * Implements hook_block_info()
  */
@@ -112,4 +135,67 @@ function fixer_rendez_vous_form($form, &$form_state){
   
   return system_settings_form($form);
 
+}
+
+
+function fixer_rendez_vous_form_submit($form, &$form_state){
+    global $user;
+    $account = user_load_by_name($user->name);
+    $horaire = array(
+      0 => t('08h-13h'),
+      1 => t('15h-18h'),
+    );
+
+    $option = array(
+      0 => t('Souscription d\'un nouveau contrat'),
+      1 => t('Demande d\'information'),
+      2 => t('Résiliation contrat'),
+    );
+
+    $demande = $form_state['values']['demande'];
+    $option_value = $option[$form_state['values']['objet']];
+    $horaire_value = $horaire[$form_state['values']['horaire']]; 
+
+    $to = "smsframework@gmail.com";
+    $from = "mouhawele@gmail.com";
+    $subject = $option_value;
+    $body = $form_state['values']['demande'] . ' ' .$horaire_value;
+    $alt = 'Fixer un rendez vous';
+
+    envoyer_mail($from, $to, $subject, $body, $alt);
+}
+
+function envoyer_mail($from, $to, $subject, $body, $alt){
+  $host = variable_get('cron_notification_mail_smtp');
+  $smtp_secure = variable_get('cron_notification_mail_smtpsecure');
+  $port = (int) variable_get('cron_notification_mail_port');
+  $username = variable_get('cron_notification_mail_username');
+  $password = variable_get('cron_notification_mail_password');
+
+  $mail = new PHPMailer;
+  $mail->SMTPDebug = 3;                               // Enable verbose debug output
+  $mail->isSMTP();                                      // Set mailer to use SMTP
+  $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+  $mail->SMTPAuth = true;                               // Enable SMTP authentication
+
+
+  $mail->Username = $username;                 // SMTP username
+  $mail->Password = $password;                           // SMTP password
+  $mail->SMTPSecure = $smtp_secure;                            // Enable TLS encryption, `ssl` also accepted
+  $mail->Port = $port;                                    // TCP port to connect to
+
+  $mail->setFrom($from, $alt);
+  $mail->addAddress($to);     // Add a recipient
+  
+  $mail->isHTML(true);                                  // Set email format to HTML
+
+  $mail->Subject = $subject;
+  $mail->Body    = $body;
+
+  if(!$mail->send()) {
+      echo 'Message could not be sent.';
+      echo 'Mailer Error: ' . $mail->ErrorInfo;
+  }  else {
+      echo 'Message has been sent';
+  }
 }
