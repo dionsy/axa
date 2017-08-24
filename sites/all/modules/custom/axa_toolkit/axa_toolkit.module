@@ -76,9 +76,6 @@ function axa_toolkit_user_presave(&$edit,$account, $category) {
     // }
     switch ($form_id) {
       case 'user_login':
-      $form['name']['#attributes']['placeholder'] = t('Email');
-      $form['name']['#title'] = t('Email');
-       print_r($form);die();
         break;
       default:
         # code...
