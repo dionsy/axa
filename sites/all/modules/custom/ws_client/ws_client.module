@@ -1,5 +1,4 @@
 <?php
- $ipAdresse = "192.168.200.27"; 
 	/**
 	* @file
 	* Web services Client
@@ -18,14 +17,14 @@ function  ws_client_block_view($delta = '') {
 }
 
 function ws_client_get_node(){
-	$url = "http://".$ipAdresse."/ServicesCompte.svc/compte/espaceClient/AXA00000004/" ;
+	$url = "http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/" ;
   $options = array('timeout' => 6000.0) ;
 	return drupal_http_request($url , $options) ;
 }
 
 
 function ws_client_getIdClient($numeroContrat){
-	$url = "http://".$ipAdresse."/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
+	$url = "http://192.168.43.145/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
 
   $options = array('timeout' => 6000.0) ;
 	$request = drupal_http_request($url ,$options) ;
@@ -38,7 +37,7 @@ function ws_client_getInfoUser(){
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
   /*var_dump($identifiant) ; die();*/
-  $url = "http://".$ipAdresse."/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
+  $url = "http://192.168.43.145/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
@@ -79,10 +78,10 @@ function ws_client_get_liste_contrats(){
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
 
-  $identifiant = 'AXA00000000';
+  /*$identifiant = 'AXA00000000';*/
 
 
-  $url = "http://".$ipAdresse."/Service1.svc/listeContrats/" .$identifiant. "";
+  $url = "http://192.168.43.145/Service1.svc/listeContrats/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
@@ -174,10 +173,10 @@ function ws_client_get_liste_devis(){
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
 
-  $identifiant = 'AXA00000000';
+ /* $identifiant = 'AXA00000000';*/
 
 
-  $url = "http://".$ipAdresse."/Service1.svc/listeDevis/" .$identifiant. "";
+  $url = "http://192.168.43.145/Service1.svc/listeDevis/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
@@ -246,7 +245,7 @@ function ws_client_get_info_conseiller(){
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
  
-  $url = "http://".$ipAdresse."/Service1.svc/conseiller/" .$identifiant. "";
+  $url = "http://192.168.43.145/Service1.svc/conseiller/" .$identifiant. "";
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
@@ -276,7 +275,7 @@ function ws_client_update_info_user($array_data) {
                   'headers' => array('Content-Type' => 'application/json')
   );
 
-  $url = 'http://".$ipAdresse."/Service1.svc/compte/update';
+  $url = 'http://192.168.43.145/Service1.svc/compte/update';
 
   $result = drupal_http_request($url, $options);
           
@@ -287,7 +286,7 @@ function ws_client_update_info_user($array_data) {
 
 /*function ws_client_getIdentifiant_node(){
 
-	$url = 'http://".$ipAdresse."/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
+	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
 	return drupal_http_request($url) ;
 }*/
 function ws_client_user_login(&$edit, $account) {
@@ -330,7 +329,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
             $marqueObject  = reset($marqueObjectParent) ;
             $marque = $marqueObject->name ;
             $devis = array(
-             'idCompte' => '' ,
+             'idCompte' =>$identifiant ,
              'nom' => $submission->data[1][0] ,
              'prenom' => $submission->data[2][0] , 
             /* 'dateNaissance' => $submission->data[3][0] ,*/ 
@@ -358,7 +357,8 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request("http://".$ipAdresse."/Service1.svc/devisAuto/create", $options);
+              $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisAuto/create", $options);
+              /*var_dump( $result) ; die();*/
 
         }
          if($nid == 9)
@@ -386,7 +386,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request("http://".$ipAdresse."/Service1.svc/devisHabitation/create", $options);
+              $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisHabitation/create", $options);
              /* var_dump( $result) ; die();*/
           }
           if($nid == 10)
@@ -442,11 +442,12 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisAssistanceAccident/create", $options);
+              $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisLoisirs/create", $options);
              /* var_dump( $result) ; die();*/
           }
-}
+           webform_submission_delete($node, $submission);
 
-function ws_client_webform_submission_insert($node, $submission) {
-  webform_submission_delete($node, $submission);
 }
+/*
+function ws_client_webform_submission_insert($node, $submission) {
+ }*/
