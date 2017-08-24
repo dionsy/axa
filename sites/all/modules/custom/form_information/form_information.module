@@ -181,7 +181,8 @@ function form_information_form_submit($form, &$form_state){
     $account = user_load_by_name($user->name);
 
     if (isset($form_state['values']['pass1'])){
-      $edit['pass'] = $form_state['values']['pass1'];     
+      $edit['pass'] = $form_state['values']['pass1'];  
+      $edit['mail'] = $form_state['values']['email'];   
       user_save($account, $edit);
     }
 

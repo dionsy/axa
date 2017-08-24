@@ -358,8 +358,6 @@ function ws_client_webform_submission_presave($node, &$submission) {
               );
 
               $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisAuto/create", $options);
-              /*var_dump( $result) ; die();*/
-
         }
          if($nid == 9)
           { 
@@ -369,14 +367,14 @@ function ws_client_webform_submission_presave($node, &$submission) {
              'prenom' => $submission->data[9][0], 
              'telephone' => $submission->data[11][0],
              'mail' => $submission->data[12][0],
-             'typeLogement' => $submission->data[1][0],
+             'typeLogement' => $submission->data[14][0],
              'adresseLogement' => $submission->data[4][0],
              'nbPieces' =>  $submission->data[2][0],
              'principal' => $submission->data[3][0],
-             'locataire' => $submission->data[14][0],
+             'locataire' => $submission->data[15][0],
              'montant' => '5000000'
              );
-              /*var_dump($devis); die();*/
+             /* var_dump($devis); die();*/
             $data = drupal_json_encode($devis);
 
               $options = array(
@@ -387,7 +385,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
               );
 
               $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisHabitation/create", $options);
-             /* var_dump( $result) ; die();*/
+              /*var_dump( $result) ; die();*/
           }
           if($nid == 10)
           { 
