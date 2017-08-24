@@ -1,4 +1,5 @@
 <?php
+module_load_include('module','ws_client');
 /**
  * Implements hook_block_info()
  */
@@ -18,66 +19,70 @@ function echeances_block_view($delta = '') {
   if ($delta == 'echeances') {
     $today = date("d/m/Y");
     
-  	$title_echeance = t('Mes échéances');
-  	$title_p = t('Situation au ' . $today); 
-  	$title = '<p>'. $title_echeance .'</p>';
-  	$title .= '<span>'. $title_p .'</span>';
-  	$text_prime = t("Dates des prochaines primes à payer pour vos contrat d'assurance");
-  	$text_contact = t('Pour toute information supplémentaire contacter votre conseiller');
-  	$output = '';
+    $title_echeance = t('Mes échéances');
+    $title_p = t('Situation au ' . $today); 
+    $title = '<p>'. $title_echeance .'</p>';
+    $title .= '<span>'. $title_p .'</span>';
+    $text_prime = t("Dates des prochaines primes à payer pour vos contrat d'assurance");
+    $text_contact = t('Pour toute information supplémentaire contacter votre conseiller');
+    $output = '';
 
-  	$table = array(
-	  	'thead' => array(
-	  		'NumContrat' => t('N° Contrat'),
-	  		'produit' => t('Produit'),
-	  		'caracteristiques' => t('Caractéristiques'),
-	  		'mode_echeance' => t('Mode d\'echeance'),
-	  		'prochaine_echeance' => t('Prochaine échéance'),
-	  	),
-	  	'tbody' => array(
-	  		array(
-		  	  'NumContrat' => t('10245520'),
-		  		'produit' => t('Oplus LIFE-Equatoria'),
-		  		'caracteristiques' => t('BMW'),
-		  		'mode_echeance' => t('Mensuelle'),
-		  		'prochaine_echeance' => t('01/09/2017'),		
-	  		),
-	  		array(
-		  	  'NumContrat' => t('1254885222'),
-		  		'produit' => t('Oplus LIFE-Equatoria'),
-		  		'caracteristiques' => t('BMW'),
-		  		'mode_echeance' => t('Mensuelle'),
-		  		'prochaine_echeance' => t('01/09/2017'),		
-	  		),
-	  		array(
-		  	    'NumContrat' => t('125460'),
-		  		'produit' => t('Oplus LIFE-Equatoria'),
-		  		'caracteristiques' => t('BMW'),
-		  		'mode_echeance' => t('Mensuelle'),
-		  		'prochaine_echeance' => t('01/09/2017'),		
-	  		),
-	  	),
-  	); 
+    //$get_service_echeance = ws_client_get_info_conseiller();
+
+    $table = array(
+      'thead' => array(
+        'NumContrat' => t('N° Contrat'),
+        'produit' => t('Produit'),
+        'caracteristiques' => t('Caractéristiques'),
+        'mode_echeance' => t('Mode d\'echeance'),
+        'prochaine_echeance' => t('Prochaine échéance'),
+      ),
+      'tbody' => array(
+        array(
+          'NumContrat' => t('10245520'),
+          'produit' => t('Oplus LIFE-Equatoria'),
+          'caracteristiques' => t('BMW'),
+          'mode_echeance' => t('Mensuelle'),
+          'prochaine_echeance' => t('01/09/2017'),    
+        ),
+        array(
+          'NumContrat' => t('1254885222'),
+          'produit' => t('Oplus LIFE-Equatoria'),
+          'caracteristiques' => t('BMW'),
+          'mode_echeance' => t('Mensuelle'),
+          'prochaine_echeance' => t('01/09/2017'),    
+        ),
+        array(
+          'NumContrat' => t('125460'),
+          'produit' => t('Oplus LIFE-Equatoria'),
+          'caracteristiques' => t('BMW'),
+          'mode_echeance' => t('Mensuelle'),
+          'prochaine_echeance' => t('01/09/2017'),    
+        ),
+      ),
+    );
+
+    $table = isset($get_service_echeance) ? $get_service_echeance : $table; 
 
     $output .= '<p>'. $text_prime .'</p>';
     $output .= '<table class="table-bordered">';
     $output .=   '<thead>';
     
     foreach ($table['thead'] as $key => $value) {
-    	# code...
+      # code...
         $output .=     '<th>'. $value .'</th>';
     }
 
     $output .=   '</thead>';
     $output .=   '<tbody>';
     foreach ($table['tbody'] as $tables) {
-    	# code...
-    	$output .= '<tr>';
-    	foreach ($tables as $key => $value) {
-    		# code...
-    		$output .=   '<td>'. $value .'</td>';
-    	}
-    	$output .= '</tr>';
+      # code...
+      $output .= '<tr>';
+      foreach ($tables as $key => $value) {
+        # code...
+        $output .=   '<td>'. $value .'</td>';
+      }
+      $output .= '</tr>';
     }
     $output .=   '</tbody>';
     $output .= '</table>';
