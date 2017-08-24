@@ -12,41 +12,6 @@
               fade:true
             });
 
-           /*$('.view-partenaire .view-content', context).slick({
-            autoplay: true,
-            dots: false,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            responsive: [
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 2,
-                  infinite: true,
-                  dots: false
-                }
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2
-                }
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-                }
-              }
-            ]
-          });*/
-
-
       }
 
       $('.view-faq li.views-row', context).on('click', function(){
@@ -90,18 +55,6 @@
         }
       });
 
-      
-      /*$(".loupe").click(function(e) {
-         $("form").addClass("fcurrent", 10000);
-      });
-
-      $(".icon-x-cross").click(function(e) {
-          $("form").removeClass("fcurrent", 10000);
-       });*/
-      /*$("input:radio:checked").next("div.form-item-submitted-nom").addClass("fadeIn") ;*/
-         /*$("input.form-radio:radio").change(function() {
-          $('form-item-submitted-nom').addClass('fadeIn') ;
-          });*/
         $(function() { 
           $('#webform-client-form-8 .form-item-submitted-nom').addClass('fadeIn') ;
           $('#webform-client-form-8 .form-item-submitted-prenom').addClass('fadeIn') ;
@@ -109,7 +62,6 @@
           $('.webform-component--type-de-bien').addClass('fadeIn'  ) ;
           $('.form-item-submitted-marque').addClass('fadeIn') ;
           $('.form-item-submitted-annee-de-naissance').addClass('fadeIn') ;
-        /*  $('#edit-account .form-item-mail').addClass('fadeIn') ;*/
         });
         $('#edit-submitted-type-de-bien').on('change', function (e) {
              $('.form-item-submitted-nombre-de-pieces').addClass('fadeIn') ;
@@ -153,27 +105,48 @@
         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).keyup(function() {
               $('.form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
           });
+        $( ".form-item-submitted-adresse-du-bien-a-assurer" ).focusout(function() {
+              $('.form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
+          });
      
         $( ".form-item-submitted-prenom" ).keyup(function() {
               $('.form-type-date').addClass('fadeIn'  ) ;
           });
+         $( ".form-item-submitted-prenom" ).focusout(function() {
+              $('.form-type-date').addClass('fadeIn'  ) ;
+          });
         $(".form-item-submitted-adresse").keyup(function() {
              $('.form-item-submitted-email').addClass('fadeIn'  ) ;
-          }); 
+          });
+          $(".form-item-submitted-adresse").focusout(function() {
+             $('.form-item-submitted-email').addClass('fadeIn'  ) ;
+          });  
         $(".form-item-submitted-email").keyup(function() {
+             $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
+         });
+        $(".form-item-submitted-email").focusout(function() {
              $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
          });
         $( ".form-item-submitted-telephone").keyup(function() {
              $('.form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
         });
+        $( ".form-item-submitted-telephone").focusout(function() {
+             $('.form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
+        });
         $( ".form-item-submitted-age-dobtention-du-permis").keyup(function() {
              $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
-        });        
+        });  
+        $( ".form-item-submitted-age-dobtention-du-permis").focusout(function() {
+             $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
+        });       
 
 /*        $( "#edit-account .form-item-mail" ).keyup(function() {
               $('#edit-field-numero-contrat').addClass('fadeIn') ;
           });*/
         $( ".form-item-submitted-puissance" ).keyup(function() {
+              $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
+          });
+        $( ".form-item-submitted-puissance" ).focusout(function() {
               $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
           });
         $('#user-login #edit-pass').numpad(
@@ -206,6 +179,10 @@
             
                    $(".nmpd-wrapper").hide();
           });
+        $('#user-login #edit-name').focus( function(){
+            
+                   $(".nmpd-wrapper").hide();
+          });
           $('#edit-field-numero-contrat-und-0-value').focus( function(){
             
                    $(".nmpd-wrapper").hide();
@@ -232,7 +209,6 @@
                   
                     $(".nmpd-wrapper").hide();    
           });
-
           $("input:password").bind('click focus', function(){
              $(this).attr("readonly", false);
           }).bind('blur', function(){

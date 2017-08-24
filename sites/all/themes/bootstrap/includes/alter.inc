@@ -305,7 +305,7 @@ function bootstrap_form_alter(array &$form, array &$form_state = array(), $form_
   }
      if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block' ) ) )
     {
-        $form['name']['#attributes']['placeholder'] = t( 'Username' );
+        $form['name']['#attributes']['placeholder'] = t( 'Email' );
         $form['pass']['#attributes']['placeholder'] = t( 'Password' );
         $form['pass']['#inputmode'] = 'numeric';
 /*        $form['pass']['#type'] = 'password';

@@ -63,7 +63,7 @@ function  ws_client_block_view($delta = '') {
 }
 
 function ws_client_get_node(){
-	$url = 'http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/' ;
+	$url = "http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/" ;
   $options = array('timeout' => 6000.0) ;
 	return drupal_http_request($url , $options) ;
 }
@@ -124,7 +124,7 @@ function ws_client_get_liste_contrats(){
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
 
-  $identifiant = 'AXA00000000';
+  /*$identifiant = 'AXA00000000';*/
 
 
   $url = "http://192.168.43.145/Service1.svc/listeContrats/" .$identifiant. "";
@@ -219,7 +219,7 @@ function ws_client_get_liste_devis(){
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
 
-  $identifiant = 'AXA00000000';
+ /* $identifiant = 'AXA00000000';*/
 
 
   $url = "http://192.168.43.145/Service1.svc/listeDevis/" .$identifiant. "";
@@ -426,12 +426,19 @@ function ws_client_user_presave(&$edit, $account, $category) {
  /* if($result != 'false')*/
 }
 function ws_client_webform_submission_presave($node, &$submission) {
+  //var_dump($submission) ;die();
+
     global $user;
-   $account = user_load($user->uid);
-  /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
-     /* var_dump($node) ;  die();*/
-     $nid = $node->nid ;
-      if($nid == '8')
+    $identifiant = "" ;
+    $uid = ($user->uid); 
+    $nid = $node->nid ;
+   if($uid != 0)
+    {
+      $account = user_load($user->uid);
+      $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+    }
+    /* var_dump($identifiant) ;die() ;*/
+      if($nid == 8)
       {
             $carrosserieObject = taxonomy_term_load($submission->data[12][0]) ;
             $carroserie = $carrosserieObject->name ;
@@ -444,7 +451,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
             $marqueObject  = reset($marqueObjectParent) ;
             $marque = $marqueObject->name ;
             $devis = array(
-             'idCompte' => '' ,
+             'idCompte' =>$identifiant ,
              'nom' => $submission->data[1][0] ,
              'prenom' => $submission->data[2][0] , 
             /* 'dateNaissance' => $submission->data[3][0] ,*/ 
@@ -472,10 +479,11 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisAuto/create', $options);
+              $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisAuto/create", $options);
+              /*var_dump( $result) ; die();*/
 
         }
-         if($nid == '9')
+         if($nid == 9)
           { 
             $devis = array(
              'idCompte' => $identifiant ,
@@ -500,9 +508,68 @@ function ws_client_webform_submission_presave($node, &$submission) {
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-              $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisHabitation/create', $options);
+              $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisHabitation/create", $options);
              /* var_dump( $result) ; die();*/
           }
-          webform_submission_delete($nid, $sid);
-}
+          if($nid == 10)
+          { 
+            $devis = array(
+             /*'idCompte' => $identifiant ,*/
+             /*'civilite' => $submission->data[8][0],*/
+            /* 'nom' => $submission->data[1][0],
+             'prenom' => $submission->data[2][0],*/ 
+             /* 'dateNaissance' => $submission->data[3][0] ,*/ 
+            /* 'telephone' => $submission->data[4][0],
+             'mail' => $submission->data[5][0],
+             'typeAssurance' => $submission->data[9][0]*/
+              "idCompte" => $identifiant,
+              "nom" => $submission->data[1][0],
+              "prenom" => $submission->data[2][0],
+              "telephone" => $submission->data[4][0],
+              "mail" => $submission->data[5][0],
+              "typeAssurance" => $submission->data[9][0] 
+             );
+              /*var_dump($devis); die();*/
+            $data = drupal_json_encode($devis);
 
+              $options = array(
+                              'method' => 'POST',
+                              'data' => $data,
+                              'timeout' => 6000.0,
+                              'headers' => array('Content-Type' => 'application/json')
+              );
+
+              $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisAssistanceAccident/create", $options);
+              /*var_dump( $result) ; die();*/
+          }
+          if($nid == 11)
+          { 
+            $devis = array(
+             'idCompte' => $identifiant ,
+             /*'civilite' => $submission->data[1][0],*/
+             'nom' => $submission->data[2][0],
+             'prenom' => $submission->data[3][0],
+             /* 'dateNaissance' => $submission->data[4][0] ,*/  
+             'mail' => $submission->data[5][0],
+             'telephone' => $submission->data[6][0],
+             'typeAssurance' => $submission->data[7][0]
+             );
+              /*var_dump($devis); die();*/
+            $data = drupal_json_encode($devis);
+
+              $options = array(
+                              'method' => 'POST',
+                              'data' => $data,
+                              'timeout' => 6000.0,
+                              'headers' => array('Content-Type' => 'application/json')
+              );
+
+              $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisLoisirs/create", $options);
+             /* var_dump( $result) ; die();*/
+          }
+           webform_submission_delete($node, $submission);
+
+}
+/*
+function ws_client_webform_submission_insert($node, $submission) {
+ }*/
