@@ -2058,6 +2058,9 @@ input.nmpd-display {
 	color: #000;
 	z-index: 501;
 	}
-    #search-block-form #edit-actions--2 {
+#search-block-form #edit-actions--2 {
         display: none ! important;
+    }
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front {
+        box-shadow: 2px 2px 0 rgba(235,234,230,0.8);
     }
