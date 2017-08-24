@@ -1,4 +1,5 @@
 <?php
+module_load_include('module','ws_client');
 /**
  * Implements hook_block_info()
  */
@@ -18,19 +19,37 @@ function mes_contrats_block_view($delta = '') {
   if ($delta == 'mes_contrats') {
     $title = '';
   	$output = '';
+    /*$auto = array();
 
-    $get_service_contrats = array(
+    $auto['type'] = 'Auto';
+    $auto['info'][] = array(
+      'id' => '1234',
+      'marque' => 'logeme',
+      'modele' => 'assurance',  
+    );
+    $auto['info'][] = array(
+      'id' => 'id',
+      'marque' => 'marque',
+      'modele' => 'modele',  
+    );
+
+    var_dump($auto); die();*/
+
+
+    //$get_service_contrats = ws_client_get_liste_contrats();
+
+    $get_test_contrats = array(
       array(
         'type' => 'Auto',
         'info' => array(
                     array(
                       'id' =>'25123596870',
-                      'produit' => 'AUTO ECO',
+                      'modele' => 'AUTO ECO',
                       'marque' => 'BMW',
                     ),
                     array(
                       'id' =>'25456789321',
-                      'produit' => 'SOLUTION CONFORT',
+                      'modele' => 'SOLUTION CONFORT',
                       'marque' => 'Mercedes',
                     ),
                   ),
@@ -41,7 +60,7 @@ function mes_contrats_block_view($delta = '') {
         'info' => array(
                     array(
                       'id' =>'25456789321',
-                      'produit' => 'MRH PREMIUM',
+                      'type_logement' => 'MRH PREMIUM',
                       'adresse' => 'Mermoz',
                     ),
                   ),
@@ -53,12 +72,13 @@ function mes_contrats_block_view($delta = '') {
                     array(
                       'id' =>'25012547896',
                       'produit' => 'Individuelle Accident',
-                      'adresse' => 'lorem',
                     ),
                   ),
       ),
 
     );
+
+    $get_service_contrats = isset($get_service_contrats) ? $get_service_contrats : $get_test_contrats;
 
     $title .=   t('Mes Contrats');
 
