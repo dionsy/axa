@@ -279,6 +279,7 @@ $databases = array (
 
 
 
+
 /**
  * Access control for update.php script.
  *
