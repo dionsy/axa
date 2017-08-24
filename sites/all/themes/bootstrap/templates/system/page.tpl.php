@@ -184,6 +184,7 @@
     <?php
               global $user; 
               global $base_url; 
+              If($is_front){
               $userUID = $user->uid; 
               if(empty($userUID)){
                 $href= l(t('Declaration Sinistre'), 'user', array(
@@ -201,7 +202,7 @@
               }
               
               echo $href;
-            
+            }
             ?>
                 <?php //} ?>
                   <?php if (!empty($page['sidebar_second'])): ?>

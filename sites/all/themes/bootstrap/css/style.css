@@ -35,11 +35,17 @@
     font-size: 100%;
     font-weight: bold;
 }
-.slick-prev {
+#block-views-slide-block:hover .slick-prev{
     left: -2px;
+} 
+#block-views-slide-block:hover .slick-next{
+     right: 0%;
+}
+.slick-prev {
+    left: -20000px;
 }
 .slick-next {
-    right: 0%;
+    right: 150%;
 }
 .slick-next,
 .slick-prev {
