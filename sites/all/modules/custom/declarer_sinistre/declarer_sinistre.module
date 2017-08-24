@@ -1,4 +1,5 @@
 <?php
+module_load_include('module','ws_client');
 /**
  * Implements hook_block_info()
  */
@@ -28,31 +29,111 @@ function declarer_sinistre_block_view($delta = '') {
  * fixer_declarer_sinistre_form
  */
 function fixer_declarer_sinistre_form($form, &$form_state){
-  $get_service_contrats = array(
+  $info_auto = array();
+  $info_habitation = array();
+  $info_accident = array();
+
+  $contrats = ws_client_get_liste_contrats();
+
+  /*$contrats = array(
       array(
         'type' => 'Auto',
         'info' => array(
-                      '25123596870 AUTO ECO BMW',
-                      '25456789321 SOLUTION CONFORT Mercedes',
+                    array(
+                      'id' =>'25123596870',
+                      'modele' => 'AUTO ECO',
+                      'marque' => 'BMW',
+                    ),
+                    array(
+                      'id' =>'25456789321',
+                      'modele' => 'SOLUTION CONFORT',
+                      'marque' => 'Mercedes',
+                    ),
                   ),
       ),
 
       array(
         'type' => 'Habitation',
         'info' => array(
-                      '25456789321 MRH PREMIUM',
+                    array(
+                      'id' =>'25456789321',
+                      'type_logement' => 'MRH PREMIUM',
+                      'adresse' => 'Mermoz',
+                    ),
                   ),
       ),
 
       array(
         'type' => 'Accident',
         'info' => array(
-                      '25012547896 Individuelle Accident',
+                    array(
+                      'id' =>'25012547896',
+                      'produit' => 'Individuelle Accident',
+                    ),
                   ),
       ),
 
-  );
+    );
+*/
+  foreach ($contrats as $contrat_devis) {
+    # code...
+    if ($contrat_devis['type'] === 'Auto') {
+      # code...
+      foreach ($contrat_devis['info'] as $contrat_devis_info) {
+        # code...
+        $info_auto[$contrat_devis_info['id']] = $contrat_devis_info['id'] .' '. $contrat_devis_info['modele'];
+      }
+    }
 
+    if ($contrat_devis['type'] === 'Habitation') {
+      # code...
+      foreach ($contrat_devis['info'] as $contrat_devis_info) {
+        # code...
+        $info_habitation[$contrat_devis_info['id']] = $contrat_devis_info['id'] .' '. $contrat_devis_info['type_logement'];
+      }
+    }
+
+    if ($contrat_devis['type'] === 'Accident') {
+      # code...
+      foreach ($contrat_devis['info'] as $contrat_devis_info) {
+        # code...
+        $info_accident[$contrat_devis_info['id']] = $contrat_devis_info['id'] .' '. $contrat_devis_info['produit'];
+      }
+    }
+
+  }
+
+  $contrats[0]['info'] = $info_auto;
+  $contrats[1]['info'] = $info_habitation;
+  $contrats[2]['info'] = $info_accident;
+  
+  $get_service_contrats = $contrats;
+  
+  /*$get_service_contrats = array(
+    array(
+      'type' => 'Auto',
+      'info' => array(
+        '123' => '25123596870 AUTO ECO BMW',
+        '1234' => '25456789321 SOLUTION CONFORT Mercedes',
+      ),
+    ),
+
+    array(
+      'type' => 'Habitation',
+      'info' => array(
+        '25' => '25456789321 MRH PREMIUM',
+      ),
+    ),
+
+    array(
+      'type' => 'Accident',
+      'info' => array(
+        '250' => '25012547896 Individuelle Accident',
+      ),
+    ),
+
+  );
+*/
   $nature_sinistre = array(
     'auto' => array('Collision entre vehicule', 'Vitre brisee', 'nature auto 2','nature auto 3'),
     'habitation' => array('Cambriolage', 'Catastrophe naturelle', 'Incendie'),
@@ -61,14 +142,17 @@ function fixer_declarer_sinistre_form($form, &$form_state){
 
   $form['sinistre'] = array(
     '#type' => 'fieldset', 
-    '#title' => t('Information sur votre sinistre'),   
+    '#title' => t('Information sur votre sinistre'),
+    '#required' => TRUE,   
   );
 
   $form['sinistre']['type'] = array(
     '#type' => 'select',
     '#options' => drupal_map_assoc(array(t('Auto'), t('Habitation'), t('Assistance et Accident'))),
     '#title' => t('Type de sinistre'),
+    '#required' => TRUE,
   );
+
   
   $form['sinistre']['contrat_auto'] = array(
     '#type' => 'select',
@@ -135,6 +219,12 @@ function fixer_declarer_sinistre_form($form, &$form_state){
     ),
   );
 
+  /*$form['sinistre']['date'] = array(
+    '#type' => 'date',
+    '#title' => t('Date sinistre'),
+    '#required' => TRUE,
+  );*/
+
   $form['supplementaire'] = array(
     '#type' => 'fieldset', 
     '#title' => t('Information supplémentaire'),
@@ -144,13 +234,15 @@ function fixer_declarer_sinistre_form($form, &$form_state){
 
   $form['supplementaire']['estimation'] = array(
     '#type' => 'select',
-    '#options' => array('plus de 50000 FCFA','plus de 10000 FCFA','plus de 500000 FCFA','plus de 1000000 FCFA') ,
+    '#options' => array('plus de 50000 FCFA','plus de 100000 FCFA','plus de 500000 FCFA','plus de 1000000 FCFA') ,
     '#title' => t('Estimations des dégâts'),
+    '#required' => TRUE,
   );
 
   $form['supplementaire']['dommages'] = array(
     '#type' => 'textarea',
     '#title' => t('Décrire les dommages'),
+    '#required' => TRUE,
   );
 
   $form['supplementaire']['garage'] = array(
@@ -214,6 +306,80 @@ function fixer_declarer_sinistre_form($form, &$form_state){
     '#theme_wrappers' => array(),
   );
 
-  
-  return system_settings_form($form);
+  $form['submit'] = array(
+    '#type' => 'submit', 
+    '#title' => 'Enregistrer',
+    '#value' => 'Déclarer Sinistre',
+    '#submit' => array('declarer_sinistre_form_submit'),
+  );
+
+  return $form;
+}
+
+function declarer_sinistre_form_submit($form, &$form_state){
+    /*print('<pre>'. print_r($form_state['values'], TRUE) .'</pre>'); die();*/
+    $data = array();
+
+    $nature_sinistre = array(
+      'auto' => array(
+        '0' => 'Collision entre vehicule', 
+        '1' => 'Vitre brisee', 
+        '2' => 'nature auto 2',
+        '3' => 'nature auto 3',
+      ),
+      'habitation' => array(
+        '0' => 'Cambriolage', 
+        '1' => 'Catastrophe naturelle', 
+        '2' => 'Incendie',
+      ),
+      'accident' => array('Accident de la route',
+        '0' => 'nature accident 2',
+        '1' => 'nature accident 3',
+      ),
+    );
+
+    $estimation = array(
+      '0' => 50000,
+      '1' => 100000,
+      '2' => 500000,
+      '3' => 1000000,
+    );
+
+    //type du contrat
+    $data['typeContrat'] = $form_state['values']['type'];
+    if ($data['typeContrat'] === 'Auto'){
+      //numéro du contrat
+      $data['idContrat'] = $form_state['values']['contrat_auto'];
+      //nature du sinistre
+      $data['natureAuto'] = $nature_sinistre['auto'][$form_state['values']['nature_auto']];
+      //Si le véhicule est ou sera déposé dans un garage?
+      if ($form_state['value']['garage'] = '1') {
+        # code...
+        $data['nomReparareur'] = $form_state['values']['nom'];
+        $data['jourReparation'] = (int) $form_state['values']['date']['day'];
+        $data['moisReparation'] = (int) $form_state['values']['date']['month'];
+        $data['anneeReparation'] = (int) $form_state['values']['date']['year'];
+      }
+    }
+
+    if ($data['typeContrat'] === 'Habitation'){
+      //numéro du contrat
+      $data['idContrat'] = $form_state['values']['contrat_habitation'];
+      //nature du sinistre
+      $data['natureHabitation'] = $nature_sinistre['habitation'][$form_state['values']['nature_habitation']];
+    }
+
+    if ($data['typeContrat'] === 'Assistance et Accident'){
+      //numéro du contrat
+      $data['idContrat'] = $form_state['values']['contrat_accident'];
+      //nature du sinistre
+      $data['natureAccident'] = $nature_sinistre['accident'][$form_state['values']['nature_accident']];
+    }
+    
+    //estimation des dégâts
+    $data['estimation'] = $estimation[$form_state['values']['estimation']];
+    //decrire les dommages
+    $data['dommages'] = $form_state['values']['dommages'];
+
+    var_dump($data); die();
 }

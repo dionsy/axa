@@ -1,7 +1,6 @@
 <?php
-$path = drupal_get_path('module','ws_client').'/ws_client.module';
 require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
-include($path);
+module_load_include('module','ws_client');
 
 /**
  * Implements hook_block_info()
@@ -122,6 +121,7 @@ function form_information_form($form, &$form_state){
       );
 
       $form['#submit'][] = 'form_information_form_submit';
+
 
   return system_settings_form($form);
 
