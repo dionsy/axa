@@ -304,10 +304,17 @@ function ws_client_user_presave(&$edit, $account, $category) {
  /* if($result != 'false')*/
 }
 function ws_client_webform_submission_presave($node, &$submission) {
+  //var_dump($submission) ;die();
+
     global $user;
-   $account = user_load($user->uid);
-  /*$identifiant = $account->field_identifiant_client['und'][0]['value'] ;*/
-     /* var_dump($node) ;  die();*/
+    $identifiant = "" ;
+    $uid = ($user->uid); 
+   if($uid != 0)
+    {
+      $account = user_load($user->uid);
+      $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+    }
+    /* var_dump($identifiant) ;die() ;*/
      $nid = $node->nid ;
       if($nid == '8')
       {
@@ -381,6 +388,11 @@ function ws_client_webform_submission_presave($node, &$submission) {
               $result = drupal_http_request('http://192.168.43.145/Service1.svc/devisHabitation/create', $options);
              /* var_dump( $result) ; die();*/
           }
-          webform_submission_delete($nid, $sid);
 }
 
+
+
+
+function ws_client_webform_submission_insert($node, $submission) {
+  webform_submission_delete($node, $submission);
+}

@@ -153,27 +153,48 @@
         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).keyup(function() {
               $('.form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
           });
+        $( ".form-item-submitted-adresse-du-bien-a-assurer" ).focusout(function() {
+              $('.form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
+          });
      
         $( ".form-item-submitted-prenom" ).keyup(function() {
               $('.form-type-date').addClass('fadeIn'  ) ;
           });
+         $( ".form-item-submitted-prenom" ).focusout(function() {
+              $('.form-type-date').addClass('fadeIn'  ) ;
+          });
         $(".form-item-submitted-adresse").keyup(function() {
              $('.form-item-submitted-email').addClass('fadeIn'  ) ;
-          }); 
+          });
+          $(".form-item-submitted-adresse").focusout(function() {
+             $('.form-item-submitted-email').addClass('fadeIn'  ) ;
+          });  
         $(".form-item-submitted-email").keyup(function() {
+             $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
+         });
+        $(".form-item-submitted-email").focusout(function() {
              $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
          });
         $( ".form-item-submitted-telephone").keyup(function() {
              $('.form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
         });
+        $( ".form-item-submitted-telephone").focusout(function() {
+             $('.form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
+        });
         $( ".form-item-submitted-age-dobtention-du-permis").keyup(function() {
              $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
-        });        
+        });  
+        $( ".form-item-submitted-age-dobtention-du-permis").focusout(function() {
+             $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
+        });       
 
 /*        $( "#edit-account .form-item-mail" ).keyup(function() {
               $('#edit-field-numero-contrat').addClass('fadeIn') ;
           });*/
         $( ".form-item-submitted-puissance" ).keyup(function() {
+              $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
+          });
+        $( ".form-item-submitted-puissance" ).focusout(function() {
               $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
           });
         $('#user-login #edit-pass').numpad(
@@ -232,7 +253,6 @@
                   
                     $(".nmpd-wrapper").hide();    
           });
-
           $("input:password").bind('click focus', function(){
              $(this).attr("readonly", false);
           }).bind('blur', function(){
