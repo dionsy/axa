@@ -1,4 +1,5 @@
 <?php
+
 /****
 	Fichier de configuration des parametres de Paydunya
 **/
@@ -9,8 +10,8 @@ $path2 = drupal_get_path('module','paydunya_config').'/paydunya_config.module';
 
 require_once($path);
 require_once($path2);
-//include($path1);
 
+//include($path1);
 /*$masterKey ='';
 $publicKey ='';
 $privateKey ='';
@@ -47,12 +48,15 @@ Paydunya_Checkout_Store::setWebsiteUrl($siteWeb);
 Paydunya_Checkout_Store::setLogoUrl($logUrl);
 
 //-------------------Configuration IPN ------------------ 
+
 $callbackEndPaye = variable_get('paydunya_IPN_callback_finalyzedpaye');
 
 $callbackNotEndPaye = variable_get('paydunya_IPN_callback_notfinalizedpaye');
 
 Paydunya_Checkout_Store::setCallbackUrl($callbackEndPaye);
+
 Paydunya_Checkout_Store::setCallbackUrl($callbackNotEndPaye);
+
 /*dsm($name,'Nom');
 dsm($callbackEndPaye,'End PAye');
 dsm($callbackNotEndPaye,'Not end paye');

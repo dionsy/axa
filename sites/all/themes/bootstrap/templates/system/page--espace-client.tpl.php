@@ -118,8 +118,8 @@ module_load_include('module','ws_client');
                   if(user_is_logged_in())
                     $account = user_load($user->uid); 
                     if(isset($account)) {
-                      //$array = ws_client_getInfoUser();
-                      $array = isset($array) ? $array : array('nom'=>'WELE');
+                      $array = ws_client_getInfoUser();
+                      $array = isset($array) ? $array : array('nom'=>'Client');
                       print '<span>'.$array['nom']. '</span>';                    
                     }  
                ?>
@@ -154,7 +154,7 @@ module_load_include('module','ws_client');
 
     <section id="test" class="col-xs-12 col-sm-12 col-md-9 col-lg-9 connexion">   
       <a id="main-content"></a>
-      <?php print $messages; ?>
+     <!--  <?php //print $messages; ?> -->
       <?php print render($page['content']); ?>
     </section>
 
@@ -170,11 +170,11 @@ module_load_include('module','ws_client');
 </div> <!-- end page -->
 
 <?php if (!empty($page['footer'])): ?>
-  <!-- <footer class="footer-client <?php print $container_class; ?>">
+    <footer class="footer-client <?php print $container_class; ?>">
   <div class="container">
     <?php print render($page['footer']); ?>
   </div>
-  </footer> -->
+  </footer> 
 </div> <!-- end fix-footer -->
 <?php endif; ?>
 

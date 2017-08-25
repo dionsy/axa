@@ -36,47 +36,8 @@ function mes_contrats_block_view($delta = '') {
     var_dump($auto); die();*/
 
 
-    //$get_service_contrats = ws_client_get_liste_contrats();
+    $get_service_contrats = ws_client_get_liste_contrats();
 
-    $get_test_contrats = array(
-      array(
-        'type' => 'Auto',
-        'info' => array(
-                    array(
-                      'id' =>'25123596870',
-                      'modele' => 'AUTO ECO',
-                      'marque' => 'BMW',
-                    ),
-                    array(
-                      'id' =>'25456789321',
-                      'modele' => 'SOLUTION CONFORT',
-                      'marque' => 'Mercedes',
-                    ),
-                  ),
-      ),
-
-      array(
-        'type' => 'Habitation',
-        'info' => array(
-                    array(
-                      'id' =>'25456789321',
-                      'type_logement' => 'MRH PREMIUM',
-                      'adresse' => 'Mermoz',
-                    ),
-                  ),
-      ),
-
-      array(
-        'type' => 'Accident',
-        'info' => array(
-                    array(
-                      'id' =>'25012547896',
-                      'produit' => 'Individuelle Accident',
-                    ),
-                  ),
-      ),
-
-    );
 
     /*var_dump($get_test_contrats); var_dump($get_service_contrats) ; die();*/
 
@@ -119,7 +80,7 @@ function mes_contrats_block_view($delta = '') {
             $output .=       '<a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 visualisation-contrat field-contrat">';
-            $output .=       '<a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
+            $output .=       '<a href="contrat-pdf.php"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 requete-contrat field-contrat">';
             $output .=       '<a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';      
