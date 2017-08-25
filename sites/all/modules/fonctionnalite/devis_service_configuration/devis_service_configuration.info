@@ -1,0 +1,9 @@
+name = Devis Service configuration
+core = 7.x
+package = AXA
+dependencies[] = services_views
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = webform_uuid_list
+features_exclude[dependencies][ctools] = ctools

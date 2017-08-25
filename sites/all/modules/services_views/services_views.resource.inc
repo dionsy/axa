@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Callbacks for services module resource hooks.
@@ -7,25 +8,26 @@
 /**
  * Callback for retrieving views resources.
  *
- * @param $view_name
- *   String. The views name.
- * @param $display_id
- *   String (optional). The views display name.
- * @param $args
- *   Array (optional). A list of arguments to pass to the view.
- * @param $offset
- *   Integer (optional). An offset integer for paging.
- * @param $limit
- *   Integer (optional). A limit integer for paging.
- * @param $return_type
- *   String (optional). Whether to return the raw data results (FALSE), the entire views object ('view') or themed results ('theme').
- * @param $filters
- *   Array (optional). A list of exposed filters to pass to the view.
+ * @param string $view_name
+ *   The views name.
+ * @param string $display_id
+ *   (optional) The views display name.
+ * @param array $args
+ *   (optional) A list of arguments to pass to the view.
+ * @param int $offset
+ *   (optional) An offset integer for paging.
+ * @param int $limit
+ *   (optional) A limit integer for paging.
+ * @param string $return_type
+ *   (optional) Whether to return the raw data results (FALSE), the entire
+ *   views object ('view') or themed results ('theme').
+ * @param array $filters
+ *   (optional) A list of exposed filters to pass to the view.
  *
- * @return
- *  Array. The views return.
+ * @return array
+ *   The views return.
  */
-function services_views_retrieve($view_name, $display_id = 'default', $args = array(), $offset = 0, $limit = -1, $return_type = FALSE, $filters = array()) {
+function services_views_retrieve($view_name, $display_id = 'default', array $args = array(), $offset = 0, $limit = -1, $return_type = FALSE, array $filters = array()) {
   $result = array();
   $view = views_get_view($view_name);
 
@@ -34,7 +36,7 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
   $view->set_exposed_input($filters);
   $view->set_offset($offset);
 
-  // Support for Views 2
+  // Support for Views 2.
   if (method_exists($view, 'set_use_pager')) {
     // If offset is set we can't have a user pager.
     if (empty($offset)) {
@@ -60,7 +62,7 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
     $result = $view->result;
 
     $row_plugin = $view->display_handler->get_option('row_plugin');
-    // If row plugin is node, then we should load each node
+    // If row plugin is node, then we should load each node.
     if ($row_plugin == 'node') {
       $nodes = array();
       foreach ($view->result as $row) {
@@ -70,7 +72,6 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
     }
     elseif ($row_plugin == 'fields') {
       $items = array();
-<<<<<<< HEAD
 
       // Pre-render and field values.
       foreach ($view->field as $field) {
@@ -80,10 +81,6 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
       foreach ($view->result as $row_index => $row) {
         $item = new stdClass();
         $excluded_fields = array();
-=======
-      foreach ($view->result as $row) {
-        $item = new stdClass();
->>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
         foreach ($view->field as $field_id => $field) {
           if (!empty($field->options['label'])) {
             $field_label = strtolower($field->options['label']);
@@ -94,18 +91,14 @@ function services_views_retrieve($view_name, $display_id = 'default', $args = ar
           else {
             $field_label = $field_id;
           }
-<<<<<<< HEAD
           $field->view->row_index = $row_index;
           $item->$field_label = $field->theme($row);
-          if(!empty($field->options['exclude'])) {
+          if (!empty($field->options['exclude'])) {
             $excluded_fields[] = $field_label;
           }
         }
         foreach ($excluded_fields as $excluded_field) {
           unset($item->{$excluded_field});
-=======
-          $item->$field_label = $field->theme($row);
->>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
         }
         $items[] = $item;
       }
@@ -167,24 +160,22 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
           $target_key = $field->options['label'];
         }
 
-        // Move key if we have an entity property and the target_key was changed via label
+        // Move key if we have an entity property and the target_key was changed
+        // via label.
         if ($entity_property) {
           unset($output[$index]->$f_key);
-<<<<<<< HEAD
           $field->view->row_index = $index;
-=======
->>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
-          $output[$index]->$target_key = $field->theme($row); // @todo: Do not render twice; use view->execute_display and consolidate functions
+          // @todo: Do not render twice; use view->execute_display and
+          // consolidate functions.
+          $output[$index]->$target_key = $field->theme($row);
           continue;
         }
 
-        // Create helper variables
+        // Create helper variables.
         $output[$index]->$target_key = array();
-<<<<<<< HEAD
-        if($field->field_info['cardinality'] == 1)
+        if ($field->field_info['cardinality'] == 1) {
           $output[$index]->$target_key = '';
-=======
->>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
+        }
         $obj = &$output[$index]->$target_key;
         $format = ($field->options['type'] == 'services') ? 'raw' : 'rendered';
 
@@ -209,7 +200,7 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
             }
             // Rendered output.
             elseif (isset($data['#access']) && $data['#access'] == TRUE) {
-              // Check for a field collection
+              // Check for a field collection.
               if (isset($data['entity']['field_collection_item'])) {
                 foreach ($data['entity']['field_collection_item'] as $fcid => $entity) {
                   // If the field collection is using the services view mode,
@@ -252,15 +243,12 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
           }
         }
 
-<<<<<<< HEAD
         // Check html_strip property.
         if ($field->options['alter']['strip_tags'] == 1) {
           // Strip the tags which aren't allowed.
           $obj[$idx] = strip_tags($obj[$idx], $field->options['alter']['preserve_tags']);
         }
 
-=======
->>>>>>> 135b5a3e2b5388a1735ed9c006f460d85ffe3825
         // Check cardinality of the field.
         if ($field->field_info['cardinality'] == 1 && count($obj) == 1) {
           $obj = $obj[$idx];

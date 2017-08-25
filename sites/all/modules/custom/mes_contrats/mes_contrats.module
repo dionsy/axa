@@ -78,7 +78,7 @@ function mes_contrats_block_view($delta = '') {
             $output .=       '<a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 visualisation-contrat field-contrat">';
-            $output .=       '<a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
+            $output .=       '<a href="contrat-pdf.php"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 requete-contrat field-contrat">';
             $output .=       '<a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';      

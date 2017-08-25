@@ -102,29 +102,9 @@
             $img = file_create_url($pic->uri);
             print '<div class="avatar"><img class="img-responsive hidden-xs-down" src="'.$img.'" /> <span>'.$account->name. '</span></div>';
             }*/
-                  ?>
-         
-                <?php
-                   if(user_is_logged_in()){
-
-                      if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-                        <!-- <div class="navbar-collapse collapse paramettre" id="navbar-collapse">
-                            <i class="fa fa-sign-out " aria-hidden="true"></i>
-                              <a href="user/logout"> <?php print t('Logout') ;?></a> -->
-                        <!-- <nav role="navigation">
-                          <?php //if (!empty($primary_nav)): ?>
-                            <?php //print render($primary_nav); ?>
-                          <?php //endif; ?>
-                          <?php //if (!empty($secondary_nav)): ?>
-                            <?php //print render($secondary_nav); ?>
-                          <?php //endif; ?>
-                          <?php //if (!empty($page['navigation'])): ?>
-                           <?php //print render($page['navigation']); ?>
-                          <?php //endif; ?>
-                        </nav> -->
-                        <!-- </div> -->
-              
-                     <?php endif; } ?>
+                  ?> 
+            
+                                 
                 </div>
               </div>
            
@@ -136,9 +116,6 @@
                   </a>
                 <?php endif; ?>
 
-          <!--<?php //if (!empty($site_name)): ?>
-             <a class="name navbar-brand" href="<?php // print $front_page; ?>" title="<?php //print t('Home'); ?>"><?php// print $site_name; ?></a> 
-          <?php //endif; ?> -->
 
                   <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -205,66 +182,57 @@
       <?php endif; ?>
 
       <?php //print render($page['content']);
-        //krumong('main')->kPrint($node);
+        
         $url=$node->field_image_produit['und'][0]['uri'];
-         $img = file_create_url($url);
+        $img = file_create_url($url);
      
          $img2= file_create_url('sites/all/themes/bootstrap/images/axa.png');
           print '<div class="img_prod row"><div class="col-md-8 col-lg-8 col-sm-8 col-xs-6"><img class="img-responsive axa_logo" src="'.$img2.'" /></div><h1 class="page-header">'.$title.'</h1><div class="col-md-4 col-lg-4 col-sm-4 col-xs-6"><img class="img-responsive offres" src="'.$img.'" /></div>';  
-          print '</div>';
-        //krumong('main')->kPrint($node);
+          print '</div>'; 
+                 
           if (!empty($node->body)){
             $body = $node->body['und'][0]['value'];
-           print '<div class="body">'.$body.'</div>';
-          //print render($node->body);
-         }
+            print '<div class="body">'.$body.'</div>';
+          }
        ?>
     </section>
-
 </div>
 
-<?php if (!empty($page['bottom'])): ?>
-  <div class="bottom">
-  <aside class="bottom">
-    <?php print render($page['bottom']); ?>
-  </aside>
+  <?php if (!empty($page['bottom'])): ?>
+    <div class="bottom">
+    <aside class="bottom">
+      <?php print render($page['bottom']); ?>
+    </aside>
     </div>
-<?php endif; ?>
+  <?php endif; ?>
 
     
-<?php //} ?>
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="col-sm-3" role="complementary">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
-
   </div>
 
 <?php if (!empty($page['content_bottom'])): ?>
   <div class="page-bottom row">
-  <aside class="content_bottom col-xs-12 col-md-12 col-lg-12">
-    <?php print render($page['content_bottom']); ?>
-  </aside>
-    </div>
+    <aside class="content_bottom col-xs-12 col-md-12 col-lg-12">
+      <?php print render($page['content_bottom']); ?>
+    </aside>
+  </div>
 <?php endif; ?>
-
-
-
-
-
 
 <?php if (!empty($page['footer_top'])): ?>
   <div class="footer_top">
-  <footer class="footer_top <?php print $container_class; ?>">
-    <?php print render($page['footer_top']); ?>
-  </footer>
-    </div>
+    <footer class="footer_top <?php print $container_class; ?>">
+      <?php print render($page['footer_top']); ?>
+    </footer>
+  </div>
 <?php endif; ?>
 </div> <!-- End Page -->
 
 <div class="barre">
-  </div>
+</div>
 <?php if (!empty($page['footer'])): ?>
   <footer class="footer <?php print $container_class; ?>">
   <div class="container">

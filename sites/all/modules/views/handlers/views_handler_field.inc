@@ -403,6 +403,7 @@ class views_handler_field extends views_handler {
         'absolute' => array('default' => FALSE, 'bool' => TRUE),
         'external' => array('default' => FALSE, 'bool' => TRUE),
         'replace_spaces' => array('default' => FALSE, 'bool' => TRUE),
+        'replace_spaces_with_underscore' => array('default' => FALSE, 'bool' => TRUE),
         'path_case' => array('default' => 'none', 'translatable' => FALSE),
         'trim_whitespace' => array('default' => FALSE, 'bool' => TRUE),
         'alt' => array('default' => '', 'translatable' => TRUE),
@@ -702,6 +703,14 @@ class views_handler_field extends views_handler {
         '#type' => 'checkbox',
         '#title' => t('Replace spaces with dashes'),
         '#default_value' => $this->options['alter']['replace_spaces'],
+        '#dependency' => array(
+          'edit-options-alter-make-link' => array(1)
+        ),
+      );
+      $form['alter']['replace_spaces_with_underscore'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Replace spaces with underscore'),
+        '#default_value' => $this->options['alter']['replace_spaces_with_underscore'],
         '#dependency' => array(
           'edit-options-alter-make-link' => array(1)
         ),
@@ -1254,6 +1263,10 @@ If you would like to have the characters \'[\' and \']\' please use the html ent
 
       if (!empty($alter['replace_spaces'])) {
         $path = str_replace(' ', '-', $path);
+      }
+
+      if (!empty($alter['replace_spaces_with_underscore'])) {
+        $path = str_replace(' ', '_', $path);
       }
     }
 
