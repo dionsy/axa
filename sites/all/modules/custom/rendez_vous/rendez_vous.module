@@ -136,15 +136,16 @@ function fixer_rendez_vous_form($form, &$form_state){
     '#type' => 'submit', 
     '#title' => 'Enregistrer',
     '#value' => 'Fixer un RDV',
-    '#submit' => array('rendez_vous_form_submit'),
   );
+
+  $form['#submit'][] = 'axa_rendez_vous_form_submit';
     
   return system_settings_form($form);
 
 }
 
 
-function rendez_vous_form_submit($form, &$form_state){
+function axa_rendez_vous_form_submit($form, &$form_state){
     global $user;
     $account = user_load_by_name($user->name);
 
