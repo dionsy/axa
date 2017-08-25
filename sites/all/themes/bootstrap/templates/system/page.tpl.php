@@ -199,8 +199,7 @@
               else{
                 $href=$base_url.'/node/12';
                 $href = '<div class="sinistre-front"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
-              }
-              
+              }              
               echo $href;
             }
             ?>
