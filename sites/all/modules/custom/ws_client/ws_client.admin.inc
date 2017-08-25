@@ -24,7 +24,7 @@ function ws_client_admin_form($form, &$form_state){
     $form['ws_client_end_point']['root'] = array(
       '#title' => 'Racine',
       '#type' => 'textfield',
-      '#default_value' => variable_get('racine', 'ServicesCompte.svc'),
+      '#default_value' => variable_get('root', 'ServicesCompte.svc'),
       '#required' => TRUE,
     );
 
@@ -63,11 +63,25 @@ function ws_client_admin_form($form, &$form_state){
       '#required' => TRUE,
     );
 
+    $form['create']['declarer_sinistre'] = array(
+      '#title' => 'Déclarer sinistre',
+      '#type' => 'textfield',
+      '#default_value' => variable_get('declarer_sinistre', 'sinistre/create'),
+      '#required' => TRUE,
+    );
+
     $form['retrieve'] = array(
       "#type" => 'fieldset',
       '#title' => 'URI de récupération d\'informations',
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
+    );
+
+    $form['retrieve']['retrieve_client_id'] = array(
+      '#title' => 'Récupération de l\'ID du client' ,
+      '#type' => 'textfield',
+      '#default_value' => variable_get('retrieve_client_id', 'compte/espaceClient/id'),
+      '#required' => TRUE,
     );
 
     $form['retrieve']['retrieve_info_user'] = array(
@@ -77,7 +91,7 @@ function ws_client_admin_form($form, &$form_state){
       '#required' => TRUE,
     );
 
-    $form['retrieve']['liste_contrats'] = array(
+    $form['retrieve']['retrieve_liste_contrats'] = array(
       '#title' => 'Liste des contrats du client',
       '#type' => 'textfield',
       '#default_value' => variable_get('retrieve_liste_contrats', 'listeContrats'),
