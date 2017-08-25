@@ -1,4 +1,50 @@
 <?php
+
+/**
+ * @file
+ * ws_client module
+ */
+
+/**
+ * Define constants for ws_client
+ */
+define('WS_CLIENT_ADMIN_PATH', 'admin/config/system/ws_client');
+
+
+
+/**
+ * Load module include files.
+ */
+module_load_include('inc', 'ws_client', 'ws_client.admin');
+
+/**
+ * Implements hook_permission()
+ */
+function ws_client_permission() {
+  return array(
+    'administer  ws_client' => array(
+    'title' => t('administer ws client'),
+    'description' => t('Perform administration end point ws client.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu()
+ */
+function ws_client_menu() {
+  $items[WS_CLIENT_ADMIN_PATH] = array(
+    'title' => 'WS Client Settings',
+    'description' => 'Administer your ws clien',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ws_client_admin_form'),
+    'access arguments' => array('administer ws_client'),
+    'file' => 'ws_client.admin.inc',
+  );
+
+  return $items;
+}
+
 	/**
 	* @file
 	* Web services Client
@@ -191,6 +237,12 @@ if(isset($data)){
       foreach ($assurance as $key => $value) {
         # code...
         if($value == TRUE && $key != 'typeContrat'){
+          
+          if ($key == 'typeLogement') {
+            # code...
+            $value = $logement[$value];
+          }
+
           $habitation['tableau'][$i] = array(
               $type_habitation[$key],
               $value,
@@ -235,6 +287,58 @@ if(isset($data)){
     $returnArray[] = $accident;
     }
 
+    if ($assurance['typeContrat'] == 'Loisirs-Vie privée') {
+      # code...
+      $loisir['type'] = 'Loisirs-Vie privée';
+      $i=0;
+      foreach ($assurance as $key => $value) {
+        # code...
+        if($value == TRUE && $key != 'typeContrat'){
+          $loisir['tableau'][$i] = array(
+            $key,
+            $value,
+          );
+        }
+      $i = $i + 1; 
+      }
+    $returnArray[] = $loisir;
+    }
+
+  }
+    
+  return $returnArray;
+}
+
+function ws_client_get_echeance(){
+  $returnArray = array();
+  
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+  //$identifiant = 'AXA00000000';
+
+  $url = "http://192.168.43.145/Service1.svc/listeEcheances/" .$identifiant. "";
+  $options = array('timeout' => 6000.0) ;
+  $request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;
+
+  $returnArray['thead'] = array(
+    'NumContrat' => t('N° Contrat'),
+    'produit' => t('Produit'),
+    'caracteristiques' => t('Caractéristiques'),
+    'mode_echeance' => t('Mode d\'echeance'),
+    'prochaine_echeance' => t('Prochaine échéance'),
+  );
+
+  foreach ($data as $echeance) {
+    $returnArray['tbody'][] = array(
+      'NumContrat' => $echeance['numContrat'],
+      'produit' => $echeance['produit'],
+      'caracteristiques' => $echeance['caracteristiques'],
+      'mode_echeance' => $echeance['modeEcheance'],
+      'prochaine_echeance' => $echeance['prochaineEcheance'],
+    );
   }
    } 
   return $returnArray;
@@ -259,6 +363,24 @@ function ws_client_get_info_conseiller(){
   );
    
   return $returnArray ;
+}
+
+function ws_client_declarer_sinistre($data){
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+  $data['id'] = $identifiant;
+  $data = drupal_json_encode($data);
+
+  $options = array(
+    'method' => 'POST',
+    'data' => $data,
+    'timeout' => 6000.0,
+    'headers' => array('Content-Type' => 'application/json'),
+  );
+
+  $result = drupal_http_request('http://192.168.43.145/Service1.svc/sinistre/create', $options);
 }
 
 function ws_client_update_info_user($array_data) {

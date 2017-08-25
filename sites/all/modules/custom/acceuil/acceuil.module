@@ -26,11 +26,11 @@ function acceuil_block_view($delta = '') {
     $output .= '<div class="corps-espace-client col-xs-12 col-sm-12  col-md-12 col-lg-12">';
     $output .=   '<h1 class="bienvenue">Bienvenue</h1>';
     $output .=   '<div class="alignement">';
-    $output .=    '<h3 class="espace"><a href="?q=node/2&qt-left_menu=3">Mon espace client internet AXA, rapide et efficace a tout moment</a></h3>';
+    $output .=    '<h3 class="espace"><a href="#">Mon espace client internet AXA, rapide et efficace a tout moment</a></h3>';
     $output .=    '<p>Toutes mes informations personnelles. </p>';
-    $output .=    '<h3 class="contrat"><a href="?q=node/2&qt-left_menu=2">Mes contrats</a></h3>';
+    $output .=    '<h3 class="contrat"><a href="#">Mes contrats</a></h3>';
     $output .=    '<p>Mes couvertures et caracteristiques de mes contrats d\'assurance</p>';
-    $output .=    '<h3 class="echeances"><a href="?q=node/2&qt-left_menu=5">Mes echeances</a></h3>';
+    $output .=    '<h3 class="echeances"><a href="#">Mes echeances</a></h3>';
     $output .=    '<p>Mes prochaines cotisation d\'assurance</p>';
     $output .=   '</div>';
     $output .= '</div>';

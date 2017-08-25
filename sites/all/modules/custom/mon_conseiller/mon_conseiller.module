@@ -23,11 +23,11 @@ function mon_conseiller_block_view($delta = '') {
     $test = array(
       'nomComplet' => 'Aliou Samba Wele',
       'adresse' => 'Gueule Tapée',
-      'aliou-samba.wele@gmail.com',
-      '778088470',
+      'mail' => 'aliou-samba.wele@gmail.com',
+      'telephone' => '778088470',
     );
 
-    $get_service_conseiller = ws_client_get_info_conseiller();
+    //$get_service_conseiller = ws_client_get_info_conseiller();
 
     $conseiller = isset($get_service_conseiller) ? $get_service_conseiller : $test;
 
@@ -39,7 +39,7 @@ function mon_conseiller_block_view($delta = '') {
       # code...
       $output .= '<p>'. $value . '</p>';
     }
-    $output .= '<p><a href="?q=node/2&qt-left_menu=7">Fixer un RDV </a></p>'; 
+    $output .= '<p class="fixer"><a href="#">Fixer un RDV </a></p>'; 
     $output .= '</div>';
     $output .= '<div class="blanc">';
     $output .= '</div>';

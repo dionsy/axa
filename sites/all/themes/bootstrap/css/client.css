@@ -19,6 +19,11 @@
     color: #666;
 }
 
+#block-mes-contrats-mes-contrats .field-contrat span a {
+    text-decoration: underline !important;
+    color: #999 !important;
+}
+
 /*** mes informations personnelles ***/
 #form-information-form #edit-submit--2 {
     display: none;
@@ -339,4 +344,22 @@ fieldset .panel-heading a.panel-title {
 
 #block-declarer-sinistre-declarer-sinistre #edit-submit--7 {
     margin-left: 0% !important;
+}
+
+
+/*** font awesome ***/
+#fixer-declarer-sinistre-form fieldset.collapse-processed a:after{
+    font-family: 'FontAwesome';
+    content: "\f085";
+    font-size: 16px;
+    position: absolute;
+    right: 20px;
+}
+
+#fixer-declarer-sinistre-form fieldset.collapse-processed.collapsed a:after{
+    font-family: 'FontAwesome';
+    content: "\f019" !important;
+    font-size: 16px;
+    position: absolute;
+    right: 20px;
 }

@@ -2,6 +2,7 @@
 module_load_include('module','ws_client');
 
 
+
 /**
  * Implements hook_libraries_info().
  */
@@ -38,9 +39,18 @@ function rendez_vous_block_info() {
  * Implements hook_block_view()
  */
 function rendez_vous_block_view($delta = '') {
+  
+  //$get_service_conseiller = ws_client_get_info_conseiller();
+  $get_service_conseiller = array(
+    'nomComplet' => 'Aliou Samba Wele',
+    'adresse' => 'Gueule Tapée',
+    'mail' => 'smsframework@gmail.com',
+    'telephone' => '778088470',
+  );
+
   $block = array();
   if ($delta == 'rendez_vous') {
-    $nom_conseiller = "Aliou Samba WELE";
+    $nom_conseiller = $get_service_conseiller['nomComplet'];
     $block['subject'] = '<p>'. 'Fixer un rendez vous avec mon conseiller' .'</p>';
     $block['subject'] .= '<span>'. $nom_conseiller . '</span>'; 
     $block['content'] = drupal_get_form('fixer_rendez_vous_form');
@@ -122,25 +132,32 @@ function fixer_rendez_vous_form($form, &$form_state){
     '#required' => TRUE,
   );
 
-
   $form['submit'] = array(
     '#type' => 'submit', 
     '#title' => 'Enregistrer',
-    '#values' => 'Enregistrer',
+    '#value' => 'Fixer un RDV',
   );
-  
-  $form['#submit'][] = 'fixer_rendez_vous_form_submit';
 
-
-  
+  $form['#submit'][] = 'axa_rendez_vous_form_submit';
+    
   return system_settings_form($form);
 
 }
 
 
-function fixer_rendez_vous_form_submit($form, &$form_state){
+function axa_rendez_vous_form_submit($form, &$form_state){
     global $user;
     $account = user_load_by_name($user->name);
+
+    //$get_service_conseiller = ws_client_get_info_conseiller();
+    $get_service_conseiller = array(
+      'nomComplet' => 'Aliou Samba Wele',
+      'adresse' => 'Gueule Tapée',
+      'mail' => 'smsframework@gmail.com',
+      'telephone' => '778088470',
+    );
+    
+
     $horaire = array(
       0 => t('08h-13h'),
       1 => t('15h-18h'),
@@ -156,7 +173,7 @@ function fixer_rendez_vous_form_submit($form, &$form_state){
     $option_value = $option[$form_state['values']['objet']];
     $horaire_value = $horaire[$form_state['values']['horaire']]; 
 
-    $to = "smsframework@gmail.com";
+    $to = $get_service_conseiller['mail'];
     $from = "mouhawele@gmail.com";
     $subject = $option_value;
     $body = $form_state['values']['demande'] . ' ' .$horaire_value;
