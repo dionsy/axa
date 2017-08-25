@@ -36,47 +36,8 @@ function mes_contrats_block_view($delta = '') {
     var_dump($auto); die();*/
 
 
-    //$get_service_contrats = ws_client_get_liste_contrats();
+    $get_service_contrats = ws_client_get_liste_contrats();
 
-    $get_test_contrats = array(
-      array(
-        'type' => 'Auto',
-        'info' => array(
-                    array(
-                      'id' =>'25123596870',
-                      'modele' => 'AUTO ECO',
-                      'marque' => 'BMW',
-                    ),
-                    array(
-                      'id' =>'25456789321',
-                      'modele' => 'SOLUTION CONFORT',
-                      'marque' => 'Mercedes',
-                    ),
-                  ),
-      ),
-
-      array(
-        'type' => 'Habitation',
-        'info' => array(
-                    array(
-                      'id' =>'25456789321',
-                      'type_logement' => 'MRH PREMIUM',
-                      'adresse' => 'Mermoz',
-                    ),
-                  ),
-      ),
-
-      array(
-        'type' => 'Accident',
-        'info' => array(
-                    array(
-                      'id' =>'25012547896',
-                      'produit' => 'Individuelle Accident',
-                    ),
-                  ),
-      ),
-
-    );
 
     $get_service_contrats = isset($get_service_contrats) ? $get_service_contrats : $get_test_contrats;
 

@@ -27,7 +27,7 @@ function mon_conseiller_block_view($delta = '') {
       'telephone' => '778088470',
     );
 
-    //$get_service_conseiller = ws_client_get_info_conseiller();
+    $get_service_conseiller = ws_client_get_info_conseiller();
 
     $conseiller = isset($get_service_conseiller) ? $get_service_conseiller : $test;
 
