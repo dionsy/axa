@@ -73,6 +73,7 @@ ul.tabs--primary li:hover{
    padding-right: 22px;
    padding-left: 20px;
    margin-left: 30px;
+
 }
 .webform-previous
 {
@@ -994,4 +995,15 @@ form#user-register-form {
 }
 #user-register-form input {
     margin-bottom: 30px;
+}
+form.webform-client-form 
+{
+    display: flex !important;
+}
+.form-actions {
+    float: right;
+}
+.page-node-2 .webform-next,.page-node-2  .webform-submit, 
+ .page-node-2 .webform-previous,.page-node-2  .btn-default {
+    float: right;
 }
