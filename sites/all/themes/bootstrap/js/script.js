@@ -28,6 +28,35 @@
           }
 
       });
+
+      $('.alignement .espace a', context).on('click', function(){
+        $( "#quicktabs-tabpage-left_menu-0" ).addClass("quicktabs-hide");
+        $( "#quicktabs-tabpage-left_menu-3" ).removeClass("quicktabs-hide");
+        $( "#quicktabs-tab-left_menu-0" ).parents('li').removeClass("active");
+        $( "#quicktabs-tab-left_menu-3" ).parents('li').addClass("active");
+      });
+
+      $('.alignement .contrat a', context).on('click', function(){
+        $( "#quicktabs-tabpage-left_menu-0" ).addClass("quicktabs-hide");
+        $( "#quicktabs-tabpage-left_menu-2" ).removeClass("quicktabs-hide");
+        $( "#quicktabs-tab-left_menu-0" ).parents('li').removeClass("active");
+        $( "#quicktabs-tab-left_menu-2" ).parents('li').addClass("active");
+      });
+
+      $('.alignement .echeances a', context).on('click', function(){
+        $( "#quicktabs-tabpage-left_menu-0" ).addClass("quicktabs-hide");
+        $( "#quicktabs-tabpage-left_menu-5" ).removeClass("quicktabs-hide");
+        $( "#quicktabs-tab-left_menu-0" ).parents('li').removeClass("active");
+        $( "#quicktabs-tab-left_menu-5" ).parents('li').addClass("active");
+      });
+
+      $('.conseiller-left-bar .fixer a', context).on('click', function(){
+        $( "#quicktabs-container-left_menu .quicktabs-tabpage" ).addClass("quicktabs-hide");
+        $( "#quicktabs-tabpage-left_menu-7" ).removeClass("quicktabs-hide");
+        $( "#quicktabs-tab-left_menu-0" ).parents('li').removeClass("active");
+      });
+      
+      
       
       $('.quicktabs-tab-block-declarer-sinistre-delta-declarer-sinistre').parents('li').addClass('declarer-sinistre');
       $('.quicktabs-tab-block-rendez-vous-delta-rendez-vous').parents('li').addClass('hide');
