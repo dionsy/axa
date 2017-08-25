@@ -350,7 +350,7 @@ fieldset .panel-heading a.panel-title {
 /*** font awesome ***/
 #fixer-declarer-sinistre-form fieldset.collapse-processed a:after{
     font-family: 'FontAwesome';
-    content: "\f085";
+    content: "\f107";
     font-size: 16px;
     position: absolute;
     right: 20px;
@@ -358,7 +358,7 @@ fieldset .panel-heading a.panel-title {
 
 #fixer-declarer-sinistre-form fieldset.collapse-processed.collapsed a:after{
     font-family: 'FontAwesome';
-    content: "\f019" !important;
+    content: "\f105" !important;
     font-size: 16px;
     position: absolute;
     right: 20px;

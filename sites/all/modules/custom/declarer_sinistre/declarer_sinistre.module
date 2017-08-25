@@ -35,9 +35,9 @@ function fixer_declarer_sinistre_form($form, &$form_state){
   $info_accident = array();
   $info_loisir = array();*/
 
-  //$contrats = ws_client_get_liste_contrats();
+  $contrats = ws_client_get_liste_contrats();
 
-  $contrats = array(
+  /*$contrats = array(
       array(
         'type' => 'Auto',
         'info' => array(
@@ -75,7 +75,7 @@ function fixer_declarer_sinistre_form($form, &$form_state){
         ),
       ),
 
-    );
+    );*/
 
   foreach ($contrats as $contrat_devis) {
     # code...
@@ -147,7 +147,9 @@ function fixer_declarer_sinistre_form($form, &$form_state){
     # code...
     $form['sinistre']['type']['#options'][$contrat['type']] = t($contrat['type']);
 
-    $form['sinistre'][$contrat['type']] = array(
+    if ($contrat['type'] == 'Assistance et Accident') {
+      # code...
+      $form['sinistre']['Accident'] = array(
       '#type' => 'select',
       '#options' => $contrat['info'] ,
       '#title' => t('Contrat concené'),
@@ -157,6 +159,21 @@ function fixer_declarer_sinistre_form($form, &$form_state){
         ),
       ),
     );
+
+    }else{
+      $form['sinistre'][$contrat['type']] = array(
+        '#type' => 'select',
+        '#options' => $contrat['info'] ,
+        '#title' => t('Contrat concené'),
+        '#states' => array(
+          'visible' => array(
+            ':input[name="type"]' => array('value' => t($contrat['type'])),
+          ),
+        ),
+      );
+      
+    }
+
   }
 
   /*
@@ -321,7 +338,7 @@ function fixer_declarer_sinistre_form($form, &$form_state){
 }
 
 function declarer_sinistre_form_submit($form, &$form_state){
-    print('<pre>'. print_r($form_state['values'], TRUE) .'</pre>'); die();
+    //print('<pre>'. print_r($form_state['values']['nature_auto'], TRUE) .'</pre>'); die();
     $data = array();
 
     $nature_sinistre = array(
@@ -350,15 +367,35 @@ function declarer_sinistre_form_submit($form, &$form_state){
     );
 
     //type du contrat
-    $data['typeContrat'] = $form_state['values']['type'];
-    if ($data['typeContrat'] === 'Auto'){
+    $data['typeAssurance'] = $form_state['values']['type'];
+    if ($data['typeAssurance'] === 'Auto'){
+      $data['typeAssurance'] = 100000000;
       //numéro du contrat
-      $data['idContrat'] = $form_state['values']['contrat_auto'];
+      $data['numContrat'] = $form_state['values']['Auto'];
       //nature du sinistre
-      $data['natureAuto'] = $nature_sinistre['auto'][$form_state['values']['nature_auto']];
+      if ( $form_state['values']['nature_auto'] == '0' ) {
+        # code...
+        $data['typeEvent'] = 100000000;
+      }
+      elseif ( $form_state['values']['nature_auto']=='1' ) {
+        # code...
+        $data['typeEvent'] = 100000001;
+      }
+
+      elseif ( $form_state['values']['nature_auto']=='2' ) {
+        # code...
+        $data['typeEvent'] = 100000002;
+      }
+
+      else {
+        # code...
+        $data['typeEvent'] = 100000003;
+      }
+
       //Si le véhicule est ou sera déposé dans un garage?
       if ($form_state['value']['garage'] = '1') {
         # code...
+        $data['EnGarage'] = TRUE;
         $data['nomReparareur'] = $form_state['values']['nom'];
         $data['jourReparation'] = (int) $form_state['values']['date']['day'];
         $data['moisReparation'] = (int) $form_state['values']['date']['month'];
@@ -366,22 +403,22 @@ function declarer_sinistre_form_submit($form, &$form_state){
       }
     }
 
-    if ($data['typeContrat'] === 'Habitation'){
+    if ($data['typeAssurance'] === 'Habitation'){
       //numéro du contrat
-      $data['idContrat'] = $form_state['values']['contrat_habitation'];
+      $data['numContrat'] = $form_state['values']['Habitation'];
       //nature du sinistre
-      $data['natureHabitation'] = $nature_sinistre['habitation'][$form_state['values']['nature_habitation']];
+      $data['typeEvent'] = $nature_sinistre['habitation'][$form_state['values']['nature_habitation']];
     }
 
-    if ($data['typeContrat'] === 'Assistance et Accident'){
+    if ($data['typeAssurance'] === 'Assistance et Accident'){
       //numéro du contrat
-      $data['idContrat'] = $form_state['values']['contrat_accident'];
+      $data['numContrat'] = $form_state['values']['Accident'];
       //nature du sinistre
-      $data['natureAccident'] = $nature_sinistre['accident'][$form_state['values']['nature_accident']];
+      $data['typeEvent'] = $nature_sinistre['accident'][$form_state['values']['nature_accident']];
     }
     
     //estimation des dégâts
-    $data['estimation'] = $estimation[$form_state['values']['estimation']];
+    $data['estimationDegats'] = $estimation[$form_state['values']['estimation']];
     //decrire les dommages
     $data['dommages'] = $form_state['values']['dommages'];
 
