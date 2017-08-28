@@ -500,11 +500,7 @@ function ws_client_update_info_user($array_data) {
 
 
   $url = 'http://192.168.200.10/Service1.svc/compte/update';
-
-
  // $url = 'http://'. $ip .'/'. $root .'/' . $update_info_user;
-
-
   $result = drupal_http_request($url, $options);
           
 }
@@ -631,12 +627,12 @@ function ws_client_webform_submission_presave($node, &$submission) {
 
               $result = drupal_http_request("http://192.168.200.10/Service1.svc/devisHabitation/create", $options);
               /*var_dump( $result) ; die();*/
-          }
+          
 
               $url = 'http://'. $ip .'/'. $root .'/' . $create_devis_habitation;
 
               $result = drupal_http_request($url, $options);
-                       }
+          }
 
           if($nid == 10)
           { 
