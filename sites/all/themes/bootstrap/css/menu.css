@@ -103,8 +103,7 @@
 }
 #block-menu-menu-menu-top ul li{
     font-size:1.0em;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding: 2px 7px 3px 2px;
     background-color: #ccc;
     margin-right: 3px;
 }
@@ -173,8 +172,9 @@ section#block-menu-menu-menu-top ul li:hover a{
 }*/
 .mon_espace_client{
     background-color:#ED1846; 
-    padding-bottom: 4px;
-    padding-top: 4px;
+/*    padding-bottom: 4px;*/
+    padding-bottom:  4px;
+    padding-top: 0px;
     margin-left:42px;
     width: 60%;
     float: right;
@@ -620,7 +620,7 @@ footer div.view-id-contact ul {
     display: inline-block;
     /*margin-left: 10px;*/
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 14px;
     padding-right: 20px;
     padding-left: 20px;
     border-right: 3px solid #fff;
@@ -632,7 +632,8 @@ footer div.view-id-contact ul {
 #block-menu-menu-menu-principal ul li.habitation,
 #block-menu-menu-menu-principal ul li.loisir-vie_privee,
 #block-menu-menu-menu-principal ul li.package{
-    border-top: 3px solid graytext
+    border-top: 4px solid graytext ;
+    box-shadow: 0 2px 0 0 rgb(255, 255, 255) inset;
 
 }
 /*#block-menu-menu-menu-principal ul li.assistance_et_accidents{
@@ -680,7 +681,7 @@ footer div.view-id-contact ul {
 
 .fond{
     background-color: #ccc !important;
-    margin-top: 15px;
+    /*margin-top: 15px;*/
 }
 ul.quicktabs-tabs.quicktabs-style-garland {
     background: #3598DC url(images/bg.gif) repeat-x scroll center bottom !important;
