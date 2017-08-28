@@ -109,7 +109,7 @@ module_load_include('module','ws_client');
         <nav role="navigation">
           <div class="row espace">
              <div class="espace-client col-xs-4 col-sm-4 col-md-8 col-lg-8">
-               <p>Mon espace client</p>
+               <p> Espace client</p>
                <div class="barre"></div>
              </div>
              <div class="nom-client col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -154,7 +154,7 @@ module_load_include('module','ws_client');
 
     <section id="test" class="col-xs-12 col-sm-12 col-md-9 col-lg-9 connexion">   
       <a id="main-content"></a>
-      <?php print $messages; ?>
+     <!--  <?php //print $messages; ?> -->
       <?php print render($page['content']); ?>
     </section>
 
@@ -170,7 +170,7 @@ module_load_include('module','ws_client');
 </div> <!-- end page -->
 
 <?php if (!empty($page['footer'])): ?>
-   <footer class="footer-client <?php print $container_class; ?>">
+    <footer class="footer-client <?php print $container_class; ?>">
   <div class="container">
     <?php print render($page['footer']); ?>
   </div>

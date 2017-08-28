@@ -88,10 +88,10 @@
                   <?php
                     // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Espace client</span></a></div>';
                     } 
                    else{
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Espace client</span></a></div>';
                     }
                    
                   ?>      
@@ -232,7 +232,7 @@
           <div class="barre">
             </div>
           <?php if (!empty($page['footer'])): ?>
-            <footer class="footer <?php print $container_class; ?>">
+            <footer class="footer ">
             <div class="container">
               <?php print render($page['footer']); ?>
             </div>
