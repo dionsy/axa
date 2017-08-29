@@ -92,6 +92,12 @@ function bootstrap_process_page(&$variables) {
 
 //Custom error page
 //krumong('main')->kPrint($variables);
+  $array = array('page__node__8','page__node__9','page__node__10','page__node__11');
+
+  if(isset($variables['theme_hook_suggestions'][2]) && in_array($variables['theme_hook_suggestions'][2], $array)){
+    $variables['theme_hook_suggestions'][] = 'page__webform';
+  }
+
     $header = drupal_get_http_header('status'); 
     $title =  drupal_get_title();
     if(isset($variables['node']) && ($variables['node']->type == 'nos_produits')) {

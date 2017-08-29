@@ -72,6 +72,7 @@
  *
  * @ingroup templates
  */
+
 ?>
 <div class="fix-footer">
   <div class="page">
@@ -160,14 +161,14 @@
         <?php endif; ?>
 
         <section id="test" class="container">
-            <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+         
             <a id="main-content"></a>
             <?php print render($title_prefix); ?>
             <?php if (!empty($title)): ?>
               <h1 class="page-header"><?php print $title; ?></h1>
             <?php endif; ?>
             <?php print render($title_suffix); ?>
-            <?php print $messages; ?>
+            <?php //print $messages; ?>
             <?php if (!empty($tabs)): ?>
               <?php print render($tabs); ?>
             <?php endif; ?>
@@ -180,62 +181,8 @@
             <?php print render($page['content']); ?>
         </section>
     </div>
-    <?php
-              global $user; 
-              global $base_url; 
-              If($is_front){
-              $userUID = $user->uid; 
-              if(empty($userUID)){
-                $href= l(t('Declaration Sinistre'), 'user', array(
-                  'attributes' => array(
-                    'title' => t('Create un espace client'),
-                    'class' => array('use-ajax ','sinistre-front'),
-                    'data-dialog' => 'true',
-                    'data-dialog-options' => '{"width":"40%"}',
-                  )
-                ));
-              }
-              else{
-                $href=$base_url.'/node/12';
-                $href = '<div class="sinistre-front"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
-              }              
-              echo $href;
-            }
-            ?>
-                <?php //} ?>
-                  <?php if (!empty($page['sidebar_second'])): ?>
-                     <aside class="col-sm-3" role="complementary">
-                       <?php print render($page['sidebar_second']); ?>
-                    </aside>  <!-- /#sidebar-second -->
-              <?php endif; ?>
+   
   </div>
 
-          <?php if (!empty($page['content_bottom'])): ?>
-            <div class="page-bottom row">
-                <aside class="content_bottom container">
-                <?php print render($page['content_bottom']); ?>
-                </aside>
-              </div>
-          <?php endif; ?>
-
-                <?php if (!empty($page['footer_top'])): ?>
-            <div class="footer_top">
-                <footer class="footer_top <?php print $container_class; ?>">
-                  <?php print render($page['footer_top']); ?>
-                </footer>
-                </div>
-                  <?php endif; ?>
-           
-          </div><!--/.nav-collapse -->
-
-          <div class="barre">
-            </div>
-          <?php if (!empty($page['footer'])): ?>
-            <footer class="footer ">
-            <div class="container">
-              <?php print render($page['footer']); ?>
-            </div>
-            </footer>
-            <?php endif; ?>
-          </div>
+         
 

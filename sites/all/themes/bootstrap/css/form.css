@@ -744,12 +744,12 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     background-color: #fff;
     height: auto;
     display: block;
-    padding: 15px;
+    padding: 9px;
     border-radius:16px 0 0 16px;
 }
 
 #block-search-form {
-    padding-top: 4px;
+    padding-top: 8px;
     padding-right: 0;
 }
 #block-search-form .input-group{
