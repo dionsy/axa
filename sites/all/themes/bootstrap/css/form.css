@@ -334,7 +334,11 @@ form div:first-child{
 }
 
 .webform-container-inline.webform-datepicker {
-    display: inline;
+    display: inline-flex;
+
+}
+html.js input.webform-calendar {
+    display: none;
 }
 
 
@@ -624,7 +628,9 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     transition: none;
 }
 .webform-container-inline.webform-datepicker div select {
-    width: 65px ! important;
+    width: 80px ! important;
+    padding-left: 10px;
+    padding-right: 5px;
 }
 #edit-submitted-civilite {
     display: inline;
@@ -738,7 +744,7 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     background-color: #fff;
     height: auto;
     display: block;
-    padding: 9px;
+    padding: 15px;
     border-radius:16px 0 0 16px;
 }
 
@@ -1002,6 +1008,9 @@ form.webform-client-form
 }
 .form-actions {
     float: right;
+}
+.not-logged-in #user-login .form-actions {
+    float: none;
 }
 .page-node-2 .webform-next,.page-node-2  .webform-submit, 
  .page-node-2 .webform-previous,.page-node-2  .btn-default {
