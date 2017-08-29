@@ -87,13 +87,13 @@ function fixer_rendez_vous_form($form, &$form_state){
     '#type' => 'select',
     '#title' => t('Je souhaite être contacter par'),
     '#options' => array(
-      'SMS' => t('SMS'),
+      'SMS' => t('Téléphone'),
       'EMAIL' => t('Email'),
     ), 
     '#required' => TRUE,
   );
 
-  $form['sms'] = array(
+  $form['telephone'] = array(
     '#type' => 'textfield',
     '#title' => t('Numéro de téléphone'),
     '#default_value' => '778241624',
@@ -126,8 +126,8 @@ function fixer_rendez_vous_form($form, &$form_state){
     '#type' => 'select',
     '#title' => t('Aux horaires suivants'),
     '#options' => array(
-      0 => t('08h-13h'),
-      1 => t('16h-18h'),
+      '08h-13h' => t('08h-13h'),
+      '16h-13h' => t('16h-18h'),
     ),
     '#required' => TRUE,
   );
@@ -176,8 +176,141 @@ function axa_rendez_vous_form_submit($form, &$form_state){
     $to = $get_service_conseiller['mail'];
     $from = "mouhawele@gmail.com";
     $subject = $option_value;
-    $body = $form_state['values']['demande'] . ' ' .$horaire_value;
     $alt = 'Fixer un rendez vous';
+    /*$body = '<div class="testcolor">';
+    $body .= $form_state['values']['demande'];
+    $body .= '</div>';*/
+
+    $body = '<html>
+<head>
+      <title>Email</title>
+      <style type="text/css">
+            body {
+                  background-color: #fcfcfc;
+            }
+            .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+              position: relative;
+              min-height: 1px;
+              padding-right: 15px;
+              padding-left: 15px;
+            }
+            .col-md-6{
+              float:left;
+              width: 50%;
+            }
+
+            .col-md-4{
+              float:left;
+              width: 25%;
+            }
+
+            .col-md-12{
+              float:left;
+              width: 100%;
+            }
+
+            .message{
+              margin-bottom: 50px;
+              background: #fcfcfc;
+              color: #666;
+              font-size: 17px;
+            }
+            
+            .border{
+              border: 1px solid #eee;
+            }
+            
+            .head{
+              padding-top: 2%;
+              padding-bottom: 2%;
+              background: #005399;
+              color: #fff;
+            }
+
+            .info{
+              padding-top: 1%;
+              padding-bottom: 1%;
+              background: #fcfcfc;
+              color: #666;
+            }
+
+            .info a{
+              color: #666 !important;
+            }
+
+            .user{
+              padding-top: 1%;
+              padding-bottom: 1%;
+              background: #fcfcfc;
+              color: #666;
+              font-size: 20px;
+            }
+
+            .objet{
+              text-align: center !important;
+              margin-bottom: 25px;
+            }
+
+            html{
+              background: #fcfcfc;
+            }
+
+            .center{
+              text-align:center;
+            }
+
+
+      </style>
+</head>
+<body>
+      <div class="row col-md-12">
+        
+        <span class=\'user col-md-12\'>'
+              . 'WELE' . 
+        '</span>
+        <span class=\'user col-md-12\'>'
+              . 'Aliou Samba' . 
+        '</span>
+        <span class=\'user col-md-12\'>'
+              . 'Gueule Tapee' . 
+        '</span>
+        <span class=\'user objet col-md-12\'>'
+              . 'Objet RDV: ' . $subject. 
+        '</span>
+
+        <div class=\'col-md-12 message\'>'
+              . $form_state['values']['demande'] . 
+        '</div>
+
+
+        <div class=\'col-md-12 center\'>
+
+          <div class=\'col-md-4 head border\'>'
+                . 'Moyen de contact' .
+          '</div>
+          <div class=\'col-md-4 head border\'>'
+                . 'Date' .
+          '</div>
+          <div class=\'col-md-4 head border\'>'
+                . 'Horaire' .
+          '</div>
+
+          <div class=\'col-md-4 border info\'>'
+                . $form_state['values']['email'] .
+          '</div>
+          <div class=\'col-md-4 border info\'>'
+                . $form_state['values']['date']['day'] . '/' . $form_state['values']['date']['month'] . '/'. $form_state['values']['date']['year'] . 
+          '</div>
+          <div class=\'col-md-4 border info\'>'
+                . $form_state['values']['horaire'] .
+          '</div>
+        </div>
+      </div>
+</body>
+
+</html>';
+
+    //$body = '<p style="color:sienna;margin-left:20px">This is a paragraph.</p>';
 
     envoyer_mail($from, $to, $subject, $body, $alt);
 }
