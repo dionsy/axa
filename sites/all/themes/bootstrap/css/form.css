@@ -180,6 +180,7 @@ form div:first-child{
     transform: translateX(17%);
     width: 75%;
 }
+
 #commerce-checkout-form-review div:first-child,
 #commerce-checkout-form-checkout div:first-child{
     width: auto ;
@@ -191,10 +192,14 @@ form div:first-child{
     transform: none !important;
     width: 100% !important;
 }
-#user-profile-form div:first-child {
+#user-profile-form div:first-child  {
     width: 75% !important;
     transform: none;
     margin: auto;
+}
+.logged-in .form-item-submitted-civilite {
+ width: 75% !important;
+    transform: none;
 }
 
 .form-item-submitted-nom,.form-item-submitted-prenom,
@@ -218,27 +223,27 @@ form div:first-child{
     margin-top: 25px;
 
 }
- .form-item-submitted-nom ,.webform-component--civilite ,
- .form-item-submitted-prenom, .webform-component--date-de-naissance,
- .form-item-submitted-email,.form-item-submitted-telephone,
-.form-item-submitted-type-dassurance ,.webform-component--type-de-bien ,
-.form-item-submitted-nombre-de-pieces,
-.webform-component--ce-logement-est-il-votre-residence-principale,
-.form-item-submitted-adresse-du-bien-a-assurer,
-.form-item-submitted-etes-vous-locataire ,
-.form-item-submitted-quand-souhaitez-vous-etre-assure,
-.form-item-submitted-marque,
-.webform-component--energie-du-vehicule,
-.form-item-submitted-annee-de-naissance,
-.form-item-submitted-age-dobtention-du-permis,
-.webform-component--email-conducteur,
-/*#edit-account .form-item-name ,
-#edit-account .form-item-mail,*/
+ .not-logged-in .form-item-submitted-nom ,.not-logged-in .webform-component--civilite ,
+ .not-logged-in .form-item-submitted-prenom, .not-logged-in .webform-component--date-de-naissance,
+ .not-logged-in .form-item-submitted-email,.not-logged-in .form-item-submitted-telephone,
+.not-logged-in .form-item-submitted-type-dassurance ,.not-logged-in .webform-component--type-de-bien ,
+.not-logged-in .form-item-submitted-nombre-de-pieces,
+.not-logged-in .webform-component--ce-logement-est-il-votre-residence-principale,
+.not-logged-in .form-item-submitted-adresse-du-bien-a-assurer,
+.not-logged-in .form-item-submitted-etes-vous-locataire ,
+.not-logged-in .form-item-submitted-quand-souhaitez-vous-etre-assure,
+.not-logged-in .form-item-submitted-marque,
+.not-logged-in .webform-component--energie-du-vehicule,
+.not-logged-in .form-item-submitted-annee-de-naissance,
+.not-logged-in .form-item-submitted-age-dobtention-du-permis,
+.not-logged-in .webform-component--email-conducteur,
+/*#edit-account .not-logged-in .form-item-name ,
+#edit-account .not-logged-in .form-item-mail,*/
 /*#edit-field-numero-contrat,*/
-.form-item-submitted-puissance,
-.form-item-submitted-date-premiere--mise-en-circulation,
-.form-item-submitted-valeur-a-neuf ,
-    .form-item-submitted-adresse{
+.not-logged-in .form-item-submitted-puissance,
+.not-logged-in .form-item-submitted-date-premiere--mise-en-circulation,
+.not-logged-in .form-item-submitted-valeur-a-neuf ,
+    .not-logged-in .form-item-submitted-adresse{
     animation-timing-function: ease-in-out;
 /*    opacity: 1;*/
     transform: translateX(50px) ;
@@ -246,23 +251,21 @@ form div:first-child{
     /*width: 80%;*/
 }
 
-.form-item-submitted-nom ,.form-item-submitted-prenom ,
-.webform-component--date-de-naissance ,.form-item-submitted-email,
- .form-item-submitted-telephone , .form-item-submitted-type-dassurance, 
- .form-item-submitted-nombre-de-pieces,
- .webform-component--ce-logement-est-il-votre-residence-principale,
- .form-item-submitted-adresse-du-bien-a-assurer,
- .form-item-submitted-etes-vous-locataire,
- .form-item-submitted-quand-souhaitez-vous-etre-assure,
- .webform-component--energie-du-vehicule,
- .form-item-submitted-age-dobtention-du-permis,
- .webform-component--email-conducteur,
-/* #edit-account .form-item-mail,*/
-/* #edit-field-numero-contrat,*/
- .form-item-submitted-puissance,
- .form-item-submitted-date-premiere--mise-en-circulation ,
- .form-item-submitted-valeur-a-neuf,
- .form-item-submitted-adresse{
+.not-logged-in .form-item-submitted-nom ,.not-logged-in .form-item-submitted-prenom ,
+.not-logged-in .webform-component--date-de-naissance ,.not-logged-in .form-item-submitted-email,
+ .not-logged-in .form-item-submitted-telephone , .not-logged-in .form-item-submitted-type-dassurance, 
+ .not-logged-in .form-item-submitted-nombre-de-pieces,
+ .not-logged-in .webform-component--ce-logement-est-il-votre-residence-principale,
+ .not-logged-in .form-item-submitted-adresse-du-bien-a-assurer,
+ .not-logged-in .form-item-submitted-etes-vous-locataire,
+ .not-logged-in .form-item-submitted-quand-souhaitez-vous-etre-assure,
+ .not-logged-in .webform-component--energie-du-vehicule,
+ .not-logged-in .form-item-submitted-age-dobtention-du-permis,
+ .not-logged-in .webform-component--email-conducteur,
+ .not-logged-in .form-item-submitted-puissance,
+ .not-logged-in .form-item-submitted-date-premiere--mise-en-circulation ,
+ .not-logged-in .form-item-submitted-valeur-a-neuf,
+ .not-logged-in .form-item-submitted-adresse{
    height: 0;
   opacity: 0;
 }
