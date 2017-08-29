@@ -85,29 +85,29 @@
       });
 
         $(function() { 
-          $('#webform-client-form-8 .form-item-submitted-nom').addClass('fadeIn') ;
-          $('#webform-client-form-8 .form-item-submitted-prenom').addClass('fadeIn') ;
-          $('.webform-component--civilite').addClass('fadeIn'  ) ;
-          $('.webform-component--type-de-bien').addClass('fadeIn'  ) ;
-          $('.form-item-submitted-marque').addClass('fadeIn') ;
-          $('.form-item-submitted-annee-de-naissance').addClass('fadeIn') ;
+          $('.not-logged-in #webform-client-form-8 .form-item-submitted-nom').addClass('fadeIn') ;
+          $('.not-logged-in #webform-client-form-8 .form-item-submitted-prenom').addClass('fadeIn') ;
+          $('.not-logged-in .webform-component--civilite').addClass('fadeIn'  ) ;
+          $('.not-logged-in .webform-component--type-de-bien').addClass('fadeIn'  ) ;
+          $('.not-logged-in .form-item-submitted-marque').addClass('fadeIn') ;
+          $('.not-logged-in .form-item-submitted-annee-de-naissance').addClass('fadeIn') ;
         });
         $('#edit-submitted-type-de-bien').on('change', function (e) {
-             $('.form-item-submitted-nombre-de-pieces').addClass('fadeIn') ;
+             $('.not-logged-in .form-item-submitted-nombre-de-pieces').addClass('fadeIn') ;
         });
          $('#edit-submitted-etes-vous-locataire').on('change', function (e) {
-             $('.form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn') ;
+             $('.not-logged-in .form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn') ;
         });
          
            $( ".form-item-submitted-nombre-de-pieces").keyup(function() {
-            $('.webform-component--ce-logement-est-il-votre-residence-principale').addClass('fadeIn'  ) ;
+            $('.not-logged-in .webform-component--ce-logement-est-il-votre-residence-principale').addClass('fadeIn'  ) ;
         });
        $('.webform-client-form').click(function() {
            if($('input:radio:checked').is(':checked')){
-               $('.form-item-submitted-nom').addClass('fadeIn' ) ;
-               $('.form-item-submitted-prenom').addClass('fadeIn'  ) ;
-               $('.form-item-submitted-adresse-du-bien-a-assurer').addClass('fadeIn') ;
-               $('.form-item-submitted-puissance').addClass('fadeIn') ;
+               $('.not-logged-in .form-item-submitted-nom').addClass('fadeIn' ) ;
+               $('.not-logged-in .form-item-submitted-prenom').addClass('fadeIn'  ) ;
+               $('.not-logged-in .form-item-submitted-adresse-du-bien-a-assurer').addClass('fadeIn') ;
+               $('.not-logged-in .form-item-submitted-puissance').addClass('fadeIn') ;
 
            } 
          });
@@ -115,68 +115,68 @@
         //ON CHANGE 
 
         $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
-             $('.form-item-submitted-adresse').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-adresse').addClass('fadeIn'  ) ;
          }); 
          $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
-             $('.form-item-submitted-email').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-email').addClass('fadeIn'  ) ;
          });   
         $( ".form-item-submitted-date-premiere--mise-en-circulation-year" ).on('change', function (e) {
-             $('.form-item-submitted-valeur-a-neuf').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-valeur-a-neuf').addClass('fadeIn'  ) ;
          }); 
         $('#edit-submitted-marque-select-1').on('change', function (e) {
-             $('.webform-component--energie-du-vehicule').addClass('fadeIn') ;
+             $('.not-logged-in .webform-component--energie-du-vehicule').addClass('fadeIn') ;
         });
         $( "#edit-submitted-annee-de-naissance-year" ).on('change', function (e) {
-             $('.form-item-submitted-age-dobtention-du-permis').addClass('fadeIn') ;
+             $('.not-logged-in .form-item-submitted-age-dobtention-du-permis').addClass('fadeIn') ;
          });
 
         //FOCUSOUT
         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).keyup(function() {
-              $('.form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
+              $('.not-logged-in .form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
           });
         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).focusout(function() {
-              $('.form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
+              $('.not-logged-in .form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
           });
      
         $( ".form-item-submitted-prenom" ).keyup(function() {
-              $('.form-type-date').addClass('fadeIn'  ) ;
+              $('.not-logged-in .form-type-date').addClass('fadeIn'  ) ;
           });
          $( ".form-item-submitted-prenom" ).focusout(function() {
-              $('.form-type-date').addClass('fadeIn'  ) ;
+              $('.not-logged-in .form-type-date').addClass('fadeIn'  ) ;
           });
         $(".form-item-submitted-adresse").keyup(function() {
-             $('.form-item-submitted-email').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-email').addClass('fadeIn'  ) ;
           });
           $(".form-item-submitted-adresse").focusout(function() {
-             $('.form-item-submitted-email').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-email').addClass('fadeIn'  ) ;
           });  
         $(".form-item-submitted-email").keyup(function() {
-             $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-telephone').addClass('fadeIn'  ) ;
          });
         $(".form-item-submitted-email").focusout(function() {
-             $('.form-item-submitted-telephone').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-telephone').addClass('fadeIn'  ) ;
          });
         $( ".form-item-submitted-telephone").keyup(function() {
-             $('.form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
         });
         $( ".form-item-submitted-telephone").focusout(function() {
-             $('.form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
+             $('.not-logged-in .form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
         });
         $( ".form-item-submitted-age-dobtention-du-permis").keyup(function() {
              $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
         });  
         $( ".form-item-submitted-age-dobtention-du-permis").focusout(function() {
-             $('.webform-component--email-conducteur').addClass('fadeIn'  ) ;
+             $('.not-logged-in .webform-component--email-conducteur').addClass('fadeIn'  ) ;
         });       
 
 /*        $( "#edit-account .form-item-mail" ).keyup(function() {
               $('#edit-field-numero-contrat').addClass('fadeIn') ;
           });*/
         $( ".form-item-submitted-puissance" ).keyup(function() {
-              $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
+              $('.not-logged-in .form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
           });
         $( ".form-item-submitted-puissance" ).focusout(function() {
-              $('.form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
+              $('.not-logged-in .form-item-submitted-date-premiere--mise-en-circulation').addClass('fadeIn') ;
           });
         $('#user-login #edit-pass').numpad(
           {
