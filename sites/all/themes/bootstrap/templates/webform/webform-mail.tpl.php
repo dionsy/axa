@@ -33,7 +33,6 @@ $src=explode('public://', $logo_url);
 //$tb_id = $node->data[1][0];
 //$tb= taxonomy_term_load($tb_id);
 //$type_de_bien = $tb->name;
-//krumong('main')->kPrint($logo_url);
 
 
 $demande='';

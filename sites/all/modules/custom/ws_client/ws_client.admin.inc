@@ -98,6 +98,13 @@ function ws_client_admin_form($form, &$form_state){
       '#required' => TRUE,
     );
 
+    $form['retrieve']['retrieve_liste_sinistres'] = array(
+      '#title' => 'Liste des sinistres du client',
+      '#type' => 'textfield',
+      '#default_value' => variable_get('retrieve_liste_sinistres', 'listeSinistres'),
+      '#required' => TRUE,
+    );
+
     $form['retrieve']['retrieve_liste_devis'] = array(
       '#title' => 'Liste des devis du client',
       '#type' => 'textfield',

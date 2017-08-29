@@ -1,4 +1,5 @@
 <?php
+module_load_include('module','ws_client');
 /**
  * Implements hook_block_info()
  */
@@ -18,6 +19,7 @@ function mes_sinistres_block_view($delta = '') {
   if ($delta == 'mes_sinistres') {
     $title = '';
   	$output = '';
+
 
 
     $table_auto = array(
@@ -79,9 +81,12 @@ function mes_sinistres_block_view($delta = '') {
       ),
 
     );
+    /*var_dump($get_service_sinistres)[0];*/
+    //$get_service_sinistres = ws_client_get_liste_sinistres();
+    /*var_dump($get_service_sinistres)[0]; die();*/
 
     $title_sinistre = t('Mes Sinistres');
-    $title_span = t('Suivi de mes déclérations sinistres'); 
+    $title_span = t('Suivi de mes déclarations sinistres'); 
     
     $title .= '<p>'. $title_sinistre .'</p>';
     $title .= '<span>'. $title_span .'</span>';
@@ -90,7 +95,7 @@ function mes_sinistres_block_view($delta = '') {
       # code...
       $output .= '<div class="item-type-sinistre">';
       $output .=   '<h3 class="title-sinistre">';
-      $output .=     'Suivi de vos sinistre '. $sinistre['type'];
+      $output .=     'Suivi de vos sinistres '. $sinistre['type'];
       $output .=   '</h3>';
       $output .=   '<div class="item-info-contrat">';
       $output .=      '<h3>';
