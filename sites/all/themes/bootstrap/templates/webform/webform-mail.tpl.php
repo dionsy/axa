@@ -33,28 +33,43 @@ $src=explode('public://', $logo_url);
 //$tb_id = $node->data[1][0];
 //$tb= taxonomy_term_load($tb_id);
 //$type_de_bien = $tb->name;
+//krumong('main')->kPrint($src);
+
 
 $demande='';
 
-if($node->nid==9){
-	$demande ='<p>[submission:values:type_de_bien:withlabel]</p>
-	<p><p>[submission:values:nombre_de_pieces:withlabel]</p>
-	<p>[submission:values:ce_logement_est_il_votre_residence_principale:withlabel]</p>
-	<p>[submission:values:adresse_du_bien_a_assurer:withlabel]</p>
-	<p>[submission:values:vous_etes:withlabel]</p>
-	<p>[submission:values:quand_souhaitez_vous_etre_assure:withlabel]</p>';
-}
-elseif($node->nid==8){
-	$demande ='<h3>Type de véhicule</h3>
-	<p>[submission:values:marque:withlabel]</p>
-	<p>[submission:values:energie_du_vehicule:withlabel]</p>
 
-	<h3>Information du conducteur Principal</h3>
+switch ($node->nid) {
+	case '9':
+		$demande ='<p>[submission:values:type_de_bien:withlabel]</p>
+		<p><p>[submission:values:nombre_de_pieces:withlabel]</p>
+		<p>[submission:values:ce_logement_est_il_votre_residence_principale:withlabel]</p>
+		<p>[submission:values:adresse_du_bien_a_assurer:withlabel]</p>
+		<p>[submission:values:vous_etes:withlabel]</p>
+		<p>[submission:values:quand_souhaitez_vous_etre_assure:withlabel]</p>';
+		break;
+	
+	case '8':
+		$demande ='<h3>Type de véhicule</h3>
+		<p>[submission:values:marque:withlabel]</p>
+		<p>[submission:values:energie_du_vehicule:withlabel]</p>
+		<h3>Information du conducteur Principal</h3>
+		<p>[submission:values:annee_de_naissance:withlabel]</p>
+		<p>[submission:valuesage_dobtention_du_permis:withlabel]</p>
+		<p>[submission:values:email_conducteur:withlabel]</p> 
+		';
+		break;
+	case '10':	
+		$demande ='<p>[submission:values:type_dassurance:withlabel]</p>';
+		break;
 
-	<p>[submission:values:annee_de_naissance:withlabel]</p>
-	<p>[submission:valuesage_dobtention_du_permis:withlabel]</p>
-	<p>[submission:values:email_conducteur:withlabel]</p>
-	';
+	case '11':
+		$demande ='<p>[submission:values:type_dassurance:withlabel]</p>';
+		break;
+
+	default:
+		# code...
+		break;
 }
 
 $logo = '<img class="img_mail" src="'.$base_url.'/sites/default/files/'.$src[1].'"/>';

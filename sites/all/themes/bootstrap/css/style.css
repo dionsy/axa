@@ -1,6 +1,28 @@
+ .container::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+ .container::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+ .container::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
 .container ,.navbar.container {
     padding-left: 0;
     padding-right:0; 
+}
+.container {
+    max-width: 1040px !important;
 }
 .bleu{
     background-color: red;
@@ -1542,8 +1564,8 @@ section#block-simple-copyright-simple-copyright-manage
     display: none;
     transition: all 1s ease 0s;
 }*/
-.navbar-btn {
-    margin-bottom: 13px;
+.navbar-btn.pull-left {
+    margin: 0px ;
 }
 .loupe{
     float: right;
@@ -1747,16 +1769,16 @@ h1, .h1, h2, .h2, h3, .h3{
 .sinistre-front {
     display: block;
     clear: both;
+    padding: 1em ;
     background: #fff;
     width: 100%;
     text-align: center;
-}
-.sinistre-front a{
     color: #004D92;
-    padding:1em;
-    display: block;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 14px;
+}
+.sinistre-front a{
 }
 #block-views-vos-services-axa-senegal-block .block-title {
     font-size: 30px;
@@ -1882,18 +1904,19 @@ input.nmpd-display {
 }
 .nmpd-grid tr td {
     border:medium none ! important;
+    padding: 4px ! important; 
 }
 .nmpd-grid .numero {
     background-color: #113184;
     color: #fff;
     font-size: 1.5em;
-     padding: 10px 25px !important;
+     padding: 8px 22px !important;
 }
 .cancel.btn ,.clear.btn {
     
     color: rgb(255, 255, 255);
-    font-size: 1.2em;
-    height: 60px;
+    font-size: 1.1em;*/
+  /*  height: 60px;*/
 }
 .cancel.btn  {
     background: rgb(71, 168, 13) none repeat scroll 0 0;
@@ -2015,13 +2038,14 @@ input.nmpd-display {
 .logo,
 .appli{
     padding-right: 0;
-    margin-top: 1em;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
 }
 .prez-mon-axa{
    display: block;
     float: right;
     border: 1px solid #ccc;
-    padding: 0 1.5rem;
+    padding: 0 0.5rem;
 }
 
 .prez-mon-axa .fa-mobile{
