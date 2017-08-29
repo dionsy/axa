@@ -405,7 +405,7 @@ html.js input.webform-calendar {
 #webform-client-form-11 .form-item-submitted-type-dassurance,
 #webform-client-form-10 .form-item-submitted-type-dassurance{
     /*width: 38%;*/
-   display: inline-block;
+   display: block;
     /*margin-left: 10%;*/
     margin-right: auto;
 }
@@ -927,10 +927,10 @@ form#user-register-form {
     text-align: left !important;
 }
 
-#webform-client-form-11 #edit-submitted-type-dassurance ,
+/*#webform-client-form-11 #edit-submitted-type-dassurance ,
 #webform-client-form-10 #edit-submitted-type-dassurance {
     margin-left: 46px;
-} 
+} */
 #webform-client-form-10 .webform-container-inline label {
     display: inline-block;
     margin-right: 0;

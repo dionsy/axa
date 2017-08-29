@@ -52,14 +52,14 @@ function ws_client_admin_form($form, &$form_state){
     $form['create']['create_devis_accident'] = array(
       '#title' => 'Creation de devis assistance et accident du client',
       '#type' => 'textfield',
-      '#default_value' => variable_get('create_devis_habitation', 'devisAssistanceAccident/create'),
+      '#default_value' => variable_get('create_devis_accident', 'devisAssistanceAccident/create'),
       '#required' => TRUE,
     );
 
     $form['create']['create_devis_loisir'] = array(
       '#title' => 'Creation de devis loisir et vie du client',
       '#type' => 'textfield',
-      '#default_value' => variable_get('create_devis_habitation', 'devisLoisirs/create'),
+      '#default_value' => variable_get('create_devis_loisir', 'devisLoisirs/create'),
       '#required' => TRUE,
     );
 

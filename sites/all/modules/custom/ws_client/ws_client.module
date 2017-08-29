@@ -574,12 +574,7 @@ function ws_client_user_login(&$edit, $account) {
 
 function ws_client_user_presave(&$edit, $account, $category) {
   // URL WEBSERVICE
-  $ip = variable_get('ip_server');
-  $root = variable_get('root');
-  $create_devis_auto = variable_get('create_devis_auto');
-  $create_devis_habitation = variable_get('create_devis_habitation');
-  $create_devis_accident = variable_get('create_devis_accident');
-  $create_devis_loisir = variable_get('create_devis_loisir');
+  
 
   if(isset( $edit['field_numero_contrat']['und'][0]['value']))
   {
@@ -640,11 +635,28 @@ function ws_client_webform_submission_presave($node, &$submission) {
       $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
     }
     $result = ws_client_createDevis($nid , $submission , $identifiant) ;
-    //var_dump($result) ; die();
+   //  var_dump($result) ; die();
     if($result->code >=  300 )
     {
-     drupal_set_message("Le devis n'a pas ete crée veuillez verifier les données saisies"  ,'error');
-     drupal_goto("node/8");
+     drupal_set_message("Le devis n'a pas ete créé veuillez verifier les données saisies"  ,'error');
+      switch ($nid) {
+        case 8:
+           drupal_goto("node/8");
+          break;
+          case 9:
+           drupal_goto("node/9");
+          break;
+          case 10:
+           drupal_goto("node/10");
+          break;
+          case 11:
+           drupal_goto("node/11");
+          break;
+        
+        default:
+          # code...
+          break;
+      }
     }
     /* var_dump($identifiant) ;die() ;*/
       
@@ -652,6 +664,12 @@ function ws_client_webform_submission_presave($node, &$submission) {
 }
 
 function ws_client_createDevis($idNode, $submission ,$identifiant){
+  $ip = variable_get('ip_server');
+  $root = variable_get('root');
+  $create_devis_auto = variable_get('create_devis_auto');
+  $create_devis_habitation = variable_get('create_devis_habitation');
+  $create_devis_accident = variable_get('create_devis_accident');
+  $create_devis_loisir = variable_get('create_devis_loisir');
   $result = "" ;
   if($idNode == 8)
       {
@@ -698,7 +716,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
 
               $url = 'http://'. $ip .'/'. $root .'/' . $create_devis_auto;
 
-              //$result = drupal_http_request($url, $options);
+              $result = drupal_http_request($url, $options);
               
         }
          if($idNode == 9)
@@ -731,7 +749,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
 
            }
 
-          if($nid == 10)
+          if($idNode == 10)
           { 
             $devis = array(
               "idCompte" => $identifiant,
@@ -752,7 +770,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
               );
 
 
-              //$result = drupal_http_request("http://192.168.200.16/Service1.svc/devisAssistanceAccident/create", $options);
+              //$result = drupal_http_request("http://192.168.43.145/Service1.svc/devisAssistanceAccident/create", $options);
 
 
             $url = 'http://'. $ip .'/'. $root .'/' . $create_devis_accident;
@@ -781,7 +799,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
                               'headers' => array('Content-Type' => 'application/json')
               );
 
-
+           // $result = drupal_http_request("http://192.168.43.145/Service1.svc/devisLoisirs/create", $options);
 
             $url = 'http://'. $ip .'/'. $root .'/' . $create_devis_loisir;
             $result = drupal_http_request($url, $options);
