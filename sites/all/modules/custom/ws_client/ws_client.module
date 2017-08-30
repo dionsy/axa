@@ -556,10 +556,7 @@ function ws_client_update_info_user($array_data) {
                   'headers' => array('Content-Type' => 'application/json')
   );
 
-
   //$url = 'http://192.168.200.16/Service1.svc/compte/update';
-
-
 
   $url = 'http://'. $ip .'/'. $root .'/' . $update_info_user;
 
@@ -582,26 +579,38 @@ function ws_client_user_login(&$edit, $account) {
   $url = 'http://'. $ip .'/'. $root .'/' . $info_user .'/'. $identifiant;
   $options = array('timeout' => 500.0) ;
   $request = drupal_http_request($url ,$options) ;
+  
   $data = drupal_json_decode($request->data) ;
 
-
-  variable_set('nom',$data['nom']);
-  variable_set('prenom',$data['prenom']);
-  variable_set('adresse',$data['adresse']);
-  variable_set('telephone',$data['telephone']);
-  variable_set('mail',$data['mail']);
-  /*var_dump($data['prenom']) ;
-  var_dump($data['nom']) ;
-  var_dump($data['adresse']) ;
-  var_dump($data['mail']) ;
-  var_dump($data['telephone']) ; die();*/
-
+  variable_set('nom_'.$user->uid, $data['nom']);
+  variable_set('prenom_'.$user->uid, $data['prenom']);
+  variable_set('adresse_'.$user->uid, $data['adresse']);
+  variable_set('telephone_'.$user->uid, $data['telephone']);
+  variable_set('mail_'.$user->uid, $data['mail']);
 }
 
 
+function ws_client_user_logout($account) {
+ /* if(!empty(variable_get('nom-'.$user->uid.'')) && !empty(variable_get('prenom-'.$user->uid.'')) && !empty(variable_get('adresse-'.$user->uid.'')) && !empty(variable_get('telephone-'.$user->uid.'')) && !empty(variable_get('mail-'.$user->uid.''))){
+
+
+    variable_del('nom-'.$user->uid.'');
+    variable_del('prenom-'.$user->uid.'');
+    variable_del('adresse-'.$user->uid.'');
+    variable_del('telephone-'.$user->uid.'');
+    variable_del('mail-'.$user->uid.'');
+
+    variable_del('nom');
+    variable_del('prenom');
+    variable_del('adresse');
+    variable_del('telephone');
+    variable_del('mail');
+  }*/
+
+}
+
 function ws_client_user_presave(&$edit, $account, $category) {
-  // URL WEBSERVICE
-  
+  // URL WEBSERVICE  
 
   if(isset( $edit['field_numero_contrat']['und'][0]['value']))
   {
@@ -629,13 +638,19 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
 
      // $infoUser = ws_client_getInfoUser() ;
      // var_dump($infoUser) ; die();
-      $nom = variable_get('nom');
-      $prenom = variable_get('prenom');      
-      $email = variable_get('mail');
-      $tel = variable_get('telephone');
+     
+
+  //$infoPerso = ws_client_getInfoUser();
+
+    $nom = variable_get('nom_'.$user->uid);
+    $prenom = variable_get('prenom_'.$user->uid);      
+    $email = variable_get('mail_'.$user->uid);
+    $adresse = variable_get('adresse_'.$user->uid);    
+    $tel = variable_get('telephone_'.$user->uid);
 
 
-      $title =$element['#title'];
+    $title =$element['#title'];
+
  
       switch ($title) {
         case 'Nom':

@@ -35,12 +35,18 @@ function form_information_form($form, &$form_state){
 
   //$infoPerso = ws_client_getInfoUser();
 
-    $nom = variable_get('nom');
-    $prenom = variable_get('prenom');      
-    $email = variable_get('mail');
-    $tel = variable_get('telephone');
+    $nom = variable_get('nom_'.$user->uid);
+    $prenom = variable_get('prenom_'.$user->uid);      
+    $email = variable_get('mail_'.$user->uid);
+    $adresse = variable_get('adresse_'.$user->uid);    
+    $tel = variable_get('telephone_'.$user->uid);
 
-
+/*var_dump($nom);
+var_dump($prenom);
+var_dump($mail);
+var_dump($adresse);
+var_dump($tel); die();
+*/
   $form['titre'] = array(
   '#type' => 'fieldset', 
   '#title' => t('Mes Informations Personnelles'), 
