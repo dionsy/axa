@@ -70,8 +70,22 @@ function fixer_declarer_sinistre_form($form, &$form_state){
         ),
       ),
 
+      array(
+        'type' => 'Loisir',
+        'info' => array(
+          array(
+            'id' =>'25012547896',
+            'produit' => 'Produit Loisir 1',
+          ),
+          array(
+            'id' =>'00124578555',
+            'produit' => 'Produit Loisir 2',
+          ),
+        ),
+      ),
+
     );
-  //$contrats = ws_client_get_liste_contrats();
+  $contrats = ws_client_get_liste_contrats();
 
   foreach ($contrats as $contrat_devis) {
     # code...
@@ -99,6 +113,14 @@ function fixer_declarer_sinistre_form($form, &$form_state){
       }
     }
 
+    if ($contrat_devis['type'] === 'Loisir') {
+      # code...
+      foreach ($contrat_devis['info'] as $contrat_devis_info) {
+        # code...
+        $info_loisir[$contrat_devis_info['id']] = $contrat_devis_info['id'] .' '. $contrat_devis_info['produit'];
+      }
+    }
+
   }
   $j = 0;
   if (isset($info_auto)) {
@@ -119,13 +141,20 @@ function fixer_declarer_sinistre_form($form, &$form_state){
     $j = $j + 1;
   }
 
+  if (isset($info_loisir)) {
+    # code...
+    $contrats[$j]['info'] = $info_loisir;
+    $j = $j + 1;
+  }
+
 
   $get_service_contrats = $contrats;
 
   $nature_sinistre = array(
-    'auto' => array('Collision entre vehicule', 'Vitre brisee', 'nature auto 2','nature auto 3'),
+    'auto' => array('Accident', 'Vitre brisee', 'Incendie','Vol','Cambriolage'),
     'habitation' => array('Incendie', 'Vol', 'Cambriolage', 'Degâts des eaux', 'Vent violent'),
     'accident' => array('Accident de la route','nature accident 2','nature accident 3'),
+    'loisir' => array('loisir1', 'loisir2', 'loisir3', 'loisir4'),
   );
 
   $form['sinistre'] = array(
@@ -200,6 +229,17 @@ function fixer_declarer_sinistre_form($form, &$form_state){
     '#states' => array(
       'visible' => array(
         ':input[name="type"]' => array('value' => t('Assistance et Accident')),
+      ),
+    ),
+  );
+
+  $form['sinistre']['nature_loisir'] = array(
+    '#type' => 'select',
+    '#options' => $nature_sinistre['loisir'] ,
+    '#title' => t('Nature du sinistre'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="type"]' => array('value' => t('Loisir')),
       ),
     ),
   );
@@ -383,6 +423,8 @@ function declarer_sinistre_form_submit($form, &$form_state){
     $data['estimationDegats'] = $estimation[$form_state['values']['estimation']];
     //decrire les dommages
     $data['dommages'] = $form_state['values']['dommages'];
+
+    //var_dump($data); die();
 
     ws_client_declarer_sinistre($data);
 

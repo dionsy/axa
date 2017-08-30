@@ -19,7 +19,7 @@ function mes_contrats_block_view($delta = '') {
   if ($delta == 'mes_contrats') {
     $title = '';
   	$output = '';
-    /*$auto = array();
+    $auto = array();
 
     $auto['type'] = 'Auto';
     $auto['info'][] = array(
@@ -33,7 +33,45 @@ function mes_contrats_block_view($delta = '') {
       'modele' => 'modele',  
     );
 
-    var_dump($auto); die();*/
+    $get_test_contrats = array(
+      array(
+        'type' => 'Auto',
+        'info' => array(
+                    array(
+                      'id' =>'25123596870',
+                      'modele' => 'AUTO ECO',
+                      'marque' => 'BMW',
+                    ),
+                    array(
+                      'id' =>'25456789321',
+                      'modele' => 'SOLUTION CONFORT',
+                      'marque' => 'Mercedes',
+                    ),
+                  ),
+      ),
+
+      array(
+        'type' => 'Habitation',
+        'info' => array(
+                    array(
+                      'id' =>'25456789321',
+                      'type_logement' => 'MRH PREMIUM',
+                      'adresse' => 'Mermoz',
+                    ),
+                  ),
+      ),
+
+      array(
+        'type' => 'Accident',
+        'info' => array(
+                    array(
+                      'id' =>'25012547896',
+                      'produit' => 'Individuelle Accident',
+                    ),
+                  ),
+      ),
+
+    );
 
 
     $get_service_contrats = ws_client_get_liste_contrats();
@@ -57,11 +95,12 @@ function mes_contrats_block_view($delta = '') {
           foreach ($contrat['info'] as $informations) {
             # code...
             $i = 0;
+            $numContrat = $informations['id'];
             foreach ($informations as $key => $value) {
               # code...
               if($i==0){
                 $output .=     '<div class="col-lg-3 field-contrat">';
-                $output .=       '<span><a href="#">'. $value .'</a></span>';      
+                $output .=       '<span><a href="contrat-pdf.php?numContrat='. $numContrat .'">'. $value .'</a></span>';      
                 $output .=     '</div>';    
               }
               elseif($i==1){
@@ -75,12 +114,12 @@ function mes_contrats_block_view($delta = '') {
                 $output .=     '</div>';
               }
               $i++;
-            }
+            } 
             $output .=     '<div class="col-lg-1 telechargement-contrat field-contrat">';
             $output .=       '<a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 visualisation-contrat field-contrat">';
-            $output .=       '<a href="contrat-pdf.php"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
+            $output .=       '<a href="contrat-pdf.php?numContrat"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 requete-contrat field-contrat">';
             $output .=       '<a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';      

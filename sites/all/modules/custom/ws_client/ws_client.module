@@ -144,6 +144,31 @@ function ws_client_get_liste_sinistres(){
     100000004 => 'Vent violent',
   );
 
+  $evenement_auto = array(
+    100000000 => 'Accident',
+    100000001 => 'Bris de glace',
+    100000002 => 'Incendie',
+    100000003 => 'Vol',
+    100000004 => 'Cambriolage',
+  );
+
+  $evenement_accident = array(
+    100000000 => 'Accident',
+    100000001 => 'Bris de glace',
+    100000002 => 'Incendie',
+    100000003 => 'Vol',
+    100000004 => 'Cambriolage',
+  );
+  
+  $evenement_loisir = array(
+    100000000 => 'Accident',
+    100000001 => 'Bris de glace',
+    100000002 => 'Incendie',
+    100000003 => 'Vol',
+    100000004 => 'Cambriolage',
+  );
+
+
   global $user;
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
@@ -153,38 +178,165 @@ function ws_client_get_liste_sinistres(){
   $options = array('timeout' => 6000.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
-
-  foreach ($data as $sinsitre) {
+  
+  $liste_sinistres = array();
+  foreach ($data as $contrat) {
     # code...
-    if ($sinsitre['typeSinistre'] === 'Habitation') {
-      # code...
-      $table_habitation['thead'] = array(
-        'date_survenance' => 'Date survenance',
-        'numero_sinistre' => 'N° Sinistre',
-        'evenements' => t('Evénements'),
-        'status' => t('Status'),
-      );
-
-      $table_habitation['tbody'][] = array(
-          'date_survenance' => '11/01/2017',
-          'numero_sinistre' => $sinsitre['id'],
-          'evenements' => $evenement_habitation[$sinsitre['typeEvent']],
-          'status' => $status[$sinsitre['statut']],    
-      );
-
-    }
-
+    $liste_sinistres[$contrat['numContrat']][] = $contrat;
   }
 
-  $returnArray[] = array(
-    'type' => 'Habitation',
-    'id' => array(
-              'numero_contrat' => 'CN001463987',
-              'info_sup' => 'Adresse: Gueule tapée Rue 67*52',
-            ),
-    'tableau' => $table_habitation,
-  );
   
+  /*$liste_sinistres = array (
+   
+      
+    'CNTR00000031' => array (
+      0 => array (
+            'id' => 'SIN00000003',
+            'numContrat' => 'CNTR00000031',
+            'statut' =>  100000000,
+            'typeEvent' =>  100000001,
+            'typeSinistre' =>  'Automobile',
+          ),
+    ),
+
+    'CNTR00000030' => array (
+      0 => array (
+            'id' => 'SIN00000004',
+            'numContrat' => 'CNTR00000030',
+            'statut' =>  100000000,
+            'typeEvent' =>  100000002,
+            'typeSinistre' =>  'Automobile',
+          ),
+      1 => array (
+            'id' => 'SIN00000005',
+            'numContrat' => 'CNTR00000030',
+            'statut' =>  100000000,
+            'typeEvent' =>  100000002,
+            'typeSinistre' =>  'Automobile',
+          ),
+    ),
+
+    'CNTR00000018' => array (
+      0 =>array (
+            'id' => 'SIN00000006',
+            'numContrat' => 'CNTR00000018',
+            'statut' => 100000001,
+            'typeEvent' => 100000002,
+            'typeSinistre' => 'Habitation',
+          ),
+
+      1 => array (
+            'id' => 'SIN00000007',
+            'numContrat' => 'CNTR00000018',
+            'statut' => 100000001,
+            'typeEvent' =>  100000001,
+            'typeSinistre' => 'Habitation',
+          ),
+    ),
+
+    'CNTR00000010' => array (
+      0 =>array (
+            'id' => 'SIN00000008',
+            'numContrat' => 'CNTR00000010',
+            'statut' => 100000002,
+            'typeEvent' => 100000002,
+            'typeSinistre' => 'Accident',
+          ),
+
+      1 => array (
+            'id' => 'SIN00000009',
+            'numContrat' => 'CNTR00000010',
+            'statut' => 100000002,
+            'typeEvent' =>  100000001,
+            'typeSinistre' => 'Accident',
+          ),
+    ),
+    'CNTR00000016' => array (
+      0 =>array (
+            'id' => 'SIN00000001',
+            'numContrat' => 'CNTR00000016',
+            'statut' => 100000001,
+            'typeEvent' => 100000002,
+            'typeSinistre' => 'Habitation',
+          ),
+
+      1 => array (
+            'id' => 'SIN00000002',
+            'numContrat' => 'CNTR00000016',
+            'statut' => 100000001,
+            'typeEvent' =>  100000001,
+            'typeSinistre' => 'Habitation',
+          ),
+    ),
+
+
+  );*/
+
+  $tableau['thead'] = array(
+    'date_survenance' => 'Date survenance',
+    'numero_sinistre' => 'N° Sinistre',
+    'evenements' => t('Evénements'),
+    'status' => t('Status'),
+  );
+
+  $i=0;
+  foreach ($liste_sinistres as $keys => $values) {
+    # code...
+    $Array_tmp1[$i]['type'] = $values[0]['typeSinistre'];
+    $Array_tmp1[$i]['liste']['id']['numero_contrat'] = $values[0]['numContrat'];
+    $Array_tmp1[$i]['liste']['id']['info_sup'] = 'a Faire';
+    
+    $k=0; 
+    foreach ($values as $tab_body) {
+      # code...
+      $tableau['tbody'][$k]['date_survenance'] = '29/08/2017';  
+      $tableau['tbody'][$k]['numero_sinistre'] = $tab_body['id'];
+    
+      if ($Array_tmp1[$i]['type'] === 'Habitation') {
+        # code...
+        $tableau['tbody'][$k]['evenements'] = $evenement_habitation[$tab_body['typeEvent']];
+      }
+
+      if ($Array_tmp1[$i]['type'] === 'Automobile') {
+        # code...
+        $tableau['tbody'][$k]['evenements'] = $evenement_auto[$tab_body['typeEvent']];
+      }
+
+      if($Array_tmp1[$i]['type'] === 'Accident'){
+        $tableau['tbody'][$k]['evenements'] = $tab_body['typeEvent'];
+      }
+
+      if($Array_tmp1[$i]['type'] === 'Loisir'){
+        $tableau['tbody'][$k]['evenements'] = $tab_body['typeEvent'];
+      }
+
+      $tableau['tbody'][$k]['status'] = $status[$tab_body['statut']];
+      $k=$k+1;
+    }
+
+    $Array_tmp1[$i]['liste']['tableau'] = $tableau;
+    $tableau = array();
+
+    $i = $i+1;
+  }
+  
+  
+  foreach ($Array_tmp1 as $array) {
+    # code...
+    $Array_tmp2[$array['type']][] = $array['liste'];
+      
+  }
+
+  $j=0;
+  foreach ($Array_tmp2 as $key_tmp2 => $value_tmp2) {
+    # code...
+    $returnArray[$j]['type'] = $key_tmp2;
+    $returnArray[$j]['liste'] = $value_tmp2;
+    $j = $j+1;
+  }
+  
+  //krumong('main')->kPrint($returnArray);die();
+
   return $returnArray;
 }
 
@@ -281,6 +433,74 @@ function ws_client_get_liste_contrats(){
   
   return $returnArray;
 }
+
+function ws_client_get_liste_echeances(){
+  // URL Webservice
+  $ip = variable_get('ip_server');
+  $root = variable_get('root');
+  $liste_contrats = variable_get('retrieve_liste_contrats');
+
+
+  $returnArray = array();
+
+  $logement = array(
+    0 => 'Bintou corrige',
+    100000000 => 'Appartement',
+    100000001 => 'Maison',
+    100000002 => 'Autres',
+  );
+
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+  $url = 'http://'. $ip .'/'. $root .'/' . $liste_contrats .'/'. $identifiant;
+
+  $options = array('timeout' => 6000.0) ;
+  $request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;
+  
+  //var_dump($data); die();
+  
+  $table['thead'] = array(
+      'NumContrat' => t('N° Contrat'),
+      'caracteristiques' => t('Caractéristiques'),
+      'mode_echeance' => t('Mode d\'echeance'),
+      'prochaine_echeance' => t('Prochaine échéance'),
+    );
+    
+    $i=0;
+    //var_dump($data);
+    foreach ($data as $echeance) {
+      # code...
+      $table['tbody'][$i]['NumContrat'] = $echeance['id'];
+      if ($echeance['typeContrat'] == 'Habitation') {
+        # code...
+      $table['tbody'][$i]['caracteristiques'] = $echeance['adresseLogement'];
+      }
+      if ($echeance['typeContrat'] == 'Automobile') {
+        # code...
+      $table['tbody'][$i]['caracteristiques'] = $echeance['modele'];
+      }
+      if ($echeance['typeContrat'] == 'Accident') {
+        # code...
+      $table['tbody'][$i]['caracteristiques'] = 'aaa';
+      }
+      if ($echeance['typeContrat'] == 'Loisir') {
+        # code...
+      $table['tbody'][$i]['caracteristiques'] = 'bbb';
+      }
+      $table['tbody'][$i]['mode_echeance'] = t('Annuelle');
+      $table['tbody'][$i]['prochaine_echeance'] = $echeance['echeance']; 
+      
+      $i=$i+1;
+    }
+
+  //var_dump($table);
+  
+  return $table;
+}
+
 
 function ws_client_get_liste_devis(){
   // URL Webservice
@@ -507,11 +727,10 @@ function ws_client_get_info_conseiller(){
     'adresse' => $data['adresse'] ,
     'telephone' => $data['telephone'] ,
     'mail' => $data['mail'],
-    'img' => $data['imageUrl'],
+    //'img' => $data['imageUrl'],
     'agence' => $data['agence'], 
   );
 
-  var_dump($returnArray); die();
    
   return $returnArray ;
 }
