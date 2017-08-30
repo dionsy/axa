@@ -194,9 +194,10 @@
                     'data-dialog-options' => '{"width":"40%"}',
                   )
                 ));
+
               }
               else{
-                $href=$base_url.'/node/12';
+                $href=$base_url.'/?q=node/2&qt-left_menu=8#qt-left_menu';
                 $href = '<div class="sinistre-front"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
               }              
               echo $href;

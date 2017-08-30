@@ -1,5 +1,5 @@
 <?php
-module_load_include('module','ws_client');
+//module_load_include('module','ws_client');
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
@@ -118,9 +118,15 @@ module_load_include('module','ws_client');
                   if(user_is_logged_in())
                     $account = user_load($user->uid); 
                     if(isset($account)) {
-                      $array = ws_client_getInfoUser();
+
+                      //$array = ws_client_getInfoUser();
+                      $nom = variable_get('nom_'.$user->uid);
+                      $prenom = variable_get('prenom_'.$user->uid); 
+                      $array = array('nom' =>$nom,
+                                     'prenom' => $prenom) ;
+
                       $array = isset($array) ? $array : array('nom'=>'Client');
-                      print '<span>'.$array['nom']. '</span>';                    
+                      print '<span>'.$array['prenom'].'  '.$array['nom']. '</span>';                    
                     }  
                ?>
              </div>

@@ -103,7 +103,7 @@
 }
 #block-menu-menu-menu-top ul li{
     font-size:1.0em;
-    padding: 2px 7px 3px 2px;
+    padding: 2px 10px 3px 10px;
     background-color: #ccc;
     margin-right: 3px;
 }
@@ -718,6 +718,10 @@ ul#quicktabs-tab-left_menu-0::before{
     background: #fff none repeat scroll 0 0;
     box-shadow: 1px 1px 1px 1px #ccc;
 }
+.page-node-2 section.row header {
+    padding-left: 0 !important ;
+    padding-right: 0 ! important ; 
+}
 
 .page-node-2 .navbar{
     margin-bottom: 0px !important;
@@ -726,12 +730,13 @@ ul#quicktabs-tab-left_menu-0::before{
 .page-node-2 .info-left-menu{
     margin-bottom: 0px !important;
     margin-top: 40px;
+    padding:  0 !important; 
 }
 /*** barre ***/
 .info-left-menu .barre {
     border-top: 4px solid #ee3e40;
     float: right;
-    left: -25px;
+    left: -8%;
     position: relative;
     text-align: right;
     top: -12px;
@@ -744,6 +749,7 @@ ul#quicktabs-tab-left_menu-0::before{
     color: #005399;
     padding-left: 0px;
     padding-right: 0px;
+    width: 50% ! important;
 }
 
 .info-left-menu .espace-client p {
@@ -752,8 +758,9 @@ ul#quicktabs-tab-left_menu-0::before{
 }
 
 .info-left-menu .nom-client {
-    padding-left: 3px;
-    padding-right: 0;
+    padding-left: 0 ! important;
+    padding-right: 0 ! important;
+    width: 47.5% ;
 }
  .info-left-menu .nom-client span{
     color: #666;
@@ -1354,7 +1361,16 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 @media screen and (min-width: 768px) and (max-width: 991px) {
     /* sm */
     .info-left-menu .barre {
-        left: 56%;
+        /*left: 56%;*/
+        width: 4%;
+    }
+    .info-left-menu .nom-client {
+        float: right;
+        width: auto;
+    }
+    .page-node-2 .info-left-menu nav {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     ul.quicktabs-tabs.quicktabs-style-navlist {
@@ -1381,9 +1397,17 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         display: none;
         left: 79%;
     }
+    .page-node-2 .main-container .row {
+    padding-left: 15px;
+    padding-right: 15px;
+    }
 
     #block-acceuil-acceuil .avatar .barre {
         display: none;
+    }
+     .info-left-menu .nom-client {
+        float: right;
+        width: auto;
     }
 
     .corps-espace-client {
@@ -1413,6 +1437,14 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     .info-left-menu .barre {
         display: none;
         left: 96% !important;
+    }
+     .info-left-menu .nom-client {
+        float: right;
+        width: auto;
+    }
+    .page-node-2 .main-container .row {
+    padding-left: 15px;
+    padding-right: 15px;
     }
 
     .topnav li:not(.active){
