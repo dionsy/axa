@@ -103,8 +103,8 @@ function ws_client_getInfoUser(){
   $url = 'http://'. $ip .'/'. $root .'/' . $info_user .'/'. $identifiant;
   $options = array('timeout' => 500.0) ;
   $request = drupal_http_request($url ,$options) ;
+  //var_dump($request) ; die();
   $data = drupal_json_decode($request->data) ;
-  // var_dump($data) ; die();
 /*  if(!empty($data))
   {
     $returnArray = array(
@@ -114,7 +114,7 @@ function ws_client_getInfoUser(){
       'telephone' => $data['telephone'] ,
       'mail' => $data['mail'], 
     );
-   // var_dump($returnArray) ; die();
+   //var_dump($returnArray) ; die();
     return $returnArray ;
   /*}
 
@@ -589,8 +589,10 @@ function ws_client_user_login(&$edit, $account) {
   variable_set('mail_'.$user->uid, $data['mail']);
 }
 
+
 function ws_client_user_logout($account) {
  /* if(!empty(variable_get('nom-'.$user->uid.'')) && !empty(variable_get('prenom-'.$user->uid.'')) && !empty(variable_get('adresse-'.$user->uid.'')) && !empty(variable_get('telephone-'.$user->uid.'')) && !empty(variable_get('mail-'.$user->uid.''))){
+
 
     variable_del('nom-'.$user->uid.'');
     variable_del('prenom-'.$user->uid.'');
@@ -626,6 +628,15 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
   
    if (in_array('client', array_values($user->roles))) {
      // $infoUser = ws_client_getInfoUser() ;
+    // var_dump($infoUser) ; die();
+   
+    /*  $nom = $infoUser['nom'];
+      $prenom = $infoUser['prenom'];
+      
+      $email = $infoUser['mail'];
+      $tel = $infoUser['telephone'];*/
+
+     // $infoUser = ws_client_getInfoUser() ;
      // var_dump($infoUser) ; die();
      
 
@@ -637,13 +648,20 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
     $adresse = variable_get('adresse_'.$user->uid);    
     $tel = variable_get('telephone_'.$user->uid);
 
+
     $title =$element['#title'];
+
  
       switch ($title) {
         case 'Nom':
+        case 'Nom ':
+        case 'nom ':
+        case 'nom':
           $element['#default_value'] =  $nom;
           break;
+        case 'Prènom':
         case 'Prenom':
+        case 'Prénom':
           $element['#default_value'] = $prenom;
           break;
          case 'Email':
