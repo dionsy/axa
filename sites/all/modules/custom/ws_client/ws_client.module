@@ -591,21 +591,25 @@ function ws_client_user_login(&$edit, $account) {
 
 
 function ws_client_user_logout($account) {
- /* if(!empty(variable_get('nom-'.$user->uid.'')) && !empty(variable_get('prenom-'.$user->uid.'')) && !empty(variable_get('adresse-'.$user->uid.'')) && !empty(variable_get('telephone-'.$user->uid.'')) && !empty(variable_get('mail-'.$user->uid.''))){
+  $nom = variable_get('nom_'.$user->uid);
+  $prenom = variable_get('prenom_'.$user->uid);
+  $adresse = variable_get('adresse_'.$user->uid);
+  $tel = variable_get('telephone_'.$user->uid);
+  $email= variable_get('mail_'.$user->uid);
 
+ if(!empty($nom) && !empty($prenom) && !empty($adresse) && !empty($tel) && !empty($email)){
+    variable_del('nom_'.$user->uid);
+    variable_del('prenom_'.$user->uid);
+    variable_del('adresse_'.$user->uid);
+    variable_del('telephone_'.$user->uid);
+    variable_del('mail_'.$user->uid);
 
-    variable_del('nom-'.$user->uid.'');
-    variable_del('prenom-'.$user->uid.'');
-    variable_del('adresse-'.$user->uid.'');
-    variable_del('telephone-'.$user->uid.'');
-    variable_del('mail-'.$user->uid.'');
-
-    variable_del('nom');
+   /* variable_del('nom');
     variable_del('prenom');
     variable_del('adresse');
     variable_del('telephone');
-    variable_del('mail');
-  }*/
+    variable_del('mail');*/
+  }
 
 }
 
@@ -651,7 +655,6 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
 
     $title =$element['#title'];
 
- 
       switch ($title) {
         case 'Nom':
         case 'Nom ':
