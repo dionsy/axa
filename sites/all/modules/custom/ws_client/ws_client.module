@@ -657,7 +657,7 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
         case 'Nom ':
         case 'nom ':
         case 'nom':
-          $element['#default_value'] =  $nom;
+          $element['#default_value'] =  $nom; 
           $element['#attributes']= array('disabled' => '1');
           break;
         case 'Prènom':
@@ -681,6 +681,7 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
       }
     }
 
+  }
 }
 
 
