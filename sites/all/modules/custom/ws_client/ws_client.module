@@ -589,21 +589,27 @@ function ws_client_user_login(&$edit, $account) {
 
 
 function ws_client_user_logout($account) {
- /* if(!empty(variable_get('nom-'.$user->uid.'')) && !empty(variable_get('prenom-'.$user->uid.'')) && !empty(variable_get('adresse-'.$user->uid.'')) && !empty(variable_get('telephone-'.$user->uid.'')) && !empty(variable_get('mail-'.$user->uid.''))){
+global $user;
 
+  $nom = variable_get('nom_'.$user->uid);
+  $prenom = variable_get('prenom_'.$user->uid);
+  $adresse = variable_get('adresse_'.$user->uid);
+  $tel = variable_get('telephone_'.$user->uid);
+  $email= variable_get('mail_'.$user->uid);
 
-    variable_del('nom-'.$user->uid.'');
-    variable_del('prenom-'.$user->uid.'');
-    variable_del('adresse-'.$user->uid.'');
-    variable_del('telephone-'.$user->uid.'');
-    variable_del('mail-'.$user->uid.'');
+ if(!isset($nom) && !isset($prenom) && !isset($adresse) && !isset($tel) && !isset($email)){
+    variable_del('nom_'.$user->uid);
+    variable_del('prenom_'.$user->uid);
+    variable_del('adresse_'.$user->uid);
+    variable_del('telephone_'.$user->uid);
+    variable_del('mail_'.$user->uid);
 
-    variable_del('nom');
+   /* variable_del('nom');
     variable_del('prenom');
     variable_del('adresse');
     variable_del('telephone');
-    variable_del('mail');
-  }*/
+    variable_del('mail');*/
+  }
 
 }
 
@@ -635,11 +641,8 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
       $email = $infoUser['mail'];
       $tel = $infoUser['telephone'];*/
 
-     // $infoUser = ws_client_getInfoUser() ;
-     // var_dump($infoUser) ; die();
-     
 
-  //$infoPerso = ws_client_getInfoUser();
+   if (in_array('client', array_values($user->roles))) {
 
     $nom = variable_get('nom_'.$user->uid);
     $prenom = variable_get('prenom_'.$user->uid);      
@@ -647,28 +650,29 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
     $adresse = variable_get('adresse_'.$user->uid);    
     $tel = variable_get('telephone_'.$user->uid);
 
-
     $title =$element['#title'];
 
- 
       switch ($title) {
         case 'Nom':
         case 'Nom ':
         case 'nom ':
         case 'nom':
           $element['#default_value'] =  $nom;
-          /*$element['#readonly'] = 'true';*/
+          $element['#attributes']= array('disabled' => '1');
           break;
         case 'Prènom':
         case 'Prenom':
         case 'Prénom':
           $element['#default_value'] = $prenom;
+           $element['#attributes']= array('disabled' => '1');
           break;
          case 'Email':
           $element['#default_value'] = $email;
+          $element['#attributes']= array('disabled' => '1');
           break;
         case 'Téléphone':
           $element['#default_value'] = $tel;
+           $element['#attributes']= array('disabled' => '1');
           break;
         
         default:
@@ -678,6 +682,7 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
     }
 
 }
+
 
 function ws_client_webform_submission_presave($node, &$submission) {
   //var_dump($submission) ;die();
@@ -695,7 +700,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
    //  var_dump($result) ; die();
     if($result->code >=  300 )
     {
-     drupal_set_message("Le devis n'a pas ete créé veuillez verifier les données saisies"  ,'error');
+     drupal_set_message(t("Le devis n'a pas ete créé veuillez verifier les données saisies"  ,'error'));
       switch ($nid) {
         case 8:
            drupal_goto("node/8");

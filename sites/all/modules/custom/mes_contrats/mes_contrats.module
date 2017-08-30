@@ -75,6 +75,7 @@ function mes_contrats_block_view($delta = '') {
               }
               $i++;
             }
+            
             $path= drupal_get_path('module','mes_contrat').'contrat-pdf.php';
 
             $output .=     '<div class="col-lg-1 telechargement-contrat field-contrat">';
