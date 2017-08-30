@@ -119,8 +119,10 @@
                     $account = user_load($user->uid); 
                     if(isset($account)) {
                       //$array = ws_client_getInfoUser();
-                      $array = array('nom' => variable_get('nom') ,
-                                     'prenom' => variable_get('prenom') ) ;
+                      $nom = variable_get('nom_'.$user->uid);
+                      $prenom = variable_get('prenom_'.$user->uid); 
+                      $array = array('nom' =>$nom,
+                                     'prenom' => $prenom) ;
                       $array = isset($array) ? $array : array('nom'=>'Client');
                       print '<span>'.$array['prenom'].'  '.$array['nom']. '</span>';                    
                     }  

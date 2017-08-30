@@ -76,7 +76,7 @@ var_dump($tel); die();
   $form['email'] = array(
     '#type' => 'textfield', 
     '#title' => 'Email',
-    '#default_value' => $mail,
+    '#default_value' => $email,
     '#required' => TRUE,
   );
 
