@@ -921,7 +921,7 @@ form#contact-site-form div:first-child {
 }
 
 #user-register-form  label{
-    width: 32%;
+    width: 33%;
 }
 form#user-register-form {
     padding-left: 24px;
@@ -1012,7 +1012,7 @@ form.webform-client-form
 .form-actions {
     float: right;
 }
-.not-logged-in #user-login .form-actions {
+.not-logged-in.page-user #edit-actions {
     float: none;
 }
 .page-node-2 .webform-next,.page-node-2  .webform-submit, 

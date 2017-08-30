@@ -73,9 +73,7 @@ function ws_client_get_node(){
 
 function ws_client_getIdClient($numeroContrat){
 
-
 	//$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
-
 
   $ip = variable_get('ip_server');
   $root = variable_get('root');
@@ -625,7 +623,8 @@ function ws_client_user_presave(&$edit, $account, $category) {
 
 function ws_client_webform_component_render_alter(&$element, &$component) {
    global $user;
-  
+   //krumong('main')->kPrint($element) ;
+   //$element['#readonly'] = 'true';
    if (in_array('client', array_values($user->roles))) {
      // $infoUser = ws_client_getInfoUser() ;
     // var_dump($infoUser) ; die();
@@ -658,6 +657,7 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
         case 'nom ':
         case 'nom':
           $element['#default_value'] =  $nom;
+          /*$element['#readonly'] = 'true';*/
           break;
         case 'Prènom':
         case 'Prenom':
