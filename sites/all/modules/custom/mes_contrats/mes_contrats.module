@@ -44,7 +44,6 @@ function mes_contrats_block_view($delta = '') {
     $get_service_contrats = isset($get_service_contrats) ? $get_service_contrats : $get_test_contrats;
 
     $title .=   t('Mes Contrats');
-
     $output .= '<div class="item-mes-contrats">';
     foreach ($get_service_contrats as $contrat) {
       # code...
@@ -76,11 +75,13 @@ function mes_contrats_block_view($delta = '') {
               }
               $i++;
             }
+            $path= drupal_get_path('module','mes_contrat').'contrat-pdf.php';
+
             $output .=     '<div class="col-lg-1 telechargement-contrat field-contrat">';
-            $output .=       '<a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>';      
+            $output .=       '<a href="'.$path.'" download="contrat-pdf.php"><i class="fa fa-download" aria-hidden="true"></i></a>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 visualisation-contrat field-contrat">';
-            $output .=       '<a href="contrat-pdf.php"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
+            $output .=       '<a href="http://localhost/pdf" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 requete-contrat field-contrat">';
             $output .=       '<a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';      

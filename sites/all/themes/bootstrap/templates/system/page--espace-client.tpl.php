@@ -119,8 +119,10 @@ module_load_include('module','ws_client');
                     $account = user_load($user->uid); 
                     if(isset($account)) {
                       //$array = ws_client_getInfoUser();
+                      $array = array('nom' => variable_get('nom') ,
+                                     'prenom' => variable_get('prenom') ) ;
                       $array = isset($array) ? $array : array('nom'=>'Client');
-                      print '<span>'.$array['nom']. '</span>';                    
+                      print '<span>'.$array['prenom'].'  '.$array['nom']. '</span>';                    
                     }  
                ?>
              </div>
