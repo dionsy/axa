@@ -24,7 +24,7 @@ function ws_client_admin_form($form, &$form_state){
     $form['ws_client_end_point']['root'] = array(
       '#title' => 'Racine',
       '#type' => 'textfield',
-      '#default_value' => variable_get('root', 'ServicesCompte.svc'),
+      '#default_value' => variable_get('root', 'Service1.svc'),
       '#required' => TRUE,
     );
 
