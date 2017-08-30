@@ -591,13 +591,15 @@ function ws_client_user_login(&$edit, $account) {
 
 
 function ws_client_user_logout($account) {
+global $user;
+
   $nom = variable_get('nom_'.$user->uid);
   $prenom = variable_get('prenom_'.$user->uid);
   $adresse = variable_get('adresse_'.$user->uid);
   $tel = variable_get('telephone_'.$user->uid);
   $email= variable_get('mail_'.$user->uid);
 
- if(!empty($nom) && !empty($prenom) && !empty($adresse) && !empty($tel) && !empty($email)){
+ if(!isset($nom) && !isset($prenom) && !isset($adresse) && !isset($tel) && !isset($email)){
     variable_del('nom_'.$user->uid);
     variable_del('prenom_'.$user->uid);
     variable_del('adresse_'.$user->uid);
@@ -629,29 +631,15 @@ function ws_client_user_presave(&$edit, $account, $category) {
 
 function ws_client_webform_component_render_alter(&$element, &$component) {
    global $user;
-  
+
+
    if (in_array('client', array_values($user->roles))) {
-     // $infoUser = ws_client_getInfoUser() ;
-    // var_dump($infoUser) ; die();
-   
-    /*  $nom = $infoUser['nom'];
-      $prenom = $infoUser['prenom'];
-      
-      $email = $infoUser['mail'];
-      $tel = $infoUser['telephone'];*/
-
-     // $infoUser = ws_client_getInfoUser() ;
-     // var_dump($infoUser) ; die();
-     
-
-  //$infoPerso = ws_client_getInfoUser();
 
     $nom = variable_get('nom_'.$user->uid);
     $prenom = variable_get('prenom_'.$user->uid);      
     $email = variable_get('mail_'.$user->uid);
     $adresse = variable_get('adresse_'.$user->uid);    
     $tel = variable_get('telephone_'.$user->uid);
-
 
     $title =$element['#title'];
 
@@ -661,17 +649,21 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
         case 'nom ':
         case 'nom':
           $element['#default_value'] =  $nom;
+          $element['#attributes']= array('disabled' => '1');
           break;
         case 'Prènom':
         case 'Prenom':
         case 'Prénom':
           $element['#default_value'] = $prenom;
+           $element['#attributes']= array('disabled' => '1');
           break;
          case 'Email':
           $element['#default_value'] = $email;
+          $element['#attributes']= array('disabled' => '1');
           break;
         case 'Téléphone':
           $element['#default_value'] = $tel;
+           $element['#attributes']= array('disabled' => '1');
           break;
         
         default:
@@ -681,6 +673,7 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
     }
 
 }
+
 
 function ws_client_webform_submission_presave($node, &$submission) {
   //var_dump($submission) ;die();
@@ -698,7 +691,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
    //  var_dump($result) ; die();
     if($result->code >=  300 )
     {
-     drupal_set_message("Le devis n'a pas ete créé veuillez verifier les données saisies"  ,'error');
+     drupal_set_message(t("Le devis n'a pas ete créé veuillez verifier les données saisies"  ,'error'));
       switch ($nid) {
         case 8:
            drupal_goto("node/8");

@@ -194,6 +194,7 @@
                     'data-dialog-options' => '{"width":"40%"}',
                   )
                 ));
+
               }
               else{
                 $href=$base_url.'/?q=node/2&qt-left_menu=8#qt-left_menu';
