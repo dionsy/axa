@@ -72,7 +72,9 @@
  *
  * @ingroup templates
  */
-
+global $user; 
+$nom=variable_get('nom_'.$user->uid);
+ echo 'NOM USER'.$nom;
 ?>
 <div class="fix-footer">
   <div class="page">

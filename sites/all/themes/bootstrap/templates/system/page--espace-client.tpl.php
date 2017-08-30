@@ -1,5 +1,5 @@
 <?php
-module_load_include('module','ws_client');
+//module_load_include('module','ws_client');
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
