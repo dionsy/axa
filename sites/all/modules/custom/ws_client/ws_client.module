@@ -103,8 +103,8 @@ function ws_client_getInfoUser(){
   $url = 'http://'. $ip .'/'. $root .'/' . $info_user .'/'. $identifiant;
   $options = array('timeout' => 500.0) ;
   $request = drupal_http_request($url ,$options) ;
+  //var_dump($request) ; die();
   $data = drupal_json_decode($request->data) ;
-  // var_dump($data) ; die();
 /*  if(!empty($data))
   {*/
     $returnArray = array(
@@ -114,7 +114,7 @@ function ws_client_getInfoUser(){
       'telephone' => $data['telephone'] ,
       'mail' => $data['mail'], 
     );
-   // var_dump($returnArray) ; die();
+   //var_dump($returnArray) ; die();
     return $returnArray ;
   /*}*/
 
@@ -592,7 +592,7 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
   
    if (in_array('client', array_values($user->roles))) {
       $infoUser = ws_client_getInfoUser() ;
-     // var_dump($infoUser) ; die();
+     var_dump($infoUser) ; die();
    
       $nom = $infoUser['nom'];
       $prenom = $infoUser['prenom'];

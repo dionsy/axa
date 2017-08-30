@@ -80,14 +80,20 @@
 }
 #block-views-faq-block-1 .view-footer a,
 #block-views-slide-block .views-more-link{
-    background-color: #3D900B;
-    width: 106px;
+    background-color: transparent;
+    width: 38%;
     padding: .5rem;
-    color: #fff;
+    color: rgba(0, 0, 0, 0.75);
     text-align: center;
     margin-top: 1rem;
-    font-size: 1.5rem;
-    font-weight: normal;
+    font-size: 1.3rem;
+    font-weight: bolder;
+     border: 1px solid rgb(255, 255, 255);  
+}
+#block-views-faq-block-1 .view-footer a:hover,
+#block-views-slide-block .views-more-link:hover {
+ background-color: white;
+ border: 1px solid black;  
 }
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
@@ -101,7 +107,7 @@ body
     background-attachment: fixed;
      overflow-x: hidden;
      font-family: sans-serif,georgia,"OpenSans",Arial,Helvetica,sans-serif;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.3px;
     
     
 }
@@ -1818,21 +1824,21 @@ h1, .h1, h2, .h2, h3, .h3{
 }
 
 #block-views-faq-block-1 h2{
-/*    font-size: 17px !important;*/
     text-align: center;
-     background: #B58CBC;  
+     background: rgb(204, 204, 204) none repeat scroll 0 0;  
      margin: 0;
-     font-size: 30px;
-font-weight: 300;
-line-height: 36px;
-/*margin-top: 15px;*/
-color: rgb(255, 255, 255);
+     font-size: 25px;
+     padding-top: 5px;
+    font-weight: 300;
+    line-height: 36px;
+    /*margin-top: 15px;*/
+    color: rgba(0, 0, 0, 0.80);
 }
 #block-views-faq-block-1{
     padding-right: 0;
 }
 #block-views-faq-block-1 .view-display-id-block_1{
-    background: #B58CBC;    
+    background: rgb(204, 204, 204) none repeat scroll 0 0 ;   
    /* margin-left: 1em;*/
     min-height:298px;
     padding: 10px 20px 20px;
@@ -1850,7 +1856,7 @@ color: rgb(255, 255, 255);
     left: 39%;
 }
 #block-views-faq-block-1 .view-display-id-block_1 li a{
-    color: #fff;
+    color: rgba(0, 0, 0, 0.75);
     font-size: 100%;
 }
 #block-views-faq-block-1 .view-display-id-block_1 li a:before{
