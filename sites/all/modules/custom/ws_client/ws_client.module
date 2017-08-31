@@ -566,6 +566,10 @@ function ws_client_update_info_user($array_data) {
 
 function ws_client_user_login(&$edit, $account) {
  // URL Webservice
+ 
+
+}
+function ws_client_init() {
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $info_user = variable_get('retrieve_info_user');
@@ -573,11 +577,14 @@ function ws_client_user_login(&$edit, $account) {
   global $user;
 
   $account = user_load($user->uid);
-
-  if(!in_array('client', array_values($user->roles)))
-    $user->roles[]='client';
- // var_dump($user->roles); die();
+ 
+ //var_dump($account); die();
+ if(!empty($account->field_identifiant_client)){
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+   if(!in_array('client', array_values($user->roles))){
+    $user->roles[]='client';
+  }
   //$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
 
   $url = 'http://'. $ip .'/'. $root .'/' . $info_user .'/'. $identifiant;
@@ -591,8 +598,8 @@ function ws_client_user_login(&$edit, $account) {
   variable_set('adresse_'.$user->uid, $data['adresse']);
   variable_set('telephone_'.$user->uid, $data['telephone']);
   variable_set('mail_'.$user->uid, $data['mail']);
+ }
 }
-
 
 function ws_client_user_logout($account) {
 global $user;
