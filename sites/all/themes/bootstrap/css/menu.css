@@ -123,7 +123,7 @@ section#block-menu-menu-menu-top ul li:hover a{
    top:-3000px;
    min-height: 300px;
    padding-left: 20px;
-    padding-top: 60px;
+    padding-top: 5%;
 }
 #block-menu-menu-menu-principal ul li.auto ul.dropdown-menu {
     border: 3px solid rgb(0, 77, 146);
@@ -1646,6 +1646,15 @@ background-color: #004D92;
 .plaisance a:before{
     content: "\f21a";
 }
+.rc_du_chef_de_famille a:before{
+    content: "\f0c0";
+}
+.rc_chasse a:before{
+    content: "\f2c5";
+}
+.rc_chevaux_de_selle a:before{
+    content: "\f2d9";
+}
 .plaisance a:before,
 .comment_souscrire_ a:before,
 .individuelle_accidents_particuliers a:before,
@@ -1655,7 +1664,10 @@ li.assurance_voyage a:before,
 .que_faire_en_cas_de_sinistre a:before,
 .mrh_premium a:before,
 .multirisque_immeuble a:before,
-.incendie_particulier a:before{
+.incendie_particulier a:before,
+.rc_du_chef_de_famille a:before,
+.rc_chasse a:before,
+.rc_chevaux_de_selle a:before{
     font-family: "FontAwesome";
     font-size: 33px;
     padding-right: .7em;

@@ -21,7 +21,7 @@ function mes_devis_block_view($delta = '') {
   	$output = '';
 
     $get_service_devis = ws_client_get_liste_devis();
-    $get_test_devis = array(
+    /*$get_test_devis = array(
         array(
             'type' => 'Type de vehicule',
             'tableau' => array(
@@ -105,7 +105,7 @@ function mes_devis_block_view($delta = '') {
       ),
 
       
-    );
+    );*/
 
 
     $get_service_devis = isset($get_service_devis) ? $get_service_devis : $get_test_devis;

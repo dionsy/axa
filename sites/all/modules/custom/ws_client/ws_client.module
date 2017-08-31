@@ -440,10 +440,6 @@ if(isset($data)){
   return $returnArray;
 }
 
-
-
-
-
 function ws_client_get_echeance(){
   $ip = variable_get('ip_server');
   $root = variable_get('root');
