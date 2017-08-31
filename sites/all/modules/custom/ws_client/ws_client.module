@@ -349,6 +349,95 @@ function ws_client_get_liste_contrats(){
   return $returnArray;
 }
 
+function ws_client_get_contrat_by_num($num_contrat){
+  // URL Webservice
+  $ip = variable_get('ip_server');
+  $root = variable_get('root');
+  $contrat = 'contrat';
+  $table = array();
+
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+  $url = 'http://'. $ip .'/'. $root .'/' . $contrat .'/'. $num_contrat;
+
+  $options = array('timeout' => 6000.0) ;
+  /*$request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;*/
+  $data = array(
+    'adresseLogement' => null,
+    'carburant' =>  100000001,
+    'debut' => '12/05/2016',
+    'echeance' => '12/05/2017',
+    'id' => null,
+    'locataire' => false,
+    'marque' => 'Bmw',
+    'modele' => 'A16',
+    'montant' => 0,
+    'nbPieces' => 0,
+    'principal' => false,
+    'puissance' => 8,
+    'service' => null,
+    'typeAssurance' => 0,
+    'typeContrat' => 'Automobile',
+    'typeLogement' => 0,
+    'valeurAneuf' => 50000000,
+  );
+
+  if ($data['typeContrat'] === 'Automobile') {
+    # code...
+    $table['thead'] = array(
+      'num_contrat' => 'Numéro Contrat',
+      'type' => 'Type du contrat',
+      'marque' => 'Marque',
+      'modele' => 'Modèle',
+      'puissance' => 'Puissance',
+      'valeur' => 'Valeur à neuf',
+      'debut' => 'Date début contrat ',
+      'fin' => 'Date fin contrat',
+      'carburant' => 'Carburant',
+    );
+
+    $table['tbody'] = array(
+      'num_contrat' => $num_contrat,
+      'type' => 'Automobile',
+      'marque' => $data['marque'],
+      'modele' => $data['modele'],
+      'puissance' => $data['puissance'],
+      'valeur' => $data['valeurAneuf'],
+      'debut' => $data['debut'],
+      'fin' => $data['echeance'],
+      'carburant' => $data['carburant'],
+    );
+
+  }
+
+  if ($data['typeContrat'] === 'Assistance') {
+    # code...
+    $table['thead'] = array(
+      'numContrat' => 'Numéro Contrat',
+      'type' => 'Type du contrat',
+      'type_assurance' => 'Type Assurance',
+      'debut' => 'Date début contrat ',
+      'fin' => 'Date fin contrat',
+    );
+
+    $table['tbody'] = array(
+      'numContrat' => $num_contrat,
+      'type' => 'Automobile',
+      'type_assurance' => $data['typeAssurance'],
+      'debut' => $data['debut'],
+      'fin' => $data['echeance'],
+    );
+
+  }
+  
+  
+  return $table;
+}
+
+
 function ws_client_get_liste_devis(){
   // URL Webservice
   $ip = variable_get('ip_server');

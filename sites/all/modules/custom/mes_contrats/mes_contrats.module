@@ -1,18 +1,80 @@
 <?php
 module_load_include('module','ws_client');
 
+/**
+ * Implements hook_requirements()
+ */
+function mes_contrats_requirements($phase) {
+  $requirements = array();
+  if ($phase == 'runtime') {
+    $t = get_t();
+    if ($path = libraries_get_path('fpdf')) {
+      if (file_exists($path . '/fpdf.php')) {
+        $requirements['fpdf'] = array(
+          'title' => $t('FPDF'),
+          'value' => $t('fpdf.php found under !path', array('!path' => $path . '/fpdf.php')),
+          'severity' => REQUIREMENT_OK,
+        );
+        return $requirements;
+      }
+    }
+    $requirements['fpdf'] = array(
+      'title' => $t('FPDF'),
+      'value' => $t('FPDF library was not found. !download the library and place in under sites/all/libraries/fpdf, so that the library can be found at sites/all/libraries/fpdf/fpdf.php.', array('!download' => l(t('Download'), 'http://www.fpdf.org/'))),
+      'severity' => REQUIREMENT_ERROR,
+    );
+  }
+  return $requirements;
+}
+
+
+/**
+ * Implements hook_libraries_info().
+ */
+function mes_contrats_libraries_info() {
+  $libraries = array();
+  $libraries['fpdf'] = array(
+    'name' => 'FPDF',
+    'vendor url' => 'http://www.fpdf.org/',
+    'download url' => 'http://www.fpdf.org/',
+    'files' => array(
+      'php' => array(
+        'fpdf.php',
+      ),
+    ),
+    'version arguments' => array(
+      'file' => 'fpdf.php',
+      'pattern' => '/((\d+).(\d+))/',
+      'lines' => 6,
+    ),
+  );
+
+  return $libraries;
+}
+
+
 function mes_contrats_menu() {
-  $items['contrat'] = array(
+  $items['contrat/%'] = array(
     'page callback' => 'detail_contrat',
-    'page arguments' => array(0),
+    'page arguments' => array(1),
+    'access callback' => TRUE,
   );
 
   return $items;
 }
 
 function detail_contrat($arg) {
-  print_r($arg); die();
-  return $arg;
+  libraries_load('fpdf');
+  $contrat =  ws_client_get_contrat_by_num($arg);
+
+  $html = $contrat['thead']['num_contrat'] . ':' . $contrat['tbody']['num_contrat'] . ',' . $contrat['thead']['type'] . ':' . $contrat['tbody']['type'] . ',' .$contrat['thead']['marque'] . ':' . $contrat['tbody']['marque'];  
+  
+  $pdf=new FPDF();
+  $pdf->AddPage();
+  $pdf->SetFont('Arial','B',16);
+  $pdf->Cell(40,10,$html);
+  $pdf->Output();
+
 }
 
 
@@ -55,13 +117,13 @@ function mes_contrats_block_view($delta = '') {
         'type' => 'Auto',
         'info' => array(
                     array(
-                      'id' =>'25123596870',
+                      'id' =>'CNTR00000027',
                       'modele' => 'AUTO ECO',
                       'marque' => 'BMW',
                     ),
                     array(
-                      'id' =>'25456789321',
-                      'modele' => 'SOLUTION CONFORT',
+                      'id' =>'CNTR00000027',
+                      'modele' => 'CONFORT',
                       'marque' => 'Mercedes',
                     ),
                   ),
@@ -71,7 +133,7 @@ function mes_contrats_block_view($delta = '') {
         'type' => 'Habitation',
         'info' => array(
                     array(
-                      'id' =>'25456789321',
+                      'id' =>'CNTR00000031',
                       'type_logement' => 'MRH PREMIUM',
                       'adresse' => 'Mermoz',
                     ),
@@ -82,7 +144,7 @@ function mes_contrats_block_view($delta = '') {
         'type' => 'Accident',
         'info' => array(
                     array(
-                      'id' =>'25012547896',
+                      'id' =>'CNTR00000024',
                       'produit' => 'Individuelle Accident',
                     ),
                   ),
@@ -116,7 +178,7 @@ function mes_contrats_block_view($delta = '') {
               # code...
               if($i==0){
                 $output .=     '<div class="col-lg-3 field-contrat">';
-                $output .=       '<span><a href="'. $numContrat .'">'. $value .'</a></span>';      
+                $output .=       '<span>'.l($value,'contrat/'. $numContrat).'</span>';       
                 $output .=     '</div>';    
               }
               elseif($i==1){
