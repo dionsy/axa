@@ -19,8 +19,6 @@ function mes_devis_block_view($delta = '') {
   if ($delta == 'mes_devis') {
     $title = '';
   	$output = '';
-
-
     $get_service_devis = ws_client_get_liste_devis();
     $get_test_devis = array(
         array(

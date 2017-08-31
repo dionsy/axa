@@ -2098,13 +2098,26 @@ input.nmpd-display {
 .search-result h3 {
     font-size: 20px;
 }
+.search-result h3:before {
+    content: "\f054"; 
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    margin-right: 5px;
+    color: #CCCCCC;
+}
 .search-result h3 a{
-    color: black ! important;
+    color: #2860CB ! important;
 }
 .search-results .search-result {
     border-bottom: 1px solid rgb(232, 232, 232);
     padding-bottom: 15px;
 }
+.search-snippet-info {
+    margin-left: 2%;
+}
 .pagination {
     display: block;
+}
+.search-results.node-results {
+    margin-top: 20px;
 }
