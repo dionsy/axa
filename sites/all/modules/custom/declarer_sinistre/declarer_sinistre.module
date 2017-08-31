@@ -85,7 +85,7 @@ function fixer_declarer_sinistre_form($form, &$form_state){
       ),
 
     );
-  $contrats = ws_client_get_liste_contrats();
+  //$contrats = ws_client_get_liste_contrats();
 
   foreach ($contrats as $contrat_devis) {
     # code...

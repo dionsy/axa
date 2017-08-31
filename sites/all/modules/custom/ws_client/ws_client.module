@@ -47,34 +47,34 @@ function ws_client_menu() {
   return $items;
 }
 
-  /**
-  * @file
-  * Web services Client
-  */
+	/**
+	* @file
+	* Web services Client
+	*/
 function  ws_client_block_info() {
-  $blocks['ws_client_block_info'] = array('info' => t('web service client'));
-  return $blocks ;
+	$blocks['ws_client_block_info'] = array('info' => t('web service client'));
+	return $blocks ;
 }
 function  ws_client_block_view($delta = '') {
-  $block['content'] = '<h1>Web Services client</h1>';
-  $get_node_result = ws_client_getClient_node();
-  /*krumong('main')->kPrint($get_node_result);*/  
-  $data = json_decode($get_node_result->data);
-  /*krumong('main')->kPrint($data);*/
-  return $block ;
+	$block['content'] = '<h1>Web Services client</h1>';
+	$get_node_result = ws_client_getClient_node();
+	/*krumong('main')->kPrint($get_node_result);*/	
+	$data = json_decode($get_node_result->data);
+	/*krumong('main')->kPrint($data);*/
+	return $block ;
 }
 
 function ws_client_get_node(){
-  $url = "http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/" ;
+	$url = "http://192.168.43.145/ServicesCompte.svc/compte/espaceClient/AXA00000004/" ;
   $options = array('timeout' => 6000.0) ;
-  return drupal_http_request($url , $options) ;
+	return drupal_http_request($url , $options) ;
 }
 
 
 function ws_client_getIdClient($numeroContrat){
 
 
-  //$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
+	//$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
 
 
   $ip = variable_get('ip_server');
@@ -84,7 +84,7 @@ function ws_client_getIdClient($numeroContrat){
   $url = 'http://'. $ip .'/'. $root .'/' . $id_client .'/'. $numeroContrat;
 
   $options = array('timeout' => 6000.0) ;
-  $request = drupal_http_request($url ,$options) ;
+	$request = drupal_http_request($url ,$options) ;
 
   return drupal_json_decode($request->data);
 }
@@ -660,50 +660,6 @@ if(isset($data)){
   return $returnArray;
 }
 
-
-
-
-
-function ws_client_get_echeance(){
-  $ip = variable_get('ip_server');
-  $root = variable_get('root');
-  $liste_echeances = variable_get('retrieve_liste_echeances');
-  $returnArray = array();
-  
-  global $user;
-  $account = user_load($user->uid);
-  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
-
-  $url = 'http://'. $ip .'/'. $root .'/' . $liste_echeances .'/'. $identifiant;
-
-  //$url = "http://192.168.200.16/Service1.svc/listeEcheances/" .$identifiant. "";
-
-  $options = array('timeout' => 6000.0) ;
-  $request = drupal_http_request($url ,$options) ;
-  $data = drupal_json_decode($request->data) ;
-
-  $returnArray['thead'] = array(
-    'NumContrat' => t('N° Contrat'),
-    'produit' => t('Produit'),
-    'caracteristiques' => t('Caractéristiques'),
-    'mode_echeance' => t('Mode d\'echeance'),
-    'prochaine_echeance' => t('Prochaine échéance'),
-  );
-
-  foreach ($data as $echeance) {
-    $returnArray['tbody'][] = array(
-      'NumContrat' => $echeance['numContrat'],
-      'produit' => $echeance['produit'],
-      'caracteristiques' => $echeance['caracteristiques'],
-      'mode_echeance' => $echeance['modeEcheance'],
-      'prochaine_echeance' => $echeance['prochaineEcheance'],
-    );
-  }
-   } 
-  return $returnArray;
-}
-
-
 function ws_client_get_info_conseiller(){
   //URL WEBSERVICE
   $ip = variable_get('ip_server');
@@ -802,9 +758,9 @@ function ws_client_user_presave(&$edit, $account, $category) {
 
   if(isset( $edit['field_numero_contrat']['und'][0]['value']))
   {
-    $numContrat = $edit['field_numero_contrat']['und'][0]['value']   ;
-    $identifiantClient = ws_client_getIdClient($numContrat);
-    if(!empty($identifiantClient) ) 
+  	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
+  	$identifiantClient = ws_client_getIdClient($numContrat);
+    if(!empty($identifiantClient) )	
     $edit['field_identifiant_client']['und'][0]['value'] = $identifiantClient ;
   }
     /*var_dump($result) ;  die();*/
