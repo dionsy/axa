@@ -122,6 +122,73 @@ function ws_client_getInfoUser(){
   
 }*/
 
+function ws_client_get_liste_echeances(){
+  // URL Webservice
+  $ip = variable_get('ip_server');
+  $root = variable_get('root');
+  $liste_contrats = variable_get('retrieve_liste_contrats');
+
+
+  $returnArray = array();
+
+  $logement = array(
+    0 => 'Bintou corrige',
+    100000000 => 'Appartement',
+    100000001 => 'Maison',
+    100000002 => 'Autres',
+  );
+
+  global $user;
+  $account = user_load($user->uid);
+  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
+
+  $url = 'http://'. $ip .'/'. $root .'/' . $liste_contrats .'/'. $identifiant;
+
+  $options = array('timeout' => 6000.0) ;
+  $request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;
+  
+  //var_dump($data); die();
+  
+  $table['thead'] = array(
+      'NumContrat' => t('N° Contrat'),
+      'caracteristiques' => t('Caractéristiques'),
+      'mode_echeance' => t('Mode d\'echeance'),
+      'prochaine_echeance' => t('Prochaine échéance'),
+    );
+    
+    $i=0;
+    //var_dump($data);
+    foreach ($data as $echeance) {
+      # code...
+      $table['tbody'][$i]['NumContrat'] = $echeance['id'];
+      if ($echeance['typeContrat'] == 'Habitation') {
+        # code...
+      $table['tbody'][$i]['caracteristiques'] = $echeance['adresseLogement'];
+      }
+      if ($echeance['typeContrat'] == 'Automobile') {
+        # code...
+      $table['tbody'][$i]['caracteristiques'] = $echeance['modele'];
+      }
+      if ($echeance['typeContrat'] == 'Accident') {
+        # code...
+      $table['tbody'][$i]['caracteristiques'] = 'aaa';
+      }
+      if ($echeance['typeContrat'] == 'Loisir') {
+        # code...
+      $table['tbody'][$i]['caracteristiques'] = 'bbb';
+      }
+      $table['tbody'][$i]['mode_echeance'] = t('Annuelle');
+      $table['tbody'][$i]['prochaine_echeance'] = $echeance['echeance']; 
+      
+      $i=$i+1;
+    }
+
+  //var_dump($table);
+  
+  return $table;
+}
+
 function ws_client_get_liste_sinistres(){
   // URL Webservice
   $ip = variable_get('ip_server');
@@ -351,90 +418,90 @@ function ws_client_get_liste_devis(){
   $data = drupal_json_decode($request->data) ;
 if(isset($data)){
 
-  foreach ($data as $assurance) {
-    # code...
-    if ($assurance['typeContrat'] == 'Habitation') {
+    foreach ($data as $assurance) {
       # code...
-      $habitation['type'] = 'Type habitation';
-      $i = 0;
-      foreach ($assurance as $key => $value) {
+      if ($assurance['typeContrat'] == 'Habitation') {
         # code...
-        if($value == TRUE && $key != 'typeContrat'){
-          
-          if ($key == 'typeLogement') {
-            # code...
-            $value = $logement[$value];
-          }
+        $habitation['type'] = 'Type habitation';
+        $i = 0;
+        foreach ($assurance as $key => $value) {
+          # code...
+          if($value == TRUE && $key != 'typeContrat'){
+            
+            if ($key == 'typeLogement') {
+              # code...
+              $value = $logement[$value];
+            }
 
-          $habitation['tableau'][$i] = array(
-              $type_habitation[$key],
+            $habitation['tableau'][$i] = array(
+                $type_habitation[$key],
+                $value,
+            );
+          }
+        $i = $i + 1;   
+        }
+      $returnArray[] = $habitation;
+      }
+
+      if ($assurance['typeContrat'] == 'Automobile') {
+        # code...
+        $auto['type'] = 'Type Auto';
+        $i = 0;
+        foreach ($assurance as $key => $value) {
+          # code...
+          if($value == TRUE && $key != 'typeContrat'){
+            $auto['tableau'][$i] = array(
+              $type_auto[$key],
               $value,
-          );
-        }
-      $i = $i + 1;   
-      }
-    $returnArray[] = $habitation;
-    }
-
-    if ($assurance['typeContrat'] == 'Automobile') {
-      # code...
-      $auto['type'] = 'Type Auto';
-      $i = 0;
-      foreach ($assurance as $key => $value) {
-        # code...
-        if($value == TRUE && $key != 'typeContrat'){
-          $auto['tableau'][$i] = array(
-            $type_auto[$key],
-            $value,
-          );
-        }
-      $i = $i + 1; 
-      }
-    $returnArray[] = $auto;
-    }
-
-    if ($assurance['typeContrat'] == 'Assistance & Accidents') {
-      # code...
-      $accident['type'] = 'Type Assistance & Accidents';
-      $i=0;
-      foreach ($assurance as $key => $value) {
-        # code...
-        if($value == TRUE && $key != 'typeContrat'){
-           if ($key == 'typeAssurance') {
-            # code...
-            $value = $accident_tab[$value];
+            );
           }
-          $accident['tableau'][$i] = array(
-            $type_accident[$key],
-            $value,
-          );
+        $i = $i + 1; 
         }
-      $i = $i + 1; 
+      $returnArray[] = $auto;
       }
-    $returnArray[] = $accident;
-    }
 
-    if ($assurance['typeContrat'] == 'Loisirs-Vie privée') {
-      # code...
-      $loisir['type'] = 'Loisirs-Vie privée';
-      $i=0;
-      foreach ($assurance as $key => $value) {
+      if ($assurance['typeContrat'] == 'Assistance & Accidents') {
         # code...
-        if($value == TRUE && $key != 'typeContrat'){
-          if ($key == 'typeAssurance') {
-            # code...
-            $value = $loisir_tab[$value];
+        $accident['type'] = 'Type Assistance & Accidents';
+        $i=0;
+        foreach ($assurance as $key => $value) {
+          # code...
+          if($value == TRUE && $key != 'typeContrat'){
+             if ($key == 'typeAssurance') {
+              # code...
+              $value = $accident_tab[$value];
+            }
+            $accident['tableau'][$i] = array(
+              $type_accident[$key],
+              $value,
+            );
           }
-          $loisir['tableau'][$i] = array(
-            $type_loisir[$key],
-            $value,
-          );
+        $i = $i + 1; 
         }
-      $i = $i + 1; 
+      $returnArray[] = $accident;
       }
-    $returnArray[] = $loisir;
-    }
 
+      if ($assurance['typeContrat'] == 'Loisirs-Vie privée') {
+        # code...
+        $loisir['type'] = 'Loisirs-Vie privée';
+        $i=0;
+        foreach ($assurance as $key => $value) {
+          # code...
+          if($value == TRUE && $key != 'typeContrat'){
+            if ($key == 'typeAssurance') {
+              # code...
+              $value = $loisir_tab[$value];
+            }
+            $loisir['tableau'][$i] = array(
+              $type_loisir[$key],
+              $value,
+            );
+          }
+        $i = $i + 1; 
+        }
+      $returnArray[] = $loisir;
+      }
+    }
   }
     
   return $returnArray;
