@@ -72,17 +72,11 @@ function ws_client_get_node(){
 
 
 function ws_client_getIdClient($numeroContrat){
-
-
-	//$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
-
-
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $id_client = variable_get('retrieve_client_id');
 
   $url = 'http://'. $ip .'/'. $root .'/' . $id_client .'/'. $numeroContrat;
-
   $options = array('timeout' => 6000.0) ;
 	$request = drupal_http_request($url ,$options) ;
 
@@ -281,13 +275,6 @@ function ws_client_get_liste_contrats(){
   global $user;
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
-
-
-  /*$identifiant = 'AXA00000000';*/
-
-
-  //$url = "http://192.168.200.16/Service1.svc/listeContrats/" .$identifiant. "";
-
 
  $url = 'http://'. $ip .'/'. $root .'/' . $liste_contrats .'/'. $identifiant;
   
@@ -596,6 +583,7 @@ if(isset($data)){
   return $returnArray;
 }
 
+
 function ws_client_get_info_conseiller(){
   //URL WEBSERVICE
   $ip = variable_get('ip_server');
@@ -677,19 +665,15 @@ function ws_client_update_info_user($array_data) {
 }
 
 function ws_client_user_login(&$edit, $account) {
- // URL Webservice
  
-
 }
+
 function ws_client_init() {
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $info_user = variable_get('retrieve_info_user');
-
   global $user;
-
-  $account = user_load($user->uid);
- 
+  $account = user_load($user->uid); 
  //var_dump($account); die();
  if(!empty($account->field_identifiant_client)){
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
@@ -714,8 +698,7 @@ function ws_client_init() {
 }
 
 function ws_client_user_logout($account) {
-global $user;
-
+  global $user;
   $nom = variable_get('nom_'.$user->uid);
   $prenom = variable_get('prenom_'.$user->uid);
   $adresse = variable_get('adresse_'.$user->uid);
@@ -723,11 +706,11 @@ global $user;
   $email= variable_get('mail_'.$user->uid);
 
  if(!isset($nom) && !isset($prenom) && !isset($adresse) && !isset($tel) && !isset($email)){
-    variable_set('nom_'.$user->uid,NULL);
-    variable_set('prenom_'.$user->uid,NULL);
-    variable_set('adresse_'.$user->uid,NULL);
-    variable_set('telephone_'.$user->uid,NULL);
-    variable_set('mail_'.$user->uid,NULL);
+    variable_set('nom_'.$user->uid,'');
+    variable_set('prenom_'.$user->uid,'');
+    variable_set('adresse_'.$user->uid,'');
+    variable_set('telephone_'.$user->uid,'');
+    variable_set('mail_'.$user->uid,'');
 
    /* variable_del('nom');
     variable_del('prenom');
@@ -985,7 +968,3 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
           }
           return $result ;
 }
-
-
-
-
