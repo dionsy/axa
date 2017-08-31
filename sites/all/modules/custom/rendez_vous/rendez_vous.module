@@ -40,7 +40,7 @@ function rendez_vous_block_info() {
  */
 function rendez_vous_block_view($delta = '') {
   
-  $get_service_conseiller = ws_client_get_info_conseiller();
+  //$get_service_conseiller = ws_client_get_info_conseiller();
   /*$get_service_conseiller = array(
     'nomComplet' => 'Aliou Samba Wele',
     'adresse' => 'Gueule Tapée',
@@ -149,7 +149,7 @@ function axa_rendez_vous_form_submit($form, &$form_state){
     global $user;
     $account = user_load_by_name($user->name);
 
-    $get_service_conseiller = ws_client_get_info_conseiller();
+    //$get_service_conseiller = ws_client_get_info_conseiller();
     $get_service_conseiller = array(
       'nomComplet' => 'Aliou Samba Wele',
       'adresse' => 'Gueule Tapée',
