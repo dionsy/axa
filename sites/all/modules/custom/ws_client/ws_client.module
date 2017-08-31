@@ -123,7 +123,7 @@ function ws_client_get_liste_echeances(){
   $liste_contrats = variable_get('retrieve_liste_contrats');
 
 
-  $returnArray = array();
+  $returnArray = array(); 
 
   $logement = array(
     0 => 'Bintou corrige',

@@ -27,7 +27,7 @@ function echeances_block_view($delta = '') {
     $text_contact = t('Pour toute information supplémentaire contacter votre conseiller');
     $output = '';
 
-    $get_service_echeance = ws_client_get_liste_echeances();
+    //$get_service_echeance = ws_client_get_liste_echeances();
 
     $table = array(
       'thead' => array(
