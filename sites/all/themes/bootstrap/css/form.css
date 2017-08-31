@@ -188,6 +188,7 @@ form div:first-child{
 }
 #user-register-form div:first-child,
 #user-login div:first-child,
+#webform-component-marque div:first-child,
 .webform-progressbar {
     transform: none !important;
     width: 100% !important;
@@ -414,7 +415,7 @@ html.js input.webform-calendar {
 }
 #edit-submitted-energie-du-vehicule {
     display: inline;
-    margin-left: 30px;
+    margin-left: 9%;
 }
 
 #webform-client-form-8 .form-item-submitted-marque{
@@ -430,7 +431,7 @@ html.js input.webform-calendar {
     display: inline;
 }
 #webform-client-form-8 .form-item-submitted-marque label{
-    margin-right: 20px;
+    margin-right: 24%;
     }
 #edit-submitted-marque-select-2 ,#edit-submitted-marque-select-3{
     margin-left: 20px;
@@ -921,7 +922,7 @@ form#contact-site-form div:first-child {
 }
 
 #user-register-form  label{
-    width: 32%;
+    width: 33%;
 }
 form#user-register-form {
     padding-left: 24px;
@@ -1012,7 +1013,7 @@ form.webform-client-form
 .form-actions {
     float: right;
 }
-.not-logged-in #user-login .form-actions {
+.not-logged-in.page-user #edit-actions {
     float: none;
 }
 .page-node-2 .webform-next,.page-node-2  .webform-submit, 

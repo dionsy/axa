@@ -1,0 +1,19 @@
+<?php
+module_load_include('module','ws_client');
+if( ! function_exists("node_object_prepare")) { 
+      include_once(drupal_get_path('module', 'node') . '/node.pages.inc');
+      module_load_include('module','node');
+}
+
+$node = new stdClass(); // Création d’un nouvel objet
+$node->type = "article"; // Spécification du type de contenu à créer
+$node->title = "Le titre de votre nouveau node";
+$node->language = LANGUAGE_NONE; // Définition de la langue du contenu.
+$node->path = array('alias' => 'article/test'); // Ajout de l’url du contenu
+//node_object_prepare($node); // Création des valeurs par défaut.
+//$node->uid = 14; // Ajout de l’auteur du node si vous souhaitez qu'il soit différent de l'utilisateur en cours
+
+// Do your stuff
+
+//$node = node_submit($node); // Prépare le node avant l’enregistrement (date + auteur) si les champs sont vides.
+//node_save($node); // Enregistrement du node.

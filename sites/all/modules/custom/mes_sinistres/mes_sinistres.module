@@ -65,24 +65,53 @@ function mes_sinistres_block_view($delta = '') {
     $get_service_sinistres = array(
       array(
         'type' => 'Auto',
-        'id' => array(
-                  'numero_contrat' => '251463987',
-                  'info_sup' => 'Immatriculation LU2667',
-                ),
-        'tableau' => $table_auto,
+        'liste' => array(
+          
+          array(
+            'id' => array(
+              'numero_contrat' => 'CN251463987',
+              'info_sup' => 'Immatriculation DK2667',
+            ),
+            'tableau' => $table_auto,
+          ),
+          array(
+            'id' => array(
+              'numero_contrat' => 'CN01463987',
+              'info_sup' => 'Immatriculation LU2667',
+            ),
+            'tableau' => $table_auto,
+          ),
+
+        ),  
       ),
+      
       array(
         'type' => 'Habitation',
-        'id' => array(
-                  'numero_contrat' => '251463987',
-                  'info_sup' => 'Adresse: Gueule tapée Rue 67*52',
-                ),
-        'tableau' => $table_habitation,
+        'liste' => array(
+          
+          array(
+            'id' => array(
+              'numero_contrat' => 'CN251463987',
+              'info_sup' => 'Adresse: Mermoz',
+            ),
+            'tableau' => $table_habitation,
+          ),
+          
+          array(
+            'id' => array(
+              'numero_contrat' => 'CN01463987',
+              'info_sup' => 'Liberte V',
+            ),
+            'tableau' => $table_habitation,
+          ),
+
+        ),
+        
       ),
 
     );
     /*var_dump($get_service_sinistres)[0];*/
-    //$get_service_sinistres = ws_client_get_liste_sinistres();
+    $get_service_sinistres = ws_client_get_liste_sinistres();
     /*var_dump($get_service_sinistres)[0]; die();*/
 
     $title_sinistre = t('Mes Sinistres');
@@ -94,32 +123,44 @@ function mes_sinistres_block_view($delta = '') {
     foreach ($get_service_sinistres as $sinistre) {
       # code...
       $output .= '<div class="item-type-sinistre">';
-      $output .=   '<h3 class="title-sinistre">';
+      $output .=   '<a class="title-sinistre" href="#" data-toggle="collapse" data-target="#collapse-'. $sinistre['type'].'">';
       $output .=     'Suivi de vos sinistres '. $sinistre['type'];
-      $output .=   '</h3>';
-      $output .=   '<div class="item-info-contrat">';
-      $output .=      '<h3>';
-      $output .=        'Contrat '. $sinistre['id']['numero_contrat'] . ' / '. $sinistre['id']['info_sup'];
-      $output .=      '</h3>';
-      $output .= '<table class="table table-bordered">';
-      $output .=   '<thead>';
-      foreach ($sinistre['tableau']['thead'] as $key => $value) {
+      $output .=   '</a>';
+      if ($get_service_sinistres[0]['type'] === $sinistre['type']) {
         # code...
-          $output .=     '<th>'. $value .'</th>';
+        $output .=   '<div id="collapse-'. $sinistre['type'].'" class="collapse in">';
       }
-      $output .=   '</thead>';
-      $output .=   '<tbody>';
-      foreach ($sinistre['tableau']['tbody'] as $tables) {
+      else {
         # code...
-        $output .= '<tr>';
-        foreach ($tables as $key => $value) {
+        $output .=   '<div id="collapse-'. $sinistre['type'].'" class="collapse">';
+      }
+      foreach ($sinistre['liste'] as $contrat_concerne) {
+        # code...
+        $output .=   '<div class="item-info-contrat">';
+        $output .=      '<h3>';
+        $output .=        'Contrat '. $contrat_concerne['id']['numero_contrat'] . ' / '. $contrat_concerne['id']['info_sup'];
+        $output .=      '</h3>';
+        $output .= '<table class="table table-bordered">';
+        $output .=   '<thead>';
+        foreach ($contrat_concerne['tableau']['thead'] as $key => $value) {
           # code...
-          $output .=   '<td>'. $value .'</td>';
+            $output .=     '<th>'. $value .'</th>';
         }
-        $output .= '</tr>';
+        $output .=   '</thead>';
+        $output .=   '<tbody>';
+        foreach ($contrat_concerne['tableau']['tbody'] as $tables) {
+          # code...
+          $output .= '<tr>';
+          foreach ($tables as $key => $value) {
+            # code...
+            $output .=   '<td>'. $value .'</td>';
+          }
+          $output .= '</tr>';
+        }
+        $output .=       '</tbody>';
+        $output .=     '</table>';   
+        $output .=   '</div>';
       }
-      $output .=       '</tbody>';
-      $output .=     '</table>';   
       $output .=   '</div>';
       $output .= '</div>';
     }

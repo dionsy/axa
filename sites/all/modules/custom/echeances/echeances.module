@@ -27,12 +27,11 @@ function echeances_block_view($delta = '') {
     $text_contact = t('Pour toute information supplémentaire contacter votre conseiller');
     $output = '';
 
-    //$get_service_echeance = ws_client_get_info_conseiller();
+    $get_service_echeance = ws_client_get_liste_echeances();
 
     $table = array(
       'thead' => array(
         'NumContrat' => t('N° Contrat'),
-        'produit' => t('Produit'),
         'caracteristiques' => t('Caractéristiques'),
         'mode_echeance' => t('Mode d\'echeance'),
         'prochaine_echeance' => t('Prochaine échéance'),
@@ -40,27 +39,25 @@ function echeances_block_view($delta = '') {
       'tbody' => array(
         array(
           'NumContrat' => t('10245520'),
-          'produit' => t('Oplus LIFE-Equatoria'),
           'caracteristiques' => t('BMW'),
-          'mode_echeance' => t('Mensuelle'),
+          'mode_echeance' => t('Annuelle'),
           'prochaine_echeance' => t('01/09/2017'),    
         ),
         array(
           'NumContrat' => t('1254885222'),
-          'produit' => t('Oplus LIFE-Equatoria'),
           'caracteristiques' => t('BMW'),
-          'mode_echeance' => t('Mensuelle'),
+          'mode_echeance' => t('Annuelle'),
           'prochaine_echeance' => t('01/09/2017'),    
         ),
         array(
           'NumContrat' => t('125460'),
-          'produit' => t('Oplus LIFE-Equatoria'),
           'caracteristiques' => t('BMW'),
-          'mode_echeance' => t('Mensuelle'),
+          'mode_echeance' => t('Annuelle'),
           'prochaine_echeance' => t('01/09/2017'),    
         ),
       ),
     );
+
 
     $table = isset($get_service_echeance) ? $get_service_echeance : $table; 
 

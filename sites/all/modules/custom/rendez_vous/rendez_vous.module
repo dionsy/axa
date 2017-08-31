@@ -40,13 +40,13 @@ function rendez_vous_block_info() {
  */
 function rendez_vous_block_view($delta = '') {
   
-  //$get_service_conseiller = ws_client_get_info_conseiller();
-  $get_service_conseiller = array(
+  $get_service_conseiller = ws_client_get_info_conseiller();
+  /*$get_service_conseiller = array(
     'nomComplet' => 'Aliou Samba Wele',
     'adresse' => 'Gueule Tapée',
     'mail' => 'smsframework@gmail.com',
     'telephone' => '778088470',
-  );
+  );*/
 
   $block = array();
   if ($delta == 'rendez_vous') {
@@ -149,7 +149,7 @@ function axa_rendez_vous_form_submit($form, &$form_state){
     global $user;
     $account = user_load_by_name($user->name);
 
-    //$get_service_conseiller = ws_client_get_info_conseiller();
+    $get_service_conseiller = ws_client_get_info_conseiller();
     $get_service_conseiller = array(
       'nomComplet' => 'Aliou Samba Wele',
       'adresse' => 'Gueule Tapée',
@@ -173,7 +173,7 @@ function axa_rendez_vous_form_submit($form, &$form_state){
     $option_value = $option[$form_state['values']['objet']];
     $horaire_value = $horaire[$form_state['values']['horaire']]; 
 
-    $to = $get_service_conseiller['mail'];
+    $to = /*$get_service_conseiller['mail']*/'smsframework@gmail.com';
     $from = "mouhawele@gmail.com";
     $subject = $option_value;
     $alt = 'Fixer un rendez vous';
@@ -266,13 +266,13 @@ function axa_rendez_vous_form_submit($form, &$form_state){
       <div class="row col-md-12">
         
         <span class=\'user col-md-12\'>'
-              . 'WELE' . 
+              . 'Nom :WELE' . 
         '</span>
         <span class=\'user col-md-12\'>'
-              . 'Aliou Samba' . 
+              . 'Prénom: Aliou Samba' . 
         '</span>
         <span class=\'user col-md-12\'>'
-              . 'Gueule Tapee' . 
+              . 'Adresse: Gueule Tapee' . 
         '</span>
         <span class=\'user objet col-md-12\'>'
               . 'Objet RDV: ' . $subject. 

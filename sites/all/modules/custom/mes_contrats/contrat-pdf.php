@@ -1,4 +1,7 @@
 <?php
+    //module_load_include('module','ws_client');
+
+    //ws_client_get_liste_contrats();
 
 	$path = libraries_get_path('fpdf').'/fpdf.php';
 	require($path);
