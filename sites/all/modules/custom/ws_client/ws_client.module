@@ -72,17 +72,11 @@ function ws_client_get_node(){
 
 
 function ws_client_getIdClient($numeroContrat){
-
-
-	//$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/id/". $numeroContrat ."";
-
-
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $id_client = variable_get('retrieve_client_id');
 
   $url = 'http://'. $ip .'/'. $root .'/' . $id_client .'/'. $numeroContrat;
-
   $options = array('timeout' => 6000.0) ;
 	$request = drupal_http_request($url ,$options) ;
 
@@ -279,13 +273,6 @@ function ws_client_get_liste_contrats(){
   global $user;
   $account = user_load($user->uid);
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
-
-
-  /*$identifiant = 'AXA00000000';*/
-
-
-  //$url = "http://192.168.200.16/Service1.svc/listeContrats/" .$identifiant. "";
-
 
  $url = 'http://'. $ip .'/'. $root .'/' . $liste_contrats .'/'. $identifiant;
   
@@ -505,6 +492,7 @@ function ws_client_get_liste_devis(){
   return $returnArray;
 }
 
+
 function ws_client_get_echeance(){
   $ip = variable_get('ip_server');
   $root = variable_get('root');
@@ -544,7 +532,6 @@ function ws_client_get_echeance(){
   return $returnArray;
 }
 
-
 function ws_client_get_info_conseiller(){
   //URL WEBSERVICE
   $ip = variable_get('ip_server');
@@ -571,8 +558,6 @@ function ws_client_get_info_conseiller(){
     'img' => $data['imageUrl'],
     'agence' => $data['agence'], 
   );
-
-
   return $returnArray ;
 }
 
@@ -626,19 +611,15 @@ function ws_client_update_info_user($array_data) {
 }
 
 function ws_client_user_login(&$edit, $account) {
- // URL Webservice
  
-
 }
+
 function ws_client_init() {
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $info_user = variable_get('retrieve_info_user');
-
   global $user;
-
-  $account = user_load($user->uid);
- 
+  $account = user_load($user->uid); 
  //var_dump($account); die();
  if(!empty($account->field_identifiant_client)){
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
@@ -663,8 +644,7 @@ function ws_client_init() {
 }
 
 function ws_client_user_logout($account) {
-global $user;
-
+  global $user;
   $nom = variable_get('nom_'.$user->uid);
   $prenom = variable_get('prenom_'.$user->uid);
   $adresse = variable_get('adresse_'.$user->uid);
@@ -934,7 +914,3 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
           }
           return $result ;
 }
-
-
-
-
