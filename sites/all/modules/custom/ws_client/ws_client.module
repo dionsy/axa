@@ -573,6 +573,10 @@ function ws_client_user_login(&$edit, $account) {
   global $user;
 
   $account = user_load($user->uid);
+
+  if(!in_array('client', array_values($user->roles)))
+    $user->roles[]='client';
+ // var_dump($user->roles); die();
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
   //$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
 
@@ -600,11 +604,11 @@ global $user;
   $email= variable_get('mail_'.$user->uid);
 
  if(!isset($nom) && !isset($prenom) && !isset($adresse) && !isset($tel) && !isset($email)){
-    variable_del('nom_'.$user->uid);
-    variable_del('prenom_'.$user->uid);
-    variable_del('adresse_'.$user->uid);
-    variable_del('telephone_'.$user->uid);
-    variable_del('mail_'.$user->uid);
+    variable_set('nom_'.$user->uid,NULL);
+    variable_set('prenom_'.$user->uid,NULL);
+    variable_set('adresse_'.$user->uid,NULL);
+    variable_set('telephone_'.$user->uid,NULL);
+    variable_set('mail_'.$user->uid,NULL);
 
    /* variable_del('nom');
     variable_del('prenom');
@@ -618,20 +622,21 @@ global $user;
 function ws_client_user_presave(&$edit, $account, $category) {
   // URL WEBSERVICE  
 
-  if(isset( $edit['field_numero_contrat']['und'][0]['value']))
+  if(isset($edit['field_numero_contrat']['und'][0]['value']))
   {
   	$numContrat = $edit['field_numero_contrat']['und'][0]['value']	 ;
   	$identifiantClient = ws_client_getIdClient($numContrat);
     if(!empty($identifiantClient) )	
     $edit['field_identifiant_client']['und'][0]['value'] = $identifiantClient ;
+     //$account->roles['3']='3';
+    //$edit['roles']='client';
   }
-    /*var_dump($result) ;  die();*/
+ //krumong('main')->kPrint($edit['roles']) ;  die();
  /* if($result != 'false')*/
 }
 
 function ws_client_webform_component_render_alter(&$element, &$component) {
    global $user;
-
 
    if (in_array('client', array_values($user->roles))) {
 
@@ -673,6 +678,7 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
     }
 
 }
+
 
 
 function ws_client_webform_submission_presave($node, &$submission) {
