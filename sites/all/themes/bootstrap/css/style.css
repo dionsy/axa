@@ -294,14 +294,14 @@ ul{
     width: 100%;
 }
 
-#block-system-main{
+/*#block-system-main{
 	margin-bottom: 4%;
     margin-top: 5%  ;
-}
+}*/
 .view-frontpage ul li {
 	padding:0;
-    margin-top: 5%;
-    margin-bottom: 8%;
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 .outside{
 	width: 94%;
@@ -2093,4 +2093,18 @@ input.nmpd-display {
     }
 .ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front {
         box-shadow: 2px 2px 0 rgba(235,234,230,0.8);
-    }
+}
+
+.search-result h3 {
+    font-size: 20px;
+}
+.search-result h3 a{
+    color: black ! important;
+}
+.search-results .search-result {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    padding-bottom: 15px;
+}
+.pagination {
+    display: block;
+}

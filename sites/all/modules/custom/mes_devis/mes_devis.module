@@ -19,9 +19,11 @@ function mes_devis_block_view($delta = '') {
   if ($delta == 'mes_devis') {
     $title = '';
   	$output = '';
+
+
     $get_service_devis = ws_client_get_liste_devis();
-   // $get_test_devis = array(
-   /*     array(
+    $get_test_devis = array(
+        array(
             'type' => 'Type de vehicule',
             'tableau' => array(
               array(
@@ -77,7 +79,7 @@ function mes_devis_block_view($delta = '') {
           
         ),  
       ),
-    );*/
+    );
     //var_dump($get_service_devis); die();
     $tmp = $get_service_devis;
     $i=0;

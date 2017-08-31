@@ -1,5 +1,22 @@
 <?php
 module_load_include('module','ws_client');
+
+function mes_contrats_menu() {
+  $items['contrat'] = array(
+    'page callback' => 'detail_contrat',
+    'page arguments' => array(0),
+  );
+
+  return $items;
+}
+
+function detail_contrat($arg) {
+  print_r($arg); die();
+  return $arg;
+}
+
+
+
 /**
  * Implements hook_block_info()
  */
@@ -99,7 +116,7 @@ function mes_contrats_block_view($delta = '') {
               # code...
               if($i==0){
                 $output .=     '<div class="col-lg-3 field-contrat">';
-                $output .=       '<span><a href="contrat-pdf.php?numContrat='. $numContrat .'">'. $value .'</a></span>';      
+                $output .=       '<span><a href="'. $numContrat .'">'. $value .'</a></span>';      
                 $output .=     '</div>';    
               }
               elseif($i==1){
