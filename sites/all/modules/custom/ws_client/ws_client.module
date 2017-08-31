@@ -617,11 +617,11 @@ function ws_client_user_logout($account) {
   $email= variable_get('mail_'.$user->uid);
 
  if(!isset($nom) && !isset($prenom) && !isset($adresse) && !isset($tel) && !isset($email)){
-    variable_set('nom_'.$user->uid,NULL);
-    variable_set('prenom_'.$user->uid,NULL);
-    variable_set('adresse_'.$user->uid,NULL);
-    variable_set('telephone_'.$user->uid,NULL);
-    variable_set('mail_'.$user->uid,NULL);
+    variable_set('nom_'.$user->uid,'');
+    variable_set('prenom_'.$user->uid,'');
+    variable_set('adresse_'.$user->uid,'');
+    variable_set('telephone_'.$user->uid,'');
+    variable_set('mail_'.$user->uid,'');
 
    /* variable_del('nom');
     variable_del('prenom');
