@@ -695,7 +695,7 @@ button.navbar-toggle
 .mean-container .mean-bar {
 	background: none;
     float: right;
-    margin-top: 05px;
+    margin-top: 109px;
     min-height: 42px;
     padding: 4px 0;
     position: absolute;
@@ -717,7 +717,7 @@ button.navbar-toggle
     font-weight: 700;
     height: 20px;
     line-height: 22px;
-    margin-right: 15px;
+    margin-right: 5%;
     padding: 13px 13px 11px;
     position: absolute;
     right: 0;
@@ -914,8 +914,8 @@ section#block-simple-copyright-simple-copyright-manage {
     width: inherit;
 }
 .fa.fa-sign-out{
-	    color: #ED1846;
-        margin-bottom: 0;
+	font-size: 15px;   
+    margin-bottom: 0;
 
 }
 section#test  div#navbar-collapse {
@@ -1362,6 +1362,13 @@ a.asligne {
 }
 
 /* Breakpoint 1024 */
+@media screen and (max-width: 1200px) {
+    .prez-mon-axa a {
+        color: rgb(153, 153, 153);
+        font-size: 11px;
+    }
+}
+
 @media screen and (min-width: 601px) and (max-width: 1024px) {
 	.view-partenaire .slick-list.draggable {
 		width: 90%;
@@ -1409,15 +1416,15 @@ a.asligne {
 	.outside{
 		width: 100%;
 	}
-	.es_cli {
+/*	.es_cli {
 		font-size: 0.5em !important;
-	}
+	}*/
 	/*.mon_espace_client {
 		margin-left: 10%;
 	}*/
-	.mean-container a.meanmenu-reveal {
-		margin-top: 5px;
-	}
+	/*.mean-container a.meanmenu-reveal {
+		margin-top: 24px;
+	}*/
 	.outside p {
 		height: 100%;
     }
@@ -2043,8 +2050,8 @@ input.nmpd-display {
 .logo,
 .appli{
     padding-right: 0;
-    margin-top: 20px !important;
-    margin-bottom: 20px !important;
+    margin-top: 20px !important; 
+    margin-bottom: 20px ! important;
 }
 .prez-mon-axa{
    display: block;
@@ -2120,4 +2127,16 @@ input.nmpd-display {
 }
 .search-results.node-results {
     margin-top: 20px;
+}
+.user .deconnection {
+    display: inline-block;
+    float: right;
+    margin-bottom: 2%;
+}
+.espace_connecter {
+    background-color: #00529B  !important;
+
+}
+.fa-home::before , .fa-user::before {
+    margin-right: 10px;
 }

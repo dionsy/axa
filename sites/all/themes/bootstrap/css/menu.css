@@ -775,7 +775,7 @@ ul#quicktabs-tab-left_menu-0::before{
 }
  
 .info-left-menu .deconnexion::before {
-    content: "\f011";
+    content: "\f08b";
     font-family: "FontAwesome";
     color: #005399;
 }
@@ -1429,6 +1429,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         margin-left: 32% !important;
         width: 68% !important;
     }
+
 }
 
 /*Breakpoint */
@@ -1697,12 +1698,18 @@ li.assurance_voyage a:before,
 
 @media all and (max-width: 768px)
 {
+    .mon_espace_client.espace_connecter {
+       /* margin-left: 31%;*/
+        padding: 5px;
+        width: auto;
+        margin-top: 0 !important;
+    }
     #page-header.first_menu {
-    width: auto;
+        width: auto;
     }
     div.user {
         width: auto;
-        margin-right: 75px;
+        margin-right: 3%;
         z-index: 66699;
     }
     .mon_espace_client{
@@ -1712,17 +1719,17 @@ li.assurance_voyage a:before,
         margin-top: 1px;
          background-color: transparent;
     }
-    .mon_espace_client a span{
+    .not-logged-in .mon_espace_client a span{
         color: black;
         padding-top: 0px;
         text-transform: normal;
         font-size: 0.8em;
     }
-     .mon_espace_client a i{
+     .not-logged-in .mon_espace_client a i{
         visibility: hidden;
         margin-right: 0px;
      }
-    .mon_espace_client a:before {
+    .not-logged-in .mon_espace_client a:before {
         display:block;
         width: 40px;
         height: 40px;
@@ -1834,26 +1841,68 @@ li.assurance_voyage a:before,
     .mean-nav ul li:last-child {
         display: none;
     }
+    .fa-user::before {
+        display:  none
+    }
+    .navbar-header {
+        float: left;
+    }
+
+    .logo, .appli {
+        display: inline-block;
+        margin-bottom: 4% !important ;
+        margin-top: 1% !important;
+        width: 47% !important  ;
+        margin-right: 3% ;
+    }
 
 
 }  
+@media all and (max-width: 652px){
+   .mon_espace_client.espace_connecter {
+        margin-left: 1% !important;
+    }
+    div.user {
+        margin-right: 3%;
+        width: 30%;
+        z-index: 66699;
+    }
+         .appli {
+        display: none !important;
+    }
+    .mean-container .mean-bar {
+        margin-top: 70px !important;
+    }
+ }
+
 @media all and (max-width: 550px){
     .webform-progressbar-page .webform-progressbar-page-label {
         font-size: 11px;   
     }
+
  }
 @media all and (max-width: 480px){
-        .mon_espace_client a span{
-        color: black;
+
+    .mon_espace_client a span{
         padding-top: 0px;
         text-transform: normal;
-        font-size: 1.6em;
+        font-size: 13px;
     }
-     div.user {
+    div.user {
+        float: right ;
+        width: 27% ;
+        margin-top: 0 ;
+    }
+ 
+    .mon_espace_client.espace_connecter {
+        margin-left: 1%;
         width: auto;
-        float: left;
-        margin-top: 18px;
     }
+     /*    div.user {
+            width: auto;
+            float: left;
+            margin-top: 18px;
+        }*/
     .mean-container .mean-bar {
     margin-top: 48px;
     }
@@ -1877,8 +1926,11 @@ li.assurance_voyage a:before,
     .view-content ul li > p {
         font-size: 12px;
     }
+    #block-menu-menu-menu-top ul li {
+    padding: 1px 6px 2px !important;
 }
-@media all and (max-width: 464px){
+}
+@media all and (max-width: 452px){
     .img_prod.row {
         display: inline-block;
         margin-top: 25px;
@@ -1897,21 +1949,31 @@ li.assurance_voyage a:before,
     .breadcrumb a, .breadcrumb span {
     padding: 1px 0.5em -1px 1.2em !important;
     }
+    .mean-container .mean-bar {
+        margin-top: 53px !important; 
+    }
+    div.user {
+        float: left !important;
+        margin-top: 24px !important;
+        width: 40% !important;
+    }
+    /*.mean-container a.meanmenu-reveal {
+        margin-top: 24% !important;
+    }*/
 
 }
 
 @media all and (max-width: 304px){ 
    .mean-container a.meanmenu-reveal {
-    margin-right: 27px;
+    margin-right: 33px;
     } 
     div.user {
         float: right;
-        margin-top: -3px;
-        width: auto;
-        margin-right:10px;
+        width: 107px  !important;
+        margin-top: 2px !important;
     }
     .mean-container .mean-bar {
-         margin-top: 60px;
+         margin-top: 75px !important;
     }
     #block-menu-menu-menu-top ul li {
         display: block;

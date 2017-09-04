@@ -717,18 +717,23 @@ function ws_client_init() {
     $user->roles[]='client';
   }
   //$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
+  variable_set('nom_'.$user->uid, "Syll");
+    variable_set('prenom_'.$user->uid, "Ababacar");
+    variable_set('adresse_'.$user->uid, "Guédiawaye");
+    variable_set('telephone_'.$user->uid,"778241624");
+    variable_set('mail_'.$user->uid, "syllababacar@yahoo.com");
 
-  $url = 'http://'. $ip .'/'. $root .'/' . $info_user .'/'. $identifiant;
+/*  $url = 'http://'. $ip .'/'. $root .'/' . $info_user .'/'. $identifiant;
   $options = array('timeout' => 500.0) ;
   $request = drupal_http_request($url ,$options) ;
-  
   $data = drupal_json_decode($request->data) ;
-
-  variable_set('nom_'.$user->uid, $data['nom']);
-  variable_set('prenom_'.$user->uid, $data['prenom']);
-  variable_set('adresse_'.$user->uid, $data['adresse']);
-  variable_set('telephone_'.$user->uid, $data['telephone']);
-  variable_set('mail_'.$user->uid, $data['mail']);
+  if(!empty($data)) {
+    variable_set('nom_'.$user->uid, $data['nom']);
+    variable_set('prenom_'.$user->uid, $data['prenom']);
+    variable_set('adresse_'.$user->uid, $data['adresse']);
+    variable_set('telephone_'.$user->uid, $data['telephone']);
+    variable_set('mail_'.$user->uid, $data['mail']);
+  } */
  }
 }
 
@@ -815,8 +820,6 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
     }
 
 }
-
-
 
 function ws_client_webform_submission_presave($node, &$submission) {
   //var_dump($submission) ;die();

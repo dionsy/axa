@@ -802,7 +802,7 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
 @media all and (max-width: 991px){
     .page-user .tabs--primary.nav.nav-tabs a {
         font-size: 11px;
-        border: 0px;  
+        border: 0px; 
     }
     .page-user ul.tabs--primary li
     {
@@ -825,6 +825,10 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     .page-user #test {
         top: 40px;
         width: 66%;
+    }
+    .mon_espace_client.espace_connecter {
+        width: 41%;
+        margin-left: 31% !important;
     }
 }
 
