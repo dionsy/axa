@@ -438,7 +438,7 @@ html.js input.webform-calendar {
 }
 #webform-client-form-8 .form-item-submitted-marque select {
     padding: 5px;
-    width: 23%;
+    width: 15% !important;
 }
 #webform-client-form-8 .form-item-submitted-energie-du-vehicule{
     margin-bottom: 25px;

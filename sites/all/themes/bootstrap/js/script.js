@@ -98,6 +98,9 @@
          $('#edit-submitted-etes-vous-locataire').on('change', function (e) {
              $('.not-logged-in .form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn') ;
         });
+         $('.form-item-submitted-type-dassurance').on('change', function (e) {
+             $('.not-logged-in .form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn') ;
+        });
          
            $( ".form-item-submitted-nombre-de-pieces").keyup(function() {
             $('.not-logged-in .webform-component--ce-logement-est-il-votre-residence-principale').addClass('fadeIn'  ) ;
@@ -114,9 +117,9 @@
 
         //ON CHANGE 
 
-        $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
+  /*      $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
              $('.not-logged-in .form-item-submitted-adresse').addClass('fadeIn'  ) ;
-         }); 
+         }); */
          $( "#edit-submitted-date-de-naissance-year" ).on('change', function (e) {
              $('.not-logged-in .form-item-submitted-email').addClass('fadeIn'  ) ;
          });   
@@ -131,6 +134,12 @@
          });
 
         //FOCUSOUT
+         $( ".not-logged-in .form-item-submitted-valeur-a-neuf" ).keyup(function() {
+              $('.not-logged-in .form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn'  ) ;
+          });      $( ".not-logged-in .form-item-submitted-valeur-a-neuf" ).focusout(function() {
+              $('.not-logged-in .form-item-submitted-quand-souhaitez-vous-etre-assure').addClass('fadeIn'  ) ;
+          });
+
         $( ".form-item-submitted-adresse-du-bien-a-assurer" ).keyup(function() {
               $('.not-logged-in .form-item-submitted-etes-vous-locataire').addClass('fadeIn'  ) ;
           });
@@ -144,9 +153,9 @@
          $( ".form-item-submitted-prenom" ).focusout(function() {
               $('.not-logged-in .form-type-date').addClass('fadeIn'  ) ;
           });
-        $(".form-item-submitted-adresse").keyup(function() {
+      /*  $(".form-item-submitted-adresse").keyup(function() {
              $('.not-logged-in .form-item-submitted-email').addClass('fadeIn'  ) ;
-          });
+          });*/
           $(".form-item-submitted-adresse").focusout(function() {
              $('.not-logged-in .form-item-submitted-email').addClass('fadeIn'  ) ;
           });  
@@ -157,9 +166,15 @@
              $('.not-logged-in .form-item-submitted-telephone').addClass('fadeIn'  ) ;
          });
         $( ".form-item-submitted-telephone").keyup(function() {
-             $('.not-logged-in .form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
+             $('.form-item-submitted-adresse').addClass('fadeIn'  ) ;
         });
         $( ".form-item-submitted-telephone").focusout(function() {
+             $('.form-item-submitted-adresse').addClass('fadeIn'  ) ;
+        });
+          $( ".form-item-submitted-adresse").focusout(function() {
+             $('.not-logged-in .form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
+        });
+        $( ".form-item-submitted-adresse").keyup(function() {
              $('.not-logged-in .form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
         });
         $( ".form-item-submitted-age-dobtention-du-permis").keyup(function() {

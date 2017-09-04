@@ -812,6 +812,10 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
           $element['#default_value'] = $tel;
            $element['#attributes']= array('disabled' => '1');
           break;
+        case 'Adresse':
+          $element['#default_value'] = $adresse;
+           $element['#attributes']= array('disabled' => '1');
+          break;
         
         default:
 
@@ -837,7 +841,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
    //  var_dump($result) ; die();
     if($result->code >=  300 )
     {
-     drupal_set_message(t("Le devis n'a pas ete créé veuillez verifier les données saisies"  ,'error'));
+     drupal_set_message("Le devis n'a pas ete créé veuillez verifier les données saisies"  ,'error');
       switch ($nid) {
         case 8:
            drupal_goto("node/8");
@@ -871,7 +875,17 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
   $create_devis_loisir = variable_get('create_devis_loisir');
   $result = "" ;
   if($idNode == 8)
-      {
+      {     
+            $dateNaissance = $submission->data[3][0]; 
+            $time = strtotime($dateNaissance);
+            $anneeNaissance = date("Y",$time);
+            $moisNaissance = date("m",$time);
+            $jourNaissance = date("d",$time);
+            $dateMisenCirculation = $submission->data[19][0] ;
+            $time = strtotime($dateMisenCirculation);
+            $anneeMiseEnCirculation = date("Y",$time);
+            $moisMiseEnCirculation = date("m",$time);
+            $jourMiseEnCirculation = date("d",$time);
             $carrosserieObject = taxonomy_term_load($submission->data[12][0]) ;
             $carroserie = $carrosserieObject->name ;
             $idCarroserie = $carrosserieObject->tid ;
@@ -886,20 +900,22 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'idCompte' =>$identifiant ,
              'nom' => $submission->data[1][0] ,
              'prenom' => $submission->data[2][0] , 
-            /* 'dateNaissance' => $submission->data[3][0] ,*/ 
-             'telephone' => $submission->data[21][0]  ,
+             'anneeNaissance' => $anneeNaissance ,
+             'moisNaissance' => $moisNaissance ,
+             'jourNaissance' => $jourNaissance ,
+             'telephone' => $submission->data[21][0] ,
+             'adresse' => $submission->data[23][0] ,
              'mail' => $submission->data[4][0] ,
-            /* 'dateMiseCirculation' => $submission->data[19][0] ,*/
-             /*'ageObtentionPermis' => $submission->data[16][0] ,*/
              'carburant' => $submission->data[13][0] ,
              'valeurAneuf' => $submission->data[20][0] ,
-          /*   'emailDuconducteurPrincipal' => $submission->data[17][0] ,*/
              'marque' =>  $marque ,
              'carosserie' => $carroserie ,
              'modele' => $modeleVehicule,
-             'puissane' => $submission->data[18][0]
-             /*'adresse' => $submission->data[21][0] */
-             /*'anneeDeNaissanceconducteur' => $submission->data[15][0] */
+             'puissane' => $submission->data[18][0],
+             'anneeMiseEnCirculation' => $anneeMiseEnCirculation ,
+             'moisMiseEnCirculation' => $moisMiseEnCirculation ,
+             'jourMiseEnCirculation' => $jourMiseEnCirculation ,
+             'momentAssurance' => $submission->data[22][0]
              );
             
             $data = drupal_json_encode($devis);
@@ -920,13 +936,22 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
         }
          if($idNode == 9)
           { 
+            $dateNaissance = $submission->data[10][0]; 
+            $time = strtotime($dateNaissance);
+            $anneeNaissance = date("Y",$time);
+            $moisNaissance = date("m",$time);
+            $jourNaissance = date("d",$time);
             $devis = array(
              'idCompte' => $identifiant ,
              'nom' => $submission->data[8][0],
              'prenom' => $submission->data[9][0], 
+             'anneeNaissance' => $anneeNaissance ,
+             'moisNaissance' => $moisNaissance ,
+             'jourNaissance' => $jourNaissance ,
              'telephone' => $submission->data[11][0],
              'mail' => $submission->data[12][0],
              'typeLogement' => $submission->data[14][0],
+             'momentAssurance' => $submission->data[16][0],
              'adresseLogement' => $submission->data[4][0],
              'nbPieces' =>  $submission->data[2][0],
              'principal' => $submission->data[3][0],
@@ -950,16 +975,27 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
 
           if($idNode == 10)
           { 
+            $dateNaissance = $submission->data[3][0]; 
+            $time = strtotime($dateNaissance);
+            $anneeNaissance = date("Y",$time);
+            $moisNaissance = date("m",$time);
+            $jourNaissance = date("d",$time);
+            /*var_dump($jourNaissance) ; die();*/
             $devis = array(
               "idCompte" => $identifiant,
               "nom" => $submission->data[1][0],
               "prenom" => $submission->data[2][0],
+              "anneeNaissance" => $anneeNaissance ,
+              "moisNaissance" => $moisNaissance ,
+              "jourNaissance" => $jourNaissance ,
               "telephone" => $submission->data[4][0],
               "mail" => $submission->data[5][0],
-              "typeAssurance" => $submission->data[9][0] 
+              "typeAssurance" => $submission->data[9][0],
+              "momentAssurance" => $submission->data[10][0] 
              );
-              /*var_dump($devis); die();*/
+              
             $data = drupal_json_encode($devis);
+            /*var_dump($data) ; die();*/
 
               $options = array(
                               'method' => 'POST',
@@ -978,15 +1014,23 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
           }
           if($idNode == 11)
           { 
+            $dateNaissance = $submission->data[4][0]; 
+            $time = strtotime($dateNaissance);
+            $anneeNaissance = date("Y",$time);
+            $moisNaissance = date("m",$time);
+            $jourNaissance = date("d",$time);
             $devis = array(
              'idCompte' => $identifiant ,
              /*'civilite' => $submission->data[1][0],*/
              'nom' => $submission->data[2][0],
              'prenom' => $submission->data[3][0],
-             /* 'dateNaissance' => $submission->data[4][0] ,*/  
+             'anneeNaissance' => $anneeNaissance ,
+             'moisNaissance' => $moisNaissance ,
+             'jourNaissance' => $jourNaissance ,
              'mail' => $submission->data[5][0],
              'telephone' => $submission->data[6][0],
-             'typeAssurance' => $submission->data[7][0]
+             'typeAssurance' => $submission->data[7][0],
+             "momentAssurance" => $submission->data[8][0] 
              );
               /*var_dump($devis); die();*/
             $data = drupal_json_encode($devis);
