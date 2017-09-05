@@ -26,8 +26,6 @@ function mes_contrats_requirements($phase) {
   }
   return $requirements;
 }
-
-
 /**
  * Implements hook_libraries_info().
  */
@@ -51,7 +49,6 @@ function mes_contrats_libraries_info() {
 
   return $libraries;
 }
-
 
 function mes_contrats_menu() {
   $items['contrat/%'] = array(
@@ -100,7 +97,7 @@ function mes_contrats_block_view($delta = '') {
   	$output = '';
     $auto = array();
 
-    $auto['type'] = 'Auto';
+/*    $auto['type'] = 'Auto';
     $auto['info'][] = array(
       'id' => '1234',
       'marque' => 'lorem',
@@ -110,8 +107,8 @@ function mes_contrats_block_view($delta = '') {
       'id' => 'id',
       'marque' => 'marque',
       'modele' => 'modele',  
-    );
-
+    );*/
+/*
     $get_test_contrats = array(
       array(
         'type' => 'Auto',
@@ -152,14 +149,10 @@ function mes_contrats_block_view($delta = '') {
 
     );
 
-
-    //$get_service_contrats = ws_client_get_liste_contrats();
-
-
-    /*var_dump($get_test_contrats); var_dump($get_service_contrats) ; die();*/
-
-    $get_service_contrats = isset($get_service_contrats) ? $get_service_contrats : $get_test_contrats;
-
+*/
+    $get_service_contrats = ws_client_get_liste_contrats();
+    /*$get_service_contrats = isset($get_service_contrats) ? $get_service_contrats : $get_test_contrats;
+*/
     $title .=   t('Mes Contrats');
     $output .= '<div class="item-mes-contrats">';
     foreach ($get_service_contrats as $contrat) {

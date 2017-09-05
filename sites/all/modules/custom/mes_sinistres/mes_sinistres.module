@@ -20,9 +20,7 @@ function mes_sinistres_block_view($delta = '') {
     $title = '';
   	$output = '';
 
-
-
-    $table_auto = array(
+ /*   $table_auto = array(
       'thead' => array(
         'date_survenance' => 'Date survenance',
         'numero_sinistre' => 'N° Sinistre',
@@ -60,60 +58,13 @@ function mes_sinistres_block_view($delta = '') {
           'status' => t('Terminé'),    
         ),
       ),
-    );
+    );*/
 
-    $get_service_sinistres = array(
-      array(
-        'type' => 'Auto',
-        'liste' => array(
-          
-          array(
-            'id' => array(
-              'numero_contrat' => 'CN251463987',
-              'info_sup' => 'Immatriculation DK2667',
-            ),
-            'tableau' => $table_auto,
-          ),
-          array(
-            'id' => array(
-              'numero_contrat' => 'CN01463987',
-              'info_sup' => 'Immatriculation LU2667',
-            ),
-            'tableau' => $table_auto,
-          ),
-
-        ),  
-      ),
-      
-      array(
-        'type' => 'Habitation',
-        'liste' => array(
-          
-          array(
-            'id' => array(
-              'numero_contrat' => 'CN251463987',
-              'info_sup' => 'Adresse: Mermoz',
-            ),
-            'tableau' => $table_habitation,
-          ),
-          
-          array(
-            'id' => array(
-              'numero_contrat' => 'CN01463987',
-              'info_sup' => 'Liberte V',
-            ),
-            'tableau' => $table_habitation,
-          ),
-
-        ),
-        
-      ),
-
-    );
+/*  */
     /*var_dump($get_service_sinistres)[0];*/
     $get_service_sinistres = ws_client_get_liste_sinistres();
-    /*var_dump($get_service_sinistres)[0]; die();*/
-
+    /*var_dump($get_service_sinistres)[0]; die();
+*/
     $title_sinistre = t('Mes Sinistres');
     $title_span = t('Suivi de mes déclarations sinistres'); 
     
@@ -127,18 +78,16 @@ function mes_sinistres_block_view($delta = '') {
       $output .=     'Suivi de vos sinistres '. $sinistre['type'];
       $output .=   '</a>';
       if ($get_service_sinistres[0]['type'] === $sinistre['type']) {
-        # code...
         $output .=   '<div id="collapse-'. $sinistre['type'].'" class="collapse in">';
       }
       else {
-        # code...
         $output .=   '<div id="collapse-'. $sinistre['type'].'" class="collapse">';
       }
+      
       foreach ($sinistre['liste'] as $contrat_concerne) {
-        # code...
         $output .=   '<div class="item-info-contrat">';
         $output .=      '<h3>';
-        $output .=        'Contrat '. $contrat_concerne['id']['numero_contrat'] . ' / '. $contrat_concerne['id']['info_sup'];
+        $output .=        'Contrat '. $contrat_concerne['id']['numero_contrat'] . ' '. $contrat_concerne['id']['info_sup'];
         $output .=      '</h3>';
         $output .= '<table class="table table-bordered">';
         $output .=   '<thead>';

@@ -19,72 +19,10 @@ function mes_devis_block_view($delta = '') {
   if ($delta == 'mes_devis') {
     $title = '';
   	$output = '';
-    $get_service_devis = ws_client_get_liste_devis();
-    $get_test_devis = array(
-        array(
-            'type' => 'Type de vehicule',
-            'tableau' => array(
-              array(
-                  'Marque',
-                  'Mercedes shooting Brake',
-                ),
-              array(
-                'Energie', 
-                'Gasoil',
-              ),
-              array(
-                'Email conducteur', 
-                'ousmane@gmail.com',
-              ),
-            ),
-      ),
-
-      array(
-        'type' => 'Type de vehicule',
-        'tableau' => array(
-            array(
-                'Marque',
-                'Dacia',
-              ),
-            array(
-              'Energie', 
-              'Essence',
-            ),
-          array(
-            'Email conducteur', 
-            'aliou-samba.wele@atos.net',
-          ),
-        ),
-      ),
-
-      array(
-        'type' => 'Info Habitation',
-        'tableau' => array(
-          array(
-            'Type de bien',
-            'Appartement',
-          ),
-          
-          array(
-              'Nombre de pieces', 
-              '4',
-          ),
-          
-          array(
-            'Résidence principale', 
-            'ousmane@gmail.com',
-          ),
-          
-        ),  
-      ),
-    );
-    //var_dump($get_service_devis); die();
-    $tmp = $get_service_devis;
+    $tmp = ws_client_get_liste_devis();
     $i=0;
-    foreach ($tmp as $devis) {
-      # code...
-      foreach ($devis['tableau'] as $key_value) {
-        # code...
+    /*foreach ($tmp as $devis) {*/
+/*      foreach ($devis['tableau'] as $key_value) {
         $tmp[$i]['tab'][$key_value[0]] = $key_value[1];  
       }
       unset($tmp[$i]['tableau']);
@@ -102,14 +40,14 @@ function mes_devis_block_view($delta = '') {
       $array[$i]['type'] = $key_tmp;
       $array[$i]['info'] = $value_tmp;
       $i++;
-    }
+    }*/
     //var_dump($array[0]['info']);var_dump($array[1]['info']); die();
     //$get_service_devis = isset($get_service_devis) ? $get_service_devis : $get_test_devis;
 
     $title .=   t('Mes devis');
 
     $output .= '<div class="item-mes-devis">';
-    foreach ($array as $devis) {
+    foreach ($tmp as $devis) {
       # code...
         if(isset($devis['type']))
         {
@@ -120,12 +58,12 @@ function mes_devis_block_view($delta = '') {
           foreach ($devis['info'] as $informations) {
             # code...
             $i = 0;
-            //$numdevis = $informations['id'];
+            $numdevis = $informations['id'];
             foreach ($informations as $key => $value) {
               # code...
               if($i==0){
-                $output .=     '<div class="col-lg-4 field-devis">';
-                $output .=       '<span><a href="#">'. $value .'</a></span>';      
+                $output .=     '<div class="col-lg-3 field-devis">';
+                $output .=       '<span><a href="#">'. $numdevis .'</a></span>';      
                 $output .=     '</div>';    
               }
               elseif($i==1){
@@ -134,13 +72,20 @@ function mes_devis_block_view($delta = '') {
                 $output .=     '</div>'; 
               }
               else{
-                $output .=     '<div class="col-lg-4 field-devis">';
+                $output .=     '<div class="col-lg-3 field-devis">';
                 $output .=       '<span>'. $value .'</span>';      
                 $output .=     '</div>';
               }
               $i++;
 
-            }      
+            }
+            $path= drupal_get_path('module','mes_contrat').'contrat-pdf.php';
+            $output .=     '<div class="col-lg-1 telechargement-contrat field-contrat">';
+            $output .=       '<a href="'.$path.'" download="contrat-pdf.php"><i class="fa fa-download" aria-hidden="true"></i></a>';      
+            $output .=     '</div>';
+            $output .=     '<div class="col-lg-1 visualisation-contrat field-contrat">';
+            $output .=       '<a href="http://localhost/pdf" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
+            $output .=     '</div>';     
           }
           $output .=   '</div>';
       }    
@@ -172,7 +117,7 @@ function mes_devis_block_view($delta = '') {
       'subject' => $title ,
       'content' => (!empty($output)) ? '<div class="devis_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
     );
-  }
-
+  /*}*/
+}
   return array();
 }
