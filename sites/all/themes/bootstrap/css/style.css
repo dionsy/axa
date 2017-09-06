@@ -2053,6 +2053,13 @@ input.nmpd-display {
     /*margin-top: 20px !important; */
     margin-bottom: 20px ! important;
 }
+.not-logged-in .logo,
+.not-logged-in .appli{
+    padding-right: 0;
+    margin-top: 25px !important; */
+    margin-bottom: 25px ! important;
+}
+
 .prez-mon-axa{
    display: block;
     float: right;

@@ -79,21 +79,24 @@
 
  <header id="" role="banner" class="container navbar-default">
              <div class="row">
-               
                   <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-sm-6 col-xs-12">  
                      <?php print render($page['header']); ?>
-
                   </header> <!-- /#page-header -->
                   <div class="user col-md-3 col-lg-3 col-sm-6 col-xs-12"> 
-                    <?php
-        // krumong('main')->kPrint($base_path);
+                 <?php
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Espace client</span></a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true"></i><span>Espace client</span></a></div>';
                     } 
                    else{
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" target="_blank" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Mon espace client</span></a></div>';
+                    $nom = variable_get('nom_'.$user->uid);
+                      $prenom = variable_get('prenom_'.$user->uid); 
+                      $array = array('nom' =>$nom,
+                                     'prenom' => $prenom) ;
+
+                      print '<div class="mon_espace_client espace_connecter" ><a href="'.$base_path.'node/2" class="es_cli"><i class="fa fa-home" aria-hidden="true"></i><span>'.$array['prenom'].'  '.$array['nom']. '</span></div></a><div class="deconnection"><a href="'.$base_path.'?q=user/logout"><i class="fa fa-sign-out" aria-hidden="true"></i><span>Déconnexion</span></a></div>';
                     }
-                 ?>
+                   
+                  ?>      
                  <?php
           /*  $account = user_load($user->uid);
             $pic ='';

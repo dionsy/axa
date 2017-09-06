@@ -869,7 +869,7 @@ function ws_client_update_info_user($array_data) {
   $options = array(
                   'method' => 'PUT',
                   'data' => $data,
-                  'timeout' => 6000.0,
+                  'timeout' => 600.0,
                   'headers' => array('Content-Type' => 'application/json')
   );
 
@@ -899,23 +899,29 @@ function ws_client_init() {
     $user->roles[]='client';
   }
   //$url = "http://192.168.200.16/Service1.svc/compte/espaceClient/infos/" .$identifiant. "";
-  variable_set('nom_'.$user->uid, "Syll");
+/*  variable_set('nom_'.$user->uid, "Syll");
     variable_set('prenom_'.$user->uid, "Ababacar");
     variable_set('adresse_'.$user->uid, "Guédiawaye");
     variable_set('telephone_'.$user->uid,"778241624");
-    variable_set('mail_'.$user->uid, "syllababacar@yahoo.com");
+    variable_set('mail_'.$user->uid, "syllababacar@yahoo.com");*/
 
-/*  $url = 'http://'. $ip .'/'. $root .'/' . $info_user .'/'. $identifiant;
+  $url = 'http://'. $ip .'/'. $root .'/' . $info_user .'/'. $identifiant;
   $options = array('timeout' => 500.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
+    $civ = array(
+    1 => 'M',
+    2 => 'Mme',
+  );
   if(!empty($data)) {
     variable_set('nom_'.$user->uid, $data['nom']);
     variable_set('prenom_'.$user->uid, $data['prenom']);
+    variable_set('dateNaissance_'.$user->uid, $data['dateNaissance']);
     variable_set('adresse_'.$user->uid, $data['adresse']);
+    variable_set('civilite_'.$user->uid, $civ[$data['civilite']]);
     variable_set('telephone_'.$user->uid, $data['telephone']);
     variable_set('mail_'.$user->uid, $data['mail']);
-  } */
+  } 
  }
 }
 
@@ -923,6 +929,8 @@ function ws_client_user_logout($account) {
   global $user;
   $nom = variable_get('nom_'.$user->uid);
   $prenom = variable_get('prenom_'.$user->uid);
+  $dateNaissance = variable_get('dateNaissance_'.$user->uid);
+  $civilite = variable_get('civilite_'.$user->uid);
   $adresse = variable_get('adresse_'.$user->uid);
   $tel = variable_get('telephone_'.$user->uid);
   $email= variable_get('mail_'.$user->uid);
@@ -930,6 +938,8 @@ function ws_client_user_logout($account) {
  if(!isset($nom) && !isset($prenom) && !isset($adresse) && !isset($tel) && !isset($email)){
     variable_set('nom_'.$user->uid,'');
     variable_set('prenom_'.$user->uid,'');
+    variable_set('dateNaissance_'.$user->uid, '');
+    variable_set('civilite_'.$user->uid , '');
     variable_set('adresse_'.$user->uid,'');
     variable_set('telephone_'.$user->uid,'');
     variable_set('mail_'.$user->uid,'');
@@ -961,15 +971,19 @@ function ws_client_user_presave(&$edit, $account, $category) {
 
 function ws_client_webform_component_render_alter(&$element, &$component) {
    global $user;
+   //krumong('main')->kPrint($element);
 
    if (in_array('client', array_values($user->roles))) {
 
     $nom = variable_get('nom_'.$user->uid);
-    $prenom = variable_get('prenom_'.$user->uid);      
+    $prenom = variable_get('prenom_'.$user->uid);
+    $time = variable_get('dateNaissance_'.$user->uid);
+    $civilite = variable_get('civilite_'.$user->uid);     
     $email = variable_get('mail_'.$user->uid);
     $adresse = variable_get('adresse_'.$user->uid);    
     $tel = variable_get('telephone_'.$user->uid);
-
+    $dateNaissance = date_parse_from_format('d-m-Y', $time);
+     // var_dump($time) ; die();
     $title =$element['#title'];
 
       switch ($title) {
@@ -996,6 +1010,14 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
           break;
         case 'Adresse':
           $element['#default_value'] = $adresse;
+           $element['#attributes']= array('disabled' => '1');
+          break;
+          case 'Date de naissance':
+          $element['#default_value'] = $dateNaissance;
+           $element['#attributes']= array('disabled' => '1');
+          break;
+          case 'Civilité':
+          $element['#default_value'] = $civilite;
            $element['#attributes']= array('disabled' => '1');
           break;
         default:

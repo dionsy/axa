@@ -1,0 +1,31 @@
+.title {
+	font-size: 12px;
+	font-weight: bold;
+	text-align:  center; 
+	position:  relative;
+	margin-top: 25px;
+	text-decoration: underline;
+		}
+.title h2 span {
+	text-transform: uppercase;
+}
+.infoContrat	
+{
+	margin-top: 25px;
+}
+.infoContrat table {
+	margin: auto;
+}
+.infoContrat table th{	
+		
+}
+.infoContrat table tr td{ 
+	width: 100%;
+	height: 35px;
+	text-align: center	;
+}
+
+/*.logo
+		{
+			background-image: url('../images/logo_axa.jpg');
+		}*/

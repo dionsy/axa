@@ -4,7 +4,7 @@ module_load_include('module','ws_client');
 /**
  * Implements hook_requirements()
  */
-function mes_contrats_requirements($phase) {
+/*function mes_contrats_requirements($phase) {
   $requirements = array();
   if ($phase == 'runtime') {
     $t = get_t();
@@ -29,7 +29,7 @@ function mes_contrats_requirements($phase) {
 /**
  * Implements hook_libraries_info().
  */
-function mes_contrats_libraries_info() {
+/*function mes_contrats_libraries_info() {
   $libraries = array();
   $libraries['fpdf'] = array(
     'name' => 'FPDF',
@@ -48,7 +48,7 @@ function mes_contrats_libraries_info() {
   );
 
   return $libraries;
-}
+}*/
 
 function mes_contrats_menu() {
   $items['contrat/%'] = array(
@@ -61,16 +61,72 @@ function mes_contrats_menu() {
 }
 
 function detail_contrat($arg) {
-  libraries_load('fpdf');
-  $contrat =  ws_client_get_contrat_by_num($arg);
+  //libraries_load('mpdf');
+  //$contrat =  ws_client_get_contrat_by_num($arg);
 
-  $html = $contrat['thead']['num_contrat'] . ':' . $contrat['tbody']['num_contrat'] . ',' . $contrat['thead']['type'] . ':' . $contrat['tbody']['type'] . ',' .$contrat['thead']['marque'] . ':' . $contrat['tbody']['marque'];  
-  
-  $pdf=new FPDF();
+/*  $html = $contrat['thead']['num_contrat'] . ':' . $contrat['tbody']['num_contrat'] . ',' . $contrat['thead']['type'] . ':' . $contrat['tbody']['type'] . ',' .$contrat['thead']['marque'] . ':' . $contrat['tbody']['marque'];  */
+$contrat['tbody']['type'] = "auto" ;
+$output  = "<div class='logo' width='323px' height='57px'> </div>
+                 <div class='title'>
+                    <h2>CONTRAT D'ASSURANCE <span>" .$contrat['tbody']['type']. "<span></h2>
+                 </div>
+                 <div class='infoContrat'>
+                  <table border='1'>
+                    <tr>
+                      <th colspan='2'>Information Personelle</th>
+                    </tr>
+                    <tr>
+                      <td>Nom</td>
+                      <td>Syll</td>
+                    </tr>
+                    <tr>
+                      <td>Prenom</td>
+                      <td>Massamba</td>
+                    </tr>
+                    <tr>
+                      <td>Email</td>
+                      <td>syllababacar@yahoo.com</td>
+                    </tr>
+                    <tr>
+                      <td>Téléphone</td>
+                      <td>77 824 16 24</td>
+                    </tr>
+                    <tr>
+                      <td>Adresse</td>
+                      <td>Guédiawaye</td>
+                    </tr>
+                    <tr>
+                      <th colspan='2'>Information du véhicule</th>
+                    </tr>
+                    <tr>
+                      <td>Numero contrat </td>
+                      <td>CNTR000000025</td>
+                    </tr>
+                    <tr>
+                      <td>Marque</td>
+                      <td>Fiat</td>
+                    </tr>
+                    <tr>
+                      <td>Modéle</td>
+                      <td>Punto</td>
+                    </tr>
+                    <tr>
+                      <td>Carosserie</td>
+                      <td>Van</td>
+                    </tr>
+                    <tr>
+                      <td>Energie du véhicule</td>
+                      <td>Gasoil</td>
+                    </tr>
+                  </table>
+                </div>";
+
+  pdf_using_mpdf_api($output,"test");
+/*  $pdf=new FPDF();
   $pdf->AddPage();
   $pdf->SetFont('Arial','B',16);
   $pdf->Cell(40,10,$html);
-  $pdf->Output();
+  $pdf->Output();*/
 
 }
 

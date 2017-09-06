@@ -33,7 +33,7 @@ function form_information_block_view($delta = '') {
 function form_information_form($form, &$form_state){
   global $user;
 
-  //$infoPerso = ws_client_getInfoUser();
+ // $infoPerso = ws_client_getInfoUser();
 
   $nom = variable_get('nom_'.$user->uid);
   $prenom = variable_get('prenom_'.$user->uid);      
