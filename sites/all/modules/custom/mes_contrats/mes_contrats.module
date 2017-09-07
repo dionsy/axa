@@ -62,13 +62,23 @@ function mes_contrats_menu() {
 
 function detail_contrat($arg) {
   //libraries_load('mpdf');
-  //$contrat =  ws_client_get_contrat_by_num($arg);
-
-/*  $html = $contrat['thead']['num_contrat'] . ':' . $contrat['tbody']['num_contrat'] . ',' . $contrat['thead']['type'] . ':' . $contrat['tbody']['type'] . ',' .$contrat['thead']['marque'] . ':' . $contrat['tbody']['marque'];  */
-$contrat['tbody']['type'] = "auto" ;
+  //var_dump($contrat) ; die();
+  $nom = variable_get('nom_'.$user->uid);
+  $prenom = variable_get('prenom_'.$user->uid);
+  $dateNaissance = variable_get('dateNaissance_'.$user->uid);
+  $civilite = variable_get('civilite_'.$user->uid);
+  $adresse = variable_get('adresse_'.$user->uid);
+  $tel = variable_get('telephone_'.$user->uid);
+  $email= variable_get('mail_'.$user->uid);
+  var_dump($nom); die();
+  $contrat =  ws_client_get_contrat_by_num($arg);
+  $carburant = array(
+    100000001 => 'Gasoil',
+    100000000 => 'Essence'
+  );
 $output  = "<div class='logo' width='323px' height='57px'> </div>
                  <div class='title'>
-                    <h2>CONTRAT D'ASSURANCE <span>" .$contrat['tbody']['type']. "<span></h2>
+                    <h2>CONTRAT D'ASSURANCE <span>" .$contrat['typeContrat']. "<span></h2>
                  </div>
                  <div class='infoContrat'>
                   <table border='1'>
@@ -77,49 +87,59 @@ $output  = "<div class='logo' width='323px' height='57px'> </div>
                     </tr>
                     <tr>
                       <td>Nom</td>
-                      <td>Syll</td>
+                      <td>".$nom."</td>
                     </tr>
                     <tr>
                       <td>Prenom</td>
-                      <td>Massamba</td>
+                      <td>".$prenom."</td>
                     </tr>
                     <tr>
                       <td>Email</td>
-                      <td>syllababacar@yahoo.com</td>
+                      <td>".$email."</td>
                     </tr>
                     <tr>
                       <td>Téléphone</td>
-                      <td>77 824 16 24</td>
+                      <td>".$tel."</td>
                     </tr>
                     <tr>
                       <td>Adresse</td>
-                      <td>Guédiawaye</td>
-                    </tr>
-                    <tr>
+                      <td>".$adresse."</td>
+                    </tr>";
+    if($contrat['typeContrat'] === "Automobile") {
+        $output .= "<tr>
                       <th colspan='2'>Information du véhicule</th>
                     </tr>
                     <tr>
                       <td>Numero contrat </td>
-                      <td>CNTR000000025</td>
+                      <td>".$arg."</td>
                     </tr>
                     <tr>
                       <td>Marque</td>
-                      <td>Fiat</td>
+                      <td>".$contrat['marque']."</td>
                     </tr>
                     <tr>
                       <td>Modéle</td>
-                      <td>Punto</td>
+                      <td>".$contrat['modele']."</td>
                     </tr>
                     <tr>
                       <td>Carosserie</td>
-                      <td>Van</td>
+                      <td>".$contrat['carosserie']."</td>
                     </tr>
                     <tr>
                       <td>Energie du véhicule</td>
-                      <td>Gasoil</td>
+                      <td>".$carburant[$contrat['carburant']]."</td>
+                    </tr>
+                    <tr>
+                      <td>Date de 1ére mise en circulation</td>
+                      <td>".$contrat['dateMiseEnCirculation']."</td>
+                    </tr>
+                    <tr>
+                      <td>Valeur à neuf</td>
+                      <td>".$contrat['valeurAneuf']."</td>
                     </tr>
                   </table>
                 </div>";
+    }
 
   pdf_using_mpdf_api($output,"test");
 /*  $pdf=new FPDF();

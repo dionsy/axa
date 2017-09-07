@@ -495,10 +495,10 @@ function ws_client_get_contrat_by_num($num_contrat){
 
   $url = 'http://'. $ip .'/'. $root .'/' . $contrat .'/'. $num_contrat;
 
-  $options = array('timeout' => 6000.0) ;
-  /*$request = drupal_http_request($url ,$options) ;
-  $data = drupal_json_decode($request->data) ;*/
-  $data = array(
+  $options = array('timeout' => 600.0) ;
+  $request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;
+  /*$data = array(
     'adresseLogement' => null,
     'carburant' =>  100000001,
     'debut' => '12/05/2016',
@@ -532,7 +532,7 @@ function ws_client_get_contrat_by_num($num_contrat){
       'carburant' => 'Carburant',
     );
 
-    $table['tbody'] = array(
+    $table = array(
       'num_contrat' => $num_contrat,
       'type' => 'Automobile',
       'marque' => $data['marque'],
@@ -566,8 +566,8 @@ function ws_client_get_contrat_by_num($num_contrat){
 
   }
   
-  
-  return $table;
+  */
+  return $data;
 }
 
 
@@ -1108,6 +1108,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'jourNaissance' => $jourNaissance ,
              'telephone' => $submission->data[21][0] ,
              'adresse' => $submission->data[23][0] ,
+             'civilite' => $submission->data[24][0] ,
              'mail' => $submission->data[4][0] ,
              'carburant' => $submission->data[13][0] ,
              'valeurAneuf' => $submission->data[20][0] ,
@@ -1153,6 +1154,8 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'jourNaissance' => $jourNaissance ,
              'telephone' => $submission->data[11][0],
              'mail' => $submission->data[12][0],
+             'adresse' => $submission->data[17][0] ,
+             'civilite' => $submission->data[7][0] ,
              'typeLogement' => $submission->data[14][0],
              'momentAssurance' => $submission->data[16][0],
              'adresseLogement' => $submission->data[4][0],
@@ -1193,6 +1196,8 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
               "jourNaissance" => $jourNaissance ,
               "telephone" => $submission->data[4][0],
               "mail" => $submission->data[5][0],
+              "adresse" => $submission->data[11][0] ,
+              "civilite" => $submission->data[8][0] ,
               "typeAssurance" => $submission->data[9][0],
               "momentAssurance" => $submission->data[10][0] 
              );
@@ -1232,8 +1237,10 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'jourNaissance' => $jourNaissance ,
              'mail' => $submission->data[5][0],
              'telephone' => $submission->data[6][0],
+             'adresse' => $submission->data[9][0] ,
+             'civilite' => $submission->data[1][0] ,
              'typeAssurance' => $submission->data[7][0],
-             "momentAssurance" => $submission->data[8][0] 
+             'momentAssurance' => $submission->data[8][0] 
              );
               /*var_dump($devis); die();*/
             $data = drupal_json_encode($devis);
