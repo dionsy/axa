@@ -61,7 +61,9 @@ function mes_contrats_menu() {
 }
 
 function detail_contrat($arg) {
+  global $user ;
   //libraries_load('mpdf');
+  $contrat =  ws_client_get_contrat_by_num($arg);
   //var_dump($contrat) ; die();
   $nom = variable_get('nom_'.$user->uid);
   $prenom = variable_get('prenom_'.$user->uid);
@@ -70,20 +72,47 @@ function detail_contrat($arg) {
   $adresse = variable_get('adresse_'.$user->uid);
   $tel = variable_get('telephone_'.$user->uid);
   $email= variable_get('mail_'.$user->uid);
-  var_dump($nom); die();
-  $contrat =  ws_client_get_contrat_by_num($arg);
+  //var_dump($nom); die();
   $carburant = array(
     100000001 => 'Gasoil',
     100000000 => 'Essence'
+  );
+   $boolean = array(
+    true => 'Oui',
+    false => 'Non'
+  );
+    $logement = array(
+    100000000 => 'Appartement',
+    100000001 => 'Maison',
+    100000002 => 'Autres'
+  );
+    $accident_tab = array(
+    100000000 => 'Voyage',
+    100000001 => 'Evacuation Sanitaire',
+    100000002 => 'Individuels accidents particulier',
+  );
+    $loisir_tab = array(
+    100000000 => 'Plaisance',
+    100000001 => 'RC chasse',
+    100000002 => 'RC chevaux de selle',
+    100000003 => 'RC chef de famille',
   );
 $output  = "<div class='logo' width='323px' height='57px'> </div>
                  <div class='title'>
                     <h2>CONTRAT D'ASSURANCE <span>" .$contrat['typeContrat']. "<span></h2>
                  </div>
+                 <div class='numContrat'>
+                    <table>
+                      <tr>
+                      <td>Numero contrat : </td>
+                      <td>".$arg."</td>
+                    </tr>
+                    </table>
+                 </div>
                  <div class='infoContrat'>
                   <table border='1'>
                     <tr>
-                      <th colspan='2'>Information Personelle</th>
+                      <th colspan='2'>Informations Personelles</th>
                     </tr>
                     <tr>
                       <td>Nom</td>
@@ -104,17 +133,13 @@ $output  = "<div class='logo' width='323px' height='57px'> </div>
                     <tr>
                       <td>Adresse</td>
                       <td>".$adresse."</td>
+                    </tr>
+                    <tr>
+                      <th colspan='2'>".$contrat['typeContrat']."</th>
                     </tr>";
     if($contrat['typeContrat'] === "Automobile") {
         $output .= "<tr>
-                      <th colspan='2'>Information du véhicule</th>
-                    </tr>
-                    <tr>
-                      <td>Numero contrat </td>
-                      <td>".$arg."</td>
-                    </tr>
-                    <tr>
-                      <td>Marque</td>
+                      <td>Type de bien</td>
                       <td>".$contrat['marque']."</td>
                     </tr>
                     <tr>
@@ -137,9 +162,61 @@ $output  = "<div class='logo' width='323px' height='57px'> </div>
                       <td>Valeur à neuf</td>
                       <td>".$contrat['valeurAneuf']."</td>
                     </tr>
-                  </table>
-                </div>";
+                    ";
     }
+    if($contrat['typeContrat'] === "Habitation") {
+        $output .= "
+                    <tr>
+                      <td>Type</td>
+                      <td>".$logement[$contrat['typeLogement']]."</td>
+                    </tr>
+                    <tr>
+                      <td>Nombre de pièces</td>
+                      <td>".$contrat['nbPieces']."</td>
+                    </tr>
+                    <tr>
+                      <td>Adresse</td>
+                      <td>".$contrat['adresseLogement']."</td>
+                    </tr>
+                    <tr>
+                      <td>Montant</td>
+                      <td>".$contrat['montant']."</td>
+                    </tr>
+                    <tr>
+                      <td>Etes-vous locataire</td>
+                      <td>".$boolean[$contrat['locataire']]."</td>
+                    </tr>
+                    <tr>
+                      <td>Est-il votre résidence principale</td>
+                      <td>".$boolean[$contrat['locataire']]."</td>
+                    </tr>
+                  ";
+    }
+    if($contrat['typeContrat'] === "Assistances & Accidents") {
+        $output .= "<tr>
+                      <td>Type d'assurance</td>
+                      <td>".$accident_tab[$contrat['typeAssurance']]."</td>
+                    </tr>
+                  ";
+    }
+    if($contrat['typeContrat'] === "Loisirs-Vie privée") {
+        $output .= "<tr>
+                      <td>Type d'assurance</td>
+                      <td>".$loisir_tab[$contrat['typeAssurance']]."</td>
+                    </tr>
+                  ";
+    }
+
+    $output .= " <tr>
+                      <td>Date début du contrat</td>
+                      <td>".$contrat['debut']."</td>
+                    </tr>
+                    <tr>
+                      <td>Date d'échéance</td>
+                      <td>".$contrat['echeance']."</td>
+                    </tr></table>
+                </div>" ;
+
 
   pdf_using_mpdf_api($output,"test");
 /*  $pdf=new FPDF();
@@ -246,6 +323,7 @@ function mes_contrats_block_view($delta = '') {
             foreach ($informations as $key => $value) {
               # code...
               if($i==0){
+                $output .= '<div class="col-lg-12">';  
                 $output .=     '<div class="col-lg-3 field-contrat">';
                 $output .=       '<span>'.l($value,'contrat/'. $numContrat).'</span>';       
                 $output .=     '</div>';    
@@ -265,14 +343,18 @@ function mes_contrats_block_view($delta = '') {
             }
             
             $path= drupal_get_path('module','mes_contrat').'contrat-pdf.php';
+            $idownload ='<i class="fa fa-download" aria-hidden="true"></i>' ;
+            $iview = '<i class="fa fa-eye" aria-hidden="true"></i>' ;
+            $irequete ='<i class="fa fa-pencil-square-o" aria-hidden="true"></i>' ;
             $output .=     '<div class="col-lg-1 telechargement-contrat field-contrat">';
-            $output .=       '<a href="'.$path.'" download="contrat-pdf.php"><i class="fa fa-download" aria-hidden="true"></i></a>';      
+            $output .=       '<span> '.l($idownload ,'contrat/'.$numContrat,array('html'=> true ,'attributes'=> array('target' => '_blank'))).'</span>';   
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 visualisation-contrat field-contrat">';
-            $output .=       '<a href="http://localhost/pdf" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a>';      
+            $output .=       '<span> '.l($iview ,'contrat/'.$numContrat,array('html'=> true)).'</span>';      
             $output .=     '</div>';
             $output .=     '<div class="col-lg-1 requete-contrat field-contrat">';
-            $output .=       '<a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>';      
+            $output .=       '<span> '.l($irequete ,'contrat/'.$numContrat,array('html'=> true)).'</span>';
+            $output .=     '</div>';
             $output .=     '</div>';
           }
           $output .=   '</div>';

@@ -418,6 +418,12 @@ function ws_client_get_liste_contrats(){
     100000001 => 'Evacuation Sanitaire',
     100000002 => 'Individuels accidents particulier',
   );
+  $loisir_tab = array(
+    100000000 => 'Plaisance',
+    100000001 => 'RC chasse',
+    100000002 => 'RC chevaux de selle',
+    100000003 => 'RC chef de famille',
+  );
 
   global $user;
   $account = user_load($user->uid);
@@ -459,7 +465,16 @@ function ws_client_get_liste_contrats(){
       $accident['info'][] = array(
         'id' => $assurance['id'],
         'produit' => $accident_tab[$assurance['typeAssurance']],
-        'complete' => 'complete',  
+        'complete' => 'A complété',  
+      );  
+    }
+    if ($assurance['typeContrat'] == 'Loisirs-Vie privée') {
+      # code...
+      $loisir['type'] = 'loisir';
+      $loisir['info'][] = array(
+        'id' => $assurance['id'],
+        'produit' => $loisir_tab[$assurance['typeAssurance']],
+        'complete' => 'A complété',  
       );  
     }
 
@@ -475,6 +490,9 @@ function ws_client_get_liste_contrats(){
   if (isset($accident)) {
     # code...
     $returnArray[] = $accident;
+  }  
+  if (isset($loisir)) {
+    $returnArray[] = $loisir;
   }
 
   //var_dump($returnArray); die();
@@ -487,89 +505,23 @@ function ws_client_get_contrat_by_num($num_contrat){
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $contrat = 'contrat';
-  $table = array();
-
-  global $user;
-  $account = user_load($user->uid);
-  $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
-
   $url = 'http://'. $ip .'/'. $root .'/' . $contrat .'/'. $num_contrat;
-
   $options = array('timeout' => 600.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
-  /*$data = array(
-    'adresseLogement' => null,
-    'carburant' =>  100000001,
-    'debut' => '12/05/2016',
-    'echeance' => '12/05/2017',
-    'id' => null,
-    'locataire' => false,
-    'marque' => 'Bmw',
-    'modele' => 'A16',
-    'montant' => 0,
-    'nbPieces' => 0,
-    'principal' => false,
-    'puissance' => 8,
-    'service' => null,
-    'typeAssurance' => 0,
-    'typeContrat' => 'Automobile',
-    'typeLogement' => 0,
-    'valeurAneuf' => 50000000,
-  );
-
-  if ($data['typeContrat'] === 'Automobile') {
-    # code...
-    $table['thead'] = array(
-      'num_contrat' => 'Numéro Contrat',
-      'type' => 'Type du contrat',
-      'marque' => 'Marque',
-      'modele' => 'Modèle',
-      'puissance' => 'Puissance',
-      'valeur' => 'Valeur à neuf',
-      'debut' => 'Date début contrat ',
-      'fin' => 'Date fin contrat',
-      'carburant' => 'Carburant',
-    );
-
-    $table = array(
-      'num_contrat' => $num_contrat,
-      'type' => 'Automobile',
-      'marque' => $data['marque'],
-      'modele' => $data['modele'],
-      'puissance' => $data['puissance'],
-      'valeur' => $data['valeurAneuf'],
-      'debut' => $data['debut'],
-      'fin' => $data['echeance'],
-      'carburant' => $data['carburant'],
-    );
-
-  }
-
-  if ($data['typeContrat'] === 'Assistance') {
-    # code...
-    $table['thead'] = array(
-      'numContrat' => 'Numéro Contrat',
-      'type' => 'Type du contrat',
-      'type_assurance' => 'Type Assurance',
-      'debut' => 'Date début contrat ',
-      'fin' => 'Date fin contrat',
-    );
-
-    $table['tbody'] = array(
-      'numContrat' => $num_contrat,
-      'type' => 'Automobile',
-      'type_assurance' => $data['typeAssurance'],
-      'debut' => $data['debut'],
-      'fin' => $data['echeance'],
-    );
-
-  }
-  
-  */
   return $data;
 }
-
+function ws_client_get_devis_by_num($num_devis){
+  // URL Webservice
+  $ip = variable_get('ip_server');
+  $root = variable_get('root');
+  $devis = 'devis';
+  $url = 'http://'. $ip .'/'. $root .'/' . $devis .'/'. $num_devis;
+  $options = array('timeout' => 600.0) ;
+  $request = drupal_http_request($url ,$options) ;
+  $data = drupal_json_decode($request->data) ;
+  return $data;
+}
 
 function ws_client_get_liste_devis(){
   // URL Webservice
@@ -1115,7 +1067,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'marque' =>  $marque ,
              'carosserie' => $carroserie ,
              'modele' => $modeleVehicule,
-             'puissane' => $submission->data[18][0],
+             'puissance' => $submission->data[18][0],
              'anneeMiseEnCirculation' => $anneeMiseEnCirculation ,
              'moisMiseEnCirculation' => $moisMiseEnCirculation ,
              'jourMiseEnCirculation' => $jourMiseEnCirculation ,
@@ -1123,6 +1075,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              );
             
             $data = drupal_json_encode($devis);
+            //var_dump($data); die();
 
               $options = array(
                               'method' => 'POST',

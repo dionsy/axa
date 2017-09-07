@@ -2147,3 +2147,11 @@ input.nmpd-display {
 .fa-home::before , .fa-user::before {
     margin-right: 10px;
 }
+#block-quicktabs-left-menu .row.item-contrat div,
+#block-quicktabs-left-menu .row.item-devis div  {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+.fa.fa-download ,.fa.fa-eye ,.fa.fa-pencil-square-o {
+    color: rgb(51, 122, 183);
+}

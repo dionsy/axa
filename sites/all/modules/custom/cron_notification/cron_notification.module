@@ -206,7 +206,8 @@ function cron_notification_cron() {
            !empty($library['loaded']) &&
            in_array("SMS", $choice)) {
         # send sms
-        //cron_notification_send_kannel_sms($number_client, $body_sms);        
+        //cron_notification_send_kannel_sms($number_client, $body_sms);
+        cron_notification_twilio_sms($number_client, $body) ;        
       }
 
     }

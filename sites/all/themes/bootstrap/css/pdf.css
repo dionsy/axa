@@ -24,6 +24,10 @@
 	height: 35px;
 	text-align: center	;
 }
+.numContrat table {
+	width:  60% ;
+	font-weight: bold;
+}
 
 /*.logo
 		{
