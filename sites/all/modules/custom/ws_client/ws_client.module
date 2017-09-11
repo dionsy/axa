@@ -701,7 +701,7 @@ function ws_client_get_liste_devis(){
 
       if ($assurance['typeContrat'] == 'Loisirs-Vie privée') {
         # code...
-        $loisir['type'] = 'Loisirs-Vie privée';
+        $loisir['type'] = 'Type Loisirs-Vie privée';
          $loisir['info'][] = array(
         'id' => $assurance['id'],
         'produit' => $loisir_tab[$assurance['typeAssurance']],
