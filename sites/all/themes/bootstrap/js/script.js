@@ -171,6 +171,12 @@
         $( ".form-item-submitted-telephone").focusout(function() {
              $('.form-item-submitted-adresse').addClass('fadeIn'  ) ;
         });
+        $( ".not-logged-in .form-item-submitted-adresse").focusout(function() {
+             $('.not-logged-in  .webform-component--civilite-client').addClass('fadeIn'  ) ;
+        });
+        $( ".not-logged-in .form-item-submitted-adresse").keyup(function() {
+             $('.not-logged-in  .webform-component--civilite-client').addClass('fadeIn'  ) ;
+        });
           $( ".form-item-submitted-adresse").focusout(function() {
              $('.not-logged-in .form-item-submitted-type-dassurance').addClass('fadeIn'  ) ;
         });

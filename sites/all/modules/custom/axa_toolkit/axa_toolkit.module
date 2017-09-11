@@ -7,6 +7,9 @@ function axa_toolkit_page_alter(&$page) {
   if( drupal_is_front_page() ){
     $page['content']['#attached']['library'][] = array('system', 'drupal.ajax');
   }
+  if ($_GET['q'] == 'node/2') {
+     $page['content']['#attached']['library'][] = array('system', 'drupal.ajax'); 
+  }
 }
 /**
  * Implement hook_form_FORM_ID_alter().

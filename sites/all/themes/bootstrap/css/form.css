@@ -244,7 +244,8 @@ form div:first-child{
 .not-logged-in .form-item-submitted-puissance,
 .not-logged-in .form-item-submitted-date-premiere--mise-en-circulation,
 .not-logged-in .form-item-submitted-valeur-a-neuf ,
-    .not-logged-in .form-item-submitted-adresse{
+.not-logged-in .form-item-submitted-adresse,
+.not-logged-in  .webform-component--civilite-client{
     animation-timing-function: ease-in-out;
 /*    opacity: 1;*/
     transform: translateX(50px) ;
@@ -266,7 +267,8 @@ form div:first-child{
  .not-logged-in .form-item-submitted-puissance,
  .not-logged-in .form-item-submitted-date-premiere--mise-en-circulation ,
  .not-logged-in .form-item-submitted-valeur-a-neuf,
- .not-logged-in .form-item-submitted-adresse{
+ .not-logged-in .form-item-submitted-adresse ,
+ .not-logged-in .webform-component--civilite-client{
    height: 0;
   opacity: 0;
 }
@@ -391,7 +393,8 @@ html.js input.webform-calendar {
 }*/
 #edit-submitted-civilite .form-item-submitted-civilite ,
 #edit-submitted-civilite .form-item-submitted-civilite,
-#edit-submitted-civilite .form-item-submitted-civilite{
+#edit-submitted-civilite .form-item-submitted-civilite,
+#edit-submitted-civilite-client .form-item-submitted-civilite-client{
 
     width: 25% ! important;
        /* width: 40%;*/
@@ -636,7 +639,7 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     padding-left: 10px;
     padding-right: 5px;
 }
-#edit-submitted-civilite {
+#edit-submitted-civilite ,#edit-submitted-civilite-client {
     display: inline;
 }
 .form-control:focus

@@ -1739,7 +1739,7 @@ div.offres .offre {
     background:  #00677F;
     text-align: center;
     padding-bottom: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 47px;
 }
 #block-views-vos-services-axa-senegal-block .block-title{
     margin-top:0;
@@ -2154,4 +2154,7 @@ input.nmpd-display {
 }
 .fa.fa-download ,.fa.fa-eye ,.fa.fa-pencil-square-o {
     color: rgb(51, 122, 183);
+}
+#block-mes-sinistres-mes-sinistres .item-type-sinistre {
+    margin-bottom: 15px;
 }

@@ -149,7 +149,7 @@ function fixer_declarer_sinistre_form($form, &$form_state){
   $get_service_contrats = $contrats;
 
   $nature_sinistre = array(
-    'auto' => array('Accident', 'Vitre brisee', 'Incendie','Vol','Cambriolage'),
+    'auto' => array('Accident', 'Bris de glace', 'Incendie','Vol','Cambriolage'),
     'habitation' => array('Incendie', 'Vol', 'Cambriolage', 'Degâts des eaux', 'Vent violent'),
     'accident' => array('Accident de la route','nature accident 2','nature accident 3'),
     'loisir' => array('loisir1', 'loisir2', 'loisir3', 'loisir4'),
@@ -169,7 +169,7 @@ function fixer_declarer_sinistre_form($form, &$form_state){
     # code...
     $form['sinistre']['type']['#options'][$contrat['type']] = t($contrat['type']);
 
-    if ($contrat['type'] == 'Assistance et Accident') {
+    if ($contrat['type'] == 'Accident') {
       # code...
       $form['sinistre']['Accident'] = array(
       '#type' => 'select',
@@ -182,7 +182,8 @@ function fixer_declarer_sinistre_form($form, &$form_state){
       ),
     );
 
-    }else{
+    }
+    else{
       $form['sinistre'][$contrat['type']] = array(
         '#type' => 'select',
         '#options' => $contrat['info'] ,
@@ -241,6 +242,15 @@ function fixer_declarer_sinistre_form($form, &$form_state){
       ),
     ),
   );
+      $form['sinistre']['dateSinistre'] = array(
+    '#type' => 'date',
+    '#title' => t('Date de survenance du sinistre'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="dateSinistre"]' => array('value' => t('date sinistre')),
+      ),
+    )
+  );
 
   /*$form['sinistre']['date'] = array(
     '#type' => 'date',
@@ -265,6 +275,7 @@ function fixer_declarer_sinistre_form($form, &$form_state){
     '#type' => 'textarea',
     '#title' => t('Décrire les dommages'),
   );
+
 
   $form['supplementaire']['garage'] = array(
     '#type' => 'checkbox',
@@ -385,8 +396,8 @@ function declarer_sinistre_form_submit($form, &$form_state){
       //Si le véhicule est ou sera déposé dans un garage?
       if ($form_state['value']['garage'] = '1') {
         # code...
-        $data['EnGarage'] = TRUE;
-        $data['nomReparareur'] = $form_state['values']['nom'];
+        $data['enGarage'] = TRUE;
+        $data['nomReparateur'] = $form_state['values']['nom'];
         $data['jourReparation'] = (int) $form_state['values']['date']['day'];
         $data['moisReparation'] = (int) $form_state['values']['date']['month'];
         $data['anneeReparation'] = (int) $form_state['values']['date']['year'];
@@ -421,8 +432,15 @@ function declarer_sinistre_form_submit($form, &$form_state){
     $data['estimationDegats'] = $estimation[$form_state['values']['estimation']];
     //decrire les dommages
     $data['dommages'] = $form_state['values']['dommages'];
+    //Date sinistre
+    $dateSinistre['dateSinistre'] = $form_state['values']['dateSinistre'];
+    $jourSinistre = $dateSinistre['dateSinistre']['day'];
+    $moisSinistre = $dateSinistre['dateSinistre']['month'];
+    $anneeSinistre = $dateSinistre['dateSinistre']['year'];
+    $data['jourSinistre'] = $jourSinistre ;
+    $data['moisSinistre'] = $moisSinistre ;
+    $data['anneeSinistre'] = $anneeSinistre ;
 
-    //var_dump($data); die();
     ws_client_declarer_sinistre($data);
 
 }

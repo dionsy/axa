@@ -27,9 +27,9 @@ function echeances_block_view($delta = '') {
     $text_contact = t('Pour toute information supplémentaire contacter votre conseiller');
     $output = '';
 
-    //$get_service_echeance = ws_client_get_liste_echeances();
+    $get_service_echeance = ws_client_get_liste_echeances();
 
-    $table = array(
+    /*$table = array(
       'thead' => array(
         'NumContrat' => t('N° Contrat'),
         'caracteristiques' => t('Caractéristiques'),
@@ -57,9 +57,10 @@ function echeances_block_view($delta = '') {
         ),
       ),
     );
+*/
 
-
-    $table = isset($get_service_echeance) ? $get_service_echeance : $table; 
+    /*$table = isset($get_service_echeance) ? $get_service_echeance : $table;*/ 
+    $table =$get_service_echeance;
 
     $output .= '<p>'. $text_prime .'</p>';
     $output .= '<table class="table-bordered">';

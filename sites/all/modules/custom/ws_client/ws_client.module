@@ -43,8 +43,22 @@ function ws_client_menu() {
     'access arguments' => array('administer ws_client'),
     'file' => 'ws_client.admin.inc',
   );
+$items['demande'] = array(
+    'page callback' => 'demand_callback',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+  );
 
   return $items;
+}
+function demand_callback(){
+  $output ='<div id="demander_devis">' ;
+  $output .= '<div class="auto"><span> '.l('Automobile','node/8').'</span></div>'; 
+  $output .= '<div class="habitation"><span> '.l('Habitation','node/9').'</span></div>'; 
+  $output .= '<div class="assistance"><span> '.l('Assistance et Accidents ','node/10').'</span></div>'; 
+  $output .= '<div class="loisir"><span> '.l('Loisirs-vie privée ','node/11').'</span></div>';
+  $output .='</div>' ;
+  return $output ;
 }
 
 	/**
@@ -53,15 +67,36 @@ function ws_client_menu() {
 	*/
 function  ws_client_block_info() {
 	$blocks['ws_client_block_info'] = array('info' => t('web service client'));
+  $blocks['button_devis_block_info'] = array('info' => t('Block button devis'));
 	return $blocks ;
 }
 function  ws_client_block_view($delta = '') {
-	$block['content'] = '<h1>Web Services client</h1>';
-	$get_node_result = ws_client_getClient_node();
-	/*krumong('main')->kPrint($get_node_result);*/	
-	$data = json_decode($get_node_result->data);
-	/*krumong('main')->kPrint($data);*/
-	return $block ;
+  switch ($delta) {
+    case 'ws_client_block_info':
+      $block['content'] = '<h1>Web Services client</h1>';
+      $get_node_result = ws_client_getClient_node();
+      /*krumong('main')->kPrint($get_node_result);*/  
+      $data = json_decode($get_node_result->data);
+      /*krumong('main')->kPrint($data);*/
+      return $block ;
+      break;
+    case 'button_devis_block_info':
+    $href= l(t(' Demander un devis'), 'demande', array(
+                  'attributes' => array(
+                    'title' => t('Demander un devis'),
+                    'class' => array('use-ajax'),
+                    'data-dialog' => 'true',
+                    'data-dialog-options' => '{"width":"40%"}',
+                  )
+                ));
+        $block['content'] = $href;
+        return $block;
+      break;
+    default:
+      # code...
+      break;
+  }
+	
 }
 
 function ws_client_get_node(){
@@ -125,11 +160,23 @@ function ws_client_get_liste_echeances(){
 
   $returnArray = array(); 
 
-  $logement = array(
+/*  $logement = array(
     100000000 => 'Appartement',
     100000001 => 'Maison',
     100000002 => 'Autres',
   );
+    $accident_tab = array(
+    100000000 => 'Voyage',
+    100000001 => 'Evacuation Sanitaire',
+    100000002 => 'Individuels accidents particulier',
+  );
+  $loisir_tab = array(
+    100000000 => 'Plaisance',
+    100000001 => 'RC chasse',
+    100000002 => 'RC chevaux de selle',
+    100000003 => 'RC chef de famille',
+  );*/
+
 
   global $user;
   $account = user_load($user->uid);
@@ -137,13 +184,13 @@ function ws_client_get_liste_echeances(){
 
   $url = 'http://'. $ip .'/'. $root .'/' . $liste_contrats .'/'. $identifiant;
 
-  $options = array('timeout' => 6000.0) ;
+  $options = array('timeout' => 600.0) ;
   $request = drupal_http_request($url ,$options) ;
   $data = drupal_json_decode($request->data) ;
-  var_dump($data); die();
+  //var_dump($data); die();
   $table['thead'] = array(
       'NumContrat' => t('N° Contrat'),
-      'caracteristiques' => t('Caractéristiques'),
+      'Type' => t('type'),
       'mode_echeance' => t('Mode d\'echeance'),
       'prochaine_echeance' => t('Prochaine échéance'),
     );
@@ -153,22 +200,7 @@ function ws_client_get_liste_echeances(){
     foreach ($data as $echeance) {
       # code...
       $table['tbody'][$i]['NumContrat'] = $echeance['id'];
-      if ($echeance['typeContrat'] == 'Habitation') {
-        # code...
-      $table['tbody'][$i]['caracteristiques'] = $echeance['adresseLogement'];
-      }
-      if ($echeance['typeContrat'] == 'Automobile') {
-        # code...
-      $table['tbody'][$i]['caracteristiques'] = $echeance['modele'];
-      }
-      if ($echeance['typeContrat'] == 'Accident') {
-        # code...
-      $table['tbody'][$i]['caracteristiques'] = 'aaa';
-      }
-      if ($echeance['typeContrat'] == 'Loisir') {
-        # code...
-      $table['tbody'][$i]['caracteristiques'] = 'bbb';
-      }
+      $table['tbody'][$i]['type'] = $echeance['typeContrat'];
       $table['tbody'][$i]['mode_echeance'] = t('Annuelle');
       $table['tbody'][$i]['prochaine_echeance'] = $echeance['echeance']; 
       
@@ -792,7 +824,7 @@ function ws_client_declarer_sinistre($data){
   $url = 'http://'. $ip .'/'. $root .'/' . $declarer_sinistre;
 
   $data = drupal_json_encode($data);
-
+  //var_dump($data); die();
   $options = array(
     'method' => 'POST',
     'data' => $data,

@@ -208,6 +208,10 @@ $output  = "<div class='logo' width='323px' height='57px'> </div>
     }
 
     $output .= " <tr>
+                      <td>Prime</td>
+                      <td>".$contrat['prime']."</td>
+                    </tr>
+                    <tr>
                       <td>Date début du contrat</td>
                       <td>".$contrat['debut']."</td>
                     </tr>

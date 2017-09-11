@@ -96,7 +96,7 @@
 
 .title-sinistre {
     background: #fcfcfc;
-    border: 1px solid #eee;
+   /* border: 1px solid #eee;*/
     color: #005399;
     padding-left: 1%;
     font-weight: bold;
@@ -348,20 +348,22 @@ fieldset .panel-heading a.panel-title {
 
 
 /*** font awesome ***/
-#fixer-declarer-sinistre-form fieldset.collapse-processed a:after{
+#fixer-declarer-sinistre-form fieldset.collapse-processed a:after ,
+#block-mes-sinistres-mes-sinistres .item-type-sinistre a:after{
     font-family: 'FontAwesome';
     content: "\f107";
-    font-size: 16px;
-    position: absolute;
-    right: 20px;
+    font-size: 14px;
+    position: relative;
+    left: 20px;
 }
 
-#fixer-declarer-sinistre-form fieldset.collapse-processed.collapsed a:after{
+#fixer-declarer-sinistre-form fieldset.collapse-processed.collapsed a:after ,
+#block-mes-sinistres-mes-sinistres .item-type-sinistre a.collapsed:after{
     font-family: 'FontAwesome';
-    content: "\f105" !important;
-    font-size: 16px;
-    position: absolute;
-    right: 20px;
+    content: "\f105";
+    font-size: 14px;
+    position: relative;
+    left: : 20px;
 }
 
 /*** fixer un rendez vous ***/
@@ -369,6 +371,36 @@ fieldset .panel-heading a.panel-title {
     color: #999 !important;
     background: red !important;
     font-size: 30px !important;
+}
+.panel-title.fieldset-legend {
+    font-size: 14px !important;
+}
+#demander_devis div a {
+    border: 1px solid;
+    font-size: 16px;
+    padding: 7px;
+    color: white ;
+}
+#demander_devis {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+#demander_devis div {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#demander_devis div.auto a {
+background-color: #2668A2 ; 
+}
+#demander_devis div.habitation a {
+background-color: #B63347 ; 
+}
+#demander_devis div.assistance a {
+background-color: #53A7E1 ; 
+}
+#demander_devis div.loisir a {
+background-color: #FFC926 ; 
 }
 
 
