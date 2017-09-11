@@ -69,7 +69,7 @@ function mes_devis_block_view($delta = '') {
               $output  .='<div class="col-lg-4"><span>Type de contrat</span></div>
                           <div class="col-lg-3"><span>A complété</span></div>';
           }
-           $output  .= ' <div class="col-lg-3"><span>Action</span></div>
+           $output  .= ' <div class="col-lg-2"><span>Action</span></div>
                         </div>' ;
           foreach ($devis['info'] as $informations) {
             # code...

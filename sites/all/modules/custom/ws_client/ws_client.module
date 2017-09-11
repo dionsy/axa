@@ -1033,7 +1033,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
       $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
     }
     $result = ws_client_createDevis($nid , $submission , $identifiant) ;
-   //  var_dump($result) ; die();
+    //var_dump($result) ; die();
     if($result->code >=  300 )
     {
      drupal_set_message("Le devis n'a pas ete créé veuillez verifier les données saisies"  ,'error');

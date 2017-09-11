@@ -254,7 +254,7 @@ form#fixer-rendez-vous-form #edit-actions--4 {
     background: #005399 !important;
     color: #fff !important;
     height: 10%;
-    border-radius: 5px;
+/*    border-radius: 5px;*/
 }
 
 .declarer-sinistre #quicktabs-tab-left_menu-8 {
@@ -405,13 +405,15 @@ background-color: #FFC926 ;
 #block-ws-client-button-devis-block-info {
     background: rgb(0, 77, 146) none repeat scroll 0 0;
     text-align: center; 
-    padding: 5px;
+    padding: 4px;
+    top: 88px;
     z-index: 9999999;
     position:  relative;
 }
 #block-ws-client-button-devis-block-info a {
     color: rgb(255, 255, 255);
-    font-size: large;
+    font-size: 14px;
+    font-weight: bold;
 }
 #block-mes-devis-mes-devis .field-devis span ,
 #block-mes-contrats-mes-contrats .field-contrat span{

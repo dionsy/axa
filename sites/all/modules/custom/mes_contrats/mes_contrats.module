@@ -283,7 +283,7 @@ function mes_contrats_block_view($delta = '') {
           }
           if($contrat['type'] === 'Accident' || $contrat['type'] === 'loisir'){
               $output  .='<div class="col-lg-3"><span>Type de contrat</span></div>
-                          <div class="col-lg-3"><span>Acomplété</span></div>';
+                          <div class="col-lg-3"><span>A complété</span></div>';
           }
            $output  .= ' <div class="col-lg-3"><span>Action</span></div>
                         </div>' ;

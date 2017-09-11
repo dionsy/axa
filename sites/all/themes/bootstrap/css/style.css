@@ -2151,6 +2151,7 @@ input.nmpd-display {
 #block-quicktabs-left-menu .row.item-devis div  {
     padding-right: 0px !important;
     padding-left: 0px !important;
+    text-align: center !important;
 }
 .fa.fa-download ,.fa.fa-eye ,.fa.fa-pencil-square-o {
     color: rgb(51, 122, 183);

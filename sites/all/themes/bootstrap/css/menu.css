@@ -329,7 +329,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li
 .page-node-2 .well {
     min-height: 20px;
     margin-bottom: 20px;
-    background-color: #004d92;
+    /*background-color: #004d92;*/
     border: 1px solid #ED1846;
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
@@ -337,6 +337,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist li a ,#block-menu-menu-nos-produits li
 }
 .well {
     padding: 0px !important;
+    background-color: transparent !important;
 }
 .page-node-2 .well  ul li {
     margin-bottom: 3px; 
@@ -895,7 +896,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 
 .mon-conseiller .well {
     border: medium none;
-    box-shadow: 0 1px 2px 0 #ccc;
+    /*box-shadow: 0 1px 2px 0 #ccc;*/
 }
 .conseiller-left-bar p:last-child {
     text-align: center;
@@ -921,7 +922,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     float: right;
     left: 2px;
     position: relative;
-    top: 13px;
+    top: 24px;
     transform: skew(0deg, 6deg);
     width: 102%;
 }

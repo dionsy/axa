@@ -142,7 +142,9 @@ function cron_notification_cron() {
   $body_mail = variable_get('cron_notification_mail_body');
   # get last submissions for all users( Set in cron_notification_form_alter())
   $values = variable_get('values');
+  //var_dump($values) ; die();
   $clients = user_load_by_role('client');
+
   # Week intervalle
   $periodes_list = array(
     0 => 'P1W',
@@ -161,9 +163,10 @@ function cron_notification_cron() {
   foreach ($clients as $client) {
     # code...
     $uid = $client->uid;
-    $number_client = '+' . $code . /*$client->field_numero_telephone['und'][0]['value']*/'778088471';
+    $number_client = '+' . $code . /*$client->field_numero_telephone['und'][0]['value']*/'778241624';
 
     # Notification choice: SMS or/and Mail
+    //print_r($values)  ; die();
     $choice = $values[$uid][$uid][1];
     # Notification periode
     $periode = $values[$uid][$uid][2][0];
@@ -174,7 +177,7 @@ function cron_notification_cron() {
     # Today
     $date = new DateTime(); 
     # Date of end of contrat
-    $date_fin = /*$client->field_fin_contrat['und'][0]['value'];*/'30/08/2017';
+    $date_fin = /*$client->field_fin_contrat['und'][0]['value'];*/'18/09/2017';
     $fin_contrat = new DateTime($date_fin); 
     # Today + Choice notification periode
     $date_intervalle = new DateInterval($periodes_list[$periode]);
@@ -199,12 +202,13 @@ function cron_notification_cron() {
     if(/*$date >= $fin_contrat && $date <= $date_majorant*/TRUE){
       if(/*in_array("MaIL", $choice)*/TRUE){
         # send email
-        //krumong('main')->kPrint($body_mail, 'body mail');
+        krumong('main')->kPrint($body_mail, 'body mail');
         cron_notification_send_mail($client->mail, $subject, $body_mail);      
       }    
       if (($library = libraries_load(TWILIO_LIBRARY)) &&
            !empty($library['loaded']) &&
            in_array("SMS", $choice)) {
+        //print_r($client)  ; die();
         # send sms
         //cron_notification_send_kannel_sms($number_client, $body_sms);
         cron_notification_twilio_sms($number_client, $body) ;        
@@ -243,6 +247,7 @@ function cron_notification_twilio_sms($number_client, $body){
               # Body message
               'Body' => $body,
           ));
+  var_dump($client) ; die();
   if($client){
     krumong('main')->kPrint('a SMS notification has been sent to:' . $number_client);
     return $client;
@@ -265,7 +270,7 @@ function cron_notification_twilio_sms($number_client, $body){
  * @return bool
  *   TRUE or FaLSE if the message was successfully sent.
  */
-function cron_notification_send_kannel_sms($to, $message){
+/*function cron_notification_send_kannel_sms($to, $message){
   $sms_to      = $to;
   $sms_message = urlencode(strip_tags($message));
         
@@ -282,7 +287,7 @@ function cron_notification_send_kannel_sms($to, $message){
         
   return $result = file_get_contents("$kannel_url") && $result === '0: accepted for delivery';
   
-}
+}*/
 
 
 /**
@@ -336,11 +341,11 @@ function cron_notification_send_mail($to, $subject, $body){
   $mail->altBody = $altbody;
 
   if($mail->send()){
-    krumong('main')->kPrint('a Mail notification has been sent to:' . $to);
+   // krumong('main')->kPrint('a Mail notification has been sent to:' . $to);
     return TRUE;
   }
   else{
-    krumong('main')->kPrint('a Mail notification has not been sent to:' . $to);
+   // krumong('main')->kPrint('a Mail notification has not been sent to:' . $to);
     return FALSE;
   }
   
@@ -418,9 +423,11 @@ function user_load_by_role($role){
  * Implements hook_form_alter().
  */
 function cron_notification_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'webform_client_form_86'){
     module_load_include('inc','webform','includes/webform.submissions');
 
     //load all clients
+    //krumong('main')->kPrint($form_id);
     $clients = user_load_by_role("client");
     //nid preference webform
     $nid = '86';
@@ -433,10 +440,11 @@ function cron_notification_form_alter(&$form, &$form_state, $form_id) {
         'nid' => '86',
         'uid' => $client->uid,
       );
+     // var_dump($client->uid) ;
       
       //Retrieve all submissions filtered by user and nid
       $submissions = webform_get_submissions($filters);
-      /*krumong('main')->kPrint($submissions);*/
+      //krumong('main')->kPrint($submissions);
         
       //last submit for each user
       foreach ($submissions as $submission) {
@@ -448,7 +456,7 @@ function cron_notification_form_alter(&$form, &$form_state, $form_id) {
 
       $values[$client->uid] = $value; 
     }
-
+    die();
     variable_set("values", $values);
-
+    }
 }
