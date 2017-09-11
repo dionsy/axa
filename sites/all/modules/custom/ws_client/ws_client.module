@@ -870,11 +870,12 @@ function ws_client_user_login(&$edit, $account) {
 }
 
 function ws_client_init() {
+  global $user;
+  if($user->uid && current_path()=='node/2'){ // Pour eviter de faire appel au CRM quand on est pas connecté et quand on est pas sur l'espace client
+  $account = user_load($user->uid); 
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $info_user = variable_get('retrieve_info_user');
-  global $user;
-  $account = user_load($user->uid); 
  //var_dump($account); die();
  if(!empty($account->field_identifiant_client)){
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
@@ -906,6 +907,7 @@ function ws_client_init() {
     variable_set('telephone_'.$user->uid, $data['telephone']);
     variable_set('mail_'.$user->uid, $data['mail']);
   } 
+ }
  }
 }
 
