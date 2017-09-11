@@ -68,7 +68,7 @@ function fixer_rendez_vous_form($form, &$form_state){
 
   $form['objet'] = array(
     '#type' => 'select',
-    '#title' => t('Objet du contrat'),
+    '#title' => t('Objet'),
     '#options' => array(
       0 => t('Souscription d\'un nouveau contrat'),
       1 => t('Demande d\'information'),
@@ -85,7 +85,7 @@ function fixer_rendez_vous_form($form, &$form_state){
 
   $form['moyen_contact'] = array(
     '#type' => 'select',
-    '#title' => t('Je souhaite être contacter par'),
+    '#title' => t('Je souhaite être contacté par'),
     '#options' => array(
       'SMS' => t('Téléphone'),
       'EMAIL' => t('Email'),
