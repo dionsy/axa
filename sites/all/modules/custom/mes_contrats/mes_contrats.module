@@ -312,8 +312,7 @@ function mes_contrats_block_view($delta = '') {
               $i++;
 
             }
-            
-            $path= drupal_get_path('module','mes_contrat').'contrat-pdf.php';
+
             $idownload ='<i class="fa fa-download" aria-hidden="true"></i>' ;
             $iview = '<i class="fa fa-eye" aria-hidden="true"></i>' ;
             $irequete ='<i class="fa fa-pencil-square-o" aria-hidden="true"></i>' ;

@@ -675,11 +675,12 @@ function ws_client_get_liste_devis(){
 
       if ($assurance['typeContrat'] == 'Assistance & Accidents') {
         # code...
+        //krumong('main')->kPrint($assurance,'assurance');
         $accident['type'] = 'Type Assistance & Accidents';
          $accident['info'][] = array(
         'id' => $assurance['id'],
         'produit' => $accident_tab[$assurance['typeAssurance']],
-        'complete' => 'complete'  
+        /*'complete' => 'complete'*/  
       );  
       /*  $i=0;
         foreach ($assurance as $key => $value) {
@@ -705,7 +706,7 @@ function ws_client_get_liste_devis(){
          $loisir['info'][] = array(
         'id' => $assurance['id'],
         'produit' => $loisir_tab[$assurance['typeAssurance']],
-        'complete' => 'complete'  
+        /*'complete' => 'complete'*/  
       );  
     /*    $i=0;
         foreach ($assurance as $key => $value) {
@@ -1006,11 +1007,11 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
            $element['#attributes']= array('disabled' => '1');
           break;
           case 'Civilité':
-          if($civilite=='M')
+          /*if($civilite=='M')
             $element['#default_value'] = 1;
           else
           $element['#default_value'] = 2;
-           $element['#attributes']= array('disabled' => '1');
+           $element['#attributes']= array('disabled' => '1');*/
           break;
         default:
 

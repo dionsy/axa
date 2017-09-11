@@ -503,6 +503,33 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 #navbar-collapse .nav .dropdown li a{
     color: #ffffff
 }
+.page-search-node .page-header{
+    border:none;
+    text-align: center;
+    margin-top: 2%;
+}
+#search-form .form-control{
+    width: 100% !important;
+    border:2px solid #ccc;
+    padding:5px 24px 4px 15px;
+    border-radius:16px 0 0 16px;
+}
+.btn.btn-primary
+#search-form{
+    position: relative;
+}
+#search-form .input-group-btn{
+    position: absolute;
+    right: 12px;
+}
+#search-form .input-group-btn .btn.btn-primary{
+    background:none;
+    padding: 0;
+    border:none;
+}
+#search-form .input-group-btn .btn.btn-primary .glyphicon-search::before {
+    color: #00529B;
+}
 .page-user #test {
     background-color: white;*/
     border: 1px solid #004d92;
@@ -517,7 +544,7 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
 }
 .node-type-webform h1.page-header {
     background-color: #004d92;
-    font-size: 2.5rem;
+    font-size: 150%;
     letter-spacing: 0.4px;
     text-align: center;
  /*   text-transform: capitalize;*/
@@ -526,6 +553,7 @@ textarea#edit-submitted-adresse-du-bien-a-assurer {
     border-color:#ED1846;
     margin-bottom: 10px;
     color: #fff;
+    padding: 0;
 }
 
 .page-node-11 h1.page-header, .page-node-30 h1.page-header,

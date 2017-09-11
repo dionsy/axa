@@ -92,6 +92,11 @@ function bootstrap_process_page(&$variables) {
 
 //Custom error page
 //krumong('main')->kPrint($variables);
+if($variables['theme_hook_suggestions'][0]=='page__search'){
+    $variables['title'] = t('Search results');
+    $variables['breadcrumb']='';
+
+}
   $array = array('page__node__8','page__node__9','page__node__10','page__node__11');
 
   if(isset($variables['theme_hook_suggestions'][2]) && in_array($variables['theme_hook_suggestions'][2], $array)){

@@ -27,6 +27,7 @@ function bootstrap_breadcrumb($variables) {
 
   $trail = menu_get_active_trail();
   $output='';
+//krumong('main')->kPrint($variables);
 
   if(isset($trail[1]['map'])){
 
