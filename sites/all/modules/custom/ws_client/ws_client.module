@@ -871,7 +871,9 @@ function ws_client_user_login(&$edit, $account) {
 
 function ws_client_init() {
   global $user;
-  if($user->uid){
+
+  if($user->uid && current_path()=='node/2'){ // Pour eviter de faire appel au CRM quand on est pas connecté et quand on est pas sur l'espace client
+
   $account = user_load($user->uid); 
   $ip = variable_get('ip_server');
   $root = variable_get('root');
