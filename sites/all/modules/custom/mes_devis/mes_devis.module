@@ -55,6 +55,22 @@ function mes_devis_block_view($delta = '') {
           $output .=     $devis['type'];
           $output .=   '</h3>';
           $output .=   '<div class="row item-devis">';
+          $output .= '<div class="titleProduit col-lg-12">
+                          <div class="col-lg-3"><span>Numéro</span></div> ';
+          if($devis['type'] === 'Auto'){
+              $output  .='<div class="col-lg-4"><span>Marque</span></div>
+                          <div class="col-lg-3"><span>Modéle</span></div>';
+          }
+          if($devis['type'] === 'Habitation'){
+              $output  .='<div class="col-lg-4"><span>Type de logement</span></div>
+                          <div class="col-lg-3"><span>Adresse</span></div>';
+          }
+          if($devis['type'] === 'Accident' || $devis['type'] === 'loisir'){
+              $output  .='<div class="col-lg-4"><span>Type de contrat</span></div>
+                          <div class="col-lg-3"><span>A complété</span></div>';
+          }
+           $output  .= ' <div class="col-lg-3"><span>Action</span></div>
+                        </div>' ;
           foreach ($devis['info'] as $informations) {
             # code...
             $i = 0;

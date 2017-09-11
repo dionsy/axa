@@ -870,11 +870,12 @@ function ws_client_user_login(&$edit, $account) {
 }
 
 function ws_client_init() {
+  global $user;
+  if($user->uid){
+  $account = user_load($user->uid); 
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $info_user = variable_get('retrieve_info_user');
-  global $user;
-  $account = user_load($user->uid); 
  //var_dump($account); die();
  if(!empty($account->field_identifiant_client)){
   $identifiant = $account->field_identifiant_client['und'][0]['value'] ;
@@ -906,6 +907,7 @@ function ws_client_init() {
     variable_set('telephone_'.$user->uid, $data['telephone']);
     variable_set('mail_'.$user->uid, $data['mail']);
   } 
+ }
  }
 }
 
@@ -967,7 +969,8 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
     $adresse = variable_get('adresse_'.$user->uid);    
     $tel = variable_get('telephone_'.$user->uid);
     $dateNaissance = date_parse_from_format('d-m-Y', $time);
-     // var_dump($time) ; die();
+     // var_dump($civilite) ; die();
+     //krumong('main')->kPrint($element) ; 
     $title =$element['#title'];
 
       switch ($title) {
@@ -1001,7 +1004,10 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
            $element['#attributes']= array('disabled' => '1');
           break;
           case 'Civilité':
-          $element['#default_value'] = $civilite;
+          if($civilite=='M')
+            $element['#default_value'] = 1;
+          else
+          $element['#default_value'] = 2;
            $element['#attributes']= array('disabled' => '1');
           break;
         default:
