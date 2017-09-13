@@ -152,6 +152,29 @@ function axa_toolkit_services_resources() {
         ),
       ),
     ),
+  'preference' => array(
+      'actions' => array(
+        'create' => array(
+          'help' => t('Create a Preference.'),
+          'file' => array(
+            'type' => 'inc',
+            'module' => 'axa_toolkit',
+            'name' => 'axa_toolkit',
+          ),
+          'callback' => '_preference_service_create',
+          'args' => array(
+              array(
+                'name' => 'data',
+                'type' => 'struct',
+                'description' => 'The preference object',
+                'source' => 'data',
+                'optional' => FALSE,
+            ),
+          ),
+          'access arguments' => array('access content'),
+        ),
+      ),
+    ),
   );
   return $resources;
 }

@@ -27,3 +27,9 @@ function axa_toolkit_update_7002() {
 function axa_toolkit_update_7003() {
   module_enable(array('email_registration','er_svc'),TRUE);
 }
+/**
+ * Install service configuration module
+ */
+function axa_toolkit_update_7004  () {
+  module_enable(array('devis_service_configuration','views_regex_rewrite','services_views'),TRUE);
+}
