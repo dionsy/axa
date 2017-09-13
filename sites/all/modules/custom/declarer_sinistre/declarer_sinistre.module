@@ -290,6 +290,7 @@ function fixer_declarer_sinistre_form($form, &$form_state){
   $form['supplementaire']['nom'] = array(
     '#type' => 'textfield',
     '#title' => t('Nom du réparateur du véhicule'),
+     '#required' => TRUE,
     '#states' => array(
       'visible' => array(
         ':input[name="garage"]' => array('checked' => TRUE),

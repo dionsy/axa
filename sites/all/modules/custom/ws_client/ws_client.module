@@ -1007,11 +1007,12 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
            $element['#attributes']= array('disabled' => '1');
           break;
           case 'Civilité':
-          /*if($civilite=='M')
-            $element['#default_value'] = 1;
-          else
-          $element['#default_value'] = 2;
-           $element['#attributes']= array('disabled' => '1');*/
+          if($civilite =='M')
+                $element['#default_value'] = "1";
+          else{
+                $element['#default_value'] = "2";
+              }
+          $element['#attributes']= array('disabled' => '1');
           break;
         default:
 
