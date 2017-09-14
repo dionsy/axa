@@ -1,5 +1,5 @@
 name = Contrat ID Block
-description = Cette module affiches les détails d'un contrat.
+description = Ce module affiches les détails d'un contrat.
 package = Atos
 version = 7.x-1
 core = 7.x

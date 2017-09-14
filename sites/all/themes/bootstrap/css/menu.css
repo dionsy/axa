@@ -1,4 +1,37 @@
-
+.node-type-faq .field-name-field-fichier{
+    margin-top: 1em;
+}
+.page-espace-de-telechargement .file-icon,
+.node-type-faq .field-name-field-fichier .file-icon{
+    display: block;
+    float: left;
+    margin-right: .5em;
+}
+.view-espace-de-telechargement h2{
+    color: #00529B;
+}
+.view-espace-de-telechargement li{
+    border-bottom: 2px dotted #ccc;
+}
+.view-espace-de-telechargement li:last-child{
+    border:none;
+}
+.view-espace-de-telechargement h2:before{
+    content: '\f096';
+    font-family:'FontAwesome';
+    padding-right: 3px;
+}
+.view-espace-de-telechargement .download-file.clear-block {
+    padding-bottom: 5px;
+    margin-left: 26px;
+}
+.view-espace-de-telechargement .download-file a{
+    color: #00529B;
+}
+.node-type-faq .field-name-field-fichier .file a{
+    color: #00529B;
+    font-weight: bold;
+}
 .navbar-default {
     background-color: transparent;
     border-color: transparent;
@@ -1547,7 +1580,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     position: fixed;
     right: 15px;
     top: 220px;
-    width:75px; 
+    width:85px; 
     padding: 5px;
     z-index: 300;
     font-size: 11px;
@@ -1563,6 +1596,11 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 #block-menu-menu-menu-d-aide  ul li a.besoin_daide_::before {
      content: "\f059" ;
 }
+
+#block-menu-menu-menu-d-aide  ul li a.espace_de_telechargement::before {
+     content: "\f019" ;
+}
+#block-menu-menu-menu-d-aide  ul li a.espace_de_telechargement::before,
 #block-menu-menu-menu-d-aide  ul li a.trouver_une_agence::before ,
 #block-menu-menu-menu-d-aide  ul li a.besoin_daide_::before{
      font-family: "FontAwesome";
