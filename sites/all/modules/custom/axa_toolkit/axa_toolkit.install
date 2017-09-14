@@ -33,3 +33,9 @@ function axa_toolkit_update_7003() {
 function axa_toolkit_update_7004  () {
   module_enable(array('devis_service_configuration','views_regex_rewrite','services_views'),TRUE);
 }
+/**
+ * Install regist module
+ */
+function axa_toolkit_update_7005  () {
+  module_enable(array('registration_role'),TRUE);
+}
