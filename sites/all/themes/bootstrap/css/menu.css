@@ -1,23 +1,26 @@
 .node-type-faq .field-name-field-fichier{
     margin-top: 1em;
 }
-.page-espace-de-telechargement .file-icon,
-.node-type-faq .field-name-field-fichier .file-icon{
-    display: block;
-    float: left;
-    margin-right: .5em;
-}
+
+
 .view-espace-de-telechargement h2{
     color: #00529B;
+    font-size: 150%;
+}
+.page-espace-de-telechargement .page-header{
+    border:none;
+    text-align: center;
 }
 .view-espace-de-telechargement li{
     border-bottom: 2px dotted #ccc;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
 }
 .view-espace-de-telechargement li:last-child{
     border:none;
 }
 .view-espace-de-telechargement h2:before{
-    content: '\f096';
+    content: '\f15b';
     font-family:'FontAwesome';
     padding-right: 3px;
 }
@@ -25,8 +28,17 @@
     padding-bottom: 5px;
     margin-left: 26px;
 }
+.node-type-faq  .download-file a,
 .view-espace-de-telechargement .download-file a{
     color: #00529B;
+}
+.node-type-faq  .download-file a:before,
+.view-espace-de-telechargement .download-file a:before{
+    content: '\f1c1';
+    font-family: 'FontAwesome';
+    font-size: 15px;
+    margin-right: 10px;
+    font-weight: bold;
 }
 .node-type-faq .field-name-field-fichier .file a{
     color: #00529B;

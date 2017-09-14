@@ -33,6 +33,7 @@ $src=explode('public://', $logo_url);
 //$tb_id = $node->data[1][0];
 //$tb= taxonomy_term_load($tb_id);
 //$type_de_bien = $tb->name;
+ $devis = variable_get('devis'.$user->uid);
 
 
 $demande='';
@@ -92,7 +93,7 @@ $logo = '<img class="img_mail" src="'.$base_url.'/sites/default/files/'.$src[1].
 
 	<h3>Votre demande</h3>
 	<div class="demande">'.$demande.'</div>
-
+	<div>'.$devis.'</div>
 	<h3>Vos informations</h3>
 	<div class="infos">
 		<p>[submission:values:email:withlabel]</p>
