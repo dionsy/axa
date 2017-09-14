@@ -275,94 +275,6 @@ function ws_client_get_liste_sinistres(){
     $liste_sinistres[$contrat['numContrat']][] = $contrat;
   }
 
-  
-  /*$liste_sinistres = array (
-   
-      
-    'CNTR00000031' => array (
-      0 => array (
-            'id' => 'SIN00000003',
-            'numContrat' => 'CNTR00000031',
-            'statut' =>  100000000,
-            'typeEvent' =>  100000001,
-            'typeSinistre' =>  'Automobile',
-          ),
-    ),
-
-    'CNTR00000030' => array (
-      0 => array (
-            'id' => 'SIN00000004',
-            'numContrat' => 'CNTR00000030',
-            'statut' =>  100000000,
-            'typeEvent' =>  100000002,
-            'typeSinistre' =>  'Automobile',
-          ),
-      1 => array (
-            'id' => 'SIN00000005',
-            'numContrat' => 'CNTR00000030',
-            'statut' =>  100000000,
-            'typeEvent' =>  100000002,
-            'typeSinistre' =>  'Automobile',
-          ),
-    ),
-
-    'CNTR00000018' => array (
-      0 =>array (
-            'id' => 'SIN00000006',
-            'numContrat' => 'CNTR00000018',
-            'statut' => 100000001,
-            'typeEvent' => 100000002,
-            'typeSinistre' => 'Habitation',
-          ),
-
-      1 => array (
-            'id' => 'SIN00000007',
-            'numContrat' => 'CNTR00000018',
-            'statut' => 100000001,
-            'typeEvent' =>  100000001,
-            'typeSinistre' => 'Habitation',
-          ),
-    ),
-
-    'CNTR00000010' => array (
-      0 =>array (
-            'id' => 'SIN00000008',
-            'numContrat' => 'CNTR00000010',
-            'statut' => 100000002,
-            'typeEvent' => 100000002,
-            'typeSinistre' => 'Accident',
-          ),
-
-      1 => array (
-            'id' => 'SIN00000009',
-            'numContrat' => 'CNTR00000010',
-            'statut' => 100000002,
-            'typeEvent' =>  100000001,
-            'typeSinistre' => 'Accident',
-          ),
-    ),
-    'CNTR00000016' => array (
-      0 =>array (
-            'id' => 'SIN00000001',
-            'numContrat' => 'CNTR00000016',
-            'statut' => 100000001,
-            'typeEvent' => 100000002,
-            'typeSinistre' => 'Habitation',
-          ),
-
-      1 => array (
-            'id' => 'SIN00000002',
-            'numContrat' => 'CNTR00000016',
-            'statut' => 100000001,
-            'typeEvent' =>  100000001,
-            'typeSinistre' => 'Habitation',
-          ),
-    ),
-
-
-  );*/
-
-
   $i=0;
   foreach ($liste_sinistres as $keys => $values) {
     # code...
@@ -456,6 +368,12 @@ function ws_client_get_liste_contrats(){
     100000002 => 'RC chevaux de selle',
     100000003 => 'RC chef de famille',
   );
+  $statut= array(
+    100000000 => 'Initialisé',
+    100000001 => 'En cours',
+    100000002 => 'Validé',
+    100000003 => 'Résilié'
+  );
 
   global $user;
   $account = user_load($user->uid);
@@ -469,6 +387,7 @@ function ws_client_get_liste_contrats(){
   $data = drupal_json_decode($request->data) ;
   
   foreach ($data as $assurance) {
+   /*  var_dump($assurance) ; die();*/
     # code...
     if ($assurance['typeContrat'] == 'Habitation') {
       # code...
@@ -476,7 +395,8 @@ function ws_client_get_liste_contrats(){
       $habitation['info'][] = array(
         'id' => $assurance['id'],
         'type_logement' => $logement[$assurance['typeLogement']],
-        'adresse' => $assurance['adresseLogement'],  
+        'adresse' => $assurance['adresseLogement'],
+        'statut' =>  $statut[$assurance['statut']]
       );
 
     }
@@ -487,7 +407,8 @@ function ws_client_get_liste_contrats(){
       $auto['info'][] = array(
         'id' => $assurance['id'],
         'marque' => $assurance['marque'],
-        'modele' => $assurance['modele'],  
+        'modele' => $assurance['modele'],
+        'statut' =>  $statut[$assurance['statut']]  
       );
     }
 
@@ -497,7 +418,8 @@ function ws_client_get_liste_contrats(){
       $accident['info'][] = array(
         'id' => $assurance['id'],
         'produit' => $accident_tab[$assurance['typeAssurance']],
-        'complete' => 'A complété',  
+        'complete' => 'A complété',
+        'statut' =>  $statut[$assurance['statut']]  
       );  
     }
     if ($assurance['typeContrat'] == 'Loisirs-Vie privée') {
@@ -506,7 +428,8 @@ function ws_client_get_liste_contrats(){
       $loisir['info'][] = array(
         'id' => $assurance['id'],
         'produit' => $loisir_tab[$assurance['typeAssurance']],
-        'complete' => 'A complété',  
+        'complete' => 'A complété',
+        'statut' =>  $statut[$assurance['statut']]  
       );  
     }
 
@@ -607,6 +530,10 @@ function ws_client_get_liste_devis(){
     100000002 => 'RC chevaux de selle',
     100000003 => 'RC chef de famille',
   );
+     $statut= array(
+    100000000 => 'Nouveau',
+    100000001 => 'Validé'
+  );
 
   global $user;
   $account = user_load($user->uid);
@@ -629,7 +556,8 @@ function ws_client_get_liste_devis(){
       $habitation['info'][] = array(
         'id' => $assurance['id'],
         'type_logement' => $logement[$assurance['typeLogement']],
-        'adresse' => $assurance['adresseLogement'] 
+        'adresse' => $assurance['adresseLogement'],
+        'statut' =>  $statut[$assurance['statut']]
       );
      /*   $i = 0;
        foreach ($assurance as $key => $value) {
@@ -657,7 +585,8 @@ function ws_client_get_liste_devis(){
          $auto['info'][] = array(
         'id' => $assurance['id'],
         'marque' => $assurance['marque'],
-        'modele' => $assurance['modele']  
+        'modele' => $assurance['modele'],
+        'statut' =>  $statut[$assurance['statut']]  
       );
      /*   $i = 0;
         foreach ($assurance as $key => $value) {
@@ -680,7 +609,8 @@ function ws_client_get_liste_devis(){
          $accident['info'][] = array(
         'id' => $assurance['id'],
         'produit' => $accident_tab[$assurance['typeAssurance']],
-        /*'complete' => 'complete'*/  
+        'complete' => 'A complété',
+        'statut' =>  $statut[$assurance['statut']]  
       );  
       /*  $i=0;
         foreach ($assurance as $key => $value) {
@@ -706,7 +636,8 @@ function ws_client_get_liste_devis(){
          $loisir['info'][] = array(
         'id' => $assurance['id'],
         'produit' => $loisir_tab[$assurance['typeAssurance']],
-        /*'complete' => 'complete'*/  
+        'complete' => 'A complété' ,
+        'statut' =>  $statut[$assurance['statut']]   
       );  
     /*    $i=0;
         foreach ($assurance as $key => $value) {
@@ -962,7 +893,8 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
    global $user;
    //krumong('main')->kPrint($element);
 
-   if (in_array('client', array_values($user->roles))) {
+     //var_dump($user->roles) ; die();
+   if (in_array('authenticated user', array_values($user->roles))) {
 
     $nom = variable_get('nom_'.$user->uid);
     $prenom = variable_get('prenom_'.$user->uid);
@@ -972,8 +904,8 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
     $adresse = variable_get('adresse_'.$user->uid);    
     $tel = variable_get('telephone_'.$user->uid);
     $dateNaissance = date_parse_from_format('d-m-Y', $time);
-     // var_dump($civilite) ; die();
-     //krumong('main')->kPrint($element) ; 
+     //krumong('main')->kPrint($element) ;
+     if(isset($element['#title'])){ 
     $title =$element['#title'];
 
       switch ($title) {
@@ -1018,6 +950,7 @@ function ws_client_webform_component_render_alter(&$element, &$component) {
 
           break;
       }
+    }
     }
 
 }

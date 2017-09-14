@@ -1,6 +1,8 @@
 /*** mes contrats new ***/
-#block-mes-contrats-mes-contrats .item-mes-contrats {
-	margin: 0% 5% 0% 3%;
+#block-mes-contrats-mes-contrats .item-mes-contrats ,
+#block-mes-devis-mes-devis .item-mes-devis {
+	margin: 0% 2% 0% 2%;
+    padding-bottom: 5%;
 }
 #block-mes-contrats-mes-contrats .item-mes-contrats h3{
     background: #fcfcfc;
@@ -8,9 +10,10 @@
     color: #004d92;
     font-size: 16px;
     font-weight: bold;
-    padding: 2% 2% 2% 0;
+    padding: 2% 2% 2% 8px;
     margin-top: 15px;
     margin-bottom: 0px;
+    text-align: left !important; 
 }
 
 #block-mes-contrats-mes-contrats .field-contrat{
@@ -226,9 +229,7 @@ form#fixer-rendez-vous-form #edit-actions--4 {
 }
 
 /*** mes sinistres ***/
-#block-mes-devis-mes-devis .item-mes-devis{
-	margin: 0% 5% 0% 3%;
-}
+
 #block-mes-devis-mes-devis .item-mes-devis h3{
     background: #fcfcfc;
     border: 1px solid #eee;
@@ -258,9 +259,9 @@ form#fixer-rendez-vous-form #edit-actions--4 {
 }
 
 .declarer-sinistre #quicktabs-tab-left_menu-8 {
-	position: absolute;
+	position: relative;
     top: -8px;
-    left: 11%;
+    text-align: center;
     color: #fff;
     font-weight: bold;
 }
@@ -407,7 +408,7 @@ background-color: #FFC926 ;
     background: rgb(0, 77, 146) none repeat scroll 0 0;
     text-align: center; 
     padding: 4px;
-    top: 88px;
+    top: 60px;
     z-index: 9999999;
     position:  relative;
 }
@@ -429,5 +430,11 @@ background-color: #FFC926 ;
 #edit-date--2 .form-item .form-control  {
     width: 100% !important ;
 }
-
-
+.webform-client-form.webform-client-form-86 {
+    display: block !important;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#edit-submitted-par-quel-moyen-voulez-vous-etre-notifie {
+    padding-left: 20px;
+}

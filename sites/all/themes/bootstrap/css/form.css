@@ -761,10 +761,9 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     margin-top: 15px;
 } 
 #edit-actions--2 {
-    margin-bottom: 0px;
+    margin-bottom: 25px;
     margin-left: 31%;
-    padding-bottom: 25px;
-    padding-top: 10px;
+    margin-right: : 30px;
 }
 .page-user .tabs--primary.nav.nav-tabs a {
     color: rgb(255, 255, 255);
