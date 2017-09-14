@@ -20,7 +20,9 @@ function paiement_commerce_checkout_complete($order) {
 	$totalOrder = $order->commerce_order_total['und'][0]['amount'];
 
 	$commerceLineItems = $order->commerce_line_items['und'];
+
 	$wrapper = entity_metadata_wrapper('commerce_order', $order);
+
 
 	if($orderTypePayement==$listPaymentOnline && $orderStatus=='checkout_complete'){ //paiement en Ligne
 
@@ -31,6 +33,7 @@ function paiement_commerce_checkout_complete($order) {
 		}
 
 		$invoice = new Paydunya_Checkout_Invoice();
+
 
 	 	$invoice->addItem($title, $quantity,$price, $totalOrder); //Envoie à Paydunya les infos de la commande
 
