@@ -1901,9 +1901,11 @@ input.nmpd-display {
 #block-mes-sinistres-mes-sinistres .item-type-sinistre {
     margin-bottom: 15px;
 }
-#block-menu-menu-menu-principal-professionne ul  li.dropdown {
+#block-menu-menu-menu-principal-professionne ul  li.dropdown , 
+#block-menu-menu-menu-principal-entreprise ul  li.dropdown {
     position: unset !important;
 }
-#block-menu-menu-menu-principal-professionne .menu.nav {
+#block-menu-menu-menu-principal-professionne .menu.nav ,
+#block-menu-menu-menu-principal-entreprise .menu.nav {
     position: relative;
 }

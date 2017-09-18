@@ -95,7 +95,8 @@
 }
 
 #block-menu-menu-menu-principal .nav li a ,
-#block-menu-menu-menu-principal-professionne .nav li a {
+#block-menu-menu-menu-principal-professionne .nav li a ,
+#block-menu-menu-menu-principal-entreprise .nav li a{
     font-weight: 700;
 }
 #block-menu-menu-menu-principal-professionne .nav li a {
@@ -151,14 +152,16 @@ section#block-menu-menu-menu-top ul li:hover a{
        color: #fff;
 }
 #block-menu-menu-menu-principal ul li ul.dropdown-menu ,
-#block-menu-menu-menu-principal-professionne ul li ul.dropdown-menu {
+#block-menu-menu-menu-principal-professionne ul li ul.dropdown-menu,
+#block-menu-menu-menu-principal-entreprise ul li ul.dropdown-menu {
    top:-3000px;
    min-height: 300px;
    /*padding-left: 20px;*/
     padding-top: 5%;
 }
 #block-menu-menu-menu-principal ul li.auto ul.dropdown-menu,
-#block-menu-menu-menu-principal-professionne ul  ul.dropdown-menu {
+#block-menu-menu-menu-principal-professionne ul  ul.dropdown-menu ,
+#block-menu-menu-menu-principal-entreprise ul ul.dropdown-menu {
     border: 3px solid rgb(0, 77, 146);
 }
 #block-menu-menu-menu-principal ul li.habitation ul.dropdown-menu {
@@ -173,16 +176,17 @@ section#block-menu-menu-menu-top ul li:hover a{
 }
 
 #block-menu-menu-menu-principal ul li:hover ul.dropdown-menu , 
-#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu  {
+#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu ,
+#block-menu-menu-menu-principal-entreprise ul li:hover ul.dropdown-menu  {
    top:100%;
    width: 100% !important;
     margin-top: 0px;
 }
-/*#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu  {
+#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu  {
    top:100%;
    width: 306% !important;
     margin-top: 0px;
-}*/
+}
 
 #block-menu-menu-menu-top ul li:hover , #block-menu-menu-menu-top ul li:active   {
     background-color:#ED1846; 
@@ -640,7 +644,8 @@ footer div.view-id-contact ul {
 
 #block-menu-menu-menu-principal ul li.dropdown , 
 #block-menu-menu-menu-principal ul li.package ,
-#block-menu-menu-menu-principal-professionne ul li.dropdown{
+#block-menu-menu-menu-principal-professionne ul li.dropdown ,
+#block-menu-menu-menu-principal-entreprise ul li.dropdown{
    /* background: rgb(237, 24, 70) none repeat scroll 0 0;*/
     display: inline-block;
     /*margin-left: 10px;*/
@@ -677,7 +682,8 @@ footer div.view-id-contact ul {
     color: #fff;
 }
 #block-menu-menu-menu-principal ul li.dropdown:first-child ,
-#block-menu-menu-menu-principal-professionne ul li.dropdown:first-child{  
+#block-menu-menu-menu-principal-professionne ul li.dropdown:first-child, 
+#block-menu-menu-menu-principal-entreprise li.dropdown:first-child  {
      border-left: 3px solid #fff;
 }
 
@@ -707,8 +713,7 @@ footer div.view-id-contact ul {
 #block-menu-menu-menu-principal .nav .dropdown ,#block-menu-menu-menu-principal ul li.package{
     position: initial;
 }
-#block-menu-menu-menu-principal .nav ,
-#block-menu-menu-menu-principal-professionnee .nav{
+#block-menu-menu-menu-principal .nav{
     position: relative;
 }
 
@@ -2155,7 +2160,5 @@ li.assurance_voyage a:before,
     content: "\f019";
     font-size: 16px;
 }
-#block-menu-menu-menu-principal-professionne ul  li.dropdown {
-    position: unset !important;
-}
+
 
