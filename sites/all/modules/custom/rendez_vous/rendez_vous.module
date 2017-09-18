@@ -96,7 +96,7 @@ function fixer_rendez_vous_form($form, &$form_state){
   $form['telephone'] = array(
     '#type' => 'textfield',
     '#title' => t('Numéro de téléphone'),
-    '#default_value' => '778241624',
+    '#default_value' => variable_get('telephone_'.$user->uid),
     '#states' => array(
       'visible' => array(
         ':input[name="moyen_contact"]' => array('value' => 'SMS'),
@@ -149,14 +149,14 @@ function axa_rendez_vous_form_submit($form, &$form_state){
     global $user;
     $account = user_load_by_name($user->name);
 
-    //$get_service_conseiller = ws_client_get_info_conseiller();
-    $get_service_conseiller = array(
+    $get_service_conseiller = ws_client_get_info_conseiller();
+ /*   $get_service_conseiller = array(
       'nomComplet' => 'Aliou Samba Wele',
       'adresse' => 'Gueule Tapée',
       'mail' => 'smsframework@gmail.com',
       'telephone' => '778088470',
     );
-    
+    */
 
     $horaire = array(
       0 => t('08h-13h'),
@@ -173,8 +173,8 @@ function axa_rendez_vous_form_submit($form, &$form_state){
     $option_value = $option[$form_state['values']['objet']];
     $horaire_value = $horaire[$form_state['values']['horaire']]; 
 
-    $to = /*$get_service_conseiller['mail']*/'smsframework@gmail.com';
-    $from = "mouhawele@gmail.com";
+    $to = $get_service_conseiller['mail'] /*'smsframework@gmail.com'*/;
+    $from =  variable_get('mail_'.$user->uid) /*"mouhawele@gmail.com"*/;
     $subject = $option_value;
     $alt = 'Fixer un rendez vous';
     /*$body = '<div class="testcolor">';
@@ -182,131 +182,131 @@ function axa_rendez_vous_form_submit($form, &$form_state){
     $body .= '</div>';*/
 
     $body = '<html>
-<head>
-      <title>Email</title>
-      <style type="text/css">
-            body {
-                  background-color: #fcfcfc;
-            }
-            .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-              position: relative;
-              min-height: 1px;
-              padding-right: 15px;
-              padding-left: 15px;
-            }
-            .col-md-6{
-              float:left;
-              width: 50%;
-            }
+              <head>
+                    <title>Email</title>
+                    <style type="text/css">
+                          body {
+                                background-color: #fcfcfc;
+                          }
+                          .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+                            position: relative;
+                            min-height: 1px;
+                            padding-right: 15px;
+                            padding-left: 15px;
+                          }
+                          .col-md-6{
+                            float:left;
+                            width: 50%;
+                          }
 
-            .col-md-4{
-              float:left;
-              width: 25%;
-            }
+                          .col-md-4{
+                            float:left;
+                            width: 25%;
+                          }
 
-            .col-md-12{
-              float:left;
-              width: 100%;
-            }
+                          .col-md-12{
+                            float:left;
+                            width: 100%;
+                          }
 
-            .message{
-              margin-bottom: 50px;
-              background: #fcfcfc;
-              color: #666;
-              font-size: 17px;
-            }
-            
-            .border{
-              border: 1px solid #eee;
-            }
-            
-            .head{
-              padding-top: 2%;
-              padding-bottom: 2%;
-              background: #005399;
-              color: #fff;
-            }
+                          .message{
+                            margin-bottom: 50px;
+                            background: #fcfcfc;
+                            color: #666;
+                            font-size: 17px;
+                          }
+                          
+                          .border{
+                            border: 1px solid #eee;
+                          }
+                          
+                          .head{
+                            padding-top: 2%;
+                            padding-bottom: 2%;
+                            background: #005399;
+                            color: #fff;
+                          }
 
-            .info{
-              padding-top: 1%;
-              padding-bottom: 1%;
-              background: #fcfcfc;
-              color: #666;
-            }
+                          .info{
+                            padding-top: 1%;
+                            padding-bottom: 1%;
+                            background: #fcfcfc;
+                            color: #666;
+                          }
 
-            .info a{
-              color: #666 !important;
-            }
+                          .info a{
+                            color: #666 !important;
+                          }
 
-            .user{
-              padding-top: 1%;
-              padding-bottom: 1%;
-              background: #fcfcfc;
-              color: #666;
-              font-size: 20px;
-            }
+                          .user{
+                            padding-top: 1%;
+                            padding-bottom: 1%;
+                            background: #fcfcfc;
+                            color: #666;
+                            font-size: 20px;
+                          }
 
-            .objet{
-              text-align: center !important;
-              margin-bottom: 25px;
-            }
+                          .objet{
+                            text-align: center !important;
+                            margin-bottom: 25px;
+                          }
 
-            html{
-              background: #fcfcfc;
-            }
+                          html{
+                            background: #fcfcfc;
+                          }
 
-            .center{
-              text-align:center;
-            }
-
-
-      </style>
-</head>
-<body>
-      <div class="row col-md-12">
-        
-        <span class=\'user col-md-12\'>'
-              . 'Nom :WELE' . 
-        '</span>
-        <span class=\'user col-md-12\'>'
-              . 'Prénom: Aliou Samba' . 
-        '</span>
-        <span class=\'user col-md-12\'>'
-              . 'Adresse: Gueule Tapee' . 
-        '</span>
-        <span class=\'user objet col-md-12\'>'
-              . 'Objet RDV: ' . $subject. 
-        '</span>
-
-        <div class=\'col-md-12 message\'>'
-              . $form_state['values']['demande'] . 
-        '</div>
+                          .center{
+                            text-align:center;
+                          }
 
 
-        <div class=\'col-md-12 center\'>
+                    </style>
+              </head>
+      <body>
+              <div class="row col-md-12">
+                
+                <span class=\'user col-md-12\'>'
+                      . 'Nom :'.variable_get('nom_'.$user->uid).
+                '</span>
+                <span class=\'user col-md-12\'>'
+                      . 'Prénom: '.variable_get('prenom_'.$user->uid). 
+                '</span>
+                <span class=\'user col-md-12\'>'
+                      . 'Adresse: ' .variable_get('adresse_'.$user->uid). 
+                '</span>
+                <span class=\'user objet col-md-12\'>'
+                      . 'Objet RDV: ' . $subject. 
+                '</span>
 
-          <div class=\'col-md-4 head border\'>'
-                . 'Moyen de contact' .
-          '</div>
-          <div class=\'col-md-4 head border\'>'
-                . 'Date' .
-          '</div>
-          <div class=\'col-md-4 head border\'>'
-                . 'Horaire' .
-          '</div>
+                <div class=\'col-md-12 message\'>'
+                      . $form_state['values']['demande'] . 
+                '</div>
 
-          <div class=\'col-md-4 border info\'>'
-                . $form_state['values']['email'] .
-          '</div>
-          <div class=\'col-md-4 border info\'>'
-                . $form_state['values']['date']['day'] . '/' . $form_state['values']['date']['month'] . '/'. $form_state['values']['date']['year'] . 
-          '</div>
-          <div class=\'col-md-4 border info\'>'
-                . $form_state['values']['horaire'] .
-          '</div>
-        </div>
-      </div>
-</body>
+
+                <div class=\'col-md-12 center\'>
+
+                  <div class=\'col-md-4 head border\'>'
+                        . 'Moyen de contact' .
+                  '</div>
+                  <div class=\'col-md-4 head border\'>'
+                        . 'Date' .
+                  '</div>
+                  <div class=\'col-md-4 head border\'>'
+                        . 'Horaire' .
+                  '</div>
+
+                  <div class=\'col-md-4 border info\'>'
+                        . $form_state['values']['email'] .
+                  '</div>
+                  <div class=\'col-md-4 border info\'>'
+                        . $form_state['values']['date']['day'] . '/' . $form_state['values']['date']['month'] . '/'. $form_state['values']['date']['year'] . 
+                  '</div>
+                  <div class=\'col-md-4 border info\'>'
+                        . $form_state['values']['horaire'] .
+                  '</div>
+                </div>
+              </div>
+        </body>
 
 </html>';
 
@@ -316,8 +316,8 @@ function axa_rendez_vous_form_submit($form, &$form_state){
 }
 
 function envoyer_mail($from, $to, $subject, $body, $alt){
-  $host = variable_get('cron_notification_mail_smtp');
-  $smtp_secure = variable_get('cron_notification_mail_smtpsecure');
+    $host = variable_get('cron_notification_mail_smtp');
+    $smtp_secure = variable_get('cron_notification_mail_smtpsecure');
   $port = (int) variable_get('cron_notification_mail_port');
   $username = variable_get('cron_notification_mail_username');
   $password = variable_get('cron_notification_mail_password');
@@ -343,9 +343,9 @@ function envoyer_mail($from, $to, $subject, $body, $alt){
   $mail->Body    = $body;
 
   if(!$mail->send()) {
-      echo 'Message could not be sent.';
-      echo 'Mailer Error: ' . $mail->ErrorInfo;
+      echo t('Message could not be sent.');
+      echo t('Mailer Error: ' . $mail->ErrorInfo);
   }  else {
-      echo 'Message has been sent';
+      echo t('Message has been sent');
   }
 }

@@ -57,10 +57,6 @@
     padding: 0;
     float: right;
 }
-/*.user span{
-	display: block;
-	text-transform: capitalize;
-}*/
 
 .user img{
 	display: block;
@@ -72,10 +68,6 @@
 }
 
 #page-header {
-/*    padding-left: 45px;
-    width: 100% !important;*/
-	/*background: none repeat scroll 0 0 #103184 !important;*/
-	/*position: fixed !important;*/
     bottom: 0;
 	left: 0; 
     right: 0;
@@ -91,17 +83,6 @@
     width: 48%;
 }
 
-
-
-/*.footer .nav li a {
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.7);
-    height: 12px;
-    font-size: 13px;
-}*/
-
 .footer .nav li a:hover {
     background: transparent !important;
     border-bottom: none !important;
@@ -112,9 +93,17 @@
     padding: 2px;
     position: relative;
 }
-#block-menu-menu-menu-principal .nav li a {
+
+#block-menu-menu-menu-principal .nav li a ,
+#block-menu-menu-menu-principal-professionne .nav li a {
     font-weight: 700;
 }
+#block-menu-menu-menu-principal-professionne .nav li a {
+     white-space: inherit;
+}
+#block-menu-menu-menu-principal-professionne .nav li li a {
+    color: black  !important;
+    }
 #navbar_banner{
     margin-bottom: 40px;
     padding: 0;
@@ -122,17 +111,8 @@
     background-color:inherit    ;
     border-color: none;
 }
-/*#block-menu-menu-menu-top ul li ::after{
-    content: "|";
-    font-size:12px;
-    margin-left: 12px;
-    margin-right: 12px;
-}
-
-#block-menu-menu-menu-top ul li:last-child a::after{
-    content:none;
-    }*/
-#block-menu-menu-menu-principal li li.last{
+#block-menu-menu-menu-principal li li.last ,
+#block-menu-menu-menu-principal-professionne li li.last{
     display: inherit;
     width: 40%;
     float: right;
@@ -140,11 +120,17 @@
     top: 20%;
     right: 20px;
 }
+/*#block-menu-menu-menu-principal-professionne li li.last {
+    margin-right: -5% ;
+}*/
 #block-menu-menu-menu-principal li li.last img{
     float: right;
 }
-#block-menu-menu-menu-principal li li{
+#block-menu-menu-menu-principal li li ,
+#block-menu-menu-menu-principal-professionne li li {
     width: 40%;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 #block-menu-menu-menu-top ul li{
     font-size:1.0em;
@@ -164,35 +150,39 @@ section#block-menu-menu-menu-top ul li:hover a {
 section#block-menu-menu-menu-top ul li:hover a{
        color: #fff;
 }
-#block-menu-menu-menu-principal ul li ul.dropdown-menu {
+#block-menu-menu-menu-principal ul li ul.dropdown-menu ,
+#block-menu-menu-menu-principal-professionne ul li ul.dropdown-menu {
    top:-3000px;
    min-height: 300px;
-   padding-left: 20px;
+   /*padding-left: 20px;*/
     padding-top: 5%;
 }
-#block-menu-menu-menu-principal ul li.auto ul.dropdown-menu {
+#block-menu-menu-menu-principal ul li.auto ul.dropdown-menu,
+#block-menu-menu-menu-principal-professionne ul  ul.dropdown-menu {
     border: 3px solid rgb(0, 77, 146);
-    /*border-top: 3px solid rgb(0, 77, 146);*/
 }
 #block-menu-menu-menu-principal ul li.habitation ul.dropdown-menu {
     border: 3px solid rgb(169, 15, 39);
- /*   border-top: 3px solid rgb(169, 15, 39);*/
 }
 #block-menu-menu-menu-principal ul li.assistance_et_accidents ul.dropdown-menu {
     border: 3px solid rgb(53, 152, 220);
- /*   border-top: 3px solid rgb(53, 152, 220);*/
 }
 
 #block-menu-menu-menu-principal ul li.loisir-vie_privee ul.dropdown-menu {
     border: 3px solid rgb(255, 192, 0);
-/*    border-top: 3px solid rgb(255, 192, 0);*/
 }
 
-#block-menu-menu-menu-principal ul li:hover ul.dropdown-menu {
+#block-menu-menu-menu-principal ul li:hover ul.dropdown-menu , 
+#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu  {
    top:100%;
-   width: 100%;
+   width: 100% !important;
     margin-top: 0px;
 }
+/*#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu  {
+   top:100%;
+   width: 306% !important;
+    margin-top: 0px;
+}*/
 
 #block-menu-menu-menu-top ul li:hover , #block-menu-menu-menu-top ul li:active   {
     background-color:#ED1846; 
@@ -203,18 +193,11 @@ section#block-menu-menu-menu-top ul li:hover a{
 #block-menu-menu-menu-top ul li a{
     padding-bottom: 5px ;
 }
-/*nav > li > a:last-child:hover, .nav > li > a:focus {
-    background-color: #eee;
-    margin-left: -18px;
-    text-decoration: none;
-}*/
 .nav > li > a:hover, .nav > li > a:focus {
     background-color: transparent;
     text-decoration: none;
 }
-/*#navbar {
-    border-bottom: 3px solid #ED1846; 
-}*/
+
 .mon_espace_client{
     background-color:#ED1846; 
 /*    padding-bottom: 4px;*/
@@ -251,7 +234,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist{
     min-height: 64px;
     padding: 0;
     position: relative;
-    /*width: 80%;*/
+    width: 75%;
     z-index: 1;
 }
 
@@ -268,16 +251,12 @@ ul.quicktabs-tabs.quicktabs-style-garland li.active {
 
  ul.quicktabs-tabs.quicktabs-style-garland {
     background: rgb(169, 15, 39);
-    /*padding:  0px ;*/
     height: auto;
     width: 100%;
     float: left;
 }  
 ul.quicktabs-tabs.quicktabs-style-garland li a:hover,
 ul.quicktabs-tabs.quicktabs-style-garland li a:link 
-/*ul.quicktabs-tabs.quicktabs-style-garland li a:visited*/{
-    /*padding:12px !important;*/
-    /*color: #000 !important;*/
 }
 ul.quicktabs-tabs.quicktabs-style-garland li.active {
    /* background: rgba(169, 15, 39,0.2);*/
@@ -659,9 +638,9 @@ footer div.view-id-contact ul {
 }
 
 
-#block-menu-menu-menu-principal ul.menu.nav {
-}
-#block-menu-menu-menu-principal ul li.dropdown , #block-menu-menu-menu-principal ul li.package{
+#block-menu-menu-menu-principal ul li.dropdown , 
+#block-menu-menu-menu-principal ul li.package ,
+#block-menu-menu-menu-principal-professionne ul li.dropdown{
    /* background: rgb(237, 24, 70) none repeat scroll 0 0;*/
     display: inline-block;
     /*margin-left: 10px;*/
@@ -670,6 +649,8 @@ footer div.view-id-contact ul {
     padding-right: 20px;
     padding-left: 20px;
     border-right: 3px solid #fff;
+        border-top: 4px solid graytext ;
+    box-shadow: 0 2px 0 0 rgb(255, 255, 255) inset;
 /*    box-shadow: 0 2px 0 0 rgb(255, 255, 255) inset;*/
     /*border-right: 2px solid rgb(255, 255, 255);*/
 }
@@ -695,12 +676,24 @@ footer div.view-id-contact ul {
 #block-menu-menu-menu-principal ul li:hover a{
     color: #fff;
 }
-#block-menu-menu-menu-principal ul li.dropdown:first-child{  
+#block-menu-menu-menu-principal ul li.dropdown:first-child ,
+#block-menu-menu-menu-principal-professionne ul li.dropdown:first-child{  
      border-left: 3px solid #fff;
 }
+
+
 #block-menu-menu-menu-principal ul li.auto:hover {
    background-color: #004D92;
 }
+/*#block-menu-menu-menu-principal-professionne ul li:hover {
+   background-color: #23488C;
+   color: #fff;
+}*/
+#block-menu-menu-menu-principal-professionne ul li:hover a {
+   color: #fff;
+}
+
+
 #block-menu-menu-menu-principal ul li.assistance_et_accidents:hover {
    background-color: #3598DC;
 }
@@ -714,7 +707,8 @@ footer div.view-id-contact ul {
 #block-menu-menu-menu-principal .nav .dropdown ,#block-menu-menu-menu-principal ul li.package{
     position: initial;
 }
-#block-menu-menu-menu-principal .nav{
+#block-menu-menu-menu-principal .nav ,
+#block-menu-menu-menu-principal-professionnee .nav{
     position: relative;
 }
 
@@ -867,7 +861,11 @@ div#edit-field-fin-contrat {
 ul.quicktabs-tabs.quicktabs-style-navlist {
     box-shadow: 2px 1px 1px 2px #ccc;
     margin-right: 3%;
-    width: 26%;
+    width: 22%  !important;
+}
+aside.mon-conseiller {
+    width: 23% !important;
+    float: right;
 }
 
 .corps-espace-client {
@@ -1337,16 +1335,15 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 }
 
 /*** preference ***/
-#node-86{
-    background: #fcfcfc;
-}
 #node-86 h2 {
     margin-top: 0;
     padding: 4px 11px;
 }
 
 #node-86{
-    padding: 0 !important;
+    background: #fcfcfc;
+    padding: 0 ;
+    padding-bottom: 20px;
 }
 #node-86 > header{
     padding: 0px !important;
@@ -1434,18 +1431,26 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         margin-left: 32% !important;
         width: 68%;
     }
+     .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+    padding-left: 2%;
+    width: 76%;
+    }
 }
 
 /*Breakpoint 524 767*/
-@media screen and (min-width: 524px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
     /* xs */
+    body{
+        font-size: 12px !important ;
+        letter-spacing: 0 !important;
+    }
     .info-left-menu .barre {
         display: none;
         left: 79%;
     }
     .page-node-2 .main-container .row {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
     }
 
     #block-acceuil-acceuil .avatar .barre {
@@ -1475,6 +1480,15 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         margin-left: 32% !important;
         width: 68% !important;
     }
+    .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+    padding-left: 1%;
+    padding-right: 1% ;
+    width: 76%;
+    }
+    #block-mes-devis-mes-devis .item-mes-devis div div  ,#block-mes-contrats-mes-contrats .titleProduit {
+        padding-right: 5px !important;
+        padding-left: 5px !important;
+    }
 
 }
 
@@ -1490,8 +1504,8 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         width: auto;
     }
     .page-node-2 .main-container .row {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
     }
 
     .topnav li:not(.active){
@@ -1578,7 +1592,14 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 
     .page-node-2 .well {
         margin-bottom: 0px !important;
-    } 
+    }
+    body{
+        font-size: 11px !important ;
+        letter-spacing: 0 !important;
+    }
+    #block-mes-devis-mes-devis .field-devis span, #block-mes-contrats-mes-contrats .field-contrat span {
+    padding-left: 0;
+}
 }
 
 
@@ -1863,8 +1884,21 @@ li.assurance_voyage a:before,
         float: none;
         margin-bottom: 10px;
         margin-left: 20px;
-        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-        color: rgb(0, 0, 0);
+        color: white;
+        padding: 7px !important;
+    }
+    .Auto div.outsides div a {
+        
+        background: #004D92;
+    }
+    .Habitation div.outsides div a{
+        background-color: #A90F27;
+    }
+    .Loisirs-vie div.outsides div a{
+        background-color: #FFC000;
+    }
+    .Assistance div.outsides div a{
+        background-color: #3598DC ;
     }
     .outside { 
         width: auto;
@@ -2005,13 +2039,19 @@ li.assurance_voyage a:before,
     }
     div.user {
         float: left !important;
-        margin-top: 24px !important;
+        margin-top: 0 !important;
         width: 40% !important;
     }
     /*.mean-container a.meanmenu-reveal {
         margin-top: 24% !important;
     }*/
-
+}
+@media all and (max-width: 409px){
+    div.user {
+        float: left !important;
+        margin-top: 10px !important;
+        width: 40% !important;
+    }
 }
 
 @media all and (max-width: 304px){ 
@@ -2114,5 +2154,8 @@ li.assurance_voyage a:before,
     font-family: 'FontAwesome';
     content: "\f019";
     font-size: 16px;
+}
+#block-menu-menu-menu-principal-professionne ul  li.dropdown {
+    position: unset !important;
 }
 

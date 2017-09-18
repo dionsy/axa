@@ -86,7 +86,6 @@
                 </header> <!-- /#page-header -->
                 <div class="user col-md-3 col-lg-3 col-sm-6 col-xs-12"> 
                   <?php
-                    // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
                       print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true"></i><span>Espace client</span></a></div>';
                     } 
@@ -141,6 +140,8 @@
          <?php if (!empty($page['navigation'])): ?>
                   <div class="fond">
                     <div class=" navigation <?php print $container_class; ?>">
+
+                      
                           <?php print render($page['navigation']); ?>
                     </div>
                 </div>

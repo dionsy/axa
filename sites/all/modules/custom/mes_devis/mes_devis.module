@@ -1,5 +1,14 @@
 <?php
 module_load_include('module','ws_client');
+
+function mes_devis_menu() {
+  $items['devis/%'] = array(
+    'page callback' => 'detail_devis',
+    'page arguments' => array(1),
+    'access callback' => TRUE
+  );
+    return $items;
+}
 /**
  * Implements hook_block_info()
  */
@@ -18,7 +27,7 @@ function mes_devis_block_info() {
 function mes_devis_block_view($delta = '') {
   if ($delta == 'mes_devis') {
     $title = '';
-  	$output = '';
+    $output = '';
     $tmp = ws_client_get_liste_devis();
     $i=0;
     /*foreach ($tmp as $devis) {*/
@@ -48,31 +57,28 @@ function mes_devis_block_view($delta = '') {
 
     $output .= '<div class="item-mes-devis">';
     foreach ($tmp as $devis) {
-      # code...
         if(isset($devis['type']))
         {
           $output .=   '<h3>';
           $output .=     $devis['type'];
           $output .=   '</h3>';
           $output .=   '<div class="row item-devis">';
-          $output .= '<div class="titleProduit col-lg-12">
-                          <div class="col-lg-3"><span>Numéro</span></div> ';
-          if($devis['type'] === 'Auto'){
-              $output  .='<div class="col-lg-4"><span>Marque</span></div>
-                          <div class="col-lg-3"><span>Modéle</span></div>';
+          $output .= '<div class="titleProduit col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span>Numéro</span></div> ';
+          if($devis['type'] === 'Type Auto'){
+              $output  .='<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 "><span>Marque</span></div>
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><span>Modéle</span></div>';
           }
-          if($devis['type'] === 'Habitation'){
-              $output  .='<div class="col-lg-4"><span>Type de logement</span></div>
-                          <div class="col-lg-3"><span>Adresse</span></div>';
+          if($devis['type'] === 'Type habitation'){
+              $output  .='<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 "><span>Type de logement</span></div>
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><span>Adresse</span></div>';
           }
-          if($devis['type'] === 'Accident' || $devis['type'] === 'loisir'){
-              $output  .='<div class="col-lg-4"><span>Type de contrat</span></div>
-                          <div class="col-lg-3"><span>
-
-
-                          </span></div>';
+          if($devis['type'] === 'Type Assistance & Accidents' || $devis['type'] === 'Type Loisirs-Vie privée'){
+              $output  .='<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 "><span>Type de contrat</span></div>
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><span>A complété</span></div>';
           }
-           $output  .= ' <div class="col-lg-3"><span>Action</span></div>
+          $output  .= ' <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><span>Statut</span></div>';
+           $output  .= ' <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><span>Action</span></div>
                         </div>' ;
           foreach ($devis['info'] as $informations) {
             # code...
@@ -81,19 +87,24 @@ function mes_devis_block_view($delta = '') {
             foreach ($informations as $key => $value) {
               # code...
               if($i==0){
-                $output .= '<div class="col-lg-12">';  
-                $output .=     '<div class="col-lg-3 field-devis">';
+                $output .= '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';  
+                $output .=     '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 field-devis">';
                 $output .=     '<span>'.l($value,'devis/'.$numdevis).'</span>';
                 /*$output .=       '<span><a href="#">'. $numdevis .'</a></span>';      */
                 $output .=     '</div>';    
               }
               elseif($i==1){
-                $output .=     '<div class="col-lg-4 field-devis">';
+                $output .=     '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 field-devis">';
                 $output .=       '<span>'. $value .'</span>';      
                 $output .=     '</div>'; 
               }
+              elseif($i==2){
+                    $output .=  '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 field-devis">';
+                    $output .=       '<span>'. $value .'</span>';      
+                    $output .=  '</div>'; 
+                  }
               else{
-                $output .=     '<div class="col-lg-3 field-devis">';
+                $output .=     '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 field-devis">';
                 $output .=       '<span>'. $value .'</span>';      
                 $output .=     '</div>';
               }
@@ -103,10 +114,10 @@ function mes_devis_block_view($delta = '') {
             $idownload ='<i class="fa fa-download" aria-hidden="true"></i>' ;
             $iview = '<i class="fa fa-eye" aria-hidden="true"></i>' ;
             $irequete ='<i class="fa fa-pencil-square-o" aria-hidden="true"></i>' ;
-            $output .=     '<div class="col-lg-1 telechargement-devis field-devis">';
+            $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 telechargement-devis field-devis">';
             $output .=       '<span> '.l($idownload ,'devis/'.$numdevis,array('html'=> true ,'attributes'=> array('target' => '_blank'))).'</span>';   
             $output .=     '</div>';
-            $output .=     '<div class="col-lg-1 visualisation-devis field-devis">';
+            $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 visualisation-devis field-devis">';
             $output .=       '<span> '.l($iview ,'devis/'.$numdevis,array('html'=> true)).'</span>';  
             $output .=     '</div>';
             $output .=     '</div>';
@@ -124,13 +135,13 @@ function mes_devis_block_view($delta = '') {
       $output .=   '</h3>';
       $output .=   '<div class="row item-devis">';
       foreach ($devis['tableau'] as $tableau) {
-      	# code...
-      	foreach ($tableau as $value) {
-      		# code...
-      		$output .= '<div class="field-devis col-lg-6">';
-      		$output .= '<span>'. $value . '</span>';
-      		$output .= '</div>';
-      	}
+        # code...
+        foreach ($tableau as $value) {
+          # code...
+          $output .= '<div class="field-devis col-lg-6">';
+          $output .= '<span>'. $value . '</span>';
+          $output .= '</div>';
+        }
       }
 
       $output .=   '</div>';
@@ -146,20 +157,10 @@ function mes_devis_block_view($delta = '') {
   return array();
 }
 
-function mes_devis_menu() {
-  $items['devis/%'] = array(
-    'page callback' => 'detail_devis',
-    'page arguments' => array(1),
-    'access callback' => TRUE,
-  );
-    return $items;
-}
-
 function detail_devis($arg) {
   global $user ;
   $devis =  ws_client_get_devis_by_num($arg);
-  variable_set('devis'.$user->uid,$devis['tarif']);
-  //var_dump($devis) ; die();
+ // var_dump($devis) ; die();
   $nom = variable_get('nom_'.$user->uid);
   $prenom = variable_get('prenom_'.$user->uid);
   $dateNaissance = variable_get('dateNaissance_'.$user->uid);
@@ -258,7 +259,7 @@ $output  = "<div class='logo' width='323px' height='57px'> </div>
                     </tr>
                     <tr>
                       <td>Valeur à neuf</td>
-                      <td>".$devis['valeurAneuf']."</td>
+                      <td>".$devis['valeurAneuf']." FCFA</td>
                     </tr>
                     ";
     }
@@ -278,7 +279,7 @@ $output  = "<div class='logo' width='323px' height='57px'> </div>
                     </tr>
                     <tr>
                       <td>Montant</td>
-                      <td>".$devis['montant']."</td>
+                      <td>".$devis['montant']." FCFA</td>
                     </tr>
                     <tr>
                       <td>Etes-vous locataire</td>
@@ -289,13 +290,13 @@ $output  = "<div class='logo' width='323px' height='57px'> </div>
                       <td>".$boolean[$devis['locataire']]."</td>
                     </tr>
                   ";
-    }
+    } 
     if($devis['typeContrat'] === "Assistances & Accidents") {
         $output .= "<tr>
                       <td>Type d'assurance</td>
                       <td>".$accident_tab[$devis['typeAssurance']]."</td>
                     </tr>
-                  ";
+                   ";
     }
     if($devis['typeContrat'] === "Loisirs-Vie privée") {
         $output .= "<tr>
@@ -306,7 +307,7 @@ $output  = "<div class='logo' width='323px' height='57px'> </div>
     }
      $output .= " <tr>
                       <td>Tarif</td>
-                      <td>".$devis['tarif']."</td>
+                      <td>".$devis['tarif']." FCFA</td>
                     </tr>
                   </table>
                 </div>" ;
