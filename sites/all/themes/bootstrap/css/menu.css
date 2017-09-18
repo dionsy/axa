@@ -182,11 +182,11 @@ section#block-menu-menu-menu-top ul li:hover a{
    width: 100% !important;
     margin-top: 0px;
 }
-#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu  {
+/*#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu  {
    top:100%;
    width: 306% !important;
     margin-top: 0px;
-}
+}*/
 
 #block-menu-menu-menu-top ul li:hover , #block-menu-menu-menu-top ul li:active   {
     background-color:#ED1846; 
