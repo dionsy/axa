@@ -72,6 +72,7 @@
  *
  * @ingroup templates
  */
+
 ?>
 <div class="fix-footer">
   <div class="page">

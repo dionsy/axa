@@ -74,6 +74,7 @@
  */
 
 ?>
+
 <div class="fix-footer">
 <div class="page">
 

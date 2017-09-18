@@ -1435,14 +1435,14 @@ body.node-type-nos-produits .body h3 {
     color: rgb(16, 49, 132);
 }
 section#block-views-frontpage-block-3 ul.container::before {
-    border-bottom: 2px solid #D62723;
+/*    border-bottom: 2px solid #D62723;
     color: rgb(16, 49, 132);
     content: "AUTRES OFFRES";
     display: block;
     font-size: 1.8em;
     margin-left: 15px;
     text-align: left;
-     width: 35%;
+     width: 35%;*/
 }
 section#block-views-frontpage-block-3 h2{
 
