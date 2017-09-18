@@ -35,11 +35,12 @@ function bootstrap_menu_link(array $variables) {
   global $base_url;
   $below =$element['#below'];
 
-if($variables['theme_hook_original']=='menu_link__menu_menu_principal'){
+   // krumong('main')->kprint($variables['theme_hook_original']);
+if($variables['theme_hook_original']=='menu_link__menu_menu_principal' || 
+   $variables['theme_hook_original']=='menu_link__menu_menu_principal_professionne'){
   $pattern = '/\S+\.(png|gif|jpg)\b/i';
   if (preg_match($pattern, $element['#title'], $matches) > 0) {
     $src=$base_url.'/sites/default/files/image_menu/'.$matches[0];
-    //krumong('main')->kprint($src);
 
     $element['#title'] = preg_replace($pattern,'<img class="img-responsive" alt = "'.$element['#localized_options']['attributes']['title'] .'"src = "'.$src.'"/>',
     $element['#title']);    

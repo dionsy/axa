@@ -233,8 +233,8 @@ function fixer_declarer_sinistre_form($form, &$form_state){
   );
 
   $form['sinistre']['nature_loisir'] = array(
-    '#type' => 'select',
-    '#options' => $nature_sinistre['loisir'] ,
+      '#type' => 'select',
+      '#options' => $nature_sinistre['loisir'] ,
     '#title' => t('Nature du sinistre'),
     '#states' => array(
       'visible' => array(

@@ -290,7 +290,7 @@ ul{
 
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2{
- font-size: 1.4em;
+ font-size: 1.3em;
  max-height: 25px;
  margin-top: 0;
  text-align: center;
@@ -1565,7 +1565,8 @@ h1, .h1, h2, .h2, h3, .h3{
     margin-left: 50px;
     margin-right: 50px;
 }
-#block-menu-menu-menu-principal li li.last:before {
+#block-menu-menu-menu-principal li li.last:before ,
+#block-menu-menu-menu-principal-professionne li li.last:before {
 
    color: rgb(237, 24, 70);
     content: "|";
@@ -1801,18 +1802,18 @@ input.nmpd-display {
 .prez-mon-axa{
    display: block;
     float: right;
-    border: 1px solid #ccc;
+    border: 1px solid #00529B;
     padding: 0 0.5rem;
 }
 
 .prez-mon-axa .fa-mobile{
     font-size: 3rem;
-    color: #999;
+    color: #00529B;
     margin-right: 1rem;
 }
 
 .prez-mon-axa a{
-    color: #999;
+    color: #00529B;
     letter-spacing: 0.2px;
 }
 
@@ -1894,9 +1895,15 @@ input.nmpd-display {
 .fa.fa-download ,.fa.fa-eye ,.fa.fa-pencil-square-o {
     color: rgb(51, 122, 183);
 }
-.statut .fa.fa-download ,.statut .fa.fa-eye ,.statut .fa.fa-pencil-square-o {
+.statut .fa.fa-download , .statut .fa.fa-eye ,.statut .fa.fa-pencil-square-o {
     color: #ccc;
 }
 #block-mes-sinistres-mes-sinistres .item-type-sinistre {
     margin-bottom: 15px;
+}
+#block-menu-menu-menu-principal-professionne ul  li.dropdown {
+    position: unset !important;
+}
+#block-menu-menu-menu-principal-professionne .menu.nav {
+    position: relative;
 }
