@@ -259,8 +259,8 @@ $databases = array (
     ),
   ),
 );
-/*
-$databases = array (
+
+/*$databases = array (
   'default' => 
   array (
     'default' => 

@@ -18,6 +18,9 @@
  * - $sid: The unique submission ID of this submission.
  * - $url: The URL of the form (or for in-block confirmations, the same page).
  */
+/*$path = drupal_get_path('module','mes_devis')
+include($path);
+dsm('devis',$devis);*/
 ?>
 <?php //print $progressbar; ?>
 

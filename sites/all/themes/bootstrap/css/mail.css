@@ -4,13 +4,13 @@
 }
 .fond_mail{
 	background-color: #ccc;
-	width: 90%;
+	width: 90% !important;
 	margin: auto;
 	padding: 15px 0;
 }
 .corps{
 	margin: auto;
-	width: 80%;
+	width: 80% !important;
 	font-size: 15px;
 	background-color: #fff;
 	padding: 3em;
