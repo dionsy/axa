@@ -185,7 +185,10 @@
       <?php endif; ?>
 
       <?php //print render($page['content']);
-        
+       
+       $nid=$node->nid;
+         $vote = $page['content']['system_main']['nodes'][$nid]['rate_l_avis_de_nos_client'];
+         krumong('main')->kPrint($vote);
         $url=$node->field_image_produit['und'][0]['uri'];
         $img = file_create_url($url);
      
@@ -196,6 +199,7 @@
           if (!empty($node->body)){
             $body = $node->body['und'][0]['value'];
             print '<div class="body">'.$body.'</div>';
+            print  'Vote'.$vote['#markup'];
           }
        ?>
     </section>
