@@ -151,9 +151,9 @@ section#block-menu-menu-menu-top ul li:hover a{
 #block-menu-menu-menu-principal-professionne ul li ul.dropdown-menu,
 #block-menu-menu-menu-principal-entreprise ul li ul.dropdown-menu {
    top:-3000px;
-   min-height: 300px;
+   min-height: 250px;
    padding-left: 20px;
-    padding-top: 5%;
+   /* padding-top: 5%;*/
 }
 #block-menu-menu-menu-principal ul li.auto ul.dropdown-menu {
     border: 3px solid #7293A4;
