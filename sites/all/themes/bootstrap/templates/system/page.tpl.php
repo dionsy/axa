@@ -72,7 +72,6 @@
  *
  * @ingroup templates
  */
-
 ?>
 <div class="fix-footer">
   <div class="page">
@@ -151,8 +150,6 @@
          <?php if (!empty($page['navigation'])): ?>
                   <div class="fond">
                     <div class=" navigation <?php print $container_class; ?>">
-
-                      
                           <?php print render($page['navigation']); ?>
                     </div>
                 </div>
@@ -261,4 +258,3 @@
             </footer>
             <?php endif; ?>
           </div>
-

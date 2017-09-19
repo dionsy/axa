@@ -49,7 +49,7 @@ function detail_contrat($arg) {
     100000003 => 'RC chef de famille'
   ) ;  
 
-$output  = "<div class='logo' width='323px' height='57px'> </div>
+$output  = "<div class='logo' width='323px' height='57px' > </div>
                   <div class='contact_axa'>
                     <h5>AXA Sénégal</h5>
                     <p>Siége: Place de l'indépendance</p>

@@ -29,7 +29,8 @@
 	font-weight: bold;
 }
 .contact_axa {
-	float: right !important;
+	float: right;
+	right: 100px;
 }
 
 /*.logo

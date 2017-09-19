@@ -50,18 +50,18 @@
 }
 
 .dropdown-menu{
-	display:block;
+    display:block;
 }
 .user{
-	text-align: center;
+    text-align: center;
     padding: 0;
     float: right;
 }
 
 .user img{
-	display: block;
-	text-align: center;
-	margin: auto;
+    display: block;
+    text-align: center;
+    margin: auto;
 }
 .logged-in div#navbar {
  
@@ -69,7 +69,7 @@
 
 #page-header {
     bottom: 0;
-	left: 0; 
+    left: 0; 
     right: 0;
 }
 
@@ -93,18 +93,9 @@
     padding: 2px;
     position: relative;
 }
-
-#block-menu-menu-menu-principal .nav li a ,
-#block-menu-menu-menu-principal-professionne .nav li a ,
-#block-menu-menu-menu-principal-entreprise .nav li a{
+#block-menu-menu-menu-principal .nav li a {
     font-weight: 700;
 }
-#block-menu-menu-menu-principal-professionne .nav li a {
-     white-space: inherit;
-}
-#block-menu-menu-menu-principal-professionne .nav li li a {
-    color: black  !important;
-    }
 #navbar_banner{
     margin-bottom: 40px;
     padding: 0;
@@ -113,7 +104,8 @@
     border-color: none;
 }
 #block-menu-menu-menu-principal li li.last ,
-#block-menu-menu-menu-principal-professionne li li.last{
+#block-menu-menu-menu-principal-professionne  li li.last,
+#block-menu-menu-menu-principal-entreprise li li.last{
     display: inherit;
     width: 40%;
     float: right;
@@ -121,17 +113,11 @@
     top: 20%;
     right: 20px;
 }
-/*#block-menu-menu-menu-principal-professionne li li.last {
-    margin-right: -5% ;
-}*/
 #block-menu-menu-menu-principal li li.last img{
     float: right;
 }
-#block-menu-menu-menu-principal li li ,
-#block-menu-menu-menu-principal-professionne li li {
+#block-menu-menu-menu-principal li li{
     width: 40%;
-    padding-bottom: 10px;
-    padding-top: 10px;
 }
 #block-menu-menu-menu-top ul li{
     font-size:1.0em;
@@ -166,37 +152,34 @@ section#block-menu-menu-menu-top ul li:hover a{
 #block-menu-menu-menu-principal-entreprise ul li ul.dropdown-menu {
    top:-3000px;
    min-height: 300px;
-   /*padding-left: 20px;*/
+   padding-left: 20px;
     padding-top: 5%;
 }
-#block-menu-menu-menu-principal ul li.auto ul.dropdown-menu,
-#block-menu-menu-menu-principal-professionne ul  ul.dropdown-menu ,
-#block-menu-menu-menu-principal-entreprise ul ul.dropdown-menu {
-    border: 3px solid rgb(0, 77, 146);
+#block-menu-menu-menu-principal ul li.auto ul.dropdown-menu {
+    border: 3px solid #7293A4;
+}
+#block-menu-menu-menu-principal-professionne ul li ul.dropdown-menu,
+#block-menu-menu-menu-principal-entreprise ul li ul.dropdown-menu{
+     border: 3px solid #00529B;
 }
 #block-menu-menu-menu-principal ul li.habitation ul.dropdown-menu {
-    border: 3px solid rgb(169, 15, 39);
+    border: 3px solid #AC69AB;
 }
 #block-menu-menu-menu-principal ul li.assistance_et_accidents ul.dropdown-menu {
-    border: 3px solid rgb(53, 152, 220);
+    border: 3px solid #53A7E1;
 }
 
 #block-menu-menu-menu-principal ul li.loisir-vie_privee ul.dropdown-menu {
-    border: 3px solid rgb(255, 192, 0);
+    border: 3px solid #26BBA0;
 }
 
-#block-menu-menu-menu-principal ul li:hover ul.dropdown-menu , 
-#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu ,
-#block-menu-menu-menu-principal-entreprise ul li:hover ul.dropdown-menu  {
-   top:100%;
-   width: 100% !important;
+#block-menu-menu-menu-principal ul li:hover ul.dropdown-menu ,
+#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu,
+#block-menu-menu-menu-principal-entreprise ul li:hover ul.dropdown-menu {
+    top:100%;
+    width: 100%;
     margin-top: 0px;
 }
-/*#block-menu-menu-menu-principal-professionne ul li:hover ul.dropdown-menu  {
-   top:100%;
-   width: 306% !important;
-    margin-top: 0px;
-}*/
 
 #block-menu-menu-menu-top ul li:hover , #block-menu-menu-menu-top ul li:active   {
     background-color:#ED1846; 
@@ -665,24 +648,16 @@ footer div.view-id-contact ul {
 }
 
 
-#block-menu-menu-menu-principal ul li.dropdown , 
-#block-menu-menu-menu-principal ul li.package ,
-#block-menu-menu-menu-principal-professionne ul li.dropdown ,
-#block-menu-menu-menu-principal-entreprise ul li.dropdown{
+#block-menu-menu-menu-principal ul.menu.nav {
+}
+#block-menu-menu-menu-principal ul li.dropdown , #block-menu-menu-menu-principal ul li.package{
    /* background: rgb(237, 24, 70) none repeat scroll 0 0;*/
     /* display: inline-block;
     margin-left: 10px;
     padding-bottom: 10px;
     padding-top: 14px;
     padding-right: 20px;
-<<<<<<< HEAD
     padding-left: 20px;*/
-=======
-    padding-left: 20px;
-    border-right: 3px solid #fff;
-        border-top: 4px solid graytext ;
-    box-shadow: 0 2px 0 0 rgb(255, 255, 255) inset;
->>>>>>> e68a82654385917c6747b4c2e83934c3b470f907
 /*    box-shadow: 0 2px 0 0 rgb(255, 255, 255) inset;*/
     /*border-right: 2px solid rgb(255, 255, 255);*/
 }
@@ -690,7 +665,9 @@ footer div.view-id-contact ul {
 #block-menu-menu-menu-principal ul li.assistance_et_accidents,
 #block-menu-menu-menu-principal ul li.habitation,
 #block-menu-menu-menu-principal ul li.loisir-vie_privee,
-#block-menu-menu-menu-principal ul li.package{
+#block-menu-menu-menu-principal ul li.package ,
+#block-menu-menu-menu-principal-professionne ul.menu.nav > li,
+#block-menu-menu-menu-principal-entreprise ul.menu.nav > li{
     border-top: 4px solid graytext ;
     box-shadow: 0 2px 0 0 rgb(255, 255, 255) inset;
 
@@ -708,44 +685,30 @@ footer div.view-id-contact ul {
 #block-menu-menu-menu-principal ul li:hover a{
     color: #fff;
 }
-<<<<<<< HEAD
 #block-menu-menu-menu-principal ul li.dropdown:first-child{  
      /*border-left: 3px solid #fff;*/
-=======
-#block-menu-menu-menu-principal ul li.dropdown:first-child ,
-#block-menu-menu-menu-principal-professionne ul li.dropdown:first-child, 
-#block-menu-menu-menu-principal-entreprise li.dropdown:first-child  {
-     border-left: 3px solid #fff;
->>>>>>> e68a82654385917c6747b4c2e83934c3b470f907
 }
-
-
 #block-menu-menu-menu-principal ul li.auto:hover {
-   background-color: #004D92;
+   background-color: #7293A4;
 }
-/*#block-menu-menu-menu-principal-professionne ul li:hover {
-   background-color: #23488C;
-   color: #fff;
-}*/
-#block-menu-menu-menu-principal-professionne ul li:hover a {
-   color: #fff;
-}
-
-
 #block-menu-menu-menu-principal ul li.assistance_et_accidents:hover {
-   background-color: #3598DC;
+   background-color: #53A7E1;
 }
 #block-menu-menu-menu-principal ul li.habitation:hover {
-   background-color: #A90F27;
+   background-color: #AC69AB;
 }
 #block-menu-menu-menu-principal ul li.loisir-vie_privee:hover {
-   background-color:#FFC000;
+   background-color:#26BBA0;
 }
 
-#block-menu-menu-menu-principal .nav .dropdown ,#block-menu-menu-menu-principal ul li.package{
+#block-menu-menu-menu-principal .nav .dropdown ,#block-menu-menu-menu-principal ul li.package ,
+#block-menu-menu-menu-principal-professionne .nav .dropdown,
+#block-menu-menu-menu-principal-entreprise .nav .dropdown{
     position: initial;
 }
-#block-menu-menu-menu-principal .nav{
+#block-menu-menu-menu-principal .nav ,
+#block-menu-menu-menu-principal-professionne .nav ,
+#block-menu-menu-menu-principal-entreprise .nav {
     position: relative;
 }
 
@@ -1439,15 +1402,22 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         display: table;
         border-right: 2px solid #fff;
     }
-     #block-menu-menu-menu-principal ul li{
+     #block-menu-menu-menu-principal ul li ,
+     #block-menu-menu-menu-principal-professionne ul li,
+     #block-menu-menu-menu-principal-entreprise ul li{
         display: table-cell;
         width: 16%;
         background: 0 0;
         margin: 0;
         padding: 0;
         vertical-align: middle;
-        border-top: 4px solid #999;
         box-shadow: inset 0 2px 0 0 #fff;
+    }
+    #block-menu-menu-menu-principal ul.meunu.nav > li ,
+    #block-menu-menu-menu-principal-professionne ul.menu.nav > li ,
+    #block-menu-menu-menu-principal-entreprise ul.menu.nav > li ,
+    #block-menu-menu-menu-principal ul li.accueil{
+    border-top: 4px solid #999;
     }
     #block-menu-menu-menu-principal ul li.recherche{
         box-shadow: none;
@@ -1475,11 +1445,13 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         font-size: initial;
         font-size: 2.1rem;
         color: #fff;
-    }
+    }   
     #block-menu-menu-menu-principal ul li.recherche span {
         font-size: 0;
     }
-   #block-menu-menu-menu-principal ul li:before {
+   #block-menu-menu-menu-principal ul li:before ,
+   #block-menu-menu-menu-principal-professionne ul li:before,
+   #block-menu-menu-menu-principal-entreprise ul li:before{
         content: "";
         border-left: 2px solid #fff;
         position: absolute;
@@ -1755,19 +1727,21 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     color: #00529B;
 }
 
-#block-menu-menu-menu-principal li li{
+#block-menu-menu-menu-principal li li ,
+#block-menu-menu-menu-principal-professionne  li li,
+#block-menu-menu-menu-principal-entreprise li li{
     display: block;
 }
 
 
 li.assurance_voyage a:before{
     content: "\f072";
-    color: #3598DC;
+    color: #53A7E1;
     margin-right: 9px;
 }
 li.solution_auto a:before{
     content: "\f1b9";
-    color: #004D92;
+    color: #7293A4;
     
 }
 li.auto li a, .habitation li a,.assistance_et_accidents li a ,
@@ -1780,7 +1754,7 @@ li.auto li a, .habitation li a,.assistance_et_accidents li a ,
 .evacuation_sanitaire a:before,
 .individuelle_accidents_particuliers a:before{
     content:"\f0f9";
-    color: #3598DC;
+    color: #53A7E1;
 }
 
 /*.auto ul{
@@ -1800,28 +1774,28 @@ background-color: #004D92;
    background-color:#FFC000;
 }*/
 .loisir-vie_privee li a:before{
-    color: #FFC000 !important;
+    color: #26BBA0 !important;
 }
 .comment_souscrire_ a:before{
    content:"\f046";  
-   color: #004D92;  
+   color: #7293A4;  
 }
 
 .que_faire_en_cas_de_sinistre a:before{
     content: "\f071";
-    color: #004D92;
+    color: #7293A4;
 }    
 .mrh_premium a:before{
     content: "\f015";
-    color: #A90F27
+    color: #AC69AB
 }
 .multirisque_immeuble a:before{
     content: "\f0f7";
-    color: #A90F27
+    color: #AC69AB
 }
 .incendie_particulier a:before{
     content: "\f06d";
-    color: #A90F27
+    color: #AC69AB
 }
 .plaisance a:before{
     content: "\f21a";
@@ -1888,7 +1862,7 @@ li.assurance_voyage a:before,
     }
     div.user {
         width: auto;
-        margin-right: 3%;
+        /*margin-right: 3%;*/
         z-index: 66699;
     }
     .mon_espace_client{
@@ -1898,15 +1872,23 @@ li.assurance_voyage a:before,
         margin-top: 1px;
          background-color: transparent;
     }
+    .mon_espace_client a span{
+        margin-left: 0 ;
+    }
     .not-logged-in .mon_espace_client a span{
         color: black;
         padding-top: 0px;
         text-transform: normal;
         font-size: 0.8em;
     }
+    .container {
+    padding-right: 10px ;
+    padding-left: 10px;
+    }
      .not-logged-in .mon_espace_client a i{
         visibility: hidden;
         margin-right: 0px;
+        display: none !important ;
      }
     .not-logged-in .mon_espace_client a:before {
         display:block;
@@ -1996,39 +1978,39 @@ li.assurance_voyage a:before,
     }
     .Auto div.outsides div a {
         
-        background: #004D92;
+        background: #7293A4;
     }
     .Habitation div.outsides div a{
-        background-color: #A90F27;
+        background-color: #AC69AB;
     }
     .Loisirs-vie div.outsides div a{
-        background-color: #FFC000;
+        background-color: #26BBA0;
     }
     .Assistance div.outsides div a{
-        background-color: #3598DC ;
+        background-color: #53A7E1 ;
     }
     .outside { 
         width: auto;
         margin-left: 30px; 
         margin-right: 30px;
          box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.15);
-        border-top: 0; 
+        border-top: none !important; 
     }
     .view-frontpage ul li:hover .outside {
         border-top: 0;
     }
 
      li.Auto .outside , li.Auto:hover .outside  {
-     border-left: 4px solid rgb(0, 77, 146);
+     border-left: 4px solid #7293A4;
     }
     li.Habitation:hover .outside , li.Habitation .outside {
-        border-left: 4px solid rgb(169, 15, 39);
+        border-left: 4px solid #AC69AB;
     }
     li.Assistance .outside , li.Assistance:hover .outside {
-        border-left: 4px solid rgb(53, 152, 220);
+        border-left: 4px solid #53A7E1;
     }
     li.Loisirs-vie .outside ,li.Loisirs-vie:hover .outside {
-        border-left: 4px solid rgb(255, 192, 0);
+        border-left: 4px solid #26BBA0;
     }
     .mean-nav ul li:last-child {
         display: none;
@@ -2262,5 +2244,7 @@ li.assurance_voyage a:before,
     content: "\f019";
     font-size: 16px;
 }
-
-
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: transparent !important;
+    border-color: none !important;
+}
