@@ -158,14 +158,14 @@
 
 
 
-    <section id="test" class="col-xs-12 col-sm-12 col-md-9 col-lg-9 connexion">   
+    <section id="test" class="col-xs-12 col-sm-9 col-md-9 col-lg-9 connexion">   
       <a id="main-content"></a>
      <!--  <?php //print $messages; ?> -->
       <?php print render($page['content']); ?>
     </section>
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="mon-conseiller col-xs-12 col-sm-12 col-md-3 col-lg-3 sidebar_first">
+      <aside class="mon-conseiller col-xs-12 col-sm-3 col-md-3 col-lg-3 sidebar_first">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>

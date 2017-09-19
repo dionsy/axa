@@ -1474,8 +1474,15 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 }
 
 /* Breakpoint 1024 */
-@media screen and (min-width: 992px) and (max-width: 1024px) {
-    /* md */    
+@media screen and (max-width: 992px){
+      .page-node-2 .info-left-menu{
+    margin-top: 0px !important;
+    }
+    .container, .navbar.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto;
+    }
 }
 
 /*Breakpoint 600*/
@@ -1507,7 +1514,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 
     .mon-conseiller {
         display: block;
-        margin-left: 32% !important;
+     /*   margin-left: 32% !important;*/
         width: 68%;
     }
      .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
@@ -1530,6 +1537,9 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     .page-node-2 .main-container .row {
     padding-left: 5px !important;
     padding-right: 5px !important;
+    }
+    .page-node-2 .info-left-menu{
+    margin-top: 0px !important;
     }
 
     #block-acceuil-acceuil .avatar .barre {
