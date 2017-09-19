@@ -35,9 +35,10 @@ function bootstrap_menu_link(array $variables) {
   global $base_url;
   $below =$element['#below'];
 
-   // krumong('main')->kprint($variables['theme_hook_original']);
+   /*krumong('main')->kprint($variables['theme_hook_original']);*/
 if($variables['theme_hook_original']=='menu_link__menu_menu_principal' || 
-   $variables['theme_hook_original']=='menu_link__menu_menu_principal_professionne'){
+   $variables['theme_hook_original']=='menu_link__menu_menu_principal_professionne' ||
+   $variables['theme_hook_original']== 'menu_link__menu_menu_principal_entreprise'){
   $pattern = '/\S+\.(png|gif|jpg)\b/i';
   if (preg_match($pattern, $element['#title'], $matches) > 0) {
     $src=$base_url.'/sites/default/files/image_menu/'.$matches[0];

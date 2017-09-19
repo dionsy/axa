@@ -125,7 +125,7 @@ $suffix='';
 
 switch ($block->delta) {
 	case 'form':
-		$class="col-md-2 col-lg-2 col-xs-12";
+		$class="col-md-12 col-lg-12 col-xs-12";
 		break;
 	case 'menu-menu-top':
 		$class="col-md-9 col-lg-9 col-xs-12";
@@ -162,7 +162,7 @@ switch ($block->delta) {
 	break;
 
 	case 'menu-menu-principal':	
-		$class="col-md-10 col-lg-10 col-sm-12 col-xs-12";
+		$class="col-md-12 col-lg-12 col-sm-12 col-xs-12";
 	break;
 	case 'menu-menu-principal-professionne':	
 		$class="col-md-10 col-lg-10 col-sm-12 col-xs-12 responsive-menus-mean-menu-processed";
@@ -230,13 +230,10 @@ switch ($block->delta) {
 
 ?>
 <section id="<?php print $block_html_id; ?>" class="<?php print $class; ?> clearfix"<?php print $attributes; ?>>
-
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
   <?php endif;?>
   <?php print render($title_suffix); ?>
-
   <?php print $prefix.$content.$suffix; ?>
-
 </section>

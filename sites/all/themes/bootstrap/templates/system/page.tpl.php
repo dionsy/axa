@@ -72,7 +72,6 @@
  *
  * @ingroup templates
  */
-
 ?>
 <div class="fix-footer">
   <div class="page">
@@ -80,25 +79,34 @@
        <header role="banner" class="container navbar-default">
              <div class="row">
                 <header role="banner" id="page-header" class="first_menu col-md-9 col-lg-9 col-sm-6 col-xs-12">
-
-                          <?php print render($page['header']); ?>
-
+                  <?php print render($page['header']); ?>
                 </header> <!-- /#page-header -->
                 <div class="user col-md-3 col-lg-3 col-sm-6 col-xs-12"> 
                   <?php
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true"></i><span>Espace client</span></a></div>';
+                      print '<div class="mon_espace_client">
+                                <a href="'.$base_path.'user" class="es_cli">
+                                   <i class="fa fa-lock" aria-hidden="true"></i><span>Espace client</span>
+                                </a>
+                             </div>';
                     } 
                    else{
                     $nom = variable_get('nom_'.$user->uid);
-                      $prenom = variable_get('prenom_'.$user->uid); 
-                      $array = array('nom' =>$nom,
-                                     'prenom' => $prenom) ;
-
-                      print '<div class="mon_espace_client espace_connecter" ><a href="'.$base_path.'node/2" class="es_cli"><i class="fa fa-home" aria-hidden="true"></i><span>'.$array['prenom'].'  '.$array['nom']. '</span></div></a><div class="deconnection"><a href="'.$base_path.'?q=user/logout"><i class="fa fa-sign-out" aria-hidden="true"></i><span>Déconnexion</span></a></div>';
+                    $prenom = variable_get('prenom_'.$user->uid);
+                    $array = array('nom' =>$nom, 'prenom' => $prenom) ;
+                    print '<div class="mon_espace_client espace_connecter" >
+                                <a href="'.$base_path.'node/2" class="es_cli">
+                                    <i class="fa fa-home" aria-hidden="true"></i><span>'.$array['prenom'].'  '.$array['nom']. '</span>
+                                </a>
+                           </div>
+                           <div class="deconnection">
+                                <a href="'.$base_path.'?q=user/logout">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i><span>Déconnexion</span>
+                                </a>
+                           </div>';
 
                      /* print '<div class="mon_espace_client" ><a href="'.$base_path.'node/2" class="es_cli"><i class="fa fa-user" aria-hidden="true" style="margin-right:7px;"></i><span>Espace client</span></a></div>';*/
-                    }
+                   }
                    
                   ?>      
                 <?php
@@ -110,7 +118,7 @@
                 </div>
               </div>
            
-            <div class="logo col-md-10 col-lg-10 col-xs-12 col-sm-6<?php //print $container_class; ?>">    
+            <div class="logo col-md-9 col-lg-9 col-xs-12 col-sm-6<?php //print $container_class; ?>">
               <div class="navbar-header ">
                 <?php if ($logo): ?>
                   <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -129,9 +137,11 @@
                </div>
             </div>
             <!-- Lien mon axa  -->
-            <div class="appli col-md-2 col-lg-2 col-xs-12 col-sm-6">
+            <div class="appli col-md-3 col-lg-3 col-xs-12 col-sm-6">
               <div class="prez-mon-axa">
-                <i class="fa fa-mobile" aria-hidden="true"></i><a href="node/114" >Découvrir Mon Axa</a>
+                <i class="" aria-hidden="true">
+                    <img src="<?php echo $base_path . drupal_get_path('theme', 'bootstrap') .'/images/etiquette_mon_axa.png' ?>" alt="mon axa"> </i>
+                  <a href="node/114" >Découvrir Mon Axa</a>
               </div>
             </div>
         </header>
@@ -140,8 +150,6 @@
          <?php if (!empty($page['navigation'])): ?>
                   <div class="fond">
                     <div class=" navigation <?php print $container_class; ?>">
-
-                      
                           <?php print render($page['navigation']); ?>
                     </div>
                 </div>
@@ -189,11 +197,20 @@
             <?php print render($page['content']); ?>
         </section>
     </div>
-    <?php
-              global $user; 
-              global $base_url; 
+
+
+                <?php //} ?>
+                  <?php if (!empty($page['sidebar_second'])): ?>
+                     <aside class="col-sm-3" role="complementary">
+                       <?php print render($page['sidebar_second']); ?>
+                    </aside>  <!-- /#sidebar-second -->
+              <?php endif; ?>
+  </div>
+         <?php
+              global $user;
+              global $base_url;
               If($is_front){
-              $userUID = $user->uid; 
+              $userUID = $user->uid;
               if(empty($userUID)){
                 $href= l(t('Declaration Sinistre'), 'user', array(
                   'attributes' => array(
@@ -208,18 +225,11 @@
               else{
                 $href=$base_url.'/?q=node/2&qt-left_menu=8#qt-left_menu';
                 $href = '<div class="sinistre-front"> <a href="'.$href.'">Déclaration Sinistre</a> </div>';
-              }              
-              echo $href;
+              }
+              echo '<div class="floatingLine"><div class="container"><div class="floating-line">'.$href.'</div></div></div>' ;
+
             }
             ?>
-                <?php //} ?>
-                  <?php if (!empty($page['sidebar_second'])): ?>
-                     <aside class="col-sm-3" role="complementary">
-                       <?php print render($page['sidebar_second']); ?>
-                    </aside>  <!-- /#sidebar-second -->
-              <?php endif; ?>
-  </div>
-
           <?php if (!empty($page['content_bottom'])): ?>
             <div class="page-bottom row">
                 <aside class="content_bottom container">
@@ -248,4 +258,3 @@
             </footer>
             <?php endif; ?>
           </div>
-

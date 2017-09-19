@@ -49,9 +49,14 @@ function detail_contrat($arg) {
     100000003 => 'RC chef de famille'
   ) ;  
 
-$output  = "<div class='logo' width='323px' height='57px'> </div>
+$output  = "<div class='logo' width='323px' height='57px' > </div>
+                  <div class='contact_axa'>
+                    <h5>AXA Sénégal</h5>
+                    <p>Siége: Place de l'indépendance</p>
+                    <p>tél: +221 338 491 010</p>
+                  </div>
                  <div class='title'>
-                    <h2>CONTRAT D'ASSURANCE <span>" .$contrat['typeContrat']. "<span></h2>
+                    <h4>CONTRAT D'ASSURANCE <span>" .$contrat['typeContrat']. "<span></h4>
                  </div>
                  <div class='numContrat'>
                     <table>
@@ -275,7 +280,6 @@ function mes_contrats_block_view($delta = '') {
                     $output .=       '<span>'. $value .'</span>';      
                     $output .=     '</div>';
                   }
-            
               $i++;
 
             }
@@ -289,10 +293,6 @@ function mes_contrats_block_view($delta = '') {
               $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 visualisation-contrat field-contrat">';
               $output .=       '<span> '.l($iview ,'contrat/'.$numContrat,array('html'=> true)).'</span>';      
               $output .=     '</div>';
-              $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 requete-contrat field-contrat">';
-              $output .=       '<span> '.l($irequete ,'contrat/'.$numContrat,array('html'=> true)).'</span>';
-              $output .=     '</div>';
-              $output .=     '</div>';
             }
             else{
               $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 telechargement-contrat field-contrat">';
@@ -301,11 +301,11 @@ function mes_contrats_block_view($delta = '') {
               $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 visualisation-contrat field-contrat">';
               $output .=       '<span class="statut"> '.$iview.'</span>';      
               $output .=     '</div>';
-              $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 requete-contrat field-contrat">';
-              $output .=       '<span class="statut">'.$irequete.'</span>';
-              $output .=     '</div>';
-              $output .=     '</div>';
             }
+              $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 requete-contrat field-contrat">';
+              $output .=       '<span> '.l($irequete ,'contrat/'.$numContrat,array('html'=> true)).'</span>';
+              $output .=     '</div>';
+              $output .=     '</div>';
 
         }
           $output .=   '</div>';

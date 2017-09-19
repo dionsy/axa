@@ -28,6 +28,10 @@
 	width:  60% ;
 	font-weight: bold;
 }
+.contact_axa {
+	float: right;
+	right: 100px;
+}
 
 /*.logo
 		{

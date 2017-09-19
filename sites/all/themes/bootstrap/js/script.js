@@ -1,4 +1,22 @@
 (function($, Drupal){
+    
+    Drupal.behaviors.searchHideShow = {
+        attach:function (context,settings) {
+            $('#block-menu-menu-menu-principal ul li.recherche span').hover(function() {
+                $(this).addClass('search');
+                $('#block-search-form').fadeIn();
+            });
+            $(document).click(function(e) {
+                var container = $("#block-search-form");
+
+                // if the target of the click isn't the container nor a descendant of the container
+                if (!container.is(e.target) && container.has(e.target).length === 0)
+                {
+                    container.hide();
+                }
+            });
+        }
+    }
   Drupal.behaviors.kyziahSlickSlider = {
     attach: function(context, settings){
           if($('.front', context).length){
