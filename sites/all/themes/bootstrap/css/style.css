@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 .page-header{
+
     border:none;
     text-align: center;
 }
@@ -27,7 +29,7 @@
     padding-right:0; 
 }
 .container {
-    max-width: 1040px !important;
+    max-width: 980px !important;
 }
 .bleu{
     background-color: red;
@@ -109,7 +111,7 @@ body
     background-size: cover;
     background-attachment: fixed;
      overflow-x: hidden;
-     font-family: sans-serif,georgia,"OpenSans",Arial,Helvetica,sans-serif;
+     font-family:'Source Sans Pro', sans-serif;
     letter-spacing: 0.3px;
     
     
@@ -243,7 +245,6 @@ ul{
 #block-views-frontpage-block-1 li,
 .outside{
 	background: #fff;
-	border-top: 4px solid #ED1846 ;
 	min-height: 184px;
 	margin-top: 28px;
 	text-align: left;
@@ -267,8 +268,8 @@ ul{
 
 .not-logged-in.page-frontpage .view-frontpage ul li {
     padding:0;
-    margin-top: 6%;
-    margin-bottom: 8%;
+    margin-top: 4%;
+    margin-bottom: 9%;
 }
 .logged-in.page-frontpage .view-frontpage ul li {
 	padding:0;
@@ -298,7 +299,7 @@ ul{
 }
 #block-views-frontpage-block-1 li h2 a,
 .view-id-frontpage li h2 a{
- color: black;
+ color: #333;
 }
 
 
@@ -313,33 +314,33 @@ ul{
 }
 
 .Loisirs-vie .outsides::before{
-    background-color: #FFC000;
+    background-color: #00AF8F;
  }
  .outsides > div {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-li.Loisirs-vie:hover .outside{
-	border-top: 4px solid #FFC000 ;
+li.Loisirs-vie .outside{
+	border-top: 4px solid #00AF8F ;
 }
 .Habitation .outsides::before {
-    background-color: #A90F27;
+    background-color: #9D4E9C;
 }
-li.Habitation:hover .outside{
-	border-top: 4px solid #A90F27 ;
+li.Habitation .outside{
+	border-top: 4px solid #9D4E9C ;
 }
 .Assistance .outsides::before {
     background-color: #3598DC;
 }
-li.Assistance:hover .outside{
+li.Assistance .outside{
 	border-top: 4px solid #3598DC ;
 }
 .Auto .outsides::before {
-    background-color: #1abd1d;
+    background-color: #598094;
 }
-li.Auto:hover .outside{
-	border-top: 4px solid #004D92 ;
+li.Auto .outside{
+	border-top: 4px solid #598094;
 }
 
 
@@ -355,11 +356,11 @@ li.Auto:hover .outside{
    border-radius: 3px;
 }
 li.Auto .outside p {
-    background-color: #1ABD1D;
+    background-color: #00AF8F;
 
 }
 li.Habitation .outside p {
-    background-color: #A90F27;
+    background-color: #9D4E9C;
     
 }
 li.Assistance  .outside p {
@@ -367,7 +368,7 @@ li.Assistance  .outside p {
     
 }
 li.Loisirs-vie  .outside p {
-    background-color: #FFC000;
+    background-color: #00AF8F;
     
 }
 
@@ -381,7 +382,7 @@ li.Loisirs-vie  .outside p {
 	bottom: 0;
 }
 .view-id-frontpage li.Auto  i.fa::before{
-		color: #004D92;
+		color: #598094;
 		content: "\f1b9"; 
 	}
 
@@ -390,11 +391,11 @@ li.Loisirs-vie  .outside p {
 		content: "\f21c";
 	}
 .view-id-frontpage li.Habitation  i.fa::before{
-		color: #A90F27;
+		color: #9D4E9C;
 		content: "\f015"; 
 	}
 .view-id-frontpage li.Loisirs-vie  i.fa::before{
-		color: #FFC000;
+		color: #00AF8F;
 		content: "\f21a"; 
 	}
 .view-id-frontpage .Habitation  i.fa::before,
@@ -650,10 +651,11 @@ color: white;
 opacity: 0.85;
 background: linear-gradient( #004D92,#004D92);
 display: block;
+    border-radius:5px;
 }
 
 .Loisirs-vie div.outsides div a {
-    background: #FFC000;
+    background: #00AF8F;
 }
 
 .Assistance div.outsides div  a{
@@ -661,11 +663,11 @@ display: block;
 }
 
 .Habitation div.outsides div a {
-    background: #A90F27;
+    background: #9D4E9C;
 }
 
 .Auto div.outsides div a{
-    background: #004D92;
+    background: #598094;
 }
 *{
     margin:0;
@@ -864,7 +866,7 @@ section#test  div#navbar-collapse {
 }
 div.footer_top{
 	width: 100%;
-	background: #fff;
+	background: #F5F5F7;
 }
 /* END Slide Show*/
 
@@ -1396,6 +1398,7 @@ td{
 .page-bottom{
     display: block;
     clear: both;
+    background-color: #ffffff;
 }
 
 /*Map Openlayers  */
@@ -1463,7 +1466,7 @@ div.offres .offre {
     padding: 0;
 }
 .page-frontpage div.main-container {
-    background-image: url('../images/bg.jpg');
+    background-image: url('../images/bg_dk.jpg');
     background-position-x: center;
     background-position-y: top;
     background-size: initial;
@@ -1473,8 +1476,30 @@ div.offres .offre {
     background-origin: initial;
     background-clip: initial;
     background-color: initial;
+    position: relative;
+}
+.page-frontpage div.floatingLine{
+    position: relative;
+    top:-4rem;
 }
 
+.page-frontpage div.floatingLine div {
+    padding: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+ .page-frontpage div.floatingLine div .floating-line {
+    background-color: #fff;
+    color: #666;
+    border-top: none;
+    margin: 0 0 3.7rem;
+    overflow: hidden;
+    box-shadow: none;
+     height:100px;
+     border-top: .6rem solid #103184;
+     box-shadow: 0 0 0.3rem #bbb;
+}
 /*L-------------es service Axa-------------*/
 
 #block-views-vos-services-axa-senegal-block li{
@@ -1530,12 +1555,15 @@ h1, .h1, h2, .h2, h3, .h3{
     clear: both;
     padding: 1em ;
     background: #fff;
-    width: 100%;
     text-align: center;
     color: #004D92;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
+    width: 215px;
+    border: 1px solid #0d2e86;
+    border-radius: 5px;
+    margin: 20px auto;
 }
 .sinistre-front a{
 }
@@ -1578,27 +1606,26 @@ h1, .h1, h2, .h2, h3, .h3{
 
 #block-views-faq-block-1 h2{
     text-align: center;
-     background: rgb(204, 204, 204) none repeat scroll 0 0;  
      margin: 0;
      font-size: 25px;
      padding-top: 5px;
     font-weight: 300;
     line-height: 36px;
-    /*margin-top: 15px;*/
-    color: rgba(0, 0, 0, 0.80);
+    border:none;
+    color: #004893;
 }
 #block-views-faq-block-1{
     padding-right: 0;
 }
 #block-views-faq-block-1 .view-display-id-block_1{
-    background: rgb(204, 204, 204) none repeat scroll 0 0 ;   
-    min-height:298px;
+    min-height:292px;
     padding: 10px 20px 20px;
     padding-right: 0px;
     margin: 0;
     margin-top: 0px;
     position: relative;
-    }
+    background-color: #ffffff;
+}
 #block-views-faq-block-1 .view-display-id-block_1 li{
     padding: .5em 0;
 }
@@ -1794,15 +1821,17 @@ input.nmpd-display {
 .not-logged-in .logo,
 .not-logged-in .appli{
     padding-right: 0;
-    margin-top: 25px !important; */
+    margin-top: 0px !important; */
     margin-bottom: 25px ! important;
 }
 
 .prez-mon-axa{
-   display: block;
+    display: block;
     float: right;
-    border: 1px solid #ccc;
-    padding: 0 0.5rem;
+    border: 1px solid #0d2e86;
+    border-radius: 5px;
+    padding: 4px 5px;
+    font-weight:bold;
 }
 
 .prez-mon-axa .fa-mobile{
@@ -1812,7 +1841,7 @@ input.nmpd-display {
 }
 
 .prez-mon-axa a{
-    color: #999;
+    color: #0d2e86;
     letter-spacing: 0.2px;
 }
 

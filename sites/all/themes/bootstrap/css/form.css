@@ -779,15 +779,30 @@ div#quicktabs-tabpage-left_menu-3 .webform-component--par-quel-moyen-voulez-vous
     height: auto;
     display: block;
     padding: 9px;
-    border-radius:16px 0 0 16px;
 }
-
+. navigation {
+}
+.region.region-navigation{
+    position: relative;
+}
 #block-search-form {
-    padding-top: 8px;
-    padding-right: 0;
+    background: #bfbcbb;
+    overflow: visible;
+    padding:20px 10px;
+    top: 1px;
+    left: 0;
+    right: 0;
+    display: none;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 #block-search-form .input-group{
-    display: block;
+    width: 100%;
+    background-color: #00479a;
+    border-bottom: 3px solid #042f87
+
 }
 #block-search-form .btn-primary{
     background-color: #fff;
