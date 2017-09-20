@@ -12,6 +12,7 @@ stylesheets[screen][] = css/menu.css
 stylesheets[screen][] = css/map.css
 stylesheets[screen][] = css/mail.css
 stylesheets[screen][] = css/client.css
+stylesheets[screen][] = css/vote.css
 
 scripts[] = slick/slick.min.js
 scripts[] = js/script.js

@@ -1,0 +1,35 @@
+.vote li{
+	margin: 10px 0;
+	text-align: center;
+}
+.vote li span{
+	display: block;
+}
+.vote li.views-row-odd{
+background-color: #ccc;
+}
+.vote li.views-row-odd:before {
+	content: '\f182';
+}
+
+
+
+.vote li.views-row-even:before,
+.vote li.views-row-odd:before {
+	font-family: 'fontawesome';
+	color: #00529B;
+	font-size: 60px;
+	display: block;
+	text-align: center;
+	width:85px;
+	height:85px;
+	background:#fff;
+	border-radius:50%;
+	border:none;
+}
+.vote li.views-row-even:before {
+	content: '\f183';
+	background-color: #ccc;
+}
+
+

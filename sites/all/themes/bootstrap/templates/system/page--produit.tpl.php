@@ -137,13 +137,7 @@
                   <a href="node/114" >Découvrir Mon Axa</a>
               </div>
             </div>
-            <div class="appli col-md-3 col-lg-3 col-xs-12 col-sm-6">
-              <div class="prez-mon-axa">
-                <i class="" aria-hidden="true">
-                    <img src="<?php echo $base_path . drupal_get_path('theme', 'bootstrap') .'/images/etiquette_mon_axa.png' ?>" alt="mon axa"> </i>
-                  <a href="node/114" >Découvrir Mon Axa</a>
-              </div>
-            </div>
+           
         </header>
 
 <!-- region slideshow -->
@@ -233,7 +227,7 @@
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
-    <?php print '<a class="resVote" href= "'.$base_path.'resultats-votes" title="resultats des votes">Avis des clients</a>'?>
+    <?php //print '<a class="resVote" href= "'.$base_path.'resultats-votes" title="resultats des votes">Avis des clients</a>'?>
   </div>
 
 <?php if (!empty($page['content_bottom'])): ?>
