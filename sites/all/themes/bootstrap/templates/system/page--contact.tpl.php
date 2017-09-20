@@ -89,7 +89,7 @@
                <?php
                     // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true"></i><span>Espace client</span></a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-lock"  aria-hidden="true"></i><span>Espace client</span></a></div>';
                     } 
                    else{
                     $nom = variable_get('nom_'.$user->uid);

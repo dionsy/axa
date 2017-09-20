@@ -85,7 +85,7 @@
                   <div class="user col-md-3 col-lg-3 col-sm-6 col-xs-12"> 
                  <?php
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true"></i><span>Espace client</span></a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-lock"  aria-hidden="true"></i><span>Espace client</span></a></div>';
                     } 
                    else{
                     $nom = variable_get('nom_'.$user->uid);
@@ -131,6 +131,13 @@
                </div>
             </div>
              <div class="appli col-md-3 col-lg-3 col-xs-12 col-sm-6">
+              <div class="prez-mon-axa">
+                <i class="" aria-hidden="true">
+                    <img src="<?php echo $base_path . drupal_get_path('theme', 'bootstrap') .'/images/etiquette_mon_axa.png' ?>" alt="mon axa"> </i>
+                  <a href="node/114" >Découvrir Mon Axa</a>
+              </div>
+            </div>
+            <div class="appli col-md-3 col-lg-3 col-xs-12 col-sm-6">
               <div class="prez-mon-axa">
                 <i class="" aria-hidden="true">
                     <img src="<?php echo $base_path . drupal_get_path('theme', 'bootstrap') .'/images/etiquette_mon_axa.png' ?>" alt="mon axa"> </i>

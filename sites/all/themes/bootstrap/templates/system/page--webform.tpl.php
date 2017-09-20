@@ -88,7 +88,7 @@
                       <?php
                     // krumong('main')->kPrint($base_path);
                     if(!user_is_logged_in()){
-                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-user" aria-hidden="true"></i><span>Espace client</span></a></div>';
+                      print '<div class="mon_espace_client" ><a href="'.$base_path.'user" class="es_cli"><i class="fa fa-lock"  aria-hidden="true"></i><span>Espace client</span></a></div>';
                     } 
                    else{
                     $nom = variable_get('nom_'.$user->uid);
@@ -111,7 +111,7 @@
                 </div>
               </div>
            
-            <div class="logo col-md-10 col-lg-10 col-xs-12 col-sm-6<?php //print $container_class; ?>">    
+            <div class="logo col-md-9 col-lg-9 col-xs-12 col-sm-6<?php //print $container_class; ?>">    
               <div class="navbar-header ">
                 <?php if ($logo): ?>
                   <a class="navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -130,9 +130,11 @@
                </div>
             </div>
             <!-- Lien mon axa  -->
-            <div class="appli col-md-2 col-lg-2 col-xs-12 col-sm-6">
+            <div class="appli col-md-3 col-lg-3 col-xs-12 col-sm-6">
               <div class="prez-mon-axa">
-                <i class="fa fa-mobile" aria-hidden="true"></i><a href="node/114" >Découvrir Mon Axa</a>
+                <i class="" aria-hidden="true">
+                    <img src="<?php echo $base_path . drupal_get_path('theme', 'bootstrap') .'/images/etiquette_mon_axa.png' ?>" alt="mon axa"> </i>
+                  <a href="node/114" >Découvrir Mon Axa</a>
               </div>
             </div>
         </header>

@@ -99,9 +99,16 @@
     font-weight: 600;
      border: 1px solid rgb(255, 255, 255);  
 }
-#block-views-faq-block-1 .view-footer a:hover,
-#block-views-slide-block .views-more-link:hover {
+#block-views-slide-block .views-more-link {
+    width: auto !important ;
+    border: none;
+    color: #fff; 
+}
+#block-views-faq-block-1 .view-footer a:hover {
  background-color: white;
+}
+#block-views-slide-block .views-more-link:hover {
+ text-decoration: underline !important;
 }
 .navbar-header.col-md-9.col-lg-9.col-xs-12 {
     padding: 0;
@@ -196,8 +203,11 @@ ul{
     margin-right: 0 !important;
     margin-left: 0 !important;
 }
-.page-frontpage div.row ,.not-front div.row {
+.not-logged-in.page-frontpage div.row ,.not-logged-in .not-front div.row {
     margin-bottom: 25px;
+}
+.page-frontpage.logged-in div.row , .page-frontpage.logged-in .not-front div.row{
+    margin-bottom: 10px !important;
 }
 
 #user-login-form li{
@@ -832,9 +842,13 @@ section#test  div#navbar-collapse {
 .descriptif{
     position: absolute;
     z-index: 10;
-    top: 20%;
+    bottom: 15px;
     width: 50%;
-    right: 8%;
+    right: 10%;
+    background-color: black; 
+    opacity: 0.6 ;
+    padding-left: 7px ;
+    padding-right: 7px;
 }
 
  .views-more-link{
@@ -846,7 +860,7 @@ section#test  div#navbar-collapse {
 }
 
 .descriptif a{
-    color:#ED1846;
+    color: #fff;
 
 }
 
@@ -1601,10 +1615,10 @@ h1, .h1, h2, .h2, h3, .h3{
 
    color: rgb(237, 24, 70);
     content: "|";
-    font-size: 19em;
-    height: 110px;
+    font-size: 17em;
+    height: 15px;
     position: absolute;
-    top: -126px;
+    top: -123px;
     transform: skew(-36deg,  -19deg);
     border-left: none ;
 }
@@ -1820,8 +1834,11 @@ input.nmpd-display {
 .logo,
 .appli{
     padding-right: 0;
-    /*margin-top: 20px !important; */
-    margin-bottom: 20px ! important;
+    margin-bottom: 20px ;
+}
+.page-frontpage.logged-in .logo,
+.page-frontpage.logged-in .appli{
+    margin-bottom: 35px ;
 }
 .not-logged-in .logo,
 .not-logged-in .appli{
@@ -1933,4 +1950,8 @@ input.nmpd-display {
 }
 #block-mes-sinistres-mes-sinistres .item-type-sinistre {
     margin-bottom: 15px;
+}
+.footer_top.container {
+    padding-bottom: 25px;
+    padding-top: 25px;
 }
