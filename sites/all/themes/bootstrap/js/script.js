@@ -19,12 +19,22 @@
     }
   Drupal.behaviors.kyziahSlickSlider = {
     attach: function(context, settings){
-          if($('.front', context).length){
+          if($('*', context).length){
              $('.slide', context).slick({
               autoplay: true,
               dots:false,
               infinite: true,
               speed: 3000,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              fade:true
+            });
+
+          $('.slide-gr', context).slick({
+              autoplay: true,
+              dots:false,
+              infinite: true,
+              speed: 1000,
               slidesToShow: 1,
               slidesToScroll: 1,
               fade:true
