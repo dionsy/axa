@@ -114,7 +114,6 @@ if($variables['theme_hook_suggestions'][0]=='page__search'){
          $type = $variables['node']->type;
          $variables['theme_hook_suggestions'][3] = 'page__produit';
     } 
-
  if($variables['page']['#type']=='page'){
     $variables['theme_hook_suggestions'][] = 'page__'.transliteration_clean_filename($title);
  }

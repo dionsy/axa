@@ -203,7 +203,7 @@ ul{
     margin-right: 0 !important;
     margin-left: 0 !important;
 }
-.not-logged-in.page-frontpage div.row ,.not-logged-in .not-front div.row {
+.not-logged-in .page div.row ,.not-logged-in .not-front div.row {
     margin-bottom: 25px;
 }
 .page-frontpage.logged-in div.row , .page-frontpage.logged-in .not-front div.row{
@@ -1416,7 +1416,10 @@ td{
     clear: both;
     background-color: #ffffff;
 }
-
+.page-bottom.row.container{
+    margin-left: auto !important ;
+    margin-right: auto !important;
+}
 /*Map Openlayers  */
 section#block-views-agence-axa-block-1 {
     margin-bottom: 20px;
@@ -1959,4 +1962,9 @@ input.nmpd-display {
     background: rgb(255, 255, 255) none repeat scroll 0 0;
     margin-left: 2%;
     width: 39%;
+}
+#block-views-professionnels-block-3 div ul li , .view.view-professionnels div ul li{
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 35px;
 }
