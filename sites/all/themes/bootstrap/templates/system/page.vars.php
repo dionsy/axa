@@ -76,6 +76,10 @@ function bootstrap_preprocess_page(&$variables) {
   else {
     $variables['navbar_classes_array'][] = 'navbar-default';
   }
+
+
+
+
 }
 
 /**
@@ -91,7 +95,8 @@ function bootstrap_process_page(&$variables) {
   $variables['navbar_classes'] = implode(' ', $variables['navbar_classes_array']);
 
 //Custom error page
-//krumong('main')->kPrint($variables);
+ 
+
 if($variables['theme_hook_suggestions'][0]=='page__search'){
     $variables['title'] = t('Search results');
     $variables['breadcrumb']='';
@@ -139,5 +144,4 @@ if(isset($variables['theme_hook_suggestions']['1']) &&  in_array($variables['the
     $variables['theme_hook_suggestions'][] = 'page__404';
   }
 }
-
 
