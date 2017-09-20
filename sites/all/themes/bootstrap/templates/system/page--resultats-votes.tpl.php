@@ -190,25 +190,13 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
 
-      <?php //print render($page['content']);
+      <?php
        
-       $nid=$node->nid;
-
-         $vote = $page['content']['system_main']['nodes'][$nid]['rate_voter'];
-         //krumong('main')->kPrint($page['content']);
-        $url=$node->field_image_produit['und'][0]['uri'];
-        $img = file_create_url($url);
-     
-         $img2= file_create_url('sites/all/themes/bootstrap/images/axa.png');
-          print '<div class="img_prod row"><div class="col-md-8 col-lg-8 col-sm-8 col-xs-6"><img class="img-responsive axa_logo" src="'.$img2.'" /></div><h1 class="page-header">'.$title.'</h1><div class="col-md-4 col-lg-4 col-sm-4 col-xs-6"><img class="img-responsive offres" src="'.$img.'" /></div>';  
-          print '</div>'; 
-                 
-          if (!empty($node->body)){
-            $body = $node->body['und'][0]['value'];
-            print '<div class="body">'.$body.'</div>';
-            print  $vote['#markup'];
-          }
-       ?>
+        // krumong('main')->kPrint($results);
+         print render($page['content']); 
+        ?>
+       
+      
     </section>
 </div>
 
@@ -226,7 +214,7 @@
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
-    <?php print '<a class="resVote" href= "'.$base_path.'resultats-votes" title="resultats des votes">Avis des clients</a>'?>
+    
   </div>
 
 <?php if (!empty($page['content_bottom'])): ?>
@@ -246,8 +234,7 @@
 <?php endif; ?>
 </div> <!-- End Page -->
 
-<div class="barre">
-</div>
+
 <?php if (!empty($page['footer'])): ?>
   <footer class="footer">
   <div class="container">
