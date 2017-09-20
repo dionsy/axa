@@ -369,10 +369,10 @@ function ws_client_get_liste_contrats(){
     100000003 => 'RC chef de famille',
   );
   $statut= array(
-    100000000 => 'Initialisé',
+    100000000 => 'Initialise',
     100000001 => 'En cours',
-    100000002 => 'Validé',
-    100000003 => 'Résilié'
+    100000002 => 'Valide',
+    100000003 => 'Résilie'
   );
 
   global $user;

@@ -208,10 +208,10 @@ function mes_contrats_block_info() {
 function mes_contrats_block_view($delta = '') {
   if ($delta == 'mes_contrats') {
       $statut= array(
-      100000000 => 'Initialisé',
+      100000000 => 'Initialise',
       100000001 => 'En cours',
-      100000002 => 'Validé',
-      100000003 => 'Résilié'
+      100000002 => 'Valide',
+      100000003 => 'Résilie'
       );
       $title = '';
     	$output = '';
@@ -257,7 +257,7 @@ function mes_contrats_block_view($delta = '') {
               if($i==0){
                 $output .= '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';  
                 $output .=     '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 field-contrat">';
-                if($statut === 'Validé'){
+                if($statut === 'Valide'){
                     $output .=       '<span>'.l($value,'contrat/'. $numContrat).'</span>'; 
                 }
                 else {  
@@ -286,7 +286,7 @@ function mes_contrats_block_view($delta = '') {
               $idownload ='<i class="fa fa-download" aria-hidden="true"></i>' ;
               $iview = '<i class="fa fa-eye" aria-hidden="true"></i>' ;
               $irequete ='<i class="fa fa-pencil-square-o" aria-hidden="true"></i>' ;
-            if($statut === 'Validé'){
+            if($statut === 'Valide'){
               $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 telechargement-contrat field-contrat">';
               $output .=       '<span> '.l($idownload ,'contrat/'.$numContrat,array('html'=> true ,'attributes'=> array('target' => '_blank' ))).'</span>';   
               $output .=     '</div>';
