@@ -170,6 +170,13 @@ switch ($block->delta) {
 	case 'menu-menu-principal-entreprise':	
 		$class="col-md-10 col-lg-10 col-sm-12 col-xs-12 responsive-menus-mean-menu-processed";
 	break;
+	case 'mon_conseiller':	
+		$class="col-md-12 col-lg-12 col-sm-12 col-xs-9 ";
+	break;
+	case 'button_devis_block_info':	
+		$class="col-md-12 col-lg-12 col-sm-12 col-xs-3 ";
+	break;
+
 
 
 	case '3':

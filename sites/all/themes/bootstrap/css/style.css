@@ -1637,7 +1637,7 @@ h1, .h1, h2, .h2, h3, .h3{
     padding-right: 0;
 }
 #block-views-faq-block-1 .view-display-id-block_1{
-    min-height:292px;
+    min-height:282px;
     padding: 10px 20px 20px;
     padding-right: 0px;
     margin: 0;
@@ -1954,4 +1954,9 @@ input.nmpd-display {
 .footer_top.container {
     padding-bottom: 25px;
     padding-top: 25px;
+}
+#block-views-faq-block-1 {
+    background: rgb(255, 255, 255) none repeat scroll 0 0;
+    margin-left: 2%;
+    width: 39%;
 }

@@ -864,7 +864,7 @@ ul.quicktabs-tabs.quicktabs-style-navlist {
     width: 22%  !important;
 }
 aside.mon-conseiller {
-    width: 23% !important;
+    /*width: 23% !important;*/
     float: right;
 }
 
@@ -935,6 +935,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     background: -moz-linear-gradient(left top, #fff, #fff 39%, #c0e7e0);
     background: -o-linear-gradient(left top, #fff, #fff 39%, #c0e7e0);
     background: linear-gradient(left top, #fff, #fff 39%, #c0e7e0);
+    padding: 0 !important
 }
 
 .mon-conseiller .well {
@@ -1476,12 +1477,38 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 /* Breakpoint 1024 */
 @media screen and (max-width: 992px){
       .page-node-2 .info-left-menu{
-    margin-top: 0px !important;
+        margin-top: 0px !important;
     }
     .container, .navbar.container {
-    padding-left: 20px;
-    padding-right: 20px;
-    width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: auto;
+    }
+    #block-views-faq-block-1 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 25px;
+    }
+        #block-mes-devis-mes-devis .field-devis span, #block-mes-contrats-mes-contrats .field-contrat span {
+        padding-left: 0 !important;
+    }
+    body {
+        letter-spacing: 0.2px !important;
+    }
+    ul.quicktabs-tabs.quicktabs-style-navlist {
+        margin-right: 0 !important;
+        width: 30%;
+    }
+        .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
+        padding-left: 2%;
+        width: 78%;
+    }
+    #block-mon-conseiller-mon-conseiller .incline {
+    transform: none !important;
+    }
+    .row.item-contrat div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     }
 }
 
@@ -1502,39 +1529,33 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         padding-right: 10px;
     }
 
-    ul.quicktabs-tabs.quicktabs-style-navlist {
-        margin-right: 2%;
-        width: 30%;
-    }
 
     .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
-      width: 68%;
+      width: 78%;
       padding-left: 2%
     }
 
     .mon-conseiller {
         display: block;
      /*   margin-left: 32% !important;*/
-        width: 68%;
+        /*width: 68%;*/
     }
-     .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
-    padding-left: 2%;
-    width: 76%;
-    }
+ 
+
 }
 
 /*Breakpoint 524 767*/
 @media screen and (max-width: 767px) {
     /* xs */
     body{
-        font-size: 12px !important ;
+        font-size: 13px !important ;
         letter-spacing: 0 !important;
     }
     .info-left-menu .barre {
         display: none;
         left: 79%;
     }
-    .page-node-2 .main-container .row {
+    .page-node-2 .main-container section.row {
     padding-left: 5px !important;
     padding-right: 5px !important;
     }
@@ -1564,11 +1585,11 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
       padding-left: 2%
     }
 
-    .mon-conseiller {
+/*    .mon-conseiller {
         display: block;
         margin-left: 32% !important;
         width: 68% !important;
-    }
+    }*/
     .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
     padding-left: 1%;
     padding-right: 1% ;
@@ -1577,6 +1598,24 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     #block-mes-devis-mes-devis .item-mes-devis div div  ,#block-mes-contrats-mes-contrats .titleProduit {
         padding-right: 5px !important;
         padding-left: 5px !important;
+    }
+    #block-mon-conseiller-mon-conseiller {
+        float: right;
+        display: inline-block;
+        margin-right: 3%; 
+        width: 75%;
+    }
+    #block-ws-client-button-devis-block-info {
+        display: inline-block;
+        float: left;
+        top: 60px;
+        width: 22%;
+    }
+    aside.mon-conseiller {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-top: 25px;
     }
 
 }
