@@ -99,6 +99,12 @@
     font-weight: 700;
     text-align: center;
 }
+#block-menu-menu-menu-principal .nav li li a  ,
+#block-menu-menu-menu-principal-professionne .nav li li a,
+#block-menu-menu-menu-principal-entreprise .nav li li a{
+    text-align: left;
+     width: auto !important; 
+}
 #navbar_banner{
     margin-bottom: 40px;
     padding: 0;
@@ -1419,12 +1425,22 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     }
     #block-menu-menu-menu-principal-professionne ul li,
      #block-menu-menu-menu-principal-entreprise ul li{
-        width:  auto !important;
+        width:  auto ;
      }
     #block-menu-menu-menu-principal ul li.active ,
     #block-menu-menu-menu-principal-professionne ul li.active,
     #block-menu-menu-menu-principal-entreprise ul li.active{
         background-color: #00529B ;
+     }
+    #block-menu-menu-menu-principal ul li li.active ,
+    #block-menu-menu-menu-principal-professionne ul li li.active,
+    #block-menu-menu-menu-principal-entreprise ul li li.active{
+        background-color: transparent !important;
+     }
+    #block-menu-menu-menu-principal ul li li.active a,
+    #block-menu-menu-menu-principal-professionne ul li li.active a,
+    #block-menu-menu-menu-principal-entreprise ul li li.active a{
+       color: rgb(0, 0, 0) !important;
      }
     #block-menu-menu-menu-principal ul.meunu.nav > li ,
     #block-menu-menu-menu-principal-professionne ul.menu.nav > li ,
@@ -1482,7 +1498,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         text-align: center;
         padding: 10px 22px 6px;
         font-weight: 700;
-        width: auto;
+        width: 100% ;
         z-index: 1;
         color: #333;
    }
@@ -1795,12 +1811,14 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 #block-menu-menu-menu-principal-professionne  li li,
 #block-menu-menu-menu-principal-entreprise li li{
     display: block;
+    width: 35% !important;
 }
-#block-menu-menu-menu-principal li li:hover ,
+/*#block-menu-menu-menu-principal li li:hover ,
 #block-menu-menu-menu-principal-professionne  li li:hover,
 #block-menu-menu-menu-principal-entreprise li li:hover{
     background-color: rgb(245, 245, 245);
-}
+    width: 50% !important;
+}*/
 
 
 li.assurance_voyage a:before{
@@ -2317,7 +2335,9 @@ li.assurance_voyage a:before,
     background-color: transparent !important;
     border-color: none !important;
 }
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus 
+/*#block-menu-menu-menu-principal ul li li a,
+   #block-menu-menu-menu-principal-entreprise ul li li a ,
+   #block-menu-menu-menu-principal-professionne ul li li a,
     {
-        background-color: transparent !important ;
-    }
+        width: auto !important; 
+    }*/
