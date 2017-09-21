@@ -1967,11 +1967,23 @@ input.nmpd-display {
 }
 #block-views-professionnels-block-3 div ul li , .view.view-professionnels div ul li{
     display: inline-block;
-    margin-left: 25px;
-    margin-top: 35px;
+    margin-right: 25px;
 }
 
 #block-views-slide-slide-groupe .slick-track .slick-track img{
     height: 300px !important;
     background-color: #00529B ;
+}
+.page-entreprises .breadcrumb,
+.page-professionnels .breadcrumb{display: none;}
+.view-professionnels h3{
+    border-bottom: 2px solid #ccc;
+    color: #999;
+    margin: 20px 0;
+}
+
+.page-entreprises .highlighted.jumbotron,
+.page-professionnels .highlighted.jumbotron{
+    max-height: 300px !important;
+    overflow: hidden;
 }
