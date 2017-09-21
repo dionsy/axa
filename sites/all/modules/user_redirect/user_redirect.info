@@ -1,3 +1,0 @@
-name = User redirect
-description = Redirige l'utilisateur sur la page espace client, apres connection.
-core = 7.x
