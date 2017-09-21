@@ -1004,6 +1004,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
   $create_devis_accident = variable_get('create_devis_accident');
   $create_devis_loisir = variable_get('create_devis_loisir');
   $result = "" ;
+
   if($idNode == 8)
       {     
             $dateNaissance = $submission->data[3][0]; 
@@ -1046,6 +1047,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'anneeMiseEnCirculation' => $anneeMiseEnCirculation ,
              'moisMiseEnCirculation' => $moisMiseEnCirculation ,
              'jourMiseEnCirculation' => $jourMiseEnCirculation ,
+             'graphique' => 'digitale',
              'momentAssurance' => $submission->data[22][0]
              );
             
@@ -1089,6 +1091,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'adresseLogement' => $submission->data[4][0],
              'nbPieces' =>  $submission->data[2][0],
              'principal' => $submission->data[3][0],
+             'graphique' => 'digitale',
              'locataire' => $submission->data[15][0],
              'montant' => '5000000'
              );
@@ -1127,6 +1130,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
               "adresse" => $submission->data[11][0] ,
               "civilite" => $submission->data[8][0] ,
               "typeAssurance" => $submission->data[9][0],
+              'graphique' => 'digitale',
               "momentAssurance" => $submission->data[10][0] 
              );
               
@@ -1167,6 +1171,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'telephone' => $submission->data[6][0],
              'adresse' => $submission->data[9][0] ,
              'civilite' => $submission->data[1][0] ,
+             'graphique' => 'digitale',
              'typeAssurance' => $submission->data[7][0],
              'momentAssurance' => $submission->data[8][0] 
              );
