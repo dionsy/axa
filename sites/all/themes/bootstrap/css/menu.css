@@ -1725,7 +1725,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         margin-bottom: 15px;
         margin-left: 2%;
         margin-right:2%;
-        width: 100%;
+        width: 100% !important;
     }
 
     .page-node-2 #quicktabs-container-left_menu.quicktabs_main.quicktabs-style-navlist {
@@ -1757,8 +1757,12 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         letter-spacing: 0 !important;
     }
     #block-mes-devis-mes-devis .field-devis span, #block-mes-contrats-mes-contrats .field-contrat span {
-    padding-left: 0;
-}
+        padding-left: 0;
+    }
+    .declarer-sinistre {
+        bottom: 0 !important ;
+        position: relative !important;
+    }
 }
 
 
@@ -2140,6 +2144,7 @@ li.assurance_voyage a:before,
     .webform-progressbar-page .webform-progressbar-page-label {
         font-size: 11px;   
     }
+
 
  }
 @media all and (max-width: 480px){
