@@ -253,8 +253,8 @@ form#fixer-rendez-vous-form #edit-actions--4 {
     position: absolute;
     width: 102%;
     bottom: -87px;
-    background: #005399 !important;
-    color: #fff !important;
+    background: #005399 ;
+    color: #fff ;
     height: 10%;
 /*    border-radius: 5px;*/
 }

@@ -1683,10 +1683,11 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     .topnav.responsive a.icon {
         display: none;
     }
-    .topnav.responsive a.icon-close {
+.topnav.responsive a.icon-close {
+        color: red;
         display: block;
-        font-size: 28px;
-        color: #ee3e40;
+        font-size: 20px;
+        margin-top: 6px;
     }
     .topnav.responsive.ferme a.icon {
         display: block;
@@ -1737,7 +1738,7 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     .mon-conseiller {
         display: block;
         width: 100% ;
-        margin-right:2%;
+        /*margin-right:2%;*/
         margin-bottom: 0px;
     }
 
@@ -1762,6 +1763,29 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
     .declarer-sinistre {
         bottom: 0 !important ;
         position: relative !important;
+        width: 100% !important;
+        background-color: #fff !important;
+    }
+     .declarer-sinistre a {
+        color: #004D92 !important;
+     }
+    #block-ws-client-button-devis-block-info {
+        width: 100% !important;
+        /*margin: 2%;*/
+    }
+    #block-mon-conseiller-mon-conseiller {
+        display: inline-block;
+        /*margin:2%;*/ 
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+    #block-menu-menu-nos-produits li a ,
+    ul.quicktabs-tabs.quicktabs-style-navlist li animation: {
+        font-size: 14px !important;
+    }
+    body {
+        font-size: 12px !important;
     }
 }
 
@@ -2223,6 +2247,14 @@ li.assurance_voyage a:before,
         margin-top: 0 !important;
         width: 40% !important;
     }
+     #block-quicktabs-left-menu .row.item-contrat div div,
+    #block-quicktabs-left-menu .row.item-devis div div {
+        width: 50% !important
+    }
+    #block-mes-devis-mes-devis .item-mes-devis div div, 
+    #block-mes-contrats-mes-contrats .titleProduit {
+        display: none;
+    }
     /*.mean-container a.meanmenu-reveal {
         margin-top: 24% !important;
     }*/
@@ -2270,6 +2302,7 @@ li.assurance_voyage a:before,
      .breadcrumb {
         display: none;
     }
+
 }
 @media all and (max-width: 233px){
     
