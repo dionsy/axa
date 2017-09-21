@@ -93,8 +93,11 @@
     padding: 2px;
     position: relative;
 }
-#block-menu-menu-menu-principal .nav li a {
+#block-menu-menu-menu-principal .nav li a  ,
+#block-menu-menu-menu-principal-professionne .nav li a,
+#block-menu-menu-menu-principal-entreprise .nav li a{
     font-weight: 700;
+    text-align: center;
 }
 #navbar_banner{
     margin-bottom: 40px;
@@ -1414,6 +1417,15 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         vertical-align: middle;
         box-shadow: inset 0 2px 0 0 #fff;
     }
+    #block-menu-menu-menu-principal-professionne ul li,
+     #block-menu-menu-menu-principal-entreprise ul li{
+        width:  auto !important;
+     }
+    #block-menu-menu-menu-principal ul li.active ,
+    #block-menu-menu-menu-principal-professionne ul li.active,
+    #block-menu-menu-menu-principal-entreprise ul li.active{
+        background-color: #00529B ;
+     }
     #block-menu-menu-menu-principal ul.meunu.nav > li ,
     #block-menu-menu-menu-principal-professionne ul.menu.nav > li ,
     #block-menu-menu-menu-principal-entreprise ul.menu.nav > li ,
@@ -1460,14 +1472,17 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
         bottom: 0;
         z-index: 2;
     }
-   #block-menu-menu-menu-principal ul li a,#block-menu-menu-menu-principal ul li.recherche span{
+   #block-menu-menu-menu-principal ul li a,
+   #block-menu-menu-menu-principal-entreprise ul li a ,
+   #block-menu-menu-menu-principal-professionne ul li a,
+   #block-menu-menu-menu-principal ul li.recherche span{
         outline: 0;
         position: relative;
         display: inline-block;
         text-align: center;
         padding: 10px 22px 6px;
         font-weight: 700;
-        width: 100%;
+        width: auto;
         z-index: 1;
         color: #333;
    }
@@ -1780,6 +1795,11 @@ h1.bienvenue, #block-views-liste-contrats-block .block-title, #block-views-user-
 #block-menu-menu-menu-principal-professionne  li li,
 #block-menu-menu-menu-principal-entreprise li li{
     display: block;
+}
+#block-menu-menu-menu-principal li li:hover ,
+#block-menu-menu-menu-principal-professionne  li li:hover,
+#block-menu-menu-menu-principal-entreprise li li:hover{
+    background-color: rgb(245, 245, 245);
 }
 
 
@@ -2297,3 +2317,7 @@ li.assurance_voyage a:before,
     background-color: transparent !important;
     border-color: none !important;
 }
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus 
+    {
+        background-color: transparent !important ;
+    }

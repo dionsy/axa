@@ -1672,7 +1672,9 @@ h1, .h1, h2, .h2, h3, .h3{
 .view-declaration-sinistre .views-field.views-field-title {
     width: 19.5%;
 }
-#block-menu-menu-menu-principal .caret {
+#block-menu-menu-menu-principal .caret ,
+#block-menu-menu-menu-principal-professionne .caret ,
+#block-menu-menu-menu-principal-entreprise  .caret{
     display: none;
 }  
 #block-menu-menu-menu-d-aide li.active > a {
