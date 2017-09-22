@@ -798,7 +798,7 @@ function ws_client_update_info_user($array_data) {
 }
 
 function ws_client_user_login(&$edit, $account) {
- 
+    drupal_goto('node/2');
 }
 
 function ws_client_init() {
@@ -996,7 +996,7 @@ function ws_client_webform_submission_presave($node, &$submission) {
            webform_submission_delete($node, $submission);
 }
 
-function ws_client_createDevis($idNode, $submission ,$identifiant){
+function ws_client_createDevis($idNode, $submission ,$identifiant,$plateform="digital"){
   $ip = variable_get('ip_server');
   $root = variable_get('root');
   $create_devis_auto = variable_get('create_devis_auto');
@@ -1004,7 +1004,6 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
   $create_devis_accident = variable_get('create_devis_accident');
   $create_devis_loisir = variable_get('create_devis_loisir');
   $result = "" ;
-
   if($idNode == 8)
       {     
             $dateNaissance = $submission->data[3][0]; 
@@ -1047,7 +1046,7 @@ function ws_client_createDevis($idNode, $submission ,$identifiant){
              'anneeMiseEnCirculation' => $anneeMiseEnCirculation ,
              'moisMiseEnCirculation' => $moisMiseEnCirculation ,
              'jourMiseEnCirculation' => $jourMiseEnCirculation ,
-             'graphique' => 'digitale',
+             'graphique' => $plateform,
              'momentAssurance' => $submission->data[22][0]
              );
             
