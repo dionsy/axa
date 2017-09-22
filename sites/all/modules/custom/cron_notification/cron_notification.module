@@ -22,7 +22,7 @@ module_load_include('inc', 'cron_notification', 'cron_notification.admin');
  * Implements hook_libraries_info().
  */
 function cron_notification_libraries_info() {
-  $libraries['twilio'] = array(
+  /*$libraries['twilio'] = array(
     'name' => 'Twilio library',
     'vendor url' => 'http://www.twilio.com',
     'download url' => 'https://github.com/twilio/twilio-php/tarball/latest',
@@ -33,7 +33,7 @@ function cron_notification_libraries_info() {
         'autoload.php',
       ),
     ),
-  );
+  );*/
 
   $libraries['phpmailer'] = array(
     'name' => 'PHPMailer library',
@@ -135,6 +135,7 @@ function cron_notification_menu() {
 * Implements hook_cron().
 */
 function cron_notification_cron() {
+
    module_load_include('inc','webform','includes/webform.submissions');
   # For sms notification
   $code = variable_get('cron_notification_country_codes', FALSE)[221];
@@ -165,7 +166,7 @@ function cron_notification_cron() {
   foreach ($clients as $client) {
     # code...
     $uid = $client->uid;
-    $number_client = '+' . $code . /*$client->field_numero_telephone['und'][0]['value']*/'778241624';
+    $number_client = '+' . $code . /*$client->field_numero_telephone['und'][0]['value']*/'775171783';
 
     # Notification choice: SMS or/and Mail
     //print_r($values)  ; die();
@@ -173,10 +174,11 @@ function cron_notification_cron() {
         'nid' => '86',
         'uid' => $client->uid
     );
-    //$submissions = reset(webform_get_submissions($filters));
+    $submissions = reset(webform_get_submissions($filters));
 
 
     $choice = $submissions->data[1];
+
     # Notification periode
     $periode = $submissions->data[2][0];
     # Defaults values
@@ -220,19 +222,19 @@ function cron_notification_cron() {
     $body_sms = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
 
     $body_mail = 'Votre contrat chez axa assurance Sénégal va expirer dans ' . $expire_list[$periode] . ". \n Merci de bien vouloir renouveller votre contrat sur ".$lien;
+
     if(/*$date >= $fin_contrat && $date <= $date_majorant*/TRUE){
+
       if(/*in_array("MaIL", $choice)*/TRUE){
         # send email
        // krumong('main')->kPrint($body_mail, 'body mail');
         cron_notification_send_mail('syllababacar@yahoo.com', $subject, $body_mail);      
       }    
-      if (($library = libraries_load(TWILIO_LIBRARY)) &&
-           !empty($library['loaded']) &&
-           in_array("SMS", $choice)) {
-        //print_r($fin_contrat)  ; die();
+      if (/*in_array("SMS", $choice)*/ TRUE) {
+
         # send sms
         //cron_notification_send_kannel_sms($number_client, $body_sms);
-        //cron_notification_twilio_sms($number_client, $body_sms) ;        
+        cron_notification_twilio_sms($number_client, $body_sms) ;
       }
 
     }
@@ -254,16 +256,19 @@ function cron_notification_cron() {
  * @return bool
  *   TRUE or FaLSE if the message was successfully sent.
  */
-/*function cron_notification_twilio_sms($number_client, $body){
-  # get value from the admin form 
+function cron_notification_twilio_sms($number_client, $body){
+
+    module_load_include('module','sms_twilio');
+    $res =  sms_twilio_command('sendmsg', array('number' => $number_client, 'message' => $body), NULL, NULL);
+ /* # get value from the admin form
 // var_dump($library) ; die();
-  $account_sid = variable_get('cron_notification_account_sid');
-  $auth_token = variable_get('cron_notification_account_auth');
-  $from = variable_get('cron_notification_number');
+//  $account_sid = variable_get('cron_notification_account_sid');
+//  $auth_token = variable_get('cron_notification_account_auth');
+//  $from = variable_get('cron_notification_number');
 
-  $client = new Client($account_sid, $auth_token);
+//  $client = new Client($account_sid, $auth_token);
 
-            $result  = $client->messages->create($number_client ,array(
+       //     $result  = $client->messages->create($number_client ,array(
               # To Number 
              /* 'To' => $number_client,
               # Your twilio number
@@ -278,8 +283,8 @@ function cron_notification_cron() {
   else{
    // krumong('main')->kPrint('a SMS notification has not been sent to:' . $number_client);
     return $client;
-  }
-}*/
+  }*/
+}
 
 /**
  * Sends a message via Kannel.

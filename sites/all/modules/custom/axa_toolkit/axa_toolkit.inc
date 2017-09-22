@@ -36,6 +36,7 @@ function _devis_service_create($data) {
     module_load_include('module', 'ws_client', 'ws_client');
     module_load_include('inc', 'webform', 'webform.module');
     module_load_include('inc', 'webform', 'includes/webform.submissions');
+
     // This methods will arrange $data in the right way
     $formdata = _webform_client_form_submit_flatten($node, $formdata);
     $formdata = webform_submission_data($node, $formdata);
@@ -50,7 +51,7 @@ function _devis_service_create($data) {
       'data' => $formdata,
     );
     // $sid = webform_submission_insert($node, $submission);
-    $result = ws_client_createDevis($nid , $submission , $identifiant);
+    $result = ws_client_createDevis($nid , $submission , $identifiant,'mobile');
     if($result->code >=  300 )
     {
      return services_error("verifier les champs", $result->code,$result);
