@@ -798,8 +798,9 @@ function ws_client_update_info_user($array_data) {
 }
 
 function ws_client_user_login(&$edit, $account) {
- 
-}
+    drupal_goto('node/2');
+} 
+
 
 function ws_client_init() {
   global $user;

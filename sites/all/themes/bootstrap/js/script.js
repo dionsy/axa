@@ -19,8 +19,8 @@
     }
   Drupal.behaviors.kyziahSlickSlider = {
     attach: function(context, settings){
-          if($('*', context).length){
-             $('.slide', context).slick({
+        /*  if($('*', context).length){*/
+          $('.slide-gr', context).slick({
               autoplay: true,
               dots:false,
               infinite: true,
@@ -30,17 +30,17 @@
               fade:true
             });
 
-          $('.slide-gr', context).slick({
+             $('.slide', context).slick({
               autoplay: true,
               dots:false,
               infinite: true,
-              speed: 500,
+              speed: 3000,
               slidesToShow: 1,
               slidesToScroll: 1,
               fade:true
-            });
+          });          
 
-      }
+      //}
 
       $('.view-faq li.views-row', context).on('click', function(){
           var classes = $(this).attr('class');
