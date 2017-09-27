@@ -441,7 +441,5 @@ function declarer_sinistre_form_submit($form, &$form_state){
     $data['jourSinistre'] = $jourSinistre ;
     $data['moisSinistre'] = $moisSinistre ;
     $data['anneeSinistre'] = $anneeSinistre ;
-
     ws_client_declarer_sinistre($data);
-
 }
