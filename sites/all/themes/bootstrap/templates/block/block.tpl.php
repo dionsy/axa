@@ -162,13 +162,13 @@ switch ($block->delta) {
 	break;
 
 	case 'menu-menu-principal':	
-		$class="col-md-12 col-lg-12 col-sm-12 col-xs-12";
+		$class="col-md-12 col-lg-12 col-sm-12 col-xs-12 axa_responsive";
 	break;
 	case 'menu-menu-principal-professionne':	
-		$class="col-md-10 col-lg-10 col-sm-12 col-xs-12 responsive-menus-mean-menu-processed";
+		$class="col-md-10 col-lg-10 col-sm-12 col-xs-12 axa_responsive";
 	break;
 	case 'menu-menu-principal-entreprise':	
-		$class="col-md-10 col-lg-10 col-sm-12 col-xs-12 responsive-menus-mean-menu-processed";
+		$class="col-md-10 col-lg-10 col-sm-12 col-xs-12 axa_responsive";
 	break;
 	case 'mon_conseiller':	
 		$class="col-md-12 col-lg-12 col-sm-12 col-xs-9 ";

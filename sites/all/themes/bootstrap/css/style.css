@@ -1987,3 +1987,18 @@ input.nmpd-display {
     max-height: 300px !important;
     overflow: hidden;
 }
+#block-views-slide-slide-groupe .slick-slide img {
+    float: right !important;
+}
+#block-views-slide-slide-groupe .slick-slide.slick-active {
+      background-color: #00529B ;
+}
+#block-views-slide-slide-groupe .descriptif {
+    left: 15%;
+    background-color: transparent; 
+    position: absolute;
+    opacity: 1;
+    top: 15px;
+    z-index: 10;
+    color: #fff;
+}
