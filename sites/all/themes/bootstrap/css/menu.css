@@ -293,8 +293,9 @@ ul.quicktabs-tabs.quicktabs-style-garland li:hover{
 ul.quicktabs-tabs.quicktabs-style-garland li a {
     color: #fff !important;
 }
-ul.quicktabs-tabs.quicktabs-style-navlist li.active a{
-    color: #ffffff;
+ul.quicktabs-tabs.quicktabs-style-navlist li.active a ,
+a.quicktabs-tab-block-declarer-sinistre-delta-declarer-sinistre{
+    color: #ffffff !important;
     font-weight: normal;
 }
 

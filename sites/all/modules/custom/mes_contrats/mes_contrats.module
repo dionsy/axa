@@ -7,8 +7,93 @@ function mes_contrats_menu() {
     'page arguments' => array(1),
     'access callback' => TRUE,
   );
+  $items['requete/%'] = array(
+    'page callback' => 'requete_callback',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+  );
 
   return $items;
+}
+function requete_callback(){
+  global $user;
+  $user_load = user_load($user->uid);
+
+  $form['objet'] = array(
+    '#type' => 'select',
+    '#title' => t('Objet'),
+    '#options' => array(
+      0 => t('Souscription d\'un nouveau contrat'),
+      1 => t('Demande d\'information'),
+      2 => t('Résiliation contrat'),
+    ), 
+    '#required' => TRUE,
+  );
+  $form['demande'] = array(
+    '#title' => t('Demande'),
+    '#type' => 'textarea',
+    '#default_value' => t(''),
+    '#required' => TRUE,
+  );
+
+  $form['moyen_contact'] = array(
+    '#type' => 'select',
+    '#title' => t('Je souhaite être contacté par'),
+    '#options' => array(
+      'SMS' => t('Téléphone'),
+      'EMAIL' => t('Email'),
+    ), 
+    '#required' => TRUE,
+  );
+
+  $form['telephone'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Numéro de téléphone'),
+    '#default_value' => variable_get('telephone_'.$user->uid),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="moyen_contact"]' => array('value' => 'SMS'),
+      ),
+    ),
+  );
+
+  $form['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Adresse mail'),
+    '#default_value' => $user_load->mail,
+    '#states' => array(
+      'visible' => array(
+        ':input[name="moyen_contact"]' => array('value' => 'EMAIL'),
+      ),
+    ),
+  );
+
+  $form['date'] = array(
+    '#type' => 'date', 
+    '#title' => t('Dans la journée de'), 
+    '#default_value' =>  array('year' => 2017, 'month' => 2, 'day' => 15), 
+    '#required' => TRUE,
+  );
+
+  $form['horaire'] = array(
+    '#type' => 'select',
+    '#title' => t('Aux horaires suivants'),
+    '#options' => array(
+      '08h-13h' => t('08h-13h'),
+      '16h-13h' => t('16h-18h'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit', 
+    '#title' => 'Enregistrer',
+    '#value' => 'Fixer un RDV',
+  );
+
+  $form['#submit'][] = 'axa_adresser_requete_form_submit';
+    
+  return system_settings_form($form);
 }
 
 function detail_contrat($arg) {
@@ -285,7 +370,7 @@ function mes_contrats_block_view($delta = '') {
             }
               $idownload ='<i class="fa fa-download" aria-hidden="true"></i>' ;
               $iview = '<i class="fa fa-eye" aria-hidden="true"></i>' ;
-              $irequete ='<i class="fa fa-pencil-square-o" aria-hidden="true"></i>' ;
+              $irequete ='<i class="fa fa-pencil-square-o" id="'.$numContrat.'"  name="'.$contrat['type'].'" aria-hidden="true"></i>' ;
             if($statut === 'Valide'){
               $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 telechargement-contrat field-contrat">';
               $output .=       '<span> '.l($idownload ,'contrat/'.$numContrat,array('html'=> true ,'attributes'=> array('target' => '_blank' ))).'</span>';   
@@ -303,7 +388,7 @@ function mes_contrats_block_view($delta = '') {
               $output .=     '</div>';
             }
               $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 requete-contrat field-contrat">';
-              $output .=       '<span> '.l($irequete ,'contrat/'.$numContrat,array('html'=> true)).'</span>';
+              $output .=       '<span> <a href="#"  class="requette">'.$irequete.'</a></span>';
               $output .=     '</div>';
               $output .=     '</div>';
 

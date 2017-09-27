@@ -1,0 +1,7 @@
+name = adresser_requete block
+description = Cette module permet d'adresser une requete a un conseiller.
+package = Atos
+version = 7.x-1
+core = 7.x
+files[] = adresser_requete.module
+

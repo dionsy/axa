@@ -1,0 +1,351 @@
+<?php
+module_load_include('module','ws_client');
+
+
+
+/**
+ * Implements hook_libraries_info().
+ */
+function adresser_requete_libraries_info() {
+  $libraries['phpmailer'] = array(
+    'name' => 'PHPMailer library',
+    'vendor url' => 'http://www.phpmailer.com',
+    'download url' => 'https://github.com/PHPMailer/PHPMailer',
+    'path' => '.',
+    'version' => '5.2.23',
+    'files' => array(
+      'php' => array(
+        'PHPMailerautoload.php',
+      ),
+    ),
+  );
+  return $libraries;
+}
+
+
+/**
+ * Implements hook_block_info()
+ */
+function adresser_requete_block_info() {
+  return array(
+    'adresser_requete' => array(
+      'info' => t('Adresser une requéte à mon conseiller'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function adresser_requete_block_view($delta = '') {
+  
+  //$get_service_conseiller = ws_client_get_info_conseiller();
+  /*$get_service_conseiller = array(
+    'nomComplet' => 'Aliou Samba Wele',
+    'adresse' => 'Gueule Tapée',
+    'mail' => 'smsframework@gmail.com',
+    'telephone' => '778088470',
+  );*/
+
+  $block = array();
+  if ($delta == 'adresser_requete') {
+    $nom_conseiller = $get_service_conseiller['nomComplet'];
+    $block['subject'] = '<p>'. 'Adresser une requéte à mon conseiller' .'</p>';
+    $block['subject'] .= '<span>'. $nom_conseiller . '</span>'; 
+    $block['content'] = drupal_get_form('adresser_requete_form');
+  }
+
+  return $block;
+}
+
+/**
+ * fixer_adresser_requete_form
+ */
+function adresser_requete_form($form, &$form_state){
+  global $user;
+  $user_load = user_load($user->uid);
+  //$form['#prefix'] ='<div id="infoContrat"> test </div>' ;
+  $form['objet'] = array(
+    '#type' => 'select',
+    '#prefix' => '<div id="infoContrat">  </div>' ,
+    '#title' => t('Objet'),
+    '#options' => array(
+      0 => t('Demande d\'information'),
+      1 => t('Résiliation contrat'),
+    ), 
+    '#required' => TRUE,
+  );
+  $form['demande'] = array(
+    '#title' => t('Demande'),
+    '#type' => 'textarea',
+    '#default_value' => t(''),
+    '#required' => TRUE,
+  );
+
+  $form['moyen_contact'] = array(
+    '#type' => 'select',
+    '#title' => t('Je souhaite être contacté par'),
+    '#options' => array(
+      'SMS' => t('Téléphone'),
+      'EMAIL' => t('Email'),
+    ), 
+    '#required' => TRUE,
+  );
+
+  $form['telephone'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Numéro de téléphone'),
+    '#default_value' => variable_get('telephone_'.$user->uid),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="moyen_contact"]' => array('value' => 'SMS'),
+      ),
+    ),
+  );
+
+  $form['email'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Adresse mail'),
+    '#default_value' => $user_load->mail,
+    '#states' => array(
+      'visible' => array(
+        ':input[name="moyen_contact"]' => array('value' => 'EMAIL'),
+      ),
+    ),
+  );
+
+  $form['date'] = array(
+    '#type' => 'date', 
+    '#title' => t('Dans la journée de'), 
+    '#default_value' =>  array('year' => 2017, 'month' => 2, 'day' => 15), 
+    '#required' => TRUE,
+  );
+
+  $form['horaire'] = array(
+    '#type' => 'select',
+    '#title' => t('Aux horaires suivants'),
+    '#options' => array(
+      '08h-13h' => t('08h-13h'),
+      '16h-13h' => t('16h-18h'),
+    ),
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit', 
+    '#title' => 'Enregistrer',
+    '#value' => 'Fixer un RDV',
+  );
+
+  $form['#submit'][] = 'axa_adresser_requete_form_submit';
+    
+  return system_settings_form($form);
+
+}
+
+
+function axa_adresser_requete_form_submit($form, &$form_state){
+    global $user;
+    $account = user_load_by_name($user->name);
+
+    $get_service_conseiller = ws_client_get_info_conseiller();
+ /*   $get_service_conseiller = array(
+      'nomComplet' => 'Aliou Samba Wele',
+      'adresse' => 'Gueule Tapée',
+      'mail' => 'smsframework@gmail.com',
+      'telephone' => '778088470',
+    );
+    */
+
+    $horaire = array(
+      0 => t('08h-13h'),
+      1 => t('15h-18h'),
+    );
+
+    $option = array(
+      0 => t('Souscription d\'un nouveau contrat'),
+      1 => t('Demande d\'information'),
+      2 => t('Résiliation contrat'),
+    );
+
+    $demande = $form_state['values']['demande'];
+    $option_value = $option[$form_state['values']['objet']];
+    $horaire_value = $horaire[$form_state['values']['horaire']]; 
+
+    $to = $get_service_conseiller['mail'] /*'smsframework@gmail.com'*/;
+    $from =  variable_get('mail_'.$user->uid) /*"mouhawele@gmail.com"*/;
+    $subject = $option_value;
+    $alt = 'Fixer un rendez vous';
+    /*$body = '<div class="testcolor">';
+    $body .= $form_state['values']['demande'];
+    $body .= '</div>';*/
+
+    $body = '<html>
+              <head>
+                    <title>Email</title>
+                    <style type="text/css">
+                          body {
+                                background-color: #fcfcfc;
+                          }
+                          .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+                            position: relative;
+                            min-height: 1px;
+                            padding-right: 15px;
+                            padding-left: 15px;
+                          }
+                          .col-md-6{
+                            float:left;
+                            width: 50%;
+                          }
+
+                          .col-md-4{
+                            float:left;
+                            width: 25%;
+                          }
+
+                          .col-md-12{
+                            float:left;
+                            width: 100%;
+                          }
+
+                          .message{
+                            margin-bottom: 50px;
+                            background: #fcfcfc;
+                            color: #666;
+                            font-size: 17px;
+                          }
+                          
+                          .border{
+                            border: 1px solid #eee;
+                          }
+                          
+                          .head{
+                            padding-top: 2%;
+                            padding-bottom: 2%;
+                            background: #005399;
+                            color: #fff;
+                          }
+
+                          .info{
+                            padding-top: 1%;
+                            padding-bottom: 1%;
+                            background: #fcfcfc;
+                            color: #666;
+                          }
+
+                          .info a{
+                            color: #666 !important;
+                          }
+
+                          .user{
+                            padding-top: 1%;
+                            padding-bottom: 1%;
+                            background: #fcfcfc;
+                            color: #666;
+                            font-size: 20px;
+                          }
+
+                          .objet{
+                            text-align: center !important;
+                            margin-bottom: 25px;
+                          }
+
+                          html{
+                            background: #fcfcfc;
+                          }
+
+                          .center{
+                            text-align:center;
+                          }
+
+
+                    </style>
+              </head>
+      <body>
+              <div class="row col-md-12">
+                
+                <span class=\'user col-md-12\'>'
+                      . 'Nom :'.variable_get('nom_'.$user->uid).
+                '</span>
+                <span class=\'user col-md-12\'>'
+                      . 'Prénom: '.variable_get('prenom_'.$user->uid). 
+                '</span>
+                <span class=\'user col-md-12\'>'
+                      . 'Adresse: ' .variable_get('adresse_'.$user->uid). 
+                '</span>
+                <span class=\'user objet col-md-12\'>'
+                      . 'Objet RDV: ' . $subject. 
+                '</span>
+
+                <div class=\'col-md-12 message\'>'
+                      . $form_state['values']['demande'] . 
+                '</div>
+
+
+                <div class=\'col-md-12 center\'>
+
+                  <div class=\'col-md-4 head border\'>'
+                        . 'Moyen de contact' .
+                  '</div>
+                  <div class=\'col-md-4 head border\'>'
+                        . 'Date' .
+                  '</div>
+                  <div class=\'col-md-4 head border\'>'
+                        . 'Horaire' .
+                  '</div>
+
+                  <div class=\'col-md-4 border info\'>'
+                        . $form_state['values']['email'] .
+                  '</div>
+                  <div class=\'col-md-4 border info\'>'
+                        . $form_state['values']['date']['day'] . '/' . $form_state['values']['date']['month'] . '/'. $form_state['values']['date']['year'] . 
+                  '</div>
+                  <div class=\'col-md-4 border info\'>'
+                        . $form_state['values']['horaire'] .
+                  '</div>
+                </div>
+              </div>
+        </body>
+
+</html>';
+
+    //$body = '<p style="color:sienna;margin-left:20px">This is a paragraph.</p>';
+
+    envoyer_mail($from, $to, $subject, $body, $alt);
+}
+/*
+function envoyer_mail($from, $to, $subject, $body, $alt){
+    $host = variable_get('cron_notification_mail_smtp');
+    $smtp_secure = variable_get('cron_notification_mail_smtpsecure');
+  $port = (int) variable_get('cron_notification_mail_port');
+  $username = variable_get('cron_notification_mail_username');
+  $password = variable_get('cron_notification_mail_password');
+
+  $mail = new PHPMailer;
+  $mail->SMTPDebug = 3;                               // Enable verbose debug output
+  $mail->isSMTP();                                      // Set mailer to use SMTP
+  $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+  $mail->SMTPAuth = true;                               // Enable SMTP authentication
+
+
+  $mail->Username = $username;                 // SMTP username
+  $mail->Password = $password;                           // SMTP password
+  $mail->SMTPSecure = $smtp_secure;                            // Enable TLS encryption, `ssl` also accepted
+  $mail->Port = $port;                                    // TCP port to connect to
+
+  $mail->setFrom($from, $alt);
+  $mail->addAddress($to);     // Add a recipient
+  
+  $mail->isHTML(true);                                  // Set email format to HTML
+
+  $mail->Subject = $subject;
+  $mail->Body    = $body;
+
+  if(!$mail->send()) {
+      echo t('Message could not be sent.');
+      echo t('Mailer Error: ' . $mail->ErrorInfo);
+  }  else {
+      echo t('Message has been sent');
+  }
+}*/

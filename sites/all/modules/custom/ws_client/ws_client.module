@@ -37,7 +37,7 @@ function ws_client_permission() {
 function ws_client_menu() {
   $items[WS_CLIENT_ADMIN_PATH] = array(
     'title' => 'WS Client Settings',
-    'description' => 'Administer your ws clien',
+    'description' => 'Administer your ws client',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ws_client_admin_form'),
     'access arguments' => array('administer ws_client'),

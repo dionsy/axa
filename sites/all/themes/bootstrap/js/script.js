@@ -78,6 +78,27 @@
         $( "#quicktabs-tab-left_menu-5" ).parents('li').addClass("active");
       });
 
+      $('#block-mes-contrats-mes-contrats .requette', context).on('click', function(event){
+        $( "#quicktabs-tabpage-left_menu-2" ).addClass("quicktabs-hide");
+        $( "#quicktabs-tabpage-left_menu-8" ).removeClass("quicktabs-hide");
+        $( "#quicktabs-tabpage-left_menu-2" ).parents('li').removeClass("active");
+        $( "#quicktabs-tabpage-left_menu-8  " ).parents('li').addClass("active");
+          var contratTarget = event.target || event.srcElement ; 
+          var   numero_contrat = contratTarget.id ; 
+          var type_contrat = $('#'+numero_contrat).attr('name') ; ;
+              infoContrat = '<div class="contrat"> <h4>Info contrat</h4></div><ul class="row"><li class="typecontrat col-md-6 col-lg-6 col-sm-12 col-xs-12"><span>Type: </span><span>' +type_contrat+ '</span></li><li class="numcontrat col-md-6 col-lg-6 col-sm-12 col-xs-12"><span>Numero: </span><span>' +numero_contrat+ '</span></li></ul>' ;
+          $("#infoContrat").html(infoContrat);
+          /* $.ajax({
+                  type : "GET" ,
+                  url : 'http://192.168.200.3/Service1.svc/contrat/'+idContrat,
+                   contentType: "application/json; charset=utf-8",
+                   success:function(data) {
+                    } 
+           })*/
+
+      });
+
+
       $('.conseiller-left-bar .fixer a', context).on('click', function(){
         $( "#quicktabs-container-left_menu .quicktabs-tabpage" ).addClass("quicktabs-hide");
         $( "#quicktabs-tabpage-left_menu-7" ).removeClass("quicktabs-hide");
