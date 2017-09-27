@@ -152,16 +152,16 @@ function axa_toolkit_services_resources() {
         ),
       ),
     ),
-  'preference' => array(
+  'userinfos' => array(
       'actions' => array(
-        'create' => array(
-          'help' => t('Create a Preference.'),
+        'update' => array(
+          'help' => t('Update user infos'),
           'file' => array(
             'type' => 'inc',
             'module' => 'axa_toolkit',
             'name' => 'axa_toolkit',
           ),
-          'callback' => '_preference_service_create',
+          'callback' => '_userinfos_service_update',
           'args' => array(
               array(
                 'name' => 'data',

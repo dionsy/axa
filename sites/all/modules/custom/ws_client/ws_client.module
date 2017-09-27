@@ -767,7 +767,7 @@ function ws_client_declarer_sinistre($data){
  /* $result = drupal_http_request('http://192.168.43.145/Service1.svc/sinistre/create', $options);*/
 
   $result = drupal_http_request($url, $options);
-
+  return $result;
 }
 
 function ws_client_update_info_user($array_data) {
@@ -781,7 +781,7 @@ function ws_client_update_info_user($array_data) {
 
   $array_data['id'] = $identifiant;
   $data = drupal_json_encode($array_data);
-
+  print_r($data);die();
   $options = array(
                   'method' => 'PUT',
                   'data' => $data,
@@ -794,11 +794,13 @@ function ws_client_update_info_user($array_data) {
   $url = 'http://'. $ip .'/'. $root .'/' . $update_info_user;
 
   $result = drupal_http_request($url, $options);
-          
+   return $result;        
 }
 
 function ws_client_user_login(&$edit, $account) {
+  if($_SERVER['REQUEST_URI']!=='/axa/api/user/login'){
     drupal_goto('node/2');
+  }
 }
 
 function ws_client_init() {
