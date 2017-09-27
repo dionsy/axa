@@ -43,7 +43,7 @@ function ws_client_menu() {
     'access arguments' => array('administer ws_client'),
     'file' => 'ws_client.admin.inc',
   );
-$items['demande'] = array(
+  $items['demande'] = array(
     'page callback' => 'demand_callback',
     'page arguments' => array(1),
     'access callback' => TRUE,
@@ -160,22 +160,6 @@ function ws_client_get_liste_echeances(){
 
   $returnArray = array(); 
 
-/*  $logement = array(
-    100000000 => 'Appartement',
-    100000001 => 'Maison',
-    100000002 => 'Autres',
-  );
-    $accident_tab = array(
-    100000000 => 'Voyage',
-    100000001 => 'Evacuation Sanitaire',
-    100000002 => 'Individuels accidents particulier',
-  );
-  $loisir_tab = array(
-    100000000 => 'Plaisance',
-    100000001 => 'RC chasse',
-    100000002 => 'RC chevaux de selle',
-    100000003 => 'RC chef de famille',
-  );*/
 
 
   global $user;
@@ -797,11 +781,11 @@ function ws_client_update_info_user($array_data) {
    return $result;        
 }
 
-function ws_client_user_login(&$edit, $account) {
+function ws_client_user_login(&$edit, $account) { 
   if($_SERVER['REQUEST_URI']!=='/axa/api/user/login'){
     drupal_goto('node/2');
+ }
 }
-
 
 function ws_client_init() {
   global $user;
