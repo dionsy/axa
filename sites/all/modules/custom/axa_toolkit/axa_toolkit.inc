@@ -50,8 +50,11 @@ function _devis_service_create($data) {
       'is_draft' => FALSE,
       'data' => $formdata,
     );
+
+    webform_submission_send_mail($node, $submission);
     // $sid = webform_submission_insert($node, $submission);
     $result = ws_client_createDevis($nid , $submission , $identifiant,'mobile');
+    return $result;
     if($result->code >=  300 )
     {
      return services_error("verifier les champs", $result->code,$result);
@@ -105,4 +108,49 @@ function _preference_service_create($data) {
     );
      $sid = webform_submission_insert($node, $submission);
      return $sid;
+}
+/**
+ * Undocumented function
+ *
+ * @param [type] $data
+ * @return void
+ */ 
+function _userinfos_service_update($data){
+  require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
+  module_load_include('module','ws_client');
+   global $user;
+    $edit = array();
+    $update = array();
+    $account = user_load_by_name($user->name);
+
+    if (isset($form_state['values']['pass1'])){
+      $edit['pass'] = $data['pass1'];  
+      $edit['mail'] = $form_state['values']['email'];   
+      user_save($account, $edit);
+    }
+    $update['nom'] = $data['nom'];
+    $update['id'] = $data['id'];
+    $update['prenom'] = $data['prenom'];
+    $update['adresse'] = $data['adresse'];
+    $update['mail'] = $data['mail'];
+    $update['telephone'] = $data['telephone'];
+    
+    $ip = variable_get('ip_server');
+    $root = variable_get('root');
+    $update_info_user = variable_get('update_info_user');
+
+    $update = drupal_json_encode($update);
+    $options = array(
+                  'method' => 'PUT',
+                  'data' => $update,
+                  'timeout' => 600.0,
+                  'headers' => array('Content-Type' => 'application/json')
+    );
+
+  //$url = 'http://192.168.200.16/Service1.svc/compte/update';
+
+  $url = 'http://'. $ip .'/'. $root .'/' . $update_info_user;
+  $result = drupal_http_request($url, $options);
+   return $result;        
+    // return ws_client_update_info_user($update);
 }

@@ -299,7 +299,7 @@ function mes_contrats_block_view($delta = '') {
       100000003 => 'Résilie'
       );
       $title = '';
-    	$output = '';
+      $output = '';
       $auto = array();
       $get_service_contrats = ws_client_get_liste_contrats();
       /*$get_service_contrats = isset($get_service_contrats) ? $get_service_contrats : $get_test_contrats; */
@@ -404,5 +404,322 @@ function mes_contrats_block_view($delta = '') {
     );
   }
 
-  return array();
+
+function mes_contrats_menu() {
+  $items['contrat/%'] = array(
+    'page callback' => 'detail_contrat',
+    'page arguments' => array(1),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+function detail_contrat($arg) {
+  global $user ;
+  //libraries_load('mpdf');
+  $contrat =  ws_client_get_contrat_by_num($arg);
+  //var_dump($contrat) ; die();
+  $nom = variable_get('nom_'.$user->uid);
+  $prenom = variable_get('prenom_'.$user->uid);
+  $dateNaissance = variable_get('dateNaissance_'.$user->uid);
+  $civilite = variable_get('civilite_'.$user->uid);
+  $adresse = variable_get('adresse_'.$user->uid);
+  $tel = variable_get('telephone_'.$user->uid);
+  $email= variable_get('mail_'.$user->uid);
+  //var_dump($nom); die();
+  $carburant = array(
+    100000001 => 'Gasoil',
+    100000000 => 'Essence'
+  );
+   $boolean = array(
+    true => 'Oui',
+    false => 'Non'
+  );
+    $logement = array(
+    100000000 => 'Appartement',
+    100000001 => 'Maison',
+    100000002 => 'Autres'
+  );
+    $accident_tab = array(
+    100000000 => 'Voyage',
+    100000001 => 'Evacuation Sanitaire',
+    100000002 => 'Individuels accidents particulier',
+  );
+    $loisir_tab= array(
+    100000000 => 'Plaisance',
+    100000001 => 'RC chasse',
+    100000002 => 'RC chevaux de selle',
+    100000003 => 'RC chef de famille'
+  ) ;  
+
+$output  = "<div class='logo' width='323px' height='57px' > </div>
+                  <div class='contact_axa'>
+                    <h5>AXA Sénégal</h5>
+                    <p>Siége: Place de l'indépendance</p>
+                    <p>tél: +221 338 491 010</p>
+                  </div>
+                 <div class='title'>
+                    <h4>CONTRAT D'ASSURANCE <span>" .$contrat['typeContrat']. "<span></h4>
+                 </div>
+                 <div class='numContrat'>
+                    <table>
+                      <tr>
+                      <td>Numero contrat : </td>
+                      <td>".$arg."</td>
+                    </tr>
+                    </table>
+                 </div>
+                 <div class='infoContrat'>
+                  <table border='1'>
+                    <tr>
+                      <th colspan='2'>Informations Personelles</th>
+                    </tr>
+                    <tr>
+                      <td>Nom</td>
+                      <td>".$nom."</td>
+                    </tr>
+                    <tr>
+                      <td>Prenom</td>
+                      <td>".$prenom."</td>
+                    </tr>
+                    <tr>
+                      <td>Email</td>
+                      <td>".$email."</td>
+                    </tr>
+                    <tr>
+                      <td>Téléphone</td>
+                      <td>".$tel."</td>
+                    </tr>
+                    <tr>
+                      <td>Adresse</td>
+                      <td>".$adresse."</td>
+                    </tr>
+                    <tr>
+                      <th colspan='2'>".$contrat['typeContrat']."</th>
+                    </tr>";
+    if($contrat['typeContrat'] === "Automobile") {
+        $output .= "<tr>
+                      <td>Type de bien</td>
+                      <td>".$contrat['marque']."</td>
+                    </tr>
+                    <tr>
+                      <td>Modéle</td>
+                      <td>".$contrat['modele']."</td>
+                    </tr>
+                    <tr>
+                      <td>Carosserie</td>
+                      <td>".$contrat['carosserie']."</td>
+                    </tr>
+                    <tr>
+                      <td>Energie du véhicule</td>
+                      <td>".$carburant[$contrat['carburant']]."</td>
+                    </tr>
+                    <tr>
+                      <td>Date de 1ére mise en circulation</td>
+                      <td>".$contrat['dateMiseEnCirculation']."</td>
+                    </tr>
+                    <tr>
+                      <td>Valeur à neuf</td>
+                      <td>".$contrat['valeurAneuf']." FCFA</td>
+                    </tr>
+                    ";
+    }
+    if($contrat['typeContrat'] === "Habitation") {
+        $output .= "
+                    <tr>
+                      <td>Type</td>
+                      <td>".$logement[$contrat['typeLogement']]."</td>
+                    </tr>
+                    <tr>
+                      <td>Nombre de pièces</td>
+                      <td>".$contrat['nbPieces']."</td>
+                    </tr>
+                    <tr>
+                      <td>Adresse</td>
+                      <td>".$contrat['adresseLogement']."</td>
+                    </tr>
+                    <tr>
+                      <td>Montant</td>
+                      <td>".$contrat['montant']." FCFA</td>
+                    </tr>
+                    <tr>
+                      <td>Etes-vous locataire</td>
+                      <td>".$boolean[$contrat['locataire']]."</td>
+                    </tr>
+                    <tr>
+                      <td>Est-il votre résidence principale</td>
+                      <td>".$boolean[$contrat['locataire']]."</td>
+                    </tr>
+                  ";
+    }
+    if($contrat['typeContrat'] === "Assistances & Accidents") {
+        $output .= "<tr>
+                      <td>Type d'assurance</td>
+                      <td>".$accident_tab[$contrat['typeAssurance']]."</td>
+                    </tr>
+                  ";
+    }
+    if($contrat['typeContrat'] === "Loisirs-Vie privée") {
+        $output .= "<tr>
+                      <td>Type d'assurance</td>
+                      <td>".$loisir_tab[$contrat['typeAssurance']]."</td>
+                    </tr>
+                  ";
+    }
+
+    $output .= " <tr>
+                      <td>Prime</td>
+                      <td>".$contrat['prime']." FCFA</td>
+                    </tr>
+                    <tr>
+                      <td>Date début du contrat</td>
+                      <td>".$contrat['debut']."</td>
+                    </tr>
+                    <tr>
+                      <td>Date d'échéance</td>
+                      <td>".$contrat['echeance']."</td>
+                    </tr></table>
+                </div>" ;
+
+
+  pdf_using_mpdf_api($output,"test");
+/*  $pdf=new FPDF();
+  $pdf->AddPage();
+  $pdf->SetFont('Arial','B',16);
+  $pdf->Cell(40,10,$html);
+  $pdf->Output();*/
+
+}
+
+
+
+/**
+ * Implements hook_block_info()
+ */
+function mes_contrats_block_info() {
+  return array(
+    'mes_contrats' => array(
+      'info' => t('Contrats client'),
+      'cache' => DRUPAL_NO_CACHE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view()
+ */
+function mes_contrats_block_view($delta = '') {
+  if ($delta == 'mes_contrats') {
+      $statut= array(
+      100000000 => 'Initialise',
+      100000001 => 'En cours',
+      100000002 => 'Valide',
+      100000003 => 'Résilie'
+      );
+      $title = '';
+    	$output = '';
+      $auto = array();
+      $get_service_contrats = ws_client_get_liste_contrats();
+      /*$get_service_contrats = isset($get_service_contrats) ? $get_service_contrats : $get_test_contrats; */
+      $title .=   t('Mes Contrats');
+      $output .= '<div class="item-mes-contrats">';
+      foreach ($get_service_contrats as $contrat) {
+/* var_dump($contrat) ; die();*/
+      # code...
+            $outputStatut =  '<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 field-contrat">';
+        if(isset($contrat['type']))
+        {
+
+          $output .=   '<h3>';
+          $output .=     'Assurance '. $contrat['type'];
+          $output .=   '</h3>';
+          $output .=   '<div class="row item-contrat">';
+          $output .= '<div class="titleProduit col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span>Numéro</span></div> ';
+          if($contrat['type'] === 'Auto'){
+              $output  .='<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>Marque</span></div>
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>Modéle</span></div>';
+          }
+          if($contrat['type'] === 'Habitation'){
+              $output  .='<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>Type de bien</span></div>
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>Adresse</span></div>';
+          }
+          if($contrat['type'] === 'Accident' || $contrat['type'] === 'loisir'){
+              $output  .='<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>Type de contrat</span></div>
+                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>A complété</span></div>';
+          }
+           $output  .= ' <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><span>Statut</span></div>';
+           $output .=  '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><span>Action</span></div> </div>';
+          foreach ($contrat['info'] as $informations) {
+            # code...
+            $i = 0;
+            $numContrat = $informations['id'];
+            $statut = $informations['statut'] ; 
+            foreach ($informations as $key => $value) {
+              # code...
+              if($i==0){
+                $output .= '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';  
+                $output .=     '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 field-contrat">';
+                if($statut === 'Valide'){
+                    $output .=       '<span>'.l($value,'contrat/'. $numContrat).'</span>'; 
+                }
+                else {  
+                    $output .=       '<span>'. $value .'</span>';
+                 }        
+                $output .=     '</div>';    
+              }
+                  elseif($i==1){
+                    $output .=     $outputStatut;
+                    $output .=       '<span>'. $value .'</span>';      
+                    $output .=     '</div>'; 
+                  }
+                  elseif($i==2){
+                    $output .=     $outputStatut;
+                    $output .=       '<span>'. $value .'</span>';      
+                    $output .=     '</div>'; 
+                  }
+                  else{
+                    $output .=     $outputStatut;
+                    $output .=       '<span>'. $value .'</span>';      
+                    $output .=     '</div>';
+                  }
+              $i++;
+
+            }
+              $idownload ='<i class="fa fa-download" aria-hidden="true"></i>' ;
+              $iview = '<i class="fa fa-eye" aria-hidden="true"></i>' ;
+              $irequete ='<i class="fa fa-pencil-square-o" aria-hidden="true"></i>' ;
+            if($statut === 'Valide'){
+              $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 telechargement-contrat field-contrat">';
+              $output .=       '<span> '.l($idownload ,'contrat/'.$numContrat,array('html'=> true ,'attributes'=> array('target' => '_blank' ))).'</span>';   
+              $output .=     '</div>';
+              $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 visualisation-contrat field-contrat">';
+              $output .=       '<span> '.l($iview ,'contrat/'.$numContrat,array('html'=> true)).'</span>';      
+              $output .=     '</div>';
+            }
+            else{
+              $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 telechargement-contrat field-contrat">';
+              $output .=       '<span class="statut">'.$idownload.'</span>';   
+              $output .=     '</div>';
+              $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 visualisation-contrat field-contrat">';
+              $output .=       '<span class="statut"> '.$iview.'</span>';      
+              $output .=     '</div>';
+            }
+              $output .=     '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 requete-contrat field-contrat">';
+              $output .=       '<span> '.l($irequete ,'contrat/'.$numContrat,array('html'=> true)).'</span>';
+              $output .=     '</div>';
+              $output .=     '</div>';
+
+        }
+          $output .=   '</div>';
+      }    
+    }
+    $output .= '</div>';
+
+    return array(
+      'subject' => $title ,
+      'content' => (!empty($output)) ? '<div class="contrat_body">' . $output . '</div>' : '<p>' . t('For now, this list is empty!') . '</p>',
+    );
+  }
 }

@@ -271,6 +271,9 @@ form#fixer-rendez-vous-form #edit-actions--4 {
    /* height: 10%;*/
 /*    border-radius: 5px;*/
 }
+.declarer-sinistre a{
+    color: #fff !important;
+}
 
 .declarer-sinistre #quicktabs-tab-left_menu-8 {
 	position: relative;
