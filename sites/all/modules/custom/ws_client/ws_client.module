@@ -781,10 +781,11 @@ function ws_client_update_info_user($array_data) {
    return $result;        
 }
 
-function ws_client_user_login(&$edit, $account) { 
-  if($_SERVER['REQUEST_URI']!=='/axa/api/user/login'){
-    drupal_goto('node/2');
- }
+function ws_client_user_login(&$edit, $account) {
+    //print_r($edit['build_info']['form_id'])
+  if(($_SERVER['REQUEST_URI']!=='/axa/api/user/login') && ($edit['build_info']['form_id']!=='user_register_form')){
+   drupal_goto('node/2');
+  }
 }
 
 function ws_client_init() {
@@ -869,10 +870,8 @@ function ws_client_user_presave(&$edit, $account, $category) {
     if(!empty($identifiantClient) ) 
     $edit['field_identifiant_client']['und'][0]['value'] = $identifiantClient ;
      //$account->roles['3']='3';
-    //$edit['roles']='client';
   }
- //krumong('main')->kPrint($edit['roles']) ;  die();
- /* if($result != 'false')*/
+ 
 }
 
 function ws_client_webform_component_render_alter(&$element, &$component) {
