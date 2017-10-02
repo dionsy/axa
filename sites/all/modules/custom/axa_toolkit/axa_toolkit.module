@@ -178,28 +178,3 @@ function axa_toolkit_services_resources() {
   );
   return $resources;
 }
-
-/**
- * Implements hook_block_info().
- */
-function axa_toolkit_block_info(){
-    return array(
-    'search_button' => array(
-      'info' => t('Search Button'),
-      'cache' => DRUPAL_NO_CACHE,
-    ),
-  );
-}
-
-/**
- * Implements hook_block_view().
- */
-function axa_toolkit_block_view($delta = '')
-{
-    switch ($delta){
-        case  'search_button':
-
-        default:
-            break;
-    }
-}
